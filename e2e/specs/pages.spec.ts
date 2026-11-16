@@ -18,6 +18,7 @@ test.describe('navigation', () => {
       'Klasyfikacja',
       'Kadra',
       'Galeria',
+      'Turnieje',
     ]);
     await nav.getByRole('link', { name: 'Kadra' }).click();
     await expect(page).toHaveURL(/\/pl\/2026-2027\/polish-team\/$/);
@@ -170,6 +171,65 @@ test.describe('gallery', () => {
     const response = await request.get(href ?? '');
 
     expect(response.headers()['content-type']).toContain('image/webp');
+  });
+});
+
+test.describe('tournaments', () => {
+  test('index lists every tournament with its status', async ({ page }) => {
+    await page.goto('/pl/tournaments/');
+
+    await expect(page.locator('.tournament-card')).toHaveCount(6);
+    await expect(
+      page.locator('.tournament-card[data-tournament="four-hills"]'),
+    ).toContainText('Rozgrywany');
+    await expect(
+      page.locator('.tournament-card[data-tournament="raw-air"]'),
+    ).toContainText('Zawieszony');
+    await expect(page.locator('.topbar__nav [aria-current="page"]')).toHaveText(
+      'Turnieje',
+    );
+  });
+
+  test('profile shows rules, events of the season and recent winners', async ({
+    page,
+  }) => {
+    await page.goto('/pl/tournaments/four-hills/');
+
+    await expect(
+      page.getByRole('heading', { name: 'Turniej Czterech Skoczni' }),
+    ).toBeVisible();
+    await expect(page.locator('.event-card')).toHaveCount(4);
+    await expect(page.locator('.table__row').first()).toContainText(
+      'Domen Prevc',
+    );
+    await expect(page.locator('main')).toContainText('systemem KO');
+  });
+
+  test('team podium is printed in the page language', async ({ page }) => {
+    await page.goto('/en/tournaments/polski-turniej/');
+    await expect(page.locator('.table__row').first()).toContainText('Austria');
+    await expect(page.locator('.table__row').first()).toContainText('Germany');
+  });
+
+  test('event page links to its tournament', async ({ page }) => {
+    await page.goto('/pl/2026-2027/innsbruck/');
+    await page
+      .locator('.event-header')
+      .getByRole('link', { name: 'Turniej Czterech Skoczni' })
+      .click();
+    await expect(page).toHaveURL(/\/pl\/tournaments\/four-hills\/$/);
+  });
+
+  test('five navigation links fit a 320 px screen', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 800 });
+    await page.goto('/pl/tournaments/raw-air/');
+
+    const last = await page.locator('.topbar__nav a').last().boundingBox();
+    const first = await page.locator('.topbar__nav a').first().boundingBox();
+
+    expect((last?.x ?? 0) + (last?.width ?? 0)).toBeLessThanOrEqual(320);
+    expect(first?.x).toBeGreaterThanOrEqual(0);
+    expect(last?.y).toBe(first?.y);
   });
 });
 

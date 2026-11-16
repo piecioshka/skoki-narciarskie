@@ -1,0 +1,612 @@
+[
+  {
+    "slug": "four-hills",
+    "name": "Turniej Czterech Skoczni",
+    "firstEdition": 1953,
+    "status": "active",
+    "hosts": [
+      "Oberstdorf",
+      "Garmisch-Partenkirchen",
+      "Innsbruck",
+      "Bischofshofen"
+    ],
+    "events": {
+      "2026-2027": [
+        "oberstdorf",
+        "garmisch-partenkirchen",
+        "innsbruck",
+        "bischofshofen"
+      ]
+    },
+    "description": {
+      "pl": "Najstarszy turniej w skokach narciarskich, rozgrywany od 1953 roku na przełomie grudnia i stycznia na dwóch skoczniach w Niemczech i dwóch w Austrii. Od sezonu 1979/1980 jest częścią Pucharu Świata.",
+      "en": "The oldest ski jumping tournament, held since 1953 at the turn of December and January on two hills in Germany and two in Austria. It has been part of the World Cup since the 1979/1980 season."
+    },
+    "format": {
+      "pl": "Wygrywa zawodnik z najwyższą sumą not z czterech konkursów, a nie z punktów Pucharu Świata. Od edycji 1996/1997 pierwsza seria każdego konkursu jest rozgrywana systemem KO: 50 skoczków rywalizuje w parach, do drugiej serii awansuje 25 zwycięzców par i 5 najlepszych przegranych.",
+      "en": "The winner is the athlete with the highest total score from the four competitions, not World Cup points. Since the 1996/1997 edition the first round of every competition is a knockout: 50 jumpers compete in pairs, and the 25 pair winners plus the 5 best losers advance to the second round."
+    },
+    "prize": {
+      "pl": "Od edycji 2012/2013 zwycięzca otrzymuje statuetkę złotego orła; wcześniej nagrodą był samochód.",
+      "en": "Since the 2012/2013 edition the winner receives a golden eagle trophy; before that the prize was a car."
+    },
+    "statusNote": {
+      "pl": "W sezonie 2026/2027 odbędzie się 75. edycja, od 29 grudnia do 6 stycznia. Wszystkie cztery konkursy w jednej edycji wygrali dotąd tylko Sven Hannawald (2001/02), Kamil Stoch (2017/18) i Ryōyū Kobayashi (2018/19).",
+      "en": "The 2026/2027 season brings the 75th edition, from 29 December to 6 January. Only Sven Hannawald (2001/02), Kamil Stoch (2017/18) and Ryōyū Kobayashi (2018/19) have won all four competitions of one edition."
+    },
+    "winners": [
+      {
+        "edition": "2025/26",
+        "podium": [
+          {
+            "name": "Domen Prevc",
+            "nation": "SLO"
+          }
+        ]
+      },
+      {
+        "edition": "2024/25",
+        "podium": [
+          {
+            "name": "Daniel Tschofenig",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2023/24",
+        "podium": [
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          }
+        ]
+      },
+      {
+        "edition": "2022/23",
+        "podium": [
+          {
+            "name": "Halvor Egner Granerud",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "2021/22",
+        "podium": [
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          }
+        ]
+      },
+      {
+        "edition": "2020/21",
+        "podium": [
+          {
+            "name": "Kamil Stoch",
+            "nation": "POL"
+          }
+        ]
+      },
+      {
+        "edition": "2019/20",
+        "podium": [
+          {
+            "name": "Dawid Kubacki",
+            "nation": "POL"
+          }
+        ]
+      }
+    ],
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Turniej_Czterech_Skoczni"
+  },
+  {
+    "slug": "raw-air",
+    "name": "Raw Air",
+    "firstEdition": 2017,
+    "status": "paused",
+    "hosts": ["Oslo", "Lillehammer", "Trondheim", "Vikersund"],
+    "events": {},
+    "description": {
+      "pl": "Norweski cykl skoków i lotów rozgrywany w marcu w ramach Pucharu Świata od sezonu 2016/2017. Zawody odbywają się dzień po dniu, bez przerwy, na skoczniach w Oslo, Lillehammer, Trondheim i Vikersund.",
+      "en": "A Norwegian series of ski jumping and ski flying held in March within the World Cup since the 2016/2017 season. The competitions run day after day, without a break, on the hills in Oslo, Lillehammer, Trondheim and Vikersund."
+    },
+    "format": {
+      "pl": "Do klasyfikacji liczy się każdy oceniany skok: konkursy indywidualne, kwalifikacje do nich (prologi) i konkursy drużynowe. W pełnym formacie daje to 16 serii w 10 dni.",
+      "en": "Every scored jump counts towards the standings: individual competitions, their qualifications (prologues) and team competitions. The full format means 16 rounds in 10 days."
+    },
+    "prize": {
+      "pl": "Za podium całego cyklu przewidziano 60 tys. euro dla zwycięzcy, 30 tys. za drugie i 10 tys. za trzecie miejsce.",
+      "en": "The overall podium is worth 60,000 euros for the winner, 30,000 for second place and 10,000 for third."
+    },
+    "statusNote": {
+      "pl": "W 2021 roku cykl odwołano z powodu pandemii. W lipcu 2025 dyrektor Pucharu Świata Sandro Pertile poinformował, że w 2026 roku Raw Air nie zostanie rozegrany; w kalendarzu 2026/2027 też go nie ma.",
+      "en": "In 2021 the series was cancelled because of the pandemic. In July 2025 World Cup director Sandro Pertile announced that Raw Air would not be held in 2026; it is not in the 2026/2027 calendar either."
+    },
+    "winners": [
+      {
+        "edition": "2025",
+        "podium": [
+          {
+            "name": "Andreas Wellinger",
+            "nation": "GER"
+          },
+          {
+            "name": "Domen Prevc",
+            "nation": "SLO"
+          },
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          }
+        ]
+      },
+      {
+        "edition": "2024",
+        "podium": [
+          {
+            "name": "Stefan Kraft",
+            "nation": "AUT"
+          },
+          {
+            "name": "Peter Prevc",
+            "nation": "SLO"
+          },
+          {
+            "name": "Daniel Huber",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2023",
+        "podium": [
+          {
+            "name": "Halvor Egner Granerud",
+            "nation": "NOR"
+          },
+          {
+            "name": "Stefan Kraft",
+            "nation": "AUT"
+          },
+          {
+            "name": "Anže Lanišek",
+            "nation": "SLO"
+          }
+        ]
+      },
+      {
+        "edition": "2022",
+        "podium": [
+          {
+            "name": "Stefan Kraft",
+            "nation": "AUT"
+          },
+          {
+            "name": "Karl Geiger",
+            "nation": "GER"
+          },
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          }
+        ]
+      },
+      {
+        "edition": "2020",
+        "podium": [
+          {
+            "name": "Kamil Stoch",
+            "nation": "POL"
+          },
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          },
+          {
+            "name": "Marius Lindvik",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "2019",
+        "podium": [
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          },
+          {
+            "name": "Stefan Kraft",
+            "nation": "AUT"
+          },
+          {
+            "name": "Robert Johansson",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "2018",
+        "podium": [
+          {
+            "name": "Kamil Stoch",
+            "nation": "POL"
+          },
+          {
+            "name": "Robert Johansson",
+            "nation": "NOR"
+          },
+          {
+            "name": "Andreas Stjernen",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "2017",
+        "podium": [
+          {
+            "name": "Stefan Kraft",
+            "nation": "AUT"
+          },
+          {
+            "name": "Kamil Stoch",
+            "nation": "POL"
+          },
+          {
+            "name": "Andreas Wellinger",
+            "nation": "GER"
+          }
+        ]
+      }
+    ],
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Raw_Air"
+  },
+  {
+    "slug": "planica7",
+    "name": "Planica7",
+    "firstEdition": 2018,
+    "status": "active",
+    "hosts": ["Planica"],
+    "events": {
+      "2026-2027": ["planica"]
+    },
+    "description": {
+      "pl": "Czterodniowy turniej lotów narciarskich na Letalnicy w Planicy, rozgrywany na zakończenie sezonu Pucharu Świata od sezonu 2017/2018.",
+      "en": "A four-day ski flying tournament at Letalnica in Planica, held at the end of the World Cup season since 2017/2018."
+    },
+    "format": {
+      "pl": "Liczy się suma not z siedmiu serii: jednej serii kwalifikacyjnej oraz po dwóch seriach w dwóch konkursach indywidualnych i w konkursie drużynowym. Nagroda jest przyznawana, gdy odbędą się co najmniej cztery z siedmiu serii.",
+      "en": "The total score from seven rounds counts: one qualification round and two rounds each in two individual competitions and in the team competition. The prize is awarded when at least four of the seven rounds take place."
+    },
+    "prize": {
+      "pl": "W pierwszej edycji zwycięzca otrzymał 20 tys. franków szwajcarskich, w sezonie 2025/2026 było to 20 tys. euro.",
+      "en": "In the first edition the winner received 20,000 Swiss francs; in the 2025/2026 season it was 20,000 euros."
+    },
+    "statusNote": {
+      "pl": "W sezonie 2026/2027 turniej zaplanowano na 18-21 marca.",
+      "en": "In the 2026/2027 season the tournament is scheduled for 18-21 March."
+    },
+    "winners": [
+      {
+        "edition": "2026",
+        "podium": [
+          {
+            "name": "Domen Prevc",
+            "nation": "SLO"
+          },
+          {
+            "name": "Marius Lindvik",
+            "nation": "NOR"
+          },
+          {
+            "name": "Daniel Tschofenig",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2025",
+        "podium": [
+          {
+            "name": "Domen Prevc",
+            "nation": "SLO"
+          },
+          {
+            "name": "Anže Lanišek",
+            "nation": "SLO"
+          },
+          {
+            "name": "Andreas Wellinger",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "2024",
+        "podium": [
+          {
+            "name": "Daniel Huber",
+            "nation": "AUT"
+          },
+          {
+            "name": "Peter Prevc",
+            "nation": "SLO"
+          },
+          {
+            "name": "Johann André Forfang",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "2023",
+        "podium": [
+          {
+            "name": "Stefan Kraft",
+            "nation": "AUT"
+          },
+          {
+            "name": "Anže Lanišek",
+            "nation": "SLO"
+          },
+          {
+            "name": "Timi Zajc",
+            "nation": "SLO"
+          }
+        ]
+      },
+      {
+        "edition": "2022",
+        "podium": [
+          {
+            "name": "Timi Zajc",
+            "nation": "SLO"
+          },
+          {
+            "name": "Marius Lindvik",
+            "nation": "NOR"
+          },
+          {
+            "name": "Peter Prevc",
+            "nation": "SLO"
+          }
+        ]
+      },
+      {
+        "edition": "2021",
+        "podium": [
+          {
+            "name": "Karl Geiger",
+            "nation": "GER"
+          },
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          },
+          {
+            "name": "Markus Eisenbichler",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "2019",
+        "podium": [
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          },
+          {
+            "name": "Markus Eisenbichler",
+            "nation": "GER"
+          },
+          {
+            "name": "Timi Zajc",
+            "nation": "SLO"
+          }
+        ]
+      },
+      {
+        "edition": "2018",
+        "podium": [
+          {
+            "name": "Kamil Stoch",
+            "nation": "POL"
+          },
+          {
+            "name": "Johann André Forfang",
+            "nation": "NOR"
+          },
+          {
+            "name": "Robert Johansson",
+            "nation": "NOR"
+          }
+        ]
+      }
+    ],
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Planica_7"
+  },
+  {
+    "slug": "willingen-six",
+    "name": "Willingen Six",
+    "firstEdition": 2018,
+    "status": "ended",
+    "hosts": ["Willingen"],
+    "events": {},
+    "description": {
+      "pl": "Turniej na skoczni Mühlenkopfschanze w Willingen, rozgrywany w ramach Pucharu Świata w latach 2018-2021. Do 2020 roku nosił nazwę Willingen Five.",
+      "en": "A tournament on the Mühlenkopfschanze in Willingen, held within the World Cup in 2018-2021. Until 2020 it was called Willingen Five."
+    },
+    "format": {
+      "pl": "Liczyła się suma punktów ze wszystkich ocenianych serii weekendu: kwalifikacji i dwóch konkursów indywidualnych. Początkowo było to pięć serii, od 2021 roku sześć.",
+      "en": "The total from every scored round of the weekend counted: qualification and two individual competitions. At first that meant five rounds, from 2021 six."
+    },
+    "prize": {
+      "pl": "W latach 2018-2020 zwycięzca otrzymywał 25 tys. euro. W 2021 roku pula wyniosła 30 tys. euro: 15 tys. za pierwsze, 10 tys. za drugie i 5 tys. za trzecie miejsce.",
+      "en": "In 2018-2020 the winner received 25,000 euros. In 2021 the pool was 30,000 euros: 15,000 for first, 10,000 for second and 5,000 for third place."
+    },
+    "statusNote": {
+      "pl": "Wszystkie zaplanowane serie udało się rozegrać tylko w 2018 i 2019 roku.",
+      "en": "All planned rounds were completed only in 2018 and 2019."
+    },
+    "winners": [
+      {
+        "edition": "2021",
+        "podium": [
+          {
+            "name": "Halvor Egner Granerud",
+            "nation": "NOR"
+          },
+          {
+            "name": "Daniel-André Tande",
+            "nation": "NOR"
+          },
+          {
+            "name": "Markus Eisenbichler",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "2020",
+        "podium": [
+          {
+            "name": "Stephan Leyhe",
+            "nation": "GER"
+          },
+          {
+            "name": "Stefan Kraft",
+            "nation": "AUT"
+          },
+          {
+            "name": "Marius Lindvik",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "2019",
+        "podium": [
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          },
+          {
+            "name": "Piotr Żyła",
+            "nation": "POL"
+          },
+          {
+            "name": "Karl Geiger",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "2018",
+        "podium": [
+          {
+            "name": "Kamil Stoch",
+            "nation": "POL"
+          },
+          {
+            "name": "Johann André Forfang",
+            "nation": "NOR"
+          },
+          {
+            "name": "Daniel-André Tande",
+            "nation": "NOR"
+          }
+        ]
+      }
+    ],
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Willingen_Six"
+  },
+  {
+    "slug": "titisee-neustadt-five",
+    "name": "Titisee-Neustadt Five",
+    "firstEdition": 2020,
+    "status": "ended",
+    "hosts": ["Titisee-Neustadt"],
+    "events": {},
+    "description": {
+      "pl": "Turniej na skoczni Hochfirstschanze, rozegrany 17-19 stycznia 2020 w ramach Pucharu Świata na wzór turnieju w Willingen.",
+      "en": "A tournament on the Hochfirstschanze, held on 17-19 January 2020 within the World Cup and modeled on the one in Willingen."
+    },
+    "format": {
+      "pl": "Do klasyfikacji zaliczano wyniki wszystkich ocenianych serii weekendu: kwalifikacji i dwóch konkursów indywidualnych.",
+      "en": "Results of every scored round of the weekend counted: qualification and two individual competitions."
+    },
+    "prize": {
+      "pl": "Zwycięzca otrzymał 25 tys. euro.",
+      "en": "The winner received 25,000 euros."
+    },
+    "statusNote": {
+      "pl": "Dawid Kubacki wygrał oba konkursy indywidualne, ale w turnieju był drugi, 5,4 punktu za Ryōyū Kobayashim.",
+      "en": "Dawid Kubacki won both individual competitions but finished second in the tournament, 5.4 points behind Ryōyū Kobayashi."
+    },
+    "winners": [
+      {
+        "edition": "2020",
+        "podium": [
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          },
+          {
+            "name": "Dawid Kubacki",
+            "nation": "POL"
+          },
+          {
+            "name": "Stephan Leyhe",
+            "nation": "GER"
+          }
+        ]
+      }
+    ],
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Titisee-Neustadt_Five_2020"
+  },
+  {
+    "slug": "polski-turniej",
+    "name": "PolSKI Turniej",
+    "firstEdition": 2024,
+    "status": "ended",
+    "hosts": ["Wisła", "Szczyrk", "Zakopane"],
+    "events": {},
+    "description": {
+      "pl": "Turniej rozegrany w styczniu 2024 w ramach Pucharu Świata 2023/2024 na polskich skoczniach w Wiśle, Szczyrku i Zakopanem.",
+      "en": "A tournament held in January 2024 within the 2023/2024 World Cup on the Polish hills in Wisła, Szczyrk and Zakopane."
+    },
+    "format": {
+      "pl": "Prowadzono klasyfikację drużynową: liczyły się wyniki dwóch najlepszych reprezentantów kraju z kwalifikacji i konkursów indywidualnych oraz konkurs duetów i konkurs drużynowy, razem siedem zawodów.",
+      "en": "The standings were for teams: results of a country's two best athletes in qualifications and individual competitions counted, plus the super team and team competitions, seven events in total."
+    },
+    "prize": {
+      "pl": "Zwycięska reprezentacja otrzymała 50 tys. euro.",
+      "en": "The winning national team received 50,000 euros."
+    },
+    "statusNote": {
+      "pl": "Polska zajęła w turnieju szóste miejsce.",
+      "en": "Poland finished sixth in the tournament."
+    },
+    "winners": [
+      {
+        "edition": "2024",
+        "podium": [
+          {
+            "nation": "AUT"
+          },
+          {
+            "nation": "SLO"
+          },
+          {
+            "nation": "GER"
+          }
+        ]
+      }
+    ],
+    "sourceUrl": "https://pl.wikipedia.org/wiki/PolSKI_Turniej_2024"
+  }
+]

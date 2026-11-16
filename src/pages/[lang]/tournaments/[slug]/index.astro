@@ -1,0 +1,149 @@
+---
+import EventCard from '../../../../components/EventCard.astro';
+import Icon from '../../../../components/Icon.astro';
+import { getCountryName, LANGUAGES, t, type Lang } from '../../../../i18n';
+import Layout from '../../../../layouts/Layout.astro';
+import { getNationCountryCode, getNationFlag } from '../../../../lib/links';
+import { tournamentsPath } from '../../../../lib/paths';
+import type { Tournament } from '../../../../lib/schema';
+import { formatSeasonLabel, getCurrentSeason } from '../../../../lib/seasons';
+import { getTournaments } from '../../../../lib/tournaments';
+
+export function getStaticPaths() {
+  return LANGUAGES.flatMap((lang) =>
+    getTournaments().map((tournament) => ({
+      params: { lang, slug: tournament.slug },
+      props: { lang, tournament },
+    })),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  tournament: Tournament;
+}
+
+const { lang, tournament } = Astro.props;
+const dict = t(lang);
+const season = getCurrentSeason();
+const slugs = tournament.events[season.id] ?? [];
+const events = slugs.flatMap((slug) => {
+  const event = season.events.find((item) => item.slug === slug);
+
+  return event ? [event] : [];
+});
+const places = Math.max(
+  ...tournament.winners.map((item) => item.podium.length),
+);
+const placeLabels = dict.placeLabels.slice(0, places);
+const placeName = (place: { name?: string | undefined; nation: string }) => {
+  const countryCode = getNationCountryCode(place.nation);
+
+  return (
+    place.name ??
+    (countryCode ? getCountryName(lang, countryCode) : place.nation)
+  );
+};
+---
+
+<Layout
+  lang={lang}
+  title={tournament.name}
+  description={tournament.description[lang]}
+  path={`/tournaments/${tournament.slug}/`}
+>
+  <a class="link back-link" href={tournamentsPath(lang)}>
+    <Icon name="arrow-left" />
+    {dict.tournamentsTitle}
+  </a>
+
+  <header class="event-header">
+    <div class="event-header__badges">
+      <span class={`badge badge--${tournament.status}`}>
+        {dict.tournamentStatuses[tournament.status]}
+      </span>
+      <span class="phase">
+        {`${dict.tournamentSince}: ${tournament.firstEdition}`}
+      </span>
+    </div>
+    <h2 class="event-header__title">{tournament.name}</h2>
+    <p class="event-header__meta">
+      {`${dict.tournamentHosts}: ${tournament.hosts.join(', ')}`}
+    </p>
+  </header>
+
+  <section class="section">
+    <p class="prose">{tournament.description[lang]}</p>
+    {tournament.statusNote && (
+      <p class="prose">{tournament.statusNote[lang]}</p>
+    )}
+  </section>
+
+  <section class="section" aria-labelledby="format-title">
+    <h3 class="section__title" id="format-title">
+      {dict.tournamentFormat}
+    </h3>
+    <p class="prose">{tournament.format[lang]}</p>
+  </section>
+
+  {tournament.prize && (
+    <section class="section" aria-labelledby="prize-title">
+      <h3 class="section__title" id="prize-title">
+        {dict.tournamentPrize}
+      </h3>
+      <p class="prose">{tournament.prize[lang]}</p>
+    </section>
+  )}
+
+  {events.length > 0 && (
+    <section class="section" aria-labelledby="season-title">
+      <h3 class="section__title" id="season-title">
+        {dict.tournamentInSeason(formatSeasonLabel(season.id))}
+      </h3>
+      <ul class="event-list">
+        {events.map((event) => (
+          <EventCard lang={lang} season={season} event={event} />
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section class="section" aria-labelledby="winners-title">
+    <h3 class="section__title" id="winners-title">
+      {dict.tournamentWinners}
+    </h3>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="table__cell" scope="col">
+              {dict.edition}
+            </th>
+            {placeLabels.map((label) => (
+              <th class="table__cell" scope="col">
+                {label}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {tournament.winners.map((winner) => (
+            <tr class="table__row">
+              <td class="table__cell table__cell--strong">{winner.edition}</td>
+              {winner.podium.map((place) => (
+                <td class="table__cell">
+                  {getNationFlag(place.nation)} {placeName(place)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      <a class="link" href={tournament.sourceUrl}>
+        {dict.tournamentSource}
+      </a>
+    </p>
+  </section>
+</Layout>

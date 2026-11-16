@@ -17,3 +17,8 @@ export function formatNumber(value: number, lang: 'pl' | 'en'): string {
 
   return lang === 'pl' ? text.replace('.', ',') : text;
 }
+
+/** Groups thousands with a non-breaking space, e.g. 26 000. */
+export function formatThousands(value: number): string {
+  return String(value).replace(/\B(?=(\d{3})+$)/g, '\u00a0');
+}

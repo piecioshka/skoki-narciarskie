@@ -153,3 +153,35 @@ export const hillSchema = z.object({
 });
 
 export type Hill = z.infer<typeof hillSchema>;
+
+const localized = z.object({ pl: z.string().min(1), en: z.string().min(1) });
+const podiumPlace = z.object({
+  // Athlete name; omitted when a national team takes the place.
+  name: z.string().min(1).optional(),
+  // FIS nation code.
+  nation: z.string().regex(/^[A-Z]{3}$/),
+});
+
+export const tournamentSchema = z.object({
+  slug: z.string().regex(/^[a-z0-9-]+$/),
+  name: z.string().min(1),
+  firstEdition: z.number().int(),
+  status: z.enum(['active', 'paused', 'ended']),
+  // Host cities in tournament order.
+  hosts: z.array(z.string().min(1)).min(1),
+  // Events of a season that belong to the tournament, keyed by season id.
+  events: z.record(z.string(), z.array(z.string())),
+  description: localized,
+  format: localized,
+  prize: localized.nullable(),
+  statusNote: localized.nullable(),
+  winners: z.array(
+    z.object({
+      edition: z.string().min(1),
+      podium: z.array(podiumPlace).min(1).max(3),
+    }),
+  ),
+  sourceUrl: z.url(),
+});
+
+export type Tournament = z.infer<typeof tournamentSchema>;

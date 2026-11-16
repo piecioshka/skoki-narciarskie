@@ -181,6 +181,7 @@ function setupShortcuts(): void {
     r: () => document.getElementById('standings-link')?.click(),
     p: () => document.getElementById('team-link')?.click(),
     g: () => document.getElementById('gallery-link')?.click(),
+    u: () => document.getElementById('tournaments-link')?.click(),
   };
 
   document.getElementById('shortcuts-open')?.addEventListener('click', open);

@@ -1,6 +1,6 @@
 ---
 import { t, type Lang } from '../i18n';
-import { formatNumber } from '../lib/hills';
+import { formatNumber, formatThousands } from '../lib/hills';
 import { getNationFlag } from '../lib/links';
 import type { Hill } from '../lib/schema';
 
@@ -34,7 +34,9 @@ const rows = [
   ],
   [
     dict.hillCapacity,
-    hill.capacity === null ? null : `${dict.about} ${hill.capacity}`,
+    hill.capacity === null
+      ? null
+      : `${dict.about} ${formatThousands(hill.capacity)}`,
   ],
 ].flatMap(([label, value]) => (label && value ? [{ label, value }] : []));
 ---

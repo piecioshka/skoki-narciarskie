@@ -1,0 +1,53 @@
+---
+import { LANGUAGES, t, type Lang } from '../../../i18n';
+import Layout from '../../../layouts/Layout.astro';
+import { tournamentPath } from '../../../lib/paths';
+import { getTournaments } from '../../../lib/tournaments';
+
+export function getStaticPaths() {
+  return LANGUAGES.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+---
+
+<Layout
+  lang={lang}
+  title={dict.tournamentsTitle}
+  description={dict.tournamentsLead}
+  path="/tournaments/"
+>
+  <section class="section" aria-labelledby="tournaments-title">
+    <h2 class="section__title section__title--page" id="tournaments-title">
+      {dict.tournamentsTitle}
+    </h2>
+    <p class="lead">{dict.tournamentsLead}</p>
+    <ul class="tournament-list">
+      {getTournaments().map((tournament) => (
+        <li>
+          <a
+            class="tournament-card"
+            href={tournamentPath(lang, tournament.slug)}
+            data-tournament={tournament.slug}
+          >
+            <h3 class="tournament-card__title">{tournament.name}</h3>
+            <p class="tournament-card__text">{tournament.hosts.join(', ')}</p>
+            <p class="tournament-card__meta">
+              <span class={`badge badge--${tournament.status}`}>
+                {dict.tournamentStatuses[tournament.status]}
+              </span>
+              <span class="phase">
+                {`${dict.tournamentSince}: ${tournament.firstEdition}`}
+              </span>
+            </p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Layout>

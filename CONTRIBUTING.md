@@ -52,6 +52,7 @@ Trasy:
 - `/[lang]/[season]/standings/` - klasyfikacja generalna
 - `/[lang]/[season]/polish-team/` - kadry A i B ze sztabem
 - `/[lang]/[season]/gallery/` - galeria odręcznych programów
+- `/[lang]/tournaments/` i `/[lang]/tournaments/[slug]/` - lista i profile turniejów
 
 ## Dane sezonu
 
@@ -97,6 +98,14 @@ Po zmianie pliku sezonu uruchom `npm test` (walidacja schematu) i `npm run build
 ## Sędziowie
 
 Pole `officials` wydarzenia w pliku sezonu: `role` (`technical-delegate`, `technical-delegate-assistant`, `judge`), `name`, `nation` (trzyliterowy kod FIS). Dane są w PDF-ach "Event Program" FIS, zwykle na kilka tygodni przed zawodami.
+
+## Skocznie
+
+`src/data/hills.json` zawiera parametry, oficjalny rekord mężczyzn i ciekawostki (po polsku i angielsku) każdej skoczni. Skocznia jest przypisana do zawodów polem `eventSlug`, więc te same dane obsługują kolejne sezony. Wartości niepotwierdzone w źródle mają `null` i nie są pokazywane.
+
+## Turnieje
+
+`src/data/tournaments.json` opisuje turnieje rozgrywane w ramach Pucharu Świata: `status` (`active`, `paused`, `ended`), gospodarzy, zasady, nagrody, podium ostatnich edycji i pole `events` z listą zawodów turnieju w danym sezonie (`{ "2026-2027": ["oberstdorf", ...] }`). Po sezonie dopisz nową edycję do `winners`, a przy nowym sezonie uzupełnij `events`. Miejsce na podium bez `name` oznacza reprezentację kraju.
 
 ## Galeria odręcznych programów
 

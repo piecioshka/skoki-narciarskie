@@ -1,22 +1,24 @@
 # Skoki narciarskie ⛷️
 
-Terminarz Pucharu Świata w skokach narciarskich z linkami do transmisji i wyników na żywo. Jedna strona, na której od razu widać, kiedy jest najbliższy konkurs, gdzie go obejrzeć i gdzie śledzić wyniki.
+Serwis kibica Pucharu Świata w skokach narciarskich: kiedy jest najbliższy konkurs, gdzie go obejrzeć, kto prowadzi w klasyfikacji i na jakiej skoczni skaczą. Po polsku i po angielsku.
+
+**[piecioshka.github.io/skoki-narciarskie](https://piecioshka.github.io/skoki-narciarskie/)**
 
 ![Strona główna z najbliższym konkursem](docs/screenshots/home-light.png)
 
 ## Co potrafi ✨
 
 - ⏱️ Najbliższy konkurs z odliczaniem do startu _(także kwalifikacje i konkursy drużynowe)_
-- 🗓️ Terminarz całego sezonu: Puchar Świata mężczyzn, Turniej Czterech Skoczni, loty i Mistrzostwa Świata
-- 📺 Linki do polskich nadawców przy każdym konkursie
-- 📊 Linki do wyników na żywo i wyników końcowych w serwisie FIS
-- 🏆 Klasyfikacja generalna Pucharu Świata _(z filtrem "Tylko Polacy")_
+- 🗓️ Terminarz sezonu: Puchar Świata mężczyzn i Mistrzostwa Świata, z programem każdych zawodów
+- 📺 Linki do polskich nadawców i do wyników na żywo w serwisie FIS
+- 🏆 Klasyfikacja generalna od sezonu 2020/2021 _(z filtrem "Tylko Polacy")_
+- 🥇 Profile turniejów: Turniej Czterech Skoczni, Raw Air, Planica7 i inne, z zasadami i zwycięzcami
+- 🏔️ Karty skoczni: punkt K, rozmiar, rekord, parametry profilu i ciekawostki
 - 🧑‍🏫 Kadry Polski A i B ze sztabem szkoleniowym
 - ⚖️ Sędziowie i delegaci techniczni zawodów
 - 🖼️ Galeria odręcznych programów na każdy weekend
 - 🌍 Godziny w strefie czasowej widza _(przeliczane w przeglądarce)_
 - 📅 Kalendarz sezonu do subskrypcji w formacie ICS
-- 🇵🇱 Dwie wersje językowe: polska i angielska
 - 🌗 Motyw jasny i ciemny
 - ⌨️ Skróty klawiaturowe _(ściąga pod `?`)_
 
@@ -24,7 +26,11 @@ Terminarz Pucharu Świata w skokach narciarskich z linkami do transmisji i wynik
 
 ## Skąd są dane 📋
 
-Punktem wyjścia jest odręczny program sezonu przygotowany przez [autora kartek z terminarzem](https://www.facebook.com/profile.php?id=100064595445494). Daty, rodzaje konkursów i godziny startu są zweryfikowane z kalendarzem [FIS](https://www.fis-ski.com/DB/ski-jumping/calendar-results.html).
+- terminarz, godziny, klasyfikacje i sędziowie: [FIS](https://www.fis-ski.com/DB/ski-jumping/calendar-results.html)
+- kadry Polski: [Polski Związek Narciarski](https://www.pzn.pl/skoki-narciarskie)
+- skocznie: [skisprungschanzen.com](https://www.skisprungschanzen.com/)
+- turnieje: Wikipedia
+- odręczne programy: [autor kartek z terminarzem](https://www.facebook.com/profile.php?id=100064595445494)
 
 ## Rozwój 🛠️
 

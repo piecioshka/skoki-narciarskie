@@ -5,6 +5,7 @@ import { REPOSITORY_URL, STORAGE_KEYS } from '../config';
 import { LANGUAGES, otherLang, t, type Lang } from '../i18n';
 import {
   galleryPath,
+  tournamentsPath,
   homePath,
   seasonPath,
   standingsPath,
@@ -38,7 +39,9 @@ const sections = ['standings', 'polish-team', 'gallery'];
 const activeSection =
   seasonSegment === undefined
     ? undefined
-    : (sections.find((item) => item === sectionSegment) ?? 'schedule');
+    : seasonSegment === 'tournaments'
+      ? 'tournaments'
+      : (sections.find((item) => item === sectionSegment) ?? 'schedule');
 const navLinks = [
   {
     id: 'schedule-link',
@@ -71,6 +74,14 @@ const navLinks = [
     href: galleryPath(lang, season.id),
     label: dict.navGallery,
     hint: dict.shortcutGallery,
+  },
+  {
+    id: 'tournaments-link',
+    section: 'tournaments',
+    key: 'u',
+    href: tournamentsPath(lang),
+    label: dict.navTournaments,
+    hint: dict.shortcutTournaments,
   },
 ];
 const flags: Record<Lang, string> = { pl: '🇵🇱', en: '🇬🇧' };

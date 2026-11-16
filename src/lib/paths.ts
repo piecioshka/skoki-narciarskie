@@ -34,3 +34,11 @@ export function teamPath(lang: Lang, seasonId: string): string {
 export function galleryPath(lang: Lang, seasonId: string): string {
   return url(`/${lang}/${seasonId}/gallery/`);
 }
+
+export function tournamentsPath(lang: Lang): string {
+  return url(`/${lang}/tournaments/`);
+}
+
+export function tournamentPath(lang: Lang, slug: string): string {
+  return url(`/${lang}/tournaments/${slug}/`);
+}

@@ -69,6 +69,21 @@ interface Dictionary {
   hillSource: string;
   about: string;
   otherSeasons: string;
+  navTournaments: string;
+  shortcutTournaments: string;
+  tournamentsTitle: string;
+  tournamentsLead: string;
+  tournamentStatuses: Record<'active' | 'paused' | 'ended', string>;
+  tournamentSince: string;
+  tournamentHosts: string;
+  tournamentFormat: string;
+  tournamentPrize: string;
+  tournamentWinners: string;
+  tournamentInSeason: (season: string) => string;
+  tournamentSource: string;
+  edition: string;
+  placeLabels: [string, string, string];
+  partOf: string;
   officials: string;
   officialRoles: Record<OfficialRole, string>;
   switchLanguage: string;
@@ -180,6 +195,26 @@ const pl: Dictionary = {
   hillSource: 'Źródło: skisprungschanzen.com',
   about: 'ok.',
   otherSeasons: 'Sezony',
+  navTournaments: 'Turnieje',
+  shortcutTournaments: 'Turnieje',
+  tournamentsTitle: 'Turnieje w Pucharze Świata',
+  tournamentsLead:
+    'Cykle rozgrywane w ramach Pucharu Świata, z własną klasyfikacją i nagrodami.',
+  tournamentStatuses: {
+    active: 'Rozgrywany',
+    paused: 'Zawieszony',
+    ended: 'Nierozgrywany',
+  },
+  tournamentSince: 'Pierwsza edycja',
+  tournamentHosts: 'Skocznie',
+  tournamentFormat: 'Zasady',
+  tournamentPrize: 'Nagrody',
+  tournamentWinners: 'Ostatnie edycje',
+  tournamentInSeason: (season) => `W sezonie ${season}`,
+  tournamentSource: 'Źródło: Wikipedia',
+  edition: 'Edycja',
+  placeLabels: ['1. miejsce', '2. miejsce', '3. miejsce'],
+  partOf: 'Część turnieju',
   officials: 'Sędziowie i delegaci',
   officialRoles: {
     'technical-delegate': 'Delegat techniczny FIS',
@@ -302,6 +337,26 @@ const en: Dictionary = {
   hillSource: 'Source: skisprungschanzen.com',
   about: 'approx.',
   otherSeasons: 'Seasons',
+  navTournaments: 'Tournaments',
+  shortcutTournaments: 'Tournaments',
+  tournamentsTitle: 'World Cup tournaments',
+  tournamentsLead:
+    'Series held within the World Cup, with their own standings and prizes.',
+  tournamentStatuses: {
+    active: 'Active',
+    paused: 'On hold',
+    ended: 'Not held',
+  },
+  tournamentSince: 'First edition',
+  tournamentHosts: 'Hills',
+  tournamentFormat: 'Rules',
+  tournamentPrize: 'Prizes',
+  tournamentWinners: 'Recent editions',
+  tournamentInSeason: (season) => `In the ${season} season`,
+  tournamentSource: 'Source: Wikipedia',
+  edition: 'Edition',
+  placeLabels: ['1st place', '2nd place', '3rd place'],
+  partOf: 'Part of the tournament',
   officials: 'Judges and delegates',
   officialRoles: {
     'technical-delegate': 'FIS Technical Delegate',

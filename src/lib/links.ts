@@ -70,3 +70,8 @@ export function getNationFlag(nation: string): string {
 export function getAthleteUrl(fisCompetitorId: number): string {
   return `${FIS}/general/athlete-biography.html?sectorcode=JP&competitorid=${fisCompetitorId}`;
 }
+
+/** ISO 3166-1 alpha-2 code for a FIS nation code, if it is known. */
+export function getNationCountryCode(nation: string): string | undefined {
+  return FIS_NATIONS[nation];
+}
