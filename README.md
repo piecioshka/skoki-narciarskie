@@ -4,28 +4,27 @@ Serwis kibica Pucharu Świata w skokach narciarskich: kiedy jest najbliższy kon
 
 **[piecioshka.github.io/skoki-narciarskie](https://piecioshka.github.io/skoki-narciarskie/)**
 
-![Strona główna z najbliższym konkursem](docs/screenshots/home-light.png)
+![Skoki narciarskie: terminarz, wyniki, mapy, skocznie i reprezentacje](docs/banner.png)
 
 ## Co potrafi ✨
 
 - ⏱️ Najbliższy konkurs z odliczaniem do startu _(także kwalifikacje i konkursy drużynowe)_
 - 🗓️ Terminarz sezonu: Puchar Świata mężczyzn i Mistrzostwa Świata, z programem każdych zawodów
 - 📺 Linki do polskich nadawców i do wyników na żywo w serwisie FIS
-- 🗄️ Archiwum trzech poprzednich sezonów z podium każdego konkursu
+- 🗄️ Archiwum poprzednich sezonów z podium każdego konkursu
+- 📖 Zasady skoków objaśnione na schematach
 - 🏆 Klasyfikacja generalna od sezonu 2000/2001 _(z filtrem "Tylko Polacy")_
 - 🥇 Profile turniejów: Turniej Czterech Skoczni, Raw Air, Planica7 i inne, z zasadami i zwycięzcami
 - 🏔️ Profile skoczni ze zdjęciem: punkt K, rozmiar, rekord, parametry profilu, ciekawostki i rozegrane konkursy
 - 🗺️ Mapy miejsc zawodów i wszystkich skoczni
 - 🌐 Strony reprezentacji: punkty, trofea i wyniki drużynowe zawodników każdego kraju
-- 🧑‍🏫 Kadry Polski A i B ze sztabem szkoleniowym
+- 🧑‍🏫 Kadry i sztaby szkoleniowe 11 reprezentacji
 - ⚖️ Sędziowie i delegaci techniczni zawodów
 - 🖼️ Galeria odręcznych programów na każdy weekend
 - 🌍 Godziny w strefie czasowej widza _(przeliczane w przeglądarce)_
 - 📅 Kalendarz sezonu do subskrypcji w formacie ICS
 - 🌗 Motyw jasny i ciemny
 - ⌨️ Skróty klawiaturowe _(ściąga pod `?`)_
-
-![Terminarz sezonu w ciemnym motywie](docs/screenshots/schedule-dark.png)
 
 ## Skąd są dane 📋
 
