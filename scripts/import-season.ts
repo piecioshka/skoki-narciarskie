@@ -24,8 +24,11 @@ const FOUR_HILLS = [
 // FIS nation code -> ISO 3166-1 alpha-2 of the host country.
 const COUNTRIES: Record<string, string> = {
   AUT: 'AT',
+  BUL: 'BG',
+  CAN: 'CA',
   CHN: 'CN',
   CZE: 'CZ',
+  EST: 'EE',
   FIN: 'FI',
   FRA: 'FR',
   GER: 'DE',
@@ -36,8 +39,10 @@ const COUNTRIES: Record<string, string> = {
   NOR: 'NO',
   POL: 'PL',
   ROU: 'RO',
+  RUS: 'RU',
   SLO: 'SI',
   SUI: 'CH',
+  SVK: 'SK',
   SWE: 'SE',
   TUR: 'TR',
   USA: 'US',
@@ -50,6 +55,16 @@ if (!/^\d{4}-\d{4}$/.test(season)) {
 }
 
 const seasonCode = season.slice(5);
+
+function toCountryCode(nation: string): string {
+  const code = COUNTRIES[nation];
+
+  // An unknown host would end up without a flag, so the import stops instead.
+  if (!code) {
+    throw new Error(`Unknown host nation: ${nation}; add it to COUNTRIES`);
+  }
+  return code;
+}
 
 function decode(text: string): string {
   return text
@@ -276,7 +291,7 @@ for (const eventId of eventIds) {
     ],
     fisEventId: Number(eventId),
     city,
-    countryCode: COUNTRIES[title[2] ?? ''] ?? 'XX',
+    countryCode: toCountryCode(title[2] ?? ''),
     hillName: null,
     timeZone: first?.timeZone ?? 'UTC',
     broadcasts: [],
