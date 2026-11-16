@@ -821,7 +821,7 @@ test.describe('hill', () => {
     await expect(hill.locator('.hill__record')).toContainText('Yukiya Satō');
     await expect(hill).toContainText('Punkt konstrukcyjny (K)');
     await expect(hill).toContainText('34,3°');
-    await expect(hill.locator('.hill__fact')).toHaveCount(3);
+    await expect(hill.locator('.hill__fact')).toHaveCount(10);
   });
 
   test('Falun shows both hills of the World Championships', async ({

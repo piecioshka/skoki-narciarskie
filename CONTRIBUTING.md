@@ -39,7 +39,7 @@ Strona jest w pełni statyczna (Astro, `output: 'static'`). Build nie zna bież�
 - `src/pages/[lang]/` - widoki: strona główna, terminarz sezonu, strona zawodów, endpoint `calendar.ics`
 - `e2e/specs/` - testy Playwright z podmienionym zegarem
 - `src/data/standings/` - klasyfikacja generalna, jeden plik na sezon
-- `src/data/teams/` - kadry Polski ze sztabem
+- `src/data/teams/` - kadry reprezentacji ze sztabem
 - `src/data/programs/` i `src/assets/programs/` - metadane i skany odręcznych programów
 - `scripts/update-standings.ts` - skrypt aktualizujący klasyfikację
 
@@ -57,6 +57,7 @@ Trasy:
 - `/[lang]/hills/` i `/[lang]/hills/[slug]/` - lista (z mapą i grupowaniem według kraju) i profile skoczni
 - `/[lang]/nations/` i `/[lang]/nations/[kod]/` - reprezentacje
 - `/[lang]/credits/` - autorzy zdjęć
+- `/[lang]/rules/` - zasady skoków ze schematami
 
 ## Dane sezonu
 
@@ -134,6 +135,16 @@ Strony `/[lang]/nations/` i `/[lang]/nations/[kod]/` nie mają własnych danych:
 ## Mapy
 
 Mapy rysuje Leaflet na kafelkach OpenStreetMap (`src/scripts/map.ts`). Współrzędne skoczni są w `src/data/hills.json` (`lat`, `lon`); zawody bez danych skoczni nie trafiają na mapę terminarza.
+
+## Kariery, trenerzy i składy
+
+- `npm run careers` pobiera z biografii FIS zwycięstwa i podia w konkursach indywidualnych PŚ dla zawodników, którzy choć raz skończyli sezon w czołowej trzydziestce, i zapisuje je do `src/data/careers.json`.
+- `src/data/coaches.json` to trenerzy główni reprezentacji jako kadencje pełnych sezonów (`from`, `to`); sezon należy do trenera, który go zaczynał. Sezony bez pewnego źródła zostają bez wpisu.
+- `src/data/teams/<sezon>.json` trzyma kadry wszystkich krajów pod kluczem `nations` (kod FIS). Grupa może mieć własną nazwę (`name`), inaczej dostaje ogólną etykietę według `id` (`a`, `b`, `national`).
+
+## Zasady
+
+Treść strony z zasadami jest w `src/i18n/rules.ts`, a schematy (przekrój skoczni, wzór noty, noty sędziów, wiatr) są rysowane w `src/pages/[lang]/rules/index.astro` jako SVG i HTML stylowane klasami.
 
 ## Galeria odręcznych programów
 
