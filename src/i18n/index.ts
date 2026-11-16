@@ -1,4 +1,10 @@
-import type { CompetitionKind, EventTag, SeasonEvent } from '../lib/schema';
+import type {
+  CompetitionKind,
+  EventTag,
+  OfficialRole,
+  SeasonEvent,
+  StaffRole,
+} from '../lib/schema';
 import type { Phase } from '../lib/schedule';
 
 export const LANGUAGES = ['pl', 'en'] as const;
@@ -17,6 +23,41 @@ interface Dictionary {
   siteDescription: string;
   skipToContent: string;
   navSchedule: string;
+  navStandings: string;
+  navTeam: string;
+  navGallery: string;
+  mainNav: string;
+  shortcutStandings: string;
+  shortcutTeam: string;
+  shortcutGallery: string;
+  galleryTitle: (season: string) => string;
+  galleryLead: string;
+  galleryAuthor: string;
+  seasonProgram: string;
+  handwrittenProgram: string;
+  openFullSize: string;
+  added: string;
+  standingsTitle: (season: string) => string;
+  standingsLead: string;
+  standingsEmpty: string;
+  standingsPrevious: (season: string) => string;
+  standingsUpdated: string;
+  standingsSource: string;
+  onlyPoles: string;
+  rank: string;
+  athlete: string;
+  country: string;
+  points: string;
+  teamTitle: (season: string) => string;
+  teamLead: string;
+  teamNames: Record<string, string>;
+  athletes: string;
+  staff: string;
+  staffRoles: Record<StaffRole, string>;
+  teamSource: string;
+  verified: string;
+  officials: string;
+  officialRoles: Record<OfficialRole, string>;
   switchLanguage: string;
   switchTheme: string;
   repository: string;
@@ -52,9 +93,6 @@ interface Dictionary {
     seconds: string;
   };
   startsIn: string;
-  footerSource: string;
-  footerSourceLink: string;
-  footerData: string;
   notFoundTitle: string;
   notFoundLead: string;
   goHome: string;
@@ -75,6 +113,53 @@ const pl: Dictionary = {
     'Terminarz Pucharu Świata w skokach narciarskich: daty i godziny konkursów, linki do transmisji i wyników na żywo.',
   skipToContent: 'Przejdź do treści',
   navSchedule: 'Terminarz',
+  navStandings: 'Klasyfikacja',
+  navTeam: 'Kadra',
+  navGallery: 'Galeria',
+  mainNav: 'Nawigacja główna',
+  shortcutStandings: 'Klasyfikacja generalna',
+  shortcutTeam: 'Kadra Polski',
+  shortcutGallery: 'Galeria programów',
+  galleryTitle: (season) => `Odręczne programy sezonu ${season}`,
+  galleryLead:
+    'Programy zawodów rysowane odręcznie na każdy weekend Pucharu Świata.',
+  galleryAuthor: 'Autor programów',
+  seasonProgram: 'Program sezonu',
+  handwrittenProgram: 'Odręczny program',
+  openFullSize: 'Otwórz w pełnym rozmiarze',
+  added: 'Dodano',
+  standingsTitle: (season) => `Klasyfikacja generalna ${season}`,
+  standingsLead: 'Puchar Świata mężczyzn.',
+  standingsEmpty:
+    'Sezon jeszcze się nie zaczął. Klasyfikacja pojawi się po pierwszym konkursie.',
+  standingsPrevious: (season) => `Końcowa klasyfikacja sezonu ${season}`,
+  standingsUpdated: 'Stan na',
+  standingsSource: 'Źródło: FIS',
+  onlyPoles: 'Tylko Polacy',
+  rank: 'Miejsce',
+  athlete: 'Zawodnik',
+  country: 'Kraj',
+  points: 'Punkty',
+  teamTitle: (season) => `Kadra Polski ${season}`,
+  teamLead: 'Kadry narodowe mężczyzn powołane przez Polski Związek Narciarski.',
+  teamNames: { a: 'Kadra narodowa A', b: 'Kadra narodowa B' },
+  athletes: 'Zawodnicy',
+  staff: 'Sztab szkoleniowy',
+  staffRoles: {
+    'head-coach': 'Trener główny',
+    'assistant-coach': 'Asystent trenera',
+    'service-technician': 'Serwismen',
+    physiotherapist: 'Fizjoterapeuta',
+    'team-manager': 'Kierownik drużyny',
+  },
+  teamSource: 'Źródło: Polski Związek Narciarski',
+  verified: 'Sprawdzono',
+  officials: 'Sędziowie i delegaci',
+  officialRoles: {
+    'technical-delegate': 'Delegat techniczny FIS',
+    'technical-delegate-assistant': 'Asystent delegata technicznego',
+    judge: 'Sędzia',
+  },
   switchLanguage: 'Switch to English',
   switchTheme: 'Przełącz motyw',
   repository: 'Repozytorium na GitHubie',
@@ -118,9 +203,6 @@ const pl: Dictionary = {
   statuses: { cancelled: 'Odwołany', moved: 'Przeniesiony' },
   countdownUnits: { days: 'd', hours: 'h', minutes: 'min', seconds: 's' },
   startsIn: 'Start za',
-  footerSource: 'Terminarz spisany na podstawie kartki przygotowanej przez',
-  footerSourceLink: 'autora odręcznych programów',
-  footerData: 'Daty i godziny zweryfikowane z kalendarzem FIS.',
   notFoundTitle: 'Nie ma takiej strony',
   notFoundLead: 'Adres jest błędny albo strona została przeniesiona.',
   goHome: 'Strona główna',
@@ -141,6 +223,52 @@ const en: Dictionary = {
     'Ski Jumping World Cup schedule: competition dates and times, links to broadcasts and live results.',
   skipToContent: 'Skip to content',
   navSchedule: 'Schedule',
+  navStandings: 'Standings',
+  navTeam: 'Team',
+  navGallery: 'Gallery',
+  mainNav: 'Main navigation',
+  shortcutStandings: 'Overall standings',
+  shortcutTeam: 'Polish team',
+  shortcutGallery: 'Program gallery',
+  galleryTitle: (season) => `Handwritten programs of the ${season} season`,
+  galleryLead: 'Event programs drawn by hand for every World Cup weekend.',
+  galleryAuthor: 'Author of the programs',
+  seasonProgram: 'Season program',
+  handwrittenProgram: 'Handwritten program',
+  openFullSize: 'Open in full size',
+  added: 'Added',
+  standingsTitle: (season) => `Overall standings ${season}`,
+  standingsLead: "Men's World Cup.",
+  standingsEmpty:
+    'The season has not started yet. Standings will appear after the first competition.',
+  standingsPrevious: (season) => `Final standings of the ${season} season`,
+  standingsUpdated: 'As of',
+  standingsSource: 'Source: FIS',
+  onlyPoles: 'Poles only',
+  rank: 'Rank',
+  athlete: 'Athlete',
+  country: 'Country',
+  points: 'Points',
+  teamTitle: (season) => `Polish team ${season}`,
+  teamLead: "Men's national teams appointed by the Polish Ski Association.",
+  teamNames: { a: 'National team A', b: 'National team B' },
+  athletes: 'Athletes',
+  staff: 'Coaching staff',
+  staffRoles: {
+    'head-coach': 'Head coach',
+    'assistant-coach': 'Assistant coach',
+    'service-technician': 'Service technician',
+    physiotherapist: 'Physiotherapist',
+    'team-manager': 'Team manager',
+  },
+  teamSource: 'Source: Polish Ski Association',
+  verified: 'Verified',
+  officials: 'Judges and delegates',
+  officialRoles: {
+    'technical-delegate': 'FIS Technical Delegate',
+    'technical-delegate-assistant': 'Technical Delegate Assistant',
+    judge: 'Judge',
+  },
   switchLanguage: 'Przełącz na polski',
   switchTheme: 'Toggle theme',
   repository: 'GitHub repository',
@@ -185,9 +313,6 @@ const en: Dictionary = {
   statuses: { cancelled: 'Cancelled', moved: 'Rescheduled' },
   countdownUnits: { days: 'd', hours: 'h', minutes: 'min', seconds: 's' },
   startsIn: 'Starts in',
-  footerSource: 'Schedule based on a sheet prepared by',
-  footerSourceLink: 'the author of handwritten programs',
-  footerData: 'Dates and times verified against the FIS calendar.',
   notFoundTitle: 'Page not found',
   notFoundLead: 'The address is wrong or the page has moved.',
   goHome: 'Home page',

@@ -1,0 +1,16 @@
+---
+interface Props {
+  name: string;
+  url?: string | undefined;
+}
+
+const { name, url } = Astro.props;
+---
+
+{url ? (
+  <a class="people__name people__name--link" href={url}>
+    {name}
+  </a>
+) : (
+  <span class="people__name">{name}</span>
+)}

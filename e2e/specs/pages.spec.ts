@@ -1,0 +1,223 @@
+import { expect, test } from '@playwright/test';
+
+const PAGES = [
+  '/pl/2026-2027/standings/',
+  '/pl/2026-2027/polish-team/',
+  '/pl/2026-2027/gallery/',
+  '/pl/2026-2027/wisla/',
+];
+
+test.describe('navigation', () => {
+  test('top bar links to every section', async ({ page }) => {
+    await page.goto('/pl/');
+
+    const nav = page.locator('.topbar__nav');
+
+    await expect(nav.getByRole('link')).toHaveText([
+      'Terminarz',
+      'Klasyfikacja',
+      'Kadra',
+      'Galeria',
+    ]);
+    await nav.getByRole('link', { name: 'Kadra' }).click();
+    await expect(page).toHaveURL(/\/pl\/2026-2027\/polish-team\/$/);
+  });
+
+  test('"r", "p" and "g" open standings, team and gallery', async ({
+    page,
+  }) => {
+    await page.goto('/pl/');
+    await page.keyboard.press('r');
+    await expect(page).toHaveURL(/\/standings\/$/);
+    await page.keyboard.press('p');
+    await expect(page).toHaveURL(/\/polish-team\/$/);
+    await page.keyboard.press('g');
+    await expect(page).toHaveURL(/\/gallery\/$/);
+  });
+});
+
+test.describe('active navigation link', () => {
+  const cases = [
+    ['/pl/2026-2027/', 'Terminarz'],
+    ['/pl/2026-2027/wisla/', 'Terminarz'],
+    ['/pl/2026-2027/standings/', 'Klasyfikacja'],
+    ['/pl/2026-2027/polish-team/', 'Kadra'],
+    ['/pl/2026-2027/gallery/', 'Galeria'],
+  ] as const;
+
+  for (const [path, label] of cases) {
+    test(`${path} marks "${label}"`, async ({ page }) => {
+      await page.goto(path);
+
+      const current = page.locator('.topbar__nav [aria-current="page"]');
+
+      await expect(current).toHaveCount(1);
+      await expect(current).toHaveText(label);
+    });
+  }
+
+  test('home page marks nothing', async ({ page }) => {
+    await page.goto('/pl/');
+    await expect(
+      page.locator('.topbar__nav [aria-current="page"]'),
+    ).toHaveCount(0);
+  });
+});
+
+test.describe('standings', () => {
+  test('before the season shows a notice and the previous final table', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/standings/');
+
+    await expect(page.locator('.notice')).toContainText(
+      'Sezon jeszcze się nie zaczął',
+    );
+    await expect(
+      page.getByRole('heading', {
+        name: 'Końcowa klasyfikacja sezonu 2025/2026',
+      }),
+    ).toBeVisible();
+
+    const rows = page.locator('.table__row');
+
+    await expect(rows.first()).toContainText('Domen Prevc');
+    await expect(rows.first()).toContainText('2148');
+    await expect(page.locator('.table__row--home').first()).toContainText(
+      'Kacper Tomasiak',
+    );
+  });
+
+  test('"Tylko Polacy" hides athletes from other countries', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/standings/');
+
+    const button = page.getByRole('button', { name: 'Tylko Polacy' });
+    const visibleRows = page.locator('.table__row:visible');
+
+    await expect(visibleRows).toHaveCount(77);
+    await button.click();
+    await expect(button).toHaveAttribute('aria-pressed', 'true');
+    await expect(visibleRows).toHaveCount(8);
+    await expect(visibleRows.first()).toContainText('Kacper Tomasiak');
+    await button.click();
+    await expect(visibleRows).toHaveCount(77);
+  });
+
+  test('column headers are written in sentence case', async ({ page }) => {
+    await page.goto('/pl/2026-2027/standings/');
+
+    const transform = await page
+      .locator('th')
+      .first()
+      .evaluate((element) => getComputedStyle(element).textTransform);
+
+    expect(transform).toBe('none');
+    await expect(page.locator('th')).toHaveText([
+      'Miejsce',
+      'Zawodnik',
+      'Kraj',
+      'Punkty',
+    ]);
+  });
+});
+
+test.describe('polish team', () => {
+  test('shows both teams with their head coaches', async ({ page }) => {
+    await page.goto('/pl/2026-2027/polish-team/');
+
+    const teamA = page.locator('.team[data-team="a"]');
+    const teamB = page.locator('.team[data-team="b"]');
+
+    await expect(teamA.locator('.people__item--lead')).toContainText(
+      'Maciej Maciusiak',
+    );
+    await expect(teamA).toContainText('Kacper Tomasiak');
+    await expect(teamB.locator('.people__item--lead')).toContainText(
+      'Wojciech Topór',
+    );
+    await expect(teamB).toContainText('Aleksander Zniszczoł');
+    await expect(
+      teamA.getByRole('link', { name: 'Maciej Maciusiak' }),
+    ).toHaveAttribute('href', /pl\.wikipedia\.org\/wiki\/Maciej_Maciusiak/);
+  });
+});
+
+test.describe('gallery', () => {
+  test('shows program scans with a credit and a full-size link', async ({
+    page,
+    request,
+  }) => {
+    await page.goto('/pl/2026-2027/gallery/');
+
+    const item = page.locator('.gallery__item').first();
+    const image = item.locator('img');
+
+    await expect(item).toContainText('Program sezonu');
+    await expect(
+      item.getByRole('link', { name: 'Autor programów' }),
+    ).toHaveAttribute('href', /facebook\.com/);
+    await expect(image).toHaveAttribute('alt', /Odręczny program/);
+    expect(
+      await image.evaluate(
+        (element) =>
+          element instanceof HTMLImageElement && element.naturalWidth,
+      ),
+    ).toBeGreaterThan(0);
+
+    const href = await item.locator('.gallery__link').getAttribute('href');
+    const response = await request.get(href ?? '');
+
+    expect(response.headers()['content-type']).toContain('image/webp');
+  });
+});
+
+test.describe('officials', () => {
+  test('event page lists judges when FIS has published them', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/wisla/');
+
+    const officials = page.locator('section', {
+      has: page.getByRole('heading', { name: 'Sędziowie i delegaci' }),
+    });
+
+    await expect(officials.locator('.people__item')).toHaveCount(7);
+    await expect(officials).toContainText('Jan Ciapała');
+    await expect(officials).toContainText('Delegat techniczny FIS');
+  });
+
+  test('event page skips the section when nothing is known', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/zakopane/');
+    await expect(
+      page.getByRole('heading', { name: 'Sędziowie i delegaci' }),
+    ).toHaveCount(0);
+  });
+});
+
+test.describe('layout of section pages', () => {
+  for (const width of [320, 400, 1440]) {
+    for (const path of PAGES) {
+      test(`${path} fits ${width} px with a 56 px top bar`, async ({
+        page,
+      }) => {
+        await page.setViewportSize({ width, height: 900 });
+        await page.goto(path);
+
+        const overflow = await page.evaluate(
+          () =>
+            document.documentElement.scrollWidth -
+            document.documentElement.clientWidth,
+        );
+        const topbar = await page.locator('.topbar').boundingBox();
+
+        expect(overflow).toBeLessThanOrEqual(0);
+        expect(topbar?.height).toBe(56);
+        await expect(page.locator('h1')).toHaveCount(1);
+      });
+    }
+  }
+});

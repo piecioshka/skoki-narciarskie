@@ -1,0 +1,130 @@
+{
+  "season": "2026-2027",
+  "sourceUrl": "https://www.pzn.pl/skoki-narciarskie",
+  "verifiedAt": "2026-11-16",
+  "teams": [
+    {
+      "id": "a",
+      "athletes": [
+        {
+          "name": "Kacper Tomasiak",
+          "url": "https://pl.wikipedia.org/wiki/Kacper_Tomasiak"
+        },
+        {
+          "name": "Klemens Joniak",
+          "url": "https://pl.wikipedia.org/wiki/Klemens_Joniak"
+        },
+        {
+          "name": "Paweł Wąsek",
+          "url": "https://pl.wikipedia.org/wiki/Pawe%C5%82_W%C4%85sek"
+        },
+        {
+          "name": "Piotr Żyła",
+          "url": "https://pl.wikipedia.org/wiki/Piotr_%C5%BBy%C5%82a"
+        },
+        {
+          "name": "Maciej Kot",
+          "url": "https://pl.wikipedia.org/wiki/Maciej_Kot"
+        },
+        {
+          "name": "Dawid Kubacki",
+          "url": "https://pl.wikipedia.org/wiki/Dawid_Kubacki"
+        }
+      ],
+      "staff": [
+        {
+          "name": "Maciej Maciusiak",
+          "role": "head-coach",
+          "url": "https://pl.wikipedia.org/wiki/Maciej_Maciusiak"
+        },
+        {
+          "name": "Krzysztof Miętus",
+          "role": "assistant-coach",
+          "url": "https://pl.wikipedia.org/wiki/Krzysztof_Mi%C4%99tus"
+        },
+        {
+          "name": "Kamil Skrobot",
+          "role": "assistant-coach"
+        },
+        {
+          "name": "Michal Doležal",
+          "role": "assistant-coach",
+          "url": "https://pl.wikipedia.org/wiki/Michal_Dole%C5%BEal"
+        },
+        {
+          "name": "Krzysztof Biegun",
+          "role": "assistant-coach",
+          "url": "https://pl.wikipedia.org/wiki/Krzysztof_Biegun"
+        },
+        {
+          "name": "Maciej Kreczmer",
+          "role": "service-technician"
+        },
+        {
+          "name": "Paweł Gurbisz",
+          "role": "physiotherapist"
+        },
+        {
+          "name": "Wojciech Jurowicz",
+          "role": "team-manager"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "athletes": [
+        {
+          "name": "Kamil Waszek"
+        },
+        {
+          "name": "Jakub Wolny",
+          "url": "https://pl.wikipedia.org/wiki/Jakub_Wolny"
+        },
+        {
+          "name": "Łukasz Łukaszczyk",
+          "url": "https://pl.wikipedia.org/wiki/%C5%81ukasz_%C5%81ukaszczyk"
+        },
+        {
+          "name": "Konrad Tomasiak"
+        },
+        {
+          "name": "Aleksander Zniszczoł",
+          "url": "https://pl.wikipedia.org/wiki/Aleksander_Zniszczo%C5%82"
+        },
+        {
+          "name": "Szymon Sarniak",
+          "url": "https://pl.wikipedia.org/wiki/Szymon_Sarniak"
+        },
+        {
+          "name": "Adam Niżnik",
+          "url": "https://pl.wikipedia.org/wiki/Adam_Ni%C5%BCnik"
+        }
+      ],
+      "staff": [
+        {
+          "name": "Wojciech Topór",
+          "role": "head-coach",
+          "url": "https://pl.wikipedia.org/wiki/Wojciech_Top%C3%B3r"
+        },
+        {
+          "name": "Robert Mateja",
+          "role": "assistant-coach",
+          "url": "https://pl.wikipedia.org/wiki/Robert_Mateja"
+        },
+        {
+          "name": "Kacper Skrobot",
+          "role": "assistant-coach"
+        },
+        {
+          "name": "Wojciech Gąsienica-Kotelnicki",
+          "role": "service-technician",
+          "url": "https://pl.wikipedia.org/wiki/Wojciech_G%C4%85sienica-Kotelnicki"
+        },
+        {
+          "name": "Paweł Leja",
+          "role": "physiotherapist"
+        }
+      ]
+    }
+  ]
+}

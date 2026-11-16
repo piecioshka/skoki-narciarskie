@@ -22,3 +22,15 @@ export function eventPath(lang: Lang, seasonId: string, slug: string): string {
 export function calendarPath(lang: Lang, seasonId: string): string {
   return url(`/${lang}/${seasonId}/calendar.ics`);
 }
+
+export function standingsPath(lang: Lang, seasonId: string): string {
+  return url(`/${lang}/${seasonId}/standings/`);
+}
+
+export function teamPath(lang: Lang, seasonId: string): string {
+  return url(`/${lang}/${seasonId}/polish-team/`);
+}
+
+export function galleryPath(lang: Lang, seasonId: string): string {
+  return url(`/${lang}/${seasonId}/gallery/`);
+}

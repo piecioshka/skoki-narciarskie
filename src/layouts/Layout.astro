@@ -1,9 +1,16 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
-import { REPOSITORY_URL, SOURCE_AUTHOR_URL, STORAGE_KEYS } from '../config';
+import { REPOSITORY_URL, STORAGE_KEYS } from '../config';
 import { LANGUAGES, otherLang, t, type Lang } from '../i18n';
-import { homePath, seasonPath, url } from '../lib/paths';
+import {
+  galleryPath,
+  homePath,
+  seasonPath,
+  standingsPath,
+  teamPath,
+  url,
+} from '../lib/paths';
 import { getCurrentSeason } from '../lib/seasons';
 
 interface Props {
@@ -24,6 +31,48 @@ const pageDescription = description ?? dict.siteDescription;
 const absolute = (target: string): string =>
   new URL(url(target), Astro.site).href;
 const canonical = absolute(`/${lang}${path}`);
+// `/2026-2027/standings/` belongs to "standings"; the season page and every
+// event page below it belong to "schedule"; the home page to no section.
+const [seasonSegment, sectionSegment] = path.split('/').filter(Boolean);
+const sections = ['standings', 'polish-team', 'gallery'];
+const activeSection =
+  seasonSegment === undefined
+    ? undefined
+    : (sections.find((item) => item === sectionSegment) ?? 'schedule');
+const navLinks = [
+  {
+    id: 'schedule-link',
+    section: 'schedule',
+    key: 's',
+    href: seasonPath(lang, season.id),
+    label: dict.navSchedule,
+    hint: dict.shortcuts.schedule,
+  },
+  {
+    id: 'standings-link',
+    section: 'standings',
+    key: 'r',
+    href: standingsPath(lang, season.id),
+    label: dict.navStandings,
+    hint: dict.shortcutStandings,
+  },
+  {
+    id: 'team-link',
+    section: 'polish-team',
+    key: 'p',
+    href: teamPath(lang, season.id),
+    label: dict.navTeam,
+    hint: dict.shortcutTeam,
+  },
+  {
+    id: 'gallery-link',
+    section: 'gallery',
+    key: 'g',
+    href: galleryPath(lang, season.id),
+    label: dict.navGallery,
+    hint: dict.shortcutGallery,
+  },
+];
 const flags: Record<Lang, string> = { pl: '🇵🇱', en: '🇬🇧' };
 const themeKey = STORAGE_KEYS.theme;
 // "<" must not appear raw inside an inline JSON script.
@@ -96,14 +145,17 @@ const jsonLdText = jsonLd
             <span class="topbar__logo-text">{dict.siteName}</span>
           </a>
         </h1>
-        <nav class="topbar__nav" aria-label={dict.navSchedule}>
-          <a
-            class="topbar__nav-link"
-            id="schedule-link"
-            href={seasonPath(lang, season.id)}
-          >
-            {dict.navSchedule}
-          </a>
+        <nav class="topbar__nav" aria-label={dict.mainNav}>
+          {navLinks.map((item) => (
+            <a
+              class="topbar__nav-link"
+              id={item.id}
+              href={item.href}
+              aria-current={item.section === activeSection ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
         <div class="topbar__actions">
           <a
@@ -145,13 +197,6 @@ const jsonLdText = jsonLd
 
     <footer class="footer">
       <p class="footer__line">
-        {dict.footerSource}{' '}
-        <a class="link" href={SOURCE_AUTHOR_URL}>
-          {dict.footerSourceLink}
-        </a>
-        . {dict.footerData}
-      </p>
-      <p class="footer__line">
         <button class="link-button" id="shortcuts-open" type="button">
           {dict.shortcutsButton}
           <kbd class="kbd">?</kbd>
@@ -180,12 +225,14 @@ const jsonLdText = jsonLd
           </dt>
           <dd class="shortcuts__label">{dict.shortcuts.home}</dd>
         </div>
-        <div class="shortcuts__row">
-          <dt class="shortcuts__key">
-            <kbd class="kbd">s</kbd>
-          </dt>
-          <dd class="shortcuts__label">{dict.shortcuts.schedule}</dd>
-        </div>
+        {navLinks.map((item) => (
+          <div class="shortcuts__row">
+            <dt class="shortcuts__key">
+              <kbd class="kbd">{item.key}</kbd>
+            </dt>
+            <dd class="shortcuts__label">{item.hint}</dd>
+          </div>
+        ))}
         <div class="shortcuts__row">
           <dt class="shortcuts__key">
             <kbd class="kbd">t</kbd>

@@ -1,0 +1,57 @@
+---
+import StandingsTable from '../../../../components/StandingsTable.astro';
+import { LANGUAGES, t, type Lang } from '../../../../i18n';
+import Layout from '../../../../layouts/Layout.astro';
+import type { Season } from '../../../../lib/schema';
+import { formatSeasonLabel, getSeasons } from '../../../../lib/seasons';
+import { getPreviousStandings, getStandings } from '../../../../lib/standings';
+
+export function getStaticPaths() {
+  return LANGUAGES.flatMap((lang) =>
+    getSeasons().map((season) => ({
+      params: { lang, season: season.id },
+      props: { lang, season },
+    })),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  season: Season;
+}
+
+const { lang, season } = Astro.props;
+const dict = t(lang);
+const title = dict.standingsTitle(formatSeasonLabel(season.id));
+const standings = getStandings(season.id);
+const hasRows = standings !== undefined && standings.rows.length > 0;
+const previous = hasRows ? undefined : getPreviousStandings(season.id);
+---
+
+<Layout
+  lang={lang}
+  title={title}
+  description={`${title}. ${dict.standingsLead}`}
+  path={`/${season.id}/standings/`}
+>
+  <section class="section" aria-labelledby="standings-title">
+    <h2 class="section__title section__title--page" id="standings-title">
+      {title}
+    </h2>
+    <p class="lead">{dict.standingsLead}</p>
+    {hasRows ? (
+      <StandingsTable lang={lang} standings={standings} />
+    ) : (
+      <p class="notice">{dict.standingsEmpty}</p>
+    )}
+  </section>
+
+  {previous && (
+    <section class="section" aria-labelledby="previous-title">
+      <h3 class="section__title" id="previous-title">
+        {dict.standingsPrevious(formatSeasonLabel(previous.season))}
+      </h3>
+      <StandingsTable lang={lang} standings={previous} />
+    </section>
+  )}
+</Layout>

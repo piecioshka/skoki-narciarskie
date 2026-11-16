@@ -134,6 +134,19 @@ function updateUpcomingEvents(): void {
   });
 }
 
+function setupHomeOnlyFilters(): void {
+  for (const button of all('.js-home-only')) {
+    button.addEventListener('click', () => {
+      const pressed = button.getAttribute('aria-pressed') !== 'true';
+      // The table follows its toolbar, so the filter stays per table.
+      const table = button.closest('.table-tools')?.nextElementSibling;
+
+      button.setAttribute('aria-pressed', String(pressed));
+      table?.classList.toggle('table-wrap--home-only', pressed);
+    });
+  }
+}
+
 function refresh(): void {
   const now = new Date();
   const lang = getLang();
@@ -165,6 +178,9 @@ function setupShortcuts(): void {
     l: () => document.getElementById('language-switch')?.click(),
     h: () => document.getElementById('home-link')?.click(),
     s: () => document.getElementById('schedule-link')?.click(),
+    r: () => document.getElementById('standings-link')?.click(),
+    p: () => document.getElementById('team-link')?.click(),
+    g: () => document.getElementById('gallery-link')?.click(),
   };
 
   document.getElementById('shortcuts-open')?.addEventListener('click', open);
@@ -199,6 +215,7 @@ function setup(): void {
       }
     });
   setupShortcuts();
+  setupHomeOnlyFilters();
   showLocalTimes();
   refresh();
   setInterval(refresh, 1000);

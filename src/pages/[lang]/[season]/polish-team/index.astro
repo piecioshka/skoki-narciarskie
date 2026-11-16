@@ -1,0 +1,84 @@
+---
+import PersonName from '../../../../components/PersonName.astro';
+import { LANGUAGES, t, type Lang } from '../../../../i18n';
+import Layout from '../../../../layouts/Layout.astro';
+import type { Season, Teams } from '../../../../lib/schema';
+import { formatSeasonLabel, getSeasons } from '../../../../lib/seasons';
+import { getTeams } from '../../../../lib/standings';
+
+export function getStaticPaths() {
+  return LANGUAGES.flatMap((lang) =>
+    getSeasons().flatMap((season) => {
+      const teams = getTeams(season.id);
+
+      return teams
+        ? [
+            {
+              params: { lang, season: season.id },
+              props: { lang, season, teams },
+            },
+          ]
+        : [];
+    }),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  season: Season;
+  teams: Teams;
+}
+
+const { lang, season, teams } = Astro.props;
+const dict = t(lang);
+const title = dict.teamTitle(formatSeasonLabel(season.id));
+---
+
+<Layout
+  lang={lang}
+  title={title}
+  description={`${title}. ${dict.teamLead}`}
+  path={`/${season.id}/polish-team/`}
+>
+  <section class="section" aria-labelledby="team-title">
+    <h2 class="section__title section__title--page" id="team-title">
+      {title}
+    </h2>
+    <p class="lead">{dict.teamLead}</p>
+    <div class="teams">
+      {teams.teams.map((team) => (
+        <article class="team" data-team={team.id}>
+          <h3 class="team__title">{dict.teamNames[team.id] ?? team.id}</h3>
+          <h4 class="team__subtitle">{dict.staff}</h4>
+          <ul class="people">
+            {team.staff.map((member) => (
+              <li
+                class:list={[
+                  'people__item',
+                  member.role === 'head-coach' && 'people__item--lead',
+                ]}
+              >
+                <PersonName name={member.name} url={member.url} />
+                <span class="people__role">{dict.staffRoles[member.role]}</span>
+              </li>
+            ))}
+          </ul>
+          <h4 class="team__subtitle">{dict.athletes}</h4>
+          <ul class="people">
+            {team.athletes.map((athlete) => (
+              <li class="people__item">
+                <PersonName name={athlete.name} url={athlete.url} />
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+    <p class="note">
+      <a class="link" href={teams.sourceUrl}>
+        {dict.teamSource}
+      </a>{' '}
+      · {`${dict.verified} ${teams.verifiedAt}`}
+    </p>
+  </section>
+</Layout>

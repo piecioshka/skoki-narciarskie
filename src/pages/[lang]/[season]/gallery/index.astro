@@ -1,0 +1,61 @@
+---
+import ProgramCard from '../../../../components/ProgramCard.astro';
+import { SOURCE_AUTHOR_URL } from '../../../../config';
+import { LANGUAGES, t, type Lang } from '../../../../i18n';
+import Layout from '../../../../layouts/Layout.astro';
+import { getPrograms } from '../../../../lib/programs';
+import type { Season } from '../../../../lib/schema';
+import { formatSeasonLabel, getSeasons } from '../../../../lib/seasons';
+
+export function getStaticPaths() {
+  return LANGUAGES.flatMap((lang) =>
+    getSeasons()
+      .filter((season) => getPrograms(season.id).length > 0)
+      .map((season) => ({
+        params: { lang, season: season.id },
+        props: { lang, season },
+      })),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  season: Season;
+}
+
+const { lang, season } = Astro.props;
+const dict = t(lang);
+const title = dict.galleryTitle(formatSeasonLabel(season.id));
+const programs = getPrograms(season.id);
+const cityOf = (slug: string | null): string =>
+  season.events.find((event) => event.slug === slug)?.city ??
+  dict.seasonProgram;
+---
+
+<Layout
+  lang={lang}
+  title={title}
+  description={dict.galleryLead}
+  path={`/${season.id}/gallery/`}
+>
+  <section class="section" aria-labelledby="gallery-title">
+    <h2 class="section__title section__title--page" id="gallery-title">
+      {title}
+    </h2>
+    <p class="lead">
+      {dict.galleryLead}{' '}
+      <a class="link" href={SOURCE_AUTHOR_URL}>
+        {dict.galleryAuthor}
+      </a>
+    </p>
+    <ul class="gallery">
+      {programs.map((program) => (
+        <ProgramCard
+          lang={lang}
+          program={program}
+          title={cityOf(program.eventSlug)}
+        />
+      ))}
+    </ul>
+  </section>
+</Layout>

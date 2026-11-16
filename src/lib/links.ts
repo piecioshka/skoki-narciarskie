@@ -32,3 +32,41 @@ export function getFlag(countryCode: string): string {
     .map((letter) => String.fromCodePoint(0x1f1e6 + letter.charCodeAt(0) - 65))
     .join('');
 }
+
+// FIS uses its own three-letter nation codes; flags need ISO 3166-1 alpha-2.
+const FIS_NATIONS: Record<string, string> = {
+  AUT: 'AT',
+  BUL: 'BG',
+  CAN: 'CA',
+  CHN: 'CN',
+  CZE: 'CZ',
+  EST: 'EE',
+  FIN: 'FI',
+  FRA: 'FR',
+  GER: 'DE',
+  ITA: 'IT',
+  JPN: 'JP',
+  KAZ: 'KZ',
+  KOR: 'KR',
+  NOR: 'NO',
+  POL: 'PL',
+  ROU: 'RO',
+  SLO: 'SI',
+  SUI: 'CH',
+  SVK: 'SK',
+  SWE: 'SE',
+  TUR: 'TR',
+  UKR: 'UA',
+  USA: 'US',
+};
+
+/** Flag for a FIS nation code, or an empty string for an unmapped code. */
+export function getNationFlag(nation: string): string {
+  const countryCode = FIS_NATIONS[nation];
+
+  return countryCode ? getFlag(countryCode) : '';
+}
+
+export function getAthleteUrl(fisCompetitorId: number): string {
+  return `${FIS}/general/athlete-biography.html?sectorcode=JP&competitorid=${fisCompetitorId}`;
+}

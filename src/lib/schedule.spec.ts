@@ -35,6 +35,7 @@ function event(competitions: Competition[]): SeasonEvent {
     hillName: 'Lysgårdsbakken',
     timeZone: 'Europe/Oslo',
     broadcasts: [],
+    officials: [],
     competitions,
   };
 }

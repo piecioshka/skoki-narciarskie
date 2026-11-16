@@ -12,7 +12,8 @@ A public static site with the Ski Jumping World Cup schedule: next competition w
 - `src/lib/` holds all logic, with `*.spec.ts` next to the code it tests
 - `src/scripts/app.ts` is the only browser script; anything that depends on "now" lives there
 - `src/pages/[lang]/` holds the views, `e2e/specs/` drives the built site
-- `sources/` archives handwritten season programs and never reaches the build
+- `src/data/programs/` and `src/assets/programs/` hold the gallery of handwritten programs
+- `src/data/standings/` is refreshed by `npm run standings`, `src/data/teams/` is edited by hand
 - `tmp/` takes logs, screenshots and throwaway scripts, and is ignored by git
 
 ## Conventions

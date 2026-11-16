@@ -10,6 +10,10 @@ Terminarz Pucharu Świata w skokach narciarskich z linkami do transmisji i wynik
 - 🗓️ Terminarz całego sezonu: Puchar Świata mężczyzn, Turniej Czterech Skoczni, loty i Mistrzostwa Świata
 - 📺 Linki do polskich nadawców przy każdym konkursie
 - 📊 Linki do wyników na żywo i wyników końcowych w serwisie FIS
+- 🏆 Klasyfikacja generalna Pucharu Świata _(z filtrem "Tylko Polacy")_
+- 🧑‍🏫 Kadry Polski A i B ze sztabem szkoleniowym
+- ⚖️ Sędziowie i delegaci techniczni zawodów
+- 🖼️ Galeria odręcznych programów na każdy weekend
 - 🌍 Godziny w strefie czasowej widza _(przeliczane w przeglądarce)_
 - 📅 Kalendarz sezonu do subskrypcji w formacie ICS
 - 🇵🇱 Dwie wersje językowe: polska i angielska

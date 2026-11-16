@@ -1,0 +1,42 @@
+---
+import { getImage, Image } from 'astro:assets';
+import { t, type Lang } from '../i18n';
+import type { ProgramSheet } from '../lib/programs';
+
+interface Props {
+  lang: Lang;
+  program: ProgramSheet;
+  title: string;
+}
+
+const { lang, program, title } = Astro.props;
+const dict = t(lang);
+// The scans are several megabytes; the linked version is resized as well.
+const full = await getImage({
+  src: program.image,
+  width: 1600,
+  format: 'webp',
+});
+---
+
+<li class="gallery__item">
+  <a
+    class="gallery__link"
+    href={full.src}
+    title={`${dict.openFullSize}: ${title}`}
+  >
+    <Image
+      class="gallery__image"
+      src={program.image}
+      width={480}
+      alt={`${dict.handwrittenProgram}: ${title}`}
+    />
+  </a>
+  <p class="gallery__title">{title}</p>
+  <p class="gallery__meta">
+    {`${dict.added} ${program.receivedAt}`} ·{' '}
+    <a class="link" href={program.sourceUrl}>
+      {dict.galleryAuthor}
+    </a>
+  </p>
+</li>

@@ -20,6 +20,7 @@ Serwer deweloperski startuje na pierwszym wolnym porcie od 3000.
 - `npm run e2e` - testy end-to-end (Playwright, headless, na zbudowanej stronie)
 - `npm run lint` - ESLint
 - `npm run format` / `npm run format:check` - Prettier
+- `npm run standings` - pobiera klasyfikację generalną z FIS do `src/data/standings/`
 - `npm run ci` - wszystko, co uruchamia CI; ten sam skrypt odpala hook `pre-push`
 
 ## Architektura
@@ -36,7 +37,10 @@ Strona jest w pełni statyczna (Astro, `output: 'static'`). Build nie zna bież�
 - `src/scripts/app.ts` - skrypt przeglądarkowy: godziny w strefie widza, fazy, odliczanie, motyw, skróty
 - `src/pages/[lang]/` - widoki: strona główna, terminarz sezonu, strona zawodów, endpoint `calendar.ics`
 - `e2e/specs/` - testy Playwright z podmienionym zegarem
-- `sources/` - archiwum odręcznych kartek z programem (poza buildem)
+- `src/data/standings/` - klasyfikacja generalna, jeden plik na sezon
+- `src/data/teams/` - kadry Polski ze sztabem
+- `src/data/programs/` i `src/assets/programs/` - metadane i skany odręcznych programów
+- `scripts/update-standings.ts` - skrypt aktualizujący klasyfikację
 
 Trasy:
 
@@ -45,6 +49,9 @@ Trasy:
 - `/[lang]/[season]/` - terminarz sezonu
 - `/[lang]/[season]/[event]/` - program zawodów
 - `/[lang]/[season]/calendar.ics` - kalendarz
+- `/[lang]/[season]/standings/` - klasyfikacja generalna
+- `/[lang]/[season]/polish-team/` - kadry A i B ze sztabem
+- `/[lang]/[season]/gallery/` - galeria odręcznych programów
 
 ## Dane sezonu
 
@@ -79,9 +86,21 @@ Po zmianie pliku sezonu uruchom `npm test` (walidacja schematu) i `npm run build
 2. Najnowszy sezon (największe `id`) staje się domyślny na stronie głównej.
 3. Gdy sezonów jest więcej niż jeden, terminarz sam pokazuje przełącznik sezonu.
 
-## Archiwum kartek
+## Klasyfikacja generalna
 
-Odręczne programy trafiają do `sources/<sezon>/<RRRR-MM-DD>-<slug>.png` z wpisem w `sources/<sezon>/index.json`. To cudze grafiki: zostają w repozytorium jako materiał źródłowy i nie są publikowane na stronie.
+`npm run standings` pobiera tabelę Pucharu Świata mężczyzn z FIS i zapisuje ją do `src/data/standings/<sezon>.json` (domyślnie najnowszy sezon, inny podaje się argumentem: `npm run standings -- 2025-2026`). Uruchom po każdym konkursie i zacommituj wynik. Zanim sezon się zacznie, strona pokazuje końcową tabelę poprzedniego sezonu.
+
+## Kadry
+
+`src/data/teams/<sezon>.json` zawiera kadry A i B ze sztabem według strony PZN. Pole `url` dostają tylko osoby, których stronę (Wikipedia) udało się potwierdzić.
+
+## Sędziowie
+
+Pole `officials` wydarzenia w pliku sezonu: `role` (`technical-delegate`, `technical-delegate-assistant`, `judge`), `name`, `nation` (trzyliterowy kod FIS). Dane są w PDF-ach "Event Program" FIS, zwykle na kilka tygodni przed zawodami.
+
+## Galeria odręcznych programów
+
+Skan trafia do `src/assets/programs/<sezon>/<RRRR-MM-DD>-<slug>.png`, a wpis do `src/data/programs/<sezon>.json`: `file`, `receivedAt`, `eventSlug` (slug zawodów albo `null` dla programu całego sezonu), `sourceUrl`, `description`. Astro sam robi miniaturę i wersję do podglądu. Program przypisany do zawodów pokazuje się też na ich stronie.
 
 ## Wdrożenie
 

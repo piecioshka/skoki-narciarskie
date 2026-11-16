@@ -13,6 +13,13 @@ export const competitionSchema = z.object({
   status: z.enum(['scheduled', 'cancelled', 'moved']),
 });
 
+export const officialSchema = z.object({
+  role: z.enum(['technical-delegate', 'technical-delegate-assistant', 'judge']),
+  name: z.string().min(1),
+  // FIS three-letter nation code, e.g. GER.
+  nation: z.string().regex(/^[A-Z]{3}$/),
+});
+
 export const eventSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/),
   type: z.enum(['world-cup', 'world-championships']),
@@ -23,6 +30,7 @@ export const eventSchema = z.object({
   hillName: z.string().min(1),
   timeZone: z.string().min(1),
   broadcasts: z.array(z.string()),
+  officials: z.array(officialSchema).default([]),
   competitions: z.array(competitionSchema).min(1),
 });
 
@@ -51,3 +59,69 @@ export type Broadcaster = z.infer<typeof broadcasterSchema>;
 export type Season = z.infer<typeof seasonSchema>;
 export type CompetitionKind = Competition['kind'];
 export type EventTag = SeasonEvent['tags'][number];
+
+export const programSchema = z.object({
+  file: z.string().min(1),
+  receivedAt: isoDate,
+  // Slug of the event the sheet covers; null for a whole-season program.
+  eventSlug: z.string().nullable(),
+  sourceUrl: z.url(),
+  description: z.string().min(1),
+});
+
+export const standingsRowSchema = z.object({
+  rank: z.number().int().positive(),
+  givenName: z.string().min(1),
+  familyName: z.string().min(1),
+  nation: z.string().regex(/^[A-Z]{3}$/),
+  points: z.number().int().nonnegative(),
+  fisCompetitorId: z.number().int().positive(),
+});
+
+export const standingsSchema = z.object({
+  season: z.string().regex(/^\d{4}-\d{4}$/),
+  // Day the table was fetched from FIS; null until the first fetch with rows.
+  updatedAt: isoDate.nullable(),
+  sourceUrl: z.url(),
+  rows: z.array(standingsRowSchema),
+});
+
+export const athleteSchema = z.object({
+  name: z.string().min(1),
+  // Profile page (Wikipedia); omitted when no verified page exists.
+  url: z.url().optional(),
+});
+
+export const staffSchema = z.object({
+  name: z.string().min(1),
+  url: z.url().optional(),
+  role: z.enum([
+    'head-coach',
+    'assistant-coach',
+    'service-technician',
+    'physiotherapist',
+    'team-manager',
+  ]),
+});
+
+export const teamsSchema = z.object({
+  season: z.string().regex(/^\d{4}-\d{4}$/),
+  sourceUrl: z.url(),
+  verifiedAt: isoDate,
+  teams: z.array(
+    z.object({
+      id: z.string().min(1),
+      athletes: z.array(athleteSchema).min(1),
+      staff: z.array(staffSchema).min(1),
+    }),
+  ),
+});
+
+export type Official = z.infer<typeof officialSchema>;
+export type OfficialRole = Official['role'];
+export type Program = z.infer<typeof programSchema>;
+export type StandingsRow = z.infer<typeof standingsRowSchema>;
+export type Standings = z.infer<typeof standingsSchema>;
+export type StaffMember = z.infer<typeof staffSchema>;
+export type StaffRole = StaffMember['role'];
+export type Teams = z.infer<typeof teamsSchema>;
