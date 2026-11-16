@@ -1,1 +1,534 @@
-{}
+{
+  "POL": [
+    {
+      "name": "Apoloniusz Tajner",
+      "from": "2000-2001",
+      "to": "2003-2004",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_skokach_narciarskich"
+    },
+    {
+      "name": "Heinz Kuttin",
+      "from": "2004-2005",
+      "to": "2005-2006",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_skokach_narciarskich"
+    },
+    {
+      "name": "Hannu Lepistö",
+      "from": "2006-2007",
+      "to": "2007-2008",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_skokach_narciarskich"
+    },
+    {
+      "name": "Łukasz Kruczek",
+      "from": "2008-2009",
+      "to": "2015-2016",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_skokach_narciarskich"
+    },
+    {
+      "name": "Stefan Horngacher",
+      "from": "2016-2017",
+      "to": "2018-2019",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_skokach_narciarskich"
+    },
+    {
+      "name": "Michal Doležal",
+      "from": "2019-2020",
+      "to": "2021-2022",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_skokach_narciarskich"
+    },
+    {
+      "name": "Thomas Thurnbichler",
+      "from": "2022-2023",
+      "to": "2024-2025",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_skokach_narciarskich"
+    },
+    {
+      "name": "Maciej Maciusiak",
+      "from": "2025-2026",
+      "to": "2026-2027",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_skokach_narciarskich"
+    }
+  ],
+  "AUT": [
+    {
+      "name": "Alois Lipburger",
+      "from": "2000-2001",
+      "to": "2000-2001",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Austrii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Toni Innauer",
+      "from": "2001-2002",
+      "to": "2001-2002",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Toni_Innauer"
+    },
+    {
+      "name": "Hannu Lepistö",
+      "from": "2002-2003",
+      "to": "2003-2004",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Austrii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Alexander Pointner",
+      "from": "2004-2005",
+      "to": "2013-2014",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Austrii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Heinz Kuttin",
+      "from": "2014-2015",
+      "to": "2017-2018",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Austrii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Andreas Felder",
+      "from": "2018-2019",
+      "to": "2019-2020",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Austrii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Andreas Widhölzl",
+      "from": "2020-2021",
+      "to": "2026-2027",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Austrii_w_skokach_narciarskich"
+    }
+  ],
+  "GER": [
+    {
+      "name": "Reinhard Heß",
+      "from": "2000-2001",
+      "to": "2002-2003",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Niemiec_w_skokach_narciarskich"
+    },
+    {
+      "name": "Wolfgang Steiert",
+      "from": "2003-2004",
+      "to": "2003-2004",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Niemiec_w_skokach_narciarskich"
+    },
+    {
+      "name": "Peter Rohwein",
+      "from": "2004-2005",
+      "to": "2007-2008",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Niemiec_w_skokach_narciarskich"
+    },
+    {
+      "name": "Werner Schuster",
+      "from": "2008-2009",
+      "to": "2018-2019",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Niemiec_w_skokach_narciarskich"
+    },
+    {
+      "name": "Stefan Horngacher",
+      "from": "2019-2020",
+      "to": "2025-2026",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Stefan_Horngacher"
+    },
+    {
+      "name": "Andreas Mitter",
+      "from": "2026-2027",
+      "to": "2026-2027",
+      "sourceUrl": "https://de.wikipedia.org/wiki/Andreas_Mitter"
+    }
+  ],
+  "NOR": [
+    {
+      "name": "Ludvik Zajc",
+      "from": "2000-2001",
+      "to": "2001-2002",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ludvik_Zajc"
+    },
+    {
+      "name": "Mika Kojonkoski",
+      "from": "2002-2003",
+      "to": "2010-2011",
+      "sourceUrl": "https://de.wikipedia.org/wiki/Mika_Kojonkoski"
+    },
+    {
+      "name": "Alexander Stöckl",
+      "from": "2011-2012",
+      "to": "2023-2024",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Norwegii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Magnus Brevig",
+      "from": "2024-2025",
+      "to": "2024-2025",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Norwegii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Rune Velta",
+      "from": "2025-2026",
+      "to": "2026-2027",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Norwegii_w_skokach_narciarskich"
+    }
+  ],
+  "SLO": [
+    {
+      "name": "Matjaž Zupan",
+      "from": "2000-2001",
+      "to": "2005-2006",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Słowenii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Vasja Bajc",
+      "from": "2006-2007",
+      "to": "2006-2007",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Vasja_Bajc"
+    },
+    {
+      "name": "Ari-Pekka Nikkola",
+      "from": "2007-2008",
+      "to": "2007-2008",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Słowenii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Matjaž Zupan",
+      "from": "2008-2009",
+      "to": "2010-2011",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Słowenii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Goran Janus",
+      "from": "2011-2012",
+      "to": "2017-2018",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Słowenii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Gorazd Bertoncelj",
+      "from": "2018-2019",
+      "to": "2020-2021",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Słowenii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Robert Hrgota",
+      "from": "2021-2022",
+      "to": "2026-2027",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Słowenii_w_skokach_narciarskich"
+    }
+  ],
+  "JPN": [
+    {
+      "name": "Katsushi Tao",
+      "from": "2004-2005",
+      "to": "2004-2005",
+      "sourceUrl": "https://de.wikipedia.org/wiki/Katsushi_Tao"
+    },
+    {
+      "name": "Kari Ylianttila",
+      "from": "2005-2006",
+      "to": "2009-2010",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kari_Ylianttila"
+    },
+    {
+      "name": "Tomoharu Yokokawa",
+      "from": "2010-2011",
+      "to": "2017-2018",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Tomoharu_Yokokawa"
+    },
+    {
+      "name": "Hideharu Miyahira",
+      "from": "2018-2019",
+      "to": "2021-2022",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Japonii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Masahiko Harada",
+      "from": "2022-2023",
+      "to": "2022-2023",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Japonii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Kento Sakuyama",
+      "from": "2023-2024",
+      "to": "2026-2027",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Japonii_w_skokach_narciarskich"
+    }
+  ],
+  "SUI": [
+    {
+      "name": "Berni Schödler",
+      "from": "2000-2001",
+      "to": "2006-2007",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Berni_Schödler"
+    },
+    {
+      "name": "Werner Schuster",
+      "from": "2007-2008",
+      "to": "2007-2008",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Szwajcarii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Martin Künzle",
+      "from": "2008-2009",
+      "to": "2014-2015",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Martin_Künzle"
+    },
+    {
+      "name": "Pipo Schödler",
+      "from": "2015-2016",
+      "to": "2015-2016",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Szwajcarii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Ronny Hornschuh",
+      "from": "2016-2017",
+      "to": "2022-2023",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Szwajcarii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Rune Velta",
+      "from": "2023-2024",
+      "to": "2024-2025",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Szwajcarii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Bine Norčič",
+      "from": "2025-2026",
+      "to": "2026-2027",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Szwajcarii_w_skokach_narciarskich"
+    }
+  ],
+  "FIN": [
+    {
+      "name": "Mika Kojonkoski",
+      "from": "2000-2001",
+      "to": "2001-2002",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Tommi Nikunen",
+      "from": "2002-2003",
+      "to": "2007-2008",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Janne Väätäinen",
+      "from": "2008-2009",
+      "to": "2009-2010",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Pekka Niemelä",
+      "from": "2010-2011",
+      "to": "2013-2014",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Jani Klinga",
+      "from": "2014-2015",
+      "to": "2015-2016",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Andreas Mitter",
+      "from": "2016-2017",
+      "to": "2017-2018",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Lauri Hakola",
+      "from": "2018-2019",
+      "to": "2019-2020",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Janne Väätäinen",
+      "from": "2020-2021",
+      "to": "2022-2023",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Lauri Hakola",
+      "from": "2023-2024",
+      "to": "2023-2024",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Igor Medved",
+      "from": "2024-2025",
+      "to": "2025-2026",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    },
+    {
+      "name": "Lauri Hakola",
+      "from": "2026-2027",
+      "to": "2026-2027",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Finlandii_w_skokach_narciarskich"
+    }
+  ],
+  "USA": [
+    {
+      "name": "Kari Ylianttila",
+      "from": "2000-2001",
+      "to": "2003-2004",
+      "sourceUrl": "https://skitrax.com/fisher-named-us-jumping-coach/"
+    },
+    {
+      "name": "Corby Fisher",
+      "from": "2004-2005",
+      "to": "2005-2006",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Corby_Fisher"
+    },
+    {
+      "name": "Mike Keuler",
+      "from": "2006-2007",
+      "to": "2006-2007",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Michael_Keuler"
+    },
+    {
+      "name": "Jochen Danneberg",
+      "from": "2007-2008",
+      "to": "2009-2010",
+      "sourceUrl": "https://de.wikipedia.org/wiki/Jochen_Danneberg"
+    },
+    {
+      "name": "Clint Jones",
+      "from": "2012-2013",
+      "to": "2013-2014",
+      "sourceUrl": "https://www.olympedia.org/athletes/101152"
+    },
+    {
+      "name": "Bine Norčič",
+      "from": "2014-2015",
+      "to": "2021-2022",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Stanów_Zjednoczonych_w_skokach_narciarskich"
+    },
+    {
+      "name": "Tore Sneli",
+      "from": "2022-2023",
+      "to": "2026-2027",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Stanów_Zjednoczonych_w_skokach_narciarskich"
+    }
+  ],
+  "ITA": [
+    {
+      "name": "Hannu Lepistö",
+      "from": "2004-2005",
+      "to": "2005-2006",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Włoch_w_skokach_narciarskich"
+    },
+    {
+      "name": "Roberto Cecon",
+      "from": "2006-2007",
+      "to": "2007-2008",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Roberto_Cecon"
+    },
+    {
+      "name": "Leonardo De Crignis",
+      "from": "2008-2009",
+      "to": "2008-2009",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Leo_De_Crignis"
+    },
+    {
+      "name": "Jakub Jiroutek",
+      "from": "2011-2012",
+      "to": "2013-2014",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jakub_Jiroutek"
+    },
+    {
+      "name": "Paolo Bernardi",
+      "from": "2014-2015",
+      "to": "2014-2015",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Włoch_w_skokach_narciarskich"
+    },
+    {
+      "name": "Walter Cogoli",
+      "from": "2015-2016",
+      "to": "2015-2016",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Włoch_w_skokach_narciarskich"
+    },
+    {
+      "name": "Łukasz Kruczek",
+      "from": "2016-2017",
+      "to": "2018-2019",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Włoch_w_skokach_narciarskich"
+    },
+    {
+      "name": "Andrea Morassi",
+      "from": "2019-2020",
+      "to": "2021-2022",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Włoch_w_skokach_narciarskich"
+    },
+    {
+      "name": "David Jiroutek",
+      "from": "2022-2023",
+      "to": "2022-2023",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Włoch_w_skokach_narciarskich"
+    },
+    {
+      "name": "Jakub Jiroutek",
+      "from": "2023-2024",
+      "to": "2025-2026",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Włoch_w_skokach_narciarskich"
+    },
+    {
+      "name": "Ivo Pertile",
+      "from": "2026-2027",
+      "to": "2026-2027",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Włoch_w_skokach_narciarskich"
+    }
+  ],
+  "CZE": [
+    {
+      "name": "Ján Tánczos",
+      "from": "2002-2003",
+      "to": "2003-2004",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Czech_w_skokach_narciarskich"
+    },
+    {
+      "name": "Vasja Bajc",
+      "from": "2004-2005",
+      "to": "2005-2006",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Czech_w_skokach_narciarskich"
+    },
+    {
+      "name": "Richard Schallert",
+      "from": "2006-2007",
+      "to": "2008-2009",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Czech_w_skokach_narciarskich"
+    },
+    {
+      "name": "David Jiroutek",
+      "from": "2009-2010",
+      "to": "2013-2014",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Czech_w_skokach_narciarskich"
+    },
+    {
+      "name": "Richard Schallert",
+      "from": "2014-2015",
+      "to": "2017-2018",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Czech_w_skokach_narciarskich"
+    },
+    {
+      "name": "David Jiroutek",
+      "from": "2018-2019",
+      "to": "2019-2020",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Czech_w_skokach_narciarskich"
+    },
+    {
+      "name": "František Vaculík",
+      "from": "2020-2021",
+      "to": "2020-2021",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Czech_w_skokach_narciarskich"
+    },
+    {
+      "name": "Vasja Bajc",
+      "from": "2021-2022",
+      "to": "2022-2023",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Czech_w_skokach_narciarskich"
+    },
+    {
+      "name": "Gaj Trček",
+      "from": "2023-2024",
+      "to": "2024-2025",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Czech_w_skokach_narciarskich"
+    },
+    {
+      "name": "Lukáš Hlava",
+      "from": "2025-2026",
+      "to": "2026-2027",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Reprezentacja_Czech_w_skokach_narciarskich"
+    }
+  ]
+}

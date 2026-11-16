@@ -1,0 +1,1258 @@
+{
+  "id": "2019-2020",
+  "broadcasters": {},
+  "events": [
+    {
+      "slug": "wisla",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45214,
+      "city": "Wisla",
+      "countryCode": "PL",
+      "hillName": null,
+      "timeZone": "Europe/Warsaw",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5549,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-11-23",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "AUT"
+            },
+            {
+              "rank": 2,
+              "nation": "NOR"
+            },
+            {
+              "rank": 3,
+              "nation": "POL"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5550,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-11-24",
+          "time": "11:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Daniel Andre Tande",
+              "nation": "NOR",
+              "fisCompetitorId": 147547
+            },
+            {
+              "rank": 2,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 3,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ruka",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45215,
+      "city": "Ruka",
+      "countryCode": "FI",
+      "hillName": null,
+      "timeZone": "Europe/Helsinki",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5552,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-11-30",
+          "time": "17:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Daniel Andre Tande",
+              "nation": "NOR",
+              "fisCompetitorId": 147547
+            },
+            {
+              "rank": 2,
+              "name": "Philipp Aschenwald",
+              "nation": "AUT",
+              "fisCompetitorId": 147015
+            },
+            {
+              "rank": 3,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5553,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-12-01",
+          "time": "17:30",
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    },
+    {
+      "slug": "nizhny-tagil",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45216,
+      "city": "Nizhny Tagil",
+      "countryCode": "RU",
+      "hillName": null,
+      "timeZone": "Asia/Yekaterinburg",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5555,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-12-07",
+          "time": "19:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Yukiya Sato",
+              "nation": "JPN",
+              "fisCompetitorId": 149215
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Philipp Aschenwald",
+              "nation": "AUT",
+              "fisCompetitorId": 147015
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5556,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-12-08",
+          "time": "19:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Killian Peier",
+              "nation": "SUI",
+              "fisCompetitorId": 153777
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "klingenthal",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45200,
+      "city": "Klingenthal",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5558,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-12-14",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "POL"
+            },
+            {
+              "rank": 2,
+              "nation": "AUT"
+            },
+            {
+              "rank": 3,
+              "nation": "JPN"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5559,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-12-15",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "engelberg",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45217,
+      "city": "Engelberg",
+      "countryCode": "CH",
+      "hillName": null,
+      "timeZone": "Europe/Zurich",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5561,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-12-21",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5562,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-12-22",
+          "time": "15:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Peter Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 131309
+            },
+            {
+              "rank": 3,
+              "name": "Jan Hoerl",
+              "nation": "AUT",
+              "fisCompetitorId": 197640
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oberstdorf",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 45218,
+      "city": "Oberstdorf",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5564,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-12-29",
+          "time": "17:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "garmisch-partenkirchen",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 45219,
+      "city": "Garmisch-Partenkirchen",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5566,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-01-01",
+          "time": "14:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "innsbruck",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 45220,
+      "city": "Innsbruck",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5568,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-01-04",
+          "time": "14:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 2,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            },
+            {
+              "rank": 3,
+              "name": "Daniel Andre Tande",
+              "nation": "NOR",
+              "fisCompetitorId": 147547
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bischofshofen",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 45221,
+      "city": "Bischofshofen",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5570,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-01-06",
+          "time": "17:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "val-di-fiemme",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45223,
+      "city": "Val di Fiemme",
+      "countryCode": "IT",
+      "hillName": null,
+      "timeZone": "Europe/Rome",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5573,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "normal",
+          "date": "2020-01-11",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5574,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "normal",
+          "date": "2020-01-12",
+          "time": "16:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "titisee-neustadt",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45224,
+      "city": "Titisee-Neustadt",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5576,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-01-18",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5577,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-01-19",
+          "time": "15:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            },
+            {
+              "rank": 2,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 3,
+              "name": "Timi Zajc",
+              "nation": "SLO",
+              "fisCompetitorId": 188590
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "zakopane",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45225,
+      "city": "Zakopane",
+      "countryCode": "PL",
+      "hillName": null,
+      "timeZone": "Europe/Warsaw",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5579,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-01-25",
+          "time": "16:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "GER"
+            },
+            {
+              "rank": 2,
+              "nation": "NOR"
+            },
+            {
+              "rank": 3,
+              "nation": "SLO"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5580,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-01-26",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sapporo",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45226,
+      "city": "Sapporo",
+      "countryCode": "JP",
+      "hillName": null,
+      "timeZone": "Asia/Tokyo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5582,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-02-01",
+          "time": "16:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Yukiya Sato",
+              "nation": "JPN",
+              "fisCompetitorId": 149215
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5583,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-02-02",
+          "time": "10:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Stephan Leyhe",
+              "nation": "GER",
+              "fisCompetitorId": 117450
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "willingen",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45227,
+      "city": "Willingen",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5585,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-02-08",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stephan Leyhe",
+              "nation": "GER",
+              "fisCompetitorId": 117450
+            },
+            {
+              "rank": 2,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 3,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5586,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-02-09",
+          "time": "10:15",
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    },
+    {
+      "slug": "tauplitz-bad-mitterndorf",
+      "type": "world-cup",
+      "tags": ["ski-flying"],
+      "fisEventId": 45228,
+      "city": "Tauplitz/ Bad Mitterndorf",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5588,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2020-02-15",
+          "time": "11:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Piotr Zyla",
+              "nation": "POL",
+              "fisCompetitorId": 73232
+            },
+            {
+              "rank": 2,
+              "name": "Timi Zajc",
+              "nation": "SLO",
+              "fisCompetitorId": 188590
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5589,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2020-02-16",
+          "time": "11:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 3,
+              "name": "Timi Zajc",
+              "nation": "SLO",
+              "fisCompetitorId": 188590
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "rasnov",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45348,
+      "city": "Rasnov",
+      "countryCode": "RO",
+      "hillName": null,
+      "timeZone": "Europe/Bucharest",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5653,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "normal",
+          "date": "2020-02-21",
+          "time": "15:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 2,
+              "name": "Stephan Leyhe",
+              "nation": "GER",
+              "fisCompetitorId": 117450
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5654,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "normal",
+          "date": "2020-02-22",
+          "time": "13:45",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Constantin Schmid",
+              "nation": "GER",
+              "fisCompetitorId": 189105
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lahti",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45229,
+      "city": "Lahti",
+      "countryCode": "FI",
+      "hillName": null,
+      "timeZone": "Europe/Helsinki",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5590,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-02-28",
+          "time": "18:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Daniel Andre Tande",
+              "nation": "NOR",
+              "fisCompetitorId": 147547
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5591,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-02-29",
+          "time": "17:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "GER"
+            },
+            {
+              "rank": 2,
+              "nation": "SLO"
+            },
+            {
+              "rank": 3,
+              "nation": "AUT"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5592,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-03-01",
+          "time": "16:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Michael Hayboeck",
+              "nation": "AUT",
+              "fisCompetitorId": 117835
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oslo",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45207,
+      "city": "Oslo",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5594,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-03-07",
+          "time": "15:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "NOR"
+            },
+            {
+              "rank": 2,
+              "nation": "GER"
+            },
+            {
+              "rank": 3,
+              "nation": "SLO"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5595,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-03-08",
+          "time": "16:30",
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    },
+    {
+      "slug": "lillehammer",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45208,
+      "city": "Lillehammer",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5597,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-03-09",
+          "time": "17:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Peter Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 131309
+            },
+            {
+              "rank": 2,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            },
+            {
+              "rank": 3,
+              "name": "Stephan Leyhe",
+              "nation": "GER",
+              "fisCompetitorId": 117450
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5598,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-03-10",
+          "time": "17:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            },
+            {
+              "rank": 2,
+              "name": "Ziga Jelar",
+              "nation": "SLO",
+              "fisCompetitorId": 164624
+            },
+            {
+              "rank": 3,
+              "name": "Timi Zajc",
+              "nation": "SLO",
+              "fisCompetitorId": 188590
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "trondheim",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 45209,
+      "city": "Trondheim",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5600,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2020-03-12",
+          "time": "17:00",
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    },
+    {
+      "slug": "vikersund",
+      "type": "world-cup",
+      "tags": ["ski-flying"],
+      "fisEventId": 45230,
+      "city": "Vikersund",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5602,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2020-03-14",
+          "time": "16:30",
+          "status": "cancelled",
+          "results": []
+        },
+        {
+          "fisRaceId": 5603,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2020-03-15",
+          "time": "16:30",
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1279 @@
+{
+  "id": "2018-2019",
+  "broadcasters": {},
+  "events": [
+    {
+      "slug": "wisla",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43163,
+      "city": "Wisla",
+      "countryCode": "PL",
+      "hillName": null,
+      "timeZone": "Europe/Warsaw",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5228,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-11-17",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "POL"
+            },
+            {
+              "rank": 2,
+              "nation": "GER"
+            },
+            {
+              "rank": 3,
+              "nation": "AUT"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5229,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-11-18",
+          "time": "15:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Evgeniy Klimov",
+              "nation": "RUS",
+              "fisCompetitorId": 172117
+            },
+            {
+              "rank": 2,
+              "name": "Stephan Leyhe",
+              "nation": "GER",
+              "fisCompetitorId": 117450
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ruka",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43164,
+      "city": "Ruka",
+      "countryCode": "FI",
+      "hillName": null,
+      "timeZone": "Europe/Helsinki",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5231,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-11-24",
+          "time": "17:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            },
+            {
+              "rank": 3,
+              "name": "Piotr Zyla",
+              "nation": "POL",
+              "fisCompetitorId": 73232
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5232,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-11-25",
+          "time": "18:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Andreas Wellinger",
+              "nation": "GER",
+              "fisCompetitorId": 174244
+            },
+            {
+              "rank": 3,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "nizhny-tagil",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43165,
+      "city": "Nizhny Tagil",
+      "countryCode": "RU",
+      "hillName": null,
+      "timeZone": "Asia/Yekaterinburg",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5234,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-12-01",
+          "time": "19:45",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Johann Andre Forfang",
+              "nation": "NOR",
+              "fisCompetitorId": 147549
+            },
+            {
+              "rank": 2,
+              "name": "Piotr Zyla",
+              "nation": "POL",
+              "fisCompetitorId": 73232
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5235,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-12-02",
+          "time": "20:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Johann Andre Forfang",
+              "nation": "NOR",
+              "fisCompetitorId": 147549
+            },
+            {
+              "rank": 3,
+              "name": "Piotr Zyla",
+              "nation": "POL",
+              "fisCompetitorId": 73232
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "titisee-neustadt",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43145,
+      "city": "Titisee-Neustadt",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5187,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-12-08",
+          "time": "16:00",
+          "status": "cancelled",
+          "results": []
+        },
+        {
+          "fisRaceId": 5189,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-12-09",
+          "time": "15:30",
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    },
+    {
+      "slug": "engelberg",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43166,
+      "city": "Engelberg",
+      "countryCode": "CH",
+      "hillName": null,
+      "timeZone": "Europe/Zurich",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5237,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-12-15",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 2,
+              "name": "Piotr Zyla",
+              "nation": "POL",
+              "fisCompetitorId": 73232
+            },
+            {
+              "rank": 3,
+              "name": "Daniel Huber",
+              "nation": "AUT",
+              "fisCompetitorId": 139429
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5238,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-12-16",
+          "time": "14:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Piotr Zyla",
+              "nation": "POL",
+              "fisCompetitorId": 73232
+            },
+            {
+              "rank": 3,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oberstdorf",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 43167,
+      "city": "Oberstdorf",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5240,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2018-12-30",
+          "time": "16:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "garmisch-partenkirchen",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 43168,
+      "city": "Garmisch-Partenkirchen",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5242,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-01-01",
+          "time": "14:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            },
+            {
+              "rank": 3,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "innsbruck",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 43169,
+      "city": "Innsbruck",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5244,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-01-04",
+          "time": "14:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Andreas Stjernen",
+              "nation": "NOR",
+              "fisCompetitorId": 112295
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bischofshofen",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 43171,
+      "city": "Bischofshofen",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5246,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-01-06",
+          "time": "17:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "val-di-fiemme",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43357,
+      "city": "Val di Fiemme",
+      "countryCode": "IT",
+      "hillName": null,
+      "timeZone": "Europe/Rome",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5342,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-01-12",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            },
+            {
+              "rank": 3,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5343,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-01-13",
+          "time": "17:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "zakopane",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43172,
+      "city": "Zakopane",
+      "countryCode": "PL",
+      "hillName": null,
+      "timeZone": "Europe/Warsaw",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5249,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-01-19",
+          "time": "16:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "GER"
+            },
+            {
+              "rank": 2,
+              "nation": "AUT"
+            },
+            {
+              "rank": 3,
+              "nation": "POL"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5250,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-01-20",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Robert Johansson",
+              "nation": "NOR",
+              "fisCompetitorId": 128806
+            },
+            {
+              "rank": 3,
+              "name": "Yukiya Sato",
+              "nation": "JPN",
+              "fisCompetitorId": 149215
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sapporo",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43174,
+      "city": "Sapporo",
+      "countryCode": "JP",
+      "hillName": null,
+      "timeZone": "Asia/Tokyo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5252,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-01-26",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            },
+            {
+              "rank": 3,
+              "name": "Robert Johansson",
+              "nation": "NOR",
+              "fisCompetitorId": 128806
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5253,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-01-27",
+          "time": "10:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Timi Zajc",
+              "nation": "SLO",
+              "fisCompetitorId": 188590
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oberstdorf-2",
+      "type": "world-cup",
+      "tags": ["ski-flying"],
+      "fisEventId": 43175,
+      "city": "Oberstdorf",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5254,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2019-02-01",
+          "time": "16:10",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Timi Zajc",
+              "nation": "SLO",
+              "fisCompetitorId": 188590
+            },
+            {
+              "rank": 2,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            },
+            {
+              "rank": 3,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5255,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2019-02-02",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5256,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2019-02-03",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            },
+            {
+              "rank": 2,
+              "name": "Evgeniy Klimov",
+              "nation": "RUS",
+              "fisCompetitorId": 172117
+            },
+            {
+              "rank": 3,
+              "name": "Dawid Kubacki",
+              "nation": "POL",
+              "fisCompetitorId": 111251
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lahti",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43176,
+      "city": "Lahti",
+      "countryCode": "FI",
+      "hillName": null,
+      "timeZone": "Europe/Helsinki",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5258,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-02-09",
+          "time": "17:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "AUT"
+            },
+            {
+              "rank": 2,
+              "nation": "GER"
+            },
+            {
+              "rank": 3,
+              "nation": "JPN"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5259,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-02-10",
+          "time": "17:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            },
+            {
+              "rank": 2,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 3,
+              "name": "Robert Johansson",
+              "nation": "NOR",
+              "fisCompetitorId": 128806
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "willingen",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43177,
+      "city": "Willingen",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5260,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-02-15",
+          "time": "15:45",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "POL"
+            },
+            {
+              "rank": 2,
+              "nation": "GER"
+            },
+            {
+              "rank": 3,
+              "nation": "SLO"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5261,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-02-16",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 2,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5262,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-02-17",
+          "time": "15:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            },
+            {
+              "rank": 3,
+              "name": "Piotr Zyla",
+              "nation": "POL",
+              "fisCompetitorId": 73232
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oslo",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43178,
+      "city": "Oslo",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5264,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-03-09",
+          "time": "14:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "NOR"
+            },
+            {
+              "rank": 2,
+              "nation": "JPN"
+            },
+            {
+              "rank": 3,
+              "nation": "AUT"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5265,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-03-10",
+          "time": "14:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Robert Johansson",
+              "nation": "NOR",
+              "fisCompetitorId": 128806
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Peter Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 131309
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lillehammer",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43781,
+      "city": "Lillehammer",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5372,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-03-12",
+          "time": "17:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Robert Johansson",
+              "nation": "NOR",
+              "fisCompetitorId": 128806
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "trondheim",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 43180,
+      "city": "Trondheim",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5269,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2019-03-14",
+          "time": "17:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Andreas Stjernen",
+              "nation": "NOR",
+              "fisCompetitorId": 112295
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "vikersund",
+      "type": "world-cup",
+      "tags": ["ski-flying"],
+      "fisEventId": 43181,
+      "city": "Vikersund",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5271,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2019-03-16",
+          "time": "17:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "SLO"
+            },
+            {
+              "rank": 2,
+              "nation": "GER"
+            },
+            {
+              "rank": 3,
+              "nation": "AUT"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5272,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2019-03-17",
+          "time": "17:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "planica",
+      "type": "world-cup",
+      "tags": ["ski-flying"],
+      "fisEventId": 43182,
+      "city": "Planica",
+      "countryCode": "SI",
+      "hillName": null,
+      "timeZone": "Europe/Ljubljana",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 5275,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2019-03-22",
+          "time": "14:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            },
+            {
+              "rank": 2,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 3,
+              "name": "Piotr Zyla",
+              "nation": "POL",
+              "fisCompetitorId": 73232
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5276,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2019-03-23",
+          "time": "10:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "POL"
+            },
+            {
+              "rank": 2,
+              "nation": "GER"
+            },
+            {
+              "rank": 3,
+              "nation": "SLO"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 5277,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2019-03-24",
+          "time": "10:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 3,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

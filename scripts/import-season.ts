@@ -66,6 +66,38 @@ function toCountryCode(nation: string): string {
   return code;
 }
 
+// FIS leaves the time zone of some older events empty; the host country
+// decides then (Russia hosted only in Nizhny Tagil, Canada only in Whistler).
+const ZONES: Record<string, string> = {
+  AT: 'Europe/Vienna',
+  CA: 'America/Vancouver',
+  CH: 'Europe/Zurich',
+  CN: 'Asia/Shanghai',
+  CZ: 'Europe/Prague',
+  DE: 'Europe/Berlin',
+  FI: 'Europe/Helsinki',
+  IT: 'Europe/Rome',
+  JP: 'Asia/Tokyo',
+  KR: 'Asia/Seoul',
+  KZ: 'Asia/Almaty',
+  NO: 'Europe/Oslo',
+  PL: 'Europe/Warsaw',
+  RO: 'Europe/Bucharest',
+  RU: 'Asia/Yekaterinburg',
+  SE: 'Europe/Stockholm',
+  SI: 'Europe/Ljubljana',
+  US: 'America/New_York',
+};
+
+function toTimeZone(fromFis: string | undefined, countryCode: string): string {
+  const zone = fromFis || ZONES[countryCode];
+
+  if (!zone) {
+    throw new Error(`No time zone for host country: ${countryCode}`);
+  }
+  return zone;
+}
+
 function decode(text: string): string {
   return text
     .replace(/&amp;/g, '&')
@@ -293,7 +325,7 @@ for (const eventId of eventIds) {
     city,
     countryCode: toCountryCode(title[2] ?? ''),
     hillName: null,
-    timeZone: first?.timeZone ?? 'UTC',
+    timeZone: toTimeZone(first?.timeZone, toCountryCode(title[2] ?? '')),
     broadcasts: [],
     officials: [],
     competitions,

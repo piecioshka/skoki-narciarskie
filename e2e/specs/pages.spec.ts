@@ -728,7 +728,9 @@ test.describe('nations', () => {
     );
     await expect(visible.locator('.table__row').first()).toContainText('1');
     await expect(visible.locator('.team')).toHaveCount(0);
+    await expect(visible.locator('.coach')).toContainText('Apoloniusz Tajner');
     await select.selectOption('2017-2018');
+    await expect(visible.locator('.coach')).toContainText('Stefan Horngacher');
     await expect(visible.locator('.table__row').first()).toContainText(
       'Kamil Stoch',
     );

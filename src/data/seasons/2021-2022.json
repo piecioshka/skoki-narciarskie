@@ -8,7 +8,7 @@
       "tags": [],
       "fisEventId": 49415,
       "city": "Nizhny Tagil",
-      "countryCode": "XX",
+      "countryCode": "RU",
       "hillName": null,
       "timeZone": "Asia/Yekaterinburg",
       "broadcasts": [],
@@ -359,9 +359,7 @@
     {
       "slug": "oberstdorf",
       "type": "world-cup",
-      "tags": [
-        "four-hills"
-      ],
+      "tags": ["four-hills"],
       "fisEventId": 49421,
       "city": "Oberstdorf",
       "countryCode": "DE",
@@ -404,9 +402,7 @@
     {
       "slug": "garmisch-partenkirchen",
       "type": "world-cup",
-      "tags": [
-        "four-hills"
-      ],
+      "tags": ["four-hills"],
       "fisEventId": 49422,
       "city": "Garmisch-Partenkirchen",
       "countryCode": "DE",
@@ -449,9 +445,7 @@
     {
       "slug": "innsbruck",
       "type": "world-cup",
-      "tags": [
-        "four-hills"
-      ],
+      "tags": ["four-hills"],
       "fisEventId": 49423,
       "city": "Innsbruck",
       "countryCode": "AT",
@@ -475,9 +469,7 @@
     {
       "slug": "bischofshofen",
       "type": "world-cup",
-      "tags": [
-        "four-hills"
-      ],
+      "tags": ["four-hills"],
       "fisEventId": 49424,
       "city": "Bischofshofen",
       "countryCode": "AT",
@@ -1125,9 +1117,7 @@
     {
       "slug": "oberstdorf-2",
       "type": "world-cup",
-      "tags": [
-        "ski-flying"
-      ],
+      "tags": ["ski-flying"],
       "fisEventId": 49429,
       "city": "Oberstdorf",
       "countryCode": "DE",
@@ -1199,9 +1189,7 @@
     {
       "slug": "planica",
       "type": "world-cup",
-      "tags": [
-        "ski-flying"
-      ],
+      "tags": ["ski-flying"],
       "fisEventId": 49430,
       "city": "Planica",
       "countryCode": "SI",
