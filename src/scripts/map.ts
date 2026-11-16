@@ -76,10 +76,17 @@ function setupMap(element: HTMLElement): void {
       .bindTooltip(point.label)
       .addTo(map);
   }
-  map.fitBounds(L.latLngBounds(points.map((point) => [point.lat, point.lon])), {
-    padding: [32, 32],
-    maxZoom: 9,
-  });
+  const [only] = points;
+
+  if (points.length === 1 && only) {
+    // A single place is shown with its surroundings, not at country scale.
+    map.setView([only.lat, only.lon], 12);
+  } else {
+    map.fitBounds(
+      L.latLngBounds(points.map((point) => [point.lat, point.lon])),
+      { padding: [32, 32], maxZoom: 9 },
+    );
+  }
   element.dataset['ready'] = 'true';
 }
 

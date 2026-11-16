@@ -24,7 +24,8 @@
     "ci": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build && npm run e2e",
     "prepare": "husky",
     "standings": "node scripts/update-standings.ts",
-    "import-season": "node scripts/import-season.ts"
+    "import-season": "node scripts/import-season.ts",
+    "careers": "node scripts/update-careers.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.5",

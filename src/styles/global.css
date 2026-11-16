@@ -2,7 +2,7 @@
 
 :root {
   --topbar-height: 56px;
-  --page-width: 60rem;
+  --page-width: 68rem;
   --gap: 1rem;
   --brand: #1d4ed8;
   --brand-text: #ffffff;
@@ -1499,5 +1499,35 @@ a[href^='http']:not(.icon-button)::after {
     height: calc(100% - 2.5rem);
     margin-top: 0;
     aspect-ratio: auto;
+  }
+}
+
+.topbar__nav {
+  gap: 1rem;
+}
+
+/* Between phone and desktop the links no longer fit beside the logo, so the
+   strip under the top bar is used up to this width as well. */
+@media (min-width: 721px) and (max-width: 1080px) {
+  .topbar__nav {
+    position: absolute;
+    top: var(--topbar-height);
+    left: 0;
+    right: 0;
+    flex: none;
+    justify-content: center;
+    gap: 0.125rem 1.25rem;
+    min-height: var(--pal-control-height);
+    padding: 0.375rem var(--gap);
+    border-bottom: 1px solid var(--pal-border);
+    background: var(--pal-bg);
+  }
+
+  .topbar__actions {
+    margin-left: auto;
+  }
+
+  .page {
+    padding-top: calc(1.5rem + var(--pal-control-height));
   }
 }

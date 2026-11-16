@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import HillCard from '../../../../components/HillCard.astro';
+import PlacesMap from '../../../../components/PlacesMap.astro';
 import Icon from '../../../../components/Icon.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../../../i18n';
 import Layout from '../../../../layouts/Layout.astro';
@@ -47,16 +48,13 @@ const visits = getSeasons().flatMap((season) =>
         .map((competition) => ({ season, event, competition })),
     ),
 );
-const [place] = visits;
 const tournaments = getTournaments().filter((tournament) =>
   Object.values(tournament.events).some((slugs) =>
     slugs.includes(hill.eventSlug),
   ),
 );
 const title = `${hill.name} HS${hill.hillSize}`;
-const location = place
-  ? `${getFlag(place.event.countryCode)} ${place.event.city}, ${getCountryName(lang, place.event.countryCode)}`
-  : '';
+const location = `${getFlag(hill.countryCode)} ${hill.city}, ${getCountryName(lang, hill.countryCode)}`;
 ---
 
 <Layout
@@ -147,6 +145,26 @@ const location = place
           </tbody>
         </table>
       </div>
+    </section>
+  )}
+
+  {hill.lat !== null && hill.lon !== null && (
+    <section class="section" aria-labelledby="location-title">
+      <h3 class="section__title" id="location-title">
+        {dict.hillLocation}
+      </h3>
+      <PlacesMap
+        label={dict.hillLocation}
+        points={[
+          {
+            label: title,
+            note: `${hill.city}, ${getCountryName(lang, hill.countryCode)}`,
+            lat: hill.lat,
+            lon: hill.lon,
+            href: `https://www.openstreetmap.org/?mlat=${hill.lat}&mlon=${hill.lon}#map=14/${hill.lat}/${hill.lon}`,
+          },
+        ]}
+      />
     </section>
   )}
 </Layout>

@@ -261,6 +261,7 @@ function setupShortcuts(): void {
     g: () => document.getElementById('gallery-link')?.click(),
     u: () => document.getElementById('tournaments-link')?.click(),
     k: () => document.getElementById('hills-link')?.click(),
+    n: () => document.getElementById('nations-link')?.click(),
   };
 
   document.getElementById('shortcuts-open')?.addEventListener('click', open);

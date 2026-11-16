@@ -1,3 +1,5 @@
+import { z } from 'zod';
+import rawCareers from '../data/careers.json';
 import { toPersonKey } from './people';
 import type { CompetitionKind } from './schema';
 import { getSeasons } from './seasons';
@@ -18,7 +20,7 @@ export interface AthleteSummary {
   /** Top-three finishes in the overall standings. */
   overallPodiums: number;
   tournamentWins: string[];
-  /** Individual competition wins and podiums in the archived seasons. */
+  /** Career wins and podiums in individual World Cup competitions. */
   wins: number;
   podiums: number;
 }
@@ -39,6 +41,13 @@ export interface NationSummary {
   athletes: AthleteSummary[];
   teamResults: TeamResult[];
 }
+
+const careers = z
+  .record(
+    z.string(),
+    z.object({ wins: z.number(), second: z.number(), third: z.number() }),
+  )
+  .parse(rawCareers);
 
 const TEAM_KINDS: CompetitionKind[] = ['team', 'super-team', 'mixed-team'];
 
@@ -89,23 +98,17 @@ function addTournamentWins(athletes: AthleteSummary[]): void {
   }
 }
 
+/**
+ * Career wins and podiums in individual World Cup competitions, as counted by
+ * FIS (src/data/careers.json, refreshed by `npm run careers`).
+ */
 function addCompetitionResults(athletes: AthleteSummary[]): void {
-  const byId = new Map(athletes.map((item) => [item.fisCompetitorId, item]));
+  for (const athlete of athletes) {
+    const career = careers[String(athlete.fisCompetitorId)];
 
-  for (const season of getSeasons()) {
-    for (const event of season.events) {
-      for (const competition of event.competitions) {
-        for (const place of competition.results) {
-          const athlete = place.fisCompetitorId
-            ? byId.get(place.fisCompetitorId)
-            : undefined;
-
-          if (athlete) {
-            athlete.podiums += 1;
-            athlete.wins += place.rank === 1 ? 1 : 0;
-          }
-        }
-      }
+    if (career) {
+      athlete.wins = career.wins;
+      athlete.podiums = career.wins + career.second + career.third;
     }
   }
 }

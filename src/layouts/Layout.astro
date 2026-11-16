@@ -88,6 +88,14 @@ const navLinks = [
     hint: dict.shortcutHills,
   },
   {
+    id: 'nations-link',
+    section: 'nations',
+    key: 'n',
+    href: nationsPath(lang),
+    label: dict.nationsTitle,
+    hint: dict.shortcutNations,
+  },
+  {
     id: 'tournaments-link',
     section: 'tournaments',
     key: 'u',
@@ -220,10 +228,6 @@ const jsonLdText = jsonLd
 
     <footer class="footer">
       <p class="footer__line">
-        <a class="link" href={nationsPath(lang)}>
-          {dict.nationsTitle}
-        </a>
-        {' · '}
         <a class="link" href={creditsPath(lang)}>
           {dict.creditsTitle}
         </a>

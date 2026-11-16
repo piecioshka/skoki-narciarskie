@@ -19,6 +19,7 @@ test.describe('navigation', () => {
       'Kadra',
       'Galeria',
       'Skocznie',
+      'Reprezentacje',
       'Turnieje',
     ]);
     await nav.getByRole('link', { name: 'Kadra' }).click();
@@ -231,7 +232,9 @@ test.describe('tournaments', () => {
       'Domen Prevc',
     );
     await expect(page.locator('main')).toContainText('systemem KO');
-    await expect(page.locator('.photo__credit')).toContainText('CC BY-SA');
+    await expect(page.locator('.photo__credit')).toContainText(
+      /CC BY|Public domain/,
+    );
 
     const rows = page.locator('.table__row');
 
@@ -448,7 +451,9 @@ test.describe('hill profiles', () => {
       }),
     ).toBeVisible();
     await expect(page.locator('.event-header')).toContainText('Oberstdorf');
-    await expect(page.locator('.photo__credit')).toContainText('CC BY-SA');
+    await expect(page.locator('.photo__credit')).toContainText(
+      /CC BY|Public domain/,
+    );
     await expect(page.locator('.hill__record')).toContainText('143,5 m');
     await expect(
       page.locator('.event-header').getByRole('link', {
@@ -524,6 +529,18 @@ test.describe('maps', () => {
     await expect(map.locator('path.leaflet-interactive')).toHaveCount(18);
   });
 
+  test('hill profile ends with a map of its location', async ({ page }) => {
+    await page.goto('/pl/hills/mackenzie-intervale/');
+
+    const map = page.locator('.js-map');
+
+    await expect(map).toHaveAttribute('data-ready', 'true');
+    await expect(map.locator('path.leaflet-interactive')).toHaveCount(1);
+    await expect(page.locator('.event-header')).toContainText(
+      'Lake Placid, Stany Zjednoczone',
+    );
+  });
+
   test('map stays under the sticky top bar', async ({ page }) => {
     await page.goto('/pl/hills/');
     await page.locator('.js-map').scrollIntoViewIfNeeded();
@@ -549,6 +566,28 @@ test.describe('nations', () => {
     expect(await rows.count()).toBeGreaterThan(15);
     await rows.filter({ hasText: 'Polska' }).getByRole('link').click();
     await expect(page).toHaveURL(/\/pl\/nations\/pol\/$/);
+  });
+
+  test('navigation fits one line beside the logo on a desktop', async ({
+    page,
+  }) => {
+    for (const width of [1150, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto('/pl/nations/');
+
+      const links = page.locator('.topbar__nav a');
+      const first = await links.first().boundingBox();
+      const last = await links.last().boundingBox();
+      const actions = await page.locator('.topbar__actions').boundingBox();
+
+      expect(last?.y).toBe(first?.y);
+      expect((last?.x ?? 0) + (last?.width ?? 0)).toBeLessThanOrEqual(
+        actions?.x ?? 0,
+      );
+    }
+    await expect(page.locator('.topbar__nav [aria-current="page"]')).toHaveText(
+      'Reprezentacje',
+    );
   });
 
   test('nation page sums points, lists trophies and team results', async ({

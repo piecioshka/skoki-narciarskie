@@ -89,6 +89,7 @@ interface Dictionary {
   shortcutHills: string;
   hillsTitle: string;
   hillsLead: string;
+  hillLocation: string;
   tocTitle: string;
   hillsMap: string;
   eventsMap: string;
@@ -104,13 +105,14 @@ interface Dictionary {
   author: string;
   license: string;
   nationsTitle: string;
+  shortcutNations: string;
   nationsLead: (range: string) => string;
   nationLead: (range: string) => string;
   crystalGlobes: string;
   seasonsCount: string;
   bestRank: string;
   competitionWins: string;
-  competitionWinsNote: (range: string) => string;
+  competitionWinsNote: () => string;
   trophies: string;
   teamResults: string;
   teamResultsNote: (range: string) => string;
@@ -253,6 +255,7 @@ const pl: Dictionary = {
   navHills: 'Skocznie',
   shortcutHills: 'Skocznie',
   hillsTitle: 'Skocznie Pucharu Świata',
+  hillLocation: 'Lokalizacja',
   tocTitle: 'Na tej stronie',
   hillsMap: 'Mapa skoczni',
   eventsMap: 'Mapa zawodów',
@@ -270,6 +273,7 @@ const pl: Dictionary = {
   author: 'Autor',
   license: 'Licencja',
   nationsTitle: 'Reprezentacje',
+  shortcutNations: 'Reprezentacje',
   nationsLead: (range) =>
     `Punkty Pucharu Świata zdobyte przez zawodników każdego kraju w sezonach ${range}.`,
   nationLead: (range) =>
@@ -278,8 +282,8 @@ const pl: Dictionary = {
   seasonsCount: 'Sezony',
   bestRank: 'Najlepsze miejsce',
   competitionWins: 'Zwycięstwa / podia',
-  competitionWinsNote: (range) =>
-    `Zwycięstwa i podia w konkursach indywidualnych są liczone tylko z sezonów ${range}.`,
+  competitionWinsNote: () =>
+    'Zwycięstwa i podia to konkursy indywidualne Pucharu Świata w całej karierze, według FIS.',
   trophies: 'Trofea',
   teamResults: 'Wyniki drużyny',
   teamResultsNote: (range) =>
@@ -435,6 +439,7 @@ const en: Dictionary = {
   navHills: 'Hills',
   shortcutHills: 'Hills',
   hillsTitle: 'World Cup hills',
+  hillLocation: 'Location',
   tocTitle: 'On this page',
   hillsMap: 'Map of hills',
   eventsMap: 'Map of events',
@@ -452,7 +457,8 @@ const en: Dictionary = {
   photo: 'Photo',
   author: 'Author',
   license: 'License',
-  nationsTitle: 'National teams',
+  nationsTitle: 'Nations',
+  shortcutNations: 'National teams',
   nationsLead: (range) =>
     `World Cup points scored by the athletes of each country in the ${range} seasons.`,
   nationLead: (range) =>
@@ -461,8 +467,8 @@ const en: Dictionary = {
   seasonsCount: 'Seasons',
   bestRank: 'Best rank',
   competitionWins: 'Wins / podiums',
-  competitionWinsNote: (range) =>
-    `Wins and podiums in individual competitions are counted only from the ${range} seasons.`,
+  competitionWinsNote: () =>
+    'Wins and podiums are individual World Cup competitions over the whole career, as counted by FIS.',
   trophies: 'Trophies',
   teamResults: 'Team results',
   teamResultsNote: (range) =>
