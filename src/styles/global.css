@@ -1217,3 +1217,55 @@ a[href^='http']:not(.icon-button)::after {
 .banner-frame .banner {
   aspect-ratio: 5 / 1;
 }
+
+/* Hill profiles */
+
+.photo {
+  margin: 0 0 1.5rem;
+}
+
+.photo__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 26rem;
+  border-radius: var(--pal-radius);
+  object-fit: cover;
+}
+
+.photo__credit {
+  margin-top: 0.375rem;
+  font-size: var(--pal-font-size-sm);
+  color: var(--pal-text-muted);
+}
+
+.hill-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+}
+
+.hill-card__placeholder {
+  aspect-ratio: 5 / 3;
+  background: var(--brand-soft);
+}
+
+@media (max-width: 720px) {
+  /* Six links take two lines on a phone; the strip grows instead of scrolling. */
+  .topbar__nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.125rem 1rem;
+    height: auto;
+    min-height: var(--pal-control-height);
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    font-size: var(--pal-font-size-md);
+  }
+
+  .page {
+    padding-top: calc(1.5rem + 4rem);
+  }
+}

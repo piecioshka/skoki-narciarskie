@@ -7,4 +7,5 @@ export const SOURCE_AUTHOR_URL =
 export const STORAGE_KEYS = {
   theme: 'ski-jumping:theme',
   lang: 'ski-jumping:lang',
+  homeOnly: 'ski-jumping:home-only',
 } as const;

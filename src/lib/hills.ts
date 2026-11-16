@@ -1,3 +1,4 @@
+import type { ImageMetadata } from 'astro';
 import { z } from 'zod';
 import rawHills from '../data/hills.json';
 import { describeHill } from './schedule';
@@ -58,4 +59,36 @@ export function describeEventHill(
   ];
 
   return [names.join(', '), types.join(', ')].filter(Boolean).join(' · ');
+}
+
+const photos = import.meta.glob<ImageMetadata>(
+  '../assets/hills/*.{jpg,jpeg,png,webp}',
+  { eager: true, import: 'default' },
+);
+
+export function getAllHills(): Hill[] {
+  return [...hills].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function getHillPhoto(hill: Hill): ImageMetadata | undefined {
+  return hill.photo ? photos[`../assets/hills/${hill.photo.file}`] : undefined;
+}
+
+/** URL slug of a hill profile, built from the hill name. */
+export function getHillProfileSlug(hill: Hill): string {
+  const base = hill.name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/ß/g, 'ss')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+  const shared = hills.filter((item) => item.name === hill.name).length > 1;
+
+  return shared ? `${base}-hs${hill.hillSize}` : base;
+}
+
+/** Whether a hill is the one an event of any season was held on. */
+export function isEventHill(hill: Hill, event: SeasonEvent): boolean {
+  return getEventHills(event).some((item) => item.slug === hill.slug);
 }

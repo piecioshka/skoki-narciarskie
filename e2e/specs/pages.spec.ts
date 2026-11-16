@@ -18,6 +18,7 @@ test.describe('navigation', () => {
       'Klasyfikacja',
       'Kadra',
       'Galeria',
+      'Skocznie',
       'Turnieje',
     ]);
     await nav.getByRole('link', { name: 'Kadra' }).click();
@@ -104,6 +105,24 @@ test.describe('standings', () => {
     await expect(visibleRows.first()).toContainText('Kacper Tomasiak');
     await button.click();
     await expect(visibleRows).toHaveCount(77);
+  });
+
+  test('"Tylko Polacy" is remembered when switching seasons', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2022-2023/standings/');
+    await page.getByRole('button', { name: 'Tylko Polacy' }).click();
+    await page
+      .locator('.season-switch')
+      .getByRole('link', { name: '2021/2022' })
+      .click();
+    await expect(page).toHaveURL(/\/2021-2022\/standings\/$/);
+    await expect(
+      page.getByRole('button', { name: 'Tylko Polacy' }),
+    ).toHaveAttribute('aria-pressed', 'true');
+    await expect(
+      page.locator('.table__row:visible:not(.table__row--home)'),
+    ).toHaveCount(0);
   });
 
   test('column headers are written in sentence case', async ({ page }) => {
@@ -238,16 +257,25 @@ test.describe('tournaments', () => {
     await expect(page).toHaveURL(/\/pl\/tournaments\/four-hills\/$/);
   });
 
-  test('five navigation links fit a 320 px screen', async ({ page }) => {
+  test('navigation links stay inside a 320 px screen', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 800 });
     await page.goto('/pl/tournaments/raw-air/');
 
-    const last = await page.locator('.topbar__nav a').last().boundingBox();
-    const first = await page.locator('.topbar__nav a').first().boundingBox();
+    const links = page.locator('.topbar__nav a');
+    const count = await links.count();
 
-    expect((last?.x ?? 0) + (last?.width ?? 0)).toBeLessThanOrEqual(320);
-    expect(first?.x).toBeGreaterThanOrEqual(0);
-    expect(last?.y).toBe(first?.y);
+    for (let index = 0; index < count; index += 1) {
+      const box = await links.nth(index).boundingBox();
+
+      expect(box?.x).toBeGreaterThanOrEqual(0);
+      expect((box?.x ?? 0) + (box?.width ?? 0)).toBeLessThanOrEqual(320);
+    }
+
+    // The strip must not cover the page heading.
+    const nav = await page.locator('.topbar__nav').boundingBox();
+    const first = await page.locator('main > *').first().boundingBox();
+
+    expect(first?.y).toBeGreaterThanOrEqual((nav?.y ?? 0) + (nav?.height ?? 0));
   });
 });
 
@@ -344,6 +372,60 @@ test.describe('external links', () => {
 
     expect(await internal.evaluate(hasPictogram)).toBe(false);
     expect(await github.evaluate(hasPictogram)).toBe(false);
+  });
+});
+
+test.describe('hill profiles', () => {
+  test('index lists every hill with a photo', async ({ page }) => {
+    await page.goto('/pl/hills/');
+    await expect(page.locator('.tournament-card')).toHaveCount(19);
+    await expect(page.locator('.hill-card__image')).toHaveCount(19);
+    await expect(page.locator('.topbar__nav [aria-current="page"]')).toHaveText(
+      'Skocznie',
+    );
+  });
+
+  test('profile shows the photo with credit, data and past winners', async ({
+    page,
+  }) => {
+    await page.goto('/pl/hills/schattenbergschanze/');
+
+    await expect(
+      page.getByRole('heading', {
+        name: 'Schattenbergschanze HS137',
+        level: 2,
+      }),
+    ).toBeVisible();
+    await expect(page.locator('.event-header')).toContainText('Oberstdorf');
+    await expect(page.locator('.photo__credit')).toContainText('CC BY-SA');
+    await expect(page.locator('.hill__record')).toContainText('143,5 m');
+    await expect(
+      page.locator('.event-header').getByRole('link', {
+        name: 'Turniej Czterech Skoczni',
+      }),
+    ).toBeVisible();
+
+    const visits = page.locator('section', {
+      has: page.getByRole('heading', { name: 'Konkursy na tej skoczni' }),
+    });
+
+    await expect(
+      visits.locator('.table__row').filter({ hasText: '2025/2026' }),
+    ).toContainText('Domen Prevc');
+  });
+
+  test('event page links to the hill profile and credits list the photos', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/zakopane/');
+    await page.locator('.hill__title a').click();
+    await expect(page).toHaveURL(/\/pl\/hills\/wielka-krokiew\/$/);
+
+    await page.goto('/pl/credits/');
+    await expect(page.locator('.table__row').first()).toBeVisible();
+    expect(await page.locator('.table__row').count()).toBeGreaterThanOrEqual(
+      18,
+    );
   });
 });
 

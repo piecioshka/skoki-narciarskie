@@ -169,6 +169,15 @@ export const hillSchema = z.object({
   landingAngle: z.number().positive().nullable(),
   facts: z.array(z.object({ pl: z.string().min(1), en: z.string().min(1) })),
   sourceUrl: z.url(),
+  // Freely licensed photo from Wikimedia Commons, stored in src/assets/hills.
+  photo: z
+    .object({
+      file: z.string().min(1),
+      author: z.string().min(1),
+      license: z.string().min(1),
+      sourceUrl: z.url(),
+    })
+    .nullable(),
 });
 
 export type Hill = z.infer<typeof hillSchema>;

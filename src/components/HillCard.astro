@@ -1,6 +1,11 @@
 ---
 import { t, type Lang } from '../i18n';
-import { formatNumber, formatThousands } from '../lib/hills';
+import {
+  formatNumber,
+  formatThousands,
+  getHillProfileSlug,
+} from '../lib/hills';
+import { hillPath } from '../lib/paths';
 import { getNationFlag } from '../lib/links';
 import type { Hill } from '../lib/schema';
 
@@ -43,7 +48,9 @@ const rows = [
 
 <article class="hill" data-hill={hill.slug}>
   <h4 class="hill__title">
-    {hill.name} HS{hill.hillSize}
+    <a class="link" href={hillPath(lang, getHillProfileSlug(hill))}>
+      {hill.name} HS{hill.hillSize}
+    </a>
   </h4>
   {hill.record && (
     <p class="hill__record">

@@ -42,3 +42,15 @@ export function tournamentsPath(lang: Lang): string {
 export function tournamentPath(lang: Lang, slug: string): string {
   return url(`/${lang}/tournaments/${slug}/`);
 }
+
+export function hillsPath(lang: Lang): string {
+  return url(`/${lang}/hills/`);
+}
+
+export function hillPath(lang: Lang, slug: string): string {
+  return url(`/${lang}/hills/${slug}/`);
+}
+
+export function creditsPath(lang: Lang): string {
+  return url(`/${lang}/credits/`);
+}

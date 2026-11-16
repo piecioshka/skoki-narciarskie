@@ -31,7 +31,13 @@
         "en": "The first Lysgårdsbakken hill was opened on 15 February 1903 and its first record was 26.5 m."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/34-Innlandet/Lillehammer/0587-Lysg%C3%A5rd/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/34-Innlandet/Lillehammer/0587-Lysg%C3%A5rd/",
+    "photo": {
+      "file": "lillehammer.jpg",
+      "author": "Tokle",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lysg%C3%A5rd.JPG"
+    }
   },
   {
     "slug": "ruka",
@@ -65,7 +71,13 @@
         "en": "Ski jumping World Cup events have been held in Ruka regularly since the 2002/2003 season."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/FIN-Finnland/OL-Oulu/Kuusamo/0250-Ruka/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/FIN-Finnland/OL-Oulu/Kuusamo/0250-Ruka/",
+    "photo": {
+      "file": "ruka.jpg",
+      "author": "Nelinjo",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kuusamo_Rukatunturi_K-120.jpg"
+    }
   },
   {
     "slug": "wisla",
@@ -99,7 +111,13 @@
         "en": "The stands officially hold 8,000 spectators, of which 1,233 are seats."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/POL-Polen/S-Schlesien/Wis%C5%82a/0582-Malinka/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/POL-Polen/S-Schlesien/Wis%C5%82a/0582-Malinka/",
+    "photo": {
+      "file": "wisla.jpg",
+      "author": "D T G",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:POL_Wis%C5%82a_Malinka_DW942_pod_skoczni%C4%85_3.JPG"
+    }
   },
   {
     "slug": "titisee-neustadt",
@@ -133,7 +151,13 @@
         "en": "The longest jump, 150.0 m, was made by Maximilian Mechler on 21 January 2011 in the Continental Cup, but the official record remains Domen Prevc's 148.0 m."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BW-Baden-W%C3%BCrttemberg/Titisee-Neustadt/0599-Hochfirst/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BW-Baden-W%C3%BCrttemberg/Titisee-Neustadt/0599-Hochfirst/",
+    "photo": {
+      "file": "titisee-neustadt.jpg",
+      "author": "Taxiarchos228",
+      "license": "FAL",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hochfirstschanze3.jpg"
+    }
   },
   {
     "slug": "engelberg",
@@ -167,7 +191,13 @@
         "en": "The longest jump on the hill is 146.0 m by Kamil Stoch on 18 December 2020."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SUI-Schweiz/Engelberg/0528/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SUI-Schweiz/Engelberg/0528/",
+    "photo": {
+      "file": "engelberg.jpg",
+      "author": "Samuel Weitzbauer",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Engelberg_HS140_(2).jpg"
+    }
   },
   {
     "slug": "oberstdorf",
@@ -201,7 +231,13 @@
         "en": "The official record, 143.5 m by Sigurd Pettersen, dates from 29 December 2003 and has not been beaten in an official competition since."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BY-Bayern/Oberstdorf/0001-Erdinger+Arena/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BY-Bayern/Oberstdorf/0001-Erdinger+Arena/",
+    "photo": {
+      "file": "oberstdorf.jpg",
+      "author": "Arne Müseler",
+      "license": "CC BY-SA 3.0 de",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ski_jumping_hill_oberstdorf_germany_2.jpg"
+    }
   },
   {
     "slug": "garmisch-partenkirchen",
@@ -235,7 +271,13 @@
         "en": "On 30 December 2023 the hill hosted its first ever competition under floodlights, a women's World Cup event."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BY-Bayern/Garmisch-Partenkirchen/0593-Olympiaschanze/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BY-Bayern/Garmisch-Partenkirchen/0593-Olympiaschanze/",
+    "photo": {
+      "file": "garmisch-partenkirchen.jpg",
+      "author": "Samuel Weitzbauer",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Garmisch-Partenkirchen_HS140.jpg"
+    }
   },
   {
     "slug": "innsbruck",
@@ -269,7 +311,13 @@
         "en": "In 2019 the hill hosted the individual and team large hill events of the World Championships in Seefeld."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/AUT-%C3%96sterreich/T-Tirol/Innsbruck/0049-Bergisel/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/AUT-%C3%96sterreich/T-Tirol/Innsbruck/0049-Bergisel/",
+    "photo": {
+      "file": "innsbruck.jpg",
+      "author": "Veit Mueller",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bergisel-N.jpg"
+    }
   },
   {
     "slug": "bischofshofen",
@@ -303,7 +351,13 @@
         "en": "The official record, 145.0 m, was set by Dawid Kubacki on 6 January 2019 in qualification for the Four Hills Tournament event."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/AUT-%C3%96sterreich/S-Salzburg/Bischofshofen/0033-Sepp+Bradl-Skistadion/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/AUT-%C3%96sterreich/S-Salzburg/Bischofshofen/0033-Sepp+Bradl-Skistadion/",
+    "photo": {
+      "file": "bischofshofen.jpg",
+      "author": "junafani",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul-Ausserleitner-Schanze.JPG"
+    }
   },
   {
     "slug": "zakopane",
@@ -337,7 +391,13 @@
         "en": "Since 1989 the hill has been named after Stanisław Marusarz, and before that, in 1932-1989, its patron was Karol Stryjeński."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/POL-Polen/K-Kleinpolen/Zakopane/0584-Wielka+Krokiew/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/POL-Polen/K-Kleinpolen/Zakopane/0584-Wielka+Krokiew/",
+    "photo": {
+      "file": "zakopane.jpg",
+      "author": "Kapitel",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zakopane_Wielka_Krokiew_dron_(1).jpg"
+    }
   },
   {
     "slug": "sapporo",
@@ -371,7 +431,13 @@
         "en": "The hill record, 148.5 m, was set by Kamil Stoch on 26 January 2019 in a World Cup event."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/JPN-Japan/01-Hokkaid%C5%8D/Sapporo/0377-%C5%8Ckurayama/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/JPN-Japan/01-Hokkaid%C5%8D/Sapporo/0377-%C5%8Ckurayama/",
+    "photo": {
+      "file": "sapporo.jpg",
+      "author": "Bmeg at Japanese Wikipedia",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ohkurayama_Schanze.jpg"
+    }
   },
   {
     "slug": "willingen",
@@ -405,7 +471,13 @@
         "en": "In the first international competition in 1951 Sepp Weiler set a record of 101 m that stood for almost 20 years."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/HE-Hessen/Willingen/0600-M%C3%BChlenkopf/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/HE-Hessen/Willingen/0600-M%C3%BChlenkopf/",
+    "photo": {
+      "file": "willingen.jpg",
+      "author": "Jeses",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Willingen_Skijumping_2007-2.JPG"
+    }
   },
   {
     "slug": "lake-placid",
@@ -439,7 +511,13 @@
         "en": "The first hill at this site, with a K-point of 35 m, was opened on 21 February 1921 in front of 3,000 spectators."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/USA-Vereinigte+Staaten/NY-New+York/Lake+Placid/0576-Olympic+Jumping+Complex/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/USA-Vereinigte+Staaten/NY-New+York/Lake+Placid/0576-Olympic+Jumping+Complex/",
+    "photo": {
+      "file": "lake-placid.jpg",
+      "author": "Jeff M for Short from Bowmanville, Canada.",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ski_Jump_Lake_Placid.jpg"
+    }
   },
   {
     "slug": "lahti",
@@ -473,7 +551,13 @@
         "en": "The ski jumping World Cup has been held in Lahti every year since the first season, 1979/1980."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/FIN-Finnland/ES-S%C3%BCdfinnland/Lahti/0251-Salpausselk%C3%A4/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/FIN-Finnland/ES-S%C3%BCdfinnland/Lahti/0251-Salpausselk%C3%A4/",
+    "photo": {
+      "file": "lahti.jpg",
+      "author": "sdbj",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lahti_skijumps.jpg"
+    }
   },
   {
     "slug": "vikersund",
@@ -507,7 +591,13 @@
         "en": "The hill was opened in February 1936 as a K90 hill, and the first jump, 86 m, was made by Reidar Andersen."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/06-Buskerud/Vikersund/0005-Skiflygingsbakke/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/06-Buskerud/Vikersund/0005-Skiflygingsbakke/",
+    "photo": {
+      "file": "vikersund.jpg",
+      "author": "Stefan.straub",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vikersundbakken-2012.jpg"
+    }
   },
   {
     "slug": "falun-normal",
@@ -541,7 +631,13 @@
         "en": "Both Lugnet hills were built for the 1974 Nordic World Ski Championships."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SWE-Schweden/Falun/0568-Lugnet/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SWE-Schweden/Falun/0568-Lugnet/",
+    "photo": {
+      "file": "falun.jpg",
+      "author": "m.prinke",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Falun_lugnet_skijump_1.jpg"
+    }
   },
   {
     "slug": "falun-large",
@@ -575,7 +671,13 @@
         "en": "In 2025 the hill size of the large hill was reduced from 134 to 132 meters."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SWE-Schweden/Falun/0568-Lugnet/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SWE-Schweden/Falun/0568-Lugnet/",
+    "photo": {
+      "file": "falun.jpg",
+      "author": "m.prinke",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Falun_lugnet_skijump_1.jpg"
+    }
   },
   {
     "slug": "oslo",
@@ -609,7 +711,13 @@
         "en": "The current structure was built after the demolition of the previous hill, which began in autumn 2008."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/03-Oslo/Oslo/0588-Holmenkollen/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/03-Oslo/Oslo/0588-Holmenkollen/",
+    "photo": {
+      "file": "oslo.jpg",
+      "author": "Ralf Roletschek",
+      "license": "CC BY-SA 1.0 fi",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:19-08-25-Oslo_Holmenkollenbakken-RalfR.jpg"
+    }
   },
   {
     "slug": "planica",
@@ -643,6 +751,12 @@
         "en": "A total of 29 ski flying world records have been set at Letalnica."
       }
     ],
-    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SLO-Slowenien/Planica/0475-Letalnica/"
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SLO-Slowenien/Planica/0475-Letalnica/",
+    "photo": {
+      "file": "planica.jpg",
+      "author": "JRE 246,5",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Planica_HS225.JPG"
+    }
   }
 ]

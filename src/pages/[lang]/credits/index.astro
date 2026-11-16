@@ -1,0 +1,69 @@
+---
+import { LANGUAGES, t, type Lang } from '../../../i18n';
+import Layout from '../../../layouts/Layout.astro';
+import { getAllHills } from '../../../lib/hills';
+import { getAvatarCredits } from '../../../lib/people';
+
+export function getStaticPaths() {
+  return LANGUAGES.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+// Two Falun hills share one photo, so credits are listed once per file.
+const hillCredits = getAllHills().flatMap((hill) =>
+  hill.photo ? [{ subject: hill.name, ...hill.photo }] : [],
+);
+const credits = [...hillCredits, ...getAvatarCredits()].filter(
+  (credit, index, all) =>
+    all.findIndex((item) => item.file === credit.file) === index,
+);
+---
+
+<Layout
+  lang={lang}
+  title={dict.creditsTitle}
+  description={dict.creditsLead}
+  path="/credits/"
+>
+  <section class="section" aria-labelledby="credits-title">
+    <h2 class="section__title section__title--page" id="credits-title">
+      {dict.creditsTitle}
+    </h2>
+    <p class="lead">{dict.creditsLead}</p>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="table__cell" scope="col">
+              {dict.photo}
+            </th>
+            <th class="table__cell" scope="col">
+              {dict.author}
+            </th>
+            <th class="table__cell" scope="col">
+              {dict.license}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {credits.map((credit) => (
+            <tr class="table__row">
+              <td class="table__cell">
+                <a class="table__link" href={credit.sourceUrl}>
+                  {credit.subject}
+                </a>
+              </td>
+              <td class="table__cell">{credit.author}</td>
+              <td class="table__cell">{credit.license}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</Layout>

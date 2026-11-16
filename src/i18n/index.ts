@@ -86,6 +86,20 @@ interface Dictionary {
   partOf: string;
   hillTypes: Record<'normal' | 'large' | 'flying', string>;
   podium: string;
+  navHills: string;
+  shortcutHills: string;
+  hillsTitle: string;
+  hillsLead: string;
+  hillProfile: string;
+  hillCompetitions: string;
+  hillTournaments: string;
+  winner: string;
+  photoBy: string;
+  creditsTitle: string;
+  creditsLead: string;
+  photo: string;
+  author: string;
+  license: string;
   officials: string;
   officialRoles: Record<OfficialRole, string>;
   switchLanguage: string;
@@ -223,6 +237,21 @@ const pl: Dictionary = {
     flying: 'skocznia mamucia',
   },
   podium: 'Podium',
+  navHills: 'Skocznie',
+  shortcutHills: 'Skocznie',
+  hillsTitle: 'Skocznie Pucharu Świata',
+  hillsLead: 'Obiekty z kalendarza: parametry, rekordy i rozegrane konkursy.',
+  hillProfile: 'Profil skoczni',
+  hillCompetitions: 'Konkursy na tej skoczni',
+  hillTournaments: 'Turnieje',
+  winner: 'Zwycięzca',
+  photoBy: 'Zdjęcie',
+  creditsTitle: 'Autorzy zdjęć',
+  creditsLead:
+    'Zdjęcia pochodzą z Wikimedia Commons i są używane na wolnych licencjach.',
+  photo: 'Zdjęcie',
+  author: 'Autor',
+  license: 'Licencja',
   officials: 'Sędziowie i delegaci',
   officialRoles: {
     'technical-delegate': 'Delegat techniczny FIS',
@@ -372,6 +401,22 @@ const en: Dictionary = {
     flying: 'flying hill',
   },
   podium: 'Podium',
+  navHills: 'Hills',
+  shortcutHills: 'Hills',
+  hillsTitle: 'World Cup hills',
+  hillsLead:
+    'Venues of the calendar: profile data, records and past competitions.',
+  hillProfile: 'Hill profile',
+  hillCompetitions: 'Competitions on this hill',
+  hillTournaments: 'Tournaments',
+  winner: 'Winner',
+  photoBy: 'Photo',
+  creditsTitle: 'Photo credits',
+  creditsLead:
+    'Photos come from Wikimedia Commons and are used under free licenses.',
+  photo: 'Photo',
+  author: 'Author',
+  license: 'License',
   officials: 'Judges and delegates',
   officialRoles: {
     'technical-delegate': 'FIS Technical Delegate',

@@ -1,0 +1,152 @@
+---
+import { Image } from 'astro:assets';
+import HillCard from '../../../../components/HillCard.astro';
+import Icon from '../../../../components/Icon.astro';
+import { getCountryName, LANGUAGES, t, type Lang } from '../../../../i18n';
+import Layout from '../../../../layouts/Layout.astro';
+import {
+  getAllHills,
+  getHillPhoto,
+  getHillProfileSlug,
+  isEventHill,
+} from '../../../../lib/hills';
+import { getFlag, getNationFlag } from '../../../../lib/links';
+import { eventPath, hillsPath, tournamentPath } from '../../../../lib/paths';
+import type { Hill } from '../../../../lib/schema';
+import { formatSeasonLabel, getSeasons } from '../../../../lib/seasons';
+import { getTournaments } from '../../../../lib/tournaments';
+
+export function getStaticPaths() {
+  return LANGUAGES.flatMap((lang) =>
+    getAllHills().map((hill) => ({
+      params: { lang, slug: getHillProfileSlug(hill) },
+      props: { lang, hill },
+    })),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  hill: Hill;
+}
+
+const { lang, hill } = Astro.props;
+const dict = t(lang);
+const photo = getHillPhoto(hill);
+// Every competition held on this hill in the seasons the site knows.
+const visits = getSeasons().flatMap((season) =>
+  season.events
+    .filter((event) => isEventHill(hill, event))
+    .flatMap((event) =>
+      event.competitions
+        .filter(
+          (item) =>
+            item.kind !== 'qualification' &&
+            (item.hillSize === null || item.hillSize === hill.hillSize),
+        )
+        .map((competition) => ({ season, event, competition })),
+    ),
+);
+const [place] = visits;
+const tournaments = getTournaments().filter((tournament) =>
+  Object.values(tournament.events).some((slugs) =>
+    slugs.includes(hill.eventSlug),
+  ),
+);
+const title = `${hill.name} HS${hill.hillSize}`;
+const location = place
+  ? `${getFlag(place.event.countryCode)} ${place.event.city}, ${getCountryName(lang, place.event.countryCode)}`
+  : '';
+---
+
+<Layout
+  lang={lang}
+  title={title}
+  description={hill.facts[0]?.[lang] ?? title}
+  path={`/hills/${getHillProfileSlug(hill)}/`}
+>
+  <a class="link back-link" href={hillsPath(lang)}>
+    <Icon name="arrow-left" />
+    {dict.hillsTitle}
+  </a>
+
+  <header class="event-header">
+    <h2 class="event-header__title">{title}</h2>
+    {location && <p class="event-header__meta">{location}</p>}
+    {tournaments.map((tournament) => (
+      <p class="event-header__meta">
+        {dict.partOf}:{' '}
+        <a class="link" href={tournamentPath(lang, tournament.slug)}>
+          {tournament.name}
+        </a>
+      </p>
+    ))}
+  </header>
+
+  {photo && hill.photo && (
+    <figure class="photo">
+      <Image class="photo__image" src={photo} width={1200} alt={hill.name} />
+      <figcaption class="photo__credit">
+        {dict.photoBy}:{' '}
+        <a class="link" href={hill.photo.sourceUrl}>
+          {`${hill.photo.author}, ${hill.photo.license}`}
+        </a>
+      </figcaption>
+    </figure>
+  )}
+
+  <section class="section">
+    <HillCard lang={lang} hill={hill} />
+  </section>
+
+  {visits.length > 0 && (
+    <section class="section" aria-labelledby="visits-title">
+      <h3 class="section__title" id="visits-title">
+        {dict.hillCompetitions}
+      </h3>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="table__cell" scope="col">
+                {dict.season}
+              </th>
+              <th class="table__cell" scope="col">
+                {dict.program}
+              </th>
+              <th class="table__cell" scope="col">
+                {dict.winner}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {visits.map(({ season, event, competition }) => {
+              const [first] = competition.results;
+
+              return (
+                <tr class="table__row">
+                  <td class="table__cell">{formatSeasonLabel(season.id)}</td>
+                  <td class="table__cell">
+                    <a
+                      class="table__link"
+                      href={eventPath(lang, season.id, event.slug)}
+                    >
+                      {`${competition.date} · ${dict.kinds[competition.kind]}`}
+                    </a>
+                  </td>
+                  <td class="table__cell">
+                    {competition.status === 'cancelled'
+                      ? dict.statuses.cancelled
+                      : first
+                        ? `${getNationFlag(first.nation)} ${first.name ?? first.nation}`
+                        : ''}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+</Layout>

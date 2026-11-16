@@ -134,15 +134,36 @@ function updateUpcomingEvents(): void {
   });
 }
 
+function read(key: string): string | null {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function applyHomeOnly(button: HTMLElement, pressed: boolean): void {
+  // The table follows its toolbar, so the filter stays per table.
+  const table = button.closest('.table-tools')?.nextElementSibling;
+
+  button.setAttribute('aria-pressed', String(pressed));
+  table?.classList.toggle('table-wrap--home-only', pressed);
+}
+
 function setupHomeOnlyFilters(): void {
-  for (const button of all('.js-home-only')) {
+  const buttons = all('.js-home-only');
+  // The choice is remembered, so it survives switching between seasons.
+  const remembered = read(STORAGE_KEYS.homeOnly) === 'true';
+
+  for (const button of buttons) {
+    applyHomeOnly(button, remembered);
     button.addEventListener('click', () => {
       const pressed = button.getAttribute('aria-pressed') !== 'true';
-      // The table follows its toolbar, so the filter stays per table.
-      const table = button.closest('.table-tools')?.nextElementSibling;
 
-      button.setAttribute('aria-pressed', String(pressed));
-      table?.classList.toggle('table-wrap--home-only', pressed);
+      store(STORAGE_KEYS.homeOnly, String(pressed));
+      for (const other of buttons) {
+        applyHomeOnly(other, pressed);
+      }
     });
   }
 }
@@ -182,6 +203,7 @@ function setupShortcuts(): void {
     p: () => document.getElementById('team-link')?.click(),
     g: () => document.getElementById('gallery-link')?.click(),
     u: () => document.getElementById('tournaments-link')?.click(),
+    k: () => document.getElementById('hills-link')?.click(),
   };
 
   document.getElementById('shortcuts-open')?.addEventListener('click', open);
