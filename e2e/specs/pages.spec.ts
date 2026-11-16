@@ -70,7 +70,7 @@ test.describe('active navigation link', () => {
 });
 
 test.describe('standings', () => {
-  test('before the season shows a notice and the previous final table', async ({
+  test('before the season shows a notice and no table of another season', async ({
     page,
   }) => {
     await page.goto('/pl/2026-2027/standings/');
@@ -78,11 +78,14 @@ test.describe('standings', () => {
     await expect(page.locator('.notice')).toContainText(
       'Sezon jeszcze się nie zaczął',
     );
+    await expect(page.locator('.table')).toHaveCount(0);
     await expect(
-      page.getByRole('heading', {
-        name: 'Końcowa klasyfikacja sezonu 2025/2026',
-      }),
-    ).toBeVisible();
+      page.getByRole('heading', { name: /Końcowa klasyfikacja/ }),
+    ).toHaveCount(0);
+  });
+
+  test('a finished season shows its final table', async ({ page }) => {
+    await page.goto('/pl/2025-2026/standings/');
 
     const rows = page.locator('.table__row');
 
@@ -96,7 +99,7 @@ test.describe('standings', () => {
   test('"Tylko Polacy" hides athletes from other countries', async ({
     page,
   }) => {
-    await page.goto('/pl/2026-2027/standings/');
+    await page.goto('/pl/2025-2026/standings/');
 
     const button = page.getByRole('button', { name: 'Tylko Polacy' });
     const visibleRows = page.locator('.table__row:visible');
@@ -129,7 +132,7 @@ test.describe('standings', () => {
   });
 
   test('column headers are written in sentence case', async ({ page }) => {
-    await page.goto('/pl/2026-2027/standings/');
+    await page.goto('/pl/2025-2026/standings/');
 
     const transform = await page
       .locator('th')
