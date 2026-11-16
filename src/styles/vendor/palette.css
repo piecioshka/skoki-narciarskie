@@ -1,0 +1,102 @@
+:root {
+  --pal-radius: 6px;
+  --pal-control-height: 2.5rem;
+  --pal-font-family:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --pal-font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --pal-font-size-xs: 0.6875rem;
+  --pal-font-size-sm: 0.75rem;
+  --pal-font-size-md: 0.8125rem;
+  --pal-font-size-base: 0.9375rem;
+  --pal-font-size-lg: 1.125rem;
+  --pal-font-size-xl: 1.375rem;
+  --pal-font-size-xxl: 1.75rem;
+  --pal-font-size-display: 2.25rem;
+  --pal-font-weight-regular: 400;
+  --pal-font-weight-medium: 500;
+  --pal-font-weight-semibold: 600;
+  --pal-font-weight-bold: 700;
+  --pal-line-height-tight: 1.2;
+  --pal-line-height-base: 1.5;
+  --pal-letter-spacing-tight: -0.01em;
+  --pal-letter-spacing-wide: 0.04em;
+  --pal-letter-spacing-label: 0.06em;
+  --pal-bg: #ffffff;
+  --pal-bg-panel: #fafafa;
+  --pal-border: #e2e2e2;
+  --pal-control-border: #868b95;
+  --pal-text: #16181d;
+  --pal-text-muted: #6a6f7a;
+  --pal-accent: #16181d;
+  --pal-accent-text: #ffffff;
+  --pal-positive: #089981;
+  --pal-negative: #f23645;
+  --pal-on-positive: #15171b;
+  --pal-on-negative: #15171b;
+  --pal-positive-text: #067a67;
+  --pal-negative-text: #d9202f;
+  --pal-warning: #f5a623;
+  --pal-warning-text: #8a5a00;
+  --pal-on-warning: #15171b;
+  --pal-focus: #3b6cf0;
+  --pal-button-bg: #f0f1f3;
+  --pal-button-bg-hover: #e6e8eb;
+  --pal-button-shadow: 0 1px 1px rgb(22 24 29 / 0.08);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --pal-bg: #15171b;
+    --pal-bg-panel: #1c1f24;
+    --pal-border: #2e3239;
+    --pal-control-border: #6b717c;
+    --pal-text: #eceef2;
+    --pal-text-muted: #9aa1ad;
+    --pal-accent: #eceef2;
+    --pal-accent-text: #15171b;
+    --pal-positive: #089981;
+    --pal-negative: #f23645;
+    --pal-on-positive: #15171b;
+    --pal-on-negative: #15171b;
+    --pal-positive-text: #2bb89f;
+    --pal-negative-text: #ff6b78;
+    --pal-warning: #f5a623;
+    --pal-warning-text: #f5a623;
+    --pal-on-warning: #15171b;
+    --pal-focus: #7ea0ff;
+    --pal-button-bg: #2a2e35;
+    --pal-button-bg-hover: #333841;
+    --pal-button-shadow: 0 1px 1px rgb(0 0 0 / 0.4);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --pal-bg: #15171b;
+  --pal-bg-panel: #1c1f24;
+  --pal-border: #2e3239;
+  --pal-control-border: #6b717c;
+  --pal-text: #eceef2;
+  --pal-text-muted: #9aa1ad;
+  --pal-accent: #eceef2;
+  --pal-accent-text: #15171b;
+  --pal-positive: #089981;
+  --pal-negative: #f23645;
+  --pal-on-positive: #15171b;
+  --pal-on-negative: #15171b;
+  --pal-positive-text: #2bb89f;
+  --pal-negative-text: #ff6b78;
+  --pal-warning: #f5a623;
+  --pal-warning-text: #f5a623;
+  --pal-on-warning: #15171b;
+  --pal-focus: #7ea0ff;
+  --pal-button-bg: #2a2e35;
+  --pal-button-bg-hover: #333841;
+  --pal-button-shadow: 0 1px 1px rgb(0 0 0 / 0.4);
+  color-scheme: dark;
+}

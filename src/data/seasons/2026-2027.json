@@ -1,0 +1,745 @@
+{
+  "id": "2026-2027",
+  "broadcasters": {
+    "hbo-max": {
+      "name": "HBO Max",
+      "url": "https://www.hbomax.com/pl/pl"
+    },
+    "eurosport": {
+      "name": "Eurosport",
+      "url": "https://www.eurosport.pl/"
+    },
+    "tvn": {
+      "name": "TVN (Player)",
+      "url": "https://player.pl/"
+    },
+    "tvp": {
+      "name": "TVP Sport",
+      "url": "https://sport.tvp.pl/transmisje"
+    }
+  },
+  "events": [
+    {
+      "slug": "lillehammer",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63024,
+      "city": "Lillehammer",
+      "countryCode": "NO",
+      "hillName": "Lysgårdsbakken",
+      "timeZone": "Europe/Oslo",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7796,
+          "kind": "qualification",
+          "hillSize": 140,
+          "date": "2026-11-20",
+          "time": "14:00",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7794,
+          "kind": "mixed-team",
+          "hillSize": 140,
+          "date": "2026-11-20",
+          "time": "16:00",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7795,
+          "kind": "individual",
+          "hillSize": 140,
+          "date": "2026-11-21",
+          "time": "16:50",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 8010,
+          "kind": "qualification",
+          "hillSize": 140,
+          "date": "2026-11-22",
+          "time": "14:30",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7797,
+          "kind": "individual",
+          "hillSize": 140,
+          "date": "2026-11-22",
+          "time": "16:00",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "ruka",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63025,
+      "city": "Ruka",
+      "countryCode": "FI",
+      "hillName": "Rukatunturi",
+      "timeZone": "Europe/Helsinki",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7801,
+          "kind": "qualification",
+          "hillSize": 142,
+          "date": "2026-11-27",
+          "time": "18:15",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7802,
+          "kind": "individual",
+          "hillSize": 142,
+          "date": "2026-11-28",
+          "time": "17:30",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7803,
+          "kind": "individual",
+          "hillSize": 142,
+          "date": "2026-11-29",
+          "time": "15:20",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "wisla",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63026,
+      "city": "Wisła",
+      "countryCode": "PL",
+      "hillName": "Skocznia im. Adama Małysza",
+      "timeZone": "Europe/Warsaw",
+      "broadcasts": ["tvp"],
+      "competitions": [
+        {
+          "fisRaceId": 7804,
+          "kind": "qualification",
+          "hillSize": 134,
+          "date": "2026-12-04",
+          "time": "18:00",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7805,
+          "kind": "individual",
+          "hillSize": 134,
+          "date": "2026-12-05",
+          "time": "16:00",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 8015,
+          "kind": "qualification",
+          "hillSize": 134,
+          "date": "2026-12-06",
+          "time": "14:00",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7806,
+          "kind": "individual",
+          "hillSize": 134,
+          "date": "2026-12-06",
+          "time": "15:40",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "titisee-neustadt",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63027,
+      "city": "Titisee-Neustadt",
+      "countryCode": "DE",
+      "hillName": "Hochfirstschanze",
+      "timeZone": "Europe/Berlin",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7808,
+          "kind": "team",
+          "hillSize": 142,
+          "date": "2026-12-11",
+          "time": "16:10",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7809,
+          "kind": "qualification",
+          "hillSize": 142,
+          "date": "2026-12-12",
+          "time": "10:00",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7810,
+          "kind": "individual",
+          "hillSize": 142,
+          "date": "2026-12-12",
+          "time": "15:40",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7811,
+          "kind": "individual",
+          "hillSize": 142,
+          "date": "2026-12-13",
+          "time": "15:30",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "engelberg",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63028,
+      "city": "Engelberg",
+      "countryCode": "CH",
+      "hillName": "Gross-Titlis-Schanze",
+      "timeZone": "Europe/Zurich",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7813,
+          "kind": "qualification",
+          "hillSize": 140,
+          "date": "2026-12-18",
+          "time": "17:00",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7815,
+          "kind": "individual",
+          "hillSize": 140,
+          "date": "2026-12-19",
+          "time": "16:00",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7816,
+          "kind": "individual",
+          "hillSize": 140,
+          "date": "2026-12-20",
+          "time": "16:00",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "oberstdorf",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 63030,
+      "city": "Oberstdorf",
+      "countryCode": "DE",
+      "hillName": "Schattenbergschanze",
+      "timeZone": "Europe/Berlin",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7828,
+          "kind": "qualification",
+          "hillSize": 137,
+          "date": "2026-12-28",
+          "time": "17:45",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7830,
+          "kind": "individual",
+          "hillSize": 137,
+          "date": "2026-12-29",
+          "time": "16:30",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "garmisch-partenkirchen",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 63031,
+      "city": "Garmisch-Partenkirchen",
+      "countryCode": "DE",
+      "hillName": "Große Olympiaschanze",
+      "timeZone": "Europe/Berlin",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7832,
+          "kind": "qualification",
+          "hillSize": 142,
+          "date": "2026-12-31",
+          "time": "16:30",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7835,
+          "kind": "individual",
+          "hillSize": 142,
+          "date": "2027-01-01",
+          "time": "16:30",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "innsbruck",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 63032,
+      "city": "Innsbruck",
+      "countryCode": "AT",
+      "hillName": "Bergiselschanze",
+      "timeZone": "Europe/Vienna",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7837,
+          "kind": "qualification",
+          "hillSize": 128,
+          "date": "2027-01-02",
+          "time": "17:45",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7839,
+          "kind": "individual",
+          "hillSize": 128,
+          "date": "2027-01-03",
+          "time": "16:30",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "bischofshofen",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 63033,
+      "city": "Bischofshofen",
+      "countryCode": "AT",
+      "hillName": "Paul-Außerleitner-Schanze",
+      "timeZone": "Europe/Vienna",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7841,
+          "kind": "qualification",
+          "hillSize": 142,
+          "date": "2027-01-05",
+          "time": "16:40",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7843,
+          "kind": "individual",
+          "hillSize": 142,
+          "date": "2027-01-06",
+          "time": "16:30",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "zakopane",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63037,
+      "city": "Zakopane",
+      "countryCode": "PL",
+      "hillName": "Wielka Krokiew",
+      "timeZone": "Europe/Warsaw",
+      "broadcasts": ["tvp"],
+      "competitions": [
+        {
+          "fisRaceId": 7856,
+          "kind": "qualification",
+          "hillSize": 140,
+          "date": "2027-01-15",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7855,
+          "kind": "team",
+          "hillSize": 140,
+          "date": "2027-01-16",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7857,
+          "kind": "individual",
+          "hillSize": 140,
+          "date": "2027-01-17",
+          "time": null,
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "sapporo",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63038,
+      "city": "Sapporo",
+      "countryCode": "JP",
+      "hillName": "Ōkurayama",
+      "timeZone": "Asia/Tokyo",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7861,
+          "kind": "qualification",
+          "hillSize": 137,
+          "date": "2027-01-22",
+          "time": "14:45",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7858,
+          "kind": "mixed-team",
+          "hillSize": 137,
+          "date": "2027-01-23",
+          "time": "13:30",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7862,
+          "kind": "individual",
+          "hillSize": 137,
+          "date": "2027-01-23",
+          "time": "16:15",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 8043,
+          "kind": "qualification",
+          "hillSize": 137,
+          "date": "2027-01-24",
+          "time": "09:30",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7863,
+          "kind": "individual",
+          "hillSize": 137,
+          "date": "2027-01-24",
+          "time": "11:00",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "willingen",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63039,
+      "city": "Willingen",
+      "countryCode": "DE",
+      "hillName": "Mühlenkopfschanze",
+      "timeZone": "Europe/Berlin",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7866,
+          "kind": "qualification",
+          "hillSize": 147,
+          "date": "2027-01-29",
+          "time": "14:15",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7864,
+          "kind": "mixed-team",
+          "hillSize": 147,
+          "date": "2027-01-29",
+          "time": "16:10",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7868,
+          "kind": "individual",
+          "hillSize": 147,
+          "date": "2027-01-30",
+          "time": "16:10",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7870,
+          "kind": "individual",
+          "hillSize": 147,
+          "date": "2027-01-31",
+          "time": "16:05",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "lake-placid",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63040,
+      "city": "Lake Placid",
+      "countryCode": "US",
+      "hillName": "MacKenzie Intervale",
+      "timeZone": "America/New_York",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7872,
+          "kind": "qualification",
+          "hillSize": 128,
+          "date": "2027-02-06",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7874,
+          "kind": "individual",
+          "hillSize": 128,
+          "date": "2027-02-06",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7876,
+          "kind": "mixed-team",
+          "hillSize": 128,
+          "date": "2027-02-07",
+          "time": null,
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "lahti",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63041,
+      "city": "Lahti",
+      "countryCode": "FI",
+      "hillName": "Salpausselkä",
+      "timeZone": "Europe/Helsinki",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7881,
+          "kind": "team",
+          "hillSize": 130,
+          "date": "2027-02-13",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7880,
+          "kind": "qualification",
+          "hillSize": 130,
+          "date": "2027-02-14",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7882,
+          "kind": "individual",
+          "hillSize": 130,
+          "date": "2027-02-14",
+          "time": null,
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "vikersund",
+      "type": "world-cup",
+      "tags": ["ski-flying"],
+      "fisEventId": 63043,
+      "city": "Vikersund",
+      "countryCode": "NO",
+      "hillName": "Vikersundbakken",
+      "timeZone": "Europe/Oslo",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7887,
+          "kind": "qualification",
+          "hillSize": 240,
+          "date": "2027-02-19",
+          "time": "16:15",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7888,
+          "kind": "individual",
+          "hillSize": 240,
+          "date": "2027-02-20",
+          "time": "15:30",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7889,
+          "kind": "individual",
+          "hillSize": 240,
+          "date": "2027-02-21",
+          "time": "16:15",
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "falun",
+      "type": "world-championships",
+      "tags": [],
+      "fisEventId": 63108,
+      "city": "Falun",
+      "countryCode": "SE",
+      "hillName": "Lugnet",
+      "timeZone": "Europe/Stockholm",
+      "broadcasts": [],
+      "competitions": [
+        {
+          "fisRaceId": 7922,
+          "kind": "mixed-team",
+          "hillSize": 95,
+          "date": "2027-02-27",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7923,
+          "kind": "qualification",
+          "hillSize": 95,
+          "date": "2027-02-28",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7924,
+          "kind": "individual",
+          "hillSize": 95,
+          "date": "2027-02-28",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7926,
+          "kind": "team",
+          "hillSize": 132,
+          "date": "2027-03-04",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7929,
+          "kind": "qualification",
+          "hillSize": 132,
+          "date": "2027-03-06",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7930,
+          "kind": "individual",
+          "hillSize": 132,
+          "date": "2027-03-06",
+          "time": null,
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "oslo",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 63044,
+      "city": "Oslo",
+      "countryCode": "NO",
+      "hillName": "Holmenkollbakken",
+      "timeZone": "Europe/Oslo",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7891,
+          "kind": "qualification",
+          "hillSize": 134,
+          "date": "2027-03-13",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7893,
+          "kind": "individual",
+          "hillSize": 134,
+          "date": "2027-03-13",
+          "time": null,
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7895,
+          "kind": "individual",
+          "hillSize": 134,
+          "date": "2027-03-14",
+          "time": null,
+          "status": "scheduled"
+        }
+      ]
+    },
+    {
+      "slug": "planica",
+      "type": "world-cup",
+      "tags": ["ski-flying"],
+      "fisEventId": 63045,
+      "city": "Planica",
+      "countryCode": "SI",
+      "hillName": "Letalnica bratov Gorišek",
+      "timeZone": "Europe/Ljubljana",
+      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "competitions": [
+        {
+          "fisRaceId": 7896,
+          "kind": "qualification",
+          "hillSize": 240,
+          "date": "2027-03-18",
+          "time": "10:00",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7897,
+          "kind": "individual",
+          "hillSize": 240,
+          "date": "2027-03-19",
+          "time": "15:00",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7899,
+          "kind": "team",
+          "hillSize": 240,
+          "date": "2027-03-20",
+          "time": "09:45",
+          "status": "scheduled"
+        },
+        {
+          "fisRaceId": 7900,
+          "kind": "individual",
+          "hillSize": 240,
+          "date": "2027-03-21",
+          "time": "10:00",
+          "status": "scheduled"
+        }
+      ]
+    }
+  ]
+}
