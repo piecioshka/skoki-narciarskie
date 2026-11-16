@@ -27,10 +27,6 @@ export function standingsPath(lang: Lang, seasonId: string): string {
   return url(`/${lang}/${seasonId}/standings/`);
 }
 
-export function teamPath(lang: Lang, seasonId: string): string {
-  return url(`/${lang}/${seasonId}/polish-team/`);
-}
-
 export function galleryPath(lang: Lang, seasonId: string): string {
   return url(`/${lang}/${seasonId}/gallery/`);
 }
@@ -61,4 +57,8 @@ export function nationsPath(lang: Lang): string {
 
 export function nationPath(lang: Lang, nation: string): string {
   return url(`/${lang}/nations/${nation.toLowerCase()}/`);
+}
+
+export function rulesPath(lang: Lang): string {
+  return url(`/${lang}/rules/`);
 }

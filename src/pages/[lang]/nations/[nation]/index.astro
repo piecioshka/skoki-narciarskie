@@ -1,5 +1,6 @@
 ---
 import Avatar from '../../../../components/Avatar.astro';
+import NationalTeams from '../../../../components/NationalTeams.astro';
 import Icon from '../../../../components/Icon.astro';
 import { LANGUAGES, t, type Lang } from '../../../../i18n';
 import Layout from '../../../../layouts/Layout.astro';
@@ -12,7 +13,8 @@ import {
 import { getNations, type NationSummary } from '../../../../lib/nations';
 import { eventPath, nationsPath } from '../../../../lib/paths';
 import { formatSeasonLabel, getSeasons } from '../../../../lib/seasons';
-import { getStandingsSeasons } from '../../../../lib/standings';
+import { getStandingsSeasons, getTeams } from '../../../../lib/standings';
+import { getCurrentSeason } from '../../../../lib/seasons';
 
 export function getStaticPaths() {
   return LANGUAGES.flatMap((lang) =>
@@ -31,6 +33,9 @@ interface Props {
 const { lang, summary } = Astro.props;
 const dict = t(lang);
 const name = getNationName(lang, summary.nation);
+// Team rosters exist only for Poland, for the current season.
+const teams =
+  summary.nation === 'POL' ? getTeams(getCurrentSeason().id) : undefined;
 const title = `${getNationFlag(summary.nation)} ${name}`.trim();
 const standingsSeasons = getStandingsSeasons();
 const pointsRange = `${formatSeasonLabel(standingsSeasons[standingsSeasons.length - 1] ?? '')} - ${formatSeasonLabel(standingsSeasons[0] ?? '')}`;
@@ -55,6 +60,8 @@ const resultsRange = `${formatSeasonLabel(archive[archive.length - 1] ?? '')} - 
       {`${dict.athletes}: ${summary.athletes.length} · ${dict.points}: ${formatThousands(summary.points)} · ${dict.crystalGlobes}: ${summary.titles}`}
     </p>
   </header>
+
+  {teams && <NationalTeams lang={lang} teams={teams} />}
 
   <section class="section" aria-labelledby="athletes-title">
     <h3 class="section__title" id="athletes-title">

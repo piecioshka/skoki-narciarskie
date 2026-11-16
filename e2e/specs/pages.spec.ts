@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 const PAGES = [
   '/pl/2026-2027/standings/',
-  '/pl/2026-2027/polish-team/',
+  '/pl/nations/pol/',
   '/pl/2026-2027/gallery/',
   '/pl/2026-2027/wisla/',
 ];
@@ -16,25 +16,25 @@ test.describe('navigation', () => {
     await expect(nav.getByRole('link')).toHaveText([
       'Terminarz',
       'Klasyfikacja',
-      'Kadra',
       'Galeria',
       'Skocznie',
       'Reprezentacje',
       'Turnieje',
+      'Zasady',
     ]);
-    await nav.getByRole('link', { name: 'Kadra' }).click();
-    await expect(page).toHaveURL(/\/pl\/2026-2027\/polish-team\/$/);
+    await nav.getByRole('link', { name: 'Reprezentacje' }).click();
+    await expect(page).toHaveURL(/\/pl\/nations\/$/);
   });
 
-  test('"r", "p" and "g" open standings, team and gallery', async ({
+  test('"r", "n" and "g" open standings, nations and gallery', async ({
     page,
   }) => {
     await page.goto('/pl/');
     await page.keyboard.press('r');
     await expect(page).toHaveURL(/\/standings\/$/);
     await page.waitForLoadState('load');
-    await page.keyboard.press('p');
-    await expect(page).toHaveURL(/\/polish-team\/$/);
+    await page.keyboard.press('n');
+    await expect(page).toHaveURL(/\/nations\/$/);
     // The shortcut handler exists only once the page script has run.
     await page.waitForLoadState('load');
     await page.keyboard.press('g');
@@ -47,7 +47,7 @@ test.describe('active navigation link', () => {
     ['/pl/2026-2027/', 'Terminarz'],
     ['/pl/2026-2027/wisla/', 'Terminarz'],
     ['/pl/2026-2027/standings/', 'Klasyfikacja'],
-    ['/pl/2026-2027/polish-team/', 'Kadra'],
+    ['/pl/nations/pol/', 'Reprezentacje'],
     ['/pl/2026-2027/gallery/', 'Galeria'],
   ] as const;
 
@@ -152,7 +152,7 @@ test.describe('standings', () => {
 
 test.describe('polish team', () => {
   test('shows both teams with their head coaches', async ({ page }) => {
-    await page.goto('/pl/2026-2027/polish-team/');
+    await page.goto('/pl/nations/pol/');
 
     const teamA = page.locator('.team[data-team="a"]');
     const teamB = page.locator('.team[data-team="b"]');
@@ -509,6 +509,39 @@ test.describe('hill profiles', () => {
   });
 });
 
+test.describe('rules', () => {
+  test('explains scoring with diagrams', async ({ page }) => {
+    await page.goto('/pl/rules/');
+
+    await expect(
+      page.getByRole('heading', { name: 'Zasady skoków narciarskich' }),
+    ).toBeVisible();
+    await expect(page.getByRole('img', { name: 'Skocznia' })).toBeVisible();
+    await expect(page.locator('.formula__part')).toHaveText([
+      'odległość',
+      'styl',
+      'wiatr',
+      'belka',
+    ]);
+    // 18.5, 19, 19, 19.5, 18: the highest and the lowest mark are dropped.
+    await expect(page.locator('.marks__item--dropped')).toHaveText([
+      '19,5',
+      '18',
+    ]);
+    await expect(page.locator('.marks__item--total')).toHaveText('56,5');
+    await expect(page.locator('main')).toContainText('60 + 5 x 1,8 = 69');
+    await expect(page.locator('.topbar__nav [aria-current="page"]')).toHaveText(
+      'Zasady',
+    );
+  });
+
+  test('is available in English', async ({ page }) => {
+    await page.goto('/en/rules/');
+    await expect(page.locator('.marks__item--total')).toHaveText('56.5');
+    await expect(page.locator('main')).toContainText('telemark');
+  });
+});
+
 test.describe('event tags', () => {
   test('championships, Four Hills and ski flying use different colors', async ({
     page,
@@ -632,6 +665,24 @@ test.describe('nations', () => {
     ).toContainText('Stany Zjednoczone');
     await page.reload();
     await expect(button).toHaveAttribute('aria-pressed', 'true');
+  });
+
+  test('wins and podiums cover the whole career', async ({ page }) => {
+    await page.goto('/pl/nations/pol/');
+    await expect(
+      page.locator('.table__row').filter({ hasText: 'Kamil Stoch' }),
+    ).toContainText('39 / 80');
+    await expect(
+      page.locator('.table__row').filter({ hasText: 'Adam Malysz' }),
+    ).toContainText('39 / 92');
+  });
+
+  test('old team address leads to the Polish nation page', async ({ page }) => {
+    await page.goto('/pl/2026-2027/polish-team/');
+    await expect(page).toHaveURL(/\/pl\/nations\/pol\/$/);
+    await expect(page.locator('.team')).toHaveCount(2);
+    await page.goto('/pl/nations/aut/');
+    await expect(page.locator('.team')).toHaveCount(0);
   });
 
   test('nation page sums points, lists trophies and team results', async ({

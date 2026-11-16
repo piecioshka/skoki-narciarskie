@@ -3,16 +3,17 @@ import '../styles/global.css';
 import Icon from '../components/Icon.astro';
 import { REPOSITORY_URL, STORAGE_KEYS } from '../config';
 import { LANGUAGES, otherLang, t, type Lang } from '../i18n';
+import { rules } from '../i18n/rules';
 import {
   galleryPath,
   creditsPath,
   nationsPath,
+  rulesPath,
   hillsPath,
   tournamentsPath,
   homePath,
   seasonPath,
   standingsPath,
-  teamPath,
   url,
 } from '../lib/paths';
 import { getCurrentSeason } from '../lib/seasons';
@@ -38,8 +39,8 @@ const canonical = absolute(`/${lang}${path}`);
 // `/2026-2027/standings/` belongs to "standings"; the season page and every
 // event page below it belong to "schedule"; the home page to no section.
 const [seasonSegment, sectionSegment] = path.split('/').filter(Boolean);
-const sections = ['standings', 'polish-team', 'gallery'];
-const topLevel = ['tournaments', 'hills', 'nations'];
+const sections = ['standings', 'gallery'];
+const topLevel = ['tournaments', 'hills', 'nations', 'rules'];
 const activeSection =
   seasonSegment === undefined || seasonSegment === 'credits'
     ? undefined
@@ -62,14 +63,6 @@ const navLinks = [
     href: standingsPath(lang, season.id),
     label: dict.navStandings,
     hint: dict.shortcutStandings,
-  },
-  {
-    id: 'team-link',
-    section: 'polish-team',
-    key: 'p',
-    href: teamPath(lang, season.id),
-    label: dict.navTeam,
-    hint: dict.shortcutTeam,
   },
   {
     id: 'gallery-link',
@@ -102,6 +95,14 @@ const navLinks = [
     href: tournamentsPath(lang),
     label: dict.navTournaments,
     hint: dict.shortcutTournaments,
+  },
+  {
+    id: 'rules-link',
+    section: 'rules',
+    key: 'z',
+    href: rulesPath(lang),
+    label: rules[lang].nav,
+    hint: rules[lang].title,
   },
 ];
 const flags: Record<Lang, string> = { pl: '🇵🇱', en: '🇬🇧' };

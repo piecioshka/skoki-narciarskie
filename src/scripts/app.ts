@@ -278,11 +278,11 @@ function setupShortcuts(): void {
     h: () => document.getElementById('home-link')?.click(),
     s: () => document.getElementById('schedule-link')?.click(),
     r: () => document.getElementById('standings-link')?.click(),
-    p: () => document.getElementById('team-link')?.click(),
     g: () => document.getElementById('gallery-link')?.click(),
     u: () => document.getElementById('tournaments-link')?.click(),
     k: () => document.getElementById('hills-link')?.click(),
     n: () => document.getElementById('nations-link')?.click(),
+    z: () => document.getElementById('rules-link')?.click(),
   };
 
   document.getElementById('shortcuts-open')?.addEventListener('click', open);

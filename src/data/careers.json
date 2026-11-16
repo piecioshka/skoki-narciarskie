@@ -1,1 +1,927 @@
-{}
+{
+  "445": {
+    "wins": 36,
+    "second": 44,
+    "third": 28
+  },
+  "639": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "973": {
+    "wins": 23,
+    "second": 31,
+    "third": 26
+  },
+  "2950": {
+    "wins": 7,
+    "second": 13,
+    "third": 14
+  },
+  "4062": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "8315": {
+    "wins": 1,
+    "second": 1,
+    "third": 2
+  },
+  "9382": {
+    "wins": 6,
+    "second": 3,
+    "third": 8
+  },
+  "9834": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "12274": {
+    "wins": 2,
+    "second": 2,
+    "third": 4
+  },
+  "13322": {
+    "wins": 0,
+    "second": 1,
+    "third": 3
+  },
+  "13860": {
+    "wins": 2,
+    "second": 3,
+    "third": 2
+  },
+  "14558": {
+    "wins": 1,
+    "second": 2,
+    "third": 2
+  },
+  "17013": {
+    "wins": 0,
+    "second": 1,
+    "third": 5
+  },
+  "17750": {
+    "wins": 2,
+    "second": 2,
+    "third": 5
+  },
+  "18137": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "18712": {
+    "wins": 15,
+    "second": 12,
+    "third": 11
+  },
+  "20810": {
+    "wins": 20,
+    "second": 25,
+    "third": 18
+  },
+  "23169": {
+    "wins": 18,
+    "second": 12,
+    "third": 10
+  },
+  "23305": {
+    "wins": 3,
+    "second": 2,
+    "third": 2
+  },
+  "23321": {
+    "wins": 9,
+    "second": 3,
+    "third": 9
+  },
+  "23833": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "23834": {
+    "wins": 16,
+    "second": 10,
+    "third": 12
+  },
+  "24547": {
+    "wins": 0,
+    "second": 1,
+    "third": 1
+  },
+  "24742": {
+    "wins": 2,
+    "second": 0,
+    "third": 1
+  },
+  "25074": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "25115": {
+    "wins": 1,
+    "second": 0,
+    "third": 1
+  },
+  "25171": {
+    "wins": 8,
+    "second": 6,
+    "third": 15
+  },
+  "25780": {
+    "wins": 2,
+    "second": 8,
+    "third": 5
+  },
+  "26815": {
+    "wins": 0,
+    "second": 1,
+    "third": 4
+  },
+  "27594": {
+    "wins": 6,
+    "second": 7,
+    "third": 7
+  },
+  "28755": {
+    "wins": 2,
+    "second": 6,
+    "third": 8
+  },
+  "29280": {
+    "wins": 2,
+    "second": 2,
+    "third": 2
+  },
+  "29533": {
+    "wins": 17,
+    "second": 13,
+    "third": 33
+  },
+  "29975": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "30815": {
+    "wins": 1,
+    "second": 1,
+    "third": 1
+  },
+  "31292": {
+    "wins": 0,
+    "second": 0,
+    "third": 0
+  },
+  "31329": {
+    "wins": 5,
+    "second": 7,
+    "third": 11
+  },
+  "32297": {
+    "wins": 7,
+    "second": 6,
+    "third": 14
+  },
+  "32824": {
+    "wins": 5,
+    "second": 4,
+    "third": 6
+  },
+  "34374": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "35237": {
+    "wins": 1,
+    "second": 5,
+    "third": 2
+  },
+  "35456": {
+    "wins": 0,
+    "second": 2,
+    "third": 3
+  },
+  "35605": {
+    "wins": 11,
+    "second": 15,
+    "third": 6
+  },
+  "35716": {
+    "wins": 1,
+    "second": 0,
+    "third": 2
+  },
+  "35788": {
+    "wins": 4,
+    "second": 9,
+    "third": 7
+  },
+  "37284": {
+    "wins": 39,
+    "second": 27,
+    "third": 26
+  },
+  "38651": {
+    "wins": 2,
+    "second": 1,
+    "third": 1
+  },
+  "39390": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "39416": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "40690": {
+    "wins": 1,
+    "second": 4,
+    "third": 5
+  },
+  "40881": {
+    "wins": 2,
+    "second": 3,
+    "third": 2
+  },
+  "42577": {
+    "wins": 1,
+    "second": 1,
+    "third": 0
+  },
+  "43223": {
+    "wins": 0,
+    "second": 1,
+    "third": 2
+  },
+  "43447": {
+    "wins": 9,
+    "second": 1,
+    "third": 2
+  },
+  "44772": {
+    "wins": 5,
+    "second": 9,
+    "third": 9
+  },
+  "47271": {
+    "wins": 15,
+    "second": 10,
+    "third": 7
+  },
+  "47446": {
+    "wins": 6,
+    "second": 4,
+    "third": 1
+  },
+  "49572": {
+    "wins": 1,
+    "second": 2,
+    "third": 1
+  },
+  "51194": {
+    "wins": 5,
+    "second": 2,
+    "third": 2
+  },
+  "51865": {
+    "wins": 8,
+    "second": 6,
+    "third": 8
+  },
+  "54682": {
+    "wins": 28,
+    "second": 14,
+    "third": 10
+  },
+  "55170": {
+    "wins": 2,
+    "second": 3,
+    "third": 2
+  },
+  "57499": {
+    "wins": 4,
+    "second": 6,
+    "third": 8
+  },
+  "57568": {
+    "wins": 8,
+    "second": 9,
+    "third": 10
+  },
+  "57861": {
+    "wins": 0,
+    "second": 1,
+    "third": 3
+  },
+  "58668": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  },
+  "61496": {
+    "wins": 17,
+    "second": 21,
+    "third": 20
+  },
+  "62975": {
+    "wins": 2,
+    "second": 5,
+    "third": 7
+  },
+  "63739": {
+    "wins": 0,
+    "second": 3,
+    "third": 6
+  },
+  "66092": {
+    "wins": 18,
+    "second": 17,
+    "third": 14
+  },
+  "67141": {
+    "wins": 0,
+    "second": 2,
+    "third": 2
+  },
+  "67638": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "68416": {
+    "wins": 1,
+    "second": 1,
+    "third": 0
+  },
+  "68743": {
+    "wins": 12,
+    "second": 13,
+    "third": 11
+  },
+  "68745": {
+    "wins": 23,
+    "second": 30,
+    "third": 23
+  },
+  "72563": {
+    "wins": 22,
+    "second": 15,
+    "third": 16
+  },
+  "72592": {
+    "wins": 0,
+    "second": 1,
+    "third": 1
+  },
+  "73166": {
+    "wins": 4,
+    "second": 6,
+    "third": 7
+  },
+  "73228": {
+    "wins": 39,
+    "second": 22,
+    "third": 19
+  },
+  "73229": {
+    "wins": 4,
+    "second": 9,
+    "third": 6
+  },
+  "73232": {
+    "wins": 2,
+    "second": 7,
+    "third": 14
+  },
+  "73277": {
+    "wins": 0,
+    "second": 2,
+    "third": 2
+  },
+  "73289": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "73762": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "74412": {
+    "wins": 3,
+    "second": 2,
+    "third": 2
+  },
+  "75148": {
+    "wins": 2,
+    "second": 5,
+    "third": 3
+  },
+  "75190": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "75837": {
+    "wins": 2,
+    "second": 1,
+    "third": 4
+  },
+  "90236": {
+    "wins": 1,
+    "second": 0,
+    "third": 1
+  },
+  "90663": {
+    "wins": 10,
+    "second": 10,
+    "third": 8
+  },
+  "99965": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  },
+  "99976": {
+    "wins": 6,
+    "second": 2,
+    "third": 2
+  },
+  "100406": {
+    "wins": 0,
+    "second": 2,
+    "third": 0
+  },
+  "101217": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  },
+  "101911": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "102251": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  },
+  "102486": {
+    "wins": 3,
+    "second": 6,
+    "third": 4
+  },
+  "104161": {
+    "wins": 5,
+    "second": 2,
+    "third": 4
+  },
+  "106377": {
+    "wins": 3,
+    "second": 4,
+    "third": 6
+  },
+  "106378": {
+    "wins": 53,
+    "second": 20,
+    "third": 15
+  },
+  "108891": {
+    "wins": 3,
+    "second": 5,
+    "third": 7
+  },
+  "110540": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "111251": {
+    "wins": 11,
+    "second": 9,
+    "third": 18
+  },
+  "111930": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "112295": {
+    "wins": 1,
+    "second": 4,
+    "third": 3
+  },
+  "112735": {
+    "wins": 1,
+    "second": 5,
+    "third": 3
+  },
+  "112973": {
+    "wins": 1,
+    "second": 4,
+    "third": 3
+  },
+  "113115": {
+    "wins": 0,
+    "second": 3,
+    "third": 4
+  },
+  "117102": {
+    "wins": 1,
+    "second": 1,
+    "third": 0
+  },
+  "117441": {
+    "wins": 3,
+    "second": 12,
+    "third": 13
+  },
+  "117450": {
+    "wins": 1,
+    "second": 3,
+    "third": 2
+  },
+  "117496": {
+    "wins": 2,
+    "second": 4,
+    "third": 1
+  },
+  "117835": {
+    "wins": 5,
+    "second": 8,
+    "third": 13
+  },
+  "118113": {
+    "wins": 2,
+    "second": 1,
+    "third": 0
+  },
+  "122992": {
+    "wins": 1,
+    "second": 2,
+    "third": 2
+  },
+  "123925": {
+    "wins": 1,
+    "second": 0,
+    "third": 1
+  },
+  "124118": {
+    "wins": 1,
+    "second": 4,
+    "third": 2
+  },
+  "124157": {
+    "wins": 2,
+    "second": 0,
+    "third": 1
+  },
+  "126003": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "128281": {
+    "wins": 0,
+    "second": 0,
+    "third": 2
+  },
+  "128286": {
+    "wins": 46,
+    "second": 38,
+    "third": 45
+  },
+  "128447": {
+    "wins": 39,
+    "second": 14,
+    "third": 20
+  },
+  "128618": {
+    "wins": 8,
+    "second": 12,
+    "third": 3
+  },
+  "128621": {
+    "wins": 15,
+    "second": 13,
+    "third": 14
+  },
+  "128806": {
+    "wins": 3,
+    "second": 4,
+    "third": 9
+  },
+  "130646": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "131309": {
+    "wins": 24,
+    "second": 23,
+    "third": 15
+  },
+  "131935": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "134802": {
+    "wins": 1,
+    "second": 2,
+    "third": 3
+  },
+  "135119": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  },
+  "138409": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "138474": {
+    "wins": 3,
+    "second": 1,
+    "third": 3
+  },
+  "139429": {
+    "wins": 3,
+    "second": 3,
+    "third": 2
+  },
+  "140329": {
+    "wins": 4,
+    "second": 6,
+    "third": 2
+  },
+  "140331": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "142646": {
+    "wins": 0,
+    "second": 2,
+    "third": 4
+  },
+  "144610": {
+    "wins": 0,
+    "second": 0,
+    "third": 0
+  },
+  "147015": {
+    "wins": 0,
+    "second": 1,
+    "third": 1
+  },
+  "147547": {
+    "wins": 8,
+    "second": 12,
+    "third": 7
+  },
+  "147549": {
+    "wins": 6,
+    "second": 10,
+    "third": 11
+  },
+  "149215": {
+    "wins": 2,
+    "second": 1,
+    "third": 1
+  },
+  "149455": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "153777": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  },
+  "155620": {
+    "wins": 37,
+    "second": 24,
+    "third": 18
+  },
+  "155672": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  },
+  "156281": {
+    "wins": 2,
+    "second": 0,
+    "third": 2
+  },
+  "157213": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  },
+  "160506": {
+    "wins": 0,
+    "second": 1,
+    "third": 2
+  },
+  "162711": {
+    "wins": 11,
+    "second": 21,
+    "third": 11
+  },
+  "164621": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "164624": {
+    "wins": 1,
+    "second": 3,
+    "third": 0
+  },
+  "166435": {
+    "wins": 3,
+    "second": 5,
+    "third": 8
+  },
+  "166436": {
+    "wins": 0,
+    "second": 1,
+    "third": 3
+  },
+  "171479": {
+    "wins": 5,
+    "second": 8,
+    "third": 4
+  },
+  "172117": {
+    "wins": 1,
+    "second": 1,
+    "third": 1
+  },
+  "173399": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "174244": {
+    "wins": 9,
+    "second": 20,
+    "third": 14
+  },
+  "174246": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  },
+  "174872": {
+    "wins": 9,
+    "second": 6,
+    "third": 10
+  },
+  "175089": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  },
+  "179422": {
+    "wins": 0,
+    "second": 1,
+    "third": 2
+  },
+  "180709": {
+    "wins": 25,
+    "second": 13,
+    "third": 3
+  },
+  "180889": {
+    "wins": 1,
+    "second": 0,
+    "third": 0
+  },
+  "181027": {
+    "wins": 0,
+    "second": 0,
+    "third": 2
+  },
+  "182407": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "182547": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "182815": {
+    "wins": 0,
+    "second": 1,
+    "third": 1
+  },
+  "185562": {
+    "wins": 14,
+    "second": 6,
+    "third": 3
+  },
+  "186516": {
+    "wins": 23,
+    "second": 12,
+    "third": 7
+  },
+  "188590": {
+    "wins": 5,
+    "second": 4,
+    "third": 6
+  },
+  "189105": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "194909": {
+    "wins": 1,
+    "second": 5,
+    "third": 2
+  },
+  "196090": {
+    "wins": 1,
+    "second": 2,
+    "third": 4
+  },
+  "196759": {
+    "wins": 11,
+    "second": 5,
+    "third": 11
+  },
+  "196784": {
+    "wins": 0,
+    "second": 0,
+    "third": 1
+  },
+  "197640": {
+    "wins": 5,
+    "second": 15,
+    "third": 8
+  },
+  "200666": {
+    "wins": 2,
+    "second": 1,
+    "third": 1
+  },
+  "209633": {
+    "wins": 0,
+    "second": 1,
+    "third": 2
+  },
+  "212387": {
+    "wins": 0,
+    "second": 1,
+    "third": 1
+  },
+  "212601": {
+    "wins": 11,
+    "second": 3,
+    "third": 7
+  },
+  "219184": {
+    "wins": 0,
+    "second": 1,
+    "third": 3
+  },
+  "229566": {
+    "wins": 1,
+    "second": 3,
+    "third": 2
+  },
+  "239625": {
+    "wins": 0,
+    "second": 1,
+    "third": 1
+  },
+  "253455": {
+    "wins": 2,
+    "second": 1,
+    "third": 2
+  },
+  "274243": {
+    "wins": 0,
+    "second": 1,
+    "third": 0
+  }
+}

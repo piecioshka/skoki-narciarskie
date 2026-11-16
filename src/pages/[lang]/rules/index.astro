@@ -1,0 +1,238 @@
+---
+import { LANGUAGES, type Lang } from '../../../i18n';
+import { rules } from '../../../i18n/rules';
+import Layout from '../../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return LANGUAGES.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const text = rules[lang];
+// Sample style marks: the highest and the lowest one do not count.
+const marks = [18.5, 19, 19, 19.5, 18];
+const dropped = [
+  marks.indexOf(Math.max(...marks)),
+  marks.indexOf(Math.min(...marks)),
+];
+const styleTotal = marks
+  .filter((_, index) => !dropped.includes(index))
+  .reduce((sum, mark) => sum + mark, 0);
+const format = (value: number): string =>
+  lang === 'pl' ? String(value).replace('.', ',') : String(value);
+---
+
+<Layout lang={lang} title={text.title} description={text.lead} path="/rules/">
+  <section class="section" aria-labelledby="rules-title">
+    <h2 class="section__title section__title--page" id="rules-title">
+      {text.title}
+    </h2>
+    <p class="lead">{text.lead}</p>
+  </section>
+
+  <section class="section rule" aria-labelledby="rule-hill">
+    <h3 class="rule__title" id="rule-hill">
+      {text.hill.title}
+    </h3>
+    <figure class="diagram">
+      <svg
+        class="diagram__svg"
+        viewBox="0 0 640 300"
+        role="img"
+        aria-label={text.hill.title}
+      >
+        <path
+          class="diagram__fill"
+          d="M20 40 C120 44 170 96 214 132 L214 146 C290 240 380 262 470 262 L620 262 L620 290 L20 290 Z"
+        ></path>
+        <path class="diagram__line" d="M20 40 C120 44 170 96 214 132"></path>
+        <path
+          class="diagram__line"
+          d="M214 146 C290 240 380 262 470 262 L620 262"
+        ></path>
+        <path class="diagram__flight" d="M214 132 Q300 118 398 252"></path>
+        <line
+          class="diagram__mark diagram__mark--k"
+          x1="372"
+          y1="236"
+          x2="372"
+          y2="262"
+        ></line>
+        <line
+          class="diagram__mark diagram__mark--hs"
+          x1="428"
+          y1="246"
+          x2="428"
+          y2="272"
+        ></line>
+        <text class="diagram__label" x="60" y="28">
+          {text.hill.inrun}
+        </text>
+        <text class="diagram__label" x="222" y="124">
+          {text.hill.takeoff}
+        </text>
+        <text class="diagram__label diagram__label--k" x="352" y="226">
+          K
+        </text>
+        <text class="diagram__label diagram__label--hs" x="436" y="240">
+          HS
+        </text>
+        <text class="diagram__label" x="250" y="284">
+          {text.hill.landing}
+        </text>
+        <text class="diagram__label" x="520" y="252">
+          {text.hill.outrun}
+        </text>
+      </svg>
+    </figure>
+    <ul class="rule__list">
+      {text.hill.points.map((point) => (
+        <li>{point}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section rule" aria-labelledby="rule-score">
+    <h3 class="rule__title" id="rule-score">
+      {text.score.title}
+    </h3>
+    <p class="prose">{text.score.intro}</p>
+    <div class="formula" role="img" aria-label={text.score.formulaLabel}>
+      <span class="formula__part formula__part--distance">
+        {text.score.distance}
+      </span>
+      <span class="formula__sign">+</span>
+      <span class="formula__part formula__part--style">{text.score.style}</span>
+      <span class="formula__sign">±</span>
+      <span class="formula__part formula__part--wind">{text.score.wind}</span>
+      <span class="formula__sign">±</span>
+      <span class="formula__part formula__part--gate">{text.score.gate}</span>
+    </div>
+  </section>
+
+  <section class="section rule" aria-labelledby="rule-distance">
+    <h3 class="rule__title" id="rule-distance">
+      {text.distance.title}
+    </h3>
+    <p class="prose">{text.distance.intro}</p>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="table__cell" scope="col">
+              {text.distance.hillColumn}
+            </th>
+            <th class="table__cell table__cell--number" scope="col">
+              {text.distance.baseColumn}
+            </th>
+            <th class="table__cell table__cell--number" scope="col">
+              {text.distance.meterColumn}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {text.distance.rows.map((row) => (
+            <tr class="table__row">
+              <td class="table__cell">{row.hill}</td>
+              <td class="table__cell table__cell--number">{row.base}</td>
+              <td class="table__cell table__cell--number table__cell--strong">
+                {row.meter}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="note">{text.distance.example}</p>
+  </section>
+
+  <section class="section rule" aria-labelledby="rule-style">
+    <h3 class="rule__title" id="rule-style">
+      {text.style.title}
+    </h3>
+    <p class="prose">{text.style.intro}</p>
+    <div class="marks" role="img" aria-label={text.style.marksLabel}>
+      {marks.map((mark, index) => (
+        <span
+          class:list={[
+            'marks__item',
+            dropped.includes(index) && 'marks__item--dropped',
+          ]}
+        >
+          {format(mark)}
+        </span>
+      ))}
+      <span class="formula__sign">=</span>
+      <span class="marks__item marks__item--total">{format(styleTotal)}</span>
+    </div>
+    <ul class="rule__list">
+      {text.style.points.map((point) => (
+        <li>{point}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section rule" aria-labelledby="rule-wind">
+    <h3 class="rule__title" id="rule-wind">
+      {text.wind.title}
+    </h3>
+    <div class="wind">
+      <figure class="wind__case">
+        <svg class="diagram__svg" viewBox="0 0 280 120" aria-hidden="true">
+          <path class="diagram__flight" d="M20 40 Q130 10 250 100"></path>
+          <path
+            class="wind__arrow wind__arrow--head"
+            d="M240 50 L150 50 M168 38 L150 50 L168 62"
+          ></path>
+        </svg>
+        <figcaption class="wind__caption">{text.wind.head}</figcaption>
+      </figure>
+      <figure class="wind__case">
+        <svg class="diagram__svg" viewBox="0 0 280 120" aria-hidden="true">
+          <path class="diagram__flight" d="M20 40 Q130 10 250 100"></path>
+          <path
+            class="wind__arrow wind__arrow--tail"
+            d="M40 80 L130 80 M112 68 L130 80 L112 92"
+          ></path>
+        </svg>
+        <figcaption class="wind__caption">{text.wind.tail}</figcaption>
+      </figure>
+    </div>
+    <ul class="rule__list">
+      {text.wind.points.map((point) => (
+        <li>{point}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section rule" aria-labelledby="rule-format">
+    <h3 class="rule__title" id="rule-format">
+      {text.format.title}
+    </h3>
+    <ul class="rule__list">
+      {text.format.points.map((point) => (
+        <li>{point}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section rule" aria-labelledby="rule-equipment">
+    <h3 class="rule__title" id="rule-equipment">
+      {text.equipment.title}
+    </h3>
+    <ul class="rule__list">
+      {text.equipment.points.map((point) => (
+        <li>{point}</li>
+      ))}
+    </ul>
+    <p class="note">
+      <a class="link" href={text.sourceUrl}>
+        {text.source}
+      </a>
+    </p>
+  </section>
+</Layout>
