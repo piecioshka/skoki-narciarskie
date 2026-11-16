@@ -712,6 +712,12 @@
       "to": "#c8102e",
       "accent": "#ffce00",
       "marks": 4
+    },
+    "photo": {
+      "file": "four-hills.jpg",
+      "author": "junafani",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul-Ausserleitner-Schanze.JPG"
     }
   },
   {
@@ -881,6 +887,12 @@
       "to": "#ba0c2f",
       "accent": "#ffffff",
       "marks": 4
+    },
+    "photo": {
+      "file": "raw-air.jpg",
+      "author": "Ralf Roletschek",
+      "license": "CC BY-SA 1.0 fi",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:19-08-25-Oslo_Holmenkollenbakken-RalfR.jpg"
     }
   },
   {
@@ -1052,6 +1064,12 @@
       "to": "#1d7a46",
       "accent": "#ffffff",
       "marks": 7
+    },
+    "photo": {
+      "file": "planica7.jpg",
+      "author": "JRE 246,5",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Planica_HS225.JPG"
     }
   },
   {
@@ -1153,6 +1171,12 @@
       "to": "#b45309",
       "accent": "#ffce00",
       "marks": 6
+    },
+    "photo": {
+      "file": "willingen-six.jpg",
+      "author": "Jeses",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Willingen_Skijumping_2007-2.JPG"
     }
   },
   {
@@ -1203,6 +1227,12 @@
       "to": "#111827",
       "accent": "#ffce00",
       "marks": 5
+    },
+    "photo": {
+      "file": "titisee-neustadt-five.jpg",
+      "author": "Taxiarchos228",
+      "license": "FAL",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hochfirstschanze3.jpg"
     }
   },
   {
@@ -1250,6 +1280,12 @@
       "to": "#7f1d1d",
       "accent": "#ffffff",
       "marks": 3
+    },
+    "photo": {
+      "file": "polski-turniej.jpg",
+      "author": "Kapitel",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zakopane_Wielka_Krokiew_dron_(1).jpg"
     }
   }
 ]

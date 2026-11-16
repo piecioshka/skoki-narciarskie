@@ -12,9 +12,11 @@ Serwis kibica Pucharu Świata w skokach narciarskich: kiedy jest najbliższy kon
 - 🗓️ Terminarz sezonu: Puchar Świata mężczyzn i Mistrzostwa Świata, z programem każdych zawodów
 - 📺 Linki do polskich nadawców i do wyników na żywo w serwisie FIS
 - 🗄️ Archiwum trzech poprzednich sezonów z podium każdego konkursu
-- 🏆 Klasyfikacja generalna od sezonu 2020/2021 _(z filtrem "Tylko Polacy")_
+- 🏆 Klasyfikacja generalna od sezonu 2000/2001 _(z filtrem "Tylko Polacy")_
 - 🥇 Profile turniejów: Turniej Czterech Skoczni, Raw Air, Planica7 i inne, z zasadami i zwycięzcami
-- 🏔️ Karty skoczni: punkt K, rozmiar, rekord, parametry profilu i ciekawostki
+- 🏔️ Profile skoczni ze zdjęciem: punkt K, rozmiar, rekord, parametry profilu, ciekawostki i rozegrane konkursy
+- 🗺️ Mapy miejsc zawodów i wszystkich skoczni
+- 🌐 Strony reprezentacji: punkty, trofea i wyniki drużynowe zawodników każdego kraju
 - 🧑‍🏫 Kadry Polski A i B ze sztabem szkoleniowym
 - ⚖️ Sędziowie i delegaci techniczni zawodów
 - 🖼️ Galeria odręcznych programów na każdy weekend
@@ -31,6 +33,7 @@ Serwis kibica Pucharu Świata w skokach narciarskich: kiedy jest najbliższy kon
 - kadry Polski: [Polski Związek Narciarski](https://www.pzn.pl/skoki-narciarskie)
 - skocznie: [skisprungschanzen.com](https://www.skisprungschanzen.com/)
 - turnieje: Wikipedia
+- zdjęcia: Wikimedia Commons, z listą autorów na stronie "Autorzy zdjęć"
 - odręczne programy: [autor kartek z terminarzem](https://www.facebook.com/profile.php?id=100064595445494)
 
 ## Rozwój 🛠️

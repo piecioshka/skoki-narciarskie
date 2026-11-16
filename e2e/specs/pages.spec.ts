@@ -204,12 +204,9 @@ test.describe('tournaments', () => {
     await page.goto('/pl/tournaments/');
 
     await expect(page.locator('.tournament-card')).toHaveCount(6);
-    await expect(page.locator('.tournament-card .banner')).toHaveCount(6);
-    await expect(
-      page.locator(
-        '.tournament-card[data-tournament="planica7"] .banner circle',
-      ),
-    ).toHaveCount(7);
+    await expect(page.locator('.tournament-card .banner--photo')).toHaveCount(
+      6,
+    );
     await expect(
       page.locator('.tournament-card[data-tournament="four-hills"]'),
     ).toContainText('Rozgrywany');
@@ -234,6 +231,7 @@ test.describe('tournaments', () => {
       'Domen Prevc',
     );
     await expect(page.locator('main')).toContainText('systemem KO');
+    await expect(page.locator('.photo__credit')).toContainText('CC BY-SA');
 
     const rows = page.locator('.table__row');
 
@@ -479,6 +477,27 @@ test.describe('hill profiles', () => {
     expect(await page.locator('.table__row').count()).toBeGreaterThanOrEqual(
       18,
     );
+  });
+});
+
+test.describe('event tags', () => {
+  test('championships, Four Hills and ski flying use different colors', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/');
+
+    const colorOf = (selector: string) =>
+      page
+        .locator(selector)
+        .first()
+        .evaluate((element) => getComputedStyle(element).backgroundColor);
+    const colors = [
+      await colorOf('.badge--championships'),
+      await colorOf('.badge--four-hills'),
+      await colorOf('.badge--ski-flying'),
+    ];
+
+    expect(new Set(colors).size).toBe(3);
   });
 });
 

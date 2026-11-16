@@ -54,6 +54,9 @@ Trasy:
 - `/[lang]/[season]/polish-team/` - kadry A i B ze sztabem
 - `/[lang]/[season]/gallery/` - galeria odręcznych programów
 - `/[lang]/tournaments/` i `/[lang]/tournaments/[slug]/` - lista i profile turniejów
+- `/[lang]/hills/` i `/[lang]/hills/[slug]/` - lista (z mapą i grupowaniem według kraju) i profile skoczni
+- `/[lang]/nations/` i `/[lang]/nations/[kod]/` - reprezentacje
+- `/[lang]/credits/` - autorzy zdjęć
 
 ## Dane sezonu
 
@@ -113,6 +116,24 @@ Pole `officials` wydarzenia w pliku sezonu: `role` (`technical-delegate`, `techn
 ## Turnieje
 
 `src/data/tournaments.json` opisuje turnieje rozgrywane w ramach Pucharu Świata: `status` (`active`, `paused`, `ended`), gospodarzy, zasady, nagrody, podium ostatnich edycji i pole `events` z listą zawodów turnieju w danym sezonie (`{ "2026-2027": ["oberstdorf", ...] }`). Po sezonie dopisz nową edycję do `winners`, a przy nowym sezonie uzupełnij `events`. Miejsce na podium bez `name` oznacza reprezentację kraju.
+
+## Zdjęcia i portrety
+
+Wszystkie zdjęcia pochodzą z Wikimedia Commons i są na wolnych licencjach. Autor, licencja i adres źródła są zapisane przy każdym pliku, a strona `/[lang]/credits/` wypisuje je wszystkie.
+
+- skocznie: `src/assets/hills/`, opis w polu `photo` w `src/data/hills.json`
+- turnieje: `src/assets/tournaments/`, pole `photo` w `src/data/tournaments.json`; bez zdjęcia pokazywany jest rysowany baner
+- osoby: `src/assets/people/`, indeks w `src/data/avatars.json` pod kluczem z nazwiska bez znaków diakrytycznych (`piotr zyla`); osoba bez zdjęcia dostaje kółko z inicjałami
+
+Portret trafia do indeksu tylko wtedy, gdy krótki opis hasła w Wikipedii potwierdza, że chodzi o skoczka albo trenera, żeby nie pokazać imiennika.
+
+## Reprezentacje
+
+Strony `/[lang]/nations/` i `/[lang]/nations/[kod]/` nie mają własnych danych: `src/lib/nations.ts` sumuje punkty z plików klasyfikacji (od 2000/2001), liczy Kryształowe Kule, zwycięstwa w turniejach oraz zwycięstwa, podia i wyniki drużynowe z zaimportowanych sezonów.
+
+## Mapy
+
+Mapy rysuje Leaflet na kafelkach OpenStreetMap (`src/scripts/map.ts`). Współrzędne skoczni są w `src/data/hills.json` (`lat`, `lon`); zawody bez danych skoczni nie trafiają na mapę terminarza.
 
 ## Galeria odręcznych programów
 

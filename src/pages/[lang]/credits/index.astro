@@ -3,6 +3,7 @@ import { LANGUAGES, t, type Lang } from '../../../i18n';
 import Layout from '../../../layouts/Layout.astro';
 import { getAllHills } from '../../../lib/hills';
 import { getAvatarCredits } from '../../../lib/people';
+import { getTournaments } from '../../../lib/tournaments';
 
 export function getStaticPaths() {
   return LANGUAGES.map((lang) => ({ params: { lang }, props: { lang } }));
@@ -18,9 +19,16 @@ const dict = t(lang);
 const hillCredits = getAllHills().flatMap((hill) =>
   hill.photo ? [{ subject: hill.name, ...hill.photo }] : [],
 );
-const credits = [...hillCredits, ...getAvatarCredits()].filter(
+const tournamentCredits = getTournaments().flatMap((tournament) =>
+  tournament.photo ? [{ subject: tournament.name, ...tournament.photo }] : [],
+);
+const credits = [
+  ...hillCredits,
+  ...tournamentCredits,
+  ...getAvatarCredits(),
+].filter(
   (credit, index, all) =>
-    all.findIndex((item) => item.file === credit.file) === index,
+    all.findIndex((item) => item.sourceUrl === credit.sourceUrl) === index,
 );
 ---
 

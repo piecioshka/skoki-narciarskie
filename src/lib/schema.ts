@@ -206,6 +206,17 @@ export const tournamentSchema = z.object({
     accent: z.string().regex(/^#[0-9a-f]{6}$/),
     marks: z.number().int().min(1).max(8),
   }),
+  // Freely licensed photo (Wikimedia Commons) in src/assets/tournaments;
+  // without one the drawn banner is used.
+  photo: z
+    .object({
+      file: z.string().min(1),
+      author: z.string().min(1),
+      license: z.string().min(1),
+      sourceUrl: z.url(),
+    })
+    .nullable()
+    .default(null),
   // Host cities in tournament order.
   hosts: z.array(z.string().min(1)).min(1),
   // Events of a season that belong to the tournament, keyed by season id.

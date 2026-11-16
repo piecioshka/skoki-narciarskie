@@ -1413,3 +1413,59 @@ a[href^='http']:not(.icon-button)::after {
   color: var(--pal-text-muted);
   font-variant-numeric: tabular-nums;
 }
+
+.banner--photo {
+  height: auto;
+  object-fit: cover;
+}
+
+.banner-frame {
+  margin-bottom: 0;
+}
+
+.banner-frame .banner--photo {
+  aspect-ratio: 3 / 1;
+}
+
+.podium__place {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.podium .avatar {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+/* Every kind of special event has its own tag color:
+   World Championships purple, Four Hills gold, ski flying teal. */
+
+:root {
+  --purple-soft: #f1e8fd;
+  --purple-on-soft: #5b21b6;
+  --teal-soft: #dcf5f0;
+  --teal-on-soft: #0f5f55;
+}
+
+:root[data-theme='dark'] {
+  --purple-soft: #33214f;
+  --purple-on-soft: #d4b8ff;
+  --teal-soft: #123a36;
+  --teal-on-soft: #7fe0d0;
+}
+
+.badge--championships {
+  background: var(--purple-soft);
+  color: var(--purple-on-soft);
+}
+
+.badge--four-hills {
+  background: var(--gold-soft);
+  color: var(--gold-on-soft);
+}
+
+.badge--ski-flying {
+  background: var(--teal-soft);
+  color: var(--teal-on-soft);
+}

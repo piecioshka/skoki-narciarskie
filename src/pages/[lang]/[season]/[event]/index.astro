@@ -1,4 +1,5 @@
 ---
+import Avatar from '../../../../components/Avatar.astro';
 import Badges from '../../../../components/Badges.astro';
 import CompetitionLinks from '../../../../components/CompetitionLinks.astro';
 import Icon from '../../../../components/Icon.astro';
@@ -172,6 +173,7 @@ const jsonLd = {
                     {competition.results.map((place) => (
                       <li class="podium__place">
                         <span class="podium__rank">{place.rank}.</span>
+                        {place.name && <Avatar name={place.name} />}
                         {getNationFlag(place.nation)}{' '}
                         {place.name ?? nationName(place.nation)}
                       </li>
