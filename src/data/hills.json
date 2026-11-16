@@ -1500,7 +1500,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BY-Bayern/Oberstdorf/2-Skiflugschanze/",
-    "photo": null,
+    "photo": {
+      "file": "oberstdorf-flying.jpg",
+      "author": "Samuel Weitzbauer",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oberstdorf_HS235.jpg"
+    },
     "countryCode": "DE",
     "city": "Oberstdorf",
     "lat": 47.37519,
@@ -1567,7 +1572,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/CZE-Tschechien/L-Region+Reichenberg/Harrachov/0149-%C4%8Cer%C5%A5%C3%A1k/",
-    "photo": null,
+    "photo": {
+      "file": "harrachov.jpg",
+      "author": "No machine-readable author provided. M k assumed (based on copyright claims).",
+      "license": "CC BY 2.5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harrachov_ski.jpg"
+    },
     "countryCode": "CZ",
     "city": "Harrachov",
     "lat": 50.76627,
@@ -1634,7 +1644,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/CZE-Tschechien/L-Region+Reichenberg/Harrachov/0149-%C4%8Cer%C5%A5%C3%A1k/",
-    "photo": null,
+    "photo": {
+      "file": "harrachov.jpg",
+      "author": "No machine-readable author provided. M k assumed (based on copyright claims).",
+      "license": "CC BY 2.5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harrachov_ski.jpg"
+    },
     "countryCode": "CZ",
     "city": "Harrachov",
     "lat": 50.76699,
@@ -1701,7 +1716,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/CZE-Tschechien/L-Region+Reichenberg/Liberec/0168-Je%C5%A1t%C4%9Bd/",
-    "photo": null,
+    "photo": {
+      "file": "liberec.jpg",
+      "author": "ŠJů",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Je%C5%A1t%C4%9Bd,_skokansk%C3%BD_are%C3%A1l,_z_lanovky_(01).jpg"
+    },
     "countryCode": "CZ",
     "city": "Liberec",
     "lat": 50.73472,
@@ -1984,7 +2004,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/FIN-Finnland/IS-Ostfinnland/Kuopio/248-Puijo/",
-    "photo": null,
+    "photo": {
+      "file": "kuopio.jpg",
+      "author": "Picture by Anna Riege at https://www.flickr.com/photos/aenneken/",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kuopio_Ski_Jumps_at_Puijo.jpg"
+    },
     "countryCode": "FI",
     "city": "Kuopio",
     "lat": 62.90944,
@@ -2051,7 +2076,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/FIN-Finnland/IS-Ostfinnland/Kuopio/248-Puijo/",
-    "photo": null,
+    "photo": {
+      "file": "kuopio.jpg",
+      "author": "Picture by Anna Riege at https://www.flickr.com/photos/aenneken/",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kuopio_Ski_Jumps_at_Puijo.jpg"
+    },
     "countryCode": "FI",
     "city": "Kuopio",
     "lat": 62.9089,
@@ -2262,7 +2292,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/ITA-Italien/Pragelato/334-Stadio+del+Trampolino/",
-    "photo": null,
+    "photo": {
+      "file": "pragelato.jpg",
+      "author": "bryangeek",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pragelato_olympic_skijump.jpg"
+    },
     "countryCode": "IT",
     "city": "Pragelato",
     "lat": 45.00694,
@@ -2329,7 +2364,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/ROU-Rum%C3%A4nien/R%C3%A2%C5%9Fnov/401/",
-    "photo": null,
+    "photo": {
+      "file": "rasnov.jpg",
+      "author": "Andrei Dan Suciu",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ski_jumping_%E2%80%93_Rasnov_-_panoramio.jpg"
+    },
     "countryCode": "RO",
     "city": "Râșnov",
     "lat": 45.57142,
@@ -2396,7 +2436,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/RUS-Russland/Nizhniy+Tagil/428/",
-    "photo": null,
+    "photo": {
+      "file": "nizhny-tagil.jpg",
+      "author": "Stoch1997",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nizhny_76.jpg"
+    },
     "countryCode": "RU",
     "city": "Niżny Tagił",
     "lat": 57.8927,
@@ -2463,7 +2508,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/KAZ-Kasachstan/Almaty/338-Gorney+Gigant/",
-    "photo": null,
+    "photo": {
+      "file": "almaty.jpg",
+      "author": "Mattun0211",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:AlmatySkiJump.jpg"
+    },
     "countryCode": "KZ",
     "city": "Ałmaty",
     "lat": 43.2117,
@@ -2530,7 +2580,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/RUS-Russland/Esto-Sadok/415-Russian+National+Ski+Jumping+Center/",
-    "photo": null,
+    "photo": {
+      "file": "sochi.jpg",
+      "author": "Акутагава",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:RusSki_Gorki_Jumping_Center_during_2014_Winter_Olympics.JPG"
+    },
     "countryCode": "RU",
     "city": "Soczi",
     "lat": 43.67588,
@@ -2597,7 +2652,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/JPN-Japan/20-Nagano/Hakuba/0351-Olympic+Ski+Jumps/",
-    "photo": null,
+    "photo": {
+      "file": "hakuba.jpg",
+      "author": "PekePON",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hakuba_Ski_Jumping_Stadium_19970915-3.jpg"
+    },
     "countryCode": "JP",
     "city": "Hakuba",
     "lat": 36.69532,

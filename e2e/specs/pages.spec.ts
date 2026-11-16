@@ -411,9 +411,7 @@ test.describe('hill profiles', () => {
   test('index lists every hill with a photo', async ({ page }) => {
     await page.goto('/pl/hills/');
     await expect(page.locator('.tournament-card:visible')).toHaveCount(43);
-    expect(
-      await page.locator('.hill-card__image:visible').count(),
-    ).toBeGreaterThanOrEqual(19);
+    expect(await page.locator('.hill-card__image:visible').count()).toBe(43);
     await expect(page.locator('.topbar__nav [aria-current="page"]')).toHaveText(
       'Skocznie',
     );
