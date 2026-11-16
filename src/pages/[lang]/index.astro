@@ -6,6 +6,7 @@ import Icon from '../../components/Icon.astro';
 import SlotTime from '../../components/SlotTime.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../i18n';
 import Layout from '../../layouts/Layout.astro';
+import EventHillPhoto from '../../components/EventHillPhoto.astro';
 import { describeEventHill } from '../../lib/hills';
 import { getFlag } from '../../lib/links';
 import { eventPath, seasonPath } from '../../lib/paths';
@@ -87,6 +88,7 @@ const buildTimeNext = findNext(competitions, new Date());
           {dict.eventPage}
           <Icon name="chevron-right" />
         </a>
+        <EventHillPhoto event={item.event} class="next__photo" />
       </article>
     ))}
     <p class="notice js-season-over" hidden={buildTimeNext !== undefined}>

@@ -62,6 +62,40 @@ test.describe('home page', () => {
     ).toHaveAttribute('href', /fis-ski\.com/);
   });
 
+  test('shows a photo of the hill next to the details', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await openAt(page, '/pl/', BEFORE_SEASON);
+
+    const next = page.locator('.js-next:visible');
+    const photo = next.locator('.next__photo');
+
+    await expect(photo).toHaveAttribute('alt', 'Lysgårdsbakken');
+    await expect
+      .poll(() =>
+        photo.evaluate(
+          (element) =>
+            element instanceof HTMLImageElement && element.naturalWidth > 0,
+        ),
+      )
+      .toBe(true);
+
+    const title = await next.locator('.next__title').boundingBox();
+    const box = await photo.boundingBox();
+
+    expect(box?.x).toBeGreaterThan((title?.x ?? 0) + (title?.width ?? 0));
+
+    // The photo fills the card but must not make it taller than its text.
+    const card = await next.boundingBox();
+    const more = await next.locator('.next__more').boundingBox();
+
+    expect(box?.height).toBeLessThanOrEqual(card?.height ?? 0);
+    expect(
+      (card?.y ?? 0) +
+        (card?.height ?? 0) -
+        ((more?.y ?? 0) + (more?.height ?? 0)),
+    ).toBeLessThan(40);
+  });
+
   test('marks a running competition as live', async ({ page }) => {
     await openAt(page, '/pl/', DURING_FIRST_RACE);
 

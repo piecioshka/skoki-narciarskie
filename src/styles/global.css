@@ -1469,3 +1469,35 @@ a[href^='http']:not(.icon-button)::after {
   background: var(--teal-soft);
   color: var(--teal-on-soft);
 }
+
+/* Next competition: photo of the hill beside the details */
+
+.next__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin-top: 1.25rem;
+  border-radius: var(--pal-radius);
+  object-fit: cover;
+}
+
+@media (min-width: 760px) {
+  /* The photo is taken out of the flow and pinned to the card edges, so the
+     card height comes from the text alone and the photo only fills it. */
+  .next {
+    position: relative;
+    padding-right: calc(20rem + 2.5rem);
+  }
+
+  .next__photo {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    width: 20rem;
+    height: calc(100% - 2.5rem);
+    margin-top: 0;
+    aspect-ratio: auto;
+  }
+}
