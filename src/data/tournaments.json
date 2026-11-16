@@ -1287,5 +1287,385 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wielka_Krokiew_winter.JPG"
     }
+  },
+  {
+    "slug": "nordic-tournament",
+    "name": "Turniej Nordycki",
+    "firstEdition": 1997,
+    "status": "ended",
+    "banner": {
+      "from": "#003580",
+      "to": "#ba0c2f",
+      "accent": "#ffffff",
+      "marks": 4
+    },
+    "photo": {
+      "file": "nordic-tournament.jpg",
+      "author": "sdbj",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lahti_skijumps.jpg"
+    },
+    "hosts": ["Lahti", "Kuopio", "Lillehammer", "Oslo"],
+    "events": {},
+    "description": {
+      "pl": "Turniej rozgrywany w latach 1997-2010 w pierwszej połowie marca na skoczniach w Norwegii, Finlandii i Szwecji, na wzór Turnieju Czterech Skoczni.",
+      "en": "A tournament held in 1997-2010 in the first half of March on hills in Norway, Finland and Sweden, modeled on the Four Hills Tournament."
+    },
+    "format": {
+      "pl": "Wygrywał zawodnik z największą sumą punktów za skoki we wszystkich konkursach turnieju, tak jak w Turnieju Czterech Skoczni.",
+      "en": "The winner was the athlete with the highest total of points for jumps in all competitions of the tournament, as in the Four Hills Tournament."
+    },
+    "prize": null,
+    "statusNote": {
+      "pl": "Najwięcej edycji, trzy, wygrał Adam Małysz, który ma też najwięcej wygranych konkursów turnieju (10). Ostatnia edycja odbyła się w 2010 roku.",
+      "en": "Adam Małysz won the most editions, three, and also the most competitions of the tournament (10). The last edition took place in 2010."
+    },
+    "winners": [
+      {
+        "edition": "2010",
+        "podium": [
+          {
+            "name": "Simon Ammann",
+            "nation": "SUI"
+          },
+          {
+            "name": "Adam Małysz",
+            "nation": "POL"
+          },
+          {
+            "name": "Thomas Morgenstern",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2009",
+        "podium": [
+          {
+            "name": "Gregor Schlierenzauer",
+            "nation": "AUT"
+          },
+          {
+            "name": "Harri Olli",
+            "nation": "FIN"
+          },
+          {
+            "name": "Simon Ammann",
+            "nation": "SUI"
+          }
+        ]
+      },
+      {
+        "edition": "2008",
+        "podium": [
+          {
+            "name": "Gregor Schlierenzauer",
+            "nation": "AUT"
+          },
+          {
+            "name": "Tom Hilde",
+            "nation": "NOR"
+          },
+          {
+            "name": "Janne Happonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "2007",
+        "podium": [
+          {
+            "name": "Adam Małysz",
+            "nation": "POL"
+          },
+          {
+            "name": "Andreas Kofler",
+            "nation": "AUT"
+          },
+          {
+            "name": "Simon Ammann",
+            "nation": "SUI"
+          }
+        ]
+      },
+      {
+        "edition": "2006",
+        "podium": [
+          {
+            "name": "Thomas Morgenstern",
+            "nation": "AUT"
+          },
+          {
+            "name": "Andreas Küttel",
+            "nation": "SUI"
+          },
+          {
+            "name": "Janne Happonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "2005",
+        "podium": [
+          {
+            "name": "Matti Hautamäki",
+            "nation": "FIN"
+          },
+          {
+            "name": "Roar Ljøkelsøy",
+            "nation": "NOR"
+          },
+          {
+            "name": "Michael Uhrmann",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "2004",
+        "podium": [
+          {
+            "name": "Roar Ljøkelsøy",
+            "nation": "NOR"
+          },
+          {
+            "name": "Bjørn Einar Romøren",
+            "nation": "NOR"
+          },
+          {
+            "name": "Simon Ammann",
+            "nation": "SUI"
+          }
+        ]
+      },
+      {
+        "edition": "2003",
+        "podium": [
+          {
+            "name": "Adam Małysz",
+            "nation": "POL"
+          },
+          {
+            "name": "Matti Hautamäki",
+            "nation": "FIN"
+          },
+          {
+            "name": "Tami Kiuru",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "2002",
+        "podium": [
+          {
+            "name": "Matti Hautamäki",
+            "nation": "FIN"
+          },
+          {
+            "name": "Adam Małysz",
+            "nation": "POL"
+          },
+          {
+            "name": "Martin Schmitt",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "2001",
+        "podium": [
+          {
+            "name": "Adam Małysz",
+            "nation": "POL"
+          },
+          {
+            "name": "Andreas Goldberger",
+            "nation": "AUT"
+          },
+          {
+            "name": "Martin Schmitt",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "2000",
+        "podium": [
+          {
+            "name": "Sven Hannawald",
+            "nation": "GER"
+          },
+          {
+            "name": "Janne Ahonen",
+            "nation": "FIN"
+          },
+          {
+            "name": "Ville Kantee",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1999",
+        "podium": [
+          {
+            "name": "Noriaki Kasai",
+            "nation": "JPN"
+          },
+          {
+            "name": "Kazuyoshi Funaki",
+            "nation": "JPN"
+          },
+          {
+            "name": "Sven Hannawald",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "1998",
+        "podium": [
+          {
+            "name": "Andreas Widhölzl",
+            "nation": "AUT"
+          },
+          {
+            "name": "Sven Hannawald",
+            "nation": "GER"
+          },
+          {
+            "name": "Hiroya Saitō",
+            "nation": "JPN"
+          }
+        ]
+      },
+      {
+        "edition": "1997",
+        "podium": [
+          {
+            "name": "Kazuyoshi Funaki",
+            "nation": "JPN"
+          },
+          {
+            "name": "Kristian Brenden",
+            "nation": "NOR"
+          },
+          {
+            "name": "Andreas Widhölzl",
+            "nation": "AUT"
+          }
+        ]
+      }
+    ],
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Turniej_Nordycki"
+  },
+  {
+    "slug": "fis-team-tour",
+    "name": "FIS Team Tour",
+    "firstEdition": 2009,
+    "status": "ended",
+    "banner": {
+      "from": "#111827",
+      "to": "#c8102e",
+      "accent": "#ffce00",
+      "marks": 5
+    },
+    "photo": {
+      "file": "fis-team-tour.jpg",
+      "author": "Sandro Halank, Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-11-27_M%C3%BChlenkopfschanze_Willingen_by_Sandro_Halank%E2%80%9308.jpg"
+    },
+    "hosts": ["Willingen", "Klingenthal", "Oberstdorf"],
+    "events": {},
+    "description": {
+      "pl": "Zawody rozgrywane w latach 2009-2013 w lutym na trzech niemieckich skoczniach: w Willingen, Klingenthal i na skoczni mamuciej w Oberstdorfie. Składały się z konkursów indywidualnych i drużynowych Pucharu Świata.",
+      "en": "An event held in 2009-2013 in February on three German hills: in Willingen, Klingenthal and on the flying hill in Oberstdorf. It consisted of individual and team World Cup competitions."
+    },
+    "format": {
+      "pl": "Prowadzono wyłącznie klasyfikację drużynową. Liczyły się punkty za odległość i styl zdobyte w zawodach, a nie punkty Pucharu Świata.",
+      "en": "Only team standings were kept. Points for distance and style scored in the competitions counted, not World Cup points."
+    },
+    "prize": null,
+    "statusNote": {
+      "pl": "Trzy z pięciu edycji wygrała Austria.",
+      "en": "Austria won three of the five editions."
+    },
+    "winners": [
+      {
+        "edition": "2013",
+        "podium": [
+          {
+            "nation": "NOR"
+          },
+          {
+            "nation": "SLO"
+          },
+          {
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2012",
+        "podium": [
+          {
+            "nation": "AUT"
+          },
+          {
+            "nation": "NOR"
+          },
+          {
+            "nation": "SLO"
+          }
+        ]
+      },
+      {
+        "edition": "2011",
+        "podium": [
+          {
+            "nation": "AUT"
+          },
+          {
+            "nation": "NOR"
+          },
+          {
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "2010",
+        "podium": [
+          {
+            "nation": "AUT"
+          },
+          {
+            "nation": "NOR"
+          },
+          {
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "2009",
+        "podium": [
+          {
+            "nation": "NOR"
+          },
+          {
+            "nation": "AUT"
+          },
+          {
+            "nation": "FIN"
+          }
+        ]
+      }
+    ],
+    "sourceUrl": "https://pl.wikipedia.org/wiki/FIS_Team_Tour"
   }
 ]

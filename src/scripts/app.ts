@@ -225,6 +225,18 @@ function setupToc(): void {
   }
 }
 
+function openExternalLinksInNewTab(): void {
+  for (const link of document.querySelectorAll<HTMLAnchorElement>(
+    'a[href^="http"]',
+  )) {
+    if (link.host !== location.host) {
+      link.target = '_blank';
+      // Without `noopener` the opened page could control this one.
+      link.rel = 'noopener noreferrer';
+    }
+  }
+}
+
 function refresh(): void {
   const now = new Date();
   const lang = getLang();
@@ -296,6 +308,7 @@ function setup(): void {
       }
     });
   setupShortcuts();
+  openExternalLinksInNewTab();
   setupHomeOnlyFilters();
   setupHillGrouping();
   setupToc();

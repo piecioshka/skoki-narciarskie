@@ -204,9 +204,9 @@ test.describe('tournaments', () => {
   test('index lists every tournament with its status', async ({ page }) => {
     await page.goto('/pl/tournaments/');
 
-    await expect(page.locator('.tournament-card')).toHaveCount(6);
+    await expect(page.locator('.tournament-card')).toHaveCount(8);
     await expect(page.locator('.tournament-card .banner--photo')).toHaveCount(
-      6,
+      8,
     );
     await expect(
       page.locator('.tournament-card[data-tournament="four-hills"]'),
@@ -247,6 +247,17 @@ test.describe('tournaments', () => {
     await expect(rows.filter({ hasText: '1957/58' })).toContainText(
       'GDR Helmut Recknagel',
     );
+  });
+
+  test('lists the tournaments of the 2000s as well', async ({ page }) => {
+    await page.goto('/pl/tournaments/nordic-tournament/');
+    await expect(page.locator('.table__row')).toHaveCount(14);
+    await expect(
+      page.locator('.table__row').filter({ hasText: '2007' }),
+    ).toContainText('Adam Małysz');
+
+    await page.goto('/pl/tournaments/fis-team-tour/');
+    await expect(page.locator('.table__row').first()).toContainText('Norwegia');
   });
 
   test('team podium is printed in the page language', async ({ page }) => {
@@ -367,6 +378,19 @@ test.describe('external links', () => {
     for (let index = 0; index < count; index += 1) {
       expect(await external.nth(index).evaluate(hasPictogram)).toBe(true);
     }
+  });
+
+  test('links leaving the site open in a new tab', async ({ page }) => {
+    await page.goto('/pl/2026-2027/wisla/');
+
+    const external = page.locator('main a[href^="http"]').first();
+
+    await expect(external).toHaveAttribute('target', '_blank');
+    await expect(external).toHaveAttribute('rel', /noopener/);
+    await expect(page.locator('.back-link')).not.toHaveAttribute(
+      'target',
+      '_blank',
+    );
   });
 
   test('internal links and the icon-only GitHub button have none', async ({
