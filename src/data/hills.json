@@ -834,5 +834,845 @@
     "city": "Planica",
     "lat": 46.47628,
     "lon": 13.72073
+  },
+  {
+    "slug": "kulm",
+    "eventSlug": "kulm",
+    "name": "Kulm",
+    "kPoint": 200,
+    "hillSize": 235,
+    "record": {
+      "distance": 245.5,
+      "athlete": "Domen Prevc",
+      "nation": "SLO",
+      "date": "2026-03-01"
+    },
+    "opened": 1950,
+    "lastRebuilt": 2014,
+    "capacity": 40000,
+    "inrunLength": 117.4,
+    "takeoffAngle": 11.3,
+    "landingAngle": 33.5,
+    "facts": [
+      {
+        "pl": "Rekord skoczni to 245,5 m, ustanowiony przez Domena Prevca 1 marca 2026 roku w konkursie Pucharu Świata.",
+        "en": "The hill record is 245.5 m, set by Domen Prevc on 1 March 2026 in a World Cup competition."
+      },
+      {
+        "pl": "Po przebudowie w 2014 roku punkt K przesunięto ze 185 na 200 m.",
+        "en": "After the 2014 rebuild the K-point was moved from 185 to 200 m."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/AUT-%C3%96sterreich/ST-Steiermark/Bad+Mitterndorf/31-Tauplitz/",
+    "photo": null,
+    "countryCode": "AT",
+    "city": "Bad Mitterndorf",
+    "lat": 47.54632,
+    "lon": 13.99546
+  },
+  {
+    "slug": "oberstdorf-flying",
+    "eventSlug": "oberstdorf",
+    "name": "Heini-Klopfer-Skiflugschanze",
+    "kPoint": 200,
+    "hillSize": 235,
+    "record": {
+      "distance": 242.5,
+      "athlete": "Domen Prevc",
+      "nation": "SLO",
+      "date": "2022-03-20"
+    },
+    "opened": 1950,
+    "lastRebuilt": 2017,
+    "capacity": 40000,
+    "inrunLength": 118,
+    "takeoffAngle": 11.2,
+    "landingAngle": 33.9,
+    "facts": [
+      {
+        "pl": "Rekord skoczni to 242,5 m, ustanowiony przez Domena Prevca 20 marca 2022 roku w konkursie Pucharu Świata.",
+        "en": "The hill record is 242.5 m, set by Domen Prevc on 20 March 2022 in a World Cup competition."
+      },
+      {
+        "pl": "Po przebudowie w latach 2016-2017 punkt K przesunięto ze 185 na 200 m.",
+        "en": "After the 2016-2017 rebuild the K-point was moved from 185 to 200 m."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BY-Bayern/Oberstdorf/2-Skiflugschanze/",
+    "photo": null,
+    "countryCode": "DE",
+    "city": "Oberstdorf",
+    "lat": 47.37519,
+    "lon": 10.26924
+  },
+  {
+    "slug": "harrachov-flying",
+    "eventSlug": "harrachov",
+    "name": "Čerťák",
+    "kPoint": 185,
+    "hillSize": 205,
+    "record": {
+      "distance": 214.5,
+      "athlete": "Matti Hautamäki",
+      "nation": "FIN",
+      "date": "2002-03-09"
+    },
+    "opened": 1979,
+    "lastRebuilt": 2013,
+    "capacity": 50000,
+    "inrunLength": 118.5,
+    "takeoffAngle": 10.5,
+    "landingAngle": 34.5,
+    "facts": [
+      {
+        "pl": "Rekord 214,5 m ustanowił Matti Hautamäki 9 marca 2002 roku, a wyrównał go Thomas Morgenstern 18 stycznia 2008 roku.",
+        "en": "The record of 214.5 m was set by Matti Hautamäki on 9 March 2002 and equalled by Thomas Morgenstern on 18 January 2008."
+      },
+      {
+        "pl": "Ostatnią imprezą na skoczni były mistrzostwa świata w lotach w marcu 2014 roku; od tego czasu obiekt jest nieczynny.",
+        "en": "The last event on the hill was the Ski Flying World Championships in March 2014; the hill has been out of use since then."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/CZE-Tschechien/L-Region+Reichenberg/Harrachov/0149-%C4%8Cer%C5%A5%C3%A1k/",
+    "photo": null,
+    "countryCode": "CZ",
+    "city": "Harrachov",
+    "lat": 50.76627,
+    "lon": 15.42831
+  },
+  {
+    "slug": "harrachov-large",
+    "eventSlug": "harrachov",
+    "name": "Čerťák",
+    "kPoint": 125,
+    "hillSize": 142,
+    "record": {
+      "distance": 145.5,
+      "athlete": "Janne Ahonen",
+      "nation": "FIN",
+      "date": "2004-12-12"
+    },
+    "opened": 1979,
+    "lastRebuilt": 2003,
+    "capacity": 50000,
+    "inrunLength": 107.8,
+    "takeoffAngle": 10.5,
+    "landingAngle": 34.5,
+    "facts": [
+      {
+        "pl": "Oficjalny rekord skoczni to 145,5 m Janne Ahonena z 12 grudnia 2004 roku.",
+        "en": "The official hill record is 145.5 m by Janne Ahonen from 12 December 2004."
+      },
+      {
+        "pl": "Ostatnie zawody Pucharu Świata odbyły się tu w dniach 9-11 grudnia 2011 roku.",
+        "en": "The last World Cup events here were held on 9-11 December 2011."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/CZE-Tschechien/L-Region+Reichenberg/Harrachov/0149-%C4%8Cer%C5%A5%C3%A1k/",
+    "photo": null,
+    "countryCode": "CZ",
+    "city": "Harrachov",
+    "lat": 50.76699,
+    "lon": 15.42875
+  },
+  {
+    "slug": "liberec",
+    "eventSlug": "liberec",
+    "name": "Ještěd A",
+    "kPoint": 120,
+    "hillSize": 134,
+    "record": {
+      "distance": 139.0,
+      "athlete": "Janne Ahonen",
+      "nation": "FIN",
+      "date": "2004-01-11"
+    },
+    "opened": 1966,
+    "lastRebuilt": 2008,
+    "capacity": 10000,
+    "inrunLength": 113.5,
+    "takeoffAngle": 10.5,
+    "landingAngle": 35,
+    "facts": [
+      {
+        "pl": "Ostatnie konkursy Pucharu Świata odbyły się tu 8 i 9 lutego 2008 roku, wygrali je Thomas Morgenstern i Anders Jacobsen.",
+        "en": "The last World Cup competitions here took place on 8 and 9 February 2008 and were won by Thomas Morgenstern and Anders Jacobsen."
+      },
+      {
+        "pl": "Na mistrzostwach świata w 2009 roku konkurs na dużej skoczni wygrał tu Andreas Küttel, a drużynowy Austria.",
+        "en": "At the 2009 World Championships Andreas Küttel won the large hill event here and Austria won the team event."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/CZE-Tschechien/L-Region+Reichenberg/Liberec/0168-Je%C5%A1t%C4%9Bd/",
+    "photo": null,
+    "countryCode": "CZ",
+    "city": "Liberec",
+    "lat": 50.73472,
+    "lon": 14.99667
+  },
+  {
+    "slug": "klingenthal",
+    "eventSlug": "klingenthal",
+    "name": "Vogtland Arena",
+    "kPoint": 125,
+    "hillSize": 140,
+    "record": {
+      "distance": 146.5,
+      "athlete": "Michael Uhrmann",
+      "nation": "GER",
+      "date": "2011-02-02"
+    },
+    "opened": 2005,
+    "lastRebuilt": 2025,
+    "capacity": 30000,
+    "inrunLength": 97.5,
+    "takeoffAngle": 11,
+    "landingAngle": 34.5,
+    "facts": [
+      {
+        "pl": "Oficjalny rekord 146,5 m ustanowił Michael Uhrmann 2 lutego 2011 roku, a 10 grudnia 2023 roku wyrównali go Andreas Wellinger i Gregor Deschwanden.",
+        "en": "The official record of 146.5 m was set by Michael Uhrmann on 2 February 2011 and equalled by Andreas Wellinger and Gregor Deschwanden on 10 December 2023."
+      },
+      {
+        "pl": "Pierwszy konkurs Pucharu Świata na tej skoczni odbył się 7 lutego 2007 roku i wygrał go Gregor Schlierenzauer.",
+        "en": "The first World Cup competition on this hill was held on 7 February 2007 and was won by Gregor Schlierenzauer."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/SN-Sachsen/Klingenthal/0595-Vogtland-Arena/",
+    "photo": null,
+    "countryCode": "DE",
+    "city": "Klingenthal",
+    "lat": 50.38389,
+    "lon": 12.44889
+  },
+  {
+    "slug": "trondheim",
+    "eventSlug": "trondheim",
+    "name": "Granåsen",
+    "kPoint": 124,
+    "hillSize": 138,
+    "record": {
+      "distance": 143.0,
+      "athlete": "Marius Lindvik",
+      "nation": "NOR",
+      "date": "2025-03-08"
+    },
+    "opened": 1940,
+    "lastRebuilt": 2023,
+    "capacity": 40000,
+    "inrunLength": 100.6,
+    "takeoffAngle": 11.5,
+    "landingAngle": 33.78,
+    "facts": [
+      {
+        "pl": "Po przebudowie w latach 2021-2023 duża skocznia ma punkt K na 124 m i rozmiar HS 138.",
+        "en": "After the 2021-2023 rebuild the large hill has a K-point at 124 m and a hill size of HS 138."
+      },
+      {
+        "pl": "Na mistrzostwach świata w 2025 roku konkurs na dużej skoczni wygrał tu 8 marca Domen Prevc.",
+        "en": "At the 2025 World Championships Domen Prevc won the large hill event here on 8 March."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/50-Tr%C3%B8ndelag/Trondheim/0590-Gran%C3%A5sen/",
+    "photo": null,
+    "countryCode": "NO",
+    "city": "Trondheim",
+    "lat": 63.3775,
+    "lon": 10.30917
+  },
+  {
+    "slug": "trondheim-normal",
+    "eventSlug": "trondheim",
+    "name": "Granåsen",
+    "kPoint": 94,
+    "hillSize": 102,
+    "record": {
+      "distance": 108.0,
+      "athlete": "Marius Lindvik",
+      "nation": "NOR",
+      "date": "2025-03-02"
+    },
+    "opened": null,
+    "lastRebuilt": 2023,
+    "capacity": 40000,
+    "inrunLength": 95,
+    "takeoffAngle": 11,
+    "landingAngle": 33.94,
+    "facts": [
+      {
+        "pl": "Jedyny dotąd męski konkurs Pucharu Świata na tej skoczni odbył się 12 marca 2024 roku i wygrał go Ryōyū Kobayashi.",
+        "en": "The only men's World Cup competition on this hill so far was held on 12 March 2024 and was won by Ryōyū Kobayashi."
+      },
+      {
+        "pl": "Rekord 108 m ustanowił Marius Lindvik 2 marca 2025 roku w konkursie mistrzostw świata, który wygrał.",
+        "en": "The record of 108 m was set by Marius Lindvik on 2 March 2025 in the World Championships event, which he won."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/50-Tr%C3%B8ndelag/Trondheim/0590-Gran%C3%A5sen/",
+    "photo": null,
+    "countryCode": "NO",
+    "city": "Trondheim",
+    "lat": 63.37664,
+    "lon": 10.3068
+  },
+  {
+    "slug": "kuopio",
+    "eventSlug": "kuopio",
+    "name": "Puijo",
+    "kPoint": 120,
+    "hillSize": 127,
+    "record": {
+      "distance": 136.0,
+      "athlete": "Daniel André Tande",
+      "nation": "NOR",
+      "date": "2016-02-22"
+    },
+    "opened": 1949,
+    "lastRebuilt": 1998,
+    "capacity": null,
+    "inrunLength": 92,
+    "takeoffAngle": 10.9,
+    "landingAngle": 35.1,
+    "facts": [
+      {
+        "pl": "Rekord skoczni to 136 m, ustanowiony przez Daniela André Tandego 22 lutego 2016 roku podczas zawodów Pucharu Świata.",
+        "en": "The hill record is 136 m, set by Daniel André Tande on 22 February 2016 during a World Cup event."
+      },
+      {
+        "pl": "Ostatni konkurs Pucharu Świata odbył się tu 23 lutego 2016 roku i wygrał go Michael Hayböck.",
+        "en": "The last World Cup competition here was held on 23 February 2016 and was won by Michael Hayböck."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/FIN-Finnland/IS-Ostfinnland/Kuopio/248-Puijo/",
+    "photo": null,
+    "countryCode": "FI",
+    "city": "Kuopio",
+    "lat": 62.90944,
+    "lon": 27.65583
+  },
+  {
+    "slug": "kuopio-normal",
+    "eventSlug": "kuopio",
+    "name": "Puijo",
+    "kPoint": 92,
+    "hillSize": 100,
+    "record": {
+      "distance": 106.0,
+      "athlete": "Simon Ammann",
+      "nation": "SUI",
+      "date": "2015-03-10"
+    },
+    "opened": null,
+    "lastRebuilt": 2005,
+    "capacity": null,
+    "inrunLength": 93.6,
+    "takeoffAngle": 11,
+    "landingAngle": 37.8,
+    "facts": [
+      {
+        "pl": "Jedyny po 2000 roku konkurs Pucharu Świata na tej skoczni odbył się 10 marca 2015 roku i wygrał go Severin Freund.",
+        "en": "The only World Cup competition on this hill after 2000 was held on 10 March 2015 and was won by Severin Freund."
+      },
+      {
+        "pl": "Oficjalny rekord 106 m ustanowił tego samego dnia Simon Ammann.",
+        "en": "The official record of 106 m was set by Simon Ammann on the same day."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/FIN-Finnland/IS-Ostfinnland/Kuopio/248-Puijo/",
+    "photo": null,
+    "countryCode": "FI",
+    "city": "Kuopio",
+    "lat": 62.9089,
+    "lon": 27.65185
+  },
+  {
+    "slug": "predazzo",
+    "eventSlug": "predazzo",
+    "name": "Trampolino Giuseppe Dal Ben",
+    "kPoint": 128,
+    "hillSize": 141,
+    "record": {
+      "distance": 141.5,
+      "athlete": "Domen Prevc",
+      "nation": "SLO",
+      "date": "2026-02-14"
+    },
+    "opened": 1989,
+    "lastRebuilt": 2025,
+    "capacity": 15000,
+    "inrunLength": 115.13,
+    "takeoffAngle": 11.5,
+    "landingAngle": null,
+    "facts": [
+      {
+        "pl": "Skocznię przebudowano w latach 2022-2025 przed igrzyskami olimpijskimi 2026; duży obiekt ma teraz punkt K na 128 m i rozmiar HS 141.",
+        "en": "The hill was rebuilt in 2022-2025 ahead of the 2026 Winter Olympics; the large hill now has a K-point at 128 m and a hill size of HS 141."
+      },
+      {
+        "pl": "Oficjalny rekord 141,5 m ustanowił Domen Prevc 14 lutego 2026 roku w konkursie olimpijskim.",
+        "en": "The official record of 141.5 m was set by Domen Prevc on 14 February 2026 in the Olympic competition."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/ITA-Italien/Predazzo/0605/",
+    "photo": null,
+    "countryCode": "IT",
+    "city": "Predazzo",
+    "lat": 46.32988,
+    "lon": 11.6057
+  },
+  {
+    "slug": "predazzo-normal",
+    "eventSlug": "predazzo",
+    "name": "Trampolino Giuseppe Dal Ben",
+    "kPoint": 98,
+    "hillSize": 107,
+    "record": {
+      "distance": 107.0,
+      "athlete": "Gregor Deschwanden",
+      "nation": "SUI",
+      "date": "2026-02-09"
+    },
+    "opened": 1989,
+    "lastRebuilt": 2025,
+    "capacity": 15000,
+    "inrunLength": 93.51,
+    "takeoffAngle": 11,
+    "landingAngle": null,
+    "facts": [
+      {
+        "pl": "Zimowy rekord przebudowanej skoczni to 107 m, uzyskane 9 lutego 2026 roku w konkursie olimpijskim przez Gregora Deschwandena i Kacpra Tomasiaka.",
+        "en": "The winter record of the rebuilt hill is 107 m, reached on 9 February 2026 in the Olympic competition by Gregor Deschwanden and Kacper Tomasiak."
+      },
+      {
+        "pl": "Na mistrzostwach świata konkursy na skoczni normalnej wygrywali tu Adam Małysz (28 lutego 2003) i Anders Bardal (23 lutego 2013).",
+        "en": "At the World Championships the normal hill events here were won by Adam Małysz (28 February 2003) and Anders Bardal (23 February 2013)."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/ITA-Italien/Predazzo/0605/",
+    "photo": null,
+    "countryCode": "IT",
+    "city": "Predazzo",
+    "lat": 46.3301,
+    "lon": 11.60511
+  },
+  {
+    "slug": "pragelato",
+    "eventSlug": "pragelato",
+    "name": "Stadio del Trampolino",
+    "kPoint": 125,
+    "hillSize": 140,
+    "record": {
+      "distance": 144.0,
+      "athlete": "Simon Ammann",
+      "nation": "SUI",
+      "date": "2008-12-13"
+    },
+    "opened": 2004,
+    "lastRebuilt": null,
+    "capacity": 9000,
+    "inrunLength": 98.6,
+    "takeoffAngle": 11,
+    "landingAngle": 34.9,
+    "facts": [
+      {
+        "pl": "Skocznię zbudowano w 2004 roku na igrzyska olimpijskie 2006, na których konkurs na dużej skoczni wygrał 18 lutego Thomas Morgenstern.",
+        "en": "The hill was built in 2004 for the 2006 Winter Olympics, where Thomas Morgenstern won the large hill event on 18 February."
+      },
+      {
+        "pl": "Rekord 144 m ustanowił Simon Ammann 13 grudnia 2008 roku, wygrywając konkurs Pucharu Świata.",
+        "en": "The record of 144 m was set by Simon Ammann on 13 December 2008, when he won the World Cup competition."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/ITA-Italien/Pragelato/334-Stadio+del+Trampolino/",
+    "photo": null,
+    "countryCode": "IT",
+    "city": "Pragelato",
+    "lat": 45.00694,
+    "lon": 6.94111
+  },
+  {
+    "slug": "rasnov",
+    "eventSlug": "rasnov",
+    "name": "Trambulina Valea Cărbunării",
+    "kPoint": 90,
+    "hillSize": 97,
+    "record": {
+      "distance": 103.0,
+      "athlete": "Gregor Schlierenzauer",
+      "nation": "AUT",
+      "date": "2020-02-22"
+    },
+    "opened": 2012,
+    "lastRebuilt": null,
+    "capacity": null,
+    "inrunLength": null,
+    "takeoffAngle": 11.1,
+    "landingAngle": 33,
+    "facts": [
+      {
+        "pl": "Pierwsze męskie konkursy Pucharu Świata odbyły się tu 21 i 22 lutego 2020 roku, wygrali je Karl Geiger i Stefan Kraft.",
+        "en": "The first men's World Cup competitions here were held on 21 and 22 February 2020 and were won by Karl Geiger and Stefan Kraft."
+      },
+      {
+        "pl": "Oficjalny rekord 103 m uzyskali 22 lutego 2020 roku Gregor Schlierenzauer, Constantin Schmid i Stefan Kraft.",
+        "en": "The official record of 103 m was reached on 22 February 2020 by Gregor Schlierenzauer, Constantin Schmid and Stefan Kraft."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/ROU-Rum%C3%A4nien/R%C3%A2%C5%9Fnov/401/",
+    "photo": null,
+    "countryCode": "RO",
+    "city": "Râșnov",
+    "lat": 45.57142,
+    "lon": 25.47086
+  },
+  {
+    "slug": "nizhny-tagil",
+    "eventSlug": "nizhny-tagil",
+    "name": "Aist",
+    "kPoint": 120,
+    "hillSize": 134,
+    "record": {
+      "distance": 142.5,
+      "athlete": "Robert Johansson",
+      "nation": "NOR",
+      "date": "2020-12-05"
+    },
+    "opened": 1970,
+    "lastRebuilt": 2012,
+    "capacity": null,
+    "inrunLength": 94.85,
+    "takeoffAngle": 10.8,
+    "landingAngle": 33.5,
+    "facts": [
+      {
+        "pl": "Pierwszy konkurs Pucharu Świata odbył się tu 13 grudnia 2014 roku i wygrał go Anders Fannemel.",
+        "en": "The first World Cup competition here was held on 13 December 2014 and was won by Anders Fannemel."
+      },
+      {
+        "pl": "Ostatnie konkursy Pucharu Świata rozegrano tu 20 i 21 listopada 2021 roku, wygrali je Karl Geiger i Halvor Egner Granerud.",
+        "en": "The last World Cup competitions here were held on 20 and 21 November 2021 and were won by Karl Geiger and Halvor Egner Granerud."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/RUS-Russland/Nizhniy+Tagil/428/",
+    "photo": null,
+    "countryCode": "RU",
+    "city": "Niżny Tagił",
+    "lat": 57.8927,
+    "lon": 59.86712
+  },
+  {
+    "slug": "almaty",
+    "eventSlug": "almaty",
+    "name": "Sunkar",
+    "kPoint": 125,
+    "hillSize": 140,
+    "record": {
+      "distance": 141.5,
+      "athlete": "Severin Freund",
+      "nation": "GER",
+      "date": "2016-02-28"
+    },
+    "opened": 2010,
+    "lastRebuilt": null,
+    "capacity": 9500,
+    "inrunLength": 101.63,
+    "takeoffAngle": 11,
+    "landingAngle": 33.46,
+    "facts": [
+      {
+        "pl": "Jedyne konkursy Pucharu Świata odbyły się tu 27 i 28 lutego 2016 roku i oba wygrał Peter Prevc.",
+        "en": "The only World Cup competitions here were held on 27 and 28 February 2016, and Peter Prevc won both."
+      },
+      {
+        "pl": "Oficjalny rekord to 141,5 m Severina Freunda z 28 lutego 2016 roku, a najdłuższy skok zimowy to 145 m Petera Prevca z 27 lutego 2016 roku.",
+        "en": "The official record is 141.5 m by Severin Freund from 28 February 2016, and the longest winter jump is 145 m by Peter Prevc from 27 February 2016."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/KAZ-Kasachstan/Almaty/338-Gorney+Gigant/",
+    "photo": null,
+    "countryCode": "KZ",
+    "city": "Ałmaty",
+    "lat": 43.2117,
+    "lon": 76.9337
+  },
+  {
+    "slug": "sochi",
+    "eventSlug": "sochi",
+    "name": "RusSki Gorki",
+    "kPoint": 95,
+    "hillSize": 106,
+    "record": {
+      "distance": 108.0,
+      "athlete": "Lukáš Hlava",
+      "nation": "CZE",
+      "date": "2012-12-07"
+    },
+    "opened": 2012,
+    "lastRebuilt": null,
+    "capacity": 7500,
+    "inrunLength": 87.47,
+    "takeoffAngle": 11,
+    "landingAngle": 32.7,
+    "facts": [
+      {
+        "pl": "Jedyne konkursy Pucharu Świata odbyły się tu 8 i 9 grudnia 2012 roku na skoczni normalnej, wygrali je Gregor Schlierenzauer i Andreas Kofler.",
+        "en": "The only World Cup competitions here were held on 8 and 9 December 2012 on the normal hill and were won by Gregor Schlierenzauer and Andreas Kofler."
+      },
+      {
+        "pl": "Na igrzyskach olimpijskich 2014 oba konkursy indywidualne wygrał tu Kamil Stoch.",
+        "en": "At the 2014 Winter Olympics Kamil Stoch won both individual events here."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/RUS-Russland/Esto-Sadok/415-Russian+National+Ski+Jumping+Center/",
+    "photo": null,
+    "countryCode": "RU",
+    "city": "Soczi",
+    "lat": 43.67588,
+    "lon": 40.23962
+  },
+  {
+    "slug": "hakuba",
+    "eventSlug": "hakuba",
+    "name": "Hakuba Ski Jumping Stadium",
+    "kPoint": 120,
+    "hillSize": 134,
+    "record": {
+      "distance": 137.0,
+      "athlete": "Takanobu Okabe",
+      "nation": "JPN",
+      "date": "1998-02-17"
+    },
+    "opened": 1992,
+    "lastRebuilt": null,
+    "capacity": 45000,
+    "inrunLength": 93.9,
+    "takeoffAngle": 11,
+    "landingAngle": 37.5,
+    "facts": [
+      {
+        "pl": "Oficjalny rekord 137 m uzyskali Takanobu Okabe i Masahiko Harada 17 lutego 1998 roku w konkursie drużynowym igrzysk olimpijskich w Nagano.",
+        "en": "The official record of 137 m was reached by Takanobu Okabe and Masahiko Harada on 17 February 1998 in the team event of the Nagano Winter Olympics."
+      },
+      {
+        "pl": "W latach 2001-2004 co roku w styczniu rozgrywano tu jeden konkurs Pucharu Świata.",
+        "en": "From 2001 to 2004 one World Cup competition was held here each January."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/JPN-Japan/20-Nagano/Hakuba/0351-Olympic+Ski+Jumps/",
+    "photo": null,
+    "countryCode": "JP",
+    "city": "Hakuba",
+    "lat": 36.69532,
+    "lon": 137.83739
+  },
+  {
+    "slug": "park-city",
+    "eventSlug": "park-city",
+    "name": "Utah Olympic Park",
+    "kPoint": 120,
+    "hillSize": 134,
+    "record": {
+      "distance": 134.0,
+      "athlete": "Wolfgang Loitzl",
+      "nation": "AUT",
+      "date": "2001-01-20"
+    },
+    "opened": 1994,
+    "lastRebuilt": 2000,
+    "capacity": 21000,
+    "inrunLength": 104.7,
+    "takeoffAngle": 10.5,
+    "landingAngle": 35,
+    "facts": [
+      {
+        "pl": "Zimowy rekord 134 m ustanowił Wolfgang Loitzl 20 stycznia 2001 roku w konkursie Pucharu Świata, który wygrał Adam Małysz.",
+        "en": "The winter record of 134 m was set by Wolfgang Loitzl on 20 January 2001 in a World Cup competition won by Adam Małysz."
+      },
+      {
+        "pl": "Na igrzyskach olimpijskich 2002 oba konkursy indywidualne wygrał tu Simon Ammann.",
+        "en": "At the 2002 Winter Olympics Simon Ammann won both individual events here."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/USA-Vereinigte+Staaten/UT-Utah/Park+City/0577-Olympic+Park/",
+    "photo": null,
+    "countryCode": "US",
+    "city": "Park City",
+    "lat": 40.70882,
+    "lon": -111.55992
+  },
+  {
+    "slug": "villach",
+    "eventSlug": "villach",
+    "name": "Villacher Alpenarena",
+    "kPoint": 90,
+    "hillSize": 98,
+    "record": {
+      "distance": 99.5,
+      "athlete": "Adam Małysz",
+      "nation": "POL",
+      "date": "2001-12-08"
+    },
+    "opened": 1923,
+    "lastRebuilt": 2025,
+    "capacity": 18000,
+    "inrunLength": 85.4,
+    "takeoffAngle": 11.5,
+    "landingAngle": 36,
+    "facts": [
+      {
+        "pl": "Oficjalny zimowy rekord mężczyzn to 99,5 m Adama Małysza z 8 grudnia 2001 roku, kiedy wygrał tu konkurs Pucharu Świata.",
+        "en": "The official men's winter record is 99.5 m by Adam Małysz from 8 December 2001, when he won the World Cup competition here."
+      },
+      {
+        "pl": "Ostatnie męskie konkursy Pucharu Świata odbyły się tu 13 i 14 grudnia 2007 roku i oba wygrał Thomas Morgenstern.",
+        "en": "The last men's World Cup competitions here were held on 13 and 14 December 2007, and Thomas Morgenstern won both."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/AUT-%C3%96sterreich/K-K%C3%A4rnten/Villach/78/",
+    "photo": null,
+    "countryCode": "AT",
+    "city": "Villach",
+    "lat": 46.60306,
+    "lon": 13.81139
+  },
+  {
+    "slug": "whistler",
+    "eventSlug": "whistler",
+    "name": "Whistler Olympic Park",
+    "kPoint": 125,
+    "hillSize": 142,
+    "record": {
+      "distance": 149.0,
+      "athlete": "Gregor Schlierenzauer",
+      "nation": "AUT",
+      "date": "2009-01-25"
+    },
+    "opened": 2007,
+    "lastRebuilt": null,
+    "capacity": 12000,
+    "inrunLength": 95.55,
+    "takeoffAngle": 11.25,
+    "landingAngle": 35,
+    "facts": [
+      {
+        "pl": "Jedyne konkursy Pucharu Świata odbyły się tu 24 i 25 stycznia 2009 roku i oba wygrał Gregor Schlierenzauer.",
+        "en": "The only World Cup competitions here were held on 24 and 25 January 2009, and Gregor Schlierenzauer won both."
+      },
+      {
+        "pl": "Na igrzyskach olimpijskich 2010 oba konkursy indywidualne wygrał tu Simon Ammann, a drużynowy Austria.",
+        "en": "At the 2010 Winter Olympics Simon Ammann won both individual events here and Austria won the team event."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/CAN-Kanada/BC-British+Columbia/Whistler/122/",
+    "photo": null,
+    "countryCode": "CA",
+    "city": "Whistler",
+    "lat": 50.13722,
+    "lon": -123.10969
+  },
+  {
+    "slug": "pyeongchang",
+    "eventSlug": "pyeongchang",
+    "name": "Alpensia",
+    "kPoint": 125,
+    "hillSize": 142,
+    "record": {
+      "distance": 143.5,
+      "athlete": "Ryōyū Kobayashi",
+      "nation": "JPN",
+      "date": "2018-02-16"
+    },
+    "opened": 2008,
+    "lastRebuilt": null,
+    "capacity": 26000,
+    "inrunLength": 98,
+    "takeoffAngle": 11,
+    "landingAngle": 34.6,
+    "facts": [
+      {
+        "pl": "Jedyny konkurs Pucharu Świata na dużej skoczni odbył się 15 lutego 2017 roku i wygrał go Stefan Kraft.",
+        "en": "The only World Cup competition on the large hill was held on 15 February 2017 and was won by Stefan Kraft."
+      },
+      {
+        "pl": "Na igrzyskach olimpijskich 2018 konkurs na dużej skoczni wygrał 17 lutego Kamil Stoch, a drużynowy Norwegia.",
+        "en": "At the 2018 Winter Olympics Kamil Stoch won the large hill event on 17 February and Norway won the team event."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/KOR-S%C3%BCdkorea/PyeongChang/0391/",
+    "photo": null,
+    "countryCode": "KR",
+    "city": "Pjongczang",
+    "lat": 37.66167,
+    "lon": 128.68056
+  },
+  {
+    "slug": "pyeongchang-normal",
+    "eventSlug": "pyeongchang",
+    "name": "Alpensia",
+    "kPoint": 98,
+    "hillSize": 109,
+    "record": {
+      "distance": 113.5,
+      "athlete": "Stefan Kraft",
+      "nation": "AUT",
+      "date": "2017-02-16"
+    },
+    "opened": 2008,
+    "lastRebuilt": null,
+    "capacity": 26000,
+    "inrunLength": 89.5,
+    "takeoffAngle": 11,
+    "landingAngle": 34,
+    "facts": [
+      {
+        "pl": "Jedyny konkurs Pucharu Świata mężczyzn na skoczni normalnej odbył się 16 lutego 2017 roku i wygrał go Maciej Kot.",
+        "en": "The only men's World Cup competition on the normal hill was held on 16 February 2017 and was won by Maciej Kot."
+      },
+      {
+        "pl": "Olimpijski konkurs na skoczni normalnej wygrał tu 10 lutego 2018 roku Andreas Wellinger.",
+        "en": "Andreas Wellinger won the Olympic normal hill event here on 10 February 2018."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/KOR-S%C3%BCdkorea/PyeongChang/0391/",
+    "photo": null,
+    "countryCode": "KR",
+    "city": "Pjongczang",
+    "lat": 37.66164,
+    "lon": 128.6799
+  },
+  {
+    "slug": "planica-large",
+    "eventSlug": "planica",
+    "name": "Bloudkova velikanka",
+    "kPoint": 125,
+    "hillSize": 138,
+    "record": {
+      "distance": 142.0,
+      "athlete": "Peter Prevc",
+      "nation": "SLO",
+      "date": "2014-03-23"
+    },
+    "opened": 1934,
+    "lastRebuilt": 2012,
+    "capacity": null,
+    "inrunLength": 96.7,
+    "takeoffAngle": 11,
+    "landingAngle": 33.55,
+    "facts": [
+      {
+        "pl": "Finał Pucharu Świata w dniach 21-23 marca 2014 roku rozegrano na tej skoczni: konkursy indywidualne wygrali Severin Freund i Peter Prevc, a drużynowy Austria.",
+        "en": "The World Cup finals on 21-23 March 2014 were held on this hill: Severin Freund and Peter Prevc won the individual competitions and Austria won the team event."
+      },
+      {
+        "pl": "Na mistrzostwach świata w 2023 roku konkurs na dużej skoczni wygrał tu 3 marca Timi Zajc, a drużynowy Słowenia.",
+        "en": "At the 2023 World Championships Timi Zajc won the large hill event here on 3 March and Slovenia won the team event."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SLO-Slowenien/Planica/0476-Velikanka/",
+    "photo": null,
+    "countryCode": "SI",
+    "city": "Planica",
+    "lat": 46.47878,
+    "lon": 13.72222
   }
 ]

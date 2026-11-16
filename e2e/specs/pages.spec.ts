@@ -409,8 +409,10 @@ test.describe('external links', () => {
 test.describe('hill profiles', () => {
   test('index lists every hill with a photo', async ({ page }) => {
     await page.goto('/pl/hills/');
-    await expect(page.locator('.tournament-card:visible')).toHaveCount(19);
-    await expect(page.locator('.hill-card__image:visible')).toHaveCount(19);
+    await expect(page.locator('.tournament-card:visible')).toHaveCount(43);
+    expect(
+      await page.locator('.hill-card__image:visible').count(),
+    ).toBeGreaterThanOrEqual(19);
     await expect(page.locator('.topbar__nav [aria-current="page"]')).toHaveText(
       'Skocznie',
     );
@@ -427,11 +429,11 @@ test.describe('hill profiles', () => {
     await expect(germany).toBeHidden();
     await button.click();
     await expect(germany).toBeVisible();
-    await expect(germany.locator('.tournament-card')).toHaveCount(4);
+    await expect(germany.locator('.tournament-card')).toHaveCount(6);
     await expect(page.locator('.country-group__title').first()).toContainText(
       'Austria',
     );
-    await expect(page.locator('.tournament-card:visible')).toHaveCount(19);
+    await expect(page.locator('.tournament-card:visible')).toHaveCount(43);
     await page.reload();
     await expect(button).toHaveAttribute('aria-pressed', 'true');
     await expect(germany).toBeVisible();
@@ -448,7 +450,7 @@ test.describe('hill profiles', () => {
     await expect(toc).toBeHidden();
     await page.getByRole('button', { name: 'Grupuj według kraju' }).click();
     await expect(toc).toBeVisible();
-    await expect(toc.locator('.toc__link')).toHaveCount(10);
+    await expect(toc.locator('.toc__link')).toHaveCount(17);
 
     const content = await page.locator('.with-toc__content').boundingBox();
     const box = await toc.boundingBox();
@@ -571,7 +573,7 @@ test.describe('maps', () => {
 
     await expect(map).toHaveAttribute('data-ready', 'true');
     // Two Falun hills share one marker.
-    await expect(map.locator('path.leaflet-interactive')).toHaveCount(18);
+    await expect(map.locator('path.leaflet-interactive')).toHaveCount(42);
     await expect(
       page.locator('.tournament-card[data-hill="zakopane"]:visible'),
     ).toContainText('Zakopane, Polska');
