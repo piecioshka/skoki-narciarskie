@@ -21,6 +21,7 @@ Serwer deweloperski startuje na pierwszym wolnym porcie od 3000.
 - `npm run lint` - ESLint
 - `npm run format` / `npm run format:check` - Prettier
 - `npm run standings` - pobiera klasyfikację generalną z FIS do `src/data/standings/`
+- `npm run import-season -- 2025-2026` - importuje zakończony sezon z FIS (zawody, konkursy mężczyzn i mieszane, podia)
 - `npm run ci` - wszystko, co uruchamia CI; ten sam skrypt odpala hook `pre-push`
 
 ## Architektura
@@ -80,6 +81,12 @@ Linki do wyników powstają z `fisRaceId`, więc nie wpisuje się ich ręcznie.
 - godziny startu: PDF "Event Program" na stronie zawodów, sekcja "Event schedule (LOC times)"
 
 Po zmianie pliku sezonu uruchom `npm test` (walidacja schematu) i `npm run build`.
+
+## Sezony archiwalne
+
+`npm run import-season -- <sezon>` pobiera z FIS kalendarz Pucharu Świata mężczyzn, strony zawodów i wyniki, a potem zapisuje plik sezonu z podium każdego konkursu (`results`). Kwalifikacje są pomijane. FIS po około 50 szybkich zapytaniach odpowiada kodem 429, więc skrypt robi jedno zapytanie na 3 sekundy, a odpowiedzi zapisuje w `tmp/fis-cache/` (ponowne uruchomienie nie kosztuje zapytań).
+
+Importowane sezony nie mają rozmiaru skoczni ani jej nazwy (FIS podaje tylko typ: normalna, duża, mamucia), stąd `hillSize: null`, `hillType` i `hillName: null`. Nazwa skoczni na stronie pochodzi wtedy z `src/data/hills.json`. Drugie zawody w tej samej miejscowości w jednym sezonie dostają slug z numerem, np. `planica-2`.
 
 ## Dodanie sezonu
 

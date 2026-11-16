@@ -6,6 +6,7 @@ import Icon from '../../components/Icon.astro';
 import SlotTime from '../../components/SlotTime.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../i18n';
 import Layout from '../../layouts/Layout.astro';
+import { describeEventHill } from '../../lib/hills';
 import { getFlag } from '../../lib/links';
 import { eventPath, seasonPath } from '../../lib/paths';
 import { findNext, listCompetitions, sortEvents } from '../../lib/schedule';
@@ -59,8 +60,8 @@ const buildTimeNext = findNext(competitions, new Date());
           {item.event.city}
         </h3>
         <p class="next__meta">
-          {dict.kinds[item.competition.kind]} · {item.event.hillName} · HS
-          {item.competition.hillSize}
+          {dict.kinds[item.competition.kind]} ·{' '}
+          {describeEventHill(item.event, dict.hillTypes)}
         </p>
         <p class="next__time">
           <SlotTime

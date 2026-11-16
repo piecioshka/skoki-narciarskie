@@ -5,9 +5,14 @@ import Icon from '../../../../components/Icon.astro';
 import SlotTime from '../../../../components/SlotTime.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../../../i18n';
 import Layout from '../../../../layouts/Layout.astro';
-import { getFisEventUrl, getFlag, getNationFlag } from '../../../../lib/links';
+import {
+  getFisEventUrl,
+  getFlag,
+  getNationCountryCode,
+  getNationFlag,
+} from '../../../../lib/links';
 import HillCard from '../../../../components/HillCard.astro';
-import { getHills } from '../../../../lib/hills';
+import { describeEventHill, getEventHills } from '../../../../lib/hills';
 import { getPrograms } from '../../../../lib/programs';
 import ProgramCard from '../../../../components/ProgramCard.astro';
 import { seasonPath, tournamentPath } from '../../../../lib/paths';
@@ -16,7 +21,6 @@ import type { Season, SeasonEvent } from '../../../../lib/schema';
 import {
   getEventEnd,
   getEventRange,
-  getHillSizes,
   getSlot,
   groupByDay,
 } from '../../../../lib/schedule';
@@ -43,17 +47,20 @@ const { lang, season, event } = Astro.props;
 const dict = t(lang);
 const range = getEventRange(event);
 const days = groupByDay(event);
-const hills = getHills(event.slug);
+const hills = getEventHills(event);
+const nationName = (nation: string): string => {
+  const countryCode = getNationCountryCode(nation);
+
+  return countryCode ? getCountryName(lang, countryCode) : nation;
+};
 const tournaments = getEventTournaments(season.id, event.slug);
 const programs = getPrograms(season.id).filter(
   (program) => program.eventSlug === event.slug,
 );
 const country = getCountryName(lang, event.countryCode);
-const hillSizes = getHillSizes(event)
-  .map((size) => `HS${size}`)
-  .join(', ');
+const hillText = describeEventHill(event, dict.hillTypes);
 const title = `${event.city} ${formatSeasonLabel(season.id)}`;
-const description = `${dict.types[event.type]}: ${event.city} (${country}), ${range.start} - ${range.end}. ${event.hillName}, ${hillSizes}.`;
+const description = `${dict.types[event.type]}: ${event.city} (${country}), ${range.start} - ${range.end}. ${hillText}`;
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SportsEvent',
@@ -64,7 +71,7 @@ const jsonLd = {
   eventStatus: 'https://schema.org/EventScheduled',
   location: {
     '@type': 'Place',
-    name: event.hillName,
+    name: event.hillName ?? event.city,
     address: {
       '@type': 'PostalAddress',
       addressLocality: event.city,
@@ -98,7 +105,7 @@ const jsonLd = {
       {event.city}
     </h2>
     <p class="event-header__meta">
-      {country} · {dict.hill}: {event.hillName} ({hillSizes})
+      {[country, hillText].filter(Boolean).join(' · ')}
     </p>
     {tournaments.map((tournament) => (
       <p class="event-header__meta">
@@ -146,7 +153,11 @@ const jsonLd = {
                   <span class="competition__kind">
                     {dict.kinds[competition.kind]}
                     <span class="competition__hill">
-                      HS{competition.hillSize}
+                      {competition.hillSize === null
+                        ? competition.hillType
+                          ? dict.hillTypes[competition.hillType]
+                          : ''
+                        : `HS${competition.hillSize}`}
                     </span>
                   </span>
                   {competition.status === 'scheduled' ? (
@@ -157,6 +168,17 @@ const jsonLd = {
                     </span>
                   )}
                 </div>
+                {competition.results.length > 0 && (
+                  <ol class="podium" aria-label={dict.podium}>
+                    {competition.results.map((place) => (
+                      <li class="podium__place">
+                        <span class="podium__rank">{place.rank}.</span>
+                        {getNationFlag(place.nation)}{' '}
+                        {place.name ?? nationName(place.nation)}
+                      </li>
+                    ))}
+                  </ol>
+                )}
                 <CompetitionLinks
                   lang={lang}
                   season={season}

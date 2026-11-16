@@ -11,6 +11,7 @@ Serwis kibica Pucharu Świata w skokach narciarskich: kiedy jest najbliższy kon
 - ⏱️ Najbliższy konkurs z odliczaniem do startu _(także kwalifikacje i konkursy drużynowe)_
 - 🗓️ Terminarz sezonu: Puchar Świata mężczyzn i Mistrzostwa Świata, z programem każdych zawodów
 - 📺 Linki do polskich nadawców i do wyników na żywo w serwisie FIS
+- 🗄️ Archiwum trzech poprzednich sezonów z podium każdego konkursu
 - 🏆 Klasyfikacja generalna od sezonu 2020/2021 _(z filtrem "Tylko Polacy")_
 - 🥇 Profile turniejów: Turniej Czterech Skoczni, Raw Air, Planica7 i inne, z zasadami i zwycięzcami
 - 🏔️ Karty skoczni: punkt K, rozmiar, rekord, parametry profilu i ciekawostki

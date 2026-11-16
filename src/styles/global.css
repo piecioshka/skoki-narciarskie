@@ -1139,3 +1139,26 @@ th.table__cell--label {
 .competition > .links {
   flex-basis: 100%;
 }
+
+/* Podium of a finished competition */
+
+.podium {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  gap: 0.25rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.podium__rank {
+  margin-right: 0.25rem;
+  font-family: var(--pal-font-mono);
+  font-weight: var(--pal-font-weight-semibold);
+  color: var(--pal-text-muted);
+}
+
+.podium__place:first-child {
+  font-weight: var(--pal-font-weight-semibold);
+}

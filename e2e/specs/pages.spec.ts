@@ -233,6 +233,70 @@ test.describe('tournaments', () => {
   });
 });
 
+test.describe('season archive', () => {
+  test('schedule switches between seasons', async ({ page }) => {
+    await page.goto('/pl/2026-2027/');
+
+    const switcher = page.locator('.season-switch');
+
+    await expect(switcher.getByRole('link')).toHaveText([
+      '2026/2027',
+      '2025/2026',
+      '2024/2025',
+      '2023/2024',
+    ]);
+    await switcher.getByRole('link', { name: '2025/2026' }).click();
+    await expect(page).toHaveURL(/\/pl\/2025-2026\/$/);
+    await expect(page.locator('.event-card')).toHaveCount(19);
+    await expect(
+      page.locator('.event-card[data-event="klingenthal"]'),
+    ).toHaveAttribute('data-phase', 'finished');
+  });
+
+  test('finished competition shows its podium and a link to results', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2025-2026/wisla/');
+
+    const row = page.locator('.competition').first();
+
+    await expect(row.locator('.podium__place')).toHaveText([
+      /1\..*Domen Prevc/,
+      /2\..*Philipp Raimund/,
+      /3\..*Ryoyu Kobayashi/,
+    ]);
+    await expect(row).toContainText('skocznia duża');
+    await expect(
+      row.getByRole('link', { name: 'Wyniki', exact: true }),
+    ).toBeVisible();
+    await expect(
+      row.getByRole('link', { name: 'Wyniki na żywo' }),
+    ).toBeHidden();
+  });
+
+  test('team podium names countries and cancelled events are marked', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2025-2026/zakopane/');
+    await expect(page.locator('.podium').first()).toContainText('Austria');
+    await expect(page.locator('.competition').first()).toContainText(
+      'Konkurs duetów',
+    );
+
+    await page.goto('/pl/2025-2026/lake-placid/');
+    await expect(page.locator('.competition').first()).toContainText(
+      'Odwołany',
+    );
+  });
+
+  test('home page still shows the newest season', async ({ page }) => {
+    await page.clock.setFixedTime(new Date('2026-11-16T12:00:00Z'));
+    await page.goto('/pl/');
+    await expect(page.locator('.js-next:visible')).toContainText('Lillehammer');
+    await expect(page.locator('.js-next:visible')).toContainText('2026-11-20');
+  });
+});
+
 test.describe('hill', () => {
   test('event page shows technical data, the record and facts', async ({
     page,

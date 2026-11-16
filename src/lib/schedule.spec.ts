@@ -20,6 +20,7 @@ function competition(overrides: Partial<Competition>): Competition {
     date: '2026-11-21',
     time: '16:50',
     status: 'scheduled',
+    results: [],
     ...overrides,
   };
 }

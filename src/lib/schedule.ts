@@ -101,9 +101,18 @@ export function getEventEnd(event: SeasonEvent): Date {
 }
 
 export function getHillSizes(event: SeasonEvent): number[] {
-  return [...new Set(event.competitions.map((item) => item.hillSize))].sort(
-    (a, b) => a - b,
+  const sizes = event.competitions.flatMap((item) =>
+    item.hillSize === null ? [] : [item.hillSize],
   );
+
+  return [...new Set(sizes)].sort((a, b) => a - b);
+}
+
+/** Short hill description: name and sizes, whatever of them is known. */
+export function describeHill(event: SeasonEvent): string {
+  const sizes = getHillSizes(event).map((size) => `HS${size}`);
+
+  return [event.hillName, sizes.join(', ')].filter(Boolean).join(' · ');
 }
 
 export interface CompetitionDay {

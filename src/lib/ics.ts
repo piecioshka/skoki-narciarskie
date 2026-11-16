@@ -24,7 +24,9 @@ function buildEvent(
 ): string[] {
   const { event, competition, slot } = item;
   const dict = t(lang);
-  const summary = `${event.city}: ${dict.kinds[competition.kind]} (HS${competition.hillSize})`;
+  const size =
+    competition.hillSize === null ? '' : ` (HS${competition.hillSize})`;
+  const summary = `${event.city}: ${dict.kinds[competition.kind]}${size}`;
   const when = slot.timed
     ? [
         `DTSTART:${formatInstant(slot.start)}`,
@@ -41,7 +43,7 @@ function buildEvent(
     `DTSTAMP:${stamp}`,
     ...when,
     `SUMMARY:${escapeText(summary)}`,
-    `LOCATION:${escapeText(`${event.hillName}, ${event.city}`)}`,
+    `LOCATION:${escapeText([event.hillName, event.city].filter(Boolean).join(', '))}`,
     `DESCRIPTION:${escapeText(`${dict.types[event.type]}\n${getResultsUrl(competition)}`)}`,
     `URL:${getResultsUrl(competition)}`,
     `STATUS:${competition.status === 'cancelled' ? 'CANCELLED' : 'CONFIRMED'}`,

@@ -1,0 +1,1268 @@
+{
+  "id": "2025-2026",
+  "broadcasters": {},
+  "events": [
+    {
+      "slug": "lillehammer",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58076,
+      "city": "Lillehammer",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7460,
+          "kind": "mixed-team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-11-21",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "JPN"
+            },
+            {
+              "rank": 2,
+              "nation": "SLO"
+            },
+            {
+              "rank": 3,
+              "nation": "AUT"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7462,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-11-22",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Daniel Tschofenig",
+              "nation": "AUT",
+              "fisCompetitorId": 196759
+            },
+            {
+              "rank": 2,
+              "name": "Jan Hoerl",
+              "nation": "AUT",
+              "fisCompetitorId": 197640
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7466,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-11-23",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 3,
+              "name": "Felix Hoffmann",
+              "nation": "GER",
+              "fisCompetitorId": 166436
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "falun",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58077,
+      "city": "Falun",
+      "countryCode": "SE",
+      "hillName": null,
+      "timeZone": "Europe/Amsterdam",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7468,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "normal",
+          "date": "2025-11-25",
+          "time": "15:10",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 3,
+              "name": "Philipp Raimund",
+              "nation": "GER",
+              "fisCompetitorId": 196090
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7470,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-11-26",
+          "time": "15:10",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 2,
+              "name": "Stephan Embacher",
+              "nation": "AUT",
+              "fisCompetitorId": 229566
+            },
+            {
+              "rank": 3,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ruka",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58078,
+      "city": "Ruka",
+      "countryCode": "FI",
+      "hillName": null,
+      "timeZone": "Europe/Helsinki",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7476,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-11-29",
+          "time": "16:05",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 2,
+              "name": "Ren Nikaido",
+              "nation": "JPN",
+              "fisCompetitorId": 194909
+            },
+            {
+              "rank": 3,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7478,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-11-30",
+          "time": "15:50",
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    },
+    {
+      "slug": "wisla",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58079,
+      "city": "Wisla",
+      "countryCode": "PL",
+      "hillName": null,
+      "timeZone": "Europe/Warsaw",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7484,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-12-06",
+          "time": "14:45",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Philipp Raimund",
+              "nation": "GER",
+              "fisCompetitorId": 196090
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7486,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-12-07",
+          "time": "14:25",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 3,
+              "name": "Philipp Raimund",
+              "nation": "GER",
+              "fisCompetitorId": 196090
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lake-placid",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58080,
+      "city": "Lake Placid",
+      "countryCode": "US",
+      "hillName": null,
+      "timeZone": "America/New_York",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7490,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-12-13",
+          "time": null,
+          "status": "cancelled",
+          "results": []
+        },
+        {
+          "fisRaceId": 7491,
+          "kind": "mixed-team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-12-14",
+          "time": null,
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    },
+    {
+      "slug": "klingenthal",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58645,
+      "city": "Klingenthal",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Amsterdam",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7624,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-12-13",
+          "time": "15:45",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 3,
+              "name": "Philipp Raimund",
+              "nation": "GER",
+              "fisCompetitorId": 196090
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7629,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-12-14",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Ren Nikaido",
+              "nation": "JPN",
+              "fisCompetitorId": 194909
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "engelberg",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58081,
+      "city": "Engelberg",
+      "countryCode": "CH",
+      "hillName": null,
+      "timeZone": "Europe/Zurich",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7495,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-12-20",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Felix Hoffmann",
+              "nation": "GER",
+              "fisCompetitorId": 166436
+            },
+            {
+              "rank": 3,
+              "name": "Ren Nikaido",
+              "nation": "JPN",
+              "fisCompetitorId": 194909
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7499,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-12-21",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 3,
+              "name": "Felix Hoffmann",
+              "nation": "GER",
+              "fisCompetitorId": 166436
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oberstdorf",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 58086,
+      "city": "Oberstdorf",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Amsterdam",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7501,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2025-12-29",
+          "time": "16:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Daniel Tschofenig",
+              "nation": "AUT",
+              "fisCompetitorId": 196759
+            },
+            {
+              "rank": 3,
+              "name": "Felix Hoffmann",
+              "nation": "GER",
+              "fisCompetitorId": 166436
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "garmisch-partenkirchen",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 58088,
+      "city": "Garmisch-Partenkirchen",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Amsterdam",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7503,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-01-01",
+          "time": "14:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Jan Hoerl",
+              "nation": "AUT",
+              "fisCompetitorId": 197640
+            },
+            {
+              "rank": 3,
+              "name": "Stephan Embacher",
+              "nation": "AUT",
+              "fisCompetitorId": 229566
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "innsbruck",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 58093,
+      "city": "Innsbruck",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7505,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-01-04",
+          "time": "13:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ren Nikaido",
+              "nation": "JPN",
+              "fisCompetitorId": 194909
+            },
+            {
+              "rank": 2,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 3,
+              "name": "Stephan Embacher",
+              "nation": "AUT",
+              "fisCompetitorId": 229566
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bischofshofen",
+      "type": "world-cup",
+      "tags": ["four-hills"],
+      "fisEventId": 58098,
+      "city": "Bischofshofen",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7507,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-01-06",
+          "time": "16:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Daniel Tschofenig",
+              "nation": "AUT",
+              "fisCompetitorId": 196759
+            },
+            {
+              "rank": 2,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "zakopane",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58104,
+      "city": "Zakopane",
+      "countryCode": "PL",
+      "hillName": null,
+      "timeZone": "Europe/Warsaw",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7510,
+          "kind": "super-team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-01-10",
+          "time": "16:10",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "AUT"
+            },
+            {
+              "rank": 2,
+              "nation": "SLO"
+            },
+            {
+              "rank": 3,
+              "nation": "POL"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7511,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-01-11",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 2,
+              "name": "Jan Hoerl",
+              "nation": "AUT",
+              "fisCompetitorId": 197640
+            },
+            {
+              "rank": 3,
+              "name": "Manuel Fettner",
+              "nation": "AUT",
+              "fisCompetitorId": 17013
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sapporo",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58105,
+      "city": "Sapporo",
+      "countryCode": "JP",
+      "hillName": null,
+      "timeZone": "Asia/Tokyo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7513,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-01-17",
+          "time": "15:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Naoki Nakamura",
+              "nation": "JPN",
+              "fisCompetitorId": 160506
+            },
+            {
+              "rank": 3,
+              "name": "Ren Nikaido",
+              "nation": "JPN",
+              "fisCompetitorId": 194909
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7515,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-01-18",
+          "time": "11:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 3,
+              "name": "Daniel Tschofenig",
+              "nation": "AUT",
+              "fisCompetitorId": 196759
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "willingen",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58107,
+      "city": "Willingen",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Amsterdam",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7521,
+          "kind": "mixed-team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-01-30",
+          "time": "16:10",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "SLO"
+            },
+            {
+              "rank": 2,
+              "nation": "GER"
+            },
+            {
+              "rank": 3,
+              "nation": "JPN"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7523,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-01-31",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Ren Nikaido",
+              "nation": "JPN",
+              "fisCompetitorId": 194909
+            },
+            {
+              "rank": 3,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7527,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-02-01",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Ren Nikaido",
+              "nation": "JPN",
+              "fisCompetitorId": 194909
+            },
+            {
+              "rank": 3,
+              "name": "Philipp Raimund",
+              "nation": "GER",
+              "fisCompetitorId": 196090
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "kulm",
+      "type": "world-cup",
+      "tags": ["ski-flying"],
+      "fisEventId": 58132,
+      "city": "Kulm",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7553,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2026-02-28",
+          "time": "13:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Stephan Embacher",
+              "nation": "AUT",
+              "fisCompetitorId": 229566
+            },
+            {
+              "rank": 3,
+              "name": "Jonas Schuster",
+              "nation": "AUT",
+              "fisCompetitorId": 196784
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7555,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2026-03-01",
+          "time": "13:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Stephan Embacher",
+              "nation": "AUT",
+              "fisCompetitorId": 229566
+            },
+            {
+              "rank": 3,
+              "name": "Johann Andre Forfang",
+              "nation": "NOR",
+              "fisCompetitorId": 147549
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lahti",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58134,
+      "city": "Lahti",
+      "countryCode": "FI",
+      "hillName": null,
+      "timeZone": "Europe/Helsinki",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7720,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-03-06",
+          "time": "15:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Philipp Raimund",
+              "nation": "GER",
+              "fisCompetitorId": 196090
+            },
+            {
+              "rank": 2,
+              "name": "Daniel Tschofenig",
+              "nation": "AUT",
+              "fisCompetitorId": 196759
+            },
+            {
+              "rank": 3,
+              "name": "Vladimir Zografski",
+              "nation": "BUL",
+              "fisCompetitorId": 111930
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7559,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-03-07",
+          "time": "18:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Daniel Tschofenig",
+              "nation": "AUT",
+              "fisCompetitorId": 196759
+            },
+            {
+              "rank": 2,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 3,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7563,
+          "kind": "super-team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-03-08",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "AUT"
+            },
+            {
+              "rank": 2,
+              "nation": "SLO"
+            },
+            {
+              "rank": 3,
+              "nation": "FIN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oslo",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 58135,
+      "city": "Oslo",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7567,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-03-14",
+          "time": "16:40",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Gregor Deschwanden",
+              "nation": "SUI",
+              "fisCompetitorId": 124118
+            },
+            {
+              "rank": 2,
+              "name": "Maximilian Ortner",
+              "nation": "AUT",
+              "fisCompetitorId": 209633
+            },
+            {
+              "rank": 3,
+              "name": "Naoki Nakamura",
+              "nation": "JPN",
+              "fisCompetitorId": 160506
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7571,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2026-03-15",
+          "time": "16:10",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Tomofumi Naito",
+              "nation": "JPN",
+              "fisCompetitorId": 117102
+            },
+            {
+              "rank": 2,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 3,
+              "name": "Antti Aalto",
+              "nation": "FIN",
+              "fisCompetitorId": 182547
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "vikersund",
+      "type": "world-cup",
+      "tags": ["ski-flying"],
+      "fisEventId": 58136,
+      "city": "Vikersund",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7574,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2026-03-21",
+          "time": "17:05",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stephan Embacher",
+              "nation": "AUT",
+              "fisCompetitorId": 229566
+            },
+            {
+              "rank": 2,
+              "name": "Tomofumi Naito",
+              "nation": "JPN",
+              "fisCompetitorId": 117102
+            },
+            {
+              "rank": 3,
+              "name": "Johann Andre Forfang",
+              "nation": "NOR",
+              "fisCompetitorId": 147549
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7576,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2026-03-22",
+          "time": "17:15",
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    },
+    {
+      "slug": "planica",
+      "type": "world-cup",
+      "tags": ["ski-flying"],
+      "fisEventId": 58137,
+      "city": "Planica",
+      "countryCode": "SI",
+      "hillName": null,
+      "timeZone": "Europe/Ljubljana",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 7579,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2026-03-27",
+          "time": "15:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 2,
+              "name": "Ren Nikaido",
+              "nation": "JPN",
+              "fisCompetitorId": 194909
+            },
+            {
+              "rank": 3,
+              "name": "Daniel Tschofenig",
+              "nation": "AUT",
+              "fisCompetitorId": 196759
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7580,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2026-03-28",
+          "time": "09:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "AUT"
+            },
+            {
+              "rank": 2,
+              "nation": "JPN"
+            },
+            {
+              "rank": 3,
+              "nation": "NOR"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 7582,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2026-03-29",
+          "time": "10:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 2,
+              "name": "Domen Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 186516
+            },
+            {
+              "rank": 3,
+              "name": "Johann Andre Forfang",
+              "nation": "NOR",
+              "fisCompetitorId": 147549
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -5,12 +5,31 @@ const localTime = z.string().regex(/^\d{2}:\d{2}$/);
 
 export const competitionSchema = z.object({
   fisRaceId: z.number().int().positive(),
-  kind: z.enum(['qualification', 'individual', 'team', 'mixed-team']),
-  hillSize: z.number().int().positive(),
+  kind: z.enum([
+    'qualification',
+    'individual',
+    'team',
+    'super-team',
+    'mixed-team',
+  ]),
+  // Unknown for seasons imported from FIS, which publishes only the hill type.
+  hillSize: z.number().int().positive().nullable(),
+  hillType: z.enum(['normal', 'large', 'flying']).optional(),
   // Date and time are local to the venue; `time: null` means "not announced".
   date: isoDate,
   time: localTime.nullable(),
   status: z.enum(['scheduled', 'cancelled', 'moved']),
+  // Podium of a finished competition; teams have no `name`.
+  results: z
+    .array(
+      z.object({
+        rank: z.number().int().positive(),
+        name: z.string().min(1).optional(),
+        nation: z.string().regex(/^[A-Z]{3}$/),
+        fisCompetitorId: z.number().int().positive().optional(),
+      }),
+    )
+    .default([]),
 });
 
 export const officialSchema = z.object({
@@ -27,7 +46,7 @@ export const eventSchema = z.object({
   fisEventId: z.number().int().positive(),
   city: z.string().min(1),
   countryCode: z.string().regex(/^[A-Z]{2}$/),
-  hillName: z.string().min(1),
+  hillName: z.string().min(1).nullable(),
   timeZone: z.string().min(1),
   broadcasts: z.array(z.string()),
   officials: z.array(officialSchema).default([]),

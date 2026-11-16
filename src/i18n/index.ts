@@ -84,6 +84,8 @@ interface Dictionary {
   edition: string;
   placeLabels: [string, string, string];
   partOf: string;
+  hillTypes: Record<'normal' | 'large' | 'flying', string>;
+  podium: string;
   officials: string;
   officialRoles: Record<OfficialRole, string>;
   switchLanguage: string;
@@ -215,6 +217,12 @@ const pl: Dictionary = {
   edition: 'Edycja',
   placeLabels: ['1. miejsce', '2. miejsce', '3. miejsce'],
   partOf: 'Część turnieju',
+  hillTypes: {
+    normal: 'skocznia normalna',
+    large: 'skocznia duża',
+    flying: 'skocznia mamucia',
+  },
+  podium: 'Podium',
   officials: 'Sędziowie i delegaci',
   officialRoles: {
     'technical-delegate': 'Delegat techniczny FIS',
@@ -248,6 +256,7 @@ const pl: Dictionary = {
     qualification: 'Kwalifikacje',
     individual: 'Konkurs indywidualny',
     team: 'Konkurs drużynowy',
+    'super-team': 'Konkurs duetów',
     'mixed-team': 'Konkurs drużyn mieszanych',
   },
   tags: { 'four-hills': 'Turniej Czterech Skoczni', 'ski-flying': 'Loty' },
@@ -357,6 +366,12 @@ const en: Dictionary = {
   edition: 'Edition',
   placeLabels: ['1st place', '2nd place', '3rd place'],
   partOf: 'Part of the tournament',
+  hillTypes: {
+    normal: 'normal hill',
+    large: 'large hill',
+    flying: 'flying hill',
+  },
+  podium: 'Podium',
   officials: 'Judges and delegates',
   officialRoles: {
     'technical-delegate': 'FIS Technical Delegate',
@@ -391,6 +406,7 @@ const en: Dictionary = {
     qualification: 'Qualification',
     individual: 'Individual competition',
     team: 'Team competition',
+    'super-team': 'Super team competition',
     'mixed-team': 'Mixed team competition',
   },
   tags: { 'four-hills': 'Four Hills Tournament', 'ski-flying': 'Ski flying' },
