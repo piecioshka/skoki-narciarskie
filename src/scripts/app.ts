@@ -168,6 +168,30 @@ function setupHomeOnlyFilters(): void {
   }
 }
 
+function setupHillGrouping(): void {
+  const button = document.querySelector<HTMLElement>('.js-group-hills');
+  const flat = document.querySelector<HTMLElement>('.js-hills-flat');
+  const grouped = document.querySelector<HTMLElement>('.js-hills-grouped');
+
+  if (!button || !flat || !grouped) {
+    return;
+  }
+
+  const apply = (pressed: boolean): void => {
+    button.setAttribute('aria-pressed', String(pressed));
+    flat.hidden = pressed;
+    grouped.hidden = !pressed;
+  };
+
+  apply(read(STORAGE_KEYS.hillsGrouped) === 'true');
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') !== 'true';
+
+    store(STORAGE_KEYS.hillsGrouped, String(pressed));
+    apply(pressed);
+  });
+}
+
 function refresh(): void {
   const now = new Date();
   const lang = getLang();
@@ -239,6 +263,7 @@ function setup(): void {
     });
   setupShortcuts();
   setupHomeOnlyFilters();
+  setupHillGrouping();
   showLocalTimes();
   refresh();
   setInterval(refresh, 1000);

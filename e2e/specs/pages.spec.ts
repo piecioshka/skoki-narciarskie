@@ -378,11 +378,32 @@ test.describe('external links', () => {
 test.describe('hill profiles', () => {
   test('index lists every hill with a photo', async ({ page }) => {
     await page.goto('/pl/hills/');
-    await expect(page.locator('.tournament-card')).toHaveCount(19);
-    await expect(page.locator('.hill-card__image')).toHaveCount(19);
+    await expect(page.locator('.tournament-card:visible')).toHaveCount(19);
+    await expect(page.locator('.hill-card__image:visible')).toHaveCount(19);
     await expect(page.locator('.topbar__nav [aria-current="page"]')).toHaveText(
       'Skocznie',
     );
+  });
+
+  test('button groups hills by country and remembers the choice', async ({
+    page,
+  }) => {
+    await page.goto('/pl/hills/');
+
+    const button = page.getByRole('button', { name: 'Grupuj według kraju' });
+    const germany = page.locator('.country-group[data-country="DE"]');
+
+    await expect(germany).toBeHidden();
+    await button.click();
+    await expect(germany).toBeVisible();
+    await expect(germany.locator('.tournament-card')).toHaveCount(4);
+    await expect(page.locator('.country-group__title').first()).toContainText(
+      'Austria',
+    );
+    await expect(page.locator('.tournament-card:visible')).toHaveCount(19);
+    await page.reload();
+    await expect(button).toHaveAttribute('aria-pressed', 'true');
+    await expect(germany).toBeVisible();
   });
 
   test('profile shows the photo with credit, data and past winners', async ({
@@ -429,6 +450,52 @@ test.describe('hill profiles', () => {
   });
 });
 
+test.describe('nations', () => {
+  test('index ranks countries by World Cup points', async ({ page }) => {
+    await page.goto('/pl/nations/');
+
+    const rows = page.locator('.table__row');
+
+    expect(await rows.count()).toBeGreaterThan(15);
+    await rows.filter({ hasText: 'Polska' }).getByRole('link').click();
+    await expect(page).toHaveURL(/\/pl\/nations\/pol\/$/);
+  });
+
+  test('nation page sums points, lists trophies and team results', async ({
+    page,
+  }) => {
+    await page.goto('/pl/nations/pol/');
+
+    const stoch = page
+      .locator('.table__row')
+      .filter({ hasText: 'Kamil Stoch' });
+
+    await expect(stoch).toContainText('Kryształowe Kule: 2');
+    await expect(stoch).toContainText('Turniej Czterech Skoczni 2016/17');
+    await expect(
+      page.locator('.table__row').filter({ hasText: 'Adam Malysz' }),
+    ).toContainText('Kryształowe Kule');
+
+    const team = page.locator('section', {
+      has: page.getByRole('heading', { name: 'Wyniki drużyny' }),
+    });
+
+    await expect(
+      team.locator('.table__row').filter({ hasText: 'Zakopane' }).first(),
+    ).toContainText('Konkurs duetów');
+  });
+
+  test('standings link every athlete nation to its page', async ({ page }) => {
+    await page.goto('/pl/2025-2026/standings/');
+    await page
+      .locator('.table__row')
+      .first()
+      .getByRole('link', { name: /SLO/ })
+      .click();
+    await expect(page).toHaveURL(/\/pl\/nations\/slo\/$/);
+  });
+});
+
 test.describe('hill', () => {
   test('event page shows technical data, the record and facts', async ({
     page,
@@ -462,7 +529,7 @@ test.describe('standings archive', () => {
 
     const switcher = page.locator('.season-switch');
 
-    await expect(switcher.getByRole('link')).toHaveCount(7);
+    await expect(switcher.getByRole('link')).toHaveCount(27);
     await switcher.getByRole('link', { name: '2020/2021' }).click();
     await expect(page).toHaveURL(/\/pl\/2020-2021\/standings\/$/);
     await expect(page.locator('.table__row').first()).toContainText(

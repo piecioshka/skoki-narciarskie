@@ -152,6 +152,7 @@ export const hillSchema = z.object({
   name: z.string().min(1),
   kPoint: z.number().positive(),
   hillSize: z.number().positive(),
+  countryCode: z.string().regex(/^[A-Z]{2}$/),
   // Official men's record; longer unofficial jumps are mentioned in `facts`.
   record: z
     .object({

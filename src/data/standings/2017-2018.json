@@ -1,0 +1,599 @@
+{
+  "season": "2017-2018",
+  "updatedAt": "2026-11-16",
+  "sourceUrl": "https://www.fis-ski.com/DB/ski-jumping/cup-standings.html?sectorcode=JP&seasoncode=2018&cupcode=WC&disciplinecode=ALL&gendercode=M&nationcode=",
+  "rows": [
+    {
+      "rank": 1,
+      "givenName": "Kamil",
+      "familyName": "Stoch",
+      "nation": "POL",
+      "points": 1443,
+      "fisCompetitorId": 73228
+    },
+    {
+      "rank": 2,
+      "givenName": "Richard",
+      "familyName": "Freitag",
+      "nation": "GER",
+      "points": 1070,
+      "fisCompetitorId": 128618
+    },
+    {
+      "rank": 3,
+      "givenName": "Daniel Andre",
+      "familyName": "Tande",
+      "nation": "NOR",
+      "points": 985,
+      "fisCompetitorId": 147547
+    },
+    {
+      "rank": 4,
+      "givenName": "Stefan",
+      "familyName": "Kraft",
+      "nation": "AUT",
+      "points": 881,
+      "fisCompetitorId": 128286
+    },
+    {
+      "rank": 5,
+      "givenName": "Robert",
+      "familyName": "Johansson",
+      "nation": "NOR",
+      "points": 840,
+      "fisCompetitorId": 128806
+    },
+    {
+      "rank": 6,
+      "givenName": "Andreas",
+      "familyName": "Wellinger",
+      "nation": "GER",
+      "points": 828,
+      "fisCompetitorId": 174244
+    },
+    {
+      "rank": 7,
+      "givenName": "Johann Andre",
+      "familyName": "Forfang",
+      "nation": "NOR",
+      "points": 821,
+      "fisCompetitorId": 147549
+    },
+    {
+      "rank": 8,
+      "givenName": "Andreas",
+      "familyName": "Stjernen",
+      "nation": "NOR",
+      "points": 665,
+      "fisCompetitorId": 112295
+    },
+    {
+      "rank": 9,
+      "givenName": "Dawid",
+      "familyName": "Kubacki",
+      "nation": "POL",
+      "points": 633,
+      "fisCompetitorId": 111251
+    },
+    {
+      "rank": 10,
+      "givenName": "Markus",
+      "familyName": "Eisenbichler",
+      "nation": "GER",
+      "points": 597,
+      "fisCompetitorId": 117441
+    },
+    {
+      "rank": 11,
+      "givenName": "Junshiro",
+      "familyName": "Kobayashi",
+      "nation": "JPN",
+      "points": 568,
+      "fisCompetitorId": 126003
+    },
+    {
+      "rank": 12,
+      "givenName": "Anders",
+      "familyName": "Fannemel",
+      "nation": "NOR",
+      "points": 500,
+      "fisCompetitorId": 140329
+    },
+    {
+      "rank": 13,
+      "givenName": "Stefan",
+      "familyName": "Hula",
+      "nation": "POL",
+      "points": 431,
+      "fisCompetitorId": 73229
+    },
+    {
+      "rank": 14,
+      "givenName": "Karl",
+      "familyName": "Geiger",
+      "nation": "GER",
+      "points": 427,
+      "fisCompetitorId": 128621
+    },
+    {
+      "rank": 15,
+      "givenName": "Peter",
+      "familyName": "Prevc",
+      "nation": "SLO",
+      "points": 416,
+      "fisCompetitorId": 131309
+    },
+    {
+      "rank": 16,
+      "givenName": "Piotr",
+      "familyName": "Zyla",
+      "nation": "POL",
+      "points": 403,
+      "fisCompetitorId": 73232
+    },
+    {
+      "rank": 17,
+      "givenName": "Jernej",
+      "familyName": "Damjan",
+      "nation": "SLO",
+      "points": 379,
+      "fisCompetitorId": 12274
+    },
+    {
+      "rank": 18,
+      "givenName": "Stephan",
+      "familyName": "Leyhe",
+      "nation": "GER",
+      "points": 327,
+      "fisCompetitorId": 117450
+    },
+    {
+      "rank": 19,
+      "givenName": "Simon",
+      "familyName": "Ammann",
+      "nation": "SUI",
+      "points": 312,
+      "fisCompetitorId": 973
+    },
+    {
+      "rank": 20,
+      "givenName": "Halvor Egner",
+      "familyName": "Granerud",
+      "nation": "NOR",
+      "points": 280,
+      "fisCompetitorId": 180709
+    },
+    {
+      "rank": 21,
+      "givenName": "Maciej",
+      "familyName": "Kot",
+      "nation": "POL",
+      "points": 261,
+      "fisCompetitorId": 118113
+    },
+    {
+      "rank": 22,
+      "givenName": "Anze",
+      "familyName": "Semenic",
+      "nation": "SLO",
+      "points": 256,
+      "fisCompetitorId": 130646
+    },
+    {
+      "rank": 23,
+      "givenName": "Michael",
+      "familyName": "Hayboeck",
+      "nation": "AUT",
+      "points": 245,
+      "fisCompetitorId": 117835
+    },
+    {
+      "rank": 24,
+      "givenName": "Ryoyu",
+      "familyName": "Kobayashi",
+      "nation": "JPN",
+      "points": 187,
+      "fisCompetitorId": 155620
+    },
+    {
+      "rank": 25,
+      "givenName": "Tilen",
+      "familyName": "Bartol",
+      "nation": "SLO",
+      "points": 185,
+      "fisCompetitorId": 171479
+    },
+    {
+      "rank": 26,
+      "givenName": "Noriaki",
+      "familyName": "Kasai",
+      "nation": "JPN",
+      "points": 164,
+      "fisCompetitorId": 29533
+    },
+    {
+      "rank": 27,
+      "givenName": "Manuel",
+      "familyName": "Fettner",
+      "nation": "AUT",
+      "points": 137,
+      "fisCompetitorId": 17013
+    },
+    {
+      "rank": 28,
+      "givenName": "Daniel",
+      "familyName": "Huber",
+      "nation": "AUT",
+      "points": 117,
+      "fisCompetitorId": 139429
+    },
+    {
+      "rank": 29,
+      "givenName": "Clemens",
+      "familyName": "Aigner",
+      "nation": "AUT",
+      "points": 104,
+      "fisCompetitorId": 128447
+    },
+    {
+      "rank": 30,
+      "givenName": "Pius",
+      "familyName": "Paschke",
+      "nation": "GER",
+      "points": 90,
+      "fisCompetitorId": 99976
+    },
+    {
+      "rank": 31,
+      "givenName": "Taku",
+      "familyName": "Takeuchi",
+      "nation": "JPN",
+      "points": 89,
+      "fisCompetitorId": 73277
+    },
+    {
+      "rank": 32,
+      "givenName": "Timi",
+      "familyName": "Zajc",
+      "nation": "SLO",
+      "points": 88,
+      "fisCompetitorId": 188590
+    },
+    {
+      "rank": 33,
+      "givenName": "Domen",
+      "familyName": "Prevc",
+      "nation": "SLO",
+      "points": 81,
+      "fisCompetitorId": 186516
+    },
+    {
+      "rank": 33,
+      "givenName": "Constantin",
+      "familyName": "Schmid",
+      "nation": "GER",
+      "points": 81,
+      "fisCompetitorId": 189105
+    },
+    {
+      "rank": 35,
+      "givenName": "Gregor",
+      "familyName": "Schlierenzauer",
+      "nation": "AUT",
+      "points": 77,
+      "fisCompetitorId": 106378
+    },
+    {
+      "rank": 36,
+      "givenName": "Jakub",
+      "familyName": "Wolny",
+      "nation": "POL",
+      "points": 73,
+      "fisCompetitorId": 149455
+    },
+    {
+      "rank": 37,
+      "givenName": "Manuel",
+      "familyName": "Poppinger",
+      "nation": "AUT",
+      "points": 66,
+      "fisCompetitorId": 106377
+    },
+    {
+      "rank": 38,
+      "givenName": "Gregor",
+      "familyName": "Deschwanden",
+      "nation": "SUI",
+      "points": 54,
+      "fisCompetitorId": 124118
+    },
+    {
+      "rank": 39,
+      "givenName": "Kevin",
+      "familyName": "Bickner",
+      "nation": "USA",
+      "points": 50,
+      "fisCompetitorId": 173399
+    },
+    {
+      "rank": 39,
+      "givenName": "Nejc",
+      "familyName": "Dezman",
+      "nation": "SLO",
+      "points": 50,
+      "fisCompetitorId": 131935
+    },
+    {
+      "rank": 41,
+      "givenName": "Marius",
+      "familyName": "Lindvik",
+      "nation": "NOR",
+      "points": 49,
+      "fisCompetitorId": 174872
+    },
+    {
+      "rank": 42,
+      "givenName": "Denis",
+      "familyName": "Kornilov",
+      "nation": "RUS",
+      "points": 46,
+      "fisCompetitorId": 90236
+    },
+    {
+      "rank": 43,
+      "givenName": "Andreas",
+      "familyName": "Wank",
+      "nation": "GER",
+      "points": 45,
+      "fisCompetitorId": 72592
+    },
+    {
+      "rank": 44,
+      "givenName": "Ziga",
+      "familyName": "Jelar",
+      "nation": "SLO",
+      "points": 43,
+      "fisCompetitorId": 164624
+    },
+    {
+      "rank": 45,
+      "givenName": "Yukiya",
+      "familyName": "Sato",
+      "nation": "JPN",
+      "points": 41,
+      "fisCompetitorId": 149215
+    },
+    {
+      "rank": 46,
+      "givenName": "Philipp",
+      "familyName": "Aschenwald",
+      "nation": "AUT",
+      "points": 34,
+      "fisCompetitorId": 147015
+    },
+    {
+      "rank": 47,
+      "givenName": "Mackenzie",
+      "familyName": "Boyd-Clowes",
+      "nation": "CAN",
+      "points": 31,
+      "fisCompetitorId": 78803
+    },
+    {
+      "rank": 48,
+      "givenName": "Cestmir",
+      "familyName": "Kozisek",
+      "nation": "CZE",
+      "points": 30,
+      "fisCompetitorId": 108867
+    },
+    {
+      "rank": 49,
+      "givenName": "Robert",
+      "familyName": "Kranjec",
+      "nation": "SLO",
+      "points": 26,
+      "fisCompetitorId": 32297
+    },
+    {
+      "rank": 50,
+      "givenName": "Jurij",
+      "familyName": "Tepes",
+      "nation": "SLO",
+      "points": 22,
+      "fisCompetitorId": 75837
+    },
+    {
+      "rank": 51,
+      "givenName": "Florian",
+      "familyName": "Altenburger",
+      "nation": "AUT",
+      "points": 20,
+      "fisCompetitorId": 128402
+    },
+    {
+      "rank": 52,
+      "givenName": "Vladimir",
+      "familyName": "Zografski",
+      "nation": "BUL",
+      "points": 15,
+      "fisCompetitorId": 111930
+    },
+    {
+      "rank": 53,
+      "givenName": "Tomaz",
+      "familyName": "Naglic",
+      "nation": "SLO",
+      "points": 14,
+      "fisCompetitorId": 106257
+    },
+    {
+      "rank": 54,
+      "givenName": "Antti",
+      "familyName": "Aalto",
+      "nation": "FIN",
+      "points": 13,
+      "fisCompetitorId": 182547
+    },
+    {
+      "rank": 54,
+      "givenName": "Bor",
+      "familyName": "Pavlovcic",
+      "nation": "SLO",
+      "points": 13,
+      "fisCompetitorId": 179422
+    },
+    {
+      "rank": 54,
+      "givenName": "Killian",
+      "familyName": "Peier",
+      "nation": "SUI",
+      "points": 13,
+      "fisCompetitorId": 153777
+    },
+    {
+      "rank": 57,
+      "givenName": "Roman",
+      "familyName": "Koudelka",
+      "nation": "CZE",
+      "points": 12,
+      "fisCompetitorId": 104161
+    },
+    {
+      "rank": 57,
+      "givenName": "William",
+      "familyName": "Rhoads",
+      "nation": "USA",
+      "points": 12,
+      "fisCompetitorId": 167385
+    },
+    {
+      "rank": 59,
+      "givenName": "Alex",
+      "familyName": "Insam",
+      "nation": "ITA",
+      "points": 11,
+      "fisCompetitorId": 175089
+    },
+    {
+      "rank": 59,
+      "givenName": "David",
+      "familyName": "Siegel",
+      "nation": "GER",
+      "points": 11,
+      "fisCompetitorId": 166437
+    },
+    {
+      "rank": 61,
+      "givenName": "Sondre",
+      "familyName": "Ringen",
+      "nation": "NOR",
+      "points": 9,
+      "fisCompetitorId": 204489
+    },
+    {
+      "rank": 61,
+      "givenName": "Ulrich",
+      "familyName": "Wohlgenannt",
+      "nation": "AUT",
+      "points": 9,
+      "fisCompetitorId": 128448
+    },
+    {
+      "rank": 63,
+      "givenName": "Daiki",
+      "familyName": "Ito",
+      "nation": "JPN",
+      "points": 8,
+      "fisCompetitorId": 73166
+    },
+    {
+      "rank": 63,
+      "givenName": "Jonathan",
+      "familyName": "Learoyd",
+      "nation": "FRA",
+      "points": 8,
+      "fisCompetitorId": 182059
+    },
+    {
+      "rank": 65,
+      "givenName": "Evgeniy",
+      "familyName": "Klimov",
+      "nation": "RUS",
+      "points": 7,
+      "fisCompetitorId": 172117
+    },
+    {
+      "rank": 66,
+      "givenName": "Eetu",
+      "familyName": "Nousiainen",
+      "nation": "FIN",
+      "points": 6,
+      "fisCompetitorId": 196315
+    },
+    {
+      "rank": 67,
+      "givenName": "Vincent",
+      "familyName": "Descombes Sevoie",
+      "nation": "FRA",
+      "points": 4,
+      "fisCompetitorId": 13322
+    },
+    {
+      "rank": 68,
+      "givenName": "Vojtech",
+      "familyName": "Stursa",
+      "nation": "CZE",
+      "points": 3,
+      "fisCompetitorId": 161594
+    },
+    {
+      "rank": 69,
+      "givenName": "Clemens",
+      "familyName": "Leitner",
+      "nation": "AUT",
+      "points": 2,
+      "fisCompetitorId": 174348
+    },
+    {
+      "rank": 69,
+      "givenName": "Naoki",
+      "familyName": "Nakamura",
+      "nation": "JPN",
+      "points": 2,
+      "fisCompetitorId": 160506
+    },
+    {
+      "rank": 69,
+      "givenName": "Andreas",
+      "familyName": "Schuler",
+      "nation": "SUI",
+      "points": 2,
+      "fisCompetitorId": 143981
+    },
+    {
+      "rank": 69,
+      "givenName": "Dimitry",
+      "familyName": "Vassiliev",
+      "nation": "RUS",
+      "points": 2,
+      "fisCompetitorId": 63739
+    },
+    {
+      "rank": 73,
+      "givenName": "Sebastian",
+      "familyName": "Colloredo",
+      "nation": "ITA",
+      "points": 1,
+      "fisCompetitorId": 71839
+    },
+    {
+      "rank": 73,
+      "givenName": "Tomasz",
+      "familyName": "Pilch",
+      "nation": "POL",
+      "points": 1,
+      "fisCompetitorId": 196003
+    }
+  ]
+}

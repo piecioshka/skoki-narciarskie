@@ -1,5 +1,7 @@
 ---
 import { t, type Lang } from '../i18n';
+import { nationPath } from '../lib/paths';
+import Avatar from './Avatar.astro';
 import { getAthleteUrl, getNationFlag } from '../lib/links';
 import type { Standings } from '../lib/schema';
 
@@ -45,12 +47,17 @@ const dict = t(lang);
         >
           <td class="table__cell table__cell--number">{row.rank}</td>
           <td class="table__cell">
-            <a class="table__link" href={getAthleteUrl(row.fisCompetitorId)}>
-              {row.givenName} {row.familyName}
-            </a>
+            <span class="person">
+              <Avatar name={`${row.givenName} ${row.familyName}`} />
+              <a class="table__link" href={getAthleteUrl(row.fisCompetitorId)}>
+                {row.givenName} {row.familyName}
+              </a>
+            </span>
           </td>
           <td class="table__cell">
-            {getNationFlag(row.nation)} {row.nation}
+            <a class="table__link" href={nationPath(lang, row.nation)}>
+              {`${getNationFlag(row.nation)} ${row.nation}`}
+            </a>
           </td>
           <td class="table__cell table__cell--number table__cell--strong">
             {row.points}

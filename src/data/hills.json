@@ -37,7 +37,8 @@
       "author": "Tokle",
       "license": "Public domain",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lysg%C3%A5rd.JPG"
-    }
+    },
+    "countryCode": "NO"
   },
   {
     "slug": "ruka",
@@ -77,7 +78,8 @@
       "author": "Nelinjo",
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kuusamo_Rukatunturi_K-120.jpg"
-    }
+    },
+    "countryCode": "FI"
   },
   {
     "slug": "wisla",
@@ -117,7 +119,8 @@
       "author": "D T G",
       "license": "CC BY 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:POL_Wis%C5%82a_Malinka_DW942_pod_skoczni%C4%85_3.JPG"
-    }
+    },
+    "countryCode": "PL"
   },
   {
     "slug": "titisee-neustadt",
@@ -157,7 +160,8 @@
       "author": "Taxiarchos228",
       "license": "FAL",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hochfirstschanze3.jpg"
-    }
+    },
+    "countryCode": "DE"
   },
   {
     "slug": "engelberg",
@@ -197,7 +201,8 @@
       "author": "Samuel Weitzbauer",
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Engelberg_HS140_(2).jpg"
-    }
+    },
+    "countryCode": "CH"
   },
   {
     "slug": "oberstdorf",
@@ -237,7 +242,8 @@
       "author": "Arne Müseler",
       "license": "CC BY-SA 3.0 de",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ski_jumping_hill_oberstdorf_germany_2.jpg"
-    }
+    },
+    "countryCode": "DE"
   },
   {
     "slug": "garmisch-partenkirchen",
@@ -277,7 +283,8 @@
       "author": "Samuel Weitzbauer",
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Garmisch-Partenkirchen_HS140.jpg"
-    }
+    },
+    "countryCode": "DE"
   },
   {
     "slug": "innsbruck",
@@ -317,7 +324,8 @@
       "author": "Veit Mueller",
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bergisel-N.jpg"
-    }
+    },
+    "countryCode": "AT"
   },
   {
     "slug": "bischofshofen",
@@ -357,7 +365,8 @@
       "author": "junafani",
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul-Ausserleitner-Schanze.JPG"
-    }
+    },
+    "countryCode": "AT"
   },
   {
     "slug": "zakopane",
@@ -397,7 +406,8 @@
       "author": "Kapitel",
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zakopane_Wielka_Krokiew_dron_(1).jpg"
-    }
+    },
+    "countryCode": "PL"
   },
   {
     "slug": "sapporo",
@@ -437,7 +447,8 @@
       "author": "Bmeg at Japanese Wikipedia",
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ohkurayama_Schanze.jpg"
-    }
+    },
+    "countryCode": "JP"
   },
   {
     "slug": "willingen",
@@ -477,7 +488,8 @@
       "author": "Jeses",
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Willingen_Skijumping_2007-2.JPG"
-    }
+    },
+    "countryCode": "DE"
   },
   {
     "slug": "lake-placid",
@@ -517,7 +529,8 @@
       "author": "Jeff M for Short from Bowmanville, Canada.",
       "license": "CC BY 2.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ski_Jump_Lake_Placid.jpg"
-    }
+    },
+    "countryCode": "US"
   },
   {
     "slug": "lahti",
@@ -557,7 +570,8 @@
       "author": "sdbj",
       "license": "CC BY 2.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lahti_skijumps.jpg"
-    }
+    },
+    "countryCode": "FI"
   },
   {
     "slug": "vikersund",
@@ -597,7 +611,8 @@
       "author": "Stefan.straub",
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vikersundbakken-2012.jpg"
-    }
+    },
+    "countryCode": "NO"
   },
   {
     "slug": "falun-normal",
@@ -637,7 +652,8 @@
       "author": "m.prinke",
       "license": "CC BY-SA 2.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Falun_lugnet_skijump_1.jpg"
-    }
+    },
+    "countryCode": "SE"
   },
   {
     "slug": "falun-large",
@@ -677,7 +693,8 @@
       "author": "m.prinke",
       "license": "CC BY-SA 2.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Falun_lugnet_skijump_1.jpg"
-    }
+    },
+    "countryCode": "SE"
   },
   {
     "slug": "oslo",
@@ -717,7 +734,8 @@
       "author": "Ralf Roletschek",
       "license": "CC BY-SA 1.0 fi",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:19-08-25-Oslo_Holmenkollenbakken-RalfR.jpg"
-    }
+    },
+    "countryCode": "NO"
   },
   {
     "slug": "planica",
@@ -757,6 +775,7 @@
       "author": "JRE 246,5",
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Planica_HS225.JPG"
-    }
+    },
+    "countryCode": "SI"
   }
 ]

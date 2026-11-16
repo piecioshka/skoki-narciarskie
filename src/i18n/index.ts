@@ -90,6 +90,7 @@ interface Dictionary {
   shortcutHills: string;
   hillsTitle: string;
   hillsLead: string;
+  groupByCountry: string;
   hillProfile: string;
   hillCompetitions: string;
   hillTournaments: string;
@@ -100,6 +101,17 @@ interface Dictionary {
   photo: string;
   author: string;
   license: string;
+  nationsTitle: string;
+  nationsLead: (range: string) => string;
+  nationLead: (range: string) => string;
+  crystalGlobes: string;
+  seasonsCount: string;
+  bestRank: string;
+  competitionWins: string;
+  competitionWinsNote: (range: string) => string;
+  trophies: string;
+  teamResults: string;
+  teamResultsNote: (range: string) => string;
   officials: string;
   officialRoles: Record<OfficialRole, string>;
   switchLanguage: string;
@@ -240,6 +252,7 @@ const pl: Dictionary = {
   navHills: 'Skocznie',
   shortcutHills: 'Skocznie',
   hillsTitle: 'Skocznie Pucharu Świata',
+  groupByCountry: 'Grupuj według kraju',
   hillsLead: 'Obiekty z kalendarza: parametry, rekordy i rozegrane konkursy.',
   hillProfile: 'Profil skoczni',
   hillCompetitions: 'Konkursy na tej skoczni',
@@ -252,6 +265,21 @@ const pl: Dictionary = {
   photo: 'Zdjęcie',
   author: 'Autor',
   license: 'Licencja',
+  nationsTitle: 'Reprezentacje',
+  nationsLead: (range) =>
+    `Punkty Pucharu Świata zdobyte przez zawodników każdego kraju w sezonach ${range}.`,
+  nationLead: (range) =>
+    `Punkty z klasyfikacji generalnej Pucharu Świata zsumowane z sezonów ${range}.`,
+  crystalGlobes: 'Kryształowe Kule',
+  seasonsCount: 'Sezony',
+  bestRank: 'Najlepsze miejsce',
+  competitionWins: 'Zwycięstwa / podia',
+  competitionWinsNote: (range) =>
+    `Zwycięstwa i podia w konkursach indywidualnych są liczone tylko z sezonów ${range}.`,
+  trophies: 'Trofea',
+  teamResults: 'Wyniki drużyny',
+  teamResultsNote: (range) =>
+    `Miejsca na podium konkursów drużynowych w sezonach ${range}.`,
   officials: 'Sędziowie i delegaci',
   officialRoles: {
     'technical-delegate': 'Delegat techniczny FIS',
@@ -404,6 +432,7 @@ const en: Dictionary = {
   navHills: 'Hills',
   shortcutHills: 'Hills',
   hillsTitle: 'World Cup hills',
+  groupByCountry: 'Group by country',
   hillsLead:
     'Venues of the calendar: profile data, records and past competitions.',
   hillProfile: 'Hill profile',
@@ -417,6 +446,21 @@ const en: Dictionary = {
   photo: 'Photo',
   author: 'Author',
   license: 'License',
+  nationsTitle: 'National teams',
+  nationsLead: (range) =>
+    `World Cup points scored by the athletes of each country in the ${range} seasons.`,
+  nationLead: (range) =>
+    `Points from the overall World Cup standings summed over the ${range} seasons.`,
+  crystalGlobes: 'Crystal Globes',
+  seasonsCount: 'Seasons',
+  bestRank: 'Best rank',
+  competitionWins: 'Wins / podiums',
+  competitionWinsNote: (range) =>
+    `Wins and podiums in individual competitions are counted only from the ${range} seasons.`,
+  trophies: 'Trophies',
+  teamResults: 'Team results',
+  teamResultsNote: (range) =>
+    `Podium places in team competitions in the ${range} seasons.`,
   officials: 'Judges and delegates',
   officialRoles: {
     'technical-delegate': 'FIS Technical Delegate',

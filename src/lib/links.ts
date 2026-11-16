@@ -36,6 +36,7 @@ export function getFlag(countryCode: string): string {
 // FIS uses its own three-letter nation codes; flags need ISO 3166-1 alpha-2.
 const FIS_NATIONS: Record<string, string> = {
   AUT: 'AT',
+  BLR: 'BY',
   BUL: 'BG',
   CAN: 'CA',
   CHN: 'CN',
@@ -43,14 +44,21 @@ const FIS_NATIONS: Record<string, string> = {
   EST: 'EE',
   FIN: 'FI',
   FRA: 'FR',
+  GEO: 'GE',
   GER: 'DE',
+  GRE: 'GR',
+  HUN: 'HU',
   ITA: 'IT',
   JPN: 'JP',
   KAZ: 'KZ',
+  KGZ: 'KG',
   KOR: 'KR',
+  LAT: 'LV',
+  NED: 'NL',
   NOR: 'NO',
   POL: 'PL',
   ROU: 'RO',
+  RUS: 'RU',
   SLO: 'SI',
   SUI: 'CH',
   SVK: 'SK',
@@ -74,4 +82,14 @@ export function getAthleteUrl(fisCompetitorId: number): string {
 /** ISO 3166-1 alpha-2 code for a FIS nation code, if it is known. */
 export function getNationCountryCode(nation: string): string | undefined {
   return FIS_NATIONS[nation];
+}
+
+/** Country name for a FIS nation code in the given language. */
+export function getNationName(lang: string, nation: string): string {
+  const countryCode = FIS_NATIONS[nation];
+
+  return countryCode
+    ? (new Intl.DisplayNames([lang], { type: 'region' }).of(countryCode) ??
+        nation)
+    : nation;
 }

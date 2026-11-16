@@ -1,0 +1,180 @@
+---
+import Avatar from '../../../../components/Avatar.astro';
+import Icon from '../../../../components/Icon.astro';
+import { LANGUAGES, t, type Lang } from '../../../../i18n';
+import Layout from '../../../../layouts/Layout.astro';
+import { formatThousands } from '../../../../lib/hills';
+import {
+  getAthleteUrl,
+  getNationFlag,
+  getNationName,
+} from '../../../../lib/links';
+import { getNations, type NationSummary } from '../../../../lib/nations';
+import { eventPath, nationsPath } from '../../../../lib/paths';
+import { formatSeasonLabel, getSeasons } from '../../../../lib/seasons';
+import { getStandingsSeasons } from '../../../../lib/standings';
+
+export function getStaticPaths() {
+  return LANGUAGES.flatMap((lang) =>
+    getNations().map((summary) => ({
+      params: { lang, nation: summary.nation.toLowerCase() },
+      props: { lang, summary },
+    })),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  summary: NationSummary;
+}
+
+const { lang, summary } = Astro.props;
+const dict = t(lang);
+const name = getNationName(lang, summary.nation);
+const title = `${getNationFlag(summary.nation)} ${name}`.trim();
+const standingsSeasons = getStandingsSeasons();
+const pointsRange = `${formatSeasonLabel(standingsSeasons[standingsSeasons.length - 1] ?? '')} - ${formatSeasonLabel(standingsSeasons[0] ?? '')}`;
+const archive = getSeasons().map((season) => season.id);
+const resultsRange = `${formatSeasonLabel(archive[archive.length - 1] ?? '')} - ${formatSeasonLabel(archive[0] ?? '')}`;
+---
+
+<Layout
+  lang={lang}
+  title={name}
+  description={dict.nationLead(pointsRange)}
+  path={`/nations/${summary.nation.toLowerCase()}/`}
+>
+  <a class="link back-link" href={nationsPath(lang)}>
+    <Icon name="arrow-left" />
+    {dict.nationsTitle}
+  </a>
+
+  <header class="event-header">
+    <h2 class="event-header__title">{title}</h2>
+    <p class="event-header__meta">
+      {`${dict.athletes}: ${summary.athletes.length} · ${dict.points}: ${formatThousands(summary.points)} · ${dict.crystalGlobes}: ${summary.titles}`}
+    </p>
+  </header>
+
+  <section class="section" aria-labelledby="athletes-title">
+    <h3 class="section__title" id="athletes-title">
+      {dict.athletes}
+    </h3>
+    <p class="lead">{dict.nationLead(pointsRange)}</p>
+    <div class="table-wrap table-wrap--scroll">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="table__cell" scope="col">
+              {dict.athlete}
+            </th>
+            <th class="table__cell table__cell--number" scope="col">
+              {dict.seasonsCount}
+            </th>
+            <th class="table__cell table__cell--number" scope="col">
+              {dict.points}
+            </th>
+            <th class="table__cell table__cell--number" scope="col">
+              {dict.bestRank}
+            </th>
+            <th class="table__cell table__cell--number" scope="col">
+              {dict.competitionWins}
+            </th>
+            <th class="table__cell" scope="col">
+              {dict.trophies}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {summary.athletes.map((athlete) => (
+            <tr class="table__row">
+              <td class="table__cell">
+                <span class="person">
+                  <Avatar name={athlete.name} />
+                  <a
+                    class="table__link"
+                    href={getAthleteUrl(athlete.fisCompetitorId)}
+                  >
+                    {athlete.name}
+                  </a>
+                </span>
+              </td>
+              <td
+                class="table__cell table__cell--number"
+                title={`${formatSeasonLabel(athlete.firstSeason)} - ${formatSeasonLabel(athlete.lastSeason)}`}
+              >
+                {athlete.seasons}
+              </td>
+              <td class="table__cell table__cell--number table__cell--strong">
+                {formatThousands(athlete.points)}
+              </td>
+              <td class="table__cell table__cell--number">
+                {athlete.bestRank}
+              </td>
+              <td class="table__cell table__cell--number">
+                {`${athlete.wins} / ${athlete.podiums}`}
+              </td>
+              <td class="table__cell">
+                {[
+                  athlete.titles > 0
+                    ? `${dict.crystalGlobes}: ${athlete.titles}`
+                    : '',
+                  ...athlete.tournamentWins,
+                ]
+                  .filter(Boolean)
+                  .join(', ')}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="note">{dict.competitionWinsNote(resultsRange)}</p>
+  </section>
+
+  {summary.teamResults.length > 0 && (
+    <section class="section" aria-labelledby="team-results-title">
+      <h3 class="section__title" id="team-results-title">
+        {dict.teamResults}
+      </h3>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="table__cell" scope="col">
+                {dict.season}
+              </th>
+              <th class="table__cell" scope="col">
+                {dict.program}
+              </th>
+              <th class="table__cell table__cell--number" scope="col">
+                {dict.rank}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {summary.teamResults.map((result) => (
+              <tr class="table__row">
+                <td class="table__cell">
+                  {formatSeasonLabel(result.seasonId)}
+                </td>
+                <td class="table__cell">
+                  <a
+                    class="table__link"
+                    href={eventPath(lang, result.seasonId, result.eventSlug)}
+                  >
+                    {`${result.date} · ${result.city} · ${dict.kinds[result.kind]}`}
+                  </a>
+                </td>
+                <td class="table__cell table__cell--number table__cell--strong">
+                  {result.rank}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="note">{dict.teamResultsNote(resultsRange)}</p>
+    </section>
+  )}
+</Layout>

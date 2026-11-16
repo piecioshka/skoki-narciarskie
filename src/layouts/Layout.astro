@@ -6,6 +6,7 @@ import { LANGUAGES, otherLang, t, type Lang } from '../i18n';
 import {
   galleryPath,
   creditsPath,
+  nationsPath,
   hillsPath,
   tournamentsPath,
   homePath,
@@ -38,7 +39,7 @@ const canonical = absolute(`/${lang}${path}`);
 // event page below it belong to "schedule"; the home page to no section.
 const [seasonSegment, sectionSegment] = path.split('/').filter(Boolean);
 const sections = ['standings', 'polish-team', 'gallery'];
-const topLevel = ['tournaments', 'hills'];
+const topLevel = ['tournaments', 'hills', 'nations'];
 const activeSection =
   seasonSegment === undefined || seasonSegment === 'credits'
     ? undefined
@@ -219,6 +220,10 @@ const jsonLdText = jsonLd
 
     <footer class="footer">
       <p class="footer__line">
+        <a class="link" href={nationsPath(lang)}>
+          {dict.nationsTitle}
+        </a>
+        {' · '}
         <a class="link" href={creditsPath(lang)}>
           {dict.creditsTitle}
         </a>

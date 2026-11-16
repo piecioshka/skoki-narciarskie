@@ -1269,3 +1269,49 @@ a[href^='http']:not(.icon-button)::after {
     padding-top: calc(1.5rem + 4rem);
   }
 }
+
+/* People with portraits */
+
+.person {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-width: 0;
+}
+
+.avatar {
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--pal-button-bg);
+  object-fit: cover;
+  object-position: top;
+}
+
+.avatar--initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--pal-font-size-sm);
+  font-weight: var(--pal-font-weight-semibold);
+  color: var(--pal-text-muted);
+}
+
+/* Wide tables scroll inside their frame instead of widening the page. */
+.table-wrap--scroll {
+  overflow-x: auto;
+}
+
+.table-wrap--scroll .table {
+  min-width: 44rem;
+}
+
+.country-group + .country-group {
+  margin-top: 2rem;
+}
+
+.country-group__title {
+  margin: 0 0 0.75rem;
+  font-size: var(--pal-font-size-lg);
+}

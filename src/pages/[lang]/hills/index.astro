@@ -1,13 +1,9 @@
 ---
-import { Image } from 'astro:assets';
-import { LANGUAGES, t, type Lang } from '../../../i18n';
+import HillTile from '../../../components/HillTile.astro';
+import { getCountryName, LANGUAGES, t, type Lang } from '../../../i18n';
 import Layout from '../../../layouts/Layout.astro';
-import {
-  getAllHills,
-  getHillPhoto,
-  getHillProfileSlug,
-} from '../../../lib/hills';
-import { hillPath } from '../../../lib/paths';
+import { getAllHills } from '../../../lib/hills';
+import { getFlag } from '../../../lib/links';
 
 export function getStaticPaths() {
   return LANGUAGES.map((lang) => ({ params: { lang }, props: { lang } }));
@@ -19,6 +15,14 @@ interface Props {
 
 const { lang } = Astro.props;
 const dict = t(lang);
+const hills = getAllHills();
+const countries = [...new Set(hills.map((hill) => hill.countryCode))]
+  .map((code) => ({
+    code,
+    name: getCountryName(lang, code),
+    hills: hills.filter((hill) => hill.countryCode === code),
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name, lang));
 ---
 
 <Layout
@@ -28,42 +32,33 @@ const dict = t(lang);
   path="/hills/"
 >
   <section class="section" aria-labelledby="hills-title">
-    <h2 class="section__title section__title--page" id="hills-title">
-      {dict.hillsTitle}
-    </h2>
+    <div class="section__header">
+      <h2 class="section__title section__title--page" id="hills-title">
+        {dict.hillsTitle}
+      </h2>
+      <button class="button js-group-hills" type="button" aria-pressed="false">
+        {dict.groupByCountry}
+      </button>
+    </div>
     <p class="lead">{dict.hillsLead}</p>
-    <ul class="tournament-list">
-      {getAllHills().map((hill) => {
-        const photo = getHillPhoto(hill);
-
-        return (
-          <li>
-            <a
-              class="tournament-card"
-              href={hillPath(lang, getHillProfileSlug(hill))}
-              data-hill={hill.slug}
-            >
-              {photo ? (
-                <Image
-                  class="hill-card__image"
-                  src={photo}
-                  width={480}
-                  alt=""
-                />
-              ) : (
-                <div class="hill-card__placeholder" />
-              )}
-              <div class="tournament-card__body">
-                <h3 class="tournament-card__title">{hill.name}</h3>
-                <p class="tournament-card__meta">
-                  <span class="badge">HS{hill.hillSize}</span>
-                  <span class="phase">K{hill.kPoint}</span>
-                </p>
-              </div>
-            </a>
-          </li>
-        );
-      })}
+    <ul class="tournament-list js-hills-flat">
+      {hills.map((hill) => (
+        <HillTile lang={lang} hill={hill} />
+      ))}
     </ul>
+    <div class="js-hills-grouped" hidden>
+      {countries.map((country) => (
+        <section class="country-group" data-country={country.code}>
+          <h3 class="country-group__title">
+            {`${getFlag(country.code)} ${country.name}`}
+          </h3>
+          <ul class="tournament-list">
+            {country.hills.map((hill) => (
+              <HillTile lang={lang} hill={hill} />
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
   </section>
 </Layout>

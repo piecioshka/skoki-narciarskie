@@ -54,3 +54,11 @@ export function hillPath(lang: Lang, slug: string): string {
 export function creditsPath(lang: Lang): string {
   return url(`/${lang}/credits/`);
 }
+
+export function nationsPath(lang: Lang): string {
+  return url(`/${lang}/nations/`);
+}
+
+export function nationPath(lang: Lang, nation: string): string {
+  return url(`/${lang}/nations/${nation.toLowerCase()}/`);
+}

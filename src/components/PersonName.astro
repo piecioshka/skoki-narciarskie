@@ -1,4 +1,5 @@
 ---
+import Avatar from './Avatar.astro';
 interface Props {
   name: string;
   url?: string | undefined;
@@ -7,10 +8,13 @@ interface Props {
 const { name, url } = Astro.props;
 ---
 
-{url ? (
-  <a class="people__name people__name--link" href={url}>
-    {name}
-  </a>
-) : (
-  <span class="people__name">{name}</span>
-)}
+<span class="person">
+  <Avatar name={name} />
+  {url ? (
+    <a class="people__name people__name--link" href={url}>
+      {name}
+    </a>
+  ) : (
+    <span class="people__name">{name}</span>
+  )}
+</span>

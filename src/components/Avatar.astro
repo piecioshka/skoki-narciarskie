@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import { getAvatar, getInitials } from '../lib/people';
+
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+const image = getAvatar(name);
+---
+
+{image ? (
+  <Image
+    class="avatar"
+    src={image}
+    width={72}
+    height={72}
+    fit="cover"
+    position="top"
+    alt=""
+  />
+) : (
+  <span class="avatar avatar--initials" aria-hidden="true">
+    {getInitials(name)}
+  </span>
+)}
