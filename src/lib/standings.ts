@@ -34,3 +34,8 @@ export function getTeams(seasonId: string): Teams | undefined {
     .map((raw) => teamsSchema.parse(raw))
     .find((item) => item.season === seasonId);
 }
+
+/** Seasons that have a standings file, newest first. */
+export function getStandingsSeasons(): string[] {
+  return allStandings.map((item) => item.season);
+}

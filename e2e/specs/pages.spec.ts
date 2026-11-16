@@ -173,6 +173,49 @@ test.describe('gallery', () => {
   });
 });
 
+test.describe('hill', () => {
+  test('event page shows technical data, the record and facts', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/zakopane/');
+
+    const hill = page.locator('.hill[data-hill="zakopane"]');
+
+    await expect(hill).toContainText('Wielka Krokiew HS140');
+    await expect(hill.locator('.hill__record')).toContainText('147 m');
+    await expect(hill.locator('.hill__record')).toContainText('Yukiya Satō');
+    await expect(hill).toContainText('Punkt konstrukcyjny (K)');
+    await expect(hill).toContainText('34,3°');
+    await expect(hill.locator('.hill__fact')).toHaveCount(3);
+  });
+
+  test('Falun shows both hills of the World Championships', async ({
+    page,
+  }) => {
+    await page.goto('/en/2026-2027/falun/');
+    await expect(page.locator('.hill')).toHaveCount(2);
+    await expect(page.locator('.hill').first()).toContainText('Lugnet HS95');
+  });
+});
+
+test.describe('standings archive', () => {
+  test('season switcher opens final standings of earlier seasons', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/standings/');
+
+    const switcher = page.locator('.season-switch');
+
+    await expect(switcher.getByRole('link')).toHaveCount(7);
+    await switcher.getByRole('link', { name: '2020/2021' }).click();
+    await expect(page).toHaveURL(/\/pl\/2020-2021\/standings\/$/);
+    await expect(page.locator('.table__row').first()).toContainText(
+      'Halvor Egner Granerud',
+    );
+    await expect(page.locator('.notice')).toHaveCount(0);
+  });
+});
+
 test.describe('officials', () => {
   test('event page lists judges when FIS has published them', async ({
     page,

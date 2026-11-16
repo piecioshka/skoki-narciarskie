@@ -1001,3 +1001,62 @@ th.table__cell {
 .table-wrap--home-only .table__row--home:hover {
   background: var(--pal-button-bg-hover);
 }
+
+/* Hill: technical data and facts */
+
+.hills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 1.25rem;
+}
+
+.hill {
+  min-width: 0;
+}
+
+.hill__title {
+  margin: 0 0 0.75rem;
+  font-size: var(--pal-font-size-lg);
+}
+
+.hill__record {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin: 0 0 0.75rem;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--brand);
+  border-radius: var(--pal-radius);
+  background: var(--pal-bg-panel);
+}
+
+.hill__record-label {
+  width: 100%;
+  font-size: var(--pal-font-size-sm);
+  color: var(--pal-text-muted);
+}
+
+.hill__record-value {
+  font-family: var(--pal-font-mono);
+  font-size: var(--pal-font-size-xl);
+  font-weight: var(--pal-font-weight-bold);
+  color: var(--brand);
+}
+
+.hill__facts {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.hill__fact + .hill__fact {
+  margin-top: 0.5rem;
+}
+
+th.table__cell--label {
+  border-bottom: 0;
+  background: none;
+  font-size: inherit;
+  font-weight: var(--pal-font-weight-regular);
+  color: var(--pal-text-muted);
+}

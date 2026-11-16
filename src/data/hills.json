@@ -1,0 +1,648 @@
+[
+  {
+    "slug": "lillehammer",
+    "eventSlug": "lillehammer",
+    "name": "Lysgårdsbakken",
+    "kPoint": 123,
+    "hillSize": 140,
+    "record": {
+      "distance": 146.0,
+      "athlete": "Simon Ammann",
+      "nation": "SUI",
+      "date": "2009-12-06"
+    },
+    "opened": 1992,
+    "lastRebuilt": 2006,
+    "capacity": 50000,
+    "inrunLength": 101.16,
+    "takeoffAngle": 11.1,
+    "landingAngle": 34.5,
+    "facts": [
+      {
+        "pl": "Kompleks Lysgårdsbakken zbudowano na Zimowe Igrzyska Olimpijskie 1994, a na stadionie pod skoczniami odbyły się ceremonie otwarcia i zamknięcia igrzysk.",
+        "en": "The Lysgårdsbakken complex was built for the 1994 Winter Olympics, and the stadium below the hills hosted the opening and closing ceremonies of the Games."
+      },
+      {
+        "pl": "Rekord 146,0 m należy do dwóch skoczków: Simon Ammann ustanowił go 6 grudnia 2009, a Markus Eisenbichler wyrównał 16 marca 2023.",
+        "en": "The 146.0 m record is shared by two jumpers: Simon Ammann set it on 6 December 2009 and Markus Eisenbichler equaled it on 16 March 2023."
+      },
+      {
+        "pl": "Pierwszą skocznię Lysgårdsbakken otwarto 15 lutego 1903, a jej pierwszy rekord wynosił 26,5 m.",
+        "en": "The first Lysgårdsbakken hill was opened on 15 February 1903 and its first record was 26.5 m."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/34-Innlandet/Lillehammer/0587-Lysg%C3%A5rd/"
+  },
+  {
+    "slug": "ruka",
+    "eventSlug": "ruka",
+    "name": "Rukatunturi",
+    "kPoint": 120,
+    "hillSize": 142,
+    "record": {
+      "distance": 150.5,
+      "athlete": "Halvor Egner Granerud",
+      "nation": "NOR",
+      "date": "2022-11-27"
+    },
+    "opened": 1964,
+    "lastRebuilt": 2016,
+    "capacity": null,
+    "inrunLength": 100.5,
+    "takeoffAngle": 11.3,
+    "landingAngle": 36.9,
+    "facts": [
+      {
+        "pl": "29 marca 1981 Finka Tiina Lehtola skoczyła na Rukatunturi 110 m i jako pierwsza kobieta przekroczyła 100 metrów.",
+        "en": "On 29 March 1981 Finland's Tiina Lehtola jumped 110 m at Rukatunturi and became the first woman to exceed 100 meters."
+      },
+      {
+        "pl": "Najdłuższy skok na skoczni to 153,5 m Jarla Magnusa Riibera z 26 listopada 2023, oddany w Pucharze Świata w kombinacji norweskiej, więc nie liczy się jako oficjalny rekord skoczków.",
+        "en": "The longest jump on the hill is 153.5 m by Jarl Magnus Riiber on 26 November 2023, made in a Nordic combined World Cup event, so it does not count as the official ski jumping record."
+      },
+      {
+        "pl": "Zawody Pucharu Świata w skokach odbywają się w Ruce regularnie od sezonu 2002/2003.",
+        "en": "Ski jumping World Cup events have been held in Ruka regularly since the 2002/2003 season."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/FIN-Finnland/OL-Oulu/Kuusamo/0250-Ruka/"
+  },
+  {
+    "slug": "wisla",
+    "eventSlug": "wisla",
+    "name": "Skocznia im. Adama Małysza",
+    "kPoint": 120,
+    "hillSize": 134,
+    "record": {
+      "distance": 144.5,
+      "athlete": "Andreas Wellinger",
+      "nation": "GER",
+      "date": "2024-01-13"
+    },
+    "opened": 1933,
+    "lastRebuilt": 2024,
+    "capacity": 8000,
+    "inrunLength": 94.35,
+    "takeoffAngle": 11,
+    "landingAngle": 33.5,
+    "facts": [
+      {
+        "pl": "Pierwszą skocznię w Wiśle-Malince zbudowano w latach 1932-1933, a pierwszy rekord, 41 m, ustanowił Mieczysław Kozdruń.",
+        "en": "The first hill in Wisła-Malinka was built in 1932-1933, and the first record, 41 m, was set by Mieczysław Kozdruń."
+      },
+      {
+        "pl": "Obecną skocznię imienia Adama Małysza otwarto 17 września 2008.",
+        "en": "The current hill, named after Adam Małysz, was opened on 17 September 2008."
+      },
+      {
+        "pl": "Trybuny mieszczą oficjalnie 8000 widzów, z czego 1233 to miejsca siedzące.",
+        "en": "The stands officially hold 8,000 spectators, of which 1,233 are seats."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/POL-Polen/S-Schlesien/Wis%C5%82a/0582-Malinka/"
+  },
+  {
+    "slug": "titisee-neustadt",
+    "eventSlug": "titisee-neustadt",
+    "name": "Hochfirstschanze",
+    "kPoint": 125,
+    "hillSize": 142,
+    "record": {
+      "distance": 148.0,
+      "athlete": "Domen Prevc",
+      "nation": "SLO",
+      "date": "2016-03-11"
+    },
+    "opened": 1950,
+    "lastRebuilt": 2001,
+    "capacity": 25000,
+    "inrunLength": 98.1,
+    "takeoffAngle": 11,
+    "landingAngle": 35,
+    "facts": [
+      {
+        "pl": "Hochfirstschanze to największa naturalna skocznia w Niemczech, czyli bez sztucznej wieży najazdowej.",
+        "en": "Hochfirstschanze is the largest natural hill in Germany, meaning it has no artificial inrun tower."
+      },
+      {
+        "pl": "Skocznię zaprojektowaną przez Heiniego Klopfera otwarto 15 stycznia 1950 przy 15 000 widzów.",
+        "en": "The hill, designed by Heini Klopfer, was opened on 15 January 1950 in front of 15,000 spectators."
+      },
+      {
+        "pl": "Najdłuższy skok, 150,0 m, oddał Maximilian Mechler 21 stycznia 2011 w Pucharze Kontynentalnym, ale oficjalnym rekordem pozostaje 148,0 m Domena Prevca.",
+        "en": "The longest jump, 150.0 m, was made by Maximilian Mechler on 21 January 2011 in the Continental Cup, but the official record remains Domen Prevc's 148.0 m."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BW-Baden-W%C3%BCrttemberg/Titisee-Neustadt/0599-Hochfirst/"
+  },
+  {
+    "slug": "engelberg",
+    "eventSlug": "engelberg",
+    "name": "Gross-Titlis-Schanze",
+    "kPoint": 125,
+    "hillSize": 140,
+    "record": {
+      "distance": 145.0,
+      "athlete": "Stephan Embacher",
+      "nation": "AUT",
+      "date": "2025-12-21"
+    },
+    "opened": 1971,
+    "lastRebuilt": 2016,
+    "capacity": 20000,
+    "inrunLength": 99,
+    "takeoffAngle": 11,
+    "landingAngle": 34.8,
+    "facts": [
+      {
+        "pl": "Na otwarciu skoczni w 1971 roku Sepp Zehnder skoczył 102 m, co było pierwszym ustanym skokiem ponad 100 metrów w Szwajcarii.",
+        "en": "At the hill's opening in 1971 Sepp Zehnder jumped 102 m, the first landed jump over 100 meters in Switzerland."
+      },
+      {
+        "pl": "Oficjalny rekord, 145,0 m, ustanowił Stephan Embacher 21 grudnia 2025.",
+        "en": "The official record, 145.0 m, was set by Stephan Embacher on 21 December 2025."
+      },
+      {
+        "pl": "Najdłuższy skok na obiekcie to 146,0 m Kamila Stocha z 18 grudnia 2020.",
+        "en": "The longest jump on the hill is 146.0 m by Kamil Stoch on 18 December 2020."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SUI-Schweiz/Engelberg/0528/"
+  },
+  {
+    "slug": "oberstdorf",
+    "eventSlug": "oberstdorf",
+    "name": "Schattenbergschanze",
+    "kPoint": 120,
+    "hillSize": 137,
+    "record": {
+      "distance": 143.5,
+      "athlete": "Sigurd Pettersen",
+      "nation": "NOR",
+      "date": "2003-12-29"
+    },
+    "opened": 1925,
+    "lastRebuilt": 2003,
+    "capacity": 25500,
+    "inrunLength": 99,
+    "takeoffAngle": 11,
+    "landingAngle": 35.5,
+    "facts": [
+      {
+        "pl": "Skocznię Schattenbergschanze, zaprojektowaną przez architekta Hansa Gschwendera, otwarto 27 grudnia 1925.",
+        "en": "The Schattenbergschanze, designed by architect Hans Gschwender, was opened on 27 December 1925."
+      },
+      {
+        "pl": "4 stycznia 1953 odbył się tu po raz pierwszy konkurs nowo powstałego Turnieju Czterech Skoczni.",
+        "en": "On 4 January 1953 an event of the newly created Four Hills Tournament was held here for the first time."
+      },
+      {
+        "pl": "Oficjalny rekord, 143,5 m Sigurda Pettersena, pochodzi z 29 grudnia 2003 i do dziś nie został pobity w oficjalnych zawodach.",
+        "en": "The official record, 143.5 m by Sigurd Pettersen, dates from 29 December 2003 and has not been beaten in an official competition since."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BY-Bayern/Oberstdorf/0001-Erdinger+Arena/"
+  },
+  {
+    "slug": "garmisch-partenkirchen",
+    "eventSlug": "garmisch-partenkirchen",
+    "name": "Große Olympiaschanze",
+    "kPoint": 125,
+    "hillSize": 142,
+    "record": {
+      "distance": 145.5,
+      "athlete": "Stephan Embacher",
+      "nation": "AUT",
+      "date": "2025-12-31"
+    },
+    "opened": 1921,
+    "lastRebuilt": 2007,
+    "capacity": 20000,
+    "inrunLength": 96,
+    "takeoffAngle": 11,
+    "landingAngle": 34.7,
+    "facts": [
+      {
+        "pl": "Konkurs olimpijski w 1936 roku, wygrany przez Norwega Birgera Ruuda, oglądało na tej skoczni 130 000 widzów.",
+        "en": "The 1936 Olympic competition, won by Norway's Birger Ruud, was watched at this hill by 130,000 spectators."
+      },
+      {
+        "pl": "Starą skocznię wysadzono 14 kwietnia 2007 ładunkami wybuchowymi umieszczonymi w 28 miejscach, a na jej miejscu powstał obecny obiekt.",
+        "en": "The old hill was blown up on 14 April 2007 with explosive charges placed in 28 spots, and the current structure was built in its place."
+      },
+      {
+        "pl": "30 grudnia 2023 odbył się tu pierwszy w historii skoczni konkurs przy sztucznym oświetleniu, zaliczany do Pucharu Świata kobiet.",
+        "en": "On 30 December 2023 the hill hosted its first ever competition under floodlights, a women's World Cup event."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/BY-Bayern/Garmisch-Partenkirchen/0593-Olympiaschanze/"
+  },
+  {
+    "slug": "innsbruck",
+    "eventSlug": "innsbruck",
+    "name": "Bergiselschanze",
+    "kPoint": 120,
+    "hillSize": 128,
+    "record": {
+      "distance": 138.0,
+      "athlete": "Michael Hayböck",
+      "nation": "AUT",
+      "date": "2015-01-04"
+    },
+    "opened": 1927,
+    "lastRebuilt": 2001,
+    "capacity": 22500,
+    "inrunLength": 90.7,
+    "takeoffAngle": 10.75,
+    "landingAngle": 34.5,
+    "facts": [
+      {
+        "pl": "Obecną skocznię zaprojektowała architektka Zaha Hadid, a w jej wieży mieszczą się restauracja i taras widokowy.",
+        "en": "The current hill was designed by architect Zaha Hadid, and its tower houses a restaurant and a viewing platform."
+      },
+      {
+        "pl": "Pierwszą skocznię na Bergisel otwarto 23 stycznia 1927 mistrzostwami Tyrolu przy 5000 widzów, a Heinrich Mayerl skoczył wtedy 47 m.",
+        "en": "The first hill on Bergisel was opened on 23 January 1927 with the Tyrolean championships in front of 5,000 spectators, when Heinrich Mayerl jumped 47 m."
+      },
+      {
+        "pl": "W 2019 roku rozegrano tu konkursy indywidualny i drużynowy na dużej skoczni mistrzostw świata w Seefeld.",
+        "en": "In 2019 the hill hosted the individual and team large hill events of the World Championships in Seefeld."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/AUT-%C3%96sterreich/T-Tirol/Innsbruck/0049-Bergisel/"
+  },
+  {
+    "slug": "bischofshofen",
+    "eventSlug": "bischofshofen",
+    "name": "Paul-Außerleitner-Schanze",
+    "kPoint": 125,
+    "hillSize": 142,
+    "record": {
+      "distance": 145.0,
+      "athlete": "Dawid Kubacki",
+      "nation": "POL",
+      "date": "2019-01-06"
+    },
+    "opened": 1947,
+    "lastRebuilt": 2003,
+    "capacity": 30000,
+    "inrunLength": 118.5,
+    "takeoffAngle": 11,
+    "landingAngle": 35.8,
+    "facts": [
+      {
+        "pl": "Skocznia nosi imię Paula Ausserleitnera, miejscowego skoczka, który upadł na niej podczas treningu 5 stycznia 1952 i zmarł 9 stycznia.",
+        "en": "The hill is named after Paul Ausserleitner, a local jumper who fell on it during training on 5 January 1952 and died on 9 January."
+      },
+      {
+        "pl": "Konkurs otwarcia odbył się 26 grudnia 1947, a pierwszy rekord, 86 m, ustanowił Sepp Bradl.",
+        "en": "The opening competition took place on 26 December 1947, and the first record, 86 m, was set by Sepp Bradl."
+      },
+      {
+        "pl": "Oficjalny rekord, 145,0 m, ustanowił Dawid Kubacki 6 stycznia 2019 w kwalifikacjach do konkursu Turnieju Czterech Skoczni.",
+        "en": "The official record, 145.0 m, was set by Dawid Kubacki on 6 January 2019 in qualification for the Four Hills Tournament event."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/AUT-%C3%96sterreich/S-Salzburg/Bischofshofen/0033-Sepp+Bradl-Skistadion/"
+  },
+  {
+    "slug": "zakopane",
+    "eventSlug": "zakopane",
+    "name": "Wielka Krokiew",
+    "kPoint": 125,
+    "hillSize": 140,
+    "record": {
+      "distance": 147.0,
+      "athlete": "Yukiya Satō",
+      "nation": "JPN",
+      "date": "2020-01-25"
+    },
+    "opened": 1925,
+    "lastRebuilt": 2017,
+    "capacity": 26000,
+    "inrunLength": 98.7,
+    "takeoffAngle": 11,
+    "landingAngle": 34.3,
+    "facts": [
+      {
+        "pl": "Wielką Krokiew, zaprojektowaną przez Karola Stryjeńskiego, otwarto 22 marca 1925.",
+        "en": "Wielka Krokiew, designed by Karol Stryjeński, was opened on 22 March 1925."
+      },
+      {
+        "pl": "Skocznia gościła konkursy skoków mistrzostw świata w narciarstwie klasycznym w latach 1929, 1939 i 1962.",
+        "en": "The hill hosted the ski jumping events of the Nordic World Ski Championships in 1929, 1939 and 1962."
+      },
+      {
+        "pl": "Od 1989 roku skocznia nosi imię Stanisława Marusarza, a wcześniej, w latach 1932-1989, jej patronem był Karol Stryjeński.",
+        "en": "Since 1989 the hill has been named after Stanisław Marusarz, and before that, in 1932-1989, its patron was Karol Stryjeński."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/POL-Polen/K-Kleinpolen/Zakopane/0584-Wielka+Krokiew/"
+  },
+  {
+    "slug": "sapporo",
+    "eventSlug": "sapporo",
+    "name": "Ōkurayama",
+    "kPoint": 123,
+    "hillSize": 137,
+    "record": {
+      "distance": 148.5,
+      "athlete": "Kamil Stoch",
+      "nation": "POL",
+      "date": "2019-01-26"
+    },
+    "opened": 1931,
+    "lastRebuilt": 2016,
+    "capacity": 44000,
+    "inrunLength": 94,
+    "takeoffAngle": 11,
+    "landingAngle": 34,
+    "facts": [
+      {
+        "pl": "Budowę skoczni sfinansował baron Kishichirō Ōkura, od którego pochodzi jej nazwa, a pierwszy konkurs odbył się 17 stycznia 1932.",
+        "en": "The construction of the hill was funded by Baron Kishichirō Ōkura, after whom it is named, and the first competition took place on 17 January 1932."
+      },
+      {
+        "pl": "Na Ōkurayamie rozegrano konkursy skoków Zimowych Igrzysk Olimpijskich 1972 i mistrzostw świata w 2007 roku.",
+        "en": "Ōkurayama hosted ski jumping events of the 1972 Winter Olympics and the 2007 World Championships."
+      },
+      {
+        "pl": "Rekord skoczni, 148,5 m, ustanowił Kamil Stoch 26 stycznia 2019 w konkursie Pucharu Świata.",
+        "en": "The hill record, 148.5 m, was set by Kamil Stoch on 26 January 2019 in a World Cup event."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/JPN-Japan/01-Hokkaid%C5%8D/Sapporo/0377-%C5%8Ckurayama/"
+  },
+  {
+    "slug": "willingen",
+    "eventSlug": "willingen",
+    "name": "Mühlenkopfschanze",
+    "kPoint": 130,
+    "hillSize": 147,
+    "record": {
+      "distance": 155.5,
+      "athlete": "Johann André Forfang",
+      "nation": "NOR",
+      "date": "2024-02-03"
+    },
+    "opened": 1925,
+    "lastRebuilt": 2000,
+    "capacity": 38000,
+    "inrunLength": 100,
+    "takeoffAngle": 11,
+    "landingAngle": 35,
+    "facts": [
+      {
+        "pl": "Mühlenkopfschanze z rozmiarem HS147 jest największą na świecie skocznią w kategorii dużych, a większe są tylko skocznie mamucie.",
+        "en": "With a hill size of HS147, Mühlenkopfschanze is the largest hill in the world in the large hill category, and only ski flying hills are bigger."
+      },
+      {
+        "pl": "Najdłuższy skok na obiekcie to 161,5 m Timiego Zajca z 3 lutego 2023, oddany w konkursie drużyn mieszanych.",
+        "en": "The longest jump on the hill is 161.5 m by Timi Zajc on 3 February 2023, made in a mixed team event."
+      },
+      {
+        "pl": "W pierwszym międzynarodowym konkursie w 1951 roku Sepp Weiler ustanowił rekord 101 m, który przetrwał prawie 20 lat.",
+        "en": "In the first international competition in 1951 Sepp Weiler set a record of 101 m that stood for almost 20 years."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/HE-Hessen/Willingen/0600-M%C3%BChlenkopf/"
+  },
+  {
+    "slug": "lake-placid",
+    "eventSlug": "lake-placid",
+    "name": "MacKenzie Intervale",
+    "kPoint": 115,
+    "hillSize": 128,
+    "record": {
+      "distance": 136.0,
+      "athlete": "Ryōyū Kobayashi",
+      "nation": "JPN",
+      "date": "2023-02-11"
+    },
+    "opened": 1921,
+    "lastRebuilt": 2021,
+    "capacity": null,
+    "inrunLength": 98.07,
+    "takeoffAngle": 11,
+    "landingAngle": 34.1,
+    "facts": [
+      {
+        "pl": "Na skoczniach w Lake Placid rozegrano konkursy olimpijskie w latach 1932 i 1980.",
+        "en": "The hills in Lake Placid hosted Olympic competitions in 1932 and 1980."
+      },
+      {
+        "pl": "W lutym 2023 Puchar Świata wrócił do Lake Placid po raz pierwszy od sezonu 1990/1991, a Ryōyū Kobayashi ustanowił wtedy rekord 136,0 m.",
+        "en": "In February 2023 the World Cup returned to Lake Placid for the first time since the 1990/1991 season, and Ryōyū Kobayashi set the 136.0 m record on that occasion."
+      },
+      {
+        "pl": "Pierwszą skocznię w tym miejscu, o punkcie K35, otwarto 21 lutego 1921 przy 3000 widzów.",
+        "en": "The first hill at this site, with a K-point of 35 m, was opened on 21 February 1921 in front of 3,000 spectators."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/USA-Vereinigte+Staaten/NY-New+York/Lake+Placid/0576-Olympic+Jumping+Complex/"
+  },
+  {
+    "slug": "lahti",
+    "eventSlug": "lahti",
+    "name": "Salpausselkä",
+    "kPoint": 116,
+    "hillSize": 130,
+    "record": {
+      "distance": 138.0,
+      "athlete": "Johann André Forfang",
+      "nation": "NOR",
+      "date": "2017-03-04"
+    },
+    "opened": 1972,
+    "lastRebuilt": 2016,
+    "capacity": 80000,
+    "inrunLength": 90,
+    "takeoffAngle": 10.5,
+    "landingAngle": 34.7,
+    "facts": [
+      {
+        "pl": "Dużą skocznię z 55-metrową żelbetową wieżą najazdową otwarto w 1972 roku.",
+        "en": "The large hill with its 55-meter reinforced concrete inrun tower was opened in 1972."
+      },
+      {
+        "pl": "Lahti gościło skoki na mistrzostwach świata siedem razy: w latach 1926, 1938, 1958, 1978, 1989, 2001 i 2017.",
+        "en": "Lahti has hosted ski jumping at the World Championships seven times: in 1926, 1938, 1958, 1978, 1989, 2001 and 2017."
+      },
+      {
+        "pl": "Puchar Świata w skokach odbywa się w Lahti co roku od pierwszego sezonu 1979/1980.",
+        "en": "The ski jumping World Cup has been held in Lahti every year since the first season, 1979/1980."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/FIN-Finnland/ES-S%C3%BCdfinnland/Lahti/0251-Salpausselk%C3%A4/"
+  },
+  {
+    "slug": "vikersund",
+    "eventSlug": "vikersund",
+    "name": "Vikersundbakken",
+    "kPoint": 200,
+    "hillSize": 240,
+    "record": {
+      "distance": 253.5,
+      "athlete": "Stefan Kraft",
+      "nation": "AUT",
+      "date": "2017-03-18"
+    },
+    "opened": 1936,
+    "lastRebuilt": 2011,
+    "capacity": 30000,
+    "inrunLength": 129.76,
+    "takeoffAngle": 10.5,
+    "landingAngle": 34.34,
+    "facts": [
+      {
+        "pl": "Na Vikersundbakken pięć razy rozegrano mistrzostwa świata w lotach narciarskich: w latach 1977, 1990, 2000, 2012 i 2022.",
+        "en": "Vikersundbakken has hosted the Ski Flying World Championships five times: in 1977, 1990, 2000, 2012 and 2022."
+      },
+      {
+        "pl": "Rekord skoczni, 253,5 m, ustanowił Stefan Kraft 18 marca 2017.",
+        "en": "The hill record, 253.5 m, was set by Stefan Kraft on 18 March 2017."
+      },
+      {
+        "pl": "Skocznię otwarto w lutym 1936 jako obiekt K90, a pierwszy skok, na 86 m, oddał Reidar Andersen.",
+        "en": "The hill was opened in February 1936 as a K90 hill, and the first jump, 86 m, was made by Reidar Andersen."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/06-Buskerud/Vikersund/0005-Skiflygingsbakke/"
+  },
+  {
+    "slug": "falun-normal",
+    "eventSlug": "falun",
+    "name": "Lugnet",
+    "kPoint": 90,
+    "hillSize": 95,
+    "record": {
+      "distance": 99.5,
+      "athlete": "Philipp Raimund",
+      "nation": "GER",
+      "date": "2025-11-25"
+    },
+    "opened": 1972,
+    "lastRebuilt": 2013,
+    "capacity": 15000,
+    "inrunLength": 87.27,
+    "takeoffAngle": 10.6,
+    "landingAngle": 32.5,
+    "facts": [
+      {
+        "pl": "Oficjalny rekord, 99,5 m, ustanowił Philipp Raimund 25 listopada 2025 w konkursie Pucharu Świata.",
+        "en": "The official record, 99.5 m, was set by Philipp Raimund on 25 November 2025 in a World Cup event."
+      },
+      {
+        "pl": "W 2025 roku rozmiar skoczni normalnej zmniejszono ze 100 na 95 metrów.",
+        "en": "In 2025 the hill size of the normal hill was reduced from 100 to 95 meters."
+      },
+      {
+        "pl": "Obie skocznie Lugnet zbudowano na mistrzostwa świata w narciarstwie klasycznym 1974.",
+        "en": "Both Lugnet hills were built for the 1974 Nordic World Ski Championships."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SWE-Schweden/Falun/0568-Lugnet/"
+  },
+  {
+    "slug": "falun-large",
+    "eventSlug": "falun",
+    "name": "Lugnet",
+    "kPoint": 120,
+    "hillSize": 132,
+    "record": {
+      "distance": 135.5,
+      "athlete": "Severin Freund",
+      "nation": "GER",
+      "date": "2015-02-26"
+    },
+    "opened": 1972,
+    "lastRebuilt": 2013,
+    "capacity": 15000,
+    "inrunLength": 98.63,
+    "takeoffAngle": 11.1,
+    "landingAngle": 33.2,
+    "facts": [
+      {
+        "pl": "Falun gościło mistrzostwa świata w narciarstwie klasycznym w latach 1974, 1993 i 2015.",
+        "en": "Falun hosted the Nordic World Ski Championships in 1974, 1993 and 2015."
+      },
+      {
+        "pl": "Najdłuższy skok na dużej skoczni to 143,0 m Severina Freunda z 28 lutego 2015, oddany podczas mistrzostw świata.",
+        "en": "The longest jump on the large hill is 143.0 m by Severin Freund on 28 February 2015, made during the World Championships."
+      },
+      {
+        "pl": "W 2025 roku rozmiar dużej skoczni zmniejszono ze 134 na 132 metry.",
+        "en": "In 2025 the hill size of the large hill was reduced from 134 to 132 meters."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SWE-Schweden/Falun/0568-Lugnet/"
+  },
+  {
+    "slug": "oslo",
+    "eventSlug": "oslo",
+    "name": "Holmenkollbakken",
+    "kPoint": 120,
+    "hillSize": 134,
+    "record": {
+      "distance": 144.0,
+      "athlete": "Robert Johansson",
+      "nation": "NOR",
+      "date": "2019-03-09"
+    },
+    "opened": 1892,
+    "lastRebuilt": 2010,
+    "capacity": 30000,
+    "inrunLength": 90.35,
+    "takeoffAngle": 11,
+    "landingAngle": 33.2,
+    "facts": [
+      {
+        "pl": "Skocznię na Holmenkollen otwarto 31 stycznia 1892 przy 20 000 widzów, a zwycięzca skoczył wtedy 22,5 m.",
+        "en": "The hill at Holmenkollen was opened on 31 January 1892 in front of 20,000 spectators, and the winner jumped 22.5 m."
+      },
+      {
+        "pl": "Pierwszy konkurs po II wojnie światowej oglądało 106 000 widzów, wśród nich król Haakon VII.",
+        "en": "The first competition after World War II was watched by 106,000 spectators, among them King Haakon VII."
+      },
+      {
+        "pl": "Obecny obiekt powstał po rozbiórce poprzedniej skoczni, którą rozpoczęto jesienią 2008 roku.",
+        "en": "The current structure was built after the demolition of the previous hill, which began in autumn 2008."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/03-Oslo/Oslo/0588-Holmenkollen/"
+  },
+  {
+    "slug": "planica",
+    "eventSlug": "planica",
+    "name": "Letalnica bratov Gorišek",
+    "kPoint": 200,
+    "hillSize": 240,
+    "record": {
+      "distance": 254.5,
+      "athlete": "Domen Prevc",
+      "nation": "SLO",
+      "date": "2025-03-30"
+    },
+    "opened": 1969,
+    "lastRebuilt": 2015,
+    "capacity": 35000,
+    "inrunLength": 133.8,
+    "takeoffAngle": 11.25,
+    "landingAngle": 33.2,
+    "facts": [
+      {
+        "pl": "30 marca 2025 Domen Prevc ustanowił na Letalnicy rekord świata, 254,5 m.",
+        "en": "On 30 March 2025 Domen Prevc set a world record of 254.5 m at Letalnica."
+      },
+      {
+        "pl": "Skocznię zaprojektowali bracia Vlado i Janez Goriškowie, a otwarto ją w marcu 1969 z punktem konstrukcyjnym na 153 metrze.",
+        "en": "The hill was designed by brothers Vlado and Janez Gorišek and opened in March 1969 with its construction point at 153 meters."
+      },
+      {
+        "pl": "Na Letalnicy ustanowiono 29 rekordów świata w długości lotu narciarskiego.",
+        "en": "A total of 29 ski flying world records have been set at Letalnica."
+      }
+    ],
+    "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SLO-Slowenien/Planica/0475-Letalnica/"
+  }
+]

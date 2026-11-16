@@ -56,6 +56,19 @@ interface Dictionary {
   staffRoles: Record<StaffRole, string>;
   teamSource: string;
   verified: string;
+  hillSection: string;
+  hillRecord: string;
+  hillKPoint: string;
+  hillHs: string;
+  hillInrun: string;
+  hillTakeoff: string;
+  hillLanding: string;
+  hillOpened: string;
+  hillRebuilt: string;
+  hillCapacity: string;
+  hillSource: string;
+  about: string;
+  otherSeasons: string;
   officials: string;
   officialRoles: Record<OfficialRole, string>;
   switchLanguage: string;
@@ -154,6 +167,19 @@ const pl: Dictionary = {
   },
   teamSource: 'Źródło: Polski Związek Narciarski',
   verified: 'Sprawdzono',
+  hillSection: 'Skocznia',
+  hillRecord: 'Rekord skoczni',
+  hillKPoint: 'Punkt konstrukcyjny (K)',
+  hillHs: 'Rozmiar skoczni (HS)',
+  hillInrun: 'Długość najazdu',
+  hillTakeoff: 'Kąt progu',
+  hillLanding: 'Kąt zeskoku',
+  hillOpened: 'Rok otwarcia',
+  hillRebuilt: 'Ostatnia przebudowa',
+  hillCapacity: 'Pojemność trybun',
+  hillSource: 'Źródło: skisprungschanzen.com',
+  about: 'ok.',
+  otherSeasons: 'Sezony',
   officials: 'Sędziowie i delegaci',
   officialRoles: {
     'technical-delegate': 'Delegat techniczny FIS',
@@ -263,6 +289,19 @@ const en: Dictionary = {
   },
   teamSource: 'Source: Polish Ski Association',
   verified: 'Verified',
+  hillSection: 'Hill',
+  hillRecord: 'Hill record',
+  hillKPoint: 'Construction point (K)',
+  hillHs: 'Hill size (HS)',
+  hillInrun: 'Inrun length',
+  hillTakeoff: 'Takeoff angle',
+  hillLanding: 'Landing angle',
+  hillOpened: 'Opened',
+  hillRebuilt: 'Last rebuilt',
+  hillCapacity: 'Spectator capacity',
+  hillSource: 'Source: skisprungschanzen.com',
+  about: 'approx.',
+  otherSeasons: 'Seasons',
   officials: 'Judges and delegates',
   officialRoles: {
     'technical-delegate': 'FIS Technical Delegate',

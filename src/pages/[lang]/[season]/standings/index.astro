@@ -2,43 +2,60 @@
 import StandingsTable from '../../../../components/StandingsTable.astro';
 import { LANGUAGES, t, type Lang } from '../../../../i18n';
 import Layout from '../../../../layouts/Layout.astro';
-import type { Season } from '../../../../lib/schema';
-import { formatSeasonLabel, getSeasons } from '../../../../lib/seasons';
-import { getPreviousStandings, getStandings } from '../../../../lib/standings';
+import { standingsPath } from '../../../../lib/paths';
+import { formatSeasonLabel } from '../../../../lib/seasons';
+import {
+  getPreviousStandings,
+  getStandings,
+  getStandingsSeasons,
+} from '../../../../lib/standings';
 
+// Standings reach further back than the schedules, so the pages follow the
+// standings files instead of the season files.
 export function getStaticPaths() {
   return LANGUAGES.flatMap((lang) =>
-    getSeasons().map((season) => ({
-      params: { lang, season: season.id },
-      props: { lang, season },
+    getStandingsSeasons().map((seasonId) => ({
+      params: { lang, season: seasonId },
+      props: { lang, seasonId },
     })),
   );
 }
 
 interface Props {
   lang: Lang;
-  season: Season;
+  seasonId: string;
 }
 
-const { lang, season } = Astro.props;
+const { lang, seasonId } = Astro.props;
 const dict = t(lang);
-const title = dict.standingsTitle(formatSeasonLabel(season.id));
-const standings = getStandings(season.id);
+const title = dict.standingsTitle(formatSeasonLabel(seasonId));
+const standings = getStandings(seasonId);
 const hasRows = standings !== undefined && standings.rows.length > 0;
-const previous = hasRows ? undefined : getPreviousStandings(season.id);
+const previous = hasRows ? undefined : getPreviousStandings(seasonId);
 ---
 
 <Layout
   lang={lang}
   title={title}
   description={`${title}. ${dict.standingsLead}`}
-  path={`/${season.id}/standings/`}
+  path={`/${seasonId}/standings/`}
 >
   <section class="section" aria-labelledby="standings-title">
     <h2 class="section__title section__title--page" id="standings-title">
       {title}
     </h2>
     <p class="lead">{dict.standingsLead}</p>
+    <nav class="season-switch" aria-label={dict.otherSeasons}>
+      {getStandingsSeasons().map((id) => (
+        <a
+          class="season-switch__link"
+          href={standingsPath(lang, id)}
+          aria-current={id === seasonId ? 'page' : undefined}
+        >
+          {formatSeasonLabel(id)}
+        </a>
+      ))}
+    </nav>
     {hasRows ? (
       <StandingsTable lang={lang} standings={standings} />
     ) : (

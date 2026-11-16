@@ -125,3 +125,31 @@ export type Standings = z.infer<typeof standingsSchema>;
 export type StaffMember = z.infer<typeof staffSchema>;
 export type StaffRole = StaffMember['role'];
 export type Teams = z.infer<typeof teamsSchema>;
+
+export const hillSchema = z.object({
+  slug: z.string().regex(/^[a-z0-9-]+$/),
+  // Events are matched by slug, so the data also serves earlier seasons.
+  eventSlug: z.string().regex(/^[a-z0-9-]+$/),
+  name: z.string().min(1),
+  kPoint: z.number().positive(),
+  hillSize: z.number().positive(),
+  // Official men's record; longer unofficial jumps are mentioned in `facts`.
+  record: z
+    .object({
+      distance: z.number().positive(),
+      athlete: z.string().min(1),
+      nation: z.string().regex(/^[A-Z]{3}$/),
+      date: isoDate,
+    })
+    .nullable(),
+  opened: z.number().int().nullable(),
+  lastRebuilt: z.number().int().nullable(),
+  capacity: z.number().int().nullable(),
+  inrunLength: z.number().positive().nullable(),
+  takeoffAngle: z.number().positive().nullable(),
+  landingAngle: z.number().positive().nullable(),
+  facts: z.array(z.object({ pl: z.string().min(1), en: z.string().min(1) })),
+  sourceUrl: z.url(),
+});
+
+export type Hill = z.infer<typeof hillSchema>;
