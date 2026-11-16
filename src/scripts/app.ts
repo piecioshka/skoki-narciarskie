@@ -246,6 +246,25 @@ function openExternalLinksInNewTab(): void {
   }
 }
 
+function setupSeasonSelects(): void {
+  for (const select of document.querySelectorAll<HTMLSelectElement>(
+    '.js-season-select',
+  )) {
+    const panels = all(
+      '.js-season-panel',
+      select.closest('section') ?? document,
+    );
+    const show = (): void => {
+      for (const panel of panels) {
+        panel.hidden = panel.dataset['season'] !== select.value;
+      }
+    };
+
+    select.addEventListener('change', show);
+    show();
+  }
+}
+
 function refresh(): void {
   const now = new Date();
   const lang = getLang();
@@ -317,6 +336,7 @@ function setup(): void {
       }
     });
   setupShortcuts();
+  setupSeasonSelects();
   openExternalLinksInNewTab();
   setupHomeOnlyFilters();
   setupViewToggles();

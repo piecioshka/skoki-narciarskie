@@ -105,6 +105,10 @@ interface Dictionary {
   author: string;
   license: string;
   nationsTitle: string;
+  squadBySeason: string;
+  squadLead: string;
+  chooseSeason: string;
+  overallRank: string;
   groupByContinent: string;
   continents: Record<'europe' | 'asia' | 'north-america', string>;
   shortcutNations: string;
@@ -275,6 +279,11 @@ const pl: Dictionary = {
   author: 'Autor',
   license: 'Licencja',
   nationsTitle: 'Reprezentacje',
+  squadBySeason: 'Skład w sezonie',
+  squadLead:
+    'Zawodnicy, którzy w wybranym sezonie zdobyli punkty Pucharu Świata.',
+  chooseSeason: 'Sezon',
+  overallRank: 'Miejsce w klasyfikacji',
   groupByContinent: 'Grupuj według kontynentu',
   continents: {
     europe: 'Europa',
@@ -466,6 +475,10 @@ const en: Dictionary = {
   author: 'Author',
   license: 'License',
   nationsTitle: 'Nations',
+  squadBySeason: 'Squad by season',
+  squadLead: 'Athletes who scored World Cup points in the selected season.',
+  chooseSeason: 'Season',
+  overallRank: 'Overall rank',
   groupByContinent: 'Group by continent',
   continents: {
     europe: 'Europe',

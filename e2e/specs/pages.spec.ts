@@ -672,10 +672,14 @@ test.describe('nations', () => {
   test('wins and podiums cover the whole career', async ({ page }) => {
     await page.goto('/pl/nations/pol/');
     await expect(
-      page.locator('.table__row').filter({ hasText: 'Kamil Stoch' }),
+      page
+        .locator('section[aria-labelledby="athletes-title"] .table__row')
+        .filter({ hasText: 'Kamil Stoch' }),
     ).toContainText('39 / 80');
     await expect(
-      page.locator('.table__row').filter({ hasText: 'Adam Malysz' }),
+      page
+        .locator('section[aria-labelledby="athletes-title"] .table__row')
+        .filter({ hasText: 'Adam Malysz' }),
     ).toContainText('39 / 92');
   });
 
@@ -687,19 +691,45 @@ test.describe('nations', () => {
     await expect(page.locator('.team')).toHaveCount(0);
   });
 
+  test('season dropdown shows the squad of an earlier season', async ({
+    page,
+  }) => {
+    await page.goto('/pl/nations/pol/');
+
+    const select = page.locator('.js-season-select');
+    const visible = page.locator('.js-season-panel:visible');
+
+    await expect(visible).toHaveCount(1);
+    await select.selectOption('2000-2001');
+    await expect(visible).toHaveAttribute('data-season', '2000-2001');
+    await expect(visible.locator('.table__row').first()).toContainText(
+      'Adam Malysz',
+    );
+    await expect(visible.locator('.table__row').first()).toContainText('1');
+    await select.selectOption('2017-2018');
+    await expect(visible.locator('.table__row').first()).toContainText(
+      'Kamil Stoch',
+    );
+    expect(
+      await select.evaluate((element) => getComputedStyle(element).appearance),
+    ).toBe('none');
+  });
+
   test('nation page sums points, lists trophies and team results', async ({
     page,
   }) => {
     await page.goto('/pl/nations/pol/');
 
     const stoch = page
-      .locator('.table__row')
+      .locator('section[aria-labelledby="athletes-title"] .table__row')
       .filter({ hasText: 'Kamil Stoch' });
 
     await expect(stoch).toContainText('Kryształowe Kule: 2');
     await expect(stoch).toContainText('Turniej Czterech Skoczni 2016/17');
     await expect(
-      page.locator('.table__row').filter({ hasText: 'Adam Malysz' }),
+      page
+        .locator('section[aria-labelledby="athletes-title"] .table__row')
+        .filter({ hasText: 'Adam Malysz' }),
     ).toContainText('Kryształowe Kule');
 
     const team = page.locator('section', {

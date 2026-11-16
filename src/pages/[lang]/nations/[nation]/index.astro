@@ -63,6 +63,69 @@ const resultsRange = `${formatSeasonLabel(archive[archive.length - 1] ?? '')} - 
 
   {teams && <NationalTeams lang={lang} teams={teams} />}
 
+  <section class="section" aria-labelledby="squad-title">
+    <div class="section__header">
+      <h3 class="section__title" id="squad-title">
+        {dict.squadBySeason}
+      </h3>
+      <label class="field">
+        <span class="field__label">{dict.chooseSeason}</span>
+        <select class="select js-season-select">
+          {summary.squads.map((squad) => (
+            <option value={squad.seasonId}>
+              {formatSeasonLabel(squad.seasonId)}
+            </option>
+          ))}
+        </select>
+      </label>
+    </div>
+    <p class="lead">{dict.squadLead}</p>
+    {summary.squads.map((squad, index) => (
+      <div
+        class="table-wrap js-season-panel"
+        data-season={squad.seasonId}
+        hidden={index > 0}
+      >
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="table__cell" scope="col">
+                {dict.athlete}
+              </th>
+              <th class="table__cell table__cell--number" scope="col">
+                {dict.overallRank}
+              </th>
+              <th class="table__cell table__cell--number" scope="col">
+                {dict.points}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {squad.athletes.map((athlete) => (
+              <tr class="table__row">
+                <td class="table__cell">
+                  <span class="person">
+                    <Avatar name={athlete.name} />
+                    <a
+                      class="table__link"
+                      href={getAthleteUrl(athlete.fisCompetitorId)}
+                    >
+                      {athlete.name}
+                    </a>
+                  </span>
+                </td>
+                <td class="table__cell table__cell--number">{athlete.rank}</td>
+                <td class="table__cell table__cell--number table__cell--strong">
+                  {athlete.points}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    ))}
+  </section>
+
   <section class="section" aria-labelledby="athletes-title">
     <h3 class="section__title" id="athletes-title">
       {dict.athletes}

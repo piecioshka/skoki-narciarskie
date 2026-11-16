@@ -34,8 +34,20 @@ export interface TeamResult {
   rank: number;
 }
 
+export interface SeasonSquad {
+  seasonId: string;
+  athletes: {
+    name: string;
+    fisCompetitorId: number;
+    rank: number;
+    points: number;
+  }[];
+}
+
 export interface NationSummary {
   nation: string;
+  /** Athletes with World Cup points in each season, newest season first. */
+  squads: SeasonSquad[];
   points: number;
   titles: number;
   athletes: AthleteSummary[];
@@ -113,6 +125,21 @@ function addCompetitionResults(athletes: AthleteSummary[]): void {
   }
 }
 
+function collectSquads(nation: string): SeasonSquad[] {
+  return getStandingsSeasons().flatMap((seasonId) => {
+    const athletes = (getStandings(seasonId)?.rows ?? [])
+      .filter((row) => row.nation === nation)
+      .map((row) => ({
+        name: `${row.givenName} ${row.familyName}`,
+        fisCompetitorId: row.fisCompetitorId,
+        rank: row.rank,
+        points: row.points,
+      }));
+
+    return athletes.length > 0 ? [{ seasonId, athletes }] : [];
+  });
+}
+
 function collectTeamResults(nation: string): TeamResult[] {
   return getSeasons().flatMap((season) =>
     season.events.flatMap((event) =>
@@ -153,6 +180,7 @@ export function getNations(): NationSummary[] {
       points: athletes.reduce((sum, item) => sum + item.points, 0),
       titles: athletes.reduce((sum, item) => sum + item.titles, 0),
       athletes,
+      squads: collectSquads(nation),
       teamResults: collectTeamResults(nation).sort((a, b) =>
         b.date.localeCompare(a.date),
       ),
