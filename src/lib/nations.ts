@@ -162,3 +162,22 @@ export function getNations(): NationSummary[] {
   cache = all.sort((a, b) => b.points - a.points);
   return cache;
 }
+
+export const CONTINENTS = ['europe', 'asia', 'north-america'] as const;
+export type Continent = (typeof CONTINENTS)[number];
+
+// Nations outside Europe; every other FIS nation in the data is European
+// (Turkey and Georgia compete in European structures).
+const NON_EUROPEAN: Record<string, Continent> = {
+  CAN: 'north-america',
+  USA: 'north-america',
+  CHN: 'asia',
+  JPN: 'asia',
+  KAZ: 'asia',
+  KGZ: 'asia',
+  KOR: 'asia',
+};
+
+export function getContinent(nation: string): Continent {
+  return NON_EUROPEAN[nation] ?? 'europe';
+}

@@ -168,28 +168,37 @@ function setupHomeOnlyFilters(): void {
   }
 }
 
-function setupHillGrouping(): void {
-  const button = document.querySelector<HTMLElement>('.js-group-hills');
-  const flat = document.querySelector<HTMLElement>('.js-hills-flat');
-  const grouped = document.querySelector<HTMLElement>('.js-hills-grouped');
+function setupViewToggles(): void {
+  for (const button of all('.js-view-toggle')) {
+    const {
+      storage,
+      flat: flatSelector,
+      grouped: groupedSelector,
+    } = button.dataset;
+    const flat = flatSelector
+      ? document.querySelector<HTMLElement>(flatSelector)
+      : null;
+    const grouped = groupedSelector
+      ? document.querySelector<HTMLElement>(groupedSelector)
+      : null;
 
-  if (!button || !flat || !grouped) {
-    return;
+    if (storage && flat && grouped) {
+      const key = `ski-jumping:${storage}`;
+      const apply = (pressed: boolean): void => {
+        button.setAttribute('aria-pressed', String(pressed));
+        flat.hidden = pressed;
+        grouped.hidden = !pressed;
+      };
+
+      apply(read(key) === 'true');
+      button.addEventListener('click', () => {
+        const pressed = button.getAttribute('aria-pressed') !== 'true';
+
+        store(key, String(pressed));
+        apply(pressed);
+      });
+    }
   }
-
-  const apply = (pressed: boolean): void => {
-    button.setAttribute('aria-pressed', String(pressed));
-    flat.hidden = pressed;
-    grouped.hidden = !pressed;
-  };
-
-  apply(read(STORAGE_KEYS.hillsGrouped) === 'true');
-  button.addEventListener('click', () => {
-    const pressed = button.getAttribute('aria-pressed') !== 'true';
-
-    store(STORAGE_KEYS.hillsGrouped, String(pressed));
-    apply(pressed);
-  });
 }
 
 function setupToc(): void {
@@ -310,7 +319,7 @@ function setup(): void {
   setupShortcuts();
   openExternalLinksInNewTab();
   setupHomeOnlyFilters();
-  setupHillGrouping();
+  setupViewToggles();
   setupToc();
   showLocalTimes();
   refresh();

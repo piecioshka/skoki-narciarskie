@@ -57,18 +57,25 @@ const countries = [...new Set(hills.map((hill) => hill.countryCode))]
       <h2 class="section__title section__title--page" id="hills-title">
         {dict.hillsTitle}
       </h2>
-      <button class="button js-group-hills" type="button" aria-pressed="false">
+      <button
+        class="button js-view-toggle"
+        type="button"
+        aria-pressed="false"
+        data-storage="hills-grouped"
+        data-flat="#hills-flat"
+        data-grouped="#hills-grouped"
+      >
         {dict.groupByCountry}
       </button>
     </div>
     <p class="lead">{dict.hillsLead}</p>
     <PlacesMap points={points} label={dict.hillsMap} />
-    <ul class="tournament-list js-hills-flat">
+    <ul class="tournament-list" id="hills-flat">
       {hills.map((hill) => (
         <HillTile lang={lang} hill={hill} />
       ))}
     </ul>
-    <div class="with-toc js-hills-grouped" hidden>
+    <div class="with-toc" id="hills-grouped" hidden>
       <div class="with-toc__content">
         {countries.map((country) => (
           <section

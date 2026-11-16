@@ -614,6 +614,26 @@ test.describe('nations', () => {
     );
   });
 
+  test('button groups nations by continent', async ({ page }) => {
+    await page.goto('/pl/nations/');
+
+    const button = page.getByRole('button', {
+      name: 'Grupuj według kontynentu',
+    });
+    const asia = page.locator('.country-group[data-continent="asia"]');
+
+    await expect(asia).toBeHidden();
+    await button.click();
+    await expect(asia).toBeVisible();
+    await expect(asia.locator('.country-group__title')).toHaveText('Azja');
+    await expect(asia.locator('.table__row').first()).toContainText('Japonia');
+    await expect(
+      page.locator('.country-group[data-continent="north-america"]'),
+    ).toContainText('Stany Zjednoczone');
+    await page.reload();
+    await expect(button).toHaveAttribute('aria-pressed', 'true');
+  });
+
   test('nation page sums points, lists trophies and team results', async ({
     page,
   }) => {

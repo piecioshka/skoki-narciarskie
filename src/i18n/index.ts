@@ -105,6 +105,8 @@ interface Dictionary {
   author: string;
   license: string;
   nationsTitle: string;
+  groupByContinent: string;
+  continents: Record<'europe' | 'asia' | 'north-america', string>;
   shortcutNations: string;
   nationsLead: (range: string) => string;
   nationLead: (range: string) => string;
@@ -273,6 +275,12 @@ const pl: Dictionary = {
   author: 'Autor',
   license: 'Licencja',
   nationsTitle: 'Reprezentacje',
+  groupByContinent: 'Grupuj według kontynentu',
+  continents: {
+    europe: 'Europa',
+    asia: 'Azja',
+    'north-america': 'Ameryka Północna',
+  },
   shortcutNations: 'Reprezentacje',
   nationsLead: (range) =>
     `Punkty Pucharu Świata zdobyte przez zawodników każdego kraju w sezonach ${range}.`,
@@ -458,6 +466,12 @@ const en: Dictionary = {
   author: 'Author',
   license: 'License',
   nationsTitle: 'Nations',
+  groupByContinent: 'Group by continent',
+  continents: {
+    europe: 'Europe',
+    asia: 'Asia',
+    'north-america': 'North America',
+  },
   shortcutNations: 'National teams',
   nationsLead: (range) =>
     `World Cup points scored by the athletes of each country in the ${range} seasons.`,

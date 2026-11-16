@@ -52,16 +52,14 @@ const groups = CONTINENTS.map((continent) => ({
       <NationsTable lang={lang} nations={nations} />
     </div>
     <div id="nations-grouped" hidden>
-      {
-        groups.map((group) => (
-          <section class="country-group" data-continent={group.continent}>
-            <h3 class="country-group__title">
-              {dict.continents[group.continent]}
-            </h3>
-            <NationsTable lang={lang} nations={group.nations} />
-          </section>
-        ))
-      }
+      {groups.map((group) => (
+        <section class="country-group" data-continent={group.continent}>
+          <h3 class="country-group__title">
+            {dict.continents[group.continent]}
+          </h3>
+          <NationsTable lang={lang} nations={group.nations} />
+        </section>
+      ))}
     </div>
   </section>
 </Layout>
