@@ -306,12 +306,10 @@ test.describe('season archive', () => {
 
     const switcher = page.locator('.season-switch');
 
-    await expect(switcher.getByRole('link')).toHaveText([
-      '2026/2027',
-      '2025/2026',
-      '2024/2025',
-      '2023/2024',
-    ]);
+    // Newest season first; the archive grows as earlier seasons are imported.
+    await expect(switcher.getByRole('link').first()).toHaveText('2026/2027');
+    await expect(switcher.getByRole('link').nth(1)).toHaveText('2025/2026');
+    expect(await switcher.getByRole('link').count()).toBeGreaterThanOrEqual(4);
     await switcher.getByRole('link', { name: '2025/2026' }).click();
     await expect(page).toHaveURL(/\/pl\/2025-2026\/$/);
     await expect(page.locator('.event-card')).toHaveCount(19);
@@ -720,12 +718,16 @@ test.describe('nations', () => {
     const visible = page.locator('.js-season-panel:visible');
 
     await expect(visible).toHaveCount(1);
+    // The current season comes first and shows the teams with their staff.
+    await expect(visible).toHaveAttribute('data-season', '2026-2027');
+    await expect(visible.locator('.team')).toHaveCount(2);
     await select.selectOption('2000-2001');
     await expect(visible).toHaveAttribute('data-season', '2000-2001');
     await expect(visible.locator('.table__row').first()).toContainText(
       'Adam Malysz',
     );
     await expect(visible.locator('.table__row').first()).toContainText('1');
+    await expect(visible.locator('.team')).toHaveCount(0);
     await select.selectOption('2017-2018');
     await expect(visible.locator('.table__row').first()).toContainText(
       'Kamil Stoch',

@@ -1,7 +1,6 @@
 ---
 import { t, type Lang } from '../i18n';
 import type { NationTeams } from '../lib/schema';
-import { formatSeasonLabel } from '../lib/seasons';
 import PersonName from './PersonName.astro';
 
 interface Props {
@@ -13,46 +12,40 @@ const { lang, teams } = Astro.props;
 const dict = t(lang);
 ---
 
-<section class="section" aria-labelledby="team-title">
-  <h3 class="section__title" id="team-title">
-    {dict.teamTitle(formatSeasonLabel(teams.season))}
-  </h3>
-  <p class="lead">{dict.teamLead}</p>
-  <div class="teams">
-    {teams.teams.map((team) => (
-      <article class="team" data-team={team.id}>
-        <h4 class="team__title">
-          {team.name ?? dict.teamNames[team.id] ?? team.id}
-        </h4>
-        <h5 class="team__subtitle">{dict.staff}</h5>
-        <ul class="people">
-          {team.staff.map((member) => (
-            <li
-              class:list={[
-                'people__item',
-                member.role === 'head-coach' && 'people__item--lead',
-              ]}
-            >
-              <PersonName name={member.name} url={member.url} />
-              <span class="people__role">{dict.staffRoles[member.role]}</span>
-            </li>
-          ))}
-        </ul>
-        <h5 class="team__subtitle">{dict.athletes}</h5>
-        <ul class="people">
-          {team.athletes.map((athlete) => (
-            <li class="people__item">
-              <PersonName name={athlete.name} url={athlete.url} />
-            </li>
-          ))}
-        </ul>
-      </article>
-    ))}
-  </div>
-  <p class="note">
-    <a class="link" href={teams.sourceUrl}>
-      {dict.teamSource}
-    </a>{' '}
-    · {`${dict.verified} ${teams.verifiedAt}`}
-  </p>
-</section>
+<div class="teams">
+  {teams.teams.map((team) => (
+    <article class="team" data-team={team.id}>
+      <h4 class="team__title">
+        {team.name ?? dict.teamNames[team.id] ?? team.id}
+      </h4>
+      <h5 class="team__subtitle">{dict.staff}</h5>
+      <ul class="people">
+        {team.staff.map((member) => (
+          <li
+            class:list={[
+              'people__item',
+              member.role === 'head-coach' && 'people__item--lead',
+            ]}
+          >
+            <PersonName name={member.name} url={member.url} />
+            <span class="people__role">{dict.staffRoles[member.role]}</span>
+          </li>
+        ))}
+      </ul>
+      <h5 class="team__subtitle">{dict.athletes}</h5>
+      <ul class="people">
+        {team.athletes.map((athlete) => (
+          <li class="people__item">
+            <PersonName name={athlete.name} url={athlete.url} />
+          </li>
+        ))}
+      </ul>
+    </article>
+  ))}
+</div>
+<p class="note">
+  <a class="link" href={teams.sourceUrl}>
+    {dict.teamSource}
+  </a>{' '}
+  · {`${dict.verified} ${teams.verifiedAt}`}
+</p>

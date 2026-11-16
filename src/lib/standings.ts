@@ -1,4 +1,6 @@
+import rawCoaches from '../data/coaches.json';
 import {
+  coachesSchema,
   standingsSchema,
   teamsSchema,
   type Standings,
@@ -38,4 +40,16 @@ export function getTeams(
 /** Seasons that have a standings file, newest first. */
 export function getStandingsSeasons(): string[] {
   return allStandings.map((item) => item.season);
+}
+
+const coaches = coachesSchema.parse(rawCoaches);
+
+/** Head coach of a nation in a season, when the data knows it. */
+export function getHeadCoach(
+  nation: string,
+  seasonId: string,
+): { name: string; sourceUrl: string } | undefined {
+  return (coaches[nation] ?? []).find(
+    (tenure) => tenure.from <= seasonId && seasonId <= tenure.to,
+  );
 }

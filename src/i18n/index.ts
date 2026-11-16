@@ -286,7 +286,7 @@ const pl: Dictionary = {
   author: 'Autor',
   license: 'Licencja',
   nationsTitle: 'Reprezentacje',
-  squadBySeason: 'Skład w sezonie',
+  squadBySeason: 'Kadra',
   squadLead:
     'Zawodnicy, którzy w wybranym sezonie zdobyli punkty Pucharu Świata.',
   chooseSeason: 'Sezon',
@@ -489,7 +489,7 @@ const en: Dictionary = {
   author: 'Author',
   license: 'License',
   nationsTitle: 'Nations',
-  squadBySeason: 'Squad by season',
+  squadBySeason: 'Squad',
   squadLead: 'Athletes who scored World Cup points in the selected season.',
   chooseSeason: 'Season',
   overallRank: 'Overall rank',

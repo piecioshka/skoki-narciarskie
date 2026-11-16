@@ -247,3 +247,17 @@ export const tournamentSchema = z.object({
 });
 
 export type Tournament = z.infer<typeof tournamentSchema>;
+
+// Head coaches of the men's national teams as tenures of whole seasons,
+// keyed by FIS nation code.
+export const coachesSchema = z.record(
+  z.string().regex(/^[A-Z]{3}$/),
+  z.array(
+    z.object({
+      name: z.string().min(1),
+      from: z.string().regex(/^\d{4}-\d{4}$/),
+      to: z.string().regex(/^\d{4}-\d{4}$/),
+      sourceUrl: z.url(),
+    }),
+  ),
+);

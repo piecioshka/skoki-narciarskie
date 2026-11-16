@@ -1,0 +1,1297 @@
+{
+  "id": "2021-2022",
+  "broadcasters": {},
+  "events": [
+    {
+      "slug": "nizhny-tagil",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49415,
+      "city": "Nizhny Tagil",
+      "countryCode": "XX",
+      "hillName": null,
+      "timeZone": "Asia/Yekaterinburg",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6215,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-11-20",
+          "time": "20:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 2,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 3,
+              "name": "Halvor Egner Granerud",
+              "nation": "NOR",
+              "fisCompetitorId": 180709
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6216,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-11-21",
+          "time": "20:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Halvor Egner Granerud",
+              "nation": "NOR",
+              "fisCompetitorId": 180709
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ruka",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49416,
+      "city": "Ruka",
+      "countryCode": "FI",
+      "hillName": null,
+      "timeZone": "Europe/Helsinki",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6218,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-11-27",
+          "time": "17:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 3,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6219,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-11-28",
+          "time": "17:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "wisla",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49417,
+      "city": "Wisla",
+      "countryCode": "PL",
+      "hillName": null,
+      "timeZone": "Europe/Warsaw",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6221,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-12-04",
+          "time": "16:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "AUT"
+            },
+            {
+              "rank": 2,
+              "nation": "GER"
+            },
+            {
+              "rank": 3,
+              "nation": "SLO"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6222,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-12-05",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Jan Hoerl",
+              "nation": "AUT",
+              "fisCompetitorId": 197640
+            },
+            {
+              "rank": 2,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "klingenthal",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49418,
+      "city": "Klingenthal",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Amsterdam",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6224,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-12-11",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Halvor Egner Granerud",
+              "nation": "NOR",
+              "fisCompetitorId": 180709
+            },
+            {
+              "rank": 3,
+              "name": "Kamil Stoch",
+              "nation": "POL",
+              "fisCompetitorId": 73228
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6225,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-12-12",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Daniel Andre Tande",
+              "nation": "NOR",
+              "fisCompetitorId": 147547
+            },
+            {
+              "rank": 3,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "engelberg",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49419,
+      "city": "Engelberg",
+      "countryCode": "CH",
+      "hillName": null,
+      "timeZone": "Europe/Zurich",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6227,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-12-18",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 2,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 3,
+              "name": "Timi Zajc",
+              "nation": "SLO",
+              "fisCompetitorId": 188590
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6228,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-12-19",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oberstdorf",
+      "type": "world-cup",
+      "tags": [
+        "four-hills"
+      ],
+      "fisEventId": 49421,
+      "city": "Oberstdorf",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6231,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2021-12-29",
+          "time": "16:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Halvor Egner Granerud",
+              "nation": "NOR",
+              "fisCompetitorId": 180709
+            },
+            {
+              "rank": 3,
+              "name": "Robert Johansson",
+              "nation": "NOR",
+              "fisCompetitorId": 128806
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "garmisch-partenkirchen",
+      "type": "world-cup",
+      "tags": [
+        "four-hills"
+      ],
+      "fisEventId": 49422,
+      "city": "Garmisch-Partenkirchen",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6233,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-01",
+          "time": "14:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            },
+            {
+              "rank": 3,
+              "name": "Lovro Kos",
+              "nation": "SLO",
+              "fisCompetitorId": 200666
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "innsbruck",
+      "type": "world-cup",
+      "tags": [
+        "four-hills"
+      ],
+      "fisEventId": 49423,
+      "city": "Innsbruck",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6235,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-04",
+          "time": "16:30",
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    },
+    {
+      "slug": "bischofshofen",
+      "type": "world-cup",
+      "tags": [
+        "four-hills"
+      ],
+      "fisEventId": 49424,
+      "city": "Bischofshofen",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6385,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-05",
+          "time": "16:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 3,
+              "name": "Halvor Egner Granerud",
+              "nation": "NOR",
+              "fisCompetitorId": 180709
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6237,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-06",
+          "time": "17:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Daniel Huber",
+              "nation": "AUT",
+              "fisCompetitorId": 139429
+            },
+            {
+              "rank": 2,
+              "name": "Halvor Egner Granerud",
+              "nation": "NOR",
+              "fisCompetitorId": 180709
+            },
+            {
+              "rank": 3,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bischofshofen-2",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49425,
+      "city": "Bischofshofen",
+      "countryCode": "AT",
+      "hillName": null,
+      "timeZone": "Europe/Vienna",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6239,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-08",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 2,
+              "name": "Halvor Egner Granerud",
+              "nation": "NOR",
+              "fisCompetitorId": 180709
+            },
+            {
+              "rank": 3,
+              "name": "Jan Hoerl",
+              "nation": "AUT",
+              "fisCompetitorId": 197640
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6240,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-09",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "AUT"
+            },
+            {
+              "rank": 2,
+              "nation": "JPN"
+            },
+            {
+              "rank": 3,
+              "nation": "NOR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "zakopane",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49426,
+      "city": "Zakopane",
+      "countryCode": "PL",
+      "hillName": null,
+      "timeZone": "Europe/Warsaw",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6242,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-15",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "SLO"
+            },
+            {
+              "rank": 2,
+              "nation": "GER"
+            },
+            {
+              "rank": 3,
+              "nation": "JPN"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6243,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-16",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sapporo",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49427,
+      "city": "Sapporo",
+      "countryCode": "JP",
+      "hillName": null,
+      "timeZone": "Asia/Tokyo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6245,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-21",
+          "time": "16:30",
+          "status": "cancelled",
+          "results": []
+        },
+        {
+          "fisRaceId": 6246,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-22",
+          "time": "16:00",
+          "status": "cancelled",
+          "results": []
+        },
+        {
+          "fisRaceId": 6247,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-23",
+          "time": "10:00",
+          "status": "cancelled",
+          "results": []
+        }
+      ]
+    },
+    {
+      "slug": "titisee-neustadt",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 51057,
+      "city": "Titisee-Neustadt",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6383,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-22",
+          "time": "16:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 2,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 3,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6384,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-23",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 2,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 3,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "willingen",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49406,
+      "city": "Willingen",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6192,
+          "kind": "mixed-team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-28",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "SLO"
+            },
+            {
+              "rank": 2,
+              "nation": "NOR"
+            },
+            {
+              "rank": 3,
+              "nation": "AUT"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6249,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-29",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 2,
+              "name": "Halvor Egner Granerud",
+              "nation": "NOR",
+              "fisCompetitorId": 180709
+            },
+            {
+              "rank": 3,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6250,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-01-30",
+          "time": "15:15",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 2,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            },
+            {
+              "rank": 3,
+              "name": "Cene Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 164621
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lahti",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49428,
+      "city": "Lahti",
+      "countryCode": "FI",
+      "hillName": null,
+      "timeZone": "Europe/Helsinki",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6251,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-02-25",
+          "time": "18:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Halvor Egner Granerud",
+              "nation": "NOR",
+              "fisCompetitorId": 180709
+            },
+            {
+              "rank": 3,
+              "name": "Piotr Zyla",
+              "nation": "POL",
+              "fisCompetitorId": 73232
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6252,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-02-26",
+          "time": "17:30",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "AUT"
+            },
+            {
+              "rank": 2,
+              "nation": "SLO"
+            },
+            {
+              "rank": 3,
+              "nation": "GER"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6253,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-02-27",
+          "time": "17:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 1,
+              "name": "Halvor Egner Granerud",
+              "nation": "NOR",
+              "fisCompetitorId": 180709
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lillehammer",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49408,
+      "city": "Lillehammer",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6255,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-03-03",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Ryoyu Kobayashi",
+              "nation": "JPN",
+              "fisCompetitorId": 155620
+            },
+            {
+              "rank": 3,
+              "name": "Karl Geiger",
+              "nation": "GER",
+              "fisCompetitorId": 128621
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oslo",
+      "type": "world-cup",
+      "tags": [],
+      "fisEventId": 49409,
+      "city": "Oslo",
+      "countryCode": "NO",
+      "hillName": null,
+      "timeZone": "Europe/Oslo",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6202,
+          "kind": "mixed-team",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-03-04",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "SLO"
+            },
+            {
+              "rank": 2,
+              "nation": "AUT"
+            },
+            {
+              "rank": 3,
+              "nation": "NOR"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6256,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-03-05",
+          "time": "17:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 2,
+              "name": "Markus Eisenbichler",
+              "nation": "GER",
+              "fisCompetitorId": 117441
+            },
+            {
+              "rank": 3,
+              "name": "Robert Johansson",
+              "nation": "NOR",
+              "fisCompetitorId": 128806
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6257,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "large",
+          "date": "2022-03-06",
+          "time": "15:45",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Daniel Andre Tande",
+              "nation": "NOR",
+              "fisCompetitorId": 147547
+            },
+            {
+              "rank": 2,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oberstdorf-2",
+      "type": "world-cup",
+      "tags": [
+        "ski-flying"
+      ],
+      "fisEventId": 49429,
+      "city": "Oberstdorf",
+      "countryCode": "DE",
+      "hillName": null,
+      "timeZone": "Europe/Berlin",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6261,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2022-03-19",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            },
+            {
+              "rank": 2,
+              "name": "Ziga Jelar",
+              "nation": "SLO",
+              "fisCompetitorId": 164624
+            },
+            {
+              "rank": 3,
+              "name": "Timi Zajc",
+              "nation": "SLO",
+              "fisCompetitorId": 188590
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6262,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2022-03-20",
+          "time": "16:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Timi Zajc",
+              "nation": "SLO",
+              "fisCompetitorId": 188590
+            },
+            {
+              "rank": 2,
+              "name": "Piotr Zyla",
+              "nation": "POL",
+              "fisCompetitorId": 73232
+            },
+            {
+              "rank": 3,
+              "name": "Stefan Kraft",
+              "nation": "AUT",
+              "fisCompetitorId": 128286
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "planica",
+      "type": "world-cup",
+      "tags": [
+        "ski-flying"
+      ],
+      "fisEventId": 49430,
+      "city": "Planica",
+      "countryCode": "SI",
+      "hillName": null,
+      "timeZone": "Europe/Ljubljana",
+      "broadcasts": [],
+      "officials": [],
+      "competitions": [
+        {
+          "fisRaceId": 6264,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2022-03-25",
+          "time": "14:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Ziga Jelar",
+              "nation": "SLO",
+              "fisCompetitorId": 164624
+            },
+            {
+              "rank": 2,
+              "name": "Peter Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 131309
+            },
+            {
+              "rank": 3,
+              "name": "Anze Lanisek",
+              "nation": "SLO",
+              "fisCompetitorId": 162711
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6265,
+          "kind": "team",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2022-03-26",
+          "time": "10:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "nation": "SLO"
+            },
+            {
+              "rank": 2,
+              "nation": "NOR"
+            },
+            {
+              "rank": 3,
+              "nation": "AUT"
+            }
+          ]
+        },
+        {
+          "fisRaceId": 6266,
+          "kind": "individual",
+          "hillSize": null,
+          "hillType": "flying",
+          "date": "2022-03-27",
+          "time": "10:00",
+          "status": "scheduled",
+          "results": [
+            {
+              "rank": 1,
+              "name": "Marius Lindvik",
+              "nation": "NOR",
+              "fisCompetitorId": 174872
+            },
+            {
+              "rank": 2,
+              "name": "Yukiya Sato",
+              "nation": "JPN",
+              "fisCompetitorId": 149215
+            },
+            {
+              "rank": 3,
+              "name": "Peter Prevc",
+              "nation": "SLO",
+              "fisCompetitorId": 131309
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

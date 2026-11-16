@@ -1761,3 +1761,30 @@ a[href^='http']:not(.icon-button)::after {
 .past .team__subtitle {
   margin-top: 0;
 }
+
+/* Squad of a season on a nation page */
+
+.season-panel__lead {
+  margin-top: 1.25rem;
+}
+
+.coach {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--pal-border);
+  border-radius: var(--pal-radius);
+  background: var(--pal-bg-panel);
+}
+
+.coach__role {
+  font-size: var(--pal-font-size-md);
+  color: var(--pal-text-muted);
+}
+
+.season-panel .teams + .note {
+  margin-bottom: 0;
+}
