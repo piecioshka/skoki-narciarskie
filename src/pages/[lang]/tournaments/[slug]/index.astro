@@ -37,6 +37,9 @@ const places = Math.max(
   ...tournament.winners.map((item) => item.podium.length),
 );
 const placeLabels = dict.placeLabels.slice(0, places);
+// Countries that no longer exist (GDR, URS) have no flag, so the code is shown.
+const placeLabel = (place: { name?: string | undefined; nation: string }) =>
+  `${getNationFlag(place.nation) || place.nation} ${placeName(place)}`;
 const placeName = (place: { name?: string | undefined; nation: string }) => {
   const countryCode = getNationCountryCode(place.nation);
 
@@ -135,9 +138,12 @@ const placeName = (place: { name?: string | undefined; nation: string }) => {
           {tournament.winners.map((winner) => (
             <tr class="table__row">
               <td class="table__cell table__cell--strong">{winner.edition}</td>
-              {winner.podium.map((place) => (
+              {winner.podium.map((place, index) => (
                 <td class="table__cell">
-                  {getNationFlag(place.nation)} {placeName(place)}
+                  {placeLabel(place)}
+                  {index === 0 && winner.coWinner && (
+                    <>, {placeLabel(winner.coWinner)}</>
+                  )}
                 </td>
               ))}
             </tr>

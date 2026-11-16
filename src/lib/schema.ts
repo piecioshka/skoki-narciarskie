@@ -205,6 +205,8 @@ export const tournamentSchema = z.object({
     z.object({
       edition: z.string().min(1),
       podium: z.array(podiumPlace).min(1).max(3),
+      // Second athlete of a shared victory (Four Hills 2005/06).
+      coWinner: podiumPlace.optional(),
     }),
   ),
   sourceUrl: z.url(),

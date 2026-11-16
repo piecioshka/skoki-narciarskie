@@ -97,6 +97,613 @@
             "nation": "POL"
           }
         ]
+      },
+      {
+        "edition": "2018/19",
+        "podium": [
+          {
+            "name": "Ryōyū Kobayashi",
+            "nation": "JPN"
+          }
+        ]
+      },
+      {
+        "edition": "2017/18",
+        "podium": [
+          {
+            "name": "Kamil Stoch",
+            "nation": "POL"
+          }
+        ]
+      },
+      {
+        "edition": "2016/17",
+        "podium": [
+          {
+            "name": "Kamil Stoch",
+            "nation": "POL"
+          }
+        ]
+      },
+      {
+        "edition": "2015/16",
+        "podium": [
+          {
+            "name": "Peter Prevc",
+            "nation": "SLO"
+          }
+        ]
+      },
+      {
+        "edition": "2014/15",
+        "podium": [
+          {
+            "name": "Stefan Kraft",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2013/14",
+        "podium": [
+          {
+            "name": "Thomas Diethart",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2012/13",
+        "podium": [
+          {
+            "name": "Gregor Schlierenzauer",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2011/12",
+        "podium": [
+          {
+            "name": "Gregor Schlierenzauer",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2010/11",
+        "podium": [
+          {
+            "name": "Thomas Morgenstern",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2009/10",
+        "podium": [
+          {
+            "name": "Andreas Kofler",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2008/09",
+        "podium": [
+          {
+            "name": "Wolfgang Loitzl",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "2007/08",
+        "podium": [
+          {
+            "name": "Janne Ahonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "2006/07",
+        "podium": [
+          {
+            "name": "Anders Jacobsen",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "2005/06",
+        "podium": [
+          {
+            "name": "Janne Ahonen",
+            "nation": "FIN"
+          }
+        ],
+        "coWinner": {
+          "name": "Jakub Janda",
+          "nation": "CZE"
+        }
+      },
+      {
+        "edition": "2004/05",
+        "podium": [
+          {
+            "name": "Janne Ahonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "2003/04",
+        "podium": [
+          {
+            "name": "Sigurd Pettersen",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "2002/03",
+        "podium": [
+          {
+            "name": "Janne Ahonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "2001/02",
+        "podium": [
+          {
+            "name": "Sven Hannawald",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "2000/01",
+        "podium": [
+          {
+            "name": "Adam Małysz",
+            "nation": "POL"
+          }
+        ]
+      },
+      {
+        "edition": "1999/00",
+        "podium": [
+          {
+            "name": "Andreas Widhölzl",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "1998/99",
+        "podium": [
+          {
+            "name": "Janne Ahonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1997/98",
+        "podium": [
+          {
+            "name": "Kazuyoshi Funaki",
+            "nation": "JPN"
+          }
+        ]
+      },
+      {
+        "edition": "1996/97",
+        "podium": [
+          {
+            "name": "Primož Peterka",
+            "nation": "SLO"
+          }
+        ]
+      },
+      {
+        "edition": "1995/96",
+        "podium": [
+          {
+            "name": "Jens Weißflog",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "1994/95",
+        "podium": [
+          {
+            "name": "Andreas Goldberger",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "1993/94",
+        "podium": [
+          {
+            "name": "Espen Bredesen",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "1992/93",
+        "podium": [
+          {
+            "name": "Andreas Goldberger",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "1991/92",
+        "podium": [
+          {
+            "name": "Toni Nieminen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1990/91",
+        "podium": [
+          {
+            "name": "Jens Weißflog",
+            "nation": "GER"
+          }
+        ]
+      },
+      {
+        "edition": "1989/90",
+        "podium": [
+          {
+            "name": "Dieter Thoma",
+            "nation": "FRG"
+          }
+        ]
+      },
+      {
+        "edition": "1988/89",
+        "podium": [
+          {
+            "name": "Risto Laakkonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1987/88",
+        "podium": [
+          {
+            "name": "Matti Nykänen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1986/87",
+        "podium": [
+          {
+            "name": "Ernst Vettori",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "1985/86",
+        "podium": [
+          {
+            "name": "Ernst Vettori",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "1984/85",
+        "podium": [
+          {
+            "name": "Jens Weißflog",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1983/84",
+        "podium": [
+          {
+            "name": "Jens Weißflog",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1982/83",
+        "podium": [
+          {
+            "name": "Matti Nykänen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1981/82",
+        "podium": [
+          {
+            "name": "Manfred Deckert",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1980/81",
+        "podium": [
+          {
+            "name": "Hubert Neuper",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "1979/80",
+        "podium": [
+          {
+            "name": "Hubert Neuper",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "1978/79",
+        "podium": [
+          {
+            "name": "Pentti Kokkonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1977/78",
+        "podium": [
+          {
+            "name": "Kari Ylianttila",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1976/77",
+        "podium": [
+          {
+            "name": "Jochen Danneberg",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1975/76",
+        "podium": [
+          {
+            "name": "Jochen Danneberg",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1974/75",
+        "podium": [
+          {
+            "name": "Willi Pürstl",
+            "nation": "AUT"
+          }
+        ]
+      },
+      {
+        "edition": "1973/74",
+        "podium": [
+          {
+            "name": "Hans-Georg Aschenbach",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1972/73",
+        "podium": [
+          {
+            "name": "Rainer Schmidt",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1971/72",
+        "podium": [
+          {
+            "name": "Ingolf Mork",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "1970/71",
+        "podium": [
+          {
+            "name": "Jiří Raška",
+            "nation": "TCH"
+          }
+        ]
+      },
+      {
+        "edition": "1969/70",
+        "podium": [
+          {
+            "name": "Horst Queck",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1968/69",
+        "podium": [
+          {
+            "name": "Bjørn Wirkola",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "1967/68",
+        "podium": [
+          {
+            "name": "Bjørn Wirkola",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "1966/67",
+        "podium": [
+          {
+            "name": "Bjørn Wirkola",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "1965/66",
+        "podium": [
+          {
+            "name": "Veikko Kankkonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1964/65",
+        "podium": [
+          {
+            "name": "Torgeir Brandtzæg",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "1963/64",
+        "podium": [
+          {
+            "name": "Veikko Kankkonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1962/63",
+        "podium": [
+          {
+            "name": "Toralf Engan",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "1961/62",
+        "podium": [
+          {
+            "name": "Eino Kirjonen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1960/61",
+        "podium": [
+          {
+            "name": "Helmut Recknagel",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1959/60",
+        "podium": [
+          {
+            "name": "Max Bolkart",
+            "nation": "FRG"
+          }
+        ]
+      },
+      {
+        "edition": "1958/59",
+        "podium": [
+          {
+            "name": "Helmut Recknagel",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1957/58",
+        "podium": [
+          {
+            "name": "Helmut Recknagel",
+            "nation": "GDR"
+          }
+        ]
+      },
+      {
+        "edition": "1956/57",
+        "podium": [
+          {
+            "name": "Pentti Uotinen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1955/56",
+        "podium": [
+          {
+            "name": "Nikolay Kamenskiy",
+            "nation": "URS"
+          }
+        ]
+      },
+      {
+        "edition": "1954/55",
+        "podium": [
+          {
+            "name": "Hemmo Silvennoinen",
+            "nation": "FIN"
+          }
+        ]
+      },
+      {
+        "edition": "1953/54",
+        "podium": [
+          {
+            "name": "Olav Bjørnstad",
+            "nation": "NOR"
+          }
+        ]
+      },
+      {
+        "edition": "1953",
+        "podium": [
+          {
+            "name": "Sepp Bradl",
+            "nation": "AUT"
+          }
+        ]
       }
     ],
     "sourceUrl": "https://pl.wikipedia.org/wiki/Turniej_Czterech_Skoczni",

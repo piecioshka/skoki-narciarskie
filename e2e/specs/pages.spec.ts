@@ -209,6 +209,18 @@ test.describe('tournaments', () => {
       'Domen Prevc',
     );
     await expect(page.locator('main')).toContainText('systemem KO');
+
+    const rows = page.locator('.table__row');
+
+    await expect(rows).toHaveCount(74);
+    await expect(rows.last()).toContainText('1953');
+    await expect(rows.last()).toContainText('Sepp Bradl');
+    await expect(rows.filter({ hasText: '2005/06' })).toContainText(
+      /Janne Ahonen, .*Jakub Janda/,
+    );
+    await expect(rows.filter({ hasText: '1957/58' })).toContainText(
+      'GDR Helmut Recknagel',
+    );
   });
 
   test('team podium is printed in the page language', async ({ page }) => {
