@@ -22,13 +22,6 @@ export function getStandings(seasonId: string): Standings | undefined {
   return allStandings.find((item) => item.season === seasonId);
 }
 
-/** The newest earlier season that has a table; shown before a season starts. */
-export function getPreviousStandings(seasonId: string): Standings | undefined {
-  return allStandings.find(
-    (item) => item.season < seasonId && item.rows.length > 0,
-  );
-}
-
 export function getTeams(seasonId: string): Teams | undefined {
   return Object.values(teamsFiles)
     .map((raw) => teamsSchema.parse(raw))

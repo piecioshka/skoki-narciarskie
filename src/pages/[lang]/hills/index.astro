@@ -68,19 +68,41 @@ const countries = [...new Set(hills.map((hill) => hill.countryCode))]
         <HillTile lang={lang} hill={hill} />
       ))}
     </ul>
-    <div class="js-hills-grouped" hidden>
-      {countries.map((country) => (
-        <section class="country-group" data-country={country.code}>
-          <h3 class="country-group__title">
-            {`${getFlag(country.code)} ${country.name}`}
-          </h3>
-          <ul class="tournament-list">
-            {country.hills.map((hill) => (
-              <HillTile lang={lang} hill={hill} />
-            ))}
-          </ul>
-        </section>
-      ))}
+    <div class="with-toc js-hills-grouped" hidden>
+      <div class="with-toc__content">
+        {countries.map((country) => (
+          <section
+            class="country-group js-toc-section"
+            id={`country-${country.code.toLowerCase()}`}
+            data-country={country.code}
+          >
+            <h3 class="country-group__title">
+              {`${getFlag(country.code)} ${country.name}`}
+            </h3>
+            <ul class="tournament-list">
+              {country.hills.map((hill) => (
+                <HillTile lang={lang} hill={hill} />
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+      <nav class="toc" aria-label={dict.tocTitle}>
+        <p class="toc__title">{dict.tocTitle}</p>
+        <ul class="toc__list">
+          {countries.map((country) => (
+            <li>
+              <a
+                class="toc__link js-toc-link"
+                href={`#country-${country.code.toLowerCase()}`}
+              >
+                {`${getFlag(country.code)} ${country.name}`}
+                <span class="toc__count">{country.hills.length}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   </section>
 </Layout>

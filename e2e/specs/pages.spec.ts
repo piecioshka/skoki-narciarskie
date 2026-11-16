@@ -31,8 +31,11 @@ test.describe('navigation', () => {
     await page.goto('/pl/');
     await page.keyboard.press('r');
     await expect(page).toHaveURL(/\/standings\/$/);
+    await page.waitForLoadState('load');
     await page.keyboard.press('p');
     await expect(page).toHaveURL(/\/polish-team\/$/);
+    // The shortcut handler exists only once the page script has run.
+    await page.waitForLoadState('load');
     await page.keyboard.press('g');
     await expect(page).toHaveURL(/\/gallery\/$/);
   });
@@ -404,6 +407,32 @@ test.describe('hill profiles', () => {
     await page.reload();
     await expect(button).toHaveAttribute('aria-pressed', 'true');
     await expect(germany).toBeVisible();
+  });
+
+  test('grouped view has a table of contents on the right', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/pl/hills/');
+
+    const toc = page.locator('.toc');
+
+    await expect(toc).toBeHidden();
+    await page.getByRole('button', { name: 'Grupuj według kraju' }).click();
+    await expect(toc).toBeVisible();
+    await expect(toc.locator('.toc__link')).toHaveCount(10);
+
+    const content = await page.locator('.with-toc__content').boundingBox();
+    const box = await toc.boundingBox();
+
+    expect(box?.x).toBeGreaterThan((content?.x ?? 0) + (content?.width ?? 0));
+    await toc.getByRole('link', { name: /Polska/ }).click();
+    await expect(page).toHaveURL(/#country-pl$/);
+    await expect(page.locator('#country-pl')).toBeInViewport();
+    await expect(toc.getByRole('link', { name: /Polska/ })).toHaveAttribute(
+      'aria-current',
+      'true',
+    );
   });
 
   test('profile shows the photo with credit, data and past winners', async ({

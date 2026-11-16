@@ -40,7 +40,6 @@ interface Dictionary {
   standingsTitle: (season: string) => string;
   standingsLead: string;
   standingsEmpty: string;
-  standingsPrevious: (season: string) => string;
   standingsUpdated: string;
   standingsSource: string;
   onlyPoles: string;
@@ -90,6 +89,7 @@ interface Dictionary {
   shortcutHills: string;
   hillsTitle: string;
   hillsLead: string;
+  tocTitle: string;
   hillsMap: string;
   eventsMap: string;
   groupByCountry: string;
@@ -190,7 +190,6 @@ const pl: Dictionary = {
   standingsLead: 'Puchar Świata mężczyzn.',
   standingsEmpty:
     'Sezon jeszcze się nie zaczął. Klasyfikacja pojawi się po pierwszym konkursie.',
-  standingsPrevious: (season) => `Końcowa klasyfikacja sezonu ${season}`,
   standingsUpdated: 'Stan na',
   standingsSource: 'Źródło: FIS',
   onlyPoles: 'Tylko Polacy',
@@ -254,6 +253,7 @@ const pl: Dictionary = {
   navHills: 'Skocznie',
   shortcutHills: 'Skocznie',
   hillsTitle: 'Skocznie Pucharu Świata',
+  tocTitle: 'Na tej stronie',
   hillsMap: 'Mapa skoczni',
   eventsMap: 'Mapa zawodów',
   groupByCountry: 'Grupuj według kraju',
@@ -372,7 +372,6 @@ const en: Dictionary = {
   standingsLead: "Men's World Cup.",
   standingsEmpty:
     'The season has not started yet. Standings will appear after the first competition.',
-  standingsPrevious: (season) => `Final standings of the ${season} season`,
   standingsUpdated: 'As of',
   standingsSource: 'Source: FIS',
   onlyPoles: 'Poles only',
@@ -436,6 +435,7 @@ const en: Dictionary = {
   navHills: 'Hills',
   shortcutHills: 'Hills',
   hillsTitle: 'World Cup hills',
+  tocTitle: 'On this page',
   hillsMap: 'Map of hills',
   eventsMap: 'Map of events',
   groupByCountry: 'Group by country',

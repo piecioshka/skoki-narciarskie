@@ -4,11 +4,7 @@ import { LANGUAGES, t, type Lang } from '../../../../i18n';
 import Layout from '../../../../layouts/Layout.astro';
 import { standingsPath } from '../../../../lib/paths';
 import { formatSeasonLabel } from '../../../../lib/seasons';
-import {
-  getPreviousStandings,
-  getStandings,
-  getStandingsSeasons,
-} from '../../../../lib/standings';
+import { getStandings, getStandingsSeasons } from '../../../../lib/standings';
 
 // Standings reach further back than the schedules, so the pages follow the
 // standings files instead of the season files.
@@ -31,7 +27,6 @@ const dict = t(lang);
 const title = dict.standingsTitle(formatSeasonLabel(seasonId));
 const standings = getStandings(seasonId);
 const hasRows = standings !== undefined && standings.rows.length > 0;
-const previous = hasRows ? undefined : getPreviousStandings(seasonId);
 ---
 
 <Layout
@@ -62,13 +57,4 @@ const previous = hasRows ? undefined : getPreviousStandings(seasonId);
       <p class="notice">{dict.standingsEmpty}</p>
     )}
   </section>
-
-  {previous && (
-    <section class="section" aria-labelledby="previous-title">
-      <h3 class="section__title" id="previous-title">
-        {dict.standingsPrevious(formatSeasonLabel(previous.season))}
-      </h3>
-      <StandingsTable lang={lang} standings={previous} />
-    </section>
-  )}
 </Layout>

@@ -192,6 +192,39 @@ function setupHillGrouping(): void {
   });
 }
 
+function setupToc(): void {
+  const links = all('.js-toc-link');
+  const sections = all('.js-toc-section');
+
+  if (links.length === 0 || !('IntersectionObserver' in window)) {
+    return;
+  }
+
+  // The section nearest to the top of the viewport is the current one.
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          for (const link of links) {
+            const current = link.getAttribute('href') === `#${entry.target.id}`;
+
+            if (current) {
+              link.setAttribute('aria-current', 'true');
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          }
+        }
+      }
+    },
+    { rootMargin: '-80px 0px -70% 0px' },
+  );
+
+  for (const section of sections) {
+    observer.observe(section);
+  }
+}
+
 function refresh(): void {
   const now = new Date();
   const lang = getLang();
@@ -264,6 +297,7 @@ function setup(): void {
   setupShortcuts();
   setupHomeOnlyFilters();
   setupHillGrouping();
+  setupToc();
   showLocalTimes();
   refresh();
   setInterval(refresh, 1000);
