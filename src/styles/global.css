@@ -1162,3 +1162,26 @@ th.table__cell--label {
 .podium__place:first-child {
   font-weight: var(--pal-font-weight-semibold);
 }
+
+/* External links: every link that leaves the site ends with the same
+   pictogram. Internal links are root-relative, so the scheme tells them apart. */
+
+a[href^='http']:not(.icon-button)::after {
+  content: '';
+  display: inline-block;
+  flex: none;
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.3em;
+  background: currentColor;
+  opacity: 0.7;
+  /* lucide "external-link" */
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 3h6v6'/%3E%3Cpath d='M10 14 21 3'/%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+/* These are flex rows with their own gap. */
+.link[href^='http']::after,
+.button[href^='http']::after {
+  margin-left: 0;
+}

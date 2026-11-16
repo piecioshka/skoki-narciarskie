@@ -297,6 +297,38 @@ test.describe('season archive', () => {
   });
 });
 
+test.describe('external links', () => {
+  const hasPictogram = (element: Element): boolean => {
+    const after = getComputedStyle(element, '::after');
+
+    return after.content !== 'none' && after.maskImage !== 'none';
+  };
+
+  test('links leaving the site end with a pictogram', async ({ page }) => {
+    await page.goto('/pl/2026-2027/wisla/');
+
+    const external = page.locator('main a[href^="http"]');
+    const count = await external.count();
+
+    expect(count).toBeGreaterThan(5);
+    for (let index = 0; index < count; index += 1) {
+      expect(await external.nth(index).evaluate(hasPictogram)).toBe(true);
+    }
+  });
+
+  test('internal links and the icon-only GitHub button have none', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/wisla/');
+
+    const internal = page.locator('.back-link');
+    const github = page.locator('.topbar__actions a[href^="https://github"]');
+
+    expect(await internal.evaluate(hasPictogram)).toBe(false);
+    expect(await github.evaluate(hasPictogram)).toBe(false);
+  });
+});
+
 test.describe('hill', () => {
   test('event page shows technical data, the record and facts', async ({
     page,
