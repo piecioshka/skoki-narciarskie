@@ -1,0 +1,27 @@
+---
+import { t, type Lang } from '../i18n';
+import type { Competition } from '../lib/schema';
+import type { Slot } from '../lib/schedule';
+import { formatInZone } from '../lib/time';
+
+interface Props {
+  lang: Lang;
+  competition: Competition;
+  timeSlot: Slot;
+}
+
+const { lang, competition, timeSlot: slot } = Astro.props;
+// Rendered in Polish time; the client script rewrites it to the viewer zone.
+const fallback = formatInZone(slot.start, 'Europe/Warsaw');
+---
+
+{slot.timed ? (
+  <time class="slot-time js-local-time" datetime={slot.start.toISOString()}>
+    {fallback}
+  </time>
+) : (
+  <span class="slot-time">
+    {competition.date}
+    <span class="slot-time__unknown">({t(lang).timeUnknown})</span>
+  </span>
+)}

@@ -1,0 +1,19 @@
+---
+import { t, type Lang } from '../i18n';
+import type { SeasonEvent } from '../lib/schema';
+
+interface Props {
+  lang: Lang;
+  event: SeasonEvent;
+}
+
+const { lang, event } = Astro.props;
+const dict = t(lang);
+---
+
+{event.type === 'world-championships' && (
+  <span class="badge badge--championships">{dict.types[event.type]}</span>
+)}
+{event.tags.map((tag) => (
+  <span class={`badge badge--${tag}`}>{dict.tags[tag]}</span>
+))}

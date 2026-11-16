@@ -1,0 +1,62 @@
+---
+import EventCard from '../../../components/EventCard.astro';
+import Icon from '../../../components/Icon.astro';
+import { LANGUAGES, t, type Lang } from '../../../i18n';
+import Layout from '../../../layouts/Layout.astro';
+import { calendarPath, seasonPath } from '../../../lib/paths';
+import type { Season } from '../../../lib/schema';
+import { sortEvents } from '../../../lib/schedule';
+import { formatSeasonLabel, getSeasons } from '../../../lib/seasons';
+
+export function getStaticPaths() {
+  return LANGUAGES.flatMap((lang) =>
+    getSeasons().map((season) => ({
+      params: { lang, season: season.id },
+      props: { lang, season },
+    })),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  season: Season;
+}
+
+const { lang, season } = Astro.props;
+const dict = t(lang);
+const seasons = getSeasons();
+const title = dict.scheduleTitle(formatSeasonLabel(season.id));
+---
+
+<Layout lang={lang} title={title} path={`/${season.id}/`}>
+  <section class="section" aria-labelledby="schedule-title">
+    <div class="section__header">
+      <h2 class="section__title section__title--page" id="schedule-title">
+        {title}
+      </h2>
+      <a class="button" href={calendarPath(lang, season.id)}>
+        <Icon name="calendar-plus" />
+        {dict.addToCalendar}
+      </a>
+    </div>
+    <p class="lead">{dict.scheduleLead}</p>
+    {seasons.length > 1 && (
+      <nav class="season-switch" aria-label={dict.season}>
+        {seasons.map((item) => (
+          <a
+            class="season-switch__link"
+            href={seasonPath(lang, item.id)}
+            aria-current={item.id === season.id ? 'page' : undefined}
+          >
+            {formatSeasonLabel(item.id)}
+          </a>
+        ))}
+      </nav>
+    )}
+    <ul class="event-list">
+      {sortEvents(season).map((event) => (
+        <EventCard lang={lang} season={season} event={event} />
+      ))}
+    </ul>
+  </section>
+</Layout>

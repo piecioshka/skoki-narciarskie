@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+import { STORAGE_KEYS } from '../config';
+import { homePath } from '../lib/paths';
+
+const targets = { pl: homePath('pl'), en: homePath('en') };
+const langKey = STORAGE_KEYS.lang;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ski Jumping World Cup schedule</title>
+    <meta name="robots" content="noindex" />
+    <script is:inline define:vars={{ targets, langKey }}>
+      // The stored choice wins; otherwise the browser language decides.
+      let lang = null;
+      try {
+        lang = localStorage.getItem(langKey);
+      } catch {
+        lang = null;
+      }
+      if (lang !== 'pl' && lang !== 'en') {
+        lang = navigator.language.toLowerCase().startsWith('pl') ? 'pl' : 'en';
+      }
+      location.replace(targets[lang]);
+    </script>
+  </head>
+  <body>
+    <main class="page">
+      <ul class="language-list">
+        <li>
+          <a class="link" href={targets.pl} hreflang="pl">
+            Polski
+          </a>
+        </li>
+        <li>
+          <a class="link" href={targets.en} hreflang="en">
+            English
+          </a>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

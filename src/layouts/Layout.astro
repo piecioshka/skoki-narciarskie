@@ -1,0 +1,219 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { REPOSITORY_URL, SOURCE_AUTHOR_URL, STORAGE_KEYS } from '../config';
+import { LANGUAGES, otherLang, t, type Lang } from '../i18n';
+import { homePath, seasonPath, url } from '../lib/paths';
+import { getCurrentSeason } from '../lib/seasons';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  /** Page path without the language prefix, e.g. `/2026-2027/wisla/`. */
+  path: string;
+  jsonLd?: Record<string, unknown>;
+}
+
+const { lang, title, description, path, jsonLd } = Astro.props;
+const dict = t(lang);
+const other = otherLang(lang);
+const season = getCurrentSeason();
+const pageTitle = title ? `${title} | ${dict.siteName}` : dict.siteName;
+const pageDescription = description ?? dict.siteDescription;
+const absolute = (target: string): string =>
+  new URL(url(target), Astro.site).href;
+const canonical = absolute(`/${lang}${path}`);
+const flags: Record<Lang, string> = { pl: '🇵🇱', en: '🇬🇧' };
+const themeKey = STORAGE_KEYS.theme;
+// "<" must not appear raw inside an inline JSON script.
+const jsonLdText = jsonLd
+  ? JSON.stringify(jsonLd).replaceAll('<', '\\u003c')
+  : undefined;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+    {LANGUAGES.map((code) => (
+      <link
+        rel="alternate"
+        hreflang={code}
+        href={absolute(`/${code}${path}`)}
+      />
+    ))}
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+    <link rel="sitemap" href={url('/sitemap-index.xml')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={dict.siteName} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={absolute('/og-image.png')} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={lang === 'pl' ? 'pl_PL' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline define:vars={{ themeKey }}>
+      // Applied before first paint so the page never flashes the wrong theme.
+      let theme = null;
+      try {
+        theme = localStorage.getItem(themeKey);
+      } catch {
+        theme = null;
+      }
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light';
+      }
+      document.documentElement.dataset.theme = theme;
+    </script>
+    {jsonLdText && (
+      <script is:inline type="application/ld+json" set:html={jsonLdText} />
+    )}
+  </head>
+  <body>
+    <a class="skip-link" href="#content">
+      {dict.skipToContent}
+    </a>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <h1 class="topbar__logo">
+          <a class="topbar__logo-link" id="home-link" href={homePath(lang)}>
+            <img
+              class="topbar__logo-mark"
+              src={url('/favicon.svg')}
+              alt=""
+              width="24"
+              height="24"
+            />
+            <span class="topbar__logo-text">{dict.siteName}</span>
+          </a>
+        </h1>
+        <nav class="topbar__nav" aria-label={dict.navSchedule}>
+          <a
+            class="topbar__nav-link"
+            id="schedule-link"
+            href={seasonPath(lang, season.id)}
+          >
+            {dict.navSchedule}
+          </a>
+        </nav>
+        <div class="topbar__actions">
+          <a
+            class="icon-button icon-button--flag"
+            id="language-switch"
+            href={url(`/${other}${path}`)}
+            hreflang={other}
+            data-lang={other}
+            aria-label={dict.switchLanguage}
+            title={dict.switchLanguage}
+          >
+            {flags[lang]}
+          </a>
+          <button
+            class="icon-button"
+            id="theme-toggle"
+            type="button"
+            aria-label={dict.switchTheme}
+            title={dict.switchTheme}
+          >
+            <Icon name="sun" class="icon--sun" />
+            <Icon name="moon" class="icon--moon" />
+          </button>
+          <a
+            class="icon-button"
+            href={REPOSITORY_URL}
+            aria-label={dict.repository}
+            title={dict.repository}
+          >
+            <Icon name="github" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page" id="content">
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <p class="footer__line">
+        {dict.footerSource}{' '}
+        <a class="link" href={SOURCE_AUTHOR_URL}>
+          {dict.footerSourceLink}
+        </a>
+        . {dict.footerData}
+      </p>
+      <p class="footer__line">
+        <button class="link-button" id="shortcuts-open" type="button">
+          {dict.shortcutsButton}
+          <kbd class="kbd">?</kbd>
+        </button>
+      </p>
+    </footer>
+
+    <dialog
+      class="dialog"
+      id="shortcuts-dialog"
+      aria-labelledby="shortcuts-title"
+    >
+      <h2 class="dialog__title" id="shortcuts-title">
+        {dict.shortcutsTitle}
+      </h2>
+      <dl class="shortcuts">
+        <div class="shortcuts__row">
+          <dt class="shortcuts__key">
+            <kbd class="kbd">?</kbd>
+          </dt>
+          <dd class="shortcuts__label">{dict.shortcuts.help}</dd>
+        </div>
+        <div class="shortcuts__row">
+          <dt class="shortcuts__key">
+            <kbd class="kbd">h</kbd>
+          </dt>
+          <dd class="shortcuts__label">{dict.shortcuts.home}</dd>
+        </div>
+        <div class="shortcuts__row">
+          <dt class="shortcuts__key">
+            <kbd class="kbd">s</kbd>
+          </dt>
+          <dd class="shortcuts__label">{dict.shortcuts.schedule}</dd>
+        </div>
+        <div class="shortcuts__row">
+          <dt class="shortcuts__key">
+            <kbd class="kbd">t</kbd>
+          </dt>
+          <dd class="shortcuts__label">{dict.shortcuts.theme}</dd>
+        </div>
+        <div class="shortcuts__row">
+          <dt class="shortcuts__key">
+            <kbd class="kbd">l</kbd>
+          </dt>
+          <dd class="shortcuts__label">{dict.shortcuts.language}</dd>
+        </div>
+        <div class="shortcuts__row">
+          <dt class="shortcuts__key">
+            <kbd class="kbd">Esc</kbd>
+          </dt>
+          <dd class="shortcuts__label">{dict.shortcutsClose}</dd>
+        </div>
+      </dl>
+      <form method="dialog">
+        <button class="button" type="submit">
+          {dict.shortcutsClose}
+        </button>
+      </form>
+    </dialog>
+
+    <script>
+      import '../scripts/app';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+---
+import { t } from '../i18n';
+import Layout from '../layouts/Layout.astro';
+import { homePath } from '../lib/paths';
+
+// A static 404 cannot know the language of the missing page.
+const dict = t('en');
+---
+
+<Layout lang="en" title={dict.notFoundTitle} path="/">
+  <section class="section">
+    <h2 class="section__title section__title--page">{dict.notFoundTitle}</h2>
+    <p class="lead">{dict.notFoundLead}</p>
+    <a class="button" href={homePath('en')}>
+      {dict.goHome}
+    </a>
+  </section>
+</Layout>

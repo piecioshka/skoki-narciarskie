@@ -1,0 +1,158 @@
+---
+import Badges from '../../../../components/Badges.astro';
+import CompetitionLinks from '../../../../components/CompetitionLinks.astro';
+import Icon from '../../../../components/Icon.astro';
+import SlotTime from '../../../../components/SlotTime.astro';
+import { getCountryName, LANGUAGES, t, type Lang } from '../../../../i18n';
+import Layout from '../../../../layouts/Layout.astro';
+import { getFisEventUrl, getFlag } from '../../../../lib/links';
+import { seasonPath } from '../../../../lib/paths';
+import type { Season, SeasonEvent } from '../../../../lib/schema';
+import {
+  getEventEnd,
+  getEventRange,
+  getHillSizes,
+  getSlot,
+  groupByDay,
+} from '../../../../lib/schedule';
+import { formatSeasonLabel, getSeasons } from '../../../../lib/seasons';
+
+export function getStaticPaths() {
+  return LANGUAGES.flatMap((lang) =>
+    getSeasons().flatMap((season) =>
+      season.events.map((event) => ({
+        params: { lang, season: season.id, event: event.slug },
+        props: { lang, season, event },
+      })),
+    ),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  season: Season;
+  event: SeasonEvent;
+}
+
+const { lang, season, event } = Astro.props;
+const dict = t(lang);
+const range = getEventRange(event);
+const days = groupByDay(event);
+const country = getCountryName(lang, event.countryCode);
+const hillSizes = getHillSizes(event)
+  .map((size) => `HS${size}`)
+  .join(', ');
+const title = `${event.city} ${formatSeasonLabel(season.id)}`;
+const description = `${dict.types[event.type]}: ${event.city} (${country}), ${range.start} - ${range.end}. ${event.hillName}, ${hillSizes}.`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsEvent',
+  name: `${dict.types[event.type]}: ${event.city}`,
+  sport: 'Ski jumping',
+  startDate: range.start,
+  endDate: getEventEnd(event).toISOString(),
+  eventStatus: 'https://schema.org/EventScheduled',
+  location: {
+    '@type': 'Place',
+    name: event.hillName,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: event.city,
+      addressCountry: event.countryCode,
+    },
+  },
+};
+---
+
+<Layout
+  lang={lang}
+  title={title}
+  description={description}
+  path={`/${season.id}/${event.slug}/`}
+  jsonLd={jsonLd}
+>
+  <a class="link back-link" href={seasonPath(lang, season.id)}>
+    <Icon name="arrow-left" />
+    {dict.backToSchedule}
+  </a>
+
+  <header class="event-header">
+    <div class="event-header__badges">
+      <span class="badge badge--type">{dict.types[event.type]}</span>
+      <Badges lang={lang} event={event} />
+    </div>
+    <h2 class="event-header__title">
+      <span role="img" aria-label={country}>
+        {getFlag(event.countryCode)}
+      </span>
+      {event.city}
+    </h2>
+    <p class="event-header__meta">
+      {country} · {dict.hill}: {event.hillName} ({hillSizes})
+    </p>
+    <p class="event-header__meta">
+      <a class="link" href={getFisEventUrl(season, event)}>
+        {dict.fisEventPage}
+        <Icon name="external-link" />
+      </a>
+    </p>
+  </header>
+
+  <section class="section" aria-labelledby="program-title">
+    <h3 class="section__title" id="program-title">
+      {dict.program}
+    </h3>
+    {days.map((day) => (
+      <div class="day">
+        <h4 class="day__title">{day.date}</h4>
+        <ul class="competition-list">
+          {day.competitions.map((competition) => {
+            const slot = getSlot(event, competition);
+
+            return (
+              <li
+                class="competition js-slot"
+                data-slot-start={slot.start.toISOString()}
+                data-slot-end={slot.end.toISOString()}
+                data-slot-timed={String(slot.timed)}
+                data-race={competition.fisRaceId}
+              >
+                <div class="competition__info">
+                  <span class="competition__time">
+                    <SlotTime
+                      lang={lang}
+                      competition={competition}
+                      timeSlot={slot}
+                    />
+                  </span>
+                  <span class="competition__kind">
+                    {dict.kinds[competition.kind]}
+                    <span class="competition__hill">
+                      HS{competition.hillSize}
+                    </span>
+                  </span>
+                  {competition.status === 'scheduled' ? (
+                    <span class="phase js-phase">{dict.phases.upcoming}</span>
+                  ) : (
+                    <span class="phase phase--alert">
+                      {dict.statuses[competition.status]}
+                    </span>
+                  )}
+                </div>
+                <CompetitionLinks
+                  lang={lang}
+                  season={season}
+                  event={event}
+                  competition={competition}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))}
+    <p class="note">
+      {dict.timeZoneNote} <span class="js-time-zone">Europe/Warsaw</span>
+    </p>
+  </section>
+</Layout>

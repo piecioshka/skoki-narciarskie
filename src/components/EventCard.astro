@@ -1,0 +1,66 @@
+---
+import { getCountryName, t, type Lang } from '../i18n';
+import { getFlag } from '../lib/links';
+import { eventPath } from '../lib/paths';
+import type { Season, SeasonEvent } from '../lib/schema';
+import {
+  getEventEnd,
+  getEventRange,
+  getHillSizes,
+  getSlot,
+  groupByDay,
+} from '../lib/schedule';
+import Badges from './Badges.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  lang: Lang;
+  season: Season;
+  event: SeasonEvent;
+  class?: string;
+}
+
+const { lang, season, event, class: className } = Astro.props;
+const dict = t(lang);
+const range = getEventRange(event);
+const [firstDay] = groupByDay(event);
+const [first] = firstDay?.competitions ?? [];
+const start = first ? getSlot(event, first).start : new Date(range.start);
+const hillSizes = getHillSizes(event)
+  .map((size) => `HS${size}`)
+  .join(', ');
+const dates =
+  range.start === range.end ? range.start : `${range.start} - ${range.end}`;
+---
+
+<li
+  class:list={['event-card', 'js-slot', className]}
+  data-slot-start={start.toISOString()}
+  data-slot-end={getEventEnd(event).toISOString()}
+  data-slot-timed="true"
+  data-event={event.slug}
+>
+  <a class="event-card__link" href={eventPath(lang, season.id, event.slug)}>
+    <span class="event-card__dates">{dates}</span>
+    <span class="event-card__main">
+      <span class="event-card__city">
+        <span
+          class="event-card__flag"
+          role="img"
+          aria-label={getCountryName(lang, event.countryCode)}
+        >
+          {getFlag(event.countryCode)}
+        </span>
+        {event.city}
+      </span>
+      <span class="event-card__hill">
+        {event.hillName} · {hillSizes}
+      </span>
+    </span>
+    <span class="event-card__badges">
+      <Badges lang={lang} event={event} />
+      <span class="phase js-phase">{dict.phases.upcoming}</span>
+    </span>
+    <Icon name="chevron-right" class="event-card__chevron" />
+  </a>
+</li>

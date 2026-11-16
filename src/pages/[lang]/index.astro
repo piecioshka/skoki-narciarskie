@@ -1,0 +1,120 @@
+---
+import CompetitionLinks from '../../components/CompetitionLinks.astro';
+import Badges from '../../components/Badges.astro';
+import EventCard from '../../components/EventCard.astro';
+import Icon from '../../components/Icon.astro';
+import SlotTime from '../../components/SlotTime.astro';
+import { getCountryName, LANGUAGES, t, type Lang } from '../../i18n';
+import Layout from '../../layouts/Layout.astro';
+import { getFlag } from '../../lib/links';
+import { eventPath, seasonPath } from '../../lib/paths';
+import { findNext, listCompetitions, sortEvents } from '../../lib/schedule';
+import { formatSeasonLabel, getCurrentSeason } from '../../lib/seasons';
+
+export function getStaticPaths() {
+  return LANGUAGES.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const season = getCurrentSeason();
+const competitions = listCompetitions(season).filter(
+  (item) => item.competition.status !== 'cancelled',
+);
+// The build-time pick is only a no-JS fallback; the client script re-picks
+// the card on every tick, because a static page does not know "now".
+const buildTimeNext = findNext(competitions, new Date());
+---
+
+<Layout lang={lang} path="/">
+  <section class="section" aria-labelledby="next-title">
+    <h2 class="section__title" id="next-title">
+      {dict.nextCompetition}
+    </h2>
+    {competitions.map((item) => (
+      <article
+        class="next js-next js-slot"
+        hidden={item !== buildTimeNext}
+        data-slot-start={item.slot.start.toISOString()}
+        data-slot-end={item.slot.end.toISOString()}
+        data-slot-timed={String(item.slot.timed)}
+        data-race={item.competition.fisRaceId}
+      >
+        <div class="next__header">
+          <span class="badge badge--type">{dict.types[item.event.type]}</span>
+          <Badges lang={lang} event={item.event} />
+          <span class="phase js-phase">{dict.phases.upcoming}</span>
+        </div>
+        <h3 class="next__title">
+          <span
+            role="img"
+            aria-label={getCountryName(lang, item.event.countryCode)}
+          >
+            {getFlag(item.event.countryCode)}
+          </span>
+          {item.event.city}
+        </h3>
+        <p class="next__meta">
+          {dict.kinds[item.competition.kind]} · {item.event.hillName} · HS
+          {item.competition.hillSize}
+        </p>
+        <p class="next__time">
+          <SlotTime
+            lang={lang}
+            competition={item.competition}
+            timeSlot={item.slot}
+          />
+        </p>
+        <p class="next__countdown js-countdown" hidden>
+          <span class="next__countdown-label">{dict.startsIn}</span>
+          <span class="next__countdown-value js-countdown-value" />
+        </p>
+        <CompetitionLinks
+          lang={lang}
+          season={season}
+          event={item.event}
+          competition={item.competition}
+        />
+        <a
+          class="link next__more"
+          href={eventPath(lang, season.id, item.event.slug)}
+        >
+          {dict.eventPage}
+          <Icon name="chevron-right" />
+        </a>
+      </article>
+    ))}
+    <p class="notice js-season-over" hidden={buildTimeNext !== undefined}>
+      {dict.seasonOver}
+    </p>
+    <p class="note">
+      {dict.timeZoneNote} <span class="js-time-zone">Europe/Warsaw</span>
+    </p>
+  </section>
+
+  <section class="section" aria-labelledby="upcoming-title">
+    <div class="section__header">
+      <h2 class="section__title" id="upcoming-title">
+        {dict.upcomingEvents}
+      </h2>
+      <a class="link" href={seasonPath(lang, season.id)}>
+        {dict.fullSchedule} {formatSeasonLabel(season.id)}
+        <Icon name="chevron-right" />
+      </a>
+    </div>
+    <ul class="event-list">
+      {sortEvents(season).map((event) => (
+        <EventCard
+          lang={lang}
+          season={season}
+          event={event}
+          class="js-upcoming-event"
+        />
+      ))}
+    </ul>
+  </section>
+</Layout>
