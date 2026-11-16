@@ -864,7 +864,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/AUT-%C3%96sterreich/ST-Steiermark/Bad+Mitterndorf/31-Tauplitz/",
-    "photo": null,
+    "photo": {
+      "file": "kulm.jpg",
+      "author": "Taxiarchos228",
+      "license": "FAL",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kulm_-_Skiflugschanze1.jpg"
+    },
     "countryCode": "AT",
     "city": "Bad Mitterndorf",
     "lat": 47.54632,
@@ -1039,7 +1044,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/GER-Deutschland/SN-Sachsen/Klingenthal/0595-Vogtland-Arena/",
-    "photo": null,
+    "photo": {
+      "file": "klingenthal.jpg",
+      "author": "Xxlfussel",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vogtland_Arena_-_2009_-_2.jpg"
+    },
     "countryCode": "DE",
     "city": "Klingenthal",
     "lat": 50.38389,
@@ -1074,7 +1084,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/50-Tr%C3%B8ndelag/Trondheim/0590-Gran%C3%A5sen/",
-    "photo": null,
+    "photo": {
+      "file": "trondheim.jpg",
+      "author": "Even Thorbergsen (User:Event)",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gran%C3%A5sen_Skijump_Arena.JPG"
+    },
     "countryCode": "NO",
     "city": "Trondheim",
     "lat": 63.3775,
@@ -1109,7 +1124,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/NOR-Norwegen/50-Tr%C3%B8ndelag/Trondheim/0590-Gran%C3%A5sen/",
-    "photo": null,
+    "photo": {
+      "file": "trondheim.jpg",
+      "author": "Even Thorbergsen (User:Event)",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gran%C3%A5sen_Skijump_Arena.JPG"
+    },
     "countryCode": "NO",
     "city": "Trondheim",
     "lat": 63.37664,
@@ -1214,7 +1234,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/ITA-Italien/Predazzo/0605/",
-    "photo": null,
+    "photo": {
+      "file": "predazzo.jpg",
+      "author": "Manuguf",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stadio_del_salto_Giuseppe_dal_Ben_2012-24.JPG"
+    },
     "countryCode": "IT",
     "city": "Predazzo",
     "lat": 46.32988,
@@ -1249,7 +1274,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/ITA-Italien/Predazzo/0605/",
-    "photo": null,
+    "photo": {
+      "file": "predazzo.jpg",
+      "author": "Manuguf",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stadio_del_salto_Giuseppe_dal_Ben_2012-24.JPG"
+    },
     "countryCode": "IT",
     "city": "Predazzo",
     "lat": 46.3301,
@@ -1494,7 +1524,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/USA-Vereinigte+Staaten/UT-Utah/Park+City/0577-Olympic+Park/",
-    "photo": null,
+    "photo": {
+      "file": "park-city.jpg",
+      "author": "MICHAEL  JIROCH  &  …",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Utah_Olympic_Park_%E2%80%93_Ski_Jumping_Center.jpg"
+    },
     "countryCode": "US",
     "city": "Park City",
     "lat": 40.70882,
@@ -1529,7 +1564,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/AUT-%C3%96sterreich/K-K%C3%A4rnten/Villach/78/",
-    "photo": null,
+    "photo": {
+      "file": "villach.jpg",
+      "author": "Eggermanuel",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:VillacherAlpenarena1.jpg"
+    },
     "countryCode": "AT",
     "city": "Villach",
     "lat": 46.60306,
@@ -1564,7 +1604,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/CAN-Kanada/BC-British+Columbia/Whistler/122/",
-    "photo": null,
+    "photo": {
+      "file": "whistler.jpg",
+      "author": "Iwona Erskine-Kellie from Vancouver, British Columbia, Canada",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Whistler_Olympic_Park_%E2%80%93_Ski_Jumping_Center_(CAN).jpg"
+    },
     "countryCode": "CA",
     "city": "Whistler",
     "lat": 50.13722,
@@ -1599,7 +1644,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/KOR-S%C3%BCdkorea/PyeongChang/0391/",
-    "photo": null,
+    "photo": {
+      "file": "pyeongchang.jpg",
+      "author": "Ron64",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alpensia_Ski_Jumping_(Night).jpg"
+    },
     "countryCode": "KR",
     "city": "Pjongczang",
     "lat": 37.66167,
@@ -1634,7 +1684,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/KOR-S%C3%BCdkorea/PyeongChang/0391/",
-    "photo": null,
+    "photo": {
+      "file": "pyeongchang.jpg",
+      "author": "Ron64",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alpensia_Ski_Jumping_(Night).jpg"
+    },
     "countryCode": "KR",
     "city": "Pjongczang",
     "lat": 37.66164,
@@ -1669,7 +1724,12 @@
       }
     ],
     "sourceUrl": "https://www.skisprungschanzen.com/DE/Schanzen/SLO-Slowenien/Planica/0476-Velikanka/",
-    "photo": null,
+    "photo": {
+      "file": "planica-large.jpg",
+      "author": "Miran Hojnik",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Planica_(38964538311).jpg"
+    },
     "countryCode": "SI",
     "city": "Planica",
     "lat": 46.47878,
