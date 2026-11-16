@@ -150,6 +150,15 @@ Treść strony z zasadami jest w `src/i18n/rules.ts`, a schematy (przekrój skoc
 
 Skan trafia do `src/assets/programs/<sezon>/<RRRR-MM-DD>-<slug>.png`, a wpis do `src/data/programs/<sezon>.json`: `file`, `receivedAt`, `eventSlug` (slug zawodów albo `null` dla programu całego sezonu), `sourceUrl`, `description`. Astro sam robi miniaturę i wersję do podglądu. Program przypisany do zawodów pokazuje się też na ich stronie.
 
+## Baner
+
+Źródłem banera jest `docs/banner.svg`. Po zmianie wygeneruj z niego oba pliki:
+
+```bash
+rsvg-convert -w 1200 -h 630 -o public/og-image.png docs/banner.svg
+rsvg-convert -w 2560 -h 1280 -o docs/banner.png docs/banner.svg
+```
+
 ## Wdrożenie
 
 Workflow `.github/workflows/pages.yml` buduje stronę i publikuje `dist/` na GitHub Pages po każdym pushu do `main`. Ścieżkę bazową i adres strony przekazują zmienne `BASE_PATH` i `SITE_URL`.

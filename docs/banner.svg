@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#070d1c"/>
+      <stop offset="0.55" stop-color="#11275c"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#cfdcff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#sky)"/>
+
+  <!-- stars -->
+  <g fill="#ffffff">
+    <circle cx="96" cy="70" r="2" opacity="0.7"/>
+    <circle cx="240" cy="38" r="1.5" opacity="0.5"/>
+    <circle cx="410" cy="92" r="2" opacity="0.6"/>
+    <circle cx="560" cy="44" r="1.5" opacity="0.7"/>
+    <circle cx="700" cy="110" r="2" opacity="0.4"/>
+    <circle cx="840" cy="56" r="1.5" opacity="0.6"/>
+    <circle cx="990" cy="88" r="2" opacity="0.5"/>
+    <circle cx="1120" cy="42" r="1.5" opacity="0.7"/>
+    <circle cx="1060" cy="170" r="1.5" opacity="0.4"/>
+    <circle cx="330" cy="170" r="1.5" opacity="0.4"/>
+  </g>
+
+  <!-- mountains -->
+  <path d="M0 470 L150 330 L260 410 L400 280 L540 420 L680 340 L820 440 L960 350 L1090 430 L1200 370 L1200 630 L0 630 Z" fill="#16306e" opacity="0.8"/>
+  <path d="M0 520 L120 430 L250 500 L380 410 L520 500 L660 440 L800 510 L950 450 L1200 530 L1200 630 L0 630 Z" fill="#1c3f93" opacity="0.9"/>
+
+  <!-- hill: inrun, takeoff, landing slope -->
+  <path d="M0 120 C120 128 230 190 318 262 L318 286 C420 420 560 520 760 548 C900 566 1050 560 1200 548 L1200 630 L0 630 Z" fill="url(#snow)"/>
+  <path d="M0 120 C120 128 230 190 318 262" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M318 286 C420 420 560 520 760 548 C900 566 1050 560 1200 548" fill="none" stroke="#9db7ff" stroke-width="3" opacity="0.9"/>
+
+  <!-- K-point and hill size marks -->
+  <path d="M640 520 L652 548" stroke="#d9202f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M722 536 L730 562" stroke="#0f766e" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- flight -->
+  <path d="M318 262 Q470 190 668 500" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 18"/>
+  <circle cx="520" cy="300" r="46" fill="url(#glow)"/>
+  <g transform="translate(520 300) rotate(24)">
+    <path d="M-44 6 L46 -6" stroke="#fbbf24" stroke-width="9" stroke-linecap="round"/>
+    <path d="M-30 -6 L26 -16" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="34" cy="-20" r="9" fill="#ffffff"/>
+  </g>
+
+  <!-- text -->
+  <text x="1130" y="232" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="92" font-weight="700" fill="#ffffff" letter-spacing="-2">Skoki narciarskie</text>
+  <text x="1130" y="292" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="500" fill="#c7d6ff">Ski Jumping World Cup</text>
+
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="26" font-weight="600" fill="#0b1220">
+    <rect x="742" y="330" width="150" height="48" rx="24" fill="#fbbf24"/>
+    <text x="817" y="363" text-anchor="middle">terminarz</text>
+    <rect x="904" y="330" width="110" height="48" rx="24" fill="#ffffff"/>
+    <text x="959" y="363" text-anchor="middle">wyniki</text>
+    <rect x="1026" y="330" width="104" height="48" rx="24" fill="#ffffff"/>
+    <text x="1078" y="363" text-anchor="middle">mapy</text>
+    <rect x="786" y="390" width="136" height="48" rx="24" fill="#ffffff"/>
+    <text x="854" y="423" text-anchor="middle">skocznie</text>
+    <rect x="934" y="390" width="196" height="48" rx="24" fill="#ffffff"/>
+    <text x="1032" y="423" text-anchor="middle">reprezentacje</text>
+  </g>
+</svg>
