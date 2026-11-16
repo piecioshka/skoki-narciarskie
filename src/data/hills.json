@@ -38,7 +38,10 @@
       "license": "Public domain",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lysg%C3%A5rd.JPG"
     },
-    "countryCode": "NO"
+    "countryCode": "NO",
+    "city": "Lillehammer",
+    "lat": 61.125,
+    "lon": 10.48722
   },
   {
     "slug": "ruka",
@@ -79,7 +82,10 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kuusamo_Rukatunturi_K-120.jpg"
     },
-    "countryCode": "FI"
+    "countryCode": "FI",
+    "city": "Ruka",
+    "lat": 66.17056,
+    "lon": 29.14639
   },
   {
     "slug": "wisla",
@@ -120,7 +126,10 @@
       "license": "CC BY 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:POL_Wis%C5%82a_Malinka_DW942_pod_skoczni%C4%85_3.JPG"
     },
-    "countryCode": "PL"
+    "countryCode": "PL",
+    "city": "Wisła",
+    "lat": 49.62833,
+    "lon": 18.915
   },
   {
     "slug": "titisee-neustadt",
@@ -161,7 +170,10 @@
       "license": "FAL",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hochfirstschanze3.jpg"
     },
-    "countryCode": "DE"
+    "countryCode": "DE",
+    "city": "Titisee-Neustadt",
+    "lat": 47.90417,
+    "lon": 8.21917
   },
   {
     "slug": "engelberg",
@@ -202,7 +214,10 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Engelberg_HS140_(2).jpg"
     },
-    "countryCode": "CH"
+    "countryCode": "CH",
+    "city": "Engelberg",
+    "lat": 46.81472,
+    "lon": 8.40417
   },
   {
     "slug": "oberstdorf",
@@ -243,7 +258,10 @@
       "license": "CC BY-SA 3.0 de",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ski_jumping_hill_oberstdorf_germany_2.jpg"
     },
-    "countryCode": "DE"
+    "countryCode": "DE",
+    "city": "Oberstdorf",
+    "lat": 47.40556,
+    "lon": 10.29278
   },
   {
     "slug": "garmisch-partenkirchen",
@@ -284,7 +302,10 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Garmisch-Partenkirchen_HS140.jpg"
     },
-    "countryCode": "DE"
+    "countryCode": "DE",
+    "city": "Garmisch-Partenkirchen",
+    "lat": 47.48025,
+    "lon": 11.11872
   },
   {
     "slug": "innsbruck",
@@ -325,7 +346,10 @@
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bergisel-N.jpg"
     },
-    "countryCode": "AT"
+    "countryCode": "AT",
+    "city": "Innsbruck",
+    "lat": 47.24901,
+    "lon": 11.39905
   },
   {
     "slug": "bischofshofen",
@@ -366,7 +390,10 @@
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul-Ausserleitner-Schanze.JPG"
     },
-    "countryCode": "AT"
+    "countryCode": "AT",
+    "city": "Bischofshofen",
+    "lat": 47.41528,
+    "lon": 13.20611
   },
   {
     "slug": "zakopane",
@@ -407,7 +434,10 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zakopane_Wielka_Krokiew_dron_(1).jpg"
     },
-    "countryCode": "PL"
+    "countryCode": "PL",
+    "city": "Zakopane",
+    "lat": 49.27944,
+    "lon": 19.96389
   },
   {
     "slug": "sapporo",
@@ -448,7 +478,10 @@
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ohkurayama_Schanze.jpg"
     },
-    "countryCode": "JP"
+    "countryCode": "JP",
+    "city": "Sapporo",
+    "lat": 43.05081,
+    "lon": 141.28627
   },
   {
     "slug": "willingen",
@@ -489,7 +522,10 @@
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Willingen_Skijumping_2007-2.JPG"
     },
-    "countryCode": "DE"
+    "countryCode": "DE",
+    "city": "Willingen",
+    "lat": 51.27572,
+    "lon": 8.61236
   },
   {
     "slug": "lake-placid",
@@ -530,7 +566,10 @@
       "license": "CC BY 2.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ski_Jump_Lake_Placid.jpg"
     },
-    "countryCode": "US"
+    "countryCode": "US",
+    "city": "Lake Placid",
+    "lat": 44.25583,
+    "lon": -73.96472
   },
   {
     "slug": "lahti",
@@ -571,7 +610,10 @@
       "license": "CC BY 2.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lahti_skijumps.jpg"
     },
-    "countryCode": "FI"
+    "countryCode": "FI",
+    "city": "Lahti",
+    "lat": 60.98333,
+    "lon": 25.62944
   },
   {
     "slug": "vikersund",
@@ -612,7 +654,10 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vikersundbakken-2012.jpg"
     },
-    "countryCode": "NO"
+    "countryCode": "NO",
+    "city": "Vikersund",
+    "lat": 59.93833,
+    "lon": 10.00611
   },
   {
     "slug": "falun-normal",
@@ -653,7 +698,10 @@
       "license": "CC BY-SA 2.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Falun_lugnet_skijump_1.jpg"
     },
-    "countryCode": "SE"
+    "countryCode": "SE",
+    "city": "Falun",
+    "lat": 60.62111,
+    "lon": 15.66528
   },
   {
     "slug": "falun-large",
@@ -694,7 +742,10 @@
       "license": "CC BY-SA 2.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Falun_lugnet_skijump_1.jpg"
     },
-    "countryCode": "SE"
+    "countryCode": "SE",
+    "city": "Falun",
+    "lat": 60.62111,
+    "lon": 15.66528
   },
   {
     "slug": "oslo",
@@ -735,7 +786,10 @@
       "license": "CC BY-SA 1.0 fi",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:19-08-25-Oslo_Holmenkollenbakken-RalfR.jpg"
     },
-    "countryCode": "NO"
+    "countryCode": "NO",
+    "city": "Oslo",
+    "lat": 59.96389,
+    "lon": 10.66778
   },
   {
     "slug": "planica",
@@ -776,6 +830,9 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Planica_HS225.JPG"
     },
-    "countryCode": "SI"
+    "countryCode": "SI",
+    "city": "Planica",
+    "lat": 46.47628,
+    "lon": 13.72073
   }
 ]

@@ -92,3 +92,29 @@ export function getHillProfileSlug(hill: Hill): string {
 export function isEventHill(hill: Hill, event: SeasonEvent): boolean {
   return getEventHills(event).some((item) => item.slug === hill.slug);
 }
+
+export interface HillPoint {
+  lat: number;
+  lon: number;
+  hills: Hill[];
+}
+
+/** Hills grouped by location, so two hills of one venue share a marker. */
+export function groupByLocation(items: Hill[]): HillPoint[] {
+  const points = new Map<string, HillPoint>();
+
+  for (const hill of items) {
+    if (hill.lat !== null && hill.lon !== null) {
+      const key = `${hill.lat},${hill.lon}`;
+      const point = points.get(key) ?? {
+        lat: hill.lat,
+        lon: hill.lon,
+        hills: [],
+      };
+
+      point.hills.push(hill);
+      points.set(key, point);
+    }
+  }
+  return [...points.values()];
+}

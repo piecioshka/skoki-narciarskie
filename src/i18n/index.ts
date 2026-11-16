@@ -90,6 +90,8 @@ interface Dictionary {
   shortcutHills: string;
   hillsTitle: string;
   hillsLead: string;
+  hillsMap: string;
+  eventsMap: string;
   groupByCountry: string;
   hillProfile: string;
   hillCompetitions: string;
@@ -252,6 +254,8 @@ const pl: Dictionary = {
   navHills: 'Skocznie',
   shortcutHills: 'Skocznie',
   hillsTitle: 'Skocznie Pucharu Świata',
+  hillsMap: 'Mapa skoczni',
+  eventsMap: 'Mapa zawodów',
   groupByCountry: 'Grupuj według kraju',
   hillsLead: 'Obiekty z kalendarza: parametry, rekordy i rozegrane konkursy.',
   hillProfile: 'Profil skoczni',
@@ -432,6 +436,8 @@ const en: Dictionary = {
   navHills: 'Hills',
   shortcutHills: 'Hills',
   hillsTitle: 'World Cup hills',
+  hillsMap: 'Map of hills',
+  eventsMap: 'Map of events',
   groupByCountry: 'Group by country',
   hillsLead:
     'Venues of the calendar: profile data, records and past competitions.',

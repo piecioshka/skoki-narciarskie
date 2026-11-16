@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import type { Lang } from '../i18n';
+import { getCountryName, type Lang } from '../i18n';
+import { getFlag } from '../lib/links';
 import { getHillPhoto, getHillProfileSlug } from '../lib/hills';
 import { hillPath } from '../lib/paths';
 import type { Hill } from '../lib/schema';
@@ -27,6 +28,9 @@ const photo = getHillPhoto(hill);
     )}
     <div class="tournament-card__body">
       <h3 class="tournament-card__title">{hill.name}</h3>
+      <p class="tournament-card__text">
+        {`${getFlag(hill.countryCode)} ${hill.city}, ${getCountryName(lang, hill.countryCode)}`}
+      </p>
       <p class="tournament-card__meta">
         <span class="badge">HS{hill.hillSize}</span>
         <span class="phase">K{hill.kPoint}</span>

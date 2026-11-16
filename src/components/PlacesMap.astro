@@ -1,0 +1,29 @@
+---
+export interface MapPoint {
+  label: string;
+  note: string;
+  lat: number;
+  lon: number;
+  href: string;
+}
+
+interface Props {
+  points: MapPoint[];
+  label: string;
+}
+
+const { points, label } = Astro.props;
+---
+
+{points.length > 0 && (
+  <div
+    class="map js-map"
+    role="region"
+    aria-label={label}
+    data-points={JSON.stringify(points)}
+  />
+)}
+
+<script>
+  import '../scripts/map';
+</script>

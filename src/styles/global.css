@@ -1315,3 +1315,31 @@ a[href^='http']:not(.icon-button)::after {
   margin: 0 0 0.75rem;
   font-size: var(--pal-font-size-lg);
 }
+
+/* Maps */
+
+.map {
+  --map-marker: var(--brand);
+
+  height: 24rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--pal-border);
+  border-radius: var(--pal-radius);
+  /* Leaflet stacks its panes up to z-index 1000; keep them under the top bar. */
+  isolation: isolate;
+  background: var(--pal-bg-panel);
+}
+
+.map__link {
+  font-weight: var(--pal-font-weight-semibold);
+}
+
+.map__note {
+  color: #4b5563;
+}
+
+@media (max-width: 640px) {
+  .map {
+    height: 18rem;
+  }
+}

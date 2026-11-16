@@ -1,8 +1,14 @@
 ---
 import HillTile from '../../../components/HillTile.astro';
+import PlacesMap from '../../../components/PlacesMap.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../../i18n';
 import Layout from '../../../layouts/Layout.astro';
-import { getAllHills } from '../../../lib/hills';
+import {
+  getAllHills,
+  getHillProfileSlug,
+  groupByLocation,
+} from '../../../lib/hills';
+import { hillPath } from '../../../lib/paths';
 import { getFlag } from '../../../lib/links';
 
 export function getStaticPaths() {
@@ -16,6 +22,21 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const hills = getAllHills();
+const points = groupByLocation(hills).flatMap((point) => {
+  const [first] = point.hills;
+
+  return first
+    ? [
+        {
+          label: `${first.name} ${point.hills.map((hill) => `HS${hill.hillSize}`).join(', ')}`,
+          note: `${first.city}, ${getCountryName(lang, first.countryCode)}`,
+          lat: point.lat,
+          lon: point.lon,
+          href: hillPath(lang, getHillProfileSlug(first)),
+        },
+      ]
+    : [];
+});
 const countries = [...new Set(hills.map((hill) => hill.countryCode))]
   .map((code) => ({
     code,
@@ -41,6 +62,7 @@ const countries = [...new Set(hills.map((hill) => hill.countryCode))]
       </button>
     </div>
     <p class="lead">{dict.hillsLead}</p>
+    <PlacesMap points={points} label={dict.hillsMap} />
     <ul class="tournament-list js-hills-flat">
       {hills.map((hill) => (
         <HillTile lang={lang} hill={hill} />

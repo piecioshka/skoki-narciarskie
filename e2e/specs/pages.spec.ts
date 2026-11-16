@@ -450,6 +450,45 @@ test.describe('hill profiles', () => {
   });
 });
 
+test.describe('maps', () => {
+  test('hills page shows every venue on a map', async ({ page }) => {
+    await page.goto('/pl/hills/');
+
+    const map = page.locator('.js-map');
+
+    await expect(map).toHaveAttribute('data-ready', 'true');
+    // Two Falun hills share one marker.
+    await expect(map.locator('path.leaflet-interactive')).toHaveCount(18);
+    await expect(
+      page.locator('.tournament-card[data-hill="zakopane"]:visible'),
+    ).toContainText('Zakopane, Polska');
+  });
+
+  test('schedule shows the venues of the season on a map', async ({ page }) => {
+    await page.goto('/pl/2026-2027/');
+
+    const map = page.locator('.js-map');
+
+    await expect(map).toHaveAttribute('data-ready', 'true');
+    await expect(map.locator('path.leaflet-interactive')).toHaveCount(18);
+  });
+
+  test('map stays under the sticky top bar', async ({ page }) => {
+    await page.goto('/pl/hills/');
+    await page.locator('.js-map').scrollIntoViewIfNeeded();
+    await page.mouse.wheel(0, 300);
+
+    const covered = await page.evaluate(() => {
+      const bar = document.querySelector('.topbar');
+      const top = document.elementFromPoint(window.innerWidth / 2, 20);
+
+      return bar !== null && top !== null && bar.contains(top);
+    });
+
+    expect(covered).toBe(true);
+  });
+});
+
 test.describe('nations', () => {
   test('index ranks countries by World Cup points', async ({ page }) => {
     await page.goto('/pl/nations/');

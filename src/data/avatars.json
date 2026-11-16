@@ -1,1 +1,686 @@
-{}
+{
+  "adam niznik": {
+    "file": "adam-niznik.jpg",
+    "author": "Martin Rulsch, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-01-19_Ski_jumping_at_the_2020_Winter_Youth_Olympics_%E2%80%93_Men%27s_Individual_%E2%80%93_1st_Round_(Martin_Rulsch)_283.jpg"
+  },
+  "aleksander zniszczol": {
+    "file": "aleksander-zniszczol.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Aleksander_Zniszczo%C5%82_002.jpg"
+  },
+  "alex insam": {
+    "file": "alex-insam.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190228_Seefeld_SJ_8527.jpg"
+  },
+  "anders fannemel": {
+    "file": "anders-fannemel.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20150927_FIS_Summer_Grand_Prix_Hinzenbach_4589.jpg"
+  },
+  "andreas stjernen": {
+    "file": "andreas-stjernen.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20150927_FIS_Summer_Grand_Prix_Hinzenbach_4769.jpg"
+  },
+  "andreas wellinger": {
+    "file": "andreas-wellinger.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-10-03_FIS_SGP_2017_Klingenthal_Siegerehrung_Andreas_Wellinger_Hymne.jpg"
+  },
+  "andrew urlaub": {
+    "file": "andrew-urlaub.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190228_Seefeld_SJ_8502.jpg"
+  },
+  "andrzej stekala": {
+    "file": "andrzej-stekala.jpg",
+    "author": "Otto Karikoski",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andrzej_St%C4%99ka%C5%82a_Lahti_2016.JPG"
+  },
+  "anze lanisek": {
+    "file": "anze-lanisek.png",
+    "author": "Stein Langørgen",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:An%C5%BEe_Lani%C5%A1ek_Trondheim_2025.png"
+  },
+  "anze semenic": {
+    "file": "anze-semenic.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-10-03_FIS_SGP_2017_Klingenthal_An%C5%BEe_Semeni%C4%8D_005.jpg"
+  },
+  "artti aigro": {
+    "file": "artti-aigro.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Artti_Aigro.jpg"
+  },
+  "benjamin oestvold": {
+    "file": "benjamin-oestvold.jpg",
+    "author": "Snoflaxe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Benjamin_%C3%98stvold_(cropped).jpg"
+  },
+  "bor pavlovcic": {
+    "file": "bor-pavlovcic.jpg",
+    "author": "ATM TV",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bor_Pavlov%C4%8Di%C4%8D_2016.jpg"
+  },
+  "casey larson": {
+    "file": "casey-larson.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Casey_Larson.jpg"
+  },
+  "cene prevc": {
+    "file": "cene-prevc.jpg",
+    "author": "Vlada Republike Slovenije from Ljubljana, Slovenia",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cene_Prevc_na_svetovnem_prvenstvu_v_nordijskem_smu%C4%8Danju_v_Planici_2023_(52728676622)_(cropped).jpg"
+  },
+  "cestmir kozisek": {
+    "file": "cestmir-kozisek.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_%C4%8Cestm%C3%ADr_Ko%C5%BE%C3%AD%C5%A1ek_002_(cropped).jpg"
+  },
+  "clemens aigner": {
+    "file": "clemens-aigner.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20150927_FIS_Summer_Grand_Prix_Hinzenbach_4634.jpg"
+  },
+  "clemens leitner": {
+    "file": "clemens-leitner.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20161001_FIS_Sommer_Grand_Prix_Hinzenbach_4835.jpg"
+  },
+  "constantin schmid": {
+    "file": "constantin-schmid.jpg",
+    "author": "Snoflaxe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Constantin_Schmid_-_Bad_Mitterndorf_2023_(2).jpg"
+  },
+  "daiki ito": {
+    "file": "daiki-ito.jpg",
+    "author": "Sławek",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Daiki_Ito_(2011).jpg"
+  },
+  "daniel andre tande": {
+    "file": "daniel-andre-tande.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20161001_FIS_Sommer_Grand_Prix_Hinzenbach_5015.jpg"
+  },
+  "daniel tschofenig": {
+    "file": "daniel-tschofenig.jpg",
+    "author": "Robert K. / MacBerti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023-09-23_TagDesSports_DanielTschofenig.jpg"
+  },
+  "danil sadreev": {
+    "file": "danil-sadreev.jpg",
+    "author": "Sandro Halank, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-01-22_Ski_Jumping_Competition_Round_Nordic_Mixed_Team_(2020_Winter_Youth_Olympics)_by_Sandro_Halank%E2%80%93290.jpg"
+  },
+  "david haagen": {
+    "file": "david-haagen.jpg",
+    "author": "Sandro Halank, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-01-22_Ski_Jumping_Competition_Round_Nordic_Mixed_Team_(2020_Winter_Youth_Olympics)_by_Sandro_Halank%E2%80%93337.jpg"
+  },
+  "dawid kubacki": {
+    "file": "dawid-kubacki.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-10-03_FIS_SGP_2017_Klingenthal_Siegerehrung_Dawid_Kubacki_Gesamt-GP_Pokal.jpg"
+  },
+  "denis kornilov": {
+    "file": "denis-kornilov.jpg",
+    "author": "Sławek",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Denis_Kornilow_(2011).jpg"
+  },
+  "domen prevc": {
+    "file": "domen-prevc.jpg",
+    "author": "Stein Langørgen",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trondheim_2025_podium_5351_(cropped).jpg"
+  },
+  "eetu nousiainen": {
+    "file": "eetu-nousiainen.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190228_Seefeld_SJ_8529.jpg"
+  },
+  "erik belshaw": {
+    "file": "erik-belshaw.jpg",
+    "author": "Sandro Halank, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-01-22_Ski_Jumping_Competition_Round_Nordic_Mixed_Team_(2020_Winter_Youth_Olympics)_by_Sandro_Halank%E2%80%93327.jpg"
+  },
+  "evgeniy klimov": {
+    "file": "evgeniy-klimov.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20170105_VST_Bischofshofen_2941.jpg"
+  },
+  "fatih arda ipcioglu": {
+    "file": "fatih-arda-ipcioglu.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Fatih_Arda_%C4%B0pcio%C4%9Flu.jpg"
+  },
+  "giovanni bresadola": {
+    "file": "giovanni-bresadola.jpg",
+    "author": "Snoflaxe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Bresadola.jpg"
+  },
+  "gregor deschwanden": {
+    "file": "gregor-deschwanden.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20150927_FIS_Summer_Grand_Prix_Hinzenbach_4587.jpg"
+  },
+  "gregor schlierenzauer": {
+    "file": "gregor-schlierenzauer.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20150927_FIS_Summer_Grand_Prix_Hinzenbach_4650.jpg"
+  },
+  "halvor egner granerud": {
+    "file": "halvor-egner-granerud.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20170106_VST_Bischofshofen_4135.jpg"
+  },
+  "hektor kapustik": {
+    "file": "hektor-kapustik.jpg",
+    "author": "TV Joj",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hektor_Kapust%C3%ADk_(2026-02-19).jpg"
+  },
+  "jakub wolny": {
+    "file": "jakub-wolny.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190226_Seefeld_SJ_4120.jpg"
+  },
+  "jan habdas": {
+    "file": "jan-habdas.jpg",
+    "author": "Martin Rulsch, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-01-19_Ski_jumping_at_the_2020_Winter_Youth_Olympics_%E2%80%93_Men%27s_Individual_%E2%80%93_Final_Round_(Martin_Rulsch)_165.jpg"
+  },
+  "jan hoerl": {
+    "file": "jan-hoerl.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190228_Seefeld_SJ_8551.jpg"
+  },
+  "jarkko maatta": {
+    "file": "jarkko-maatta.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Jarkko_M%C3%A4%C3%A4tt%C3%A4.jpg"
+  },
+  "jernej presecnik": {
+    "file": "jernej-presecnik.jpg",
+    "author": "Sandro Halank, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-01-22_Ski_Jumping_Competition_Round_Nordic_Mixed_Team_(2020_Winter_Youth_Olympics)_by_Sandro_Halank%E2%80%93363.jpg"
+  },
+  "joergen oliver stroem": {
+    "file": "joergen-oliver-stroem.jpg",
+    "author": "Unknown authorUnknown author",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:JorgenOoliverStrom.jpg"
+  },
+  "johann andre forfang": {
+    "file": "johann-andre-forfang.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-10-03_FIS_SGP_2017_Klingenthal_Siegerehrung_Pressekonferenz_Johann_Andr%C3%A9_Forfang_001.jpg"
+  },
+  "jonas schuster": {
+    "file": "jonas-schuster.jpg",
+    "author": "Snoflaxe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jonas_Schuster_-_Bischofshofen_2025.jpg"
+  },
+  "junshiro kobayashi": {
+    "file": "junshiro-kobayashi.jpg",
+    "author": "Clément Bucco-Lechat",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FIS_Sommer_Grand_Prix_2014_-_20140809_-_Junshiro_Kobayashi_1.jpg"
+  },
+  "justin lisso": {
+    "file": "justin-lisso.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Justin_Lisso.jpg"
+  },
+  "kacper juroszek": {
+    "file": "kacper-juroszek.jpg",
+    "author": "Snoflaxe",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kacper_Juroszek_-_Hinzenbach_2022.jpg"
+  },
+  "kacper tomasiak": {
+    "file": "kacper-tomasiak.jpg",
+    "author": "Pawelstanczyk2301",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kacper_Tomasiak_(cropped).jpg"
+  },
+  "kamil stoch": {
+    "file": "kamil-stoch.jpg",
+    "author": "Marzecky",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kamil_Stoch_Atlas.jpg"
+  },
+  "karl geiger": {
+    "file": "karl-geiger.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190226_Seefeld_SJ_4137.jpg"
+  },
+  "kasperi valto": {
+    "file": "kasperi-valto.jpg",
+    "author": "Sandro Halank, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-01-22_Ski_Jumping_Competition_Round_Nordic_Mixed_Team_(2020_Winter_Youth_Olympics)_by_Sandro_Halank%E2%80%93313.jpg"
+  },
+  "kevin bickner": {
+    "file": "kevin-bickner.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20161001_FIS_Sommer_Grand_Prix_Hinzenbach_5024.jpg"
+  },
+  "kevin maltsev": {
+    "file": "kevin-maltsev.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190228_Seefeld_SJ_8452.jpg"
+  },
+  "killian peier": {
+    "file": "killian-peier.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190226_Seefeld_SJ_4142.jpg"
+  },
+  "klemens muranka": {
+    "file": "klemens-muranka.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Klemens_Mura%C5%84ka_(POL)_2017.jpg"
+  },
+  "kristoffer eriksen sundal": {
+    "file": "kristoffer-eriksen-sundal.jpg",
+    "author": "Snoflaxe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kristoffer_Eriksen_Sundal_(NOR)_2024.jpg"
+  },
+  "krzysztof biegun": {
+    "file": "krzysztof-biegun.jpg",
+    "author": "Snoflaxe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Krzysztof_Biegun_-_Wis%C5%82a_2014.jpg"
+  },
+  "krzysztof mietus": {
+    "file": "krzysztof-mietus.jpg",
+    "author": "Sławek",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Krzysztof_Mi%C4%99tus_(2011).jpg"
+  },
+  "lovro kos": {
+    "file": "lovro-kos.jpg",
+    "author": "Nebojša Tejić",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lovro_Kos_2024.jpg"
+  },
+  "luca roth": {
+    "file": "luca-roth.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Luca_Roth.jpg"
+  },
+  "maciej kot": {
+    "file": "maciej-kot.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20150927_FIS_Summer_Grand_Prix_Hinzenbach_4666.jpg"
+  },
+  "maciej kreczmer": {
+    "file": "maciej-kreczmer.jpg",
+    "author": "Anferov73",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%86%D0%B5%D0%B9_%D0%9A%D1%80%D0%B5%D1%87%D0%BC%D0%B5%D1%80.JPG"
+  },
+  "maciej maciusiak": {
+    "file": "maciej-maciusiak.jpg",
+    "author": "Tadeusz Mieczyński",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maciej_Maciusiak_2010.JPG"
+  },
+  "mackenzie boyd clowes": {
+    "file": "mackenzie-boyd-clowes.jpg",
+    "author": "Bjoertvedt",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boyd-Clowes_Mackenzie_CAN_IMG_9103.JPG"
+  },
+  "manuel fettner": {
+    "file": "manuel-fettner.jpg",
+    "author": "InterWork Personalservice GmbH",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manuel-Fettner-Bergisel-2022.jpg"
+  },
+  "marius lindvik": {
+    "file": "marius-lindvik.jpg",
+    "author": "Vladroman24",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marius_Lindvik_(NOR)_2020.jpg"
+  },
+  "markus eisenbichler": {
+    "file": "markus-eisenbichler.jpg",
+    "author": "Granada",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190302_FIS_NWSC_Seefeld_Medal_Ceremony_850_6840_Markus_Eisenbichler.jpg"
+  },
+  "markus schiffner": {
+    "file": "markus-schiffner.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20150927_FIS_Summer_Grand_Prix_Hinzenbach_4552.jpg"
+  },
+  "matthew soukup": {
+    "file": "matthew-soukup.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Matthew_Soukop.jpg"
+  },
+  "maximilian ortner": {
+    "file": "maximilian-ortner.jpg",
+    "author": "SportomatykPL",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maximilian_Ortner_2025.jpg"
+  },
+  "maximilian steiner": {
+    "file": "maximilian-steiner.jpg",
+    "author": "Snoflaxe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maximilian_Steiner_-_Bad_Mitterndorf_2023_(1).jpg"
+  },
+  "michael hayboeck": {
+    "file": "michael-hayboeck.jpg",
+    "author": "Manfred Werner (Tsui)",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Hayb%C3%B6ck_Sporthilfe-Gala_2017_b.jpg"
+  },
+  "michal dolezal": {
+    "file": "michal-dolezal.png",
+    "author": "Portal OX.PL",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michal_Dolezal_(2020).png"
+  },
+  "mikhail nazarov": {
+    "file": "mikhail-nazarov.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-10-03_FIS_SGP_2017_Klingenthal_Mikhail_Nazarov_001.jpg"
+  },
+  "naoki nakamura": {
+    "file": "naoki-nakamura.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190226_Seefeld_SJ_3925.jpg"
+  },
+  "niko kytosaho": {
+    "file": "niko-kytosaho.jpg",
+    "author": "Snoflaxe",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Niko_Kyt%C3%B6saho_-_Innsbruck_2020.jpg"
+  },
+  "noriaki kasai": {
+    "file": "noriaki-kasai.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20170105_VST_Bischofshofen_2734.jpg"
+  },
+  "pawel wasek": {
+    "file": "pawel-wasek.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Pawe%C5%82_W%C4%85sek.jpg"
+  },
+  "peter prevc": {
+    "file": "peter-prevc.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20161001_FIS_Sommer_Grand_Prix_Hinzenbach_5483.jpg"
+  },
+  "philipp aschenwald": {
+    "file": "philipp-aschenwald.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20150927_FIS_Summer_Grand_Prix_Hinzenbach_4553.jpg"
+  },
+  "philipp raimund": {
+    "file": "philipp-raimund.jpg",
+    "author": "Snoflaxe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philipp_Raimund_-_Bischofshofen_2023.jpg"
+  },
+  "piotr zyla": {
+    "file": "piotr-zyla.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20161001_FIS_Sommer_Grand_Prix_Hinzenbach_4910.jpg"
+  },
+  "pius paschke": {
+    "file": "pius-paschke.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-10-01_COC_Klingenthal_Siegerehrung_Sommer_COC_Gesamt_Pius_Paschke.jpg"
+  },
+  "richard freitag": {
+    "file": "richard-freitag.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Richard_Freitag_(GER)_2019.jpg"
+  },
+  "robert johansson": {
+    "file": "robert-johansson.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190301_Seefeld_SJ_8596.jpg"
+  },
+  "robert mateja": {
+    "file": "robert-mateja.jpg",
+    "author": "Tadeusz Mieczyński",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robert_Mateja_Oslo_2011_(training).jpg"
+  },
+  "roman koudelka": {
+    "file": "roman-koudelka.jpg",
+    "author": "Clément Bucco-Lechat",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FIS_Sommer_Grand_Prix_2014_-_20140809_-_Roman_Koudelka.jpg"
+  },
+  "roman sergeevich trofimov": {
+    "file": "roman-sergeevich-trofimov.jpg",
+    "author": "Tadeusz Mieczyński",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roman-Sergeevich_Trofimov_Oslo_2011_(training).jpg"
+  },
+  "ryoyu kobayashi": {
+    "file": "ryoyu-kobayashi.jpg",
+    "author": "Yk1967",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ryoyu_Kobayashi_in_Wisla_(2018).jpg"
+  },
+  "severin freund": {
+    "file": "severin-freund.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20150927_FIS_Summer_Grand_Prix_Hinzenbach_4624.jpg"
+  },
+  "simon ammann": {
+    "file": "simon-ammann.jpg",
+    "author": "Sławek",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Simon_Ammann_(2011).jpg"
+  },
+  "stefan kraft": {
+    "file": "stefan-kraft.jpg",
+    "author": "Granada",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stefan_Kraft_(AUT)_2019.jpg"
+  },
+  "stephan embacher": {
+    "file": "stephan-embacher.jpg",
+    "author": "[polski-sport.com]",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stephan_Embacher_reprezentant_Austrii_(cropped).jpg"
+  },
+  "stephan leyhe": {
+    "file": "stephan-leyhe.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190226_Seefeld_SJ_4131.jpg"
+  },
+  "taku takeuchi": {
+    "file": "taku-takeuchi.jpg",
+    "author": "Ja Fryta from Strzegom",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taku_Takeuchi_(2).jpg"
+  },
+  "tate frantz": {
+    "file": "tate-frantz.jpg",
+    "author": "Snoflaxe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tate_Frantz_-_Bischofshofen_2025.jpg"
+  },
+  "thomas aasen markeng": {
+    "file": "thomas-aasen-markeng.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190301_Seefeld_SJ_8617.jpg"
+  },
+  "thomas lackner": {
+    "file": "thomas-lackner.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Thomas_Lackner.jpg"
+  },
+  "tilen bartol": {
+    "file": "tilen-bartol.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-10-01_COC_Klingenthal_Siegerehrung_Tilen_Bartol.jpg"
+  },
+  "timi zajc": {
+    "file": "timi-zajc.png",
+    "author": "Stein Langørgen",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Timi_Zajc_Trondheim_2025.png"
+  },
+  "tomas kuisma": {
+    "file": "tomas-kuisma.jpg",
+    "author": "Martin Rulsch, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-01-19_Ski_jumping_at_the_2020_Winter_Youth_Olympics_%E2%80%93_Men%27s_Individual_%E2%80%93_1st_Round_(Martin_Rulsch)_114.jpg"
+  },
+  "tomasz pilch": {
+    "file": "tomasz-pilch.jpg",
+    "author": "Portal OX.PL",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tomasz_Pilch_2020.jpg"
+  },
+  "tomofumi naito": {
+    "file": "tomofumi-naito.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Tomofumi_Naito.jpg"
+  },
+  "ulrich wohlgenannt": {
+    "file": "ulrich-wohlgenannt.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Ulrich_Wohlgenannt.jpg"
+  },
+  "valentin foubert": {
+    "file": "valentin-foubert.jpg",
+    "author": "Sandro Halank, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-01-22_Ski_Jumping_Competition_Round_Nordic_Mixed_Team_(2020_Winter_Youth_Olympics)_by_Sandro_Halank%E2%80%93348.jpg"
+  },
+  "viktor polasek": {
+    "file": "viktor-polasek.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190228_Seefeld_SJ_8542.jpg"
+  },
+  "vitaliy kalinichenko": {
+    "file": "vitaliy-kalinichenko.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190226_Seefeld_SJ_3874.jpg"
+  },
+  "vladimir zografski": {
+    "file": "vladimir-zografski.jpg",
+    "author": "Bjoertvedt",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zografski_Vladimir_BUL_IMG_8677.JPG"
+  },
+  "wojciech gasienica kotelnicki": {
+    "file": "wojciech-gasienica-kotelnicki.jpg",
+    "author": "Tadeusz Mieczyński",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adam_Bulls_Eye_-_Wojciech_G%C4%85sienica-Kotelnicki.jpg"
+  },
+  "yanick wasser": {
+    "file": "yanick-wasser.jpg",
+    "author": "Martin Rulsch, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-01-19_Ski_jumping_at_the_2020_Winter_Youth_Olympics_%E2%80%93_Men%27s_Individual_%E2%80%93_1st_Round_(Martin_Rulsch)_124.jpg"
+  },
+  "yevhen marusiak": {
+    "file": "yevhen-marusiak.jpg",
+    "author": "Christian Bier",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-09-30_COC_Klingenthal_Yevhen_Marusiak.jpg"
+  },
+  "yukiya sato": {
+    "file": "yukiya-sato.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190301_Seefeld_SJ_8608.jpg"
+  },
+  "zak mogel": {
+    "file": "zak-mogel.jpg",
+    "author": "Snoflaxe",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%C5%BDak_Mogel_-_Bad_Mitterndorf_2023.jpg"
+  },
+  "ziga jelar": {
+    "file": "ziga-jelar.jpg",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20190228_Seefeld_SJ_8561.jpg"
+  }
+}

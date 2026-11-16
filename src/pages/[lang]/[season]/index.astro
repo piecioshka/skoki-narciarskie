@@ -1,5 +1,9 @@
 ---
 import EventCard from '../../../components/EventCard.astro';
+import PlacesMap from '../../../components/PlacesMap.astro';
+import { getEventHills } from '../../../lib/hills';
+import { eventPath } from '../../../lib/paths';
+import { getEventRange } from '../../../lib/schedule';
 import Icon from '../../../components/Icon.astro';
 import { LANGUAGES, t, type Lang } from '../../../i18n';
 import Layout from '../../../layouts/Layout.astro';
@@ -26,6 +30,26 @@ const { lang, season } = Astro.props;
 const dict = t(lang);
 const seasons = getSeasons();
 const title = dict.scheduleTitle(formatSeasonLabel(season.id));
+// Venues without hill data (no coordinates) are left off the map.
+const points = sortEvents(season).flatMap((event) => {
+  const [hill] = getEventHills(event);
+  const range = getEventRange(event);
+
+  return hill && hill.lat !== null && hill.lon !== null
+    ? [
+        {
+          label: event.city,
+          note:
+            range.start === range.end
+              ? range.start
+              : `${range.start} - ${range.end}`,
+          lat: hill.lat,
+          lon: hill.lon,
+          href: eventPath(lang, season.id, event.slug),
+        },
+      ]
+    : [];
+});
 ---
 
 <Layout lang={lang} title={title} path={`/${season.id}/`}>
@@ -53,6 +77,7 @@ const title = dict.scheduleTitle(formatSeasonLabel(season.id));
         ))}
       </nav>
     )}
+    <PlacesMap points={points} label={dict.eventsMap} />
     <ul class="event-list">
       {sortEvents(season).map((event) => (
         <EventCard lang={lang} season={season} event={event} />
