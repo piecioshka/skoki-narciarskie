@@ -1185,3 +1185,35 @@ a[href^='http']:not(.icon-button)::after {
 .button[href^='http']::after {
   margin-left: 0;
 }
+
+/* Tournament banners */
+
+.banner {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 2;
+}
+
+.tournament-card {
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.tournament-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+}
+
+.banner-frame {
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  border-radius: var(--pal-radius);
+}
+
+.banner-frame .banner {
+  aspect-ratio: 5 / 1;
+}

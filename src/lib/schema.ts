@@ -186,6 +186,13 @@ export const tournamentSchema = z.object({
   name: z.string().min(1),
   firstEdition: z.number().int(),
   status: z.enum(['active', 'paused', 'ended']),
+  // Drawn banner: gradient colors, color of the flight paths and their count.
+  banner: z.object({
+    from: z.string().regex(/^#[0-9a-f]{6}$/),
+    to: z.string().regex(/^#[0-9a-f]{6}$/),
+    accent: z.string().regex(/^#[0-9a-f]{6}$/),
+    marks: z.number().int().min(1).max(8),
+  }),
   // Host cities in tournament order.
   hosts: z.array(z.string().min(1)).min(1),
   // Events of a season that belong to the tournament, keyed by season id.

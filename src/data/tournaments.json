@@ -99,7 +99,13 @@
         ]
       }
     ],
-    "sourceUrl": "https://pl.wikipedia.org/wiki/Turniej_Czterech_Skoczni"
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Turniej_Czterech_Skoczni",
+    "banner": {
+      "from": "#1f2937",
+      "to": "#c8102e",
+      "accent": "#ffce00",
+      "marks": 4
+    }
   },
   {
     "slug": "raw-air",
@@ -262,7 +268,13 @@
         ]
       }
     ],
-    "sourceUrl": "https://pl.wikipedia.org/wiki/Raw_Air"
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Raw_Air",
+    "banner": {
+      "from": "#00205b",
+      "to": "#ba0c2f",
+      "accent": "#ffffff",
+      "marks": 4
+    }
   },
   {
     "slug": "planica7",
@@ -427,7 +439,13 @@
         ]
       }
     ],
-    "sourceUrl": "https://pl.wikipedia.org/wiki/Planica_7"
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Planica_7",
+    "banner": {
+      "from": "#0b4ea2",
+      "to": "#1d7a46",
+      "accent": "#ffffff",
+      "marks": 7
+    }
   },
   {
     "slug": "willingen-six",
@@ -522,7 +540,13 @@
         ]
       }
     ],
-    "sourceUrl": "https://pl.wikipedia.org/wiki/Willingen_Six"
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Willingen_Six",
+    "banner": {
+      "from": "#111827",
+      "to": "#b45309",
+      "accent": "#ffce00",
+      "marks": 6
+    }
   },
   {
     "slug": "titisee-neustadt-five",
@@ -566,7 +590,13 @@
         ]
       }
     ],
-    "sourceUrl": "https://pl.wikipedia.org/wiki/Titisee-Neustadt_Five_2020"
+    "sourceUrl": "https://pl.wikipedia.org/wiki/Titisee-Neustadt_Five_2020",
+    "banner": {
+      "from": "#14532d",
+      "to": "#111827",
+      "accent": "#ffce00",
+      "marks": 5
+    }
   },
   {
     "slug": "polski-turniej",
@@ -607,6 +637,12 @@
         ]
       }
     ],
-    "sourceUrl": "https://pl.wikipedia.org/wiki/PolSKI_Turniej_2024"
+    "sourceUrl": "https://pl.wikipedia.org/wiki/PolSKI_Turniej_2024",
+    "banner": {
+      "from": "#dc143c",
+      "to": "#7f1d1d",
+      "accent": "#ffffff",
+      "marks": 3
+    }
   }
 ]

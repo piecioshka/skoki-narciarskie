@@ -42,27 +42,27 @@ const flights = Array.from({ length: marks }, (_, index) => {
   <path
     d="M0 22 C40 26 70 44 92 62 L92 70 C130 118 190 150 400 134 L400 160 L0 160 Z"
     fill="#ffffff"
-    fill-opacity="0.16"></path>
+    fill-opacity="0.16"
+  ></path>
   <path
     d="M0 22 C40 26 70 44 92 62"
     fill="none"
     stroke="#ffffff"
     stroke-opacity="0.7"
     stroke-width="3"
-    stroke-linecap="round"></path>
-  {
-    flights.map((flight) => (
-      <>
-        <path
-          d={flight.path}
-          fill="none"
-          stroke={accent}
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-dasharray="1 6"
-        />
-        <circle cx={flight.x} cy={flight.y} r="4" fill={accent} />
-      </>
-    ))
-  }
+    stroke-linecap="round"
+  ></path>
+  {flights.map((flight) => (
+    <>
+      <path
+        d={flight.path}
+        fill="none"
+        stroke={accent}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-dasharray="1 6"
+      />
+      <circle cx={flight.x} cy={flight.y} r="4" fill={accent} />
+    </>
+  ))}
 </svg>

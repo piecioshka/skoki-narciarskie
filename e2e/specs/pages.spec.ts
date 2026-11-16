@@ -179,6 +179,12 @@ test.describe('tournaments', () => {
     await page.goto('/pl/tournaments/');
 
     await expect(page.locator('.tournament-card')).toHaveCount(6);
+    await expect(page.locator('.tournament-card .banner')).toHaveCount(6);
+    await expect(
+      page.locator(
+        '.tournament-card[data-tournament="planica7"] .banner circle',
+      ),
+    ).toHaveCount(7);
     await expect(
       page.locator('.tournament-card[data-tournament="four-hills"]'),
     ).toContainText('Rozgrywany');

@@ -1,5 +1,6 @@
 ---
 import EventCard from '../../../../components/EventCard.astro';
+import TournamentBanner from '../../../../components/TournamentBanner.astro';
 import Icon from '../../../../components/Icon.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../../../i18n';
 import Layout from '../../../../layouts/Layout.astro';
@@ -56,6 +57,10 @@ const placeName = (place: { name?: string | undefined; nation: string }) => {
     <Icon name="arrow-left" />
     {dict.tournamentsTitle}
   </a>
+
+  <div class="banner-frame">
+    <TournamentBanner tournament={tournament} />
+  </div>
 
   <header class="event-header">
     <div class="event-header__badges">
