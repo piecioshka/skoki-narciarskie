@@ -1,12 +1,12 @@
 ---
 import { t, type Lang } from '../i18n';
-import type { Teams } from '../lib/schema';
+import type { NationTeams } from '../lib/schema';
 import { formatSeasonLabel } from '../lib/seasons';
 import PersonName from './PersonName.astro';
 
 interface Props {
   lang: Lang;
-  teams: Teams;
+  teams: NationTeams;
 }
 
 const { lang, teams } = Astro.props;
@@ -21,7 +21,9 @@ const dict = t(lang);
   <div class="teams">
     {teams.teams.map((team) => (
       <article class="team" data-team={team.id}>
-        <h4 class="team__title">{dict.teamNames[team.id] ?? team.id}</h4>
+        <h4 class="team__title">
+          {team.name ?? dict.teamNames[team.id] ?? team.id}
+        </h4>
         <h5 class="team__subtitle">{dict.staff}</h5>
         <ul class="people">
           {team.staff.map((member) => (

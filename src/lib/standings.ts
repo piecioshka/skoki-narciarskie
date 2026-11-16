@@ -2,7 +2,7 @@ import {
   standingsSchema,
   teamsSchema,
   type Standings,
-  type Teams,
+  type NationTeams,
 } from './schema';
 
 const standingsFiles = import.meta.glob('../data/standings/*.json', {
@@ -22,10 +22,17 @@ export function getStandings(seasonId: string): Standings | undefined {
   return allStandings.find((item) => item.season === seasonId);
 }
 
-export function getTeams(seasonId: string): Teams | undefined {
-  return Object.values(teamsFiles)
+/** Squads of one nation for a season, if they are in the data. */
+export function getTeams(
+  seasonId: string,
+  nation: string,
+): NationTeams | undefined {
+  const file = Object.values(teamsFiles)
     .map((raw) => teamsSchema.parse(raw))
     .find((item) => item.season === seasonId);
+  const squads = file?.nations[nation];
+
+  return squads ? { ...squads, season: seasonId } : undefined;
 }
 
 /** Seasons that have a standings file, newest first. */

@@ -186,12 +186,15 @@ test.describe('gallery', () => {
       item.getByRole('link', { name: 'Autor programów' }),
     ).toHaveAttribute('href', /facebook\.com/);
     await expect(image).toHaveAttribute('alt', /Odręczny program/);
-    expect(
-      await image.evaluate(
-        (element) =>
-          element instanceof HTMLImageElement && element.naturalWidth,
-      ),
-    ).toBeGreaterThan(0);
+    // The image is lazy, so wait until it has really been decoded.
+    await expect
+      .poll(() =>
+        image.evaluate(
+          (element) =>
+            element instanceof HTMLImageElement && element.naturalWidth > 0,
+        ),
+      )
+      .toBe(true);
 
     const href = await item.locator('.gallery__link').getAttribute('href');
     const response = await request.get(href ?? '');
@@ -687,7 +690,24 @@ test.describe('nations', () => {
     await page.goto('/pl/2026-2027/polish-team/');
     await expect(page).toHaveURL(/\/pl\/nations\/pol\/$/);
     await expect(page.locator('.team')).toHaveCount(2);
-    await page.goto('/pl/nations/aut/');
+  });
+
+  test('other nations show their squads and head coaches too', async ({
+    page,
+  }) => {
+    await page.goto('/pl/nations/ger/');
+
+    const teams = page.locator('.team');
+
+    await expect(teams).toHaveCount(2);
+    await expect(teams.first()).toContainText('Lehrgangsgruppe 1a');
+    await expect(teams.first().locator('.people__item--lead')).toContainText(
+      'Andreas Mitter',
+    );
+    await page.goto('/pl/nations/jpn/');
+    await expect(page.locator('.team__title')).toHaveText('Kadra narodowa');
+    // Nations without a confirmed squad for this season show none.
+    await page.goto('/pl/nations/kaz/');
     await expect(page.locator('.team')).toHaveCount(0);
   });
 

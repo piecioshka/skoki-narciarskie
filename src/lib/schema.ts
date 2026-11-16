@@ -123,17 +123,25 @@ export const staffSchema = z.object({
   ]),
 });
 
-export const teamsSchema = z.object({
-  season: z.string().regex(/^\d{4}-\d{4}$/),
+const nationTeamsSchema = z.object({
   sourceUrl: z.url(),
   verifiedAt: isoDate,
   teams: z.array(
     z.object({
       id: z.string().min(1),
+      // Group name as the federation calls it; without one a generic label
+      // ("National team A") is shown.
+      name: z.string().min(1).optional(),
       athletes: z.array(athleteSchema).min(1),
       staff: z.array(staffSchema).min(1),
     }),
   ),
+});
+
+export const teamsSchema = z.object({
+  season: z.string().regex(/^\d{4}-\d{4}$/),
+  // Squads keyed by FIS nation code.
+  nations: z.record(z.string().regex(/^[A-Z]{3}$/), nationTeamsSchema),
 });
 
 export type Official = z.infer<typeof officialSchema>;
@@ -143,7 +151,9 @@ export type StandingsRow = z.infer<typeof standingsRowSchema>;
 export type Standings = z.infer<typeof standingsSchema>;
 export type StaffMember = z.infer<typeof staffSchema>;
 export type StaffRole = StaffMember['role'];
-export type Teams = z.infer<typeof teamsSchema>;
+export type NationTeams = z.infer<typeof nationTeamsSchema> & {
+  season: string;
+};
 
 export const hillSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/),

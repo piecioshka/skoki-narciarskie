@@ -1,130 +1,611 @@
 {
   "season": "2026-2027",
-  "sourceUrl": "https://www.pzn.pl/skoki-narciarskie",
-  "verifiedAt": "2026-11-16",
-  "teams": [
-    {
-      "id": "a",
-      "athletes": [
+  "nations": {
+    "POL": {
+      "sourceUrl": "https://www.pzn.pl/skoki-narciarskie",
+      "verifiedAt": "2026-11-16",
+      "teams": [
         {
-          "name": "Kacper Tomasiak",
-          "url": "https://pl.wikipedia.org/wiki/Kacper_Tomasiak"
+          "id": "a",
+          "athletes": [
+            {
+              "name": "Kacper Tomasiak",
+              "url": "https://pl.wikipedia.org/wiki/Kacper_Tomasiak"
+            },
+            {
+              "name": "Klemens Joniak",
+              "url": "https://pl.wikipedia.org/wiki/Klemens_Joniak"
+            },
+            {
+              "name": "Paweł Wąsek",
+              "url": "https://pl.wikipedia.org/wiki/Pawe%C5%82_W%C4%85sek"
+            },
+            {
+              "name": "Piotr Żyła",
+              "url": "https://pl.wikipedia.org/wiki/Piotr_%C5%BBy%C5%82a"
+            },
+            {
+              "name": "Maciej Kot",
+              "url": "https://pl.wikipedia.org/wiki/Maciej_Kot"
+            },
+            {
+              "name": "Dawid Kubacki",
+              "url": "https://pl.wikipedia.org/wiki/Dawid_Kubacki"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Maciej Maciusiak",
+              "role": "head-coach",
+              "url": "https://pl.wikipedia.org/wiki/Maciej_Maciusiak"
+            },
+            {
+              "name": "Krzysztof Miętus",
+              "role": "assistant-coach",
+              "url": "https://pl.wikipedia.org/wiki/Krzysztof_Mi%C4%99tus"
+            },
+            {
+              "name": "Kamil Skrobot",
+              "role": "assistant-coach"
+            },
+            {
+              "name": "Michal Doležal",
+              "role": "assistant-coach",
+              "url": "https://pl.wikipedia.org/wiki/Michal_Dole%C5%BEal"
+            },
+            {
+              "name": "Krzysztof Biegun",
+              "role": "assistant-coach",
+              "url": "https://pl.wikipedia.org/wiki/Krzysztof_Biegun"
+            },
+            {
+              "name": "Maciej Kreczmer",
+              "role": "service-technician"
+            },
+            {
+              "name": "Paweł Gurbisz",
+              "role": "physiotherapist"
+            },
+            {
+              "name": "Wojciech Jurowicz",
+              "role": "team-manager"
+            }
+          ]
         },
         {
-          "name": "Klemens Joniak",
-          "url": "https://pl.wikipedia.org/wiki/Klemens_Joniak"
-        },
-        {
-          "name": "Paweł Wąsek",
-          "url": "https://pl.wikipedia.org/wiki/Pawe%C5%82_W%C4%85sek"
-        },
-        {
-          "name": "Piotr Żyła",
-          "url": "https://pl.wikipedia.org/wiki/Piotr_%C5%BBy%C5%82a"
-        },
-        {
-          "name": "Maciej Kot",
-          "url": "https://pl.wikipedia.org/wiki/Maciej_Kot"
-        },
-        {
-          "name": "Dawid Kubacki",
-          "url": "https://pl.wikipedia.org/wiki/Dawid_Kubacki"
-        }
-      ],
-      "staff": [
-        {
-          "name": "Maciej Maciusiak",
-          "role": "head-coach",
-          "url": "https://pl.wikipedia.org/wiki/Maciej_Maciusiak"
-        },
-        {
-          "name": "Krzysztof Miętus",
-          "role": "assistant-coach",
-          "url": "https://pl.wikipedia.org/wiki/Krzysztof_Mi%C4%99tus"
-        },
-        {
-          "name": "Kamil Skrobot",
-          "role": "assistant-coach"
-        },
-        {
-          "name": "Michal Doležal",
-          "role": "assistant-coach",
-          "url": "https://pl.wikipedia.org/wiki/Michal_Dole%C5%BEal"
-        },
-        {
-          "name": "Krzysztof Biegun",
-          "role": "assistant-coach",
-          "url": "https://pl.wikipedia.org/wiki/Krzysztof_Biegun"
-        },
-        {
-          "name": "Maciej Kreczmer",
-          "role": "service-technician"
-        },
-        {
-          "name": "Paweł Gurbisz",
-          "role": "physiotherapist"
-        },
-        {
-          "name": "Wojciech Jurowicz",
-          "role": "team-manager"
+          "id": "b",
+          "athletes": [
+            {
+              "name": "Kamil Waszek"
+            },
+            {
+              "name": "Jakub Wolny",
+              "url": "https://pl.wikipedia.org/wiki/Jakub_Wolny"
+            },
+            {
+              "name": "Łukasz Łukaszczyk",
+              "url": "https://pl.wikipedia.org/wiki/%C5%81ukasz_%C5%81ukaszczyk"
+            },
+            {
+              "name": "Konrad Tomasiak"
+            },
+            {
+              "name": "Aleksander Zniszczoł",
+              "url": "https://pl.wikipedia.org/wiki/Aleksander_Zniszczo%C5%82"
+            },
+            {
+              "name": "Szymon Sarniak",
+              "url": "https://pl.wikipedia.org/wiki/Szymon_Sarniak"
+            },
+            {
+              "name": "Adam Niżnik",
+              "url": "https://pl.wikipedia.org/wiki/Adam_Ni%C5%BCnik"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Wojciech Topór",
+              "role": "head-coach",
+              "url": "https://pl.wikipedia.org/wiki/Wojciech_Top%C3%B3r"
+            },
+            {
+              "name": "Robert Mateja",
+              "role": "assistant-coach",
+              "url": "https://pl.wikipedia.org/wiki/Robert_Mateja"
+            },
+            {
+              "name": "Kacper Skrobot",
+              "role": "assistant-coach"
+            },
+            {
+              "name": "Wojciech Gąsienica-Kotelnicki",
+              "role": "service-technician",
+              "url": "https://pl.wikipedia.org/wiki/Wojciech_G%C4%85sienica-Kotelnicki"
+            },
+            {
+              "name": "Paweł Leja",
+              "role": "physiotherapist"
+            }
+          ]
         }
       ]
     },
-    {
-      "id": "b",
-      "athletes": [
+    "AUT": {
+      "sourceUrl": "https://www.skijumping.pl/wiadomosci/38729/austriackie-kadry-na-sezon-202627/",
+      "verifiedAt": "2026-11-16",
+      "teams": [
         {
-          "name": "Kamil Waszek"
-        },
-        {
-          "name": "Jakub Wolny",
-          "url": "https://pl.wikipedia.org/wiki/Jakub_Wolny"
-        },
-        {
-          "name": "Łukasz Łukaszczyk",
-          "url": "https://pl.wikipedia.org/wiki/%C5%81ukasz_%C5%81ukaszczyk"
-        },
-        {
-          "name": "Konrad Tomasiak"
-        },
-        {
-          "name": "Aleksander Zniszczoł",
-          "url": "https://pl.wikipedia.org/wiki/Aleksander_Zniszczo%C5%82"
-        },
-        {
-          "name": "Szymon Sarniak",
-          "url": "https://pl.wikipedia.org/wiki/Szymon_Sarniak"
-        },
-        {
-          "name": "Adam Niżnik",
-          "url": "https://pl.wikipedia.org/wiki/Adam_Ni%C5%BCnik"
+          "id": "national",
+          "name": "Nationalteam",
+          "athletes": [
+            {
+              "name": "Stephan Embacher"
+            },
+            {
+              "name": "Jan Hörl"
+            },
+            {
+              "name": "Stefan Kraft"
+            },
+            {
+              "name": "Maximilian Ortner"
+            },
+            {
+              "name": "Jonas Schuster"
+            },
+            {
+              "name": "Daniel Tschofenig"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Andreas Widhölzl",
+              "role": "head-coach"
+            }
+          ]
         }
-      ],
-      "staff": [
+      ]
+    },
+    "GER": {
+      "sourceUrl": "https://www.skijumping.pl/wiadomosci/38739/kadry-niemiec-na-sezon-20262027-kahofer-zmienia-barwy-narodowe/",
+      "verifiedAt": "2026-11-16",
+      "teams": [
         {
-          "name": "Wojciech Topór",
-          "role": "head-coach",
-          "url": "https://pl.wikipedia.org/wiki/Wojciech_Top%C3%B3r"
+          "id": "1a",
+          "name": "Lehrgangsgruppe 1a",
+          "athletes": [
+            {
+              "name": "Karl Geiger"
+            },
+            {
+              "name": "Felix Hoffmann"
+            },
+            {
+              "name": "Pius Paschke"
+            },
+            {
+              "name": "Philipp Raimund"
+            },
+            {
+              "name": "Luca Roth"
+            },
+            {
+              "name": "Andreas Wellinger"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Andreas Mitter",
+              "role": "head-coach"
+            },
+            {
+              "name": "Jens Deimel",
+              "role": "assistant-coach"
+            },
+            {
+              "name": "Tino Haase",
+              "role": "assistant-coach"
+            }
+          ]
         },
         {
-          "name": "Robert Mateja",
-          "role": "assistant-coach",
-          "url": "https://pl.wikipedia.org/wiki/Robert_Mateja"
+          "id": "1b",
+          "name": "Lehrgangsgruppe 1b",
+          "athletes": [
+            {
+              "name": "Ben Bayer"
+            },
+            {
+              "name": "Finn Braun"
+            },
+            {
+              "name": "Lasse Deimel"
+            },
+            {
+              "name": "Jannik Faißt"
+            },
+            {
+              "name": "Martin Hamann"
+            },
+            {
+              "name": "Timon-Pascal Kahofer"
+            },
+            {
+              "name": "Robin Kloß"
+            },
+            {
+              "name": "Elias Malcher"
+            },
+            {
+              "name": "Alex Reiter"
+            },
+            {
+              "name": "Constantin Schmid"
+            },
+            {
+              "name": "Emanuel Schmid"
+            },
+            {
+              "name": "Adrian Tittel"
+            },
+            {
+              "name": "Max Unglaube"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Thomas Thurnbichler",
+              "role": "head-coach"
+            }
+          ]
+        }
+      ]
+    },
+    "NOR": {
+      "sourceUrl": "https://www.skijumping.pl/wiadomosci/38724/trzynascioro-skoczkow-w-norweskiej-reprezentacji/",
+      "verifiedAt": "2026-11-16",
+      "teams": [
+        {
+          "id": "a",
+          "name": "A-landslag",
+          "athletes": [
+            {
+              "name": "Johann André Forfang"
+            },
+            {
+              "name": "Halvor Egner Granerud"
+            },
+            {
+              "name": "Isak Andreas Langmo"
+            },
+            {
+              "name": "Marius Lindvik"
+            },
+            {
+              "name": "Benjamin Østvold"
+            },
+            {
+              "name": "Kristoffer Eriksen Sundal"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Rune Velta",
+              "role": "head-coach"
+            },
+            {
+              "name": "Anders Fannemel",
+              "role": "assistant-coach"
+            },
+            {
+              "name": "Sigurd Nymoen Søberg",
+              "role": "assistant-coach"
+            },
+            {
+              "name": "Arne Sneli",
+              "role": "service-technician"
+            }
+          ]
         },
         {
-          "name": "Kacper Skrobot",
-          "role": "assistant-coach"
+          "id": "b",
+          "name": "B-laget",
+          "athletes": [
+            {
+              "name": "Adrian Thon Gundersrud"
+            },
+            {
+              "name": "Oddvar Gunnerød"
+            },
+            {
+              "name": "Robin Pedersen"
+            },
+            {
+              "name": "Sølve Jokerud Strand"
+            },
+            {
+              "name": "Jørgen Oliver Strøm"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Andreas Varsi Breivik",
+              "role": "head-coach"
+            }
+          ]
+        }
+      ]
+    },
+    "SLO": {
+      "sourceUrl": "https://www.skijumping.pl/wiadomosci/38703/slowency-odkrywaja-karty-przed-sezonem-202627/",
+      "verifiedAt": "2026-11-16",
+      "teams": [
+        {
+          "id": "a",
+          "name": "Reprezentanca A",
+          "athletes": [
+            {
+              "name": "Žiga Jančar"
+            },
+            {
+              "name": "Lovro Kos"
+            },
+            {
+              "name": "Anže Lanišek"
+            },
+            {
+              "name": "Žak Mogel"
+            },
+            {
+              "name": "Rok Oblak"
+            },
+            {
+              "name": "Domen Prevc"
+            },
+            {
+              "name": "Timi Zajc"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Robert Hrgota",
+              "role": "head-coach"
+            }
+          ]
         },
         {
-          "name": "Wojciech Gąsienica-Kotelnicki",
-          "role": "service-technician",
-          "url": "https://pl.wikipedia.org/wiki/Wojciech_G%C4%85sienica-Kotelnicki"
+          "id": "b",
+          "name": "Reprezentanca B",
+          "athletes": [
+            {
+              "name": "Enej Faletič"
+            },
+            {
+              "name": "Žiga Jelar"
+            },
+            {
+              "name": "Rok Masle"
+            },
+            {
+              "name": "Jernej Presečnik"
+            },
+            {
+              "name": "Gorazd Završnik"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Gašper Vodan",
+              "role": "head-coach"
+            }
+          ]
+        }
+      ]
+    },
+    "JPN": {
+      "sourceUrl": "https://www.ski-japan.or.jp/snowjapan/jp/",
+      "verifiedAt": "2026-11-16",
+      "teams": [
+        {
+          "id": "national",
+          "athletes": [
+            {
+              "name": "Ryōyū Kobayashi"
+            },
+            {
+              "name": "Ren Nikaidō"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Kento Sakuyama",
+              "role": "head-coach"
+            }
+          ]
+        }
+      ]
+    },
+    "SUI": {
+      "sourceUrl": "https://www.skijumping.pl/wiadomosci/38691/kadry-szwajcarii-na-sezon-20262027/",
+      "verifiedAt": "2026-11-16",
+      "teams": [
+        {
+          "id": "national",
+          "athletes": [
+            {
+              "name": "Gregor Deschwanden"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Bine Norčič",
+              "role": "head-coach"
+            }
+          ]
+        }
+      ]
+    },
+    "FIN": {
+      "sourceUrl": "https://www.skijumping.pl/wiadomosci/38730/finowie-na-fali-wznoszacej-wspolna-reprezentacja-na-sezon-202627/",
+      "verifiedAt": "2026-11-16",
+      "teams": [
+        {
+          "id": "a",
+          "athletes": [
+            {
+              "name": "Antti Aalto"
+            },
+            {
+              "name": "Niko Kytösaho"
+            },
+            {
+              "name": "Jarkko Määttä"
+            },
+            {
+              "name": "Eetu Nousiainen"
+            },
+            {
+              "name": "Vilho Palosaari"
+            },
+            {
+              "name": "Kasperi Valto"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Lauri Hakola",
+              "role": "head-coach"
+            },
+            {
+              "name": "Lasse Moilanen",
+              "role": "assistant-coach"
+            }
+          ]
+        }
+      ]
+    },
+    "USA": {
+      "sourceUrl": "https://www.skijumping.pl/wiadomosci/39184/amerykanie-zatwierdzili-kadry-na-zime/",
+      "verifiedAt": "2026-11-16",
+      "teams": [
+        {
+          "id": "a",
+          "athletes": [
+            {
+              "name": "Kevin Bickner"
+            },
+            {
+              "name": "Jason Colby"
+            },
+            {
+              "name": "Tate Frantz"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Tore Sneli",
+              "role": "head-coach"
+            }
+          ]
+        }
+      ]
+    },
+    "ITA": {
+      "sourceUrl": "https://www.skijumping.pl/wiadomosci/38777/jakub-jiroutek-opuscil-wlochow-kadry-italii-na-nowy-sezon/",
+      "verifiedAt": "2026-11-16",
+      "teams": [
+        {
+          "id": "national",
+          "athletes": [
+            {
+              "name": "Giovanni Bresadola"
+            },
+            {
+              "name": "Francesco Cecon"
+            },
+            {
+              "name": "Alex Insam"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Ivo Pertile",
+              "role": "head-coach"
+            },
+            {
+              "name": "Martin Bayer",
+              "role": "assistant-coach"
+            },
+            {
+              "name": "Sebastian Colloredo",
+              "role": "assistant-coach"
+            }
+          ]
+        }
+      ]
+    },
+    "CZE": {
+      "sourceUrl": "https://www.skijumping.pl/wiadomosci/38877/czesi-oglosili-kadry-na-sezon-202627/",
+      "verifiedAt": "2026-11-16",
+      "teams": [
+        {
+          "id": "a",
+          "athletes": [
+            {
+              "name": "Roman Koudelka"
+            },
+            {
+              "name": "David Rygl"
+            },
+            {
+              "name": "Daniel Škarka"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Lukáš Hlava",
+              "role": "head-coach"
+            },
+            {
+              "name": "Lukas Danek",
+              "role": "assistant-coach"
+            }
+          ]
         },
         {
-          "name": "Paweł Leja",
-          "role": "physiotherapist"
+          "id": "b",
+          "athletes": [
+            {
+              "name": "Filip Křenek"
+            },
+            {
+              "name": "Štěpán Kysel"
+            },
+            {
+              "name": "Jiří Černý"
+            },
+            {
+              "name": "Jan Černý"
+            },
+            {
+              "name": "Oliver Janda"
+            },
+            {
+              "name": "Matěj Matura"
+            }
+          ],
+          "staff": [
+            {
+              "name": "Radek Žídek",
+              "role": "head-coach"
+            },
+            {
+              "name": "Benedikt Holub",
+              "role": "assistant-coach"
+            }
+          ]
         }
       ]
     }
-  ]
+  }
 }

@@ -8,7 +8,7 @@ import { getTeams } from '../../../../lib/standings';
 export function getStaticPaths() {
   return LANGUAGES.flatMap((lang) =>
     getSeasons()
-      .filter((season) => getTeams(season.id) !== undefined)
+      .filter((season) => getTeams(season.id, 'POL') !== undefined)
       .map((season) => ({
         params: { lang, season: season.id },
         props: { lang },
