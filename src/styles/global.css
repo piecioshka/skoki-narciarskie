@@ -1750,3 +1750,14 @@ a[href^='http']:not(.icon-button)::after {
   appearance: none;
   cursor: pointer;
 }
+
+.table__cell--date {
+  width: 1%;
+  font-family: var(--pal-font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.past .team__subtitle {
+  margin-top: 0;
+}

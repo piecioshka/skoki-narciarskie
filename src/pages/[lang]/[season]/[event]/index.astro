@@ -13,6 +13,7 @@ import {
   getNationFlag,
 } from '../../../../lib/links';
 import HillCard from '../../../../components/HillCard.astro';
+import PastWinners from '../../../../components/PastWinners.astro';
 import { describeEventHill, getEventHills } from '../../../../lib/hills';
 import { getPrograms } from '../../../../lib/programs';
 import ProgramCard from '../../../../components/ProgramCard.astro';
@@ -196,6 +197,8 @@ const jsonLd = {
       {dict.timeZoneNote} <span class="js-time-zone">Europe/Warsaw</span>
     </p>
   </section>
+
+  <PastWinners lang={lang} event={event} />
 
   {hills.length > 0 && (
     <section class="section" aria-labelledby="hill-title">

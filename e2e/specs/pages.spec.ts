@@ -772,6 +772,38 @@ test.describe('nations', () => {
   });
 });
 
+test.describe('past winners', () => {
+  test('event page lists recent individual and team winners at the venue', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/zakopane/');
+
+    const individual = page.locator('.past[data-past="individual"]');
+    const team = page.locator('.past[data-past="team"]');
+
+    expect(await individual.locator('.table__row').count()).toBeGreaterThan(0);
+    expect(await individual.locator('.table__row').count()).toBeLessThanOrEqual(
+      5,
+    );
+    await expect(individual.locator('.table__row').first()).toContainText(
+      '2026-01-11',
+    );
+    await expect(individual.locator('.table__row').first()).toContainText(
+      'Anze Lanisek',
+    );
+    await expect(team.locator('.table__row').first()).toContainText('Austria');
+  });
+
+  test('ski flying events do not mix in winners from the large hill', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/planica/');
+    await expect(
+      page.locator('.past[data-past="individual"] .table__row').first(),
+    ).toContainText('Marius Lindvik');
+  });
+});
+
 test.describe('hill', () => {
   test('event page shows technical data, the record and facts', async ({
     page,

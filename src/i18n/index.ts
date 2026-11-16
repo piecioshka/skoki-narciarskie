@@ -122,6 +122,9 @@ interface Dictionary {
   trophies: string;
   teamResults: string;
   teamResultsNote: (range: string) => string;
+  pastWinners: string;
+  pastIndividual: string;
+  pastTeam: string;
   officials: string;
   officialRoles: Record<OfficialRole, string>;
   switchLanguage: string;
@@ -309,6 +312,9 @@ const pl: Dictionary = {
   teamResults: 'Wyniki drużyny',
   teamResultsNote: (range) =>
     `Miejsca na podium konkursów drużynowych w sezonach ${range}.`,
+  pastWinners: 'Ostatni zwycięzcy',
+  pastIndividual: 'Konkursy indywidualne',
+  pastTeam: 'Konkursy drużynowe',
   officials: 'Sędziowie i delegaci',
   officialRoles: {
     'technical-delegate': 'Delegat techniczny FIS',
@@ -508,6 +514,9 @@ const en: Dictionary = {
   teamResults: 'Team results',
   teamResultsNote: (range) =>
     `Podium places in team competitions in the ${range} seasons.`,
+  pastWinners: 'Recent winners',
+  pastIndividual: 'Individual competitions',
+  pastTeam: 'Team competitions',
   officials: 'Judges and delegates',
   officialRoles: {
     'technical-delegate': 'FIS Technical Delegate',

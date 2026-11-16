@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { buildCalendar } from './ics';
 import {
   findNext,
+  getPastWinners,
   getEventRange,
   getHillSizes,
   getPhase,
@@ -173,6 +174,62 @@ describe('buildCalendar', () => {
   it('uses CRLF line endings and stable identifiers', () => {
     expect(calendar.startsWith('BEGIN:VCALENDAR\r\n')).toBe(true);
     expect(calendar).toContain('UID:fis-race-7@skoki-narciarskie');
+  });
+});
+
+describe('getPastWinners', () => {
+  const won = (
+    fisRaceId: number,
+    date: string,
+    kind: Competition['kind'],
+    winner: { name?: string; nation: string },
+  ): Competition =>
+    competition({
+      fisRaceId,
+      date,
+      kind,
+      results: [{ rank: 1, ...winner }],
+    });
+  const older = season([
+    event([
+      won(1, '2024-11-23', 'individual', {
+        name: 'Pius Paschke',
+        nation: 'GER',
+      }),
+      won(2, '2024-11-22', 'mixed-team', { nation: 'GER' }),
+    ]),
+  ]);
+  const newer = {
+    ...season([
+      event([
+        won(3, '2025-11-22', 'individual', {
+          name: 'Daniel Tschofenig',
+          nation: 'AUT',
+        }),
+      ]),
+    ]),
+    id: '2025-2026',
+  };
+  const upcoming = event([competition({ fisRaceId: 9, date: '2026-11-21' })]);
+
+  it('lists earlier winners at the same venue, newest first', () => {
+    const past = getPastWinners([older, newer], upcoming);
+
+    expect(past.individual.map((item) => item.name)).toEqual([
+      'Daniel Tschofenig',
+      'Pius Paschke',
+    ]);
+    expect(past.team.map((item) => item.nation)).toEqual(['GER']);
+  });
+
+  it('ignores competitions held on or after the event itself', () => {
+    const past = getPastWinners(
+      [older, newer],
+      event([competition({ date: '2024-11-23' })]),
+    );
+
+    expect(past.individual).toEqual([]);
+    expect(past.team.map((item) => item.date)).toEqual(['2024-11-22']);
   });
 });
 

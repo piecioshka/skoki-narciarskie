@@ -1,0 +1,65 @@
+---
+import { t, type Lang } from '../i18n';
+import { getNationFlag, getNationName } from '../lib/links';
+import { eventPath } from '../lib/paths';
+import type { SeasonEvent } from '../lib/schema';
+import { getPastWinners } from '../lib/schedule';
+import { getSeasons } from '../lib/seasons';
+import Avatar from './Avatar.astro';
+
+interface Props {
+  lang: Lang;
+  event: SeasonEvent;
+}
+
+const { lang, event } = Astro.props;
+const dict = t(lang);
+const past = getPastWinners(getSeasons(), event);
+const groups = [
+  { id: 'individual', title: dict.pastIndividual, winners: past.individual },
+  { id: 'team', title: dict.pastTeam, winners: past.team },
+].filter((group) => group.winners.length > 0);
+---
+
+{groups.length > 0 && (
+  <section class="section" aria-labelledby="past-winners-title">
+    <h3 class="section__title" id="past-winners-title">
+      {dict.pastWinners}
+    </h3>
+    <div class="teams">
+      {groups.map((group) => (
+        <div class="past" data-past={group.id}>
+          <h4 class="team__subtitle">{group.title}</h4>
+          <div class="table-wrap">
+            <table class="table">
+              <tbody>
+                {group.winners.map((winner) => (
+                  <tr class="table__row">
+                    <td class="table__cell table__cell--date">
+                      <a
+                        class="table__link"
+                        href={eventPath(
+                          lang,
+                          winner.seasonId,
+                          winner.eventSlug,
+                        )}
+                      >
+                        {winner.date}
+                      </a>
+                    </td>
+                    <td class="table__cell">
+                      <span class="person">
+                        {winner.name && <Avatar name={winner.name} />}
+                        {`${getNationFlag(winner.nation)} ${winner.name ?? getNationName(lang, winner.nation)}`}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
