@@ -10,6 +10,8 @@
   --brand-on-soft: #173ea8;
   --gold-soft: #fdf1d7;
   --gold-on-soft: #7a4d00;
+  --silver-soft: #e9ecf1;
+  --bronze-soft: #f6e2d2;
   --live: #d9202f;
   --live-soft: #fde8ea;
 }
@@ -21,6 +23,8 @@
   --brand-on-soft: #b9cfff;
   --gold-soft: #3a2e12;
   --gold-on-soft: #f7c66b;
+  --silver-soft: #2b3039;
+  --bronze-soft: #3d2819;
   --live: #ff6b78;
   --live-soft: #40191e;
 }
@@ -862,6 +866,26 @@ th.table__cell {
 
 .table__row--home {
   background: var(--brand-soft);
+}
+
+/* Podium places: the row takes the color of its medal. */
+
+.table__row--gold {
+  background: var(--gold-soft);
+}
+
+.table__row--silver {
+  background: var(--silver-soft);
+}
+
+.table__row--bronze {
+  background: var(--bronze-soft);
+}
+
+.table__cell--medal {
+  width: 1%;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .table__cell--number {

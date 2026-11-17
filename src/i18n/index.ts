@@ -122,6 +122,9 @@ interface Dictionary {
   trophies: string;
   teamResults: string;
   teamResultsNote: (range: string) => string;
+  medal: string;
+  /** Names of the medals for places 1, 2 and 3. */
+  medalNames: [string, string, string];
   pastWinners: string;
   pastIndividual: string;
   pastTeam: string;
@@ -312,6 +315,8 @@ const pl: Dictionary = {
   teamResults: 'Wyniki drużyny',
   teamResultsNote: (range) =>
     `Miejsca na podium konkursów drużynowych w sezonach ${range}.`,
+  medal: 'Medal',
+  medalNames: ['Złoty medal', 'Srebrny medal', 'Brązowy medal'],
   pastWinners: 'Ostatni zwycięzcy',
   pastIndividual: 'Konkursy indywidualne',
   pastTeam: 'Konkursy drużynowe',
@@ -514,6 +519,8 @@ const en: Dictionary = {
   teamResults: 'Team results',
   teamResultsNote: (range) =>
     `Podium places in team competitions in the ${range} seasons.`,
+  medal: 'Medal',
+  medalNames: ['Gold medal', 'Silver medal', 'Bronze medal'],
   pastWinners: 'Recent winners',
   pastIndividual: 'Individual competitions',
   pastTeam: 'Team competitions',

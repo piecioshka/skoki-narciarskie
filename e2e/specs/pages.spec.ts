@@ -761,6 +761,21 @@ test.describe('nations', () => {
     await expect(
       team.locator('.table__row').filter({ hasText: 'Zakopane' }).first(),
     ).toContainText('Konkurs duetów');
+
+    const klingenthal = team
+      .locator('.table__row')
+      .filter({ hasText: '2019-12-14' });
+
+    await expect(klingenthal).toHaveClass(/table__row--gold/);
+    await expect(
+      klingenthal.getByRole('img', { name: 'Złoty medal' }),
+    ).toHaveText('🥇');
+    await expect(team.locator('.table__row--silver').first()).toContainText(
+      '🥈',
+    );
+    await expect(team.locator('.table__row--bronze').first()).toContainText(
+      '🥉',
+    );
   });
 
   test('standings link every athlete nation to its page', async ({ page }) => {
