@@ -67,7 +67,7 @@ const photos = import.meta.glob<ImageMetadata>(
 );
 
 export function getAllHills(): Hill[] {
-  return [...hills].sort((a, b) => a.name.localeCompare(b.name));
+  return hills.toSorted((a, b) => a.name.localeCompare(b.name));
 }
 
 export function getHillPhoto(hill: Hill): ImageMetadata | undefined {

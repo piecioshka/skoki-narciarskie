@@ -122,7 +122,7 @@ export interface CompetitionDay {
 
 export function groupByDay(event: SeasonEvent): CompetitionDay[] {
   const days = new Map<string, Competition[]>();
-  const sorted = [...event.competitions].sort(
+  const sorted = event.competitions.toSorted(
     (a, b) =>
       getSlot(event, a).start.getTime() - getSlot(event, b).start.getTime(),
   );
@@ -137,7 +137,7 @@ export function groupByDay(event: SeasonEvent): CompetitionDay[] {
 }
 
 export function sortEvents(season: Season): SeasonEvent[] {
-  return [...season.events].sort((a, b) =>
+  return season.events.toSorted((a, b) =>
     getEventRange(a).start.localeCompare(getEventRange(b).start),
   );
 }
