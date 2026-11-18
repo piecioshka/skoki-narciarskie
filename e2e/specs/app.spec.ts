@@ -151,7 +151,7 @@ test.describe('schedule', () => {
     const body = await response.text();
 
     expect(response.headers()['content-type']).toContain('text/calendar');
-    expect(body.match(/BEGIN:VEVENT/g)).toHaveLength(61);
+    expect(body.match(/BEGIN:VEVENT/g)).toHaveLength(62);
   });
 });
 
@@ -161,23 +161,40 @@ test.describe('event page', () => {
 
     const rows = page.locator('.competition');
 
-    await expect(rows).toHaveCount(5);
-    await expect(rows.first()).toContainText('Kwalifikacje');
+    await expect(rows).toHaveCount(6);
+    await expect(rows.nth(1)).toContainText('Kwalifikacje');
     await expect(
-      rows.first().getByRole('link', { name: 'Wyniki', exact: true }),
+      rows.nth(1).getByRole('link', { name: 'Wyniki', exact: true }),
     ).toHaveAttribute('href', /raceid=7796/);
   });
 
   test('keeps only results for a finished competition', async ({ page }) => {
     await openAt(page, '/pl/2026-2027/lillehammer/', AFTER_FIRST_EVENT);
 
-    const row = page.locator('.competition').first();
+    const row = page.locator('.competition[data-race="7796"]');
 
     await expect(row.locator('.js-phase')).toHaveText('Zakończony');
     await expect(row.getByRole('link', { name: 'HBO Max' })).toBeHidden();
     await expect(
       row.getByRole('link', { name: 'Wyniki', exact: true }),
     ).toBeVisible();
+  });
+
+  test('lists the training and the broadcasters of each competition', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/lillehammer/');
+
+    const training = page.locator('.competition').first();
+    const mixed = page.locator('.competition[data-race="7794"]');
+
+    await expect(training).toContainText('Oficjalny trening');
+    await expect(training).toContainText('Bez transmisji w telewizji');
+    await expect(
+      training.getByRole('link', { name: 'Wyniki', exact: true }),
+    ).toHaveCount(0);
+    await expect(mixed.getByRole('link', { name: /TTV/ })).toBeVisible();
+    await expect(mixed.getByRole('link', { name: /TVN/ })).toHaveCount(0);
   });
 
   test('shows times in the time zone of the viewer', async ({ browser }) => {

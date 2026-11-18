@@ -24,8 +24,11 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const season = getCurrentSeason();
+// Training is in the event program, but the countdown is for competitions.
 const competitions = listCompetitions(season).filter(
-  (item) => item.competition.status !== 'cancelled',
+  (item) =>
+    item.competition.status !== 'cancelled' &&
+    item.competition.kind !== 'training',
 );
 // The build-time pick is only a no-JS fallback; the client script re-picks
 // the card on every tick, because a static page does not know "now".

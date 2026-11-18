@@ -3,34 +3,42 @@ import { z } from 'zod';
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const localTime = z.string().regex(/^\d{2}:\d{2}$/);
 
-export const competitionSchema = z.object({
-  fisRaceId: z.number().int().positive(),
-  kind: z.enum([
-    'qualification',
-    'individual',
-    'team',
-    'super-team',
-    'mixed-team',
-  ]),
-  // Unknown for seasons imported from FIS, which publishes only the hill type.
-  hillSize: z.number().int().positive().nullable(),
-  hillType: z.enum(['normal', 'large', 'flying']).optional(),
-  // Date and time are local to the venue; `time: null` means "not announced".
-  date: isoDate,
-  time: localTime.nullable(),
-  status: z.enum(['scheduled', 'cancelled', 'moved']),
-  // Podium of a finished competition; teams have no `name`.
-  results: z
-    .array(
-      z.object({
-        rank: z.number().int().positive(),
-        name: z.string().min(1).optional(),
-        nation: z.string().regex(/^[A-Z]{3}$/),
-        fisCompetitorId: z.number().int().positive().optional(),
-      }),
-    )
-    .default([]),
-});
+export const competitionSchema = z
+  .object({
+    // FIS gives no race id to official training, so only training may lack one.
+    fisRaceId: z.number().int().positive().nullable(),
+    kind: z.enum([
+      'training',
+      'qualification',
+      'individual',
+      'team',
+      'super-team',
+      'mixed-team',
+    ]),
+    // Unknown for seasons imported from FIS, which publishes only the hill type.
+    hillSize: z.number().int().positive().nullable(),
+    hillType: z.enum(['normal', 'large', 'flying']).optional(),
+    // Date and time are local to the venue; `time: null` means "not announced".
+    date: isoDate,
+    time: localTime.nullable(),
+    status: z.enum(['scheduled', 'cancelled', 'moved']),
+    // Podium of a finished competition; teams have no `name`.
+    results: z
+      .array(
+        z.object({
+          rank: z.number().int().positive(),
+          name: z.string().min(1).optional(),
+          nation: z.string().regex(/^[A-Z]{3}$/),
+          fisCompetitorId: z.number().int().positive().optional(),
+        }),
+      )
+      .default([]),
+    // Broadcasters of this competition alone; falls back to the event's list.
+    broadcasts: z.array(z.string()).optional(),
+  })
+  .refine((item) => item.fisRaceId !== null || item.kind === 'training', {
+    message: 'Only training may have no FIS race id',
+  });
 
 export const officialSchema = z.object({
   role: z.enum(['technical-delegate', 'technical-delegate-assistant', 'judge']),
@@ -67,7 +75,10 @@ export const seasonSchema = z
   .refine(
     (season) =>
       season.events.every((event) =>
-        event.broadcasts.every((id) => id in season.broadcasters),
+        [
+          ...event.broadcasts,
+          ...event.competitions.flatMap((item) => item.broadcasts ?? []),
+        ].every((id) => id in season.broadcasters),
       ),
     { message: 'Event refers to an unknown broadcaster' },
   );

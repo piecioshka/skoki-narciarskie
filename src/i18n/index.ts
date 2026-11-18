@@ -143,6 +143,7 @@ interface Dictionary {
   season: string;
   watch: string;
   broadcastUnknown: string;
+  broadcastNone: string;
   liveResults: string;
   results: string;
   eventPage: string;
@@ -339,6 +340,7 @@ const pl: Dictionary = {
   season: 'Sezon',
   watch: 'Transmisja',
   broadcastUnknown: 'Nadawca nie jest jeszcze znany',
+  broadcastNone: 'Bez transmisji w telewizji',
   liveResults: 'Wyniki na żywo',
   results: 'Wyniki',
   eventPage: 'Program zawodów',
@@ -350,6 +352,7 @@ const pl: Dictionary = {
   backToSchedule: 'Wróć do terminarza',
   hill: 'Skocznia',
   kinds: {
+    training: 'Oficjalny trening',
     qualification: 'Kwalifikacje',
     individual: 'Konkurs indywidualny',
     team: 'Konkurs drużynowy',
@@ -544,6 +547,7 @@ const en: Dictionary = {
   season: 'Season',
   watch: 'Broadcast',
   broadcastUnknown: 'Broadcaster not announced yet',
+  broadcastNone: 'Not shown on TV',
   liveResults: 'Live results',
   results: 'Results',
   eventPage: 'Event program',
@@ -555,6 +559,7 @@ const en: Dictionary = {
   backToSchedule: 'Back to schedule',
   hill: 'Hill',
   kinds: {
+    training: 'Official training',
     qualification: 'Qualification',
     individual: 'Individual competition',
     team: 'Team competition',

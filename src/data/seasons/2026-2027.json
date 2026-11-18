@@ -13,6 +13,10 @@
       "name": "TVN (Player)",
       "url": "https://player.pl/"
     },
+    "ttv": {
+      "name": "TTV (Player)",
+      "url": "https://player.pl/"
+    },
     "tvp": {
       "name": "TVP Sport",
       "url": "https://sport.tvp.pl/transmisje"
@@ -31,12 +35,22 @@
       "broadcasts": ["hbo-max", "eurosport", "tvn"],
       "competitions": [
         {
+          "fisRaceId": null,
+          "kind": "training",
+          "hillSize": 140,
+          "date": "2026-11-20",
+          "time": "12:00",
+          "status": "scheduled",
+          "broadcasts": []
+        },
+        {
           "fisRaceId": 7796,
           "kind": "qualification",
           "hillSize": 140,
           "date": "2026-11-20",
           "time": "14:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "broadcasts": ["hbo-max", "eurosport"]
         },
         {
           "fisRaceId": 7794,
@@ -44,7 +58,8 @@
           "hillSize": 140,
           "date": "2026-11-20",
           "time": "16:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "broadcasts": ["hbo-max", "eurosport", "ttv"]
         },
         {
           "fisRaceId": 7795,
@@ -60,7 +75,8 @@
           "hillSize": 140,
           "date": "2026-11-22",
           "time": "14:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "broadcasts": ["hbo-max", "eurosport"]
         },
         {
           "fisRaceId": 7797,

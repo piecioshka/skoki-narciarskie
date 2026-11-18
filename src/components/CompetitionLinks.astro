@@ -13,7 +13,8 @@ interface Props {
 
 const { lang, season, event, competition } = Astro.props;
 const dict = t(lang);
-const broadcasters = getBroadcasters(season, event);
+const broadcasters = getBroadcasters(season, event, competition);
+const resultsUrl = getResultsUrl(competition);
 ---
 
 <ul class="links">
@@ -31,7 +32,9 @@ const broadcasters = getBroadcasters(season, event);
   ))}
   {broadcasters.length === 0 && (
     <li class="links__item links__item--broadcast links__note">
-      {dict.broadcastUnknown}
+      {competition.broadcasts === undefined
+        ? dict.broadcastUnknown
+        : dict.broadcastNone}
     </li>
   )}
   <li class="links__item links__item--live">
@@ -40,10 +43,12 @@ const broadcasters = getBroadcasters(season, event);
       {dict.liveResults}
     </a>
   </li>
-  <li class="links__item">
-    <a class="button" href={getResultsUrl(competition)}>
-      <Icon name="list" />
-      {dict.results}
-    </a>
-  </li>
+  {resultsUrl && (
+    <li class="links__item">
+      <a class="button" href={resultsUrl}>
+        <Icon name="list" />
+        {dict.results}
+      </a>
+    </li>
+  )}
 </ul>

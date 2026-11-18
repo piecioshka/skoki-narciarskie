@@ -37,15 +37,24 @@ function buildEvent(
         `DTEND;VALUE=DATE:${formatDay(addDays(competition.date, 1))}`,
       ];
 
+  const resultsUrl = getResultsUrl(competition);
+  const uid =
+    competition.fisRaceId === null
+      ? `${competition.kind}-${event.slug}-${competition.date}-${competition.time ?? 'tba'}`
+      : `fis-race-${competition.fisRaceId}`;
+  const description = [dict.types[event.type], resultsUrl]
+    .filter(Boolean)
+    .join('\n');
+
   return [
     'BEGIN:VEVENT',
-    `UID:fis-race-${competition.fisRaceId}@skoki-narciarskie`,
+    `UID:${uid}@skoki-narciarskie`,
     `DTSTAMP:${stamp}`,
     ...when,
     `SUMMARY:${escapeText(summary)}`,
     `LOCATION:${escapeText([event.hillName, event.city].filter(Boolean).join(', '))}`,
-    `DESCRIPTION:${escapeText(`${dict.types[event.type]}\n${getResultsUrl(competition)}`)}`,
-    `URL:${getResultsUrl(competition)}`,
+    `DESCRIPTION:${escapeText(description)}`,
+    ...(resultsUrl ? [`URL:${resultsUrl}`] : []),
     `STATUS:${competition.status === 'cancelled' ? 'CANCELLED' : 'CONFIRMED'}`,
     'END:VEVENT',
   ];

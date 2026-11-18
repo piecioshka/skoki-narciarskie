@@ -43,6 +43,7 @@ const visits = getSeasons().flatMap((season) =>
         .filter(
           (item) =>
             item.kind !== 'qualification' &&
+            item.kind !== 'training' &&
             (item.hillSize === null || item.hillSize === hill.hillSize),
         )
         .map((competition) => ({ season, event, competition })),

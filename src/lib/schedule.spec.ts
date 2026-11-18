@@ -175,6 +175,24 @@ describe('buildCalendar', () => {
     expect(calendar.startsWith('BEGIN:VCALENDAR\r\n')).toBe(true);
     expect(calendar).toContain('UID:fis-race-7@skoki-narciarskie');
   });
+
+  it('gives training a stable identifier and no FIS link', () => {
+    const training = buildCalendar(
+      season([
+        event([
+          competition({ fisRaceId: null, kind: 'training', time: '12:00' }),
+        ]),
+      ]),
+      'en',
+      new Date('2026-11-01T00:00:00Z'),
+    );
+
+    expect(training).toContain(
+      'UID:training-lillehammer-2026-11-21-12:00@skoki-narciarskie',
+    );
+    expect(training).toContain('SUMMARY:Lillehammer: Official training');
+    expect(training).not.toContain('URL:');
+  });
 });
 
 describe('getPastWinners', () => {

@@ -4,9 +4,14 @@ const FIS = 'https://www.fis-ski.com/DB';
 
 export const FIS_LIVE_URL = `${FIS}/ski-jumping/live.html`;
 
-/** FIS page of a single competition: start list, live scoring link, results. */
-export function getResultsUrl(competition: Competition): string {
-  return `${FIS}/general/results.html?sectorcode=JP&raceid=${competition.fisRaceId}`;
+/**
+ * FIS page of a single competition: start list, live scoring link, results.
+ * Null for training, which FIS does not publish as a race.
+ */
+export function getResultsUrl(competition: Competition): string | null {
+  return competition.fisRaceId === null
+    ? null
+    : `${FIS}/general/results.html?sectorcode=JP&raceid=${competition.fisRaceId}`;
 }
 
 export function getFisEventUrl(season: Season, event: SeasonEvent): string {
@@ -18,8 +23,9 @@ export function getFisEventUrl(season: Season, event: SeasonEvent): string {
 export function getBroadcasters(
   season: Season,
   event: SeasonEvent,
+  competition: Competition,
 ): Broadcaster[] {
-  return event.broadcasts.flatMap((id) => {
+  return (competition.broadcasts ?? event.broadcasts).flatMap((id) => {
     const broadcaster = season.broadcasters[id];
 
     return broadcaster ? [broadcaster] : [];
