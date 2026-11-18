@@ -178,10 +178,12 @@ test.describe('gallery', () => {
   }) => {
     await page.goto('/pl/2026-2027/gallery/');
 
-    const item = page.locator('.gallery__item').first();
+    const item = page
+      .locator('.gallery__item')
+      .filter({ hasText: 'Program sezonu' });
     const image = item.locator('img');
 
-    await expect(item).toContainText('Program sezonu');
+    await expect(item).toHaveCount(1);
     await expect(
       item.getByRole('link', { name: 'Autor programów' }),
     ).toHaveAttribute('href', /facebook\.com/);
