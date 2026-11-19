@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
 import SlotTime from '../../../components/SlotTime.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../../i18n';
 import Layout from '../../../layouts/Layout.astro';
@@ -27,10 +28,6 @@ const competitions = listCompetitions(season).filter(
 );
 // Only a no-JS fallback; the client script picks the poster on every tick.
 const buildTimeNext = findNext(competitions, new Date());
-// The address on the poster tells whoever gets the screenshot where it is from.
-const siteAddress = new URL(url('/'), Astro.site).href
-  .replace(/^https?:\/\//, '')
-  .replace(/\/$/, '');
 const units = ['days', 'hours', 'minutes', 'seconds'] as const;
 const posters = competitions.map((item) => {
   const [hill] = getEventHills(item.event);
@@ -74,6 +71,7 @@ const posters = competitions.map((item) => {
           data-slot-end={item.slot.end.toISOString()}
           data-slot-timed={String(item.slot.timed)}
           data-race={item.competition.fisRaceId}
+          data-event={item.event.slug}
         >
           {item.photo && (
             <Image
@@ -122,7 +120,9 @@ const posters = competitions.map((item) => {
               <span class="poster__city-name">{item.event.city}</span>
             </h3>
             <p class="poster__kind">
-              {dict.kinds[item.competition.kind]}
+              <span class="poster__kind-name">
+                {dict.kinds[item.competition.kind]}
+              </span>
               {item.hill && (
                 <span class="poster__hill">
                   {item.hill.name} · HS{item.hill.hillSize}
@@ -145,7 +145,7 @@ const posters = competitions.map((item) => {
             </p>
 
             <p class="poster__start">
-              <span class="poster__start-label">{dict.startsIn}</span>
+              <span class="poster__start-label">{dict.posterStartsAt}</span>{' '}
               <SlotTime
                 lang={lang}
                 competition={item.competition}
@@ -158,7 +158,8 @@ const posters = competitions.map((item) => {
                 <strong class="poster__record-value">
                   {formatNumber(item.hill.record.distance, lang)} m
                 </strong>{' '}
-                {item.hill.record.athlete} ({item.hill.record.nation})
+                {item.hill.record.athlete} ({item.hill.record.nation}) ·{' '}
+                <span class="poster__record-date">{item.hill.record.date}</span>
               </p>
             )}
 
@@ -171,11 +172,43 @@ const posters = competitions.map((item) => {
                 height="20"
               />
               <span class="poster__site">{dict.siteName}</span>
-              <span class="poster__address">{siteAddress}</span>
             </p>
           </div>
         </article>
       ))}
+    </div>
+    <div class="poster-export" hidden={buildTimeNext === undefined}>
+      <button
+        class="button button--primary js-poster-export"
+        type="button"
+        data-kind="image"
+        data-idle={dict.posterExport.image}
+        data-busy={dict.posterExport.imageBusy}
+        data-done={dict.posterExport.done}
+        data-failed={dict.posterExport.failed}
+      >
+        <Icon name="download" class="poster-export__idle" />
+        <Icon name="loader" class="poster-export__spinner" />
+        <span class="js-poster-export-label">{dict.posterExport.image}</span>
+      </button>
+      <button
+        class="button js-poster-export"
+        type="button"
+        data-kind="video"
+        data-idle={dict.posterExport.video}
+        data-busy={dict.posterExport.videoBusy}
+        data-done={dict.posterExport.done}
+        data-failed={dict.posterExport.failed}
+        data-unsupported={dict.posterExport.unsupported}
+      >
+        <Icon name="video" class="poster-export__idle" />
+        <Icon name="loader" class="poster-export__spinner" />
+        <span class="js-poster-export-label">{dict.posterExport.video}</span>
+      </button>
+      <p
+        class="poster-export__status js-poster-export-status"
+        role="status"
+      ></p>
     </div>
     <p class="notice js-season-over" hidden={buildTimeNext !== undefined}>
       {dict.seasonOver}

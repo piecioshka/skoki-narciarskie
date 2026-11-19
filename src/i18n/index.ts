@@ -180,6 +180,16 @@ interface Dictionary {
   posterLive: string;
   posterToday: string;
   posterRecord: string;
+  posterStartsAt: string;
+  posterExport: {
+    image: string;
+    imageBusy: string;
+    video: string;
+    videoBusy: string;
+    done: string;
+    failed: string;
+    unsupported: string;
+  };
   notFoundTitle: string;
   notFoundLead: string;
   goHome: string;
@@ -396,6 +406,17 @@ const pl: Dictionary = {
   posterLive: 'Konkurs trwa!',
   posterToday: 'To już dziś!',
   posterRecord: 'Rekord skoczni',
+  posterStartsAt: 'Rozpoczęcie',
+  posterExport: {
+    image: 'Eksportuj obrazek',
+    imageBusy: 'Eksportowanie obrazka…',
+    video: 'Eksportuj film 15 s',
+    videoBusy: 'Eksportowanie filmu…',
+    done: 'Plik zapisany w pobranych.',
+    failed: 'Nie udało się zapisać pliku.',
+    unsupported:
+      'Ta przeglądarka nie nagrywa filmów. Spróbuj w Chrome albo Safari.',
+  },
   notFoundTitle: 'Nie ma takiej strony',
   notFoundLead: 'Adres jest błędny albo strona została przeniesiona.',
   goHome: 'Strona główna',
@@ -613,6 +634,16 @@ const en: Dictionary = {
   posterLive: 'Live now!',
   posterToday: 'It is today!',
   posterRecord: 'Hill record',
+  posterStartsAt: 'Starts',
+  posterExport: {
+    image: 'Export image',
+    imageBusy: 'Exporting image…',
+    video: 'Export 15 s video',
+    videoBusy: 'Exporting video…',
+    done: 'The file is in your downloads.',
+    failed: 'The file could not be saved.',
+    unsupported: 'This browser cannot record video. Try Chrome or Safari.',
+  },
   notFoundTitle: 'Page not found',
   notFoundLead: 'The address is wrong or the page has moved.',
   goHome: 'Home page',

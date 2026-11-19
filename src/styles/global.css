@@ -2152,11 +2152,6 @@ a[href^='http']:not(.icon-button)::after {
   font-weight: var(--pal-font-weight-bold);
 }
 
-.poster__address {
-  font-family: var(--pal-font-mono);
-  color: var(--poster-ink-muted);
-}
-
 @keyframes poster-zoom {
   to {
     transform: scale(1.14) translate(-1.5%, -1%);
@@ -2205,6 +2200,48 @@ a[href^='http']:not(.icon-button)::after {
 
   .poster-stage[data-format='wide'] .poster__city:not(.poster__city--xlong) {
     font-size: 11cqw;
+  }
+}
+
+.poster-export {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.poster-export__status {
+  flex-basis: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: var(--pal-font-size-sm);
+  color: var(--pal-text-muted);
+}
+
+.poster-export__status:empty {
+  display: none;
+}
+
+.poster-export__spinner,
+.button[aria-busy='true'] .poster-export__idle {
+  display: none;
+}
+
+.button[aria-busy='true'] .poster-export__spinner {
+  display: block;
+  animation: poster-spin 1s linear infinite;
+}
+
+.button:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+@keyframes poster-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 

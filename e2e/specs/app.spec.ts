@@ -142,6 +142,36 @@ test.describe('countdown poster', () => {
     await expect(poster.locator('.poster__photo')).toBeVisible();
   });
 
+  test('shows the start time and the date of the hill record', async ({
+    page,
+  }) => {
+    await openAt(page, '/pl/countdown/', BEFORE_SEASON);
+
+    const poster = page.locator('.js-poster:visible');
+
+    await expect(poster.locator('.poster__start')).toContainText(
+      /Rozpoczęcie \d{4}-\d{2}-\d{2} \d{2}:\d{2}/,
+    );
+    await expect(poster.locator('.poster__record-date')).toHaveText(
+      /^\d{4}-\d{2}-\d{2}$/,
+    );
+  });
+
+  test('exports the poster as a PNG in the chosen format', async ({ page }) => {
+    await openAt(page, '/pl/countdown/', BEFORE_SEASON);
+    await page.getByRole('button', { name: 'Pionowo' }).click();
+
+    const download = page.waitForEvent('download');
+
+    await page.getByRole('button', { name: 'Eksportuj obrazek' }).click();
+    expect((await download).suggestedFilename()).toBe(
+      'countdown-lillehammer-2026-11-20-story.png',
+    );
+    await expect(page.locator('.js-poster-export-status')).toHaveText(
+      'Plik zapisany w pobranych.',
+    );
+  });
+
   test('is linked from the next competition card', async ({ page }) => {
     await openAt(page, '/pl/', BEFORE_SEASON);
     await page

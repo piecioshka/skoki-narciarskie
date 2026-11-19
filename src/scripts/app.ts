@@ -2,6 +2,7 @@ import { STORAGE_KEYS } from '../config';
 import { isLang, t, type Lang } from '../i18n';
 import { getPhase, type Slot } from '../lib/schedule';
 import { countdown, formatLocal } from '../lib/time';
+import { setupPosterExport } from './poster-export';
 
 const MAX_UPCOMING_EVENTS = 3;
 
@@ -403,6 +404,18 @@ function setup(): void {
   setupHomeOnlyFilters();
   setupViewToggles();
   setupPosterFormats();
+  setupPosterExport({
+    current: () => {
+      const element = all('.js-poster').find((card) => !card.hidden);
+      const slot = element ? readSlot(element) : undefined;
+
+      return element && slot ? { element, slot } : undefined;
+    },
+    liveLabel: (slot) =>
+      getPhase(new Date(), slot) === 'live'
+        ? t(getLang()).posterLive
+        : t(getLang()).posterToday,
+  });
   setupToc();
   showLocalTimes();
   refresh();
