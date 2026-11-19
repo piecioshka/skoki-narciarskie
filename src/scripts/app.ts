@@ -79,7 +79,7 @@ function formatCountdown(now: Date, target: Date, lang: Lang): string {
   const units = t(lang).countdownUnits;
   const left = countdown(now, target);
   const parts = [
-    left.days > 0 ? `${left.days} ${units.days}` : '',
+    left.days > 0 ? `${left.days} ${units.days(left.days)}` : '',
     `${left.hours} ${units.hours}`,
     `${left.minutes} ${units.minutes}`,
     `${left.seconds} ${units.seconds}`,

@@ -160,7 +160,8 @@ interface Dictionary {
   phases: Record<Phase, string>;
   statuses: { cancelled: string; moved: string };
   countdownUnits: {
-    days: string;
+    /** Polish needs "dzień" for one day and "dni" for more. */
+    days: (count: number) => string;
     hours: string;
     minutes: string;
     seconds: string;
@@ -395,7 +396,12 @@ const pl: Dictionary = {
     finished: 'Zakończony',
   },
   statuses: { cancelled: 'Odwołany', moved: 'Przeniesiony' },
-  countdownUnits: { days: 'd', hours: 'h', minutes: 'min', seconds: 's' },
+  countdownUnits: {
+    days: (count) => (count === 1 ? 'dzień' : 'dni'),
+    hours: 'godz.',
+    minutes: 'min',
+    seconds: 's',
+  },
   startsIn: 'Start za',
   posterTitle: 'Odliczanie',
   posterLead: 'Zrób zrzut ekranu i wyślij znajomym, niech też odliczają.',
@@ -622,7 +628,12 @@ const en: Dictionary = {
     finished: 'Finished',
   },
   statuses: { cancelled: 'Cancelled', moved: 'Rescheduled' },
-  countdownUnits: { days: 'd', hours: 'h', minutes: 'min', seconds: 's' },
+  countdownUnits: {
+    days: () => 'd',
+    hours: 'h',
+    minutes: 'min',
+    seconds: 's',
+  },
   startsIn: 'Starts in',
   posterTitle: 'Countdown',
   posterLead:

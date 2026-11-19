@@ -54,7 +54,7 @@ test.describe('home page', () => {
     await expect(next).toContainText('Lillehammer');
     await expect(next).toContainText('Kwalifikacje');
     await expect(next.locator('.js-countdown-value')).toHaveText(
-      '4 d 1 h 0 min 0 s',
+      '4 dni 1 godz. 0 min 0 s',
     );
     await expect(next.getByRole('link', { name: 'HBO Max' })).toBeVisible();
     await expect(
