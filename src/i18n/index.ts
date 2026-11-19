@@ -406,7 +406,7 @@ const pl: Dictionary = {
   posterLive: 'Konkurs trwa!',
   posterToday: 'To już dziś!',
   posterRecord: 'Rekord skoczni',
-  posterStartsAt: 'Rozpoczęcie',
+  posterStartsAt: 'Start o',
   posterExport: {
     image: 'Eksportuj obrazek',
     imageBusy: 'Eksportowanie obrazka…',
@@ -634,7 +634,7 @@ const en: Dictionary = {
   posterLive: 'Live now!',
   posterToday: 'It is today!',
   posterRecord: 'Hill record',
-  posterStartsAt: 'Starts',
+  posterStartsAt: 'Starts at',
   posterExport: {
     image: 'Export image',
     imageBusy: 'Exporting image…',

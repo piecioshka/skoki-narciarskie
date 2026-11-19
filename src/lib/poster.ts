@@ -2,9 +2,9 @@ export type PosterFormat = 'wide' | 'story';
 
 export const POSTER_VIDEO_SECONDS = 15;
 
-// About 5 MB for 15 s: small enough to send in a chat, and the picture is
+// About 3 MB for 15 s: small enough to send in a chat, and the picture is
 // mostly a still photo, so the snow and the digits stay sharp.
-export const POSTER_VIDEO_BITRATE = 2_500_000;
+export const POSTER_VIDEO_BITRATE = 1_500_000;
 
 /** Pixel size of an exported poster: Full HD, landscape or a phone story. */
 export function posterSize(format: PosterFormat): {

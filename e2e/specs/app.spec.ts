@@ -150,7 +150,7 @@ test.describe('countdown poster', () => {
     const poster = page.locator('.js-poster:visible');
 
     await expect(poster.locator('.poster__start')).toContainText(
-      /Rozpoczęcie \d{4}-\d{2}-\d{2} \d{2}:\d{2}/,
+      /Start o \d{4}-\d{2}-\d{2} \d{2}:\d{2}/,
     );
     await expect(poster.locator('.poster__record-date')).toHaveText(
       /^\d{4}-\d{2}-\d{2}$/,
