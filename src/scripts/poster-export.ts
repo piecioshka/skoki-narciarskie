@@ -1,5 +1,6 @@
 import {
   pickVideoType,
+  POSTER_VIDEO_BITRATE,
   POSTER_VIDEO_SECONDS,
   posterFileName,
   posterSize,
@@ -742,7 +743,7 @@ async function exportVideo(
   const stream = canvas.captureStream(30);
   const recorder = new MediaRecorder(stream, {
     mimeType: type,
-    videoBitsPerSecond: 8_000_000,
+    videoBitsPerSecond: POSTER_VIDEO_BITRATE,
   });
   const chunks: Blob[] = [];
   const started = performance.now();
