@@ -125,6 +125,66 @@ test.describe('home page', () => {
   });
 });
 
+test.describe('countdown poster', () => {
+  test('counts down to the next competition', async ({ page }) => {
+    await openAt(page, '/pl/countdown/', BEFORE_SEASON);
+
+    const poster = page.locator('.js-poster:visible');
+
+    await expect(poster).toHaveCount(1);
+    await expect(poster.locator('.poster__city')).toContainText('Lillehammer');
+    await expect(poster.locator('.poster__digits')).toHaveText([
+      '04',
+      '01',
+      '00',
+      '00',
+    ]);
+    await expect(poster.locator('.poster__photo')).toBeVisible();
+  });
+
+  test('is linked from the next competition card', async ({ page }) => {
+    await openAt(page, '/pl/', BEFORE_SEASON);
+    await page
+      .locator('.js-next:visible')
+      .getByRole('link', { name: 'Odliczanie na plakacie' })
+      .click();
+    await expect(page).toHaveURL(/\/pl\/countdown\/$/);
+  });
+
+  test('switches to a portrait poster and remembers it', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await openAt(page, '/pl/countdown/', BEFORE_SEASON);
+    await page.getByRole('button', { name: 'Pionowo' }).click();
+
+    const box = await page.locator('.js-poster:visible').boundingBox();
+
+    expect(box?.height).toBeGreaterThan(box?.width ?? 0);
+    await page.reload();
+    await expect(page.getByRole('button', { name: 'Pionowo' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+  });
+
+  test('shows a live banner instead of the clock', async ({ page }) => {
+    await openAt(page, '/pl/countdown/', DURING_FIRST_RACE);
+
+    const poster = page.locator('.js-poster:visible');
+
+    await expect(poster.locator('.js-poster-live')).toHaveText('Konkurs trwa!');
+    await expect(poster.locator('.js-poster-clock')).toBeHidden();
+  });
+
+  test('says the season is over after the last competition', async ({
+    page,
+  }) => {
+    await openAt(page, '/pl/countdown/', AFTER_SEASON);
+
+    await expect(page.locator('.js-poster:visible')).toHaveCount(0);
+    await expect(page.locator('.js-season-over')).toBeVisible();
+  });
+});
+
 test.describe('schedule', () => {
   test('lists every event of the season', async ({ page }) => {
     await openAt(page, '/pl/2026-2027/', AFTER_FIRST_EVENT);

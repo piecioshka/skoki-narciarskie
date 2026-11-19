@@ -42,7 +42,8 @@ const [seasonSegment, sectionSegment] = path.split('/').filter(Boolean);
 const sections = ['standings', 'gallery'];
 const topLevel = ['tournaments', 'hills', 'nations', 'rules'];
 const activeSection =
-  seasonSegment === undefined || seasonSegment === 'credits'
+  seasonSegment === undefined ||
+  ['credits', 'countdown'].includes(seasonSegment)
     ? undefined
     : (topLevel.find((item) => item === seasonSegment) ??
       sections.find((item) => item === sectionSegment) ??

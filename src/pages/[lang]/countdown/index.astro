@@ -1,0 +1,187 @@
+---
+import { Image } from 'astro:assets';
+import SlotTime from '../../../components/SlotTime.astro';
+import { getCountryName, LANGUAGES, t, type Lang } from '../../../i18n';
+import Layout from '../../../layouts/Layout.astro';
+import { formatNumber, getEventHills, getHillPhoto } from '../../../lib/hills';
+import { getFlag } from '../../../lib/links';
+import { url } from '../../../lib/paths';
+import { findNext, listCompetitions } from '../../../lib/schedule';
+import { formatSeasonLabel, getCurrentSeason } from '../../../lib/seasons';
+
+export function getStaticPaths() {
+  return LANGUAGES.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const season = getCurrentSeason();
+const competitions = listCompetitions(season).filter(
+  (item) =>
+    item.competition.status !== 'cancelled' &&
+    item.competition.kind !== 'training',
+);
+// Only a no-JS fallback; the client script picks the poster on every tick.
+const buildTimeNext = findNext(competitions, new Date());
+// The address on the poster tells whoever gets the screenshot where it is from.
+const siteAddress = new URL(url('/'), Astro.site).href
+  .replace(/^https?:\/\//, '')
+  .replace(/\/$/, '');
+const units = ['days', 'hours', 'minutes', 'seconds'] as const;
+const posters = competitions.map((item) => {
+  const [hill] = getEventHills(item.event);
+
+  return { ...item, hill, photo: hill ? getHillPhoto(hill) : undefined };
+});
+---
+
+<Layout
+  lang={lang}
+  path="/countdown/"
+  title={dict.posterTitle}
+  description={dict.posterLead}
+>
+  <section class="section" aria-labelledby="poster-title">
+    <div class="section__header">
+      <h2 class="section__title" id="poster-title">
+        {dict.posterTitle}
+      </h2>
+      <div class="poster-formats" role="group" aria-label={dict.posterFormat}>
+        {(['wide', 'story'] as const).map((format) => (
+          <button
+            class="button js-poster-format"
+            type="button"
+            data-format={format}
+            aria-pressed={format === 'wide' ? 'true' : 'false'}
+          >
+            {dict.posterFormats[format]}
+          </button>
+        ))}
+      </div>
+    </div>
+    <p class="lead">{dict.posterLead}</p>
+
+    <div class="poster-stage js-poster-stage" data-format="wide">
+      {posters.map((item) => (
+        <article
+          class="poster js-poster js-slot"
+          hidden={item.slot !== buildTimeNext?.slot}
+          data-slot-start={item.slot.start.toISOString()}
+          data-slot-end={item.slot.end.toISOString()}
+          data-slot-timed={String(item.slot.timed)}
+          data-race={item.competition.fisRaceId}
+        >
+          {item.photo && (
+            <Image
+              class="poster__photo"
+              src={item.photo}
+              width={1600}
+              alt=""
+              loading="eager"
+            />
+          )}
+          <div class="poster__shade" aria-hidden="true" />
+          <div class="poster__snow" aria-hidden="true" />
+          <svg
+            class="poster__flight"
+            viewBox="0 0 400 200"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              class="poster__flight-hill"
+              d="M0 40 Q 120 60 160 110 T 400 200"
+            />
+            <path class="poster__flight-path" d="M150 92 Q 260 70 380 170" />
+          </svg>
+
+          <div class="poster__body">
+            <p class="poster__kicker">
+              {dict.types[item.event.type]} {formatSeasonLabel(season.id)}
+            </p>
+            <h3
+              class:list={[
+                'poster__city',
+                {
+                  'poster__city--long': item.event.city.length > 8,
+                  'poster__city--xlong': item.event.city.length > 12,
+                },
+              ]}
+            >
+              <span
+                class="poster__flag"
+                role="img"
+                aria-label={getCountryName(lang, item.event.countryCode)}
+              >
+                {getFlag(item.event.countryCode)}
+              </span>
+              <span class="poster__city-name">{item.event.city}</span>
+            </h3>
+            <p class="poster__kind">
+              {dict.kinds[item.competition.kind]}
+              {item.hill && (
+                <span class="poster__hill">
+                  {item.hill.name} · HS{item.hill.hillSize}
+                </span>
+              )}
+            </p>
+
+            <div class="poster__clock js-poster-clock">
+              {units.map((unit) => (
+                <div class={`poster__unit poster__unit--${unit}`}>
+                  <span class={`poster__digits js-poster-${unit}`}>--</span>
+                  <span class="poster__unit-label">
+                    {dict.posterUnits[unit]}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p class="poster__live js-poster-live" hidden>
+              {dict.posterLive}
+            </p>
+
+            <p class="poster__start">
+              <span class="poster__start-label">{dict.startsIn}</span>
+              <SlotTime
+                lang={lang}
+                competition={item.competition}
+                timeSlot={item.slot}
+              />
+            </p>
+            {item.hill?.record && (
+              <p class="poster__record">
+                {dict.posterRecord}:{' '}
+                <strong class="poster__record-value">
+                  {formatNumber(item.hill.record.distance, lang)} m
+                </strong>{' '}
+                {item.hill.record.athlete} ({item.hill.record.nation})
+              </p>
+            )}
+
+            <p class="poster__footer">
+              <img
+                class="poster__logo"
+                src={url('/favicon.svg')}
+                alt=""
+                width="20"
+                height="20"
+              />
+              <span class="poster__site">{dict.siteName}</span>
+              <span class="poster__address">{siteAddress}</span>
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+    <p class="notice js-season-over" hidden={buildTimeNext !== undefined}>
+      {dict.seasonOver}
+    </p>
+    <p class="note">
+      {dict.timeZoneNote} <span class="js-time-zone">Europe/Warsaw</span>
+    </p>
+  </section>
+</Layout>

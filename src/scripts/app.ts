@@ -87,11 +87,11 @@ function formatCountdown(now: Date, target: Date, lang: Lang): string {
   return parts.filter(Boolean).join(' ');
 }
 
-function updateNext(now: Date, lang: Lang): void {
-  const cards = all('.js-next');
-
+/** The first card whose competition has not finished; the rest are hidden. */
+function showCurrent(cards: HTMLElement[], now: Date): HTMLElement | undefined {
+  // Each page has one kind of card; an empty list must not flag the season.
   if (cards.length === 0) {
-    return;
+    return undefined;
   }
 
   const current = cards.find((card) => {
@@ -106,7 +106,11 @@ function updateNext(now: Date, lang: Lang): void {
   for (const element of all('.js-season-over')) {
     element.hidden = current !== undefined;
   }
+  return current;
+}
 
+function updateNext(now: Date, lang: Lang): void {
+  const current = showCurrent(all('.js-next'), now);
   const slot = current ? readSlot(current) : undefined;
 
   if (current && slot) {
@@ -118,6 +122,63 @@ function updateNext(now: Date, lang: Lang): void {
     for (const element of all('.js-countdown-value', current)) {
       element.textContent = formatCountdown(now, slot.start, lang);
     }
+  }
+}
+
+function updatePoster(now: Date, lang: Lang): void {
+  const current = showCurrent(all('.js-poster'), now);
+  const slot = current ? readSlot(current) : undefined;
+
+  if (!current || !slot) {
+    return;
+  }
+
+  const phase = getPhase(now, slot);
+  const left = countdown(now, slot.start);
+
+  for (const element of all('.js-poster-clock', current)) {
+    element.hidden = phase !== 'upcoming';
+  }
+  for (const element of all('.js-poster-live', current)) {
+    element.hidden = phase === 'upcoming';
+    element.textContent =
+      phase === 'live' ? t(lang).posterLive : t(lang).posterToday;
+  }
+  for (const unit of ['days', 'hours', 'minutes', 'seconds'] as const) {
+    for (const element of all(`.js-poster-${unit}`, current)) {
+      element.textContent = String(left[unit]).padStart(2, '0');
+    }
+  }
+}
+
+function setupPosterFormats(): void {
+  const stage = document.querySelector<HTMLElement>('.js-poster-stage');
+  const buttons = all('.js-poster-format');
+
+  if (!stage) {
+    return;
+  }
+
+  // A phone screenshot fits a story better, so narrow screens start there.
+  const fallback = matchMedia('(max-width: 640px)').matches ? 'story' : 'wide';
+  const apply = (format: string): void => {
+    stage.dataset['format'] = format;
+    for (const button of buttons) {
+      button.setAttribute(
+        'aria-pressed',
+        String(button.dataset['format'] === format),
+      );
+    }
+  };
+
+  apply(read(STORAGE_KEYS.posterFormat) ?? fallback);
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      const format = button.dataset['format'] ?? 'wide';
+
+      store(STORAGE_KEYS.posterFormat, format);
+      apply(format);
+    });
   }
 }
 
@@ -271,6 +332,7 @@ function refresh(): void {
 
   updatePhases(now, lang);
   updateNext(now, lang);
+  updatePoster(now, lang);
   updateUpcomingEvents();
 }
 
@@ -340,6 +402,7 @@ function setup(): void {
   openExternalLinksInNewTab();
   setupHomeOnlyFilters();
   setupViewToggles();
+  setupPosterFormats();
   setupToc();
   showLocalTimes();
   refresh();

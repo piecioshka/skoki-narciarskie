@@ -5,6 +5,7 @@ const PAGES = [
   '/pl/nations/pol/',
   '/pl/2026-2027/gallery/',
   '/pl/2026-2027/wisla/',
+  '/pl/countdown/',
 ];
 
 test.describe('navigation', () => {

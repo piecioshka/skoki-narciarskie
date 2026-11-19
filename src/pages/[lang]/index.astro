@@ -9,7 +9,7 @@ import Layout from '../../layouts/Layout.astro';
 import EventHillPhoto from '../../components/EventHillPhoto.astro';
 import { describeEventHill } from '../../lib/hills';
 import { getFlag } from '../../lib/links';
-import { eventPath, seasonPath } from '../../lib/paths';
+import { countdownPath, eventPath, seasonPath } from '../../lib/paths';
 import { findNext, listCompetitions, sortEvents } from '../../lib/schedule';
 import { formatSeasonLabel, getCurrentSeason } from '../../lib/seasons';
 
@@ -84,6 +84,10 @@ const buildTimeNext = findNext(competitions, new Date());
           event={item.event}
           competition={item.competition}
         />
+        <a class="link next__poster" href={countdownPath(lang)}>
+          {dict.posterOpen}
+          <Icon name="chevron-right" />
+        </a>
         <a
           class="link next__more"
           href={eventPath(lang, season.id, item.event.slug)}

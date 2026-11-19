@@ -1812,3 +1812,402 @@ a[href^='http']:not(.icon-button)::after {
 .season-panel .teams + .note {
   margin-bottom: 0;
 }
+
+/* Countdown poster: a picture made to be screenshotted and shared, so it keeps
+   its own dark colors in both themes and sizes everything from its width. */
+
+:root {
+  --poster-ink: #ffffff;
+  --poster-ink-muted: rgb(255 255 255 / 72%);
+  --poster-accent: #ffd23f;
+  --poster-glow: rgb(255 210 63 / 45%);
+  --poster-night: #050b1f;
+  --poster-brand: #1d4ed8;
+  --poster-tile: rgb(5 11 31 / 55%);
+  --poster-tile-border: rgb(255 255 255 / 18%);
+  --poster-live: #ff4d5e;
+}
+
+.poster-formats {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.poster-stage {
+  display: flex;
+  justify-content: center;
+}
+
+.poster {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 22rem;
+  border-radius: calc(var(--pal-radius) * 2);
+  background:
+    radial-gradient(120% 90% at 85% 0%, #1d4ed8 0%, transparent 60%),
+    var(--poster-night);
+  color: var(--poster-ink);
+  container-type: inline-size;
+  isolation: isolate;
+}
+
+.poster-stage[data-format='story'] .poster {
+  width: min(100%, 30rem);
+  aspect-ratio: 9 / 16;
+}
+
+.poster__photo,
+.poster__shade,
+.poster__snow,
+.poster__flight {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.poster__photo {
+  z-index: -3;
+  object-fit: cover;
+  transform: scale(1.06);
+  filter: saturate(1.15) contrast(1.05);
+  animation: poster-zoom 30s ease-in-out infinite alternate;
+}
+
+.poster__shade {
+  z-index: -2;
+  background:
+    linear-gradient(
+      100deg,
+      rgb(5 11 31 / 94%) 0%,
+      rgb(5 11 31 / 78%) 42%,
+      rgb(29 78 216 / 25%) 100%
+    ),
+    linear-gradient(0deg, rgb(5 11 31 / 85%) 0%, transparent 45%);
+}
+
+.poster-stage[data-format='story'] .poster__shade {
+  background:
+    linear-gradient(
+      180deg,
+      rgb(5 11 31 / 55%) 0%,
+      rgb(5 11 31 / 88%) 45%,
+      rgb(5 11 31 / 96%) 100%
+    ),
+    linear-gradient(0deg, rgb(29 78 216 / 30%), transparent 60%);
+}
+
+.poster__snow {
+  z-index: -1;
+  opacity: 0.7;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 70% 10%, #fff 50%, transparent 51%),
+    radial-gradient(2.5px 2.5px at 40% 70%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 85% 55%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 55% 45%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 10% 85%, #fff 50%, transparent 51%);
+  background-size: 240px 240px;
+  animation: poster-snow 14s linear infinite;
+}
+
+.poster__flight {
+  z-index: -1;
+  inset: auto 0 0 auto;
+  width: 60%;
+  height: auto;
+  opacity: 0.5;
+}
+
+.poster-stage[data-format='story'] .poster__flight {
+  width: 100%;
+  opacity: 0.35;
+}
+
+.poster__flight-hill,
+.poster__flight-path {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.poster__flight-hill {
+  stroke: rgb(255 255 255 / 55%);
+  stroke-width: 3;
+}
+
+.poster__flight-path {
+  stroke: var(--poster-accent);
+  stroke-width: 2.5;
+  stroke-dasharray: 2 9;
+  animation: poster-flight 3s linear infinite;
+}
+
+.poster__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.6cqw;
+  width: 100%;
+  padding: 5cqw 6cqw;
+}
+
+.poster-stage[data-format='story'] .poster__body {
+  justify-content: flex-end;
+  gap: 3.2cqw;
+  padding: 10cqw 8cqw;
+}
+
+.poster__kicker {
+  align-self: flex-start;
+  margin: 0;
+  padding: 0.5cqw 1.6cqw;
+  border-radius: 99px;
+  background: var(--poster-accent);
+  color: var(--poster-night);
+  font-size: max(0.7rem, 1.5cqw);
+  font-weight: var(--pal-font-weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.poster__city {
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  margin: 0;
+  font-size: 8.5cqw;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  text-shadow: 0 0.4cqw 2.4cqw rgb(0 0 0 / 45%);
+}
+
+.poster__city-name {
+  min-width: 0;
+}
+
+/* Long names get smaller type, so a word never breaks in the middle. */
+.poster__city--xlong {
+  font-size: 6.5cqw;
+}
+
+.poster__flag {
+  font-size: 0.7em;
+  font-style: normal;
+}
+
+.poster__kind {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.4cqw;
+  margin: 0;
+  font-size: max(0.8rem, 2.1cqw);
+  font-weight: var(--pal-font-weight-semibold);
+}
+
+.poster__hill {
+  color: var(--poster-ink-muted);
+}
+
+.poster__clock {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.4cqw;
+  max-width: 62cqw;
+  margin-top: 1.4cqw;
+}
+
+.poster-stage[data-format='story'] .poster__clock {
+  max-width: none;
+  gap: 2.4cqw;
+}
+
+.poster__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.4cqw 0.6cqw 1.1cqw;
+  border: 1px solid var(--poster-tile-border);
+  border-radius: 1.4cqw;
+  background: var(--poster-tile);
+  backdrop-filter: blur(6px);
+}
+
+.poster__digits {
+  font-family: var(--pal-font-mono);
+  font-size: 7cqw;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: var(--poster-accent);
+  text-shadow: 0 0 2.4cqw var(--poster-glow);
+}
+
+.poster-stage[data-format='story'] .poster__digits {
+  font-size: 13cqw;
+}
+
+.poster__unit-label {
+  margin-top: 0.6cqw;
+  font-size: max(0.6rem, 1.4cqw);
+  font-weight: var(--pal-font-weight-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--poster-ink-muted);
+}
+
+.poster-stage[data-format='story'] .poster__unit-label {
+  font-size: max(0.6rem, 2.8cqw);
+}
+
+.poster__live {
+  align-self: flex-start;
+  margin: 1.4cqw 0 0;
+  padding: 1cqw 3cqw;
+  border-radius: 1.4cqw;
+  background: var(--poster-live);
+  font-size: 6cqw;
+  font-style: italic;
+  font-weight: 900;
+  text-transform: uppercase;
+  animation: poster-pulse 1.6s ease-in-out infinite;
+}
+
+.poster__start,
+.poster__record {
+  margin: 0;
+  font-size: max(0.75rem, 1.7cqw);
+  color: var(--poster-ink-muted);
+}
+
+.poster-stage[data-format='story'] .poster__start,
+.poster-stage[data-format='story'] .poster__record,
+.poster-stage[data-format='story'] .poster__kind {
+  font-size: max(0.75rem, 3.6cqw);
+}
+
+.poster-stage[data-format='story'] .poster__kicker {
+  font-size: max(0.7rem, 3cqw);
+}
+
+.poster-stage[data-format='story'] .poster__city {
+  font-size: 15cqw;
+}
+
+.poster-stage[data-format='story'] .poster__city--long {
+  font-size: 11cqw;
+}
+
+.poster-stage[data-format='story'] .poster__city--xlong {
+  font-size: 9cqw;
+}
+
+.poster__start {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1cqw;
+}
+
+.poster__start .slot-time {
+  font-family: var(--pal-font-mono);
+  font-weight: var(--pal-font-weight-bold);
+  color: var(--poster-ink);
+}
+
+.poster__start .slot-time__unknown {
+  color: var(--poster-ink-muted);
+}
+
+.poster__record-value {
+  color: var(--poster-ink);
+}
+
+.poster__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6cqw 1.2cqw;
+  margin: 1.4cqw 0 0;
+  padding-top: 1.4cqw;
+  border-top: 1px solid var(--poster-tile-border);
+  font-size: max(0.7rem, 1.5cqw);
+}
+
+.poster-stage[data-format='story'] .poster__footer {
+  font-size: max(0.7rem, 3cqw);
+}
+
+.poster__logo {
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.poster__site {
+  font-weight: var(--pal-font-weight-bold);
+}
+
+.poster__address {
+  font-family: var(--pal-font-mono);
+  color: var(--poster-ink-muted);
+}
+
+@keyframes poster-zoom {
+  to {
+    transform: scale(1.14) translate(-1.5%, -1%);
+  }
+}
+
+@keyframes poster-snow {
+  to {
+    background-position: 60px 240px;
+  }
+}
+
+@keyframes poster-flight {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+@keyframes poster-pulse {
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster__photo,
+  .poster__snow,
+  .poster__flight-path,
+  .poster__live {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .poster-stage[data-format='wide'] .poster {
+    aspect-ratio: auto;
+  }
+
+  .poster__clock {
+    max-width: none;
+  }
+
+  .poster-stage[data-format='wide'] .poster__digits {
+    font-size: 10cqw;
+  }
+
+  .poster-stage[data-format='wide'] .poster__city:not(.poster__city--xlong) {
+    font-size: 11cqw;
+  }
+}
+
+.next__poster {
+  margin: 1rem 1rem 0 0;
+}

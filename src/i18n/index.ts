@@ -166,6 +166,20 @@ interface Dictionary {
     seconds: string;
   };
   startsIn: string;
+  posterTitle: string;
+  posterLead: string;
+  posterOpen: string;
+  posterFormat: string;
+  posterFormats: { wide: string; story: string };
+  posterUnits: {
+    days: string;
+    hours: string;
+    minutes: string;
+    seconds: string;
+  };
+  posterLive: string;
+  posterToday: string;
+  posterRecord: string;
   notFoundTitle: string;
   notFoundLead: string;
   goHome: string;
@@ -373,6 +387,15 @@ const pl: Dictionary = {
   statuses: { cancelled: 'Odwołany', moved: 'Przeniesiony' },
   countdownUnits: { days: 'd', hours: 'h', minutes: 'min', seconds: 's' },
   startsIn: 'Start za',
+  posterTitle: 'Odliczanie',
+  posterLead: 'Zrób zrzut ekranu i wyślij znajomym, niech też odliczają.',
+  posterOpen: 'Odliczanie na plakacie',
+  posterFormat: 'Format plakatu',
+  posterFormats: { wide: 'Poziomo', story: 'Pionowo' },
+  posterUnits: { days: 'dni', hours: 'godz.', minutes: 'min', seconds: 'sek.' },
+  posterLive: 'Konkurs trwa!',
+  posterToday: 'To już dziś!',
+  posterRecord: 'Rekord skoczni',
   notFoundTitle: 'Nie ma takiej strony',
   notFoundLead: 'Adres jest błędny albo strona została przeniesiona.',
   goHome: 'Strona główna',
@@ -580,6 +603,16 @@ const en: Dictionary = {
   statuses: { cancelled: 'Cancelled', moved: 'Rescheduled' },
   countdownUnits: { days: 'd', hours: 'h', minutes: 'min', seconds: 's' },
   startsIn: 'Starts in',
+  posterTitle: 'Countdown',
+  posterLead:
+    'Take a screenshot and send it to your friends so they count down too.',
+  posterOpen: 'Countdown poster',
+  posterFormat: 'Poster format',
+  posterFormats: { wide: 'Landscape', story: 'Portrait' },
+  posterUnits: { days: 'days', hours: 'hrs', minutes: 'min', seconds: 'sec' },
+  posterLive: 'Live now!',
+  posterToday: 'It is today!',
+  posterRecord: 'Hill record',
   notFoundTitle: 'Page not found',
   notFoundLead: 'The address is wrong or the page has moved.',
   goHome: 'Home page',

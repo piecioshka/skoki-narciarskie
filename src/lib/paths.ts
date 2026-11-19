@@ -62,3 +62,7 @@ export function nationPath(lang: Lang, nation: string): string {
 export function rulesPath(lang: Lang): string {
   return url(`/${lang}/rules/`);
 }
+
+export function countdownPath(lang: Lang): string {
+  return url(`/${lang}/countdown/`);
+}

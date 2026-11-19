@@ -8,4 +8,5 @@ export const STORAGE_KEYS = {
   theme: 'ski-jumping:theme',
   lang: 'ski-jumping:lang',
   homeOnly: 'ski-jumping:home-only',
+  posterFormat: 'ski-jumping:poster-format',
 } as const;
