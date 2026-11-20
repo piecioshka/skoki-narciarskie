@@ -1,7 +1,7 @@
 import type { Lang } from '../i18n';
 import { t } from '../i18n';
 import { eventPath } from './paths';
-import { listCompetitions } from './schedule';
+import { COMPETITION_DURATION_MINUTES, listCompetitions } from './schedule';
 import type { Season } from './schema';
 
 // A background tab runs timers late (even once a minute), and a page opened
@@ -53,6 +53,18 @@ export function findDueAlerts(
 
     return (
       start <= now.getTime() && start > windowStart && !shown.has(alert.id)
+    );
+  });
+}
+
+/** True while any competition is between its start and its expected end. */
+export function isAnyLive(alerts: StartAlert[], now: Date): boolean {
+  return alerts.some((alert) => {
+    const start = Date.parse(alert.start);
+
+    return (
+      start <= now.getTime() &&
+      now.getTime() < start + COMPETITION_DURATION_MINUTES * 60_000
     );
   });
 }

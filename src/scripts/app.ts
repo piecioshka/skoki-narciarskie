@@ -3,6 +3,7 @@ import { isLang, t, type Lang } from '../i18n';
 import { getPhase, type Slot } from '../lib/schedule';
 import { countdown, formatLocal } from '../lib/time';
 import { setupPosterExport } from './poster-export';
+import { setupLiveFavicon } from './live-favicon';
 import { setupStartAlerts } from './start-alerts';
 
 const MAX_UPCOMING_EVENTS = 3;
@@ -421,9 +422,11 @@ function setup(): void {
   showLocalTimes();
 
   const checkStartAlerts = setupStartAlerts();
+  const updateFavicon = setupLiveFavicon();
   const tick = (): void => {
     refresh();
     checkStartAlerts?.();
+    updateFavicon();
   };
 
   tick();

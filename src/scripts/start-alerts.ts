@@ -32,7 +32,7 @@ function isAlert(value: unknown): value is StartAlert {
   );
 }
 
-function readAlerts(): StartAlert[] {
+export function readAlerts(): StartAlert[] {
   const text = document.getElementById('start-alerts-data')?.textContent;
 
   try {

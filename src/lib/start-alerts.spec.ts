@@ -3,6 +3,7 @@ import type { Competition, Season } from './schema';
 import {
   buildStartAlerts,
   findDueAlerts,
+  isAnyLive,
   type StartAlert,
 } from './start-alerts';
 
@@ -98,5 +99,19 @@ describe('findDueAlerts', () => {
 
   it('skips alerts already shown', () => {
     expect(findDueAlerts(alerts, now, new Set(['now']))).toEqual([]);
+  });
+});
+
+describe('isAnyLive', () => {
+  const alerts = [alert('a', '2026-11-21T15:50:00.000Z')];
+
+  it('is true from the start until the expected end', () => {
+    expect(isAnyLive(alerts, new Date('2026-11-21T15:50:00.000Z'))).toBe(true);
+    expect(isAnyLive(alerts, new Date('2026-11-21T18:19:59.000Z'))).toBe(true);
+  });
+
+  it('is false before the start and after the end', () => {
+    expect(isAnyLive(alerts, new Date('2026-11-21T15:49:59.000Z'))).toBe(false);
+    expect(isAnyLive(alerts, new Date('2026-11-21T18:20:00.000Z'))).toBe(false);
   });
 });

@@ -135,7 +135,14 @@ const jsonLdText = jsonLd
         href={absolute(`/${code}${path}`)}
       />
     ))}
-    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      id="favicon"
+      href={url('/favicon.svg')}
+      data-idle={url('/favicon.svg')}
+      data-live={url('/favicon-live.svg')}
+    />
     <link rel="sitemap" href={url('/sitemap-index.xml')} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={dict.siteName} />

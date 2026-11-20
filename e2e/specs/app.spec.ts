@@ -518,3 +518,22 @@ test.describe('start notifications', () => {
     );
   });
 });
+
+test.describe('live favicon', () => {
+  test('shows a red dot while a competition is on', async ({ page }) => {
+    await openAt(page, '/pl/', DURING_FIRST_RACE);
+    await expect(page.locator('#favicon')).toHaveAttribute(
+      'href',
+      /favicon-live\.svg$/,
+    );
+  });
+
+  test('keeps the plain icon when nothing is on', async ({ page }) => {
+    await openAt(page, '/pl/', BEFORE_SEASON);
+    await page.waitForLoadState('load');
+    await expect(page.locator('#favicon')).toHaveAttribute(
+      'href',
+      /\/favicon\.svg$/,
+    );
+  });
+});
