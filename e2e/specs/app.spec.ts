@@ -381,3 +381,111 @@ test.describe('layout', () => {
     }
   }
 });
+
+test.describe('start notifications', () => {
+  const JUST_AFTER_START = new Date('2026-11-21T15:51:00Z');
+
+  async function mockNotifications(
+    page: Page,
+    permission: NotificationPermission,
+  ): Promise<void> {
+    await page.addInitScript((initial) => {
+      const created: { title: string; body: string }[] = [];
+
+      class FakeNotification extends EventTarget {
+        static permission: NotificationPermission = initial;
+
+        static requestPermission(): Promise<NotificationPermission> {
+          FakeNotification.permission = 'granted';
+          return Promise.resolve('granted');
+        }
+
+        constructor(title: string, options: NotificationOptions = {}) {
+          super();
+          created.push({ title, body: options.body ?? '' });
+          Reflect.set(window, 'lastNotification', this);
+        }
+
+        close(): void {
+          // Nothing to close in the fake.
+        }
+      }
+
+      Reflect.set(window, 'Notification', FakeNotification);
+      Reflect.set(window, 'createdNotifications', created);
+    }, permission);
+  }
+
+  test('asks for permission, announces a start and opens its event', async ({
+    page,
+  }) => {
+    await mockNotifications(page, 'default');
+    await openAt(page, '/pl/2026-2027/', JUST_AFTER_START);
+
+    const toggle = page.locator('#start-alerts-toggle');
+
+    await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+    await toggle.click();
+    await expect(toggle).toHaveAttribute('aria-pressed', 'true');
+    await expect
+      .poll(() =>
+        page.evaluate(() => Reflect.get(window, 'createdNotifications')),
+      )
+      .toEqual([
+        {
+          title: 'Zawody wystartowały: Lillehammer',
+          body: 'Konkurs indywidualny HS140. Kliknij, aby otworzyć stronę zawodów.',
+        },
+      ]);
+
+    await page.evaluate(() => {
+      const notification: unknown = Reflect.get(window, 'lastNotification');
+
+      if (notification instanceof EventTarget) {
+        notification.dispatchEvent(new Event('click'));
+      }
+    });
+    await expect(page).toHaveURL(/\/pl\/2026-2027\/lillehammer\/$/);
+  });
+
+  test('announces each start once across page loads', async ({ page }) => {
+    await mockNotifications(page, 'granted');
+    await page.addInitScript(() => {
+      localStorage.setItem('ski-jumping:start-alerts', 'true');
+    });
+    await openAt(page, '/pl/', JUST_AFTER_START);
+    await expect
+      .poll(() =>
+        page.evaluate(() => {
+          const created: unknown = Reflect.get(window, 'createdNotifications');
+
+          return Array.isArray(created) ? created.length : -1;
+        }),
+      )
+      .toBe(1);
+    await page.reload();
+    await page.waitForTimeout(1500);
+    expect(
+      await page.evaluate(() => {
+        const created: unknown = Reflect.get(window, 'createdNotifications');
+
+        return Array.isArray(created) ? created.length : -1;
+      }),
+    ).toBe(0);
+  });
+
+  test('shows the blocked state when the browser denies notifications', async ({
+    page,
+  }) => {
+    await mockNotifications(page, 'denied');
+    await page.goto('/pl/');
+
+    const toggle = page.locator('#start-alerts-toggle');
+
+    await expect(toggle).toHaveAttribute('aria-disabled', 'true');
+    await expect(toggle).toHaveAttribute(
+      'title',
+      'Powiadomienia są zablokowane w ustawieniach przeglądarki',
+    );
+  });
+});

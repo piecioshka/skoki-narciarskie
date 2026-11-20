@@ -167,6 +167,11 @@ interface Dictionary {
     seconds: string;
   };
   startsIn: string;
+  startAlertTitle: string;
+  startAlertBody: string;
+  startAlertsOn: string;
+  startAlertsOff: string;
+  startAlertsBlocked: string;
   posterTitle: string;
   posterLead: string;
   posterOpen: string;
@@ -403,6 +408,12 @@ const pl: Dictionary = {
     seconds: 's',
   },
   startsIn: 'Start za',
+  startAlertTitle: 'Zawody wystartowały',
+  startAlertBody: 'Kliknij, aby otworzyć stronę zawodów.',
+  startAlertsOn: 'Wyłącz powiadomienia o starcie zawodów',
+  startAlertsOff: 'Włącz powiadomienia o starcie zawodów',
+  startAlertsBlocked:
+    'Powiadomienia są zablokowane w ustawieniach przeglądarki',
   posterTitle: 'Odliczanie',
   posterLead: 'Zrób zrzut ekranu i wyślij znajomym, niech też odliczają.',
   posterOpen: 'Odliczanie na plakacie',
@@ -635,6 +646,11 @@ const en: Dictionary = {
     seconds: 's',
   },
   startsIn: 'Starts in',
+  startAlertTitle: 'Competition started',
+  startAlertBody: 'Click to open the event page.',
+  startAlertsOn: 'Turn off competition start notifications',
+  startAlertsOff: 'Turn on competition start notifications',
+  startAlertsBlocked: 'Notifications are blocked in the browser settings',
   posterTitle: 'Countdown',
   posterLead:
     'Take a screenshot and send it to your friends so they count down too.',

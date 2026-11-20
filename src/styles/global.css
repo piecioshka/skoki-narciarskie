@@ -175,6 +175,15 @@ body {
   line-height: 1;
 }
 
+.icon--bell,
+.icon-button--alerts[aria-pressed='true'] .icon--bell-off {
+  display: none;
+}
+
+.icon-button--alerts[aria-pressed='true'] .icon--bell {
+  display: block;
+}
+
 .icon--moon,
 :root[data-theme='dark'] .icon--sun {
   display: none;

@@ -17,6 +17,7 @@ import {
   url,
 } from '../lib/paths';
 import { getCurrentSeason } from '../lib/seasons';
+import { buildStartAlerts } from '../lib/start-alerts';
 
 interface Props {
   lang: Lang;
@@ -106,6 +107,11 @@ const navLinks = [
     hint: rules[lang].title,
   },
 ];
+// Every page carries the season's starts, so a notification fires on
+// whichever page is open.
+const startAlertsText = JSON.stringify(
+  buildStartAlerts(season, lang),
+).replaceAll('<', '\\u003c');
 const flags: Record<Lang, string> = { pl: '🇵🇱', en: '🇬🇧' };
 const themeKey = STORAGE_KEYS.theme;
 // "<" must not appear raw inside an inline JSON script.
@@ -191,6 +197,21 @@ const jsonLdText = jsonLd
           ))}
         </nav>
         <div class="topbar__actions">
+          <button
+            class="icon-button icon-button--alerts js-start-alerts"
+            id="start-alerts-toggle"
+            type="button"
+            aria-pressed="false"
+            aria-label={dict.startAlertsOff}
+            title={dict.startAlertsOff}
+            data-label-on={dict.startAlertsOn}
+            data-label-off={dict.startAlertsOff}
+            data-label-blocked={dict.startAlertsBlocked}
+            hidden
+          >
+            <Icon name="bell" class="icon--bell" />
+            <Icon name="bell-off" class="icon--bell-off" />
+          </button>
           <a
             class="icon-button icon-button--flag"
             id="language-switch"
@@ -297,6 +318,12 @@ const jsonLdText = jsonLd
       </form>
     </dialog>
 
+    <script
+      is:inline
+      type="application/json"
+      id="start-alerts-data"
+      set:html={startAlertsText}
+    />
     <script>
       import '../scripts/app';
     </script>

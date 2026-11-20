@@ -9,4 +9,6 @@ export const STORAGE_KEYS = {
   lang: 'ski-jumping:lang',
   homeOnly: 'ski-jumping:home-only',
   posterFormat: 'ski-jumping:poster-format',
+  startAlerts: 'ski-jumping:start-alerts',
+  startAlertsShown: 'ski-jumping:start-alerts-shown',
 } as const;
