@@ -2,6 +2,10 @@ import { z } from 'zod';
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const localTime = z.string().regex(/^\d{2}:\d{2}$/);
+// PDF attachments from the FIS event page, labelled as FIS labels them.
+const documentsSchema = z.array(
+  z.object({ label: z.string().min(1), url: z.url() }),
+);
 
 export const competitionSchema = z
   .object({
@@ -38,6 +42,7 @@ export const competitionSchema = z
         }),
       )
       .default([]),
+    documents: documentsSchema.optional(),
     // Broadcasters of this competition alone; falls back to the event's list.
     broadcasts: z.array(z.string()).optional(),
   })
@@ -63,6 +68,7 @@ export const eventSchema = z.object({
   timeZone: z.string().min(1),
   broadcasts: z.array(z.string()),
   officials: z.array(officialSchema).default([]),
+  documents: documentsSchema.optional(),
   // Poles on the FIS start list of the event; empty until FIS publishes it.
   polishAthletes: z
     .array(

@@ -41,7 +41,13 @@
           "date": "2026-11-20",
           "time": "12:00",
           "status": "scheduled",
-          "broadcasts": []
+          "broadcasts": [],
+          "documents": [
+            {
+              "label": "Results Training",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/5a224b88-6370-4618-9531-4954aa9d9a14.pdf"
+            }
+          ]
         },
         {
           "fisRaceId": 7796,
@@ -51,7 +57,17 @@
           "time": "14:00",
           "status": "scheduled",
           "broadcasts": ["eurosport-pilot", "eurosport-polsat"],
-          "fisCodex": "0002"
+          "fisCodex": "0002",
+          "documents": [
+            {
+              "label": "Start List Qualification",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/5e8134d6-d27e-4785-8e6b-2620e1df2bfd.pdf"
+            },
+            {
+              "label": "Media Stats",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/29b37709-6176-4805-9085-835406ed6ae7.pdf"
+            }
+          ]
         },
         {
           "fisRaceId": 7794,
@@ -61,7 +77,13 @@
           "time": "16:00",
           "status": "scheduled",
           "broadcasts": ["eurosport-pilot", "eurosport-polsat", "ttv"],
-          "fisCodex": "0315"
+          "fisCodex": "0315",
+          "documents": [
+            {
+              "label": "Media Stats",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/260c6c7d-4aee-4667-8ea2-4d56af610704.pdf"
+            }
+          ]
         },
         {
           "fisRaceId": 7795,
@@ -70,7 +92,13 @@
           "date": "2026-11-21",
           "time": "16:50",
           "status": "scheduled",
-          "fisCodex": "0001"
+          "fisCodex": "0001",
+          "documents": [
+            {
+              "label": "Media Stats",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/318f709f-81cd-4947-a137-8b337091a4a1.pdf"
+            }
+          ]
         },
         {
           "fisRaceId": 8010,
@@ -80,7 +108,13 @@
           "time": "14:30",
           "status": "scheduled",
           "broadcasts": ["eurosport-pilot", "eurosport-polsat"],
-          "fisCodex": "0075"
+          "fisCodex": "0075",
+          "documents": [
+            {
+              "label": "Media Stats",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/187ae994-5424-403b-b77a-08c23653c8cb.pdf"
+            }
+          ]
         },
         {
           "fisRaceId": 7797,
@@ -89,7 +123,13 @@
           "date": "2026-11-22",
           "time": "16:00",
           "status": "scheduled",
-          "fisCodex": "0003"
+          "fisCodex": "0003",
+          "documents": [
+            {
+              "label": "Media Stats",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/93d83361-2a63-4fd8-9532-730b8a13c39a.pdf"
+            }
+          ]
         }
       ],
       "officials": [
@@ -128,6 +168,12 @@
         {
           "name": "Kacper Tomasiak",
           "fisCompetitorId": 239625
+        }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/9ab63717-7f55-4940-a267-b68f62712ff5.pdf"
         }
       ]
     },
@@ -180,6 +226,12 @@
           "role": "technical-delegate-assistant",
           "name": "Josef Hlava",
           "nation": "CZE"
+        }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/c7f36b3b-1df3-4af6-b303-f1e28156c69a.pdf"
         }
       ]
     },
@@ -267,6 +319,12 @@
           "name": "Tomaz Dezmen",
           "nation": "SLO"
         }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/f1b65947-fa86-4850-8fe6-79cff72d5fea.pdf"
+        }
       ]
     },
     {
@@ -348,6 +406,12 @@
           "name": "Petra Toivonen",
           "nation": "FIN"
         }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/68b679e7-3536-44ec-a1a0-844ecd38a0bd.pdf"
+        }
       ]
     },
     {
@@ -400,6 +464,12 @@
           "name": "Harald Haefker",
           "nation": "GER"
         }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/9e810d57-31ed-492a-9701-3c074c9ed71e.pdf"
+        }
       ]
     },
     {
@@ -442,6 +512,12 @@
           "role": "technical-delegate-assistant",
           "name": "Josef Hlava",
           "nation": "CZE"
+        }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/a266630e-bcf1-44b5-b1d9-23f2c35ca6ef.pdf"
         }
       ]
     },
@@ -486,6 +562,12 @@
           "name": "Sandro Sambugaro",
           "nation": "ITA"
         }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/35f1c1e1-5e10-4803-8b7b-c0236301c1ec.pdf"
+        }
       ]
     },
     {
@@ -529,6 +611,12 @@
           "name": "Kristian Brenden",
           "nation": "NOR"
         }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/c82a172f-10fd-4502-b464-bbb0ac8aa0a2.pdf"
+        }
       ]
     },
     {
@@ -571,6 +659,12 @@
           "role": "technical-delegate-assistant",
           "name": "Suzanne Tahk",
           "nation": "EST"
+        }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/08d834cc-d788-4f34-ba2c-31c93b359d68.pdf"
         }
       ]
     },
@@ -623,6 +717,12 @@
           "role": "technical-delegate-assistant",
           "name": "Lindsey Van",
           "nation": "USA"
+        }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/78695893-0a0f-4130-8060-f7f0c687191f.pdf"
         }
       ]
     },
@@ -693,6 +793,12 @@
           "role": "technical-delegate-assistant",
           "name": "Sandro Sambugaro",
           "nation": "ITA"
+        }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/5d8b97b6-c57d-4603-9d46-c0ef1a3507bf.pdf"
         }
       ]
     },
@@ -770,6 +876,12 @@
           "name": "Nazym Nassyrov",
           "nation": "KAZ"
         }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/30a77f21-192e-4c01-8847-1b98814f0db7.pdf"
+        }
       ]
     },
     {
@@ -821,6 +933,12 @@
           "role": "technical-delegate-assistant",
           "name": "Josef Hlava",
           "nation": "CZE"
+        }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/421ae0ca-bdcf-430e-9555-5f7e15035bd3.pdf"
         }
       ]
     },
@@ -914,6 +1032,12 @@
           "role": "technical-delegate-assistant",
           "name": "Suzanne Tahk",
           "nation": "EST"
+        }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/f124781f-ad5b-4841-a71b-a178fbb55065.pdf"
         }
       ]
     },
@@ -1084,6 +1208,12 @@
           "role": "technical-delegate-assistant",
           "name": "Georg Spaeth",
           "nation": "GER"
+        }
+      ],
+      "documents": [
+        {
+          "label": "Event Program",
+          "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/911537b1-3c4c-4618-a889-62240a3134b2.pdf"
         }
       ]
     }

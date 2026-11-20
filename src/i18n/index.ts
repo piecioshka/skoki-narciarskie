@@ -149,6 +149,8 @@ interface Dictionary {
   results: string;
   eventPage: string;
   fisEventPage: string;
+  /** FIS attachment labels; an unknown label is shown as FIS wrote it. */
+  documentLabels: Record<string, string>;
   program: string;
   timeUnknown: string;
   timeZoneNote: string;
@@ -382,6 +384,20 @@ const pl: Dictionary = {
   results: 'Wyniki',
   eventPage: 'Program zawodów',
   fisEventPage: 'Strona zawodów w FIS',
+  documentLabels: {
+    'Event Program': 'Program zawodów',
+    'Media Stats': 'Statystyki dla mediów',
+    'Results Training': 'Wyniki treningu',
+    'Qualification Results': 'Wyniki kwalifikacji',
+    'Official Results': 'Wyniki oficjalne',
+    Results: 'Wyniki',
+    'Start List': 'Lista startowa',
+    'Start List Qualification': 'Lista startowa kwalifikacji',
+    'Start List Training': 'Lista startowa treningu',
+    'Start List 1st Round': 'Lista startowa 1. serii',
+    'Start List 2nd Round': 'Lista startowa 2. serii',
+    'Trial Round Results': 'Wyniki serii próbnej',
+  },
   program: 'Program',
   timeUnknown: 'godzina nieznana',
   timeZoneNote: 'Godziny w strefie czasowej:',
@@ -626,6 +642,7 @@ const en: Dictionary = {
   results: 'Results',
   eventPage: 'Event program',
   fisEventPage: 'Event page at FIS',
+  documentLabels: {},
   program: 'Program',
   timeUnknown: 'time not announced',
   timeZoneNote: 'Times shown in time zone:',

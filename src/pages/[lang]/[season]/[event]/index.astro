@@ -139,6 +139,14 @@ const jsonLd = {
       <a class="link" href={getFisEventUrl(season, event)}>
         {dict.fisEventPage}
       </a>
+      {(event.documents ?? []).map((document) => (
+        <>
+          {' · '}
+          <a class="link" href={document.url}>
+            {dict.documentLabels[document.label] ?? document.label} (PDF)
+          </a>
+        </>
+      ))}
     </p>
   </header>
 

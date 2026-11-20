@@ -21,6 +21,7 @@ Serwer deweloperski startuje na pierwszym wolnym porcie od 3000.
 - `npm run lint` - ESLint
 - `npm run format` / `npm run format:check` - Prettier
 - `npm run standings` - pobiera klasyfikację generalną z FIS do `src/data/standings/`
+- `npm run documents` - pobiera z FIS pliki PDF zawodów (program, listy startowe, wyniki, Media Stats) dla nadchodzących i trwających zawodów; jedne zawody: `npm run documents -- 2026-2027 lillehammer`
 - `npm run import-season -- 2025-2026` - importuje zakończony sezon z FIS (zawody, konkursy mężczyzn i mieszane, podia)
 - `npm run ci` - wszystko, co uruchamia CI; ten sam skrypt odpala hook `pre-push`
 

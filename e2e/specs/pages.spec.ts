@@ -939,3 +939,24 @@ test.describe('polish athletes', () => {
     ).toHaveCount(0);
   });
 });
+
+test.describe('fis documents', () => {
+  test('event page links the FIS PDFs of the event and its competitions', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/lillehammer/');
+    await expect(
+      page.locator('.event-header').getByRole('link', {
+        name: 'Program zawodów (PDF)',
+      }),
+    ).toHaveAttribute('href', /competition-attachment\/.+\.pdf$/);
+    await expect(
+      page.getByRole('link', { name: 'Wyniki treningu (PDF)' }),
+    ).toHaveAttribute('href', /competition-attachment\/.+\.pdf$/);
+    await expect(
+      page
+        .locator('.competition[data-race="7796"]')
+        .getByRole('link', { name: 'Lista startowa kwalifikacji (PDF)' }),
+    ).toBeVisible();
+  });
+});
