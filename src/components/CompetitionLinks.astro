@@ -17,46 +17,50 @@ const broadcasters = getBroadcasters(season, event, competition);
 const resultsUrl = getResultsUrl(competition);
 ---
 
-<ul class="links">
-  {broadcasters.map((broadcaster) => (
-    <li class="links__item links__item--broadcast">
-      <a
-        class="button button--primary"
-        href={broadcaster.url}
-        title={`${dict.watch}: ${broadcaster.name}`}
-      >
-        <Icon name="tv" />
-        {broadcaster.name}
+<div class="links">
+  <ul class="links__row links__row--broadcast">
+    {broadcasters.map((broadcaster) => (
+      <li class="links__item links__item--broadcast">
+        <a
+          class="button button--primary"
+          href={broadcaster.url}
+          title={`${dict.watch}: ${broadcaster.name}`}
+        >
+          <Icon name="tv" />
+          {broadcaster.name}
+        </a>
+      </li>
+    ))}
+    {broadcasters.length === 0 && (
+      <li class="links__item links__item--broadcast links__note">
+        {competition.broadcasts === undefined
+          ? dict.broadcastUnknown
+          : dict.broadcastNone}
+      </li>
+    )}
+  </ul>
+  <ul class="links__row">
+    <li class="links__item links__item--live">
+      <a class="button" href={getLiveUrl(competition)}>
+        <Icon name="activity" />
+        {dict.liveResults}
       </a>
     </li>
-  ))}
-  {broadcasters.length === 0 && (
-    <li class="links__item links__item--broadcast links__note">
-      {competition.broadcasts === undefined
-        ? dict.broadcastUnknown
-        : dict.broadcastNone}
-    </li>
-  )}
-  <li class="links__item links__item--live">
-    <a class="button" href={getLiveUrl(competition)}>
-      <Icon name="activity" />
-      {dict.liveResults}
-    </a>
-  </li>
-  {(competition.documents ?? []).map((document) => (
-    <li class="links__item links__item--document">
-      <a class="button" href={document.url}>
-        <Icon name="file-text" />
-        {dict.documentLabels[document.label] ?? document.label} (PDF)
-      </a>
-    </li>
-  ))}
-  {resultsUrl && (
-    <li class="links__item">
-      <a class="button" href={resultsUrl}>
-        <Icon name="list" />
-        {dict.results}
-      </a>
-    </li>
-  )}
-</ul>
+    {(competition.documents ?? []).map((document) => (
+      <li class="links__item links__item--document">
+        <a class="button" href={document.url}>
+          <Icon name="file-text" />
+          {dict.documentLabels[document.label] ?? document.label} (PDF)
+        </a>
+      </li>
+    ))}
+    {resultsUrl && (
+      <li class="links__item">
+        <a class="button" href={resultsUrl}>
+          <Icon name="list" />
+          {dict.results}
+        </a>
+      </li>
+    )}
+  </ul>
+</div>

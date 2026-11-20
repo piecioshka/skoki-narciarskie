@@ -537,3 +537,30 @@ test.describe('live favicon', () => {
     );
   });
 });
+
+test.describe('competition links', () => {
+  test('put broadcasts on the first row and the rest below', async ({
+    page,
+  }) => {
+    await openAt(page, '/pl/2026-2027/lillehammer/', BEFORE_SEASON);
+
+    const rows = page.locator('.competition[data-race="7796"] .links__row');
+
+    await expect(rows.first().locator('.links__item')).toHaveText([
+      /Eurosport 1 \(Pilot WP\)/,
+      /Eurosport 1 \(Polsat Box Go\)/,
+    ]);
+    await expect(rows.nth(1).locator('.links__item').first()).toHaveText(
+      /Wyniki na żywo/,
+    );
+
+    const first = await rows.first().boundingBox();
+    const second = await rows.nth(1).boundingBox();
+
+    expect(first && second).toBeTruthy();
+    if (first && second) {
+      expect(second.y).toBeGreaterThan(first.y + first.height);
+      expect(second.x).toBeCloseTo(first.x, 0);
+    }
+  });
+});

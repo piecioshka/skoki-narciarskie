@@ -445,6 +445,13 @@ body {
 
 .links {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Broadcasts take the first row, everything else the second. */
+.links__row {
+  display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 0;
@@ -461,8 +468,8 @@ body {
 }
 
 /* A finished competition keeps only the link to its results. */
-[data-phase='finished'] > .links > .links__item--broadcast,
-[data-phase='finished'] > .links > .links__item--live {
+[data-phase='finished'] > .links > .links__row--broadcast,
+[data-phase='finished'] > .links .links__item--live {
   display: none;
 }
 
