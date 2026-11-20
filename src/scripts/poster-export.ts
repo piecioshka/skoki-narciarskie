@@ -717,7 +717,7 @@ function download(blob: Blob, name: string): void {
   setTimeout(() => URL.revokeObjectURL(href), 10_000);
 }
 
-async function exportImage(content: PosterContent): Promise<void> {
+async function renderImage(content: PosterContent): Promise<Blob> {
   const { canvas, frame } = createFrame(content);
 
   drawPoster(frame, new Date(), 0);
@@ -729,10 +729,28 @@ async function exportImage(content: PosterContent): Promise<void> {
   if (!blob) {
     throw new Error('The canvas gave no image');
   }
+  return blob;
+}
+
+async function exportImage(content: PosterContent): Promise<void> {
   download(
-    blob,
+    await renderImage(content),
     posterFileName(content.slug, content.slot.start, content.format, 'png'),
   );
+}
+
+function canCopyImage(): boolean {
+  return 'ClipboardItem' in window && 'write' in navigator.clipboard;
+}
+
+/**
+ * Safari accepts a clipboard write only within the click itself, so the item
+ * gets a promise of the image right away and the drawing happens inside it.
+ */
+async function copyImage(content: Promise<PosterContent>): Promise<void> {
+  await navigator.clipboard.write([
+    new ClipboardItem({ 'image/png': content.then(renderImage) }),
+  ]);
 }
 
 async function exportVideo(
@@ -821,6 +839,33 @@ export function setupPosterExport(options: PosterExportOptions): void {
       ? pickVideoType((type) => MediaRecorder.isTypeSupported(type))
       : undefined;
 
+  const formatOf = (): PosterFormat =>
+    stage?.dataset['format'] === 'story' ? 'story' : 'wide';
+  const contentOf = async (
+    current: NonNullable<ReturnType<PosterExportOptions['current']>>,
+  ): Promise<PosterContent> => {
+    await document.fonts.ready;
+    return readContent(
+      current.element,
+      current.slot,
+      formatOf(),
+      options.liveLabel(current.slot),
+    );
+  };
+  const exportFor = (
+    kind: string | undefined,
+    content: Promise<PosterContent>,
+  ): Promise<void> => {
+    if (kind === 'copy') {
+      return copyImage(content);
+    }
+    return content.then((value) =>
+      kind === 'video' && videoType
+        ? exportVideo(value, videoType)
+        : exportImage(value),
+    );
+  };
+
   const run = async (button: HTMLElement): Promise<void> => {
     const current = options.current();
     const kind = button.dataset['kind'];
@@ -828,28 +873,21 @@ export function setupPosterExport(options: PosterExportOptions): void {
     if (!current || !status) {
       return;
     }
-    if (kind === 'video' && !videoType) {
+    if (
+      (kind === 'video' && !videoType) ||
+      (kind === 'copy' && !canCopyImage())
+    ) {
       status.textContent = button.dataset['unsupported'] ?? '';
       return;
     }
 
-    const format: PosterFormat =
-      stage?.dataset['format'] === 'story' ? 'story' : 'wide';
+    // Started before any await, so the clipboard still sees the click.
+    const job = exportFor(kind, contentOf(current));
 
     setBusy(buttons, button);
     status.textContent = '';
     try {
-      await document.fonts.ready;
-      const content = readContent(
-        current.element,
-        current.slot,
-        format,
-        options.liveLabel(current.slot),
-      );
-
-      await (kind === 'video' && videoType
-        ? exportVideo(content, videoType)
-        : exportImage(content));
+      await job;
       status.textContent = button.dataset['done'] ?? '';
     } catch (error) {
       console.error(error);

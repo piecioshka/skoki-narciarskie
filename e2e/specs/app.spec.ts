@@ -172,6 +172,31 @@ test.describe('countdown poster', () => {
     );
   });
 
+  test('copies the poster as a PNG to the clipboard', async ({ browser }) => {
+    const context = await browser.newContext({
+      permissions: ['clipboard-read', 'clipboard-write'],
+    });
+    const page = await context.newPage();
+
+    await openAt(page, '/pl/countdown/', BEFORE_SEASON);
+    await page.getByRole('button', { name: 'Pionowo' }).click();
+    await page.getByRole('button', { name: 'Kopiuj obrazek' }).click();
+    await expect(page.locator('.js-poster-export-status')).toHaveText(
+      'Obrazek jest w schowku.',
+    );
+
+    const size = await page.evaluate(async () => {
+      const [item] = await navigator.clipboard.read();
+      const blob = await item?.getType('image/png');
+      const bitmap = blob ? await createImageBitmap(blob) : undefined;
+
+      return bitmap ? `${bitmap.width}x${bitmap.height}` : '';
+    });
+
+    expect(size).toBe('1080x1920');
+    await context.close();
+  });
+
   test('is linked from the next competition card', async ({ page }) => {
     await openAt(page, '/pl/', BEFORE_SEASON);
     await page

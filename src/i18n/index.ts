@@ -191,6 +191,11 @@ interface Dictionary {
   posterExport: {
     image: string;
     imageBusy: string;
+    copy: string;
+    copyBusy: string;
+    copied: string;
+    copyFailed: string;
+    copyUnsupported: string;
     video: string;
     videoBusy: string;
     done: string;
@@ -429,6 +434,11 @@ const pl: Dictionary = {
   posterExport: {
     image: 'Eksportuj obrazek',
     imageBusy: 'Eksportowanie obrazka…',
+    copy: 'Kopiuj obrazek',
+    copyBusy: 'Kopiowanie obrazka…',
+    copied: 'Obrazek jest w schowku.',
+    copyFailed: 'Nie udało się skopiować obrazka.',
+    copyUnsupported: 'Ta przeglądarka nie kopiuje obrazków do schowka.',
     video: 'Eksportuj film 15 s',
     videoBusy: 'Eksportowanie filmu…',
     done: 'Plik zapisany w pobranych.',
@@ -668,6 +678,11 @@ const en: Dictionary = {
   posterExport: {
     image: 'Export image',
     imageBusy: 'Exporting image…',
+    copy: 'Copy image',
+    copyBusy: 'Copying image…',
+    copied: 'The image is on your clipboard.',
+    copyFailed: 'The image could not be copied.',
+    copyUnsupported: 'This browser cannot copy images to the clipboard.',
     video: 'Export 15 s video',
     videoBusy: 'Exporting video…',
     done: 'The file is in your downloads.',

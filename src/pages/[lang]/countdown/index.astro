@@ -194,6 +194,20 @@ const posters = competitions.map((item) => {
       <button
         class="button js-poster-export"
         type="button"
+        data-kind="copy"
+        data-idle={dict.posterExport.copy}
+        data-busy={dict.posterExport.copyBusy}
+        data-done={dict.posterExport.copied}
+        data-failed={dict.posterExport.copyFailed}
+        data-unsupported={dict.posterExport.copyUnsupported}
+      >
+        <Icon name="copy" class="poster-export__idle" />
+        <Icon name="loader" class="poster-export__spinner" />
+        <span class="js-poster-export-label">{dict.posterExport.copy}</span>
+      </button>
+      <button
+        class="button js-poster-export"
+        type="button"
         data-kind="video"
         data-idle={dict.posterExport.video}
         data-busy={dict.posterExport.videoBusy}
