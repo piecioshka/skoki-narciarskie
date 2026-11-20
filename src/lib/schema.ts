@@ -7,6 +7,11 @@ export const competitionSchema = z
   .object({
     // FIS gives no race id to official training, so only training may lack one.
     fisRaceId: z.number().int().positive().nullable(),
+    // Race number FIS shows as "Codex"; it names the live scoring page.
+    fisCodex: z
+      .string()
+      .regex(/^\d{4}$/)
+      .optional(),
     kind: z.enum([
       'training',
       'qualification',

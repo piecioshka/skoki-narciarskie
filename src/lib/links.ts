@@ -5,6 +5,16 @@ const FIS = 'https://www.fis-ski.com/DB';
 export const FIS_LIVE_URL = `${FIS}/ski-jumping/live.html`;
 
 /**
+ * Live scoring of a single competition, or the FIS list of live competitions
+ * when the codex is not known (training, imported seasons).
+ */
+export function getLiveUrl(competition: Competition): string {
+  return competition.fisCodex === undefined
+    ? FIS_LIVE_URL
+    : `https://live.fis-ski.com/jp-${competition.fisCodex}/results-pda.htm`;
+}
+
+/**
  * FIS page of a single competition: start list, live scoring link, results.
  * Null for training, which FIS does not publish as a race.
  */

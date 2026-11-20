@@ -50,7 +50,8 @@
           "date": "2026-11-20",
           "time": "14:00",
           "status": "scheduled",
-          "broadcasts": ["hbo-max", "eurosport"]
+          "broadcasts": ["hbo-max", "eurosport"],
+          "fisCodex": "0002"
         },
         {
           "fisRaceId": 7794,
@@ -59,7 +60,8 @@
           "date": "2026-11-20",
           "time": "16:00",
           "status": "scheduled",
-          "broadcasts": ["hbo-max", "eurosport", "ttv"]
+          "broadcasts": ["hbo-max", "eurosport", "ttv"],
+          "fisCodex": "0315"
         },
         {
           "fisRaceId": 7795,
@@ -67,7 +69,8 @@
           "hillSize": 140,
           "date": "2026-11-21",
           "time": "16:50",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0001"
         },
         {
           "fisRaceId": 8010,
@@ -76,7 +79,8 @@
           "date": "2026-11-22",
           "time": "14:30",
           "status": "scheduled",
-          "broadcasts": ["hbo-max", "eurosport"]
+          "broadcasts": ["hbo-max", "eurosport"],
+          "fisCodex": "0075"
         },
         {
           "fisRaceId": 7797,
@@ -84,7 +88,8 @@
           "hillSize": 140,
           "date": "2026-11-22",
           "time": "16:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0003"
         }
       ],
       "officials": [
@@ -117,7 +122,8 @@
           "hillSize": 142,
           "date": "2026-11-27",
           "time": "18:15",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0316"
         },
         {
           "fisRaceId": 7802,
@@ -125,7 +131,8 @@
           "hillSize": 142,
           "date": "2026-11-28",
           "time": "17:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0317"
         },
         {
           "fisRaceId": 7803,
@@ -133,7 +140,8 @@
           "hillSize": 142,
           "date": "2026-11-29",
           "time": "15:20",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0007"
         }
       ],
       "officials": [
@@ -166,7 +174,8 @@
           "hillSize": 134,
           "date": "2026-12-04",
           "time": "18:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0318"
         },
         {
           "fisRaceId": 7805,
@@ -174,7 +183,8 @@
           "hillSize": 134,
           "date": "2026-12-05",
           "time": "16:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0319"
         },
         {
           "fisRaceId": 8015,
@@ -182,7 +192,8 @@
           "hillSize": 134,
           "date": "2026-12-06",
           "time": "14:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0080"
         },
         {
           "fisRaceId": 7806,
@@ -190,7 +201,8 @@
           "hillSize": 134,
           "date": "2026-12-06",
           "time": "15:40",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0008"
         }
       ],
       "officials": [
@@ -248,7 +260,8 @@
           "hillSize": 142,
           "date": "2026-12-11",
           "time": "16:10",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0321"
         },
         {
           "fisRaceId": 7809,
@@ -256,7 +269,8 @@
           "hillSize": 142,
           "date": "2026-12-12",
           "time": "10:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0009"
         },
         {
           "fisRaceId": 7810,
@@ -264,7 +278,8 @@
           "hillSize": 142,
           "date": "2026-12-12",
           "time": "15:40",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0010"
         },
         {
           "fisRaceId": 7811,
@@ -272,7 +287,8 @@
           "hillSize": 142,
           "date": "2026-12-13",
           "time": "15:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0011"
         }
       ],
       "officials": [
@@ -325,7 +341,8 @@
           "hillSize": 140,
           "date": "2026-12-18",
           "time": "17:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0323"
         },
         {
           "fisRaceId": 7815,
@@ -333,7 +350,8 @@
           "hillSize": 140,
           "date": "2026-12-19",
           "time": "16:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0012"
         },
         {
           "fisRaceId": 7816,
@@ -341,7 +359,8 @@
           "hillSize": 140,
           "date": "2026-12-20",
           "time": "16:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0013"
         }
       ],
       "officials": [
@@ -374,7 +393,8 @@
           "hillSize": 137,
           "date": "2026-12-28",
           "time": "17:45",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0328"
         },
         {
           "fisRaceId": 7830,
@@ -382,7 +402,8 @@
           "hillSize": 137,
           "date": "2026-12-29",
           "time": "16:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0022"
         }
       ],
       "officials": [
@@ -415,7 +436,8 @@
           "hillSize": 142,
           "date": "2026-12-31",
           "time": "16:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0331"
         },
         {
           "fisRaceId": 7835,
@@ -423,7 +445,8 @@
           "hillSize": 142,
           "date": "2027-01-01",
           "time": "16:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0024"
         }
       ],
       "officials": [
@@ -456,7 +479,8 @@
           "hillSize": 128,
           "date": "2027-01-02",
           "time": "17:45",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0334"
         },
         {
           "fisRaceId": 7839,
@@ -464,7 +488,8 @@
           "hillSize": 128,
           "date": "2027-01-03",
           "time": "16:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0025"
         }
       ],
       "officials": [
@@ -497,7 +522,8 @@
           "hillSize": 142,
           "date": "2027-01-05",
           "time": "16:40",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0337"
         },
         {
           "fisRaceId": 7843,
@@ -505,7 +531,8 @@
           "hillSize": 142,
           "date": "2027-01-06",
           "time": "16:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0026"
         }
       ],
       "officials": [
@@ -538,7 +565,8 @@
           "hillSize": 140,
           "date": "2027-01-15",
           "time": "17:15",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0032"
         },
         {
           "fisRaceId": 7855,
@@ -546,7 +574,8 @@
           "hillSize": 140,
           "date": "2027-01-16",
           "time": "16:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0345"
         },
         {
           "fisRaceId": 7857,
@@ -554,7 +583,8 @@
           "hillSize": 140,
           "date": "2027-01-17",
           "time": "16:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0033"
         }
       ],
       "officials": [
@@ -587,7 +617,8 @@
           "hillSize": 137,
           "date": "2027-01-22",
           "time": "14:45",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0036"
         },
         {
           "fisRaceId": 7858,
@@ -595,7 +626,8 @@
           "hillSize": 137,
           "date": "2027-01-23",
           "time": "13:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0346"
         },
         {
           "fisRaceId": 7862,
@@ -603,7 +635,8 @@
           "hillSize": 137,
           "date": "2027-01-23",
           "time": "16:15",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0037"
         },
         {
           "fisRaceId": 8043,
@@ -611,7 +644,8 @@
           "hillSize": 137,
           "date": "2027-01-24",
           "time": "09:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0082"
         },
         {
           "fisRaceId": 7863,
@@ -619,7 +653,8 @@
           "hillSize": 137,
           "date": "2027-01-24",
           "time": "11:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0038"
         }
       ],
       "officials": [
@@ -652,7 +687,8 @@
           "hillSize": 147,
           "date": "2027-01-29",
           "time": "14:15",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0040"
         },
         {
           "fisRaceId": 7864,
@@ -660,7 +696,8 @@
           "hillSize": 147,
           "date": "2027-01-29",
           "time": "16:10",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0347"
         },
         {
           "fisRaceId": 7868,
@@ -668,7 +705,8 @@
           "hillSize": 147,
           "date": "2027-01-30",
           "time": "16:10",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0042"
         },
         {
           "fisRaceId": 7870,
@@ -676,7 +714,8 @@
           "hillSize": 147,
           "date": "2027-01-31",
           "time": "16:05",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0044"
         }
       ],
       "officials": [
@@ -724,7 +763,8 @@
           "hillSize": 128,
           "date": "2027-02-06",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0349"
         },
         {
           "fisRaceId": 7874,
@@ -732,7 +772,8 @@
           "hillSize": 128,
           "date": "2027-02-06",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0045"
         },
         {
           "fisRaceId": 7876,
@@ -740,7 +781,8 @@
           "hillSize": 128,
           "date": "2027-02-07",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0047"
         }
       ],
       "officials": [
@@ -773,7 +815,8 @@
           "hillSize": 130,
           "date": "2027-02-13",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0050"
         },
         {
           "fisRaceId": 7880,
@@ -781,7 +824,8 @@
           "hillSize": 130,
           "date": "2027-02-14",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0049"
         },
         {
           "fisRaceId": 7882,
@@ -789,7 +833,8 @@
           "hillSize": 130,
           "date": "2027-02-14",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0051"
         }
       ],
       "officials": []
@@ -811,7 +856,8 @@
           "hillSize": 240,
           "date": "2027-02-19",
           "time": "16:15",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0053"
         },
         {
           "fisRaceId": 7888,
@@ -819,7 +865,8 @@
           "hillSize": 240,
           "date": "2027-02-20",
           "time": "15:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0054"
         },
         {
           "fisRaceId": 7889,
@@ -827,7 +874,8 @@
           "hillSize": 240,
           "date": "2027-02-21",
           "time": "16:15",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0055"
         }
       ],
       "officials": [
@@ -860,7 +908,8 @@
           "hillSize": 95,
           "date": "2027-02-27",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0066"
         },
         {
           "fisRaceId": 7923,
@@ -868,7 +917,8 @@
           "hillSize": 95,
           "date": "2027-02-28",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0067"
         },
         {
           "fisRaceId": 7924,
@@ -876,7 +926,8 @@
           "hillSize": 95,
           "date": "2027-02-28",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0068"
         },
         {
           "fisRaceId": 7926,
@@ -884,7 +935,8 @@
           "hillSize": 132,
           "date": "2027-03-04",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0070"
         },
         {
           "fisRaceId": 7929,
@@ -892,7 +944,8 @@
           "hillSize": 132,
           "date": "2027-03-06",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0073"
         },
         {
           "fisRaceId": 7930,
@@ -900,7 +953,8 @@
           "hillSize": 132,
           "date": "2027-03-06",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0074"
         }
       ],
       "officials": []
@@ -922,7 +976,8 @@
           "hillSize": 134,
           "date": "2027-03-13",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0357"
         },
         {
           "fisRaceId": 7893,
@@ -930,7 +985,8 @@
           "hillSize": 134,
           "date": "2027-03-13",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0056"
         },
         {
           "fisRaceId": 7895,
@@ -938,7 +994,8 @@
           "hillSize": 134,
           "date": "2027-03-14",
           "time": null,
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0058"
         }
       ],
       "officials": []
@@ -960,7 +1017,8 @@
           "hillSize": 240,
           "date": "2027-03-18",
           "time": "10:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0359"
         },
         {
           "fisRaceId": 7897,
@@ -968,7 +1026,8 @@
           "hillSize": 240,
           "date": "2027-03-19",
           "time": "15:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0360"
         },
         {
           "fisRaceId": 7899,
@@ -976,7 +1035,8 @@
           "hillSize": 240,
           "date": "2027-03-20",
           "time": "09:30",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0060"
         },
         {
           "fisRaceId": 7900,
@@ -984,7 +1044,8 @@
           "hillSize": 240,
           "date": "2027-03-21",
           "time": "10:00",
-          "status": "scheduled"
+          "status": "scheduled",
+          "fisCodex": "0061"
         }
       ],
       "officials": [

@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { getBroadcasters, getResultsUrl } from './links';
+import {
+  FIS_LIVE_URL,
+  getBroadcasters,
+  getLiveUrl,
+  getResultsUrl,
+} from './links';
 import { competitionSchema, type Competition, type Season } from './schema';
 import { getCurrentSeason } from './seasons';
 
@@ -76,3 +81,26 @@ describe('competitionSchema', () => {
     ).toBe(true);
   });
 });
+
+describe('getLiveUrl', () => {
+  it('links the live scoring page of the competition by its codex', () => {
+    expect(
+      getLiveUrl(competitionSchema.parse({ ...base(), fisCodex: '0002' })),
+    ).toBe('https://live.fis-ski.com/jp-0002/results-pda.htm');
+  });
+
+  it('falls back to the FIS live list without a codex', () => {
+    expect(getLiveUrl(competitionSchema.parse(base()))).toBe(FIS_LIVE_URL);
+  });
+});
+
+function base(): Omit<Competition, 'results'> {
+  return {
+    fisRaceId: 7796,
+    kind: 'qualification',
+    hillSize: 140,
+    date: '2026-11-20',
+    time: '14:00',
+    status: 'scheduled',
+  };
+}
