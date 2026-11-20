@@ -459,6 +459,15 @@ body {
   list-style: none;
 }
 
+/* The broadcast row is framed so it stands apart from the other links. */
+.links__row--broadcast {
+  align-self: flex-start;
+  max-width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--pal-border);
+  border-radius: var(--pal-radius);
+}
+
 .links__note {
   display: inline-flex;
   align-items: center;
