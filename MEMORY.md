@@ -4,6 +4,8 @@ Fakty o TYM repozytorium, których nie widać w kodzie ani w historii gita.
 
 ## Fakty
 
+- [2026-11-20] [referencja] Wyniki na żywo konkretnego konkursu: `https://live.fis-ski.com/jp-<kodeks>/results-pda.htm`, kodeks (4 cyfry, pole `fisCodex`) jest w kolumnie "Codex" na stronie zawodów FIS, a gdy tam pusty, to na stronie konkursu `results.html?sectorcode=JP&raceid=<id>` ("CODEX: 0002"). Lista startowa z polskimi zawodnikami (`polishAthletes`) też jest na stronie konkursu (wiersze z `competitorid=`), pojawia się ok. dzień przed kwalifikacjami; uzupełniać ręcznie przed każdymi zawodami.
+- [2026-11-20] [projekt] Powiadomienia o starcie zawodów działają tylko przy otwartej karcie strony (strona statyczna, brak serwera push); dzwonek w górnym pasku, dane wszystkich startów sezonu są w każdej stronie w `#start-alerts-data`.
 - [2026-11-16] [referencja] FIS nie podaje godzin startu w HTML (`data-time` jest puste); godziny są tylko w PDF "Event Program" na stronie zawodów (`/DB/v2/download/competition-attachment/<uuid>.pdf`), sekcja "Event schedule (LOC times)", wyciągać przez `pdftotext -layout`. Strony FIS wymagają nagłówka `User-Agent` przeglądarki.
 - [2026-11-16] [referencja] FIS datuje kwalifikacje dniem konkursu, do którego należą, a nie dniem rozegrania (Ruka: kwalifikacje "28 Nov" odbywają się 27.11 o 18:15). Datę w pliku sezonu brać z PDF programu.
 - [2026-11-20] [projekt] Godziny na 2026-11-20 nieznane dla: Lake Placid (program FIS ma tylko konkurs kobiet), Lahti, Oslo, Falun (`time: null`). Uzupełnić, gdy FIS opublikuje programy. Programy FIS ze strony zawodów skanuje `tmp/scan-programs.sh` (poza repo).
