@@ -302,7 +302,7 @@ test.describe('event page', () => {
   test('shows only the date when the time is not announced', async ({
     page,
   }) => {
-    await page.goto('/pl/2026-2027/zakopane/');
+    await page.goto('/pl/2026-2027/lahti/');
     await expect(page.locator('.competition').first()).toContainText(
       'godzina nieznana',
     );

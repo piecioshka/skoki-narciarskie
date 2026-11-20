@@ -885,7 +885,7 @@ test.describe('officials', () => {
   test('event page skips the section when nothing is known', async ({
     page,
   }) => {
-    await page.goto('/pl/2026-2027/zakopane/');
+    await page.goto('/pl/2026-2027/lahti/');
     await expect(
       page.getByRole('heading', { name: 'Sędziowie i delegaci' }),
     ).toHaveCount(0);

@@ -87,7 +87,18 @@
           "status": "scheduled"
         }
       ],
-      "officials": []
+      "officials": [
+        {
+          "role": "technical-delegate",
+          "name": "Georg Spaeth",
+          "nation": "GER"
+        },
+        {
+          "role": "technical-delegate-assistant",
+          "name": "Matthew Laue",
+          "nation": "USA"
+        }
+      ]
     },
     {
       "slug": "ruka",
@@ -266,6 +277,11 @@
       ],
       "officials": [
         {
+          "role": "technical-delegate",
+          "name": "Geir Steinar Loeng",
+          "nation": "NOR"
+        },
+        {
           "role": "judge",
           "name": "Maik Stielow",
           "nation": "GER"
@@ -328,7 +344,18 @@
           "status": "scheduled"
         }
       ],
-      "officials": []
+      "officials": [
+        {
+          "role": "technical-delegate",
+          "name": "Stefan Wolf",
+          "nation": "AUT"
+        },
+        {
+          "role": "technical-delegate-assistant",
+          "name": "Harald Haefker",
+          "nation": "GER"
+        }
+      ]
     },
     {
       "slug": "oberstdorf",
@@ -358,7 +385,18 @@
           "status": "scheduled"
         }
       ],
-      "officials": []
+      "officials": [
+        {
+          "role": "technical-delegate",
+          "name": "Saso Komovec",
+          "nation": "SLO"
+        },
+        {
+          "role": "technical-delegate-assistant",
+          "name": "Josef Hlava",
+          "nation": "CZE"
+        }
+      ]
     },
     {
       "slug": "garmisch-partenkirchen",
@@ -429,7 +467,18 @@
           "status": "scheduled"
         }
       ],
-      "officials": []
+      "officials": [
+        {
+          "role": "technical-delegate",
+          "name": "Georg Spaeth",
+          "nation": "GER"
+        },
+        {
+          "role": "technical-delegate-assistant",
+          "name": "Kristian Brenden",
+          "nation": "NOR"
+        }
+      ]
     },
     {
       "slug": "bischofshofen",
@@ -459,7 +508,18 @@
           "status": "scheduled"
         }
       ],
-      "officials": []
+      "officials": [
+        {
+          "role": "technical-delegate",
+          "name": "Aljosa Dolhar",
+          "nation": "SLO"
+        },
+        {
+          "role": "technical-delegate-assistant",
+          "name": "Suzanne Tahk",
+          "nation": "EST"
+        }
+      ]
     },
     {
       "slug": "zakopane",
@@ -477,7 +537,7 @@
           "kind": "qualification",
           "hillSize": 140,
           "date": "2027-01-15",
-          "time": null,
+          "time": "17:15",
           "status": "scheduled"
         },
         {
@@ -485,7 +545,7 @@
           "kind": "team",
           "hillSize": 140,
           "date": "2027-01-16",
-          "time": null,
+          "time": "16:00",
           "status": "scheduled"
         },
         {
@@ -493,11 +553,22 @@
           "kind": "individual",
           "hillSize": 140,
           "date": "2027-01-17",
-          "time": null,
+          "time": "16:00",
           "status": "scheduled"
         }
       ],
-      "officials": []
+      "officials": [
+        {
+          "role": "technical-delegate",
+          "name": "Saso Komovec",
+          "nation": "SLO"
+        },
+        {
+          "role": "technical-delegate-assistant",
+          "name": "Lindsey Van",
+          "nation": "USA"
+        }
+      ]
     },
     {
       "slug": "sapporo",
@@ -904,7 +975,7 @@
           "kind": "team",
           "hillSize": 240,
           "date": "2027-03-20",
-          "time": "09:45",
+          "time": "09:30",
           "status": "scheduled"
         },
         {
@@ -916,7 +987,18 @@
           "status": "scheduled"
         }
       ],
-      "officials": []
+      "officials": [
+        {
+          "role": "technical-delegate",
+          "name": "Ivo Greger",
+          "nation": "CZE"
+        },
+        {
+          "role": "technical-delegate-assistant",
+          "name": "Georg Spaeth",
+          "nation": "GER"
+        }
+      ]
     }
   ]
 }
