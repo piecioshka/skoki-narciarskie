@@ -56,7 +56,9 @@ test.describe('home page', () => {
     await expect(next.locator('.js-countdown-value')).toHaveText(
       '4 dni 1 godz. 0 min 0 s',
     );
-    await expect(next.getByRole('link', { name: 'HBO Max' })).toBeVisible();
+    await expect(
+      next.getByRole('link', { name: 'Eurosport 1 (Pilot WP)' }),
+    ).toBeVisible();
     await expect(
       next.getByRole('link', { name: 'Wyniki na żywo' }),
     ).toHaveAttribute('href', /fis-ski\.com/);
@@ -289,7 +291,9 @@ test.describe('event page', () => {
     const row = page.locator('.competition[data-race="7796"]');
 
     await expect(row.locator('.js-phase')).toHaveText('Zakończony');
-    await expect(row.getByRole('link', { name: 'HBO Max' })).toBeHidden();
+    await expect(
+      row.getByRole('link', { name: 'Eurosport 1 (Pilot WP)' }),
+    ).toBeHidden();
     await expect(
       row.getByRole('link', { name: 'Wyniki', exact: true }),
     ).toBeVisible();

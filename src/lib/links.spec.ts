@@ -27,16 +27,19 @@ function namesOf(kind: string): string[][] {
 describe('getBroadcasters', () => {
   it('uses the broadcasters of the competition when it has its own', () => {
     expect(namesOf('mixed-team')).toEqual([
-      ['HBO Max', 'Eurosport', 'TTV (Player)'],
+      ['Eurosport 1 (Pilot WP)', 'Eurosport 1 (Polsat Box Go)', 'TTV (Player)'],
     ]);
-    expect(namesOf('qualification')[0]).toEqual(['HBO Max', 'Eurosport']);
+    expect(namesOf('qualification')[0]).toEqual([
+      'Eurosport 1 (Pilot WP)',
+      'Eurosport 1 (Polsat Box Go)',
+    ]);
     expect(namesOf('training')).toEqual([[]]);
   });
 
   it('falls back to the broadcasters of the event', () => {
     expect(namesOf('individual')[0]).toEqual([
-      'HBO Max',
-      'Eurosport',
+      'Eurosport 1 (Pilot WP)',
+      'Eurosport 1 (Polsat Box Go)',
       'TVN (Player)',
     ]);
   });

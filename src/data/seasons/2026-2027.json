@@ -1,13 +1,13 @@
 {
   "id": "2026-2027",
   "broadcasters": {
-    "hbo-max": {
-      "name": "HBO Max",
-      "url": "https://www.hbomax.com/pl/pl"
+    "eurosport-pilot": {
+      "name": "Eurosport 1 (Pilot WP)",
+      "url": "https://pilot.wp.pl/tv/#eurosport-1"
     },
-    "eurosport": {
-      "name": "Eurosport",
-      "url": "https://www.eurosport.pl/"
+    "eurosport-polsat": {
+      "name": "Eurosport 1 (Polsat Box Go)",
+      "url": "https://polsatboxgo.pl/kanaly-tv/eurosport-1/1456336/ogladaj"
     },
     "tvn": {
       "name": "TVN (Player)",
@@ -32,7 +32,7 @@
       "countryCode": "NO",
       "hillName": "Lysgårdsbakken",
       "timeZone": "Europe/Oslo",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": null,
@@ -50,7 +50,7 @@
           "date": "2026-11-20",
           "time": "14:00",
           "status": "scheduled",
-          "broadcasts": ["hbo-max", "eurosport"],
+          "broadcasts": ["eurosport-pilot", "eurosport-polsat"],
           "fisCodex": "0002"
         },
         {
@@ -60,7 +60,7 @@
           "date": "2026-11-20",
           "time": "16:00",
           "status": "scheduled",
-          "broadcasts": ["hbo-max", "eurosport", "ttv"],
+          "broadcasts": ["eurosport-pilot", "eurosport-polsat", "ttv"],
           "fisCodex": "0315"
         },
         {
@@ -79,7 +79,7 @@
           "date": "2026-11-22",
           "time": "14:30",
           "status": "scheduled",
-          "broadcasts": ["hbo-max", "eurosport"],
+          "broadcasts": ["eurosport-pilot", "eurosport-polsat"],
           "fisCodex": "0075"
         },
         {
@@ -140,7 +140,7 @@
       "countryCode": "FI",
       "hillName": "Rukatunturi",
       "timeZone": "Europe/Helsinki",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7801,
@@ -278,7 +278,7 @@
       "countryCode": "DE",
       "hillName": "Hochfirstschanze",
       "timeZone": "Europe/Berlin",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7808,
@@ -359,7 +359,7 @@
       "countryCode": "CH",
       "hillName": "Gross-Titlis-Schanze",
       "timeZone": "Europe/Zurich",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7813,
@@ -411,7 +411,7 @@
       "countryCode": "DE",
       "hillName": "Schattenbergschanze",
       "timeZone": "Europe/Berlin",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7828,
@@ -454,7 +454,7 @@
       "countryCode": "DE",
       "hillName": "Große Olympiaschanze",
       "timeZone": "Europe/Berlin",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7832,
@@ -497,7 +497,7 @@
       "countryCode": "AT",
       "hillName": "Bergiselschanze",
       "timeZone": "Europe/Vienna",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7837,
@@ -540,7 +540,7 @@
       "countryCode": "AT",
       "hillName": "Paul-Außerleitner-Schanze",
       "timeZone": "Europe/Vienna",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7841,
@@ -635,7 +635,7 @@
       "countryCode": "JP",
       "hillName": "Ōkurayama",
       "timeZone": "Asia/Tokyo",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7861,
@@ -705,7 +705,7 @@
       "countryCode": "DE",
       "hillName": "Mühlenkopfschanze",
       "timeZone": "Europe/Berlin",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7866,
@@ -781,7 +781,7 @@
       "countryCode": "US",
       "hillName": "MacKenzie Intervale",
       "timeZone": "America/New_York",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7872,
@@ -833,7 +833,7 @@
       "countryCode": "FI",
       "hillName": "Salpausselkä",
       "timeZone": "Europe/Helsinki",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7881,
@@ -874,7 +874,7 @@
       "countryCode": "NO",
       "hillName": "Vikersundbakken",
       "timeZone": "Europe/Oslo",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7887,
@@ -994,7 +994,7 @@
       "countryCode": "NO",
       "hillName": "Holmenkollbakken",
       "timeZone": "Europe/Oslo",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7891,
@@ -1035,7 +1035,7 @@
       "countryCode": "SI",
       "hillName": "Letalnica bratov Gorišek",
       "timeZone": "Europe/Ljubljana",
-      "broadcasts": ["hbo-max", "eurosport", "tvn"],
+      "broadcasts": ["eurosport-pilot", "eurosport-polsat", "tvn"],
       "competitions": [
         {
           "fisRaceId": 7896,
