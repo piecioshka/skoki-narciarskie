@@ -558,8 +558,9 @@ body {
   opacity: 0.55;
 }
 
+/* A live event is framed; an inset shadow keeps the layout still. */
 .event-card[data-phase='live'] {
-  box-shadow: inset 4px 0 0 var(--live);
+  box-shadow: inset 0 0 0 1px var(--live);
 }
 
 .season-switch {
@@ -668,6 +669,11 @@ body {
 
 .competition[data-phase='finished'] .competition__info {
   opacity: 0.55;
+}
+
+/* Framed like a live event card. */
+.competition[data-phase='live'] {
+  box-shadow: inset 0 0 0 1px var(--live);
 }
 
 /* Footer */
