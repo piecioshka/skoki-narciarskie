@@ -103,6 +103,32 @@
           "name": "Matthew Laue",
           "nation": "USA"
         }
+      ],
+      "polishAthletes": [
+        {
+          "name": "Jakub Wolny",
+          "fisCompetitorId": 149455
+        },
+        {
+          "name": "Klemens Joniak",
+          "fisCompetitorId": 229687
+        },
+        {
+          "name": "Dawid Kubacki",
+          "fisCompetitorId": 111251
+        },
+        {
+          "name": "Paweł Wąsek",
+          "fisCompetitorId": 182407
+        },
+        {
+          "name": "Maciej Kot",
+          "fisCompetitorId": 118113
+        },
+        {
+          "name": "Kacper Tomasiak",
+          "fisCompetitorId": 239625
+        }
       ]
     },
     {

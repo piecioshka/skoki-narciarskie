@@ -915,3 +915,27 @@ test.describe('layout of section pages', () => {
     }
   }
 });
+
+test.describe('polish athletes', () => {
+  test('event page lists Poles from the FIS start list', async ({ page }) => {
+    await page.goto('/pl/2026-2027/lillehammer/');
+
+    const section = page.locator('section', {
+      has: page.getByRole('heading', { name: 'Polacy na liście startowej' }),
+    });
+
+    await expect(section.locator('.people__item')).toHaveCount(6);
+    await expect(
+      section.getByRole('link', { name: 'Paweł Wąsek' }),
+    ).toHaveAttribute('href', /pl\.wikipedia\.org/);
+  });
+
+  test('event page skips the section before the start list', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2026-2027/lahti/');
+    await expect(
+      page.getByRole('heading', { name: 'Polacy na liście startowej' }),
+    ).toHaveCount(0);
+  });
+});

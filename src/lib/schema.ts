@@ -63,6 +63,15 @@ export const eventSchema = z.object({
   timeZone: z.string().min(1),
   broadcasts: z.array(z.string()),
   officials: z.array(officialSchema).default([]),
+  // Poles on the FIS start list of the event; empty until FIS publishes it.
+  polishAthletes: z
+    .array(
+      z.object({
+        name: z.string().min(1),
+        fisCompetitorId: z.number().int().positive(),
+      }),
+    )
+    .default([]),
   competitions: z.array(competitionSchema).min(1),
 });
 

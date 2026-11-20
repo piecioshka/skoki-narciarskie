@@ -129,6 +129,7 @@ interface Dictionary {
   pastIndividual: string;
   pastTeam: string;
   officials: string;
+  polishAthletes: string;
   officialRoles: Record<OfficialRole, string>;
   switchLanguage: string;
   switchTheme: string;
@@ -352,6 +353,7 @@ const pl: Dictionary = {
   pastIndividual: 'Konkursy indywidualne',
   pastTeam: 'Konkursy drużynowe',
   officials: 'Sędziowie i delegaci',
+  polishAthletes: 'Polacy na liście startowej',
   officialRoles: {
     'technical-delegate': 'Delegat techniczny FIS',
     'technical-delegate-assistant': 'Asystent delegata technicznego',
@@ -589,6 +591,7 @@ const en: Dictionary = {
   pastIndividual: 'Individual competitions',
   pastTeam: 'Team competitions',
   officials: 'Judges and delegates',
+  polishAthletes: 'Poles on the start list',
   officialRoles: {
     'technical-delegate': 'FIS Technical Delegate',
     'technical-delegate-assistant': 'Technical Delegate Assistant',

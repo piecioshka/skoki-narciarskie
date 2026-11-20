@@ -35,6 +35,7 @@ function season(competitions: Competition[]): Season {
         timeZone: 'Europe/Oslo',
         broadcasts: [],
         officials: [],
+        polishAthletes: [],
         competitions,
       },
     ],
