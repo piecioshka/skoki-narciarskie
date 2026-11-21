@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { addDays, countdown, formatInZone, zonedTimeToUtc } from './time';
+import {
+  addDays,
+  countdown,
+  formatInZone,
+  isSameLocalDay,
+  zonedTimeToUtc,
+} from './time';
 
 describe('zonedTimeToUtc', () => {
   it('converts winter time in Central Europe', () => {
@@ -65,5 +71,16 @@ describe('countdown', () => {
       minutes: 0,
       seconds: 0,
     });
+  });
+});
+
+describe('isSameLocalDay', () => {
+  it('compares calendar days, not 24-hour spans', () => {
+    const morning = new Date(2026, 10, 21, 0, 5);
+    const evening = new Date(2026, 10, 21, 23, 55);
+    const nextDay = new Date(2026, 10, 22, 0, 5);
+
+    expect(isSameLocalDay(morning, evening)).toBe(true);
+    expect(isSameLocalDay(evening, nextDay)).toBe(false);
   });
 });

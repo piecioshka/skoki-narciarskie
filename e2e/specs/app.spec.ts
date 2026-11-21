@@ -258,6 +258,25 @@ test.describe('schedule', () => {
     );
   });
 
+  test('frames competitions of the current day in blue', async ({ page }) => {
+    await openAt(
+      page,
+      '/pl/2026-2027/lillehammer/',
+      new Date('2026-11-21T09:00:00Z'),
+    );
+
+    const framed = page.locator(
+      ".competition[data-today='true'][data-phase='upcoming']",
+    );
+
+    await expect(framed).toHaveCount(1);
+    await expect(framed).toContainText('2026-11-21');
+    await expect(framed).toHaveCSS('box-shadow', /inset/);
+    await expect(
+      page.locator(".competition[data-today='false']").first(),
+    ).toHaveCSS('box-shadow', 'none');
+  });
+
   test('offers the season as a calendar feed', async ({ page, request }) => {
     await page.goto('/pl/2026-2027/');
 
@@ -302,7 +321,7 @@ test.describe('event page', () => {
   test('lists the training and the broadcasters of each competition', async ({
     page,
   }) => {
-    await page.goto('/pl/2026-2027/lillehammer/');
+    await openAt(page, '/pl/2026-2027/lillehammer/', BEFORE_SEASON);
 
     const training = page.locator('.competition').first();
     const mixed = page.locator('.competition[data-race="7794"]');

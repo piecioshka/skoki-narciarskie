@@ -1,7 +1,7 @@
 import { STORAGE_KEYS } from '../config';
 import { isLang, t, type Lang } from '../i18n';
 import { getPhase, type Slot } from '../lib/schedule';
-import { countdown, formatLocal } from '../lib/time';
+import { countdown, formatLocal, isSameLocalDay } from '../lib/time';
 import { setupPosterExport } from './poster-export';
 import { setupLiveFavicon } from './live-favicon';
 import { setupStartAlerts } from './start-alerts';
@@ -70,6 +70,7 @@ function updatePhases(now: Date, lang: Lang): void {
       const phase = getPhase(now, slot);
 
       element.dataset['phase'] = phase;
+      element.dataset['today'] = String(isSameLocalDay(now, slot.start));
       for (const label of all('.js-phase', element)) {
         label.textContent = labels[phase];
       }

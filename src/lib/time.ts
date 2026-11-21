@@ -57,6 +57,11 @@ export function formatInZone(instant: Date, timeZone: string): string {
   return shifted.toISOString().slice(0, 16).replace('T', ' ');
 }
 
+/** True when both instants fall on the same calendar day of the runtime. */
+export function isSameLocalDay(a: Date, b: Date): boolean {
+  return formatLocal(a).slice(0, 10) === formatLocal(b).slice(0, 10);
+}
+
 /** Formats an instant as `YYYY-MM-DD HH:mm` in the runtime's own time zone. */
 export function formatLocal(instant: Date): string {
   const date = `${instant.getFullYear()}-${pad(instant.getMonth() + 1)}-${pad(instant.getDate())}`;
