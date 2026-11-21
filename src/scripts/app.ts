@@ -60,6 +60,26 @@ function showLocalTimes(): void {
   }
 }
 
+/** A competition of the current day counts down to its start. */
+function updateSlotCountdown(
+  element: HTMLElement,
+  now: Date,
+  slot: Slot,
+  lang: Lang,
+): void {
+  const visible =
+    element.dataset['today'] === 'true' && getPhase(now, slot) === 'upcoming';
+
+  for (const countdownElement of all('.js-slot-countdown', element)) {
+    countdownElement.hidden = !visible;
+  }
+  if (visible) {
+    for (const value of all('.js-slot-countdown-value', element)) {
+      value.textContent = formatCountdown(now, slot.start, lang);
+    }
+  }
+}
+
 function updatePhases(now: Date, lang: Lang): void {
   const labels = t(lang).phases;
 
@@ -71,6 +91,7 @@ function updatePhases(now: Date, lang: Lang): void {
 
       element.dataset['phase'] = phase;
       element.dataset['today'] = String(isSameLocalDay(now, slot.start));
+      updateSlotCountdown(element, now, slot, lang);
       for (const label of all('.js-phase', element)) {
         label.textContent = labels[phase];
       }

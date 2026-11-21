@@ -272,6 +272,11 @@ test.describe('schedule', () => {
     await expect(framed).toHaveCount(1);
     await expect(framed).toContainText('2026-11-21');
     await expect(framed).toHaveCSS('box-shadow', /inset/);
+    await expect(framed.locator('.js-slot-countdown')).toBeVisible();
+    await expect(framed.locator('.js-slot-countdown')).toContainText(
+      'Start za 6 godz. 50 min',
+    );
+    await expect(page.locator('.js-slot-countdown:visible')).toHaveCount(1);
     await expect(
       page.locator(".competition[data-today='false']").first(),
     ).toHaveCSS('box-shadow', 'none');

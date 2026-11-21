@@ -658,6 +658,17 @@ body {
   color: var(--pal-text-muted);
 }
 
+.competition__countdown {
+  color: var(--pal-text-muted);
+}
+
+.competition__countdown-value {
+  font-family: var(--pal-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--pal-font-weight-bold);
+  color: var(--brand);
+}
+
 .competition[data-phase='finished'] .competition__info {
   opacity: 0.55;
 }

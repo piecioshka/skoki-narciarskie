@@ -194,6 +194,15 @@ const jsonLd = {
                       {dict.statuses[competition.status]}
                     </span>
                   )}
+                  {competition.status === 'scheduled' && slot.timed && (
+                    <span
+                      class="competition__countdown js-slot-countdown"
+                      hidden
+                    >
+                      {dict.startsIn}{' '}
+                      <span class="competition__countdown-value js-slot-countdown-value" />
+                    </span>
+                  )}
                 </div>
                 {competition.results.length > 0 && (
                   <ol class="podium" aria-label={dict.podium}>
