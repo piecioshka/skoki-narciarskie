@@ -648,6 +648,7 @@ body {
 
 .competition__info {
   display: flex;
+  flex: 1 1 auto;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.375rem 0.75rem;
@@ -670,7 +671,9 @@ body {
   color: var(--pal-text-muted);
 }
 
+/* The countdown sits at the far right of the row. */
 .competition__countdown {
+  margin-left: auto;
   color: var(--pal-text-muted);
 }
 
