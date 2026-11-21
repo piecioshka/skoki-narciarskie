@@ -24,7 +24,7 @@ function store(key: string, value: string): void {
 function getLang(): Lang {
   const { lang } = document.documentElement;
 
-  return isLang(lang) ? lang : 'en';
+  return isLang(lang) ? lang : 'pl';
 }
 
 function readSlot(element: HTMLElement): Slot | undefined {

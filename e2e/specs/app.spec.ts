@@ -22,12 +22,14 @@ test.describe('language', () => {
     await context.close();
   });
 
-  test('root redirects to English for other browsers', async ({ browser }) => {
+  test('root redirects to Polish for other browsers too', async ({
+    browser,
+  }) => {
     const context = await browser.newContext({ locale: 'de-DE' });
     const page = await context.newPage();
 
     await page.goto('/');
-    await expect(page).toHaveURL(/\/en\/$/);
+    await expect(page).toHaveURL(/\/pl\/$/);
     await context.close();
   });
 

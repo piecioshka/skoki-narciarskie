@@ -8,23 +8,22 @@ const langKey = STORAGE_KEYS.lang;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ski Jumping World Cup schedule</title>
+    <title>Terminarz Pucharu Świata w skokach narciarskich</title>
     <meta name="robots" content="noindex" />
     <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
     <script is:inline define:vars={{ targets, langKey }}>
-      // The stored choice wins; otherwise the browser language decides.
-      let lang = null;
+      // Polish is the default; English only when the visitor chose it before.
+      let lang = 'pl';
       try {
-        lang = localStorage.getItem(langKey);
+        if (localStorage.getItem(langKey) === 'en') {
+          lang = 'en';
+        }
       } catch {
-        lang = null;
-      }
-      if (lang !== 'pl' && lang !== 'en') {
-        lang = navigator.language.toLowerCase().startsWith('pl') ? 'pl' : 'en';
+        lang = 'pl';
       }
       location.replace(targets[lang]);
     </script>
