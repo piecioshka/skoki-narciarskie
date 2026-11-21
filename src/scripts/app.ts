@@ -1,6 +1,11 @@
 import { STORAGE_KEYS } from '../config';
 import { isLang, t, type Lang } from '../i18n';
-import { getPhase, type Slot } from '../lib/schedule';
+import {
+  getEventPhase,
+  getPhase,
+  type Phase,
+  type Slot,
+} from '../lib/schedule';
 import { countdown, formatLocal, isSameLocalDay } from '../lib/time';
 import { setupPosterExport } from './poster-export';
 import { setupLiveFavicon } from './live-favicon';
@@ -60,6 +65,38 @@ function showLocalTimes(): void {
   }
 }
 
+function isSlotPair(value: unknown): value is { start: string; end: string } {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    typeof Reflect.get(value, 'start') === 'string' &&
+    typeof Reflect.get(value, 'end') === 'string'
+  );
+}
+
+/** An event card takes its phase from its competitions, not its whole span. */
+function readPhase(element: HTMLElement, now: Date, slot: Slot): Phase {
+  const { competitionSlots } = element.dataset;
+
+  if (!competitionSlots) {
+    return getPhase(now, slot);
+  }
+  try {
+    const parsed: unknown = JSON.parse(competitionSlots);
+    const slots = (Array.isArray(parsed) ? parsed : [])
+      .filter(isSlotPair)
+      .map((pair) => ({
+        start: new Date(pair.start),
+        end: new Date(pair.end),
+        timed: true,
+      }));
+
+    return slots.length > 0 ? getEventPhase(now, slots) : getPhase(now, slot);
+  } catch {
+    return getPhase(now, slot);
+  }
+}
+
 /** A competition of the current day counts down to its start. */
 function updateSlotCountdown(
   element: HTMLElement,
@@ -87,7 +124,7 @@ function updatePhases(now: Date, lang: Lang): void {
     const slot = readSlot(element);
 
     if (slot) {
-      const phase = getPhase(now, slot);
+      const phase = readPhase(element, now, slot);
 
       element.dataset['phase'] = phase;
       element.dataset['today'] = String(isSameLocalDay(now, slot.start));

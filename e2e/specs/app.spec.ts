@@ -282,6 +282,26 @@ test.describe('schedule', () => {
     ).toHaveCSS('box-shadow', 'none');
   });
 
+  test('marks an event card as today, not live, before its start', async ({
+    page,
+  }) => {
+    await openAt(page, '/pl/2026-2027/', new Date('2026-11-21T09:00:00Z'));
+
+    const card = page.locator('.event-card[data-event="lillehammer"]');
+
+    await expect(card).toHaveAttribute('data-phase', 'today');
+    await expect(card.locator('.js-phase')).toHaveText('Dzisiaj');
+    await expect(card).toHaveCSS('box-shadow', /inset/);
+  });
+
+  test('marks an event card as live during a competition', async ({ page }) => {
+    await openAt(page, '/pl/2026-2027/', DURING_FIRST_RACE);
+
+    await expect(
+      page.locator('.event-card[data-event="lillehammer"] .js-phase'),
+    ).toHaveText('Trwa');
+  });
+
   test('offers the season as a calendar feed', async ({ page, request }) => {
     await page.goto('/pl/2026-2027/');
 

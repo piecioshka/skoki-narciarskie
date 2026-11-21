@@ -26,6 +26,14 @@ const range = getEventRange(event);
 const [firstDay] = groupByDay(event);
 const [first] = firstDay?.competitions ?? [];
 const start = first ? getSlot(event, first).start : new Date(range.start);
+// Each competition's own slot, so the browser can tell "live" from "today".
+const slots = event.competitions
+  .filter((competition) => competition.status !== 'cancelled')
+  .map((competition) => {
+    const slot = getSlot(event, competition);
+
+    return { start: slot.start.toISOString(), end: slot.end.toISOString() };
+  });
 const dates =
   range.start === range.end ? range.start : `${range.start} - ${range.end}`;
 ---
@@ -36,6 +44,7 @@ const dates =
   data-slot-end={getEventEnd(event).toISOString()}
   data-slot-timed="true"
   data-event={event.slug}
+  data-competition-slots={JSON.stringify(slots)}
 >
   <a class="event-card__link" href={eventPath(lang, season.id, event.slug)}>
     <span class="event-card__dates">{dates}</span>

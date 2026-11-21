@@ -1,5 +1,5 @@
 import type { Competition, Season, SeasonEvent } from './schema';
-import { addDays, zonedTimeToUtc } from './time';
+import { addDays, isSameLocalDay, zonedTimeToUtc } from './time';
 
 // A competition with two rounds takes about two hours; the margin keeps the
 // "live" state on screen until the broadcast really ends.
@@ -54,6 +54,27 @@ export function getPhase(now: Date, slot: Slot): Phase {
     return 'upcoming';
   }
   return slot.timed ? 'live' : 'today';
+}
+
+/**
+ * Phase of a whole event from its competitions: live only while one of them
+ * is on, "today" while one is still ahead on the viewer's current day.
+ */
+export function getEventPhase(now: Date, slots: Slot[]): Phase {
+  const phases = slots.map((slot) => getPhase(now, slot));
+
+  if (phases.includes('live')) {
+    return 'live';
+  }
+  if (phases.every((phase) => phase === 'finished')) {
+    return 'finished';
+  }
+  const aheadToday = slots.some(
+    (slot, index) =>
+      phases[index] !== 'finished' && isSameLocalDay(now, slot.start),
+  );
+
+  return aheadToday ? 'today' : 'upcoming';
 }
 
 /** Every competition of the season, in chronological order. */

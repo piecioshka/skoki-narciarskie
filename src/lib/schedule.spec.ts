@@ -3,12 +3,14 @@ import { buildCalendar } from './ics';
 import {
   findNext,
   getPastWinners,
+  getEventPhase,
   getEventRange,
   getHillSizes,
   getPhase,
   getSlot,
   groupByDay,
   listCompetitions,
+  type Slot,
 } from './schedule';
 import type { Competition, Season, SeasonEvent } from './schema';
 import { getCurrentSeason, getSeasons } from './seasons';
@@ -266,5 +268,38 @@ describe('season data', () => {
 
     expect(new Set(slugs).size).toBe(slugs.length);
     expect(new Set(races).size).toBe(races.length);
+  });
+});
+
+describe('getEventPhase', () => {
+  const slot = (start: string, end: string): Slot => ({
+    start: new Date(start),
+    end: new Date(end),
+    timed: true,
+  });
+  const slots = [
+    slot('2026-11-20T11:00:00', '2026-11-20T13:30:00'),
+    slot('2026-11-21T16:50:00', '2026-11-21T19:20:00'),
+    slot('2026-11-22T15:00:00', '2026-11-22T17:30:00'),
+  ];
+
+  it('is live only while a competition is on', () => {
+    expect(getEventPhase(new Date('2026-11-20T12:00:00'), slots)).toBe('live');
+  });
+
+  it('is today when a competition is still ahead on the current day', () => {
+    expect(getEventPhase(new Date('2026-11-21T09:00:00'), slots)).toBe('today');
+  });
+
+  it('is upcoming between competition days', () => {
+    expect(getEventPhase(new Date('2026-11-20T20:00:00'), slots)).toBe(
+      'upcoming',
+    );
+  });
+
+  it('is finished after the last competition', () => {
+    expect(getEventPhase(new Date('2026-11-23T09:00:00'), slots)).toBe(
+      'finished',
+    );
   });
 });
