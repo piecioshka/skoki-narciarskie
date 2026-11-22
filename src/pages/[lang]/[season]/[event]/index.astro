@@ -231,13 +231,18 @@ const jsonLd = {
                   season={season}
                   event={event}
                   competition={competition}
-                />
-                {competition.status === 'scheduled' && slot.timed && (
-                  <span class="competition__countdown js-slot-countdown" hidden>
-                    {dict.startsIn}{' '}
-                    <span class="competition__countdown-value js-slot-countdown-value" />
-                  </span>
-                )}
+                  broadcastsLast
+                >
+                  {competition.status === 'scheduled' && slot.timed && (
+                    <span
+                      class="competition__countdown js-slot-countdown"
+                      hidden
+                    >
+                      {dict.startsIn}{' '}
+                      <span class="competition__countdown-value js-slot-countdown-value" />
+                    </span>
+                  )}
+                </CompetitionLinks>
               </li>
             );
           })}

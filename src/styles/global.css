@@ -475,6 +475,10 @@ body {
 }
 
 /* A finished competition keeps only the link to its results. */
+.links--broadcasts-last > .links__row--broadcast {
+  order: 1;
+}
+
 [data-phase='finished'] > .links > .links__row--broadcast,
 [data-phase='finished'] > .links .links__item--live {
   display: none;

@@ -9,15 +9,23 @@ interface Props {
   season: Season;
   event: SeasonEvent;
   competition: Competition;
+  // Moves broadcasts below the other links and the default slot.
+  broadcastsLast?: boolean;
 }
 
-const { lang, season, event, competition } = Astro.props;
+const {
+  lang,
+  season,
+  event,
+  competition,
+  broadcastsLast = false,
+} = Astro.props;
 const dict = t(lang);
 const broadcasters = getBroadcasters(season, event, competition);
 const resultsUrl = getResultsUrl(competition);
 ---
 
-<div class="links">
+<div class:list={['links', broadcastsLast && 'links--broadcasts-last']}>
   <ul class="links__row links__row--broadcast">
     {broadcasters.map((broadcaster) => (
       <li class="links__item links__item--broadcast">
@@ -63,4 +71,5 @@ const resultsUrl = getResultsUrl(competition);
       </li>
     )}
   </ul>
+  <slot />
 </div>
