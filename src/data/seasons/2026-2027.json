@@ -294,12 +294,40 @@
           "fisCodex": "0003",
           "documents": [
             {
+              "label": "Official Results",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/52f21e7e-9f02-4810-a550-d577cc31d1b5.pdf"
+            },
+            {
+              "label": "Start List Final Round",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/6e51960e-a6c2-4e7b-be65-d506c03bbf75.pdf"
+            },
+            {
+              "label": "Results 1st Round",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/204e5e66-651d-4fb9-8bcf-66789be86666.pdf"
+            },
+            {
               "label": "Start List 1st Round",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/1d1cf31a-d40e-4cd5-8823-8fc22ec2fc7a.pdf"
             },
             {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/93d83361-2a63-4fd8-9532-730b8a13c39a.pdf"
+            },
+            {
+              "label": "Prize Money Ranking",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/beffde7b-fc6d-4454-b711-0ff4c787eb6e.pdf"
+            },
+            {
+              "label": "Speed Analysis",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/6bee7164-f592-4691-8c71-f8525d8577ee.pdf"
+            },
+            {
+              "label": "World Cup Standing",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/7b23970f-3e73-471a-90da-51d8f78b072e.pdf"
+            },
+            {
+              "label": "Nations Cup Standing",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/b33a7700-2e0e-4355-a1b5-7c80d05ac2d7.pdf"
             }
           ]
         }
