@@ -317,6 +317,17 @@ body {
   filter: brightness(1.1);
 }
 
+.button--live {
+  border-color: var(--live);
+  background: var(--live-soft);
+  color: var(--live);
+}
+
+.button--live:hover {
+  background: var(--live-soft);
+  filter: brightness(0.95);
+}
+
 .kbd {
   display: inline-block;
   min-width: 1.5rem;
