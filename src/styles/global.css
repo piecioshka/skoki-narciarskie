@@ -671,9 +671,9 @@ body {
   color: var(--pal-text-muted);
 }
 
-/* The countdown sits at the far right of the row. */
+/* The countdown sits on its own line below the links. */
 .competition__countdown {
-  margin-left: auto;
+  flex-basis: 100%;
   color: var(--pal-text-muted);
 }
 
@@ -1247,7 +1247,7 @@ th.table__cell--label {
   }
 
   .competition--athletes > .athletes {
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 4;
     grid-column: 2;
     padding-left: var(--gap);
     border-left: 1px solid var(--pal-border);
