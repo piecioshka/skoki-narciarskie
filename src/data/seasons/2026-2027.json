@@ -60,12 +60,20 @@
           "fisCodex": "0002",
           "documents": [
             {
+              "label": "Qualification Results",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/8fe5d607-fa34-4413-a49e-647b2cf99fc5.pdf"
+            },
+            {
               "label": "Start List Qualification",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/5e8134d6-d27e-4785-8e6b-2620e1df2bfd.pdf"
             },
             {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/29b37709-6176-4805-9085-835406ed6ae7.pdf"
+            },
+            {
+              "label": "Equipment Control Report",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/2342ec54-e7a5-4f50-bb27-cb53705a5feb.pdf"
             }
           ],
           "polishAthletes": [
@@ -106,8 +114,32 @@
           "fisCodex": "0315",
           "documents": [
             {
+              "label": "Official Results",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/ebccc7ab-e61a-4f8f-b7b3-d2258aa7355f.pdf"
+            },
+            {
+              "label": "Start List Final Round",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/7423f1c8-9484-4952-8960-a85c88136528.pdf"
+            },
+            {
+              "label": "Results 1st Round",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/1f24b1c7-3093-40fc-9294-641c54167454.pdf"
+            },
+            {
+              "label": "Start List 1st Round",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/8f1a0a50-dcfc-41e9-9e4a-38f8642ae179.pdf"
+            },
+            {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/260c6c7d-4aee-4667-8ea2-4d56af610704.pdf"
+            },
+            {
+              "label": "Speed Analysis",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/4b448787-c682-49c0-9853-3f8f6553f99a.pdf"
+            },
+            {
+              "label": "Equipment Control Report",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/39279283-c777-4c5e-9ec9-e2557bdcce29.pdf"
             }
           ],
           "polishAthletes": [
@@ -139,8 +171,44 @@
           "fisCodex": "0001",
           "documents": [
             {
+              "label": "Official Results",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/e70232bb-c7de-4cc2-8099-4fd557daccaf.pdf"
+            },
+            {
+              "label": "Start List Final Round",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/59b22c47-e310-4cad-a077-ca3317b585ac.pdf"
+            },
+            {
+              "label": "Results 1st Round",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/52b75017-077c-45e4-a635-d23b2ab0d382.pdf"
+            },
+            {
+              "label": "Start List 1st Round",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/271896f3-aecb-4340-bd64-d0e53b9c0440.pdf"
+            },
+            {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/318f709f-81cd-4947-a137-8b337091a4a1.pdf"
+            },
+            {
+              "label": "Prize Money Ranking",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/8374df7e-df0f-46e5-ae21-aeb80efacaf2.pdf"
+            },
+            {
+              "label": "Speed Analysis",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/2b97b6cc-3164-4369-b3bb-47b02012bc59.pdf"
+            },
+            {
+              "label": "World Cup Standing",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/4f63734d-a676-408b-97fe-03b736e47ba2.pdf"
+            },
+            {
+              "label": "Nations Cup Standing",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/a4efce97-06fe-4f17-9346-1a436882b1d1.pdf"
+            },
+            {
+              "label": "Equipment Control Report",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/98b6c0eb-ee56-47a7-8d61-381a3451546f.pdf"
             }
           ],
           "polishAthletes": [
@@ -173,8 +241,20 @@
           "fisCodex": "0075",
           "documents": [
             {
+              "label": "Qualification Results",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/f60bd77b-776b-4ed1-9e66-07ab2347d89c.pdf"
+            },
+            {
+              "label": "Start List Qualification",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/666bf6cd-c619-4ee2-bc66-053e407bd33b.pdf"
+            },
+            {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/187ae994-5424-403b-b77a-08c23653c8cb.pdf"
+            },
+            {
+              "label": "Speed Analysis",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/ba6d76b5-65a1-48fe-899f-830338e384df.pdf"
             }
           ],
           "polishAthletes": [
@@ -213,6 +293,10 @@
           "status": "scheduled",
           "fisCodex": "0003",
           "documents": [
+            {
+              "label": "Start List 1st Round",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/1d1cf31a-d40e-4cd5-8823-8fc22ec2fc7a.pdf"
+            },
             {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/93d83361-2a63-4fd8-9532-730b8a13c39a.pdf"

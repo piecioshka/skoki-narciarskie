@@ -72,15 +72,12 @@ test.describe('active navigation link', () => {
 });
 
 test.describe('standings', () => {
-  test('before the season shows a notice and no table of another season', async ({
-    page,
-  }) => {
+  test('a season in progress shows its current table', async ({ page }) => {
     await page.goto('/pl/2026-2027/standings/');
 
-    await expect(page.locator('.notice')).toContainText(
-      'Sezon jeszcze się nie zaczął',
+    await expect(page.locator('.table__row').first()).toContainText(
+      'Stephan Embacher',
     );
-    await expect(page.locator('.table')).toHaveCount(0);
     await expect(
       page.getByRole('heading', { name: /Końcowa klasyfikacja/ }),
     ).toHaveCount(0);
