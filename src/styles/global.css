@@ -1218,21 +1218,40 @@ th.table__cell--label {
   flex-basis: 100%;
 }
 
-/* Poles on the start list of a competition, collapsed by default */
+/* Poles on the start list of a competition: a column on the right of the
+   row on wide screens, below the details on narrow ones. */
 
 .athletes {
   flex-basis: 100%;
 }
 
-.athletes__summary {
-  width: fit-content;
+.athletes__title {
+  margin: 0;
   font-size: var(--pal-font-size-md);
   color: var(--pal-text-muted);
-  cursor: pointer;
 }
 
-.athletes__list {
-  margin-top: 0.25rem;
+.athletes__list .people__item {
+  padding: 0.25rem 0;
+}
+
+@media (min-width: 721px) {
+  .competition--athletes {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 15rem;
+    align-items: start;
+  }
+
+  .competition--athletes > :not(.athletes) {
+    grid-column: 1;
+  }
+
+  .competition--athletes > .athletes {
+    grid-row: 1 / span 3;
+    grid-column: 2;
+    padding-left: var(--gap);
+    border-left: 1px solid var(--pal-border);
+  }
 }
 
 /* Podium of a finished competition */

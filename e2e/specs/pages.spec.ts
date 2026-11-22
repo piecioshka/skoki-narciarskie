@@ -917,28 +917,25 @@ test.describe('layout of section pages', () => {
 });
 
 test.describe('polish athletes', () => {
-  test('each competition lists its Poles, collapsed by default', async ({
-    page,
-  }) => {
+  test('each competition lists its Poles on the right', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
     await page.goto('/pl/2026-2027/lillehammer/');
 
-    const lists = page.locator('.competition .athletes');
-    await expect(lists).toHaveCount(4);
+    await expect(page.locator('.competition .athletes')).toHaveCount(4);
 
     const mixed = page.locator('.competition', {
       hasText: 'Konkurs drużyn mieszanych',
     });
-    const details = mixed.locator('.athletes');
-    await expect(details).not.toHaveAttribute('open');
+    const athletes = mixed.locator('.athletes');
+    await expect(athletes.locator('.people__item')).toHaveCount(4);
     await expect(
-      details.getByRole('link', { name: 'Anna Twardosz' }),
-    ).toBeHidden();
-
-    await details.locator('summary').click();
-    await expect(details.locator('.people__item')).toHaveCount(4);
-    await expect(
-      details.getByRole('link', { name: 'Anna Twardosz' }),
+      athletes.getByRole('link', { name: 'Anna Twardosz' }),
     ).toBeVisible();
+
+    const info = await mixed.locator('.competition__info').boundingBox();
+    const list = await athletes.boundingBox();
+    expect(list!.x).toBeGreaterThan(info!.x + info!.width - 1);
+    expect(list!.y).toBeCloseTo(info!.y, -1);
   });
 
   test('a competition before its start list has no list', async ({ page }) => {

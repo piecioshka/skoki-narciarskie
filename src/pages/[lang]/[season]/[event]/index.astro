@@ -160,7 +160,12 @@ const jsonLd = {
 
             return (
               <li
-                class="competition js-slot"
+                class:list={[
+                  'competition',
+                  'js-slot',
+                  competition.polishAthletes.length > 0 &&
+                    'competition--athletes',
+                ]}
                 data-slot-start={slot.start.toISOString()}
                 data-slot-end={slot.end.toISOString()}
                 data-slot-timed={String(slot.timed)}
@@ -214,10 +219,10 @@ const jsonLd = {
                   </ol>
                 )}
                 {competition.polishAthletes.length > 0 && (
-                  <details class="athletes">
-                    <summary class="athletes__summary">
+                  <div class="athletes">
+                    <p class="athletes__title">
                       {`${dict.polishAthletes} (${competition.polishAthletes.length})`}
-                    </summary>
+                    </p>
                     <ul class="people athletes__list">
                       {competition.polishAthletes.map((athlete) => (
                         <li class="people__item">
@@ -228,7 +233,7 @@ const jsonLd = {
                         </li>
                       ))}
                     </ul>
-                  </details>
+                  </div>
                 )}
                 <CompetitionLinks
                   lang={lang}
