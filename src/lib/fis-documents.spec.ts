@@ -29,6 +29,7 @@ function competition(overrides: Partial<Competition>): Competition {
     time: '14:00',
     status: 'scheduled',
     results: [],
+    polishAthletes: [],
     ...overrides,
   };
 }
@@ -44,7 +45,6 @@ const event: SeasonEvent = {
   timeZone: 'Europe/Oslo',
   broadcasts: [],
   officials: [],
-  polishAthletes: [],
   competitions: [
     competition({ kind: 'training', fisRaceId: null, time: '12:00' }),
     competition({ fisCodex: '0002' }),

@@ -72,12 +72,9 @@ const squadLinks = new Map(
       athlete.url ? [[toPersonKey(athlete.name), athlete.url]] : [],
     ),
 );
-const polishAthletes = event.polishAthletes.map((athlete) => ({
-  name: athlete.name,
-  url:
-    squadLinks.get(toPersonKey(athlete.name)) ??
-    getAthleteUrl(athlete.fisCompetitorId),
-}));
+const athleteUrl = (athlete: { name: string; fisCompetitorId: number }) =>
+  squadLinks.get(toPersonKey(athlete.name)) ??
+  getAthleteUrl(athlete.fisCompetitorId);
 const hillText = describeEventHill(event, dict.hillTypes);
 const title = `${event.city} ${formatSeasonLabel(season.id)}`;
 const description = `${dict.types[event.type]}: ${event.city} (${country}), ${range.start} - ${range.end}. ${hillText}`;
@@ -216,6 +213,23 @@ const jsonLd = {
                     ))}
                   </ol>
                 )}
+                {competition.polishAthletes.length > 0 && (
+                  <details class="athletes">
+                    <summary class="athletes__summary">
+                      {`${dict.polishAthletes} (${competition.polishAthletes.length})`}
+                    </summary>
+                    <ul class="people athletes__list">
+                      {competition.polishAthletes.map((athlete) => (
+                        <li class="people__item">
+                          <PersonName
+                            name={athlete.name}
+                            url={athleteUrl(athlete)}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
                 <CompetitionLinks
                   lang={lang}
                   season={season}
@@ -232,21 +246,6 @@ const jsonLd = {
       {dict.timeZoneNote} <span class="js-time-zone">Europe/Warsaw</span>
     </p>
   </section>
-
-  {polishAthletes.length > 0 && (
-    <section class="section" aria-labelledby="polish-athletes-title">
-      <h3 class="section__title" id="polish-athletes-title">
-        {dict.polishAthletes}
-      </h3>
-      <ul class="people">
-        {polishAthletes.map((athlete) => (
-          <li class="people__item">
-            <PersonName name={athlete.name} url={athlete.url} />
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
 
   <PastWinners lang={lang} event={event} />
 

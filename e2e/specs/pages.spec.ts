@@ -917,26 +917,33 @@ test.describe('layout of section pages', () => {
 });
 
 test.describe('polish athletes', () => {
-  test('event page lists Poles from the FIS start list', async ({ page }) => {
-    await page.goto('/pl/2026-2027/lillehammer/');
-
-    const section = page.locator('section', {
-      has: page.getByRole('heading', { name: 'Polacy na liście startowej' }),
-    });
-
-    await expect(section.locator('.people__item')).toHaveCount(6);
-    await expect(
-      section.getByRole('link', { name: 'Paweł Wąsek' }),
-    ).toHaveAttribute('href', /pl\.wikipedia\.org/);
-  });
-
-  test('event page skips the section before the start list', async ({
+  test('each competition lists its Poles, collapsed by default', async ({
     page,
   }) => {
-    await page.goto('/pl/2026-2027/lahti/');
+    await page.goto('/pl/2026-2027/lillehammer/');
+
+    const lists = page.locator('.competition .athletes');
+    await expect(lists).toHaveCount(4);
+
+    const mixed = page.locator('.competition', {
+      hasText: 'Konkurs drużyn mieszanych',
+    });
+    const details = mixed.locator('.athletes');
+    await expect(details).not.toHaveAttribute('open');
     await expect(
-      page.getByRole('heading', { name: 'Polacy na liście startowej' }),
-    ).toHaveCount(0);
+      details.getByRole('link', { name: 'Anna Twardosz' }),
+    ).toBeHidden();
+
+    await details.locator('summary').click();
+    await expect(details.locator('.people__item')).toHaveCount(4);
+    await expect(
+      details.getByRole('link', { name: 'Anna Twardosz' }),
+    ).toBeVisible();
+  });
+
+  test('a competition before its start list has no list', async ({ page }) => {
+    await page.goto('/pl/2026-2027/lahti/');
+    await expect(page.locator('.athletes')).toHaveCount(0);
   });
 });
 

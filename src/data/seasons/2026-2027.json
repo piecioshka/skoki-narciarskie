@@ -67,6 +67,32 @@
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/29b37709-6176-4805-9085-835406ed6ae7.pdf"
             }
+          ],
+          "polishAthletes": [
+            {
+              "name": "Kacper Tomasiak",
+              "fisCompetitorId": 239625
+            },
+            {
+              "name": "Jakub Wolny",
+              "fisCompetitorId": 149455
+            },
+            {
+              "name": "Maciej Kot",
+              "fisCompetitorId": 118113
+            },
+            {
+              "name": "Dawid Kubacki",
+              "fisCompetitorId": 111251
+            },
+            {
+              "name": "Paweł Wąsek",
+              "fisCompetitorId": 182407
+            },
+            {
+              "name": "Klemens Joniak",
+              "fisCompetitorId": 229687
+            }
           ]
         },
         {
@@ -83,6 +109,24 @@
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/260c6c7d-4aee-4667-8ea2-4d56af610704.pdf"
             }
+          ],
+          "polishAthletes": [
+            {
+              "name": "Anna Twardosz",
+              "fisCompetitorId": 190207
+            },
+            {
+              "name": "Maciej Kot",
+              "fisCompetitorId": 118113
+            },
+            {
+              "name": "Kamila Karpiel",
+              "fisCompetitorId": 190131
+            },
+            {
+              "name": "Kacper Tomasiak",
+              "fisCompetitorId": 239625
+            }
           ]
         },
         {
@@ -97,6 +141,24 @@
             {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/318f709f-81cd-4947-a137-8b337091a4a1.pdf"
+            }
+          ],
+          "polishAthletes": [
+            {
+              "name": "Maciej Kot",
+              "fisCompetitorId": 118113
+            },
+            {
+              "name": "Dawid Kubacki",
+              "fisCompetitorId": 111251
+            },
+            {
+              "name": "Kacper Tomasiak",
+              "fisCompetitorId": 239625
+            },
+            {
+              "name": "Jakub Wolny",
+              "fisCompetitorId": 149455
             }
           ]
         },
@@ -113,6 +175,32 @@
             {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/187ae994-5424-403b-b77a-08c23653c8cb.pdf"
+            }
+          ],
+          "polishAthletes": [
+            {
+              "name": "Klemens Joniak",
+              "fisCompetitorId": 229687
+            },
+            {
+              "name": "Paweł Wąsek",
+              "fisCompetitorId": 182407
+            },
+            {
+              "name": "Jakub Wolny",
+              "fisCompetitorId": 149455
+            },
+            {
+              "name": "Kacper Tomasiak",
+              "fisCompetitorId": 239625
+            },
+            {
+              "name": "Dawid Kubacki",
+              "fisCompetitorId": 111251
+            },
+            {
+              "name": "Maciej Kot",
+              "fisCompetitorId": 118113
             }
           ]
         },
@@ -142,32 +230,6 @@
           "role": "technical-delegate-assistant",
           "name": "Matthew Laue",
           "nation": "USA"
-        }
-      ],
-      "polishAthletes": [
-        {
-          "name": "Jakub Wolny",
-          "fisCompetitorId": 149455
-        },
-        {
-          "name": "Klemens Joniak",
-          "fisCompetitorId": 229687
-        },
-        {
-          "name": "Dawid Kubacki",
-          "fisCompetitorId": 111251
-        },
-        {
-          "name": "Paweł Wąsek",
-          "fisCompetitorId": 182407
-        },
-        {
-          "name": "Maciej Kot",
-          "fisCompetitorId": 118113
-        },
-        {
-          "name": "Kacper Tomasiak",
-          "fisCompetitorId": 239625
         }
       ],
       "documents": [

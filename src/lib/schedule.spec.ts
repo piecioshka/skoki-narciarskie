@@ -24,6 +24,7 @@ function competition(overrides: Partial<Competition>): Competition {
     time: '16:50',
     status: 'scheduled',
     results: [],
+    polishAthletes: [],
     ...overrides,
   };
 }
@@ -40,7 +41,6 @@ function event(competitions: Competition[]): SeasonEvent {
     timeZone: 'Europe/Oslo',
     broadcasts: [],
     officials: [],
-    polishAthletes: [],
     competitions,
   };
 }

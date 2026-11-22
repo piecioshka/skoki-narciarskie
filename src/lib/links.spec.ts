@@ -54,6 +54,7 @@ describe('getResultsUrl', () => {
     time: '16:50',
     status: 'scheduled',
     results: [],
+    polishAthletes: [],
   };
 
   it('links a race to its FIS page', () => {
@@ -97,7 +98,7 @@ describe('getLiveUrl', () => {
   });
 });
 
-function base(): Omit<Competition, 'results'> {
+function base(): Omit<Competition, 'results' | 'polishAthletes'> {
   return {
     fisRaceId: 7796,
     kind: 'qualification',

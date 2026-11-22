@@ -45,6 +45,16 @@ export const competitionSchema = z
     documents: documentsSchema.optional(),
     // Broadcasters of this competition alone; falls back to the event's list.
     broadcasts: z.array(z.string()).optional(),
+    // Poles (men and women) on the FIS start list of this competition; empty
+    // until FIS publishes it.
+    polishAthletes: z
+      .array(
+        z.object({
+          name: z.string().min(1),
+          fisCompetitorId: z.number().int().positive(),
+        }),
+      )
+      .default([]),
   })
   .refine((item) => item.fisRaceId !== null || item.kind === 'training', {
     message: 'Only training may have no FIS race id',
@@ -69,15 +79,6 @@ export const eventSchema = z.object({
   broadcasts: z.array(z.string()),
   officials: z.array(officialSchema).default([]),
   documents: documentsSchema.optional(),
-  // Poles on the FIS start list of the event; empty until FIS publishes it.
-  polishAthletes: z
-    .array(
-      z.object({
-        name: z.string().min(1),
-        fisCompetitorId: z.number().int().positive(),
-      }),
-    )
-    .default([]),
   competitions: z.array(competitionSchema).min(1),
 });
 

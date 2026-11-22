@@ -1218,6 +1218,23 @@ th.table__cell--label {
   flex-basis: 100%;
 }
 
+/* Poles on the start list of a competition, collapsed by default */
+
+.athletes {
+  flex-basis: 100%;
+}
+
+.athletes__summary {
+  width: fit-content;
+  font-size: var(--pal-font-size-md);
+  color: var(--pal-text-muted);
+  cursor: pointer;
+}
+
+.athletes__list {
+  margin-top: 0.25rem;
+}
+
 /* Podium of a finished competition */
 
 .podium {
