@@ -43,6 +43,9 @@ jobs:
       - name: Commit and publish
         env:
           GH_TOKEN: ${{ github.token }}
+          # The pre-push hook runs the full CI with e2e, which needs browsers
+          # this job does not install; the bot only pushes data files.
+          HUSKY: 0
         run: |
           if git diff --quiet -- src/data; then
             echo "No changes"
