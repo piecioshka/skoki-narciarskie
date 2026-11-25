@@ -1,4 +1,4 @@
-import { hillSizeLabel } from './hills';
+import { competitionHillLabel } from './hills';
 import type { Lang } from '../i18n';
 import { t } from '../i18n';
 import { eventPath } from './paths';
@@ -25,17 +25,17 @@ export function buildStartAlerts(season: Season, lang: Lang): StartAlert[] {
 
   return listScheduled(season, { withTraining: false })
     .filter(({ slot }) => slot.timed)
-    .map(({ event, competition, slot }) => ({
-      id: `${season.id}/${event.slug}/${competition.date}/${competition.kind}/${competition.time}`,
-      start: slot.start.toISOString(),
-      title: `${dict.startAlertTitle}: ${event.city}`,
-      body: `${dict.kinds[competition.kind]}${
-        competition.hillSize === null
-          ? ''
-          : ` ${hillSizeLabel(event, competition.hillSize)}`
-      }. ${dict.startAlertBody}`,
-      url: eventPath(lang, season.id, event.slug),
-    }));
+    .map(({ event, competition, slot }) => {
+      const hill = competitionHillLabel(event, competition, dict.hillTypes);
+
+      return {
+        id: `${season.id}/${event.slug}/${competition.date}/${competition.kind}/${competition.time}`,
+        start: slot.start.toISOString(),
+        title: `${dict.startAlertTitle}: ${event.city}`,
+        body: `${dict.kinds[competition.kind]}${hill ? ` ${hill}` : ''}. ${dict.startAlertBody}`,
+        url: eventPath(lang, season.id, event.slug),
+      };
+    });
 }
 
 /** Alerts whose start has just passed and that were not shown yet. */

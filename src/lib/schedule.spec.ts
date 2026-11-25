@@ -1,11 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildCalendar } from './ics';
-import {
-  getPastWinners,
-  getEventRange,
-  getHillSizes,
-  groupByDay,
-} from './schedule';
+import { getPastWinners, getEventRange, groupByDay } from './schedule';
 import type { Competition, Season, SeasonEvent } from './schema';
 import { getCurrentSeason, getSeasons } from './seasons';
 
@@ -71,10 +66,6 @@ describe('event helpers', () => {
       start: '2026-11-20',
       end: '2026-11-22',
     });
-  });
-
-  it('lists unique hill sizes in ascending order', () => {
-    expect(getHillSizes(sample)).toEqual([100, 140]);
   });
 
   it('groups competitions by day in start order', () => {

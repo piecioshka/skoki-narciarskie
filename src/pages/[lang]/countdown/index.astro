@@ -7,8 +7,8 @@ import Layout from '../../../layouts/Layout.astro';
 import {
   formatHillSize,
   formatNumber,
-  getEventHills,
   getHillPhoto,
+  hillOfCompetition,
 } from '../../../lib/hills';
 import { getFlag } from '../../../lib/links';
 import { url } from '../../../lib/paths';
@@ -31,7 +31,7 @@ const competitions = listScheduled(season, { withTraining: false });
 const buildTimeNext = findNext(competitions, new Date());
 const units = ['days', 'hours', 'minutes', 'seconds'] as const;
 const posters = competitions.map((item) => {
-  const [hill] = getEventHills(item.event);
+  const hill = hillOfCompetition(item.event, item.competition);
 
   return { ...item, hill, photo: hill ? getHillPhoto(hill) : undefined };
 });

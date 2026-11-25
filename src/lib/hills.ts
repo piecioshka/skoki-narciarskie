@@ -1,8 +1,12 @@
 import type { ImageMetadata } from 'astro';
 import { z } from 'zod';
 import rawHills from '../data/hills.json';
-import { describeHill } from './schedule';
-import { hillSchema, type Hill, type SeasonEvent } from './schema';
+import {
+  hillSchema,
+  type Competition,
+  type Hill,
+  type SeasonEvent,
+} from './schema';
 
 const hills: Hill[] = z.array(hillSchema).parse(rawHills);
 
@@ -25,14 +29,67 @@ export function formatThousands(value: number): string {
   return String(value).replace(/\B(?=(\d{3})+$)/g, '\u00a0');
 }
 
-/** Hills of the venue that match the kind of the event (flying or not). */
-export function getEventHills(event: SeasonEvent): Hill[] {
-  // A second visit to the same town in one season gets a numbered slug.
-  const flying = event.tags.includes('ski-flying');
+/** Ski flying hills are HS185 and above; every other hill is below that. */
+const FLYING_MIN_HILL_SIZE = 185;
 
-  return getHills(event.slug.replace(/-\d+$/, '')).filter(
-    (hill) => hill.hillSize >= 185 === flying,
+/**
+ * Slug of the town an event is held in: a second visit to the same town in
+ * one season gets a numbered slug ("zakopane-2").
+ */
+function venueSlug(event: SeasonEvent): string {
+  return event.slug.replace(/-\d+$/, '');
+}
+
+function isFlyingEvent(event: SeasonEvent): boolean {
+  return event.tags.includes('ski-flying');
+}
+
+/**
+ * Key of the venue of an event: its town and whether it is ski flying, since
+ * ski flying is held on a different hill than the other events of a town.
+ */
+export function venueKey(event: SeasonEvent): string {
+  return `${venueSlug(event)}:${isFlyingEvent(event) ? 'flying' : 'hill'}`;
+}
+
+/** Hills of the venue that match the kind of the event, smallest first. */
+export function getEventHills(event: SeasonEvent): Hill[] {
+  const flying = isFlyingEvent(event);
+
+  return getHills(venueSlug(event)).filter(
+    (hill) => hill.hillSize >= FLYING_MIN_HILL_SIZE === flying,
   );
+}
+
+/** Distinct hill sizes of the competitions of an event, smallest first. */
+export function getHillSizes(event: SeasonEvent): number[] {
+  const sizes = event.competitions.flatMap((item) =>
+    item.hillSize === null ? [] : [item.hillSize],
+  );
+
+  return [...new Set(sizes)].sort((a, b) => a - b);
+}
+
+/** The hill a competition is held on: the venue hill of the same size. */
+export function hillOfCompetition(
+  event: SeasonEvent,
+  competition: Pick<Competition, 'hillSize'>,
+): Hill | undefined {
+  return getEventHills(event).find(
+    (hill) => hill.hillSize === competition.hillSize,
+  );
+}
+
+/**
+ * The hill that stands for a whole event (photo, map point): the largest hill
+ * its competitions use, or the largest venue hill when no size is known.
+ */
+export function hillOfEvent(event: SeasonEvent): Hill | undefined {
+  const venueHills = getEventHills(event);
+  const sizes = getHillSizes(event);
+  const used = venueHills.filter((hill) => sizes.includes(hill.hillSize));
+
+  return (used.length > 0 ? used : venueHills).at(-1);
 }
 
 /** "HS142 (K120)": the K-point is shown wherever the hill size is. */
@@ -46,10 +103,28 @@ export function formatHillSize(
  * Size of a hill used by an event, with its K-point when the hill data knows
  * a hill of that size there.
  */
-export function hillSizeLabel(event: SeasonEvent, size: number): string {
-  const hill = getEventHills(event).find((item) => item.hillSize === size);
+function hillSizeLabel(event: SeasonEvent, size: number): string {
+  const hill = hillOfCompetition(event, { hillSize: size });
 
   return hill ? formatHillSize(hill) : `HS${size}`;
+}
+
+export type HillTypeLabels = Record<'normal' | 'large' | 'flying', string>;
+
+/**
+ * Hill of a competition as a label: "HS142 (K120)", plain "HS142" when the
+ * hill data has no hill of that size, the hill type when the size is unknown,
+ * and an empty string when neither is known.
+ */
+export function competitionHillLabel(
+  event: SeasonEvent,
+  competition: Pick<Competition, 'hillSize' | 'hillType'>,
+  typeLabels: HillTypeLabels,
+): string {
+  if (competition.hillSize !== null) {
+    return hillSizeLabel(event, competition.hillSize);
+  }
+  return competition.hillType ? typeLabels[competition.hillType] : '';
 }
 
 /**
@@ -58,9 +133,10 @@ export function hillSizeLabel(event: SeasonEvent, size: number): string {
  */
 export function describeEventHill(
   event: SeasonEvent,
-  typeLabels: Record<'normal' | 'large' | 'flying', string>,
+  typeLabels: HillTypeLabels,
 ): string {
-  const own = describeHill(event, (size) => hillSizeLabel(event, size));
+  const sizes = getHillSizes(event).map((size) => hillSizeLabel(event, size));
+  const own = [event.hillName, sizes.join(', ')].filter(Boolean).join(' · ');
 
   if (own) {
     return own;

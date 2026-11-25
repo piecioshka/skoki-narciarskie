@@ -1,7 +1,7 @@
 ---
 import EventCard from '../../../components/EventCard.astro';
 import PlacesMap from '../../../components/PlacesMap.astro';
-import { getEventHills } from '../../../lib/hills';
+import { hillOfEvent } from '../../../lib/hills';
 import { eventPath } from '../../../lib/paths';
 import { getEventRange } from '../../../lib/schedule';
 import Icon from '../../../components/Icon.astro';
@@ -32,7 +32,7 @@ const seasons = getSeasons();
 const title = dict.scheduleTitle(formatSeasonLabel(season.id));
 // Venues without hill data (no coordinates) are left off the map.
 const points = sortEvents(season).flatMap((event) => {
-  const [hill] = getEventHills(event);
+  const hill = hillOfEvent(event);
   const range = getEventRange(event);
 
   return hill && hill.lat !== null && hill.lon !== null

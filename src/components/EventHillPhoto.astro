@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { getEventHills, getHillPhoto } from '../lib/hills';
+import { getHillPhoto, hillOfEvent } from '../lib/hills';
 import type { SeasonEvent } from '../lib/schema';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { event, class: className } = Astro.props;
-const [hill] = getEventHills(event);
+const hill = hillOfEvent(event);
 const photo = hill ? getHillPhoto(hill) : undefined;
 ---
 

@@ -16,9 +16,9 @@ import {
 import HillCard from '../../../../components/HillCard.astro';
 import PastWinners from '../../../../components/PastWinners.astro';
 import {
+  competitionHillLabel,
   describeEventHill,
   getEventHills,
-  hillSizeLabel,
 } from '../../../../lib/hills';
 import { getPrograms } from '../../../../lib/programs';
 import ProgramCard from '../../../../components/ProgramCard.astro';
@@ -185,11 +185,7 @@ const jsonLd = {
                   <span class="competition__kind">
                     {dict.kinds[competition.kind]}
                     <span class="competition__hill">
-                      {competition.hillSize === null
-                        ? competition.hillType
-                          ? dict.hillTypes[competition.hillType]
-                          : ''
-                        : hillSizeLabel(event, competition.hillSize)}
+                      {competitionHillLabel(event, competition, dict.hillTypes)}
                     </span>
                   </span>
                   {competition.status === 'scheduled' ? (

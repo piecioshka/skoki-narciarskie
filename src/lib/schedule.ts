@@ -1,4 +1,5 @@
 import type { Competition, Season, SeasonEvent } from './schema';
+import { venueKey } from './hills';
 import { getSlot } from './timing';
 
 export interface DateRange {
@@ -18,24 +19,6 @@ export function getEventEnd(event: SeasonEvent): Date {
   );
 
   return new Date(Math.max(...ends));
-}
-
-export function getHillSizes(event: SeasonEvent): number[] {
-  const sizes = event.competitions.flatMap((item) =>
-    item.hillSize === null ? [] : [item.hillSize],
-  );
-
-  return [...new Set(sizes)].sort((a, b) => a - b);
-}
-
-/** Short hill description: name and sizes, whatever of them is known. */
-export function describeHill(
-  event: SeasonEvent,
-  sizeLabel: (size: number) => string = (size) => `HS${size}`,
-): string {
-  const sizes = getHillSizes(event).map(sizeLabel);
-
-  return [event.hillName, sizes.join(', ')].filter(Boolean).join(' · ');
 }
 
 export interface CompetitionDay {
@@ -77,14 +60,6 @@ export interface PastWinner {
 
 const PAST_WINNERS_LIMIT = 5;
 
-function venueOf(event: SeasonEvent): string {
-  // A second visit to the same town in one season gets a numbered slug, and
-  // ski flying is held on a different hill than the other events of a town.
-  const flying = event.tags.includes('ski-flying') ? 'flying' : 'hill';
-
-  return `${event.slug.replace(/-\d+$/, '')}:${flying}`;
-}
-
 /**
  * The most recent winners at the venue of an event, from competitions held
  * before it: individual competitions and team competitions separately.
@@ -97,7 +72,7 @@ export function getPastWinners(
   const winners = seasons
     .flatMap((season) =>
       season.events
-        .filter((item) => venueOf(item) === venueOf(event))
+        .filter((item) => venueKey(item) === venueKey(event))
         .flatMap((item) =>
           item.competitions.flatMap((competition) => {
             const first = competition.results.find((place) => place.rank === 1);
