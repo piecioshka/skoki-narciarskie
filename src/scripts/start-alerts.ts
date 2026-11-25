@@ -73,12 +73,15 @@ function isEnabled(): boolean {
   );
 }
 
-// The address comes from data in the page; only a page of this site is opened.
-function openOnSite(url: string): void {
-  const target = new URL(url, location.href);
+// Event pages are plain paths such as /pl/2026-2027/ruka/ (with the base
+// path in front on GitHub Pages).
+const EVENT_PATH = /^\/[a-z0-9-]+(?:\/[a-z0-9-]+)*\/$/;
 
-  if (target.origin === location.origin) {
-    location.assign(target.pathname + target.search + target.hash);
+// The address comes from data in the page, so only an event path of this site
+// is opened, never a full URL or a `javascript:` one.
+function openOnSite(url: string): void {
+  if (EVENT_PATH.test(url)) {
+    location.assign(url);
   }
 }
 
