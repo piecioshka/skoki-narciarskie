@@ -20,6 +20,7 @@ export function otherLang(lang: Lang): Lang {
 
 interface Dictionary {
   siteName: string;
+  ogImageAlt: string;
   siteDescription: string;
   skipToContent: string;
   navSchedule: string;
@@ -220,6 +221,8 @@ interface Dictionary {
 
 const pl: Dictionary = {
   siteName: 'Skoki narciarskie',
+  ogImageAlt:
+    'Skoki narciarskie: terminarz Pucharu Świata, transmisje i wyniki',
   siteDescription:
     'Terminarz Pucharu Świata w skokach narciarskich: daty i godziny konkursów, linki do transmisji i wyników na żywo.',
   skipToContent: 'Przejdź do treści',
@@ -478,6 +481,7 @@ const pl: Dictionary = {
 
 const en: Dictionary = {
   siteName: 'Ski Jumping',
+  ogImageAlt: 'Ski Jumping: World Cup schedule, broadcasts and results',
   siteDescription:
     'Ski Jumping World Cup schedule: competition dates and times, links to broadcasts and live results.',
   skipToContent: 'Skip to content',
