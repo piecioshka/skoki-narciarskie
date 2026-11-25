@@ -444,7 +444,13 @@
           "date": "2026-11-27",
           "time": "18:15",
           "status": "scheduled",
-          "fisCodex": "0316"
+          "fisCodex": "0316",
+          "documents": [
+            {
+              "label": "Media Stats",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/a9da54af-eedb-4416-b6a2-9942e493db64.pdf"
+            }
+          ]
         },
         {
           "fisRaceId": 7802,
@@ -453,7 +459,13 @@
           "date": "2026-11-28",
           "time": "17:30",
           "status": "scheduled",
-          "fisCodex": "0317"
+          "fisCodex": "0317",
+          "documents": [
+            {
+              "label": "Media Stats",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/74848e96-494e-4f01-b51f-86cff750da63.pdf"
+            }
+          ]
         },
         {
           "fisRaceId": 7803,
@@ -462,7 +474,13 @@
           "date": "2026-11-29",
           "time": "15:20",
           "status": "scheduled",
-          "fisCodex": "0007"
+          "fisCodex": "0007",
+          "documents": [
+            {
+              "label": "Media Stats",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/018c8116-839a-4cb2-a3b3-1b9c317238b3.pdf"
+            }
+          ]
         }
       ],
       "officials": [
