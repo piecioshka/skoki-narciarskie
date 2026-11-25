@@ -98,16 +98,30 @@ function toTimeZone(fromFis: string | undefined, countryCode: string): string {
   return zone;
 }
 
+// `&amp;` goes last, so `&amp;quot;` stays the text `&quot;`.
 function decode(text: string): string {
   return text
-    .replace(/&amp;/g, '&')
     .replace(/&#0?39;|&apos;/g, "'")
     .replace(/&quot;/g, '"')
-    .replace(/&nbsp;/g, ' ');
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&');
+}
+
+// Repeated until nothing changes, so a comment that only appears once
+// another one is removed is stripped as well.
+function stripComments(html: string, replacement: string): string {
+  let previous: string;
+  let current = html;
+
+  do {
+    previous = current;
+    current = current.replace(/<!--[\s\S]*?-->/g, replacement);
+  } while (current !== previous);
+  return current;
 }
 
 function toText(html: string): string {
-  return decode(html.replace(/<!--[\s\S]*?-->/g, ' ').replace(/<[^>]+>/g, ' '))
+  return decode(stripComments(html, ' ').replace(/<[^>]+>/g, ' '))
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -218,7 +232,7 @@ function toHillType(description: string): string {
 
 function parsePodium(html: string, team: boolean) {
   const places = splitRows(html).flatMap((row) => {
-    const clean = row.replace(/<!--[\s\S]*?-->/g, '');
+    const clean = stripComments(row, '');
     const rank = /<div class="[^"]*justify-right[^"]*">\s*(\d+)\s*<\/div>/.exec(
       clean,
     );

@@ -73,6 +73,15 @@ function isEnabled(): boolean {
   );
 }
 
+// The address comes from data in the page; only a page of this site is opened.
+function openOnSite(url: string): void {
+  const target = new URL(url, location.href);
+
+  if (target.origin === location.origin) {
+    location.assign(target.pathname + target.search + target.hash);
+  }
+}
+
 function show(alert: StartAlert): void {
   // The tag lets the system replace a duplicate from another open tab.
   const notification = new Notification(alert.title, {
@@ -84,7 +93,7 @@ function show(alert: StartAlert): void {
   notification.addEventListener('click', () => {
     window.focus();
     notification.close();
-    location.assign(alert.url);
+    openOnSite(alert.url);
   });
 }
 

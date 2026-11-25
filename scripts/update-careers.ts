@@ -60,7 +60,10 @@ export function parsePodiums(html: string): {
   third: number;
 } {
   const text = html
-    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ')
+    .replace(
+      /<script\b[\s\S]*?<\/script[^>]*>|<style\b[\s\S]*?<\/style[^>]*>/gi,
+      ' ',
+    )
     .replace(/<[^>]+>/g, ' ')
     .replace(/\s+/g, ' ');
   const table =
