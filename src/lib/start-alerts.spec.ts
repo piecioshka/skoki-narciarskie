@@ -56,7 +56,7 @@ describe('buildStartAlerts', () => {
       id: '2026-2027/lillehammer/2026-11-21/individual/16:50',
       start: '2026-11-21T15:50:00.000Z',
       title: 'Zawody wystartowały: Lillehammer',
-      body: 'Konkurs indywidualny HS140. Kliknij, aby otworzyć stronę zawodów.',
+      body: 'Konkurs indywidualny HS140 (K123). Kliknij, aby otworzyć stronę zawodów.',
       url: '/pl/2026-2027/lillehammer/',
     });
   });

@@ -130,8 +130,11 @@ export function getHillSizes(event: SeasonEvent): number[] {
 }
 
 /** Short hill description: name and sizes, whatever of them is known. */
-export function describeHill(event: SeasonEvent): string {
-  const sizes = getHillSizes(event).map((size) => `HS${size}`);
+export function describeHill(
+  event: SeasonEvent,
+  sizeLabel: (size: number) => string = (size) => `HS${size}`,
+): string {
+  const sizes = getHillSizes(event).map(sizeLabel);
 
   return [event.hillName, sizes.join(', ')].filter(Boolean).join(' · ');
 }

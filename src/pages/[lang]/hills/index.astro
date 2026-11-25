@@ -4,6 +4,7 @@ import PlacesMap from '../../../components/PlacesMap.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../../i18n';
 import Layout from '../../../layouts/Layout.astro';
 import {
+  formatHillSize,
   getAllHills,
   getHillProfileSlug,
   groupByLocation,
@@ -28,7 +29,7 @@ const points = groupByLocation(hills).flatMap((point) => {
   return first
     ? [
         {
-          label: `${first.name} ${point.hills.map((hill) => `HS${hill.hillSize}`).join(', ')}`,
+          label: `${first.name} ${point.hills.map(formatHillSize).join(', ')}`,
           note: `${first.city}, ${getCountryName(lang, first.countryCode)}`,
           lat: point.lat,
           lon: point.lon,

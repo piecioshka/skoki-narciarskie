@@ -542,7 +542,7 @@ test.describe('start notifications', () => {
       .toEqual([
         {
           title: 'Zawody wystartowały: Lillehammer',
-          body: 'Konkurs indywidualny HS140. Kliknij, aby otworzyć stronę zawodów.',
+          body: 'Konkurs indywidualny HS140 (K123). Kliknij, aby otworzyć stronę zawodów.',
         },
       ]);
 

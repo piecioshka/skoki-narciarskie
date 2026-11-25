@@ -1,3 +1,4 @@
+import { hillSizeLabel } from './hills';
 import type { Lang } from '../i18n';
 import { t } from '../i18n';
 import { eventPath } from './paths';
@@ -34,7 +35,9 @@ export function buildStartAlerts(season: Season, lang: Lang): StartAlert[] {
       start: slot.start.toISOString(),
       title: `${dict.startAlertTitle}: ${event.city}`,
       body: `${dict.kinds[competition.kind]}${
-        competition.hillSize === null ? '' : ` HS${competition.hillSize}`
+        competition.hillSize === null
+          ? ''
+          : ` ${hillSizeLabel(event, competition.hillSize)}`
       }. ${dict.startAlertBody}`,
       url: eventPath(lang, season.id, event.slug),
     }));

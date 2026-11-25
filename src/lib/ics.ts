@@ -1,3 +1,4 @@
+import { hillSizeLabel } from './hills';
 import { t, type Lang } from '../i18n';
 import { getResultsUrl } from './links';
 import type { Season } from './schema';
@@ -25,7 +26,9 @@ function buildEvent(
   const { event, competition, slot } = item;
   const dict = t(lang);
   const size =
-    competition.hillSize === null ? '' : ` (HS${competition.hillSize})`;
+    competition.hillSize === null
+      ? ''
+      : ` · ${hillSizeLabel(event, competition.hillSize)}`;
   const summary = `${event.city}: ${dict.kinds[competition.kind]}${size}`;
   const when = slot.timed
     ? [

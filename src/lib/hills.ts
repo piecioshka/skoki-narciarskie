@@ -35,6 +35,23 @@ export function getEventHills(event: SeasonEvent): Hill[] {
   );
 }
 
+/** "HS142 (K120)": the K-point is shown wherever the hill size is. */
+export function formatHillSize(
+  hill: Pick<Hill, 'hillSize' | 'kPoint'>,
+): string {
+  return `HS${hill.hillSize} (K${hill.kPoint})`;
+}
+
+/**
+ * Size of a hill used by an event, with its K-point when the hill data knows
+ * a hill of that size there.
+ */
+export function hillSizeLabel(event: SeasonEvent, size: number): string {
+  const hill = getEventHills(event).find((item) => item.hillSize === size);
+
+  return hill ? formatHillSize(hill) : `HS${size}`;
+}
+
 /**
  * Hill line of an event. Imported seasons have neither a hill name nor a hill
  * size, so the name comes from the hill data and the type from FIS.
@@ -43,7 +60,7 @@ export function describeEventHill(
   event: SeasonEvent,
   typeLabels: Record<'normal' | 'large' | 'flying', string>,
 ): string {
-  const own = describeHill(event);
+  const own = describeHill(event, (size) => hillSizeLabel(event, size));
 
   if (own) {
     return own;

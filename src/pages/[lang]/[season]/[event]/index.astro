@@ -15,7 +15,11 @@ import {
 } from '../../../../lib/links';
 import HillCard from '../../../../components/HillCard.astro';
 import PastWinners from '../../../../components/PastWinners.astro';
-import { describeEventHill, getEventHills } from '../../../../lib/hills';
+import {
+  describeEventHill,
+  getEventHills,
+  hillSizeLabel,
+} from '../../../../lib/hills';
 import { getPrograms } from '../../../../lib/programs';
 import ProgramCard from '../../../../components/ProgramCard.astro';
 import PersonName from '../../../../components/PersonName.astro';
@@ -186,7 +190,7 @@ const jsonLd = {
                         ? competition.hillType
                           ? dict.hillTypes[competition.hillType]
                           : ''
-                        : `HS${competition.hillSize}`}
+                        : hillSizeLabel(event, competition.hillSize)}
                     </span>
                   </span>
                   {competition.status === 'scheduled' ? (

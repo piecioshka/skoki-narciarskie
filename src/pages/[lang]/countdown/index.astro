@@ -4,7 +4,12 @@ import Icon from '../../../components/Icon.astro';
 import SlotTime from '../../../components/SlotTime.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../../i18n';
 import Layout from '../../../layouts/Layout.astro';
-import { formatNumber, getEventHills, getHillPhoto } from '../../../lib/hills';
+import {
+  formatHillSize,
+  formatNumber,
+  getEventHills,
+  getHillPhoto,
+} from '../../../lib/hills';
 import { getFlag } from '../../../lib/links';
 import { url } from '../../../lib/paths';
 import { findNext, listCompetitions } from '../../../lib/schedule';
@@ -125,7 +130,7 @@ const posters = competitions.map((item) => {
               </span>
               {item.hill && (
                 <span class="poster__hill">
-                  {item.hill.name} · HS{item.hill.hillSize}
+                  {item.hill.name} · {formatHillSize(item.hill)}
                 </span>
               )}
             </p>
