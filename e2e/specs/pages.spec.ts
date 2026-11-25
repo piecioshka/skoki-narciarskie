@@ -849,6 +849,19 @@ test.describe('hill', () => {
 });
 
 test.describe('nations cup', () => {
+  test('standings link to the Nations Cup of the same season', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2025-2026/standings/');
+    await page.getByRole('link', { name: 'Puchar Narodów 2025/2026' }).click();
+    await expect(page).toHaveURL(/\/pl\/2025-2026\/nations-cup\/$/);
+
+    await page.goto('/pl/2005-2006/standings/');
+    await expect(
+      page.getByRole('link', { name: /Puchar Narodów/ }),
+    ).toHaveCount(0);
+  });
+
   test('a season shows countries ranked by FIS team points', async ({
     page,
   }) => {

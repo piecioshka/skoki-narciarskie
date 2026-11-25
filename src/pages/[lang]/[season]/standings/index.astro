@@ -3,6 +3,8 @@ import SeasonSwitch from '../../../../components/SeasonSwitch.astro';
 import StandingsTable from '../../../../components/StandingsTable.astro';
 import { LANGUAGES, t, type Lang } from '../../../../i18n';
 import Layout from '../../../../layouts/Layout.astro';
+import { getNationsCupSeasons } from '../../../../lib/nations-cup';
+import { routeUrl } from '../../../../lib/paths';
 import { formatSeasonLabel } from '../../../../lib/seasons';
 import { getStandings, getStandingsSeasons } from '../../../../lib/standings';
 
@@ -27,6 +29,8 @@ const dict = t(lang);
 const title = dict.standingsTitle(formatSeasonLabel(seasonId));
 const standings = getStandings(seasonId);
 const hasRows = standings !== undefined && standings.rows.length > 0;
+// FIS publishes the Nations Cup only for recent seasons.
+const hasNationsCup = getNationsCupSeasons().includes(seasonId);
 ---
 
 <Layout
@@ -40,6 +44,16 @@ const hasRows = standings !== undefined && standings.rows.length > 0;
       {title}
     </h2>
     <p class="lead">{dict.standingsLead}</p>
+    {hasNationsCup && (
+      <p class="nations-cup-link">
+        <a
+          class="link"
+          href={routeUrl(lang, { name: 'nations-cup', seasonId })}
+        >
+          {dict.nationsCupTitle(formatSeasonLabel(seasonId))}
+        </a>
+      </p>
+    )}
     <SeasonSwitch
       lang={lang}
       seasons={getStandingsSeasons()}
