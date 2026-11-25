@@ -381,7 +381,7 @@ test.describe('schedule', () => {
     const body = await response.text();
 
     expect(response.headers()['content-type']).toContain('text/calendar');
-    expect(body.match(/BEGIN:VEVENT/g)).toHaveLength(62);
+    expect(body.match(/BEGIN:VEVENT/g)).toHaveLength(63);
   });
 });
 

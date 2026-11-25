@@ -441,6 +441,15 @@
           ]
         },
         {
+          "fisRaceId": 8044,
+          "kind": "qualification",
+          "hillSize": 142,
+          "date": "2026-11-29",
+          "time": "13:45",
+          "status": "scheduled",
+          "fisCodex": "0083"
+        },
+        {
           "fisRaceId": 7803,
           "kind": "individual",
           "hillSize": 142,
