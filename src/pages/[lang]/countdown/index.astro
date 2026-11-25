@@ -12,7 +12,7 @@ import {
 } from '../../../lib/hills';
 import { getFlag } from '../../../lib/links';
 import { url } from '../../../lib/paths';
-import { findNext, listCompetitions } from '../../../lib/schedule';
+import { findNext, listScheduled, timingAttributes } from '../../../lib/timing';
 import { formatSeasonLabel, getCurrentSeason } from '../../../lib/seasons';
 
 export function getStaticPaths() {
@@ -26,11 +26,7 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const season = getCurrentSeason();
-const competitions = listCompetitions(season).filter(
-  (item) =>
-    item.competition.status !== 'cancelled' &&
-    item.competition.kind !== 'training',
-);
+const competitions = listScheduled(season, { withTraining: false });
 // Only a no-JS fallback; the client script picks the poster on every tick.
 const buildTimeNext = findNext(competitions, new Date());
 const units = ['days', 'hours', 'minutes', 'seconds'] as const;
@@ -70,11 +66,9 @@ const posters = competitions.map((item) => {
     <div class="poster-stage js-poster-stage" data-format="wide">
       {posters.map((item) => (
         <article
-          class="poster js-poster js-slot"
+          class="poster js-poster"
           hidden={item.slot !== buildTimeNext?.slot}
-          data-slot-start={item.slot.start.toISOString()}
-          data-slot-end={item.slot.end.toISOString()}
-          data-slot-timed={String(item.slot.timed)}
+          {...timingAttributes(item.competition, item.slot)}
           data-race={item.competition.fisRaceId}
           data-event={item.event.slug}
         >

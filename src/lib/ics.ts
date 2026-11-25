@@ -2,7 +2,7 @@ import { hillSizeLabel } from './hills';
 import { t, type Lang } from '../i18n';
 import { getResultsUrl } from './links';
 import type { Season } from './schema';
-import { listCompetitions, type ScheduledCompetition } from './schedule';
+import { listCompetitions, type ScheduledCompetition } from './timing';
 import { formatSeasonLabel } from './seasons';
 import { addDays } from './time';
 

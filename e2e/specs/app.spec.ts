@@ -320,6 +320,41 @@ test.describe('schedule', () => {
     ).toHaveText('Trwa');
   });
 
+  test('marks an event card as today, not live, on the day of a competition without a time', async ({
+    page,
+  }) => {
+    // Lahti 2027-02-13 has only a team competition with no announced time.
+    await openAt(page, '/pl/2026-2027/', new Date('2027-02-13T12:00:00Z'));
+
+    const card = page.locator('.event-card[data-event="lahti"]');
+
+    await expect(card).toHaveAttribute('data-phase', 'today');
+    await expect(card.locator('.js-phase')).toHaveText('Dzisiaj');
+  });
+
+  test('gives a cancelled competition no phase', async ({ page }) => {
+    // Ruka 2025-11-30 15:50 local was cancelled; 14:00Z is inside its slot.
+    await openAt(page, '/pl/2025-2026/ruka/', new Date('2025-11-30T14:00:00Z'));
+
+    const cancelled = page.locator('.competition[data-race="7478"]');
+
+    // The other competitions get a phase, so the page script has run.
+    await expect(page.locator('.competition').first()).toHaveAttribute(
+      'data-phase',
+      /./,
+    );
+    await expect(cancelled).toContainText('Odwołany');
+    await expect(cancelled).not.toHaveAttribute('data-phase');
+    await expect(cancelled).toHaveCSS('box-shadow', 'none');
+    await expect(cancelled.locator('.links__item--live')).toBeHidden();
+    await expect(cancelled.locator('.watch')).toBeHidden();
+    await expect(cancelled.locator('.links__item--results')).toBeVisible();
+    await expect(cancelled.locator('.competition__info')).toHaveCSS(
+      'opacity',
+      '0.55',
+    );
+  });
+
   test('offers the season as a calendar feed', async ({ page, request }) => {
     await page.goto('/pl/2026-2027/');
 

@@ -2,7 +2,7 @@ import { hillSizeLabel } from './hills';
 import type { Lang } from '../i18n';
 import { t } from '../i18n';
 import { eventPath } from './paths';
-import { COMPETITION_DURATION_MINUTES, listCompetitions } from './schedule';
+import { isLive, listScheduled, timedSlot } from './timing';
 import type { Season } from './schema';
 
 // A background tab runs timers late (even once a minute), and a page opened
@@ -23,13 +23,8 @@ export interface StartAlert {
 export function buildStartAlerts(season: Season, lang: Lang): StartAlert[] {
   const dict = t(lang);
 
-  return listCompetitions(season)
-    .filter(
-      ({ competition, slot }) =>
-        slot.timed &&
-        competition.kind !== 'training' &&
-        competition.status !== 'cancelled',
-    )
+  return listScheduled(season, { withTraining: false })
+    .filter(({ slot }) => slot.timed)
     .map(({ event, competition, slot }) => ({
       id: `${season.id}/${event.slug}/${competition.date}/${competition.kind}/${competition.time}`,
       start: slot.start.toISOString(),
@@ -62,12 +57,5 @@ export function findDueAlerts(
 
 /** True while any competition is between its start and its expected end. */
 export function isAnyLive(alerts: StartAlert[], now: Date): boolean {
-  return alerts.some((alert) => {
-    const start = Date.parse(alert.start);
-
-    return (
-      start <= now.getTime() &&
-      now.getTime() < start + COMPETITION_DURATION_MINUTES * 60_000
-    );
-  });
+  return alerts.some((alert) => isLive(now, timedSlot(new Date(alert.start))));
 }

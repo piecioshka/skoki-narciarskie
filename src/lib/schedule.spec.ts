@@ -1,16 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { buildCalendar } from './ics';
 import {
-  findNext,
   getPastWinners,
-  getEventPhase,
   getEventRange,
   getHillSizes,
-  getPhase,
-  getSlot,
   groupByDay,
-  listCompetitions,
-  type Slot,
 } from './schedule';
 import type { Competition, Season, SeasonEvent } from './schema';
 import { getCurrentSeason, getSeasons } from './seasons';
@@ -48,66 +42,6 @@ function event(competitions: Competition[]): SeasonEvent {
 function season(events: SeasonEvent[]): Season {
   return { id: '2026-2027', broadcasters: {}, channels: {}, events };
 }
-
-describe('getPhase', () => {
-  const timed = getSlot(event([]), competition({}));
-
-  it('is upcoming before the start', () => {
-    expect(getPhase(new Date('2026-11-21T15:49:00Z'), timed)).toBe('upcoming');
-  });
-
-  it('is live from the start until the assumed end', () => {
-    expect(getPhase(new Date('2026-11-21T15:50:00Z'), timed)).toBe('live');
-    expect(getPhase(new Date('2026-11-21T18:19:00Z'), timed)).toBe('live');
-  });
-
-  it('is finished after the assumed end', () => {
-    expect(getPhase(new Date('2026-11-21T18:20:00Z'), timed)).toBe('finished');
-  });
-
-  it('marks a competition without a time as "today" for the whole venue day', () => {
-    const untimed = getSlot(event([]), competition({ time: null }));
-
-    expect(getPhase(new Date('2026-11-20T22:59:00Z'), untimed)).toBe(
-      'upcoming',
-    );
-    expect(getPhase(new Date('2026-11-20T23:00:00Z'), untimed)).toBe('today');
-    expect(getPhase(new Date('2026-11-21T23:00:00Z'), untimed)).toBe(
-      'finished',
-    );
-  });
-});
-
-describe('findNext', () => {
-  const first = competition({ fisRaceId: 1, date: '2026-11-21' });
-  const second = competition({ fisRaceId: 2, date: '2026-11-22' });
-  const list = listCompetitions(season([event([second, first])]));
-
-  it('returns the earliest competition that has not finished', () => {
-    const next = findNext(list, new Date('2026-11-21T17:00:00Z'));
-
-    expect(next?.competition.fisRaceId).toBe(1);
-  });
-
-  it('moves on once a competition is finished', () => {
-    const next = findNext(list, new Date('2026-11-21T19:00:00Z'));
-
-    expect(next?.competition.fisRaceId).toBe(2);
-  });
-
-  it('skips cancelled competitions', () => {
-    const cancelled = competition({ fisRaceId: 1, status: 'cancelled' });
-    const items = listCompetitions(season([event([cancelled, second])]));
-
-    expect(
-      findNext(items, new Date('2026-11-01T00:00:00Z'))?.competition.fisRaceId,
-    ).toBe(2);
-  });
-
-  it('returns nothing after the season', () => {
-    expect(findNext(list, new Date('2027-06-01T00:00:00Z'))).toBeUndefined();
-  });
-});
 
 describe('event helpers', () => {
   const sample = event([
@@ -268,38 +202,5 @@ describe('season data', () => {
 
     expect(new Set(slugs).size).toBe(slugs.length);
     expect(new Set(races).size).toBe(races.length);
-  });
-});
-
-describe('getEventPhase', () => {
-  const slot = (start: string, end: string): Slot => ({
-    start: new Date(start),
-    end: new Date(end),
-    timed: true,
-  });
-  const slots = [
-    slot('2026-11-20T11:00:00', '2026-11-20T13:30:00'),
-    slot('2026-11-21T16:50:00', '2026-11-21T19:20:00'),
-    slot('2026-11-22T15:00:00', '2026-11-22T17:30:00'),
-  ];
-
-  it('is live only while a competition is on', () => {
-    expect(getEventPhase(new Date('2026-11-20T12:00:00'), slots)).toBe('live');
-  });
-
-  it('is today when a competition is still ahead on the current day', () => {
-    expect(getEventPhase(new Date('2026-11-21T09:00:00'), slots)).toBe('today');
-  });
-
-  it('is upcoming between competition days', () => {
-    expect(getEventPhase(new Date('2026-11-20T20:00:00'), slots)).toBe(
-      'upcoming',
-    );
-  });
-
-  it('is finished after the last competition', () => {
-    expect(getEventPhase(new Date('2026-11-23T09:00:00'), slots)).toBe(
-      'finished',
-    );
   });
 });

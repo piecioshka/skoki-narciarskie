@@ -1,11 +1,13 @@
 import { STORAGE_KEYS } from '../config';
 import { isLang, t, type Lang } from '../i18n';
 import {
-  getEventPhase,
+  findFirstUnfinished,
   getPhase,
-  type Phase,
+  getTimingPhase,
+  readTiming,
+  TIMING_SELECTOR,
   type Slot,
-} from '../lib/schedule';
+} from '../lib/timing';
 import { countdown, formatLocal, isSameLocalDay } from '../lib/time';
 import { setupPosterExport } from './poster-export';
 import { setupLiveFavicon } from './live-favicon';
@@ -28,16 +30,7 @@ function getLang(): Lang {
 }
 
 function readSlot(element: HTMLElement): Slot | undefined {
-  const { slotStart, slotEnd, slotTimed } = element.dataset;
-
-  if (!slotStart || !slotEnd) {
-    return undefined;
-  }
-  return {
-    start: new Date(slotStart),
-    end: new Date(slotEnd),
-    timed: slotTimed === 'true',
-  };
+  return readTiming(element.dataset)?.slot;
 }
 
 function all(selector: string, root: ParentNode = document): HTMLElement[] {
@@ -65,38 +58,6 @@ function showLocalTimes(): void {
   }
 }
 
-function isSlotPair(value: unknown): value is { start: string; end: string } {
-  return (
-    typeof value === 'object' &&
-    value !== null &&
-    typeof Reflect.get(value, 'start') === 'string' &&
-    typeof Reflect.get(value, 'end') === 'string'
-  );
-}
-
-/** An event card takes its phase from its competitions, not its whole span. */
-function readPhase(element: HTMLElement, now: Date, slot: Slot): Phase {
-  const { competitionSlots } = element.dataset;
-
-  if (!competitionSlots) {
-    return getPhase(now, slot);
-  }
-  try {
-    const parsed: unknown = JSON.parse(competitionSlots);
-    const slots = (Array.isArray(parsed) ? parsed : [])
-      .filter(isSlotPair)
-      .map((pair) => ({
-        start: new Date(pair.start),
-        end: new Date(pair.end),
-        timed: true,
-      }));
-
-    return slots.length > 0 ? getEventPhase(now, slots) : getPhase(now, slot);
-  } catch {
-    return getPhase(now, slot);
-  }
-}
-
 /** A competition of the current day counts down to its start. */
 function updateSlotCountdown(
   element: HTMLElement,
@@ -120,11 +81,12 @@ function updateSlotCountdown(
 function updatePhases(now: Date, lang: Lang): void {
   const labels = t(lang).phases;
 
-  for (const element of all('.js-slot')) {
-    const slot = readSlot(element);
+  for (const element of all(TIMING_SELECTOR)) {
+    const timing = readTiming(element.dataset);
 
-    if (slot) {
-      const phase = readPhase(element, now, slot);
+    if (timing) {
+      const { slot } = timing;
+      const phase = getTimingPhase(now, timing);
 
       element.dataset['phase'] = phase;
       element.dataset['today'] = String(isSameLocalDay(now, slot.start));
@@ -156,11 +118,8 @@ function showCurrent(cards: HTMLElement[], now: Date): HTMLElement | undefined {
     return undefined;
   }
 
-  const current = cards.find((card) => {
-    const slot = readSlot(card);
-
-    return slot !== undefined && getPhase(now, slot) !== 'finished';
-  });
+  // A card without timing (a cancelled competition) is never the current one.
+  const current = findFirstUnfinished(cards, now, readSlot);
 
   for (const card of cards) {
     card.hidden = card !== current;

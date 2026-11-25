@@ -31,9 +31,9 @@ import type { Season, SeasonEvent } from '../../../../lib/schema';
 import {
   getEventEnd,
   getEventRange,
-  getSlot,
   groupByDay,
 } from '../../../../lib/schedule';
+import { getSlot, timingAttributes } from '../../../../lib/timing';
 import { formatSeasonLabel, getSeasons } from '../../../../lib/seasons';
 
 export function getStaticPaths() {
@@ -166,13 +166,12 @@ const jsonLd = {
               <li
                 class:list={[
                   'competition',
-                  'js-slot',
+                  competition.status === 'cancelled' &&
+                    'competition--cancelled',
                   competition.polishAthletes.length > 0 &&
                     'competition--athletes',
                 ]}
-                data-slot-start={slot.start.toISOString()}
-                data-slot-end={slot.end.toISOString()}
-                data-slot-timed={String(slot.timed)}
+                {...timingAttributes(competition, slot)}
                 data-race={competition.fisRaceId}
               >
                 <div class="competition__info">

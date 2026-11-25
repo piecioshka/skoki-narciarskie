@@ -598,9 +598,13 @@ body {
   display: none;
 }
 
+/* A cancelled competition has no phase and is shown like a finished one. */
 [data-phase='finished'] > .links > .watch,
 [data-phase='finished'] > .links > .links__note--broadcast,
-[data-phase='finished'] > .links .links__item--live {
+[data-phase='finished'] > .links .links__item--live,
+.competition--cancelled > .links > .watch,
+.competition--cancelled > .links > .links__note--broadcast,
+.competition--cancelled > .links .links__item--live {
   display: none;
 }
 
@@ -808,7 +812,8 @@ body {
   color: var(--brand);
 }
 
-.competition[data-phase='finished'] .competition__info {
+.competition[data-phase='finished'] .competition__info,
+.competition--cancelled .competition__info {
   opacity: 0.55;
 }
 

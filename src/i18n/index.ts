@@ -5,7 +5,7 @@ import type {
   SeasonEvent,
   StaffRole,
 } from '../lib/schema';
-import type { Phase } from '../lib/schedule';
+import type { Phase } from '../lib/timing';
 
 export const LANGUAGES = ['pl', 'en'] as const;
 export type Lang = (typeof LANGUAGES)[number];

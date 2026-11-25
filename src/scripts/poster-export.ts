@@ -9,7 +9,7 @@ import {
   videoExtension,
   type PosterFormat,
 } from '../lib/poster';
-import { getPhase, type Slot } from '../lib/schedule';
+import { getPhase, type Slot } from '../lib/timing';
 import { countdown } from '../lib/time';
 
 // The exported file is drawn on a canvas rather than copied from the page, so
