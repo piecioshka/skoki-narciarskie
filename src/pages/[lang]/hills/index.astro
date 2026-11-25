@@ -51,7 +51,7 @@ const countries = [...new Set(hills.map((hill) => hill.countryCode))]
   lang={lang}
   title={dict.hillsTitle}
   description={dict.hillsLead}
-  path="/hills/"
+  route={{ name: 'hills' }}
 >
   <section class="section" aria-labelledby="hills-title">
     <div class="section__header">

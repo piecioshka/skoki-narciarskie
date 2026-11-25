@@ -62,7 +62,7 @@ const location = `${getFlag(hill.countryCode)} ${hill.city}, ${getCountryName(la
   lang={lang}
   title={title}
   description={hill.facts[0]?.[lang] ?? title}
-  path={`/hills/${getHillProfileSlug(hill)}/`}
+  route={{ name: 'hill', slug: getHillProfileSlug(hill) }}
 >
   <a class="link back-link" href={hillsPath(lang)}>
     <Icon name="arrow-left" />

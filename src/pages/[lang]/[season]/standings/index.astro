@@ -33,7 +33,7 @@ const hasRows = standings !== undefined && standings.rows.length > 0;
   lang={lang}
   title={title}
   description={`${title}. ${dict.standingsLead}`}
-  path={`/${seasonId}/standings/`}
+  route={{ name: 'standings', seasonId }}
 >
   <section class="section" aria-labelledby="standings-title">
     <h2 class="section__title section__title--page" id="standings-title">

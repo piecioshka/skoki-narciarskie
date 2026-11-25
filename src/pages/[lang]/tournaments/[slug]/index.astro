@@ -55,7 +55,7 @@ const placeName = (place: { name?: string | undefined; nation: string }) => {
   lang={lang}
   title={tournament.name}
   description={tournament.description[lang]}
-  path={`/tournaments/${tournament.slug}/`}
+  route={{ name: 'tournament', slug: tournament.slug }}
 >
   <a class="link back-link" href={tournamentsPath(lang)}>
     <Icon name="arrow-left" />

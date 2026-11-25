@@ -32,7 +32,7 @@ const competitions = listScheduled(season, { withTraining: false });
 const buildTimeNext = findNext(competitions, new Date());
 ---
 
-<Layout lang={lang} path="/">
+<Layout lang={lang} route={{ name: 'home' }}>
   <section class="section" aria-labelledby="next-title">
     <h2 class="section__title" id="next-title">
       {dict.nextCompetition}

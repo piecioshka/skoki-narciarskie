@@ -65,7 +65,7 @@ const resultsRange = `${formatSeasonLabel(archive[archive.length - 1] ?? '')} - 
   lang={lang}
   title={name}
   description={dict.nationLead(pointsRange)}
-  path={`/nations/${summary.nation.toLowerCase()}/`}
+  route={{ name: 'nation', nation: summary.nation }}
 >
   <a class="link back-link" href={nationsPath(lang)}>
     <Icon name="arrow-left" />

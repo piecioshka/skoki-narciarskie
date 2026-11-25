@@ -57,3 +57,7 @@ A TV channel (Eurosport 1, TVN, TVP) with every way to watch it: online services
 ### Channels of a competition
 
 The channels a competition is shown on (`getChannels` in `src/lib/links.ts`): its own `channels` list, or the event's when it has none. An empty result shows a note: "not announced yet" when the competition has no list of its own, "not on TV" when it has an empty one.
+
+### Route
+
+The identity of one page without language or base path, such as `{ name: 'event', seasonId, slug }` (`Route` in `src/lib/routes.ts`). `routePath` turns it into a path, `sectionOf` names the nav section it highlights, and `NAV` declares each top bar section once with its landing route, labels and shortcut key; pages hand their route to the layout instead of a path string.

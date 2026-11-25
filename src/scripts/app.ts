@@ -376,16 +376,16 @@ function setupShortcuts(): void {
   const actions: Record<string, () => void> = {
     '?': open,
     t: toggleTheme,
-    l: () => document.getElementById('language-switch')?.click(),
-    h: () => document.getElementById('home-link')?.click(),
-    s: () => document.getElementById('schedule-link')?.click(),
-    r: () => document.getElementById('standings-link')?.click(),
-    g: () => document.getElementById('gallery-link')?.click(),
-    u: () => document.getElementById('tournaments-link')?.click(),
-    k: () => document.getElementById('hills-link')?.click(),
-    n: () => document.getElementById('nations-link')?.click(),
-    z: () => document.getElementById('rules-link')?.click(),
   };
+
+  // Links in the layout carry their own key, so the layout is the one list.
+  for (const link of all('[data-shortcut]')) {
+    const key = link.dataset['shortcut'];
+
+    if (key) {
+      actions[key] = () => link.click();
+    }
+  }
 
   document.getElementById('shortcuts-open')?.addEventListener('click', open);
   document.addEventListener('keydown', (event) => {

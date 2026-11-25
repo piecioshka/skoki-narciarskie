@@ -36,7 +36,7 @@ const cityOf = (slug: string | null): string =>
   lang={lang}
   title={title}
   description={dict.galleryLead}
-  path={`/${season.id}/gallery/`}
+  route={{ name: 'gallery', seasonId: season.id }}
 >
   <section class="section" aria-labelledby="gallery-title">
     <h2 class="section__title section__title--page" id="gallery-title">

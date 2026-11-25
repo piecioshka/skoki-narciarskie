@@ -29,7 +29,7 @@ const groups = CONTINENTS.map((continent) => ({
   lang={lang}
   title={dict.nationsTitle}
   description={dict.nationsLead(range)}
-  path="/nations/"
+  route={{ name: 'nations' }}
 >
   <section class="section" aria-labelledby="nations-title">
     <div class="section__header">

@@ -2,6 +2,7 @@
 // there is no push server: a notification fires only while some page of the
 // site is open (also in a background tab).
 import { STORAGE_KEYS } from '../config';
+import { url } from '../lib/paths';
 import { findDueAlerts, type StartAlert } from '../lib/start-alerts';
 
 // Old ids are dropped so the list in storage does not grow all season.
@@ -79,9 +80,9 @@ const EVENT_PATH = /^\/[a-z0-9-]+(?:\/[a-z0-9-]+)*\/$/;
 
 // The address comes from data in the page, so only an event path of this site
 // is opened, never a full URL or a `javascript:` one.
-function openOnSite(url: string): void {
-  if (EVENT_PATH.test(url)) {
-    location.assign(url);
+function openOnSite(target: string): void {
+  if (EVENT_PATH.test(target)) {
+    location.assign(target);
   }
 }
 
@@ -90,7 +91,7 @@ function show(alert: StartAlert): void {
   const notification = new Notification(alert.title, {
     body: alert.body,
     tag: alert.id,
-    icon: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`,
+    icon: url('/favicon.svg'),
   });
 
   notification.addEventListener('click', () => {

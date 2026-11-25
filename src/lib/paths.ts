@@ -1,22 +1,26 @@
 import type { Lang } from '../i18n';
-
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+import { routePath, withBase, type Route } from './routes';
 
 /** Prefixes an absolute site path with the deployment base path. */
 export function url(path: string): string {
-  return `${base}${path}`;
+  return withBase(import.meta.env.BASE_URL, path);
+}
+
+/** The address of a page in one language, with the base path. */
+export function routeUrl(lang: Lang, route: Route): string {
+  return url(`/${lang}${routePath(route)}`);
 }
 
 export function homePath(lang: Lang): string {
-  return url(`/${lang}/`);
+  return routeUrl(lang, { name: 'home' });
 }
 
 export function seasonPath(lang: Lang, seasonId: string): string {
-  return url(`/${lang}/${seasonId}/`);
+  return routeUrl(lang, { name: 'season', seasonId });
 }
 
 export function eventPath(lang: Lang, seasonId: string, slug: string): string {
-  return url(`/${lang}/${seasonId}/${slug}/`);
+  return routeUrl(lang, { name: 'event', seasonId, slug });
 }
 
 export function calendarPath(lang: Lang, seasonId: string): string {
@@ -24,45 +28,45 @@ export function calendarPath(lang: Lang, seasonId: string): string {
 }
 
 export function standingsPath(lang: Lang, seasonId: string): string {
-  return url(`/${lang}/${seasonId}/standings/`);
+  return routeUrl(lang, { name: 'standings', seasonId });
 }
 
 export function galleryPath(lang: Lang, seasonId: string): string {
-  return url(`/${lang}/${seasonId}/gallery/`);
+  return routeUrl(lang, { name: 'gallery', seasonId });
 }
 
 export function tournamentsPath(lang: Lang): string {
-  return url(`/${lang}/tournaments/`);
+  return routeUrl(lang, { name: 'tournaments' });
 }
 
 export function tournamentPath(lang: Lang, slug: string): string {
-  return url(`/${lang}/tournaments/${slug}/`);
+  return routeUrl(lang, { name: 'tournament', slug });
 }
 
 export function hillsPath(lang: Lang): string {
-  return url(`/${lang}/hills/`);
+  return routeUrl(lang, { name: 'hills' });
 }
 
 export function hillPath(lang: Lang, slug: string): string {
-  return url(`/${lang}/hills/${slug}/`);
+  return routeUrl(lang, { name: 'hill', slug });
 }
 
 export function creditsPath(lang: Lang): string {
-  return url(`/${lang}/credits/`);
+  return routeUrl(lang, { name: 'credits' });
 }
 
 export function nationsPath(lang: Lang): string {
-  return url(`/${lang}/nations/`);
+  return routeUrl(lang, { name: 'nations' });
 }
 
 export function nationPath(lang: Lang, nation: string): string {
-  return url(`/${lang}/nations/${nation.toLowerCase()}/`);
+  return routeUrl(lang, { name: 'nation', nation });
 }
 
 export function rulesPath(lang: Lang): string {
-  return url(`/${lang}/rules/`);
+  return routeUrl(lang, { name: 'rules' });
 }
 
 export function countdownPath(lang: Lang): string {
-  return url(`/${lang}/countdown/`);
+  return routeUrl(lang, { name: 'countdown' });
 }

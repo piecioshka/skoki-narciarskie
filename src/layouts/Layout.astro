@@ -4,18 +4,8 @@ import Icon from '../components/Icon.astro';
 import { REPOSITORY_URL, STORAGE_KEYS } from '../config';
 import { LANGUAGES, otherLang, t, type Lang } from '../i18n';
 import { rules } from '../i18n/rules';
-import {
-  galleryPath,
-  creditsPath,
-  nationsPath,
-  rulesPath,
-  hillsPath,
-  tournamentsPath,
-  homePath,
-  seasonPath,
-  standingsPath,
-  url,
-} from '../lib/paths';
+import { creditsPath, homePath, routeUrl, url } from '../lib/paths';
+import { NAV, routePath, sectionOf, type Route } from '../lib/routes';
 import { getCurrentSeason } from '../lib/seasons';
 import { buildStartAlerts } from '../lib/start-alerts';
 
@@ -23,12 +13,11 @@ interface Props {
   lang: Lang;
   title?: string;
   description?: string;
-  /** Page path without the language prefix, e.g. `/2026-2027/wisla/`. */
-  path: string;
+  route: Route;
   jsonLd?: Record<string, unknown>;
 }
 
-const { lang, title, description, path, jsonLd } = Astro.props;
+const { lang, title, description, route, jsonLd } = Astro.props;
 const dict = t(lang);
 const other = otherLang(lang);
 const season = getCurrentSeason();
@@ -36,77 +25,18 @@ const pageTitle = title ? `${title} | ${dict.siteName}` : dict.siteName;
 const pageDescription = description ?? dict.siteDescription;
 const absolute = (target: string): string =>
   new URL(url(target), Astro.site).href;
+const path = routePath(route);
 const canonical = absolute(`/${lang}${path}`);
-// `/2026-2027/standings/` belongs to "standings"; the season page and every
-// event page below it belong to "schedule"; the home page to no section.
-const [seasonSegment, sectionSegment] = path.split('/').filter(Boolean);
-const sections = ['standings', 'gallery'];
-const topLevel = ['tournaments', 'hills', 'nations', 'rules'];
-const activeSection =
-  seasonSegment === undefined ||
-  ['credits', 'countdown'].includes(seasonSegment)
-    ? undefined
-    : (topLevel.find((item) => item === seasonSegment) ??
-      sections.find((item) => item === sectionSegment) ??
-      'schedule');
-const navLinks = [
-  {
-    id: 'schedule-link',
-    section: 'schedule',
-    key: 's',
-    href: seasonPath(lang, season.id),
-    label: dict.navSchedule,
-    hint: dict.shortcuts.schedule,
-  },
-  {
-    id: 'standings-link',
-    section: 'standings',
-    key: 'r',
-    href: standingsPath(lang, season.id),
-    label: dict.navStandings,
-    hint: dict.shortcutStandings,
-  },
-  {
-    id: 'gallery-link',
-    section: 'gallery',
-    key: 'g',
-    href: galleryPath(lang, season.id),
-    label: dict.navGallery,
-    hint: dict.shortcutGallery,
-  },
-  {
-    id: 'hills-link',
-    section: 'hills',
-    key: 'k',
-    href: hillsPath(lang),
-    label: dict.navHills,
-    hint: dict.shortcutHills,
-  },
-  {
-    id: 'nations-link',
-    section: 'nations',
-    key: 'n',
-    href: nationsPath(lang),
-    label: dict.nationsTitle,
-    hint: dict.shortcutNations,
-  },
-  {
-    id: 'tournaments-link',
-    section: 'tournaments',
-    key: 'u',
-    href: tournamentsPath(lang),
-    label: dict.navTournaments,
-    hint: dict.shortcutTournaments,
-  },
-  {
-    id: 'rules-link',
-    section: 'rules',
-    key: 'z',
-    href: rulesPath(lang),
-    label: rules[lang].nav,
-    hint: rules[lang].title,
-  },
-];
+const activeSection = sectionOf(route);
+const navTexts = { dict, rules: rules[lang] };
+const navLinks = NAV.map((item) => ({
+  id: `${item.section}-link`,
+  section: item.section,
+  key: item.shortcut,
+  href: routeUrl(lang, item.route(season.id)),
+  label: item.label(navTexts),
+  hint: item.hint(navTexts),
+}));
 // Every page carries the season's starts, so a notification fires on
 // whichever page is open.
 const startAlertsText = JSON.stringify(
@@ -190,7 +120,12 @@ const jsonLdText = jsonLd
     <header class="topbar">
       <div class="topbar__inner">
         <h1 class="topbar__logo">
-          <a class="topbar__logo-link" id="home-link" href={homePath(lang)}>
+          <a
+            class="topbar__logo-link"
+            id="home-link"
+            href={homePath(lang)}
+            data-shortcut="h"
+          >
             <img
               class="topbar__logo-mark"
               src={url('/favicon.svg')}
@@ -207,6 +142,7 @@ const jsonLdText = jsonLd
               class="topbar__nav-link"
               id={item.id}
               href={item.href}
+              data-shortcut={item.key}
               aria-current={item.section === activeSection ? 'page' : undefined}
             >
               {item.label}
@@ -235,6 +171,7 @@ const jsonLdText = jsonLd
             href={url(`/${other}${path}`)}
             hreflang={other}
             data-lang={other}
+            data-shortcut="l"
             aria-label={dict.switchLanguage}
             title={dict.switchLanguage}
           >

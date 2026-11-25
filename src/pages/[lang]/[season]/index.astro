@@ -52,7 +52,11 @@ const points = sortEvents(season).flatMap((event) => {
 });
 ---
 
-<Layout lang={lang} title={title} path={`/${season.id}/`}>
+<Layout
+  lang={lang}
+  title={title}
+  route={{ name: 'season', seasonId: season.id }}
+>
   <section class="section" aria-labelledby="schedule-title">
     <div class="section__header">
       <h2 class="section__title section__title--page" id="schedule-title">

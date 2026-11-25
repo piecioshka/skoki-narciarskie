@@ -106,7 +106,7 @@ const jsonLd = {
   lang={lang}
   title={title}
   description={description}
-  path={`/${season.id}/${event.slug}/`}
+  route={{ name: 'event', seasonId: season.id, slug: event.slug }}
   jsonLd={jsonLd}
 >
   <a class="link back-link" href={seasonPath(lang, season.id)}>

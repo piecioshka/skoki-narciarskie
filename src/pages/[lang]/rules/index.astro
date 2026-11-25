@@ -26,7 +26,12 @@ const format = (value: number): string =>
   lang === 'pl' ? String(value).replace('.', ',') : String(value);
 ---
 
-<Layout lang={lang} title={text.title} description={text.lead} path="/rules/">
+<Layout
+  lang={lang}
+  title={text.title}
+  description={text.lead}
+  route={{ name: 'rules' }}
+>
   <section class="section" aria-labelledby="rules-title">
     <h2 class="section__title section__title--page" id="rules-title">
       {text.title}
