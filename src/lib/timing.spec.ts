@@ -3,7 +3,9 @@ import type { Competition, Season, SeasonEvent } from './schema';
 import {
   eventTimingAttributes,
   findFirstUnfinished,
+  dropFinished,
   findNext,
+  getBuildNow,
   getEventPhase,
   getPhase,
   getSlot,
@@ -110,6 +112,42 @@ describe('findNext', () => {
 
   it('returns nothing after the season', () => {
     expect(findNext(list, new Date('2027-06-01T00:00:00Z'))).toBeUndefined();
+  });
+});
+
+describe('dropFinished', () => {
+  const first = competition({ fisRaceId: 1, date: '2026-11-21' });
+  const second = competition({ fisRaceId: 2, date: '2026-11-22' });
+  const list = listCompetitions(season([event([first, second])]));
+  const ids = (now: string) =>
+    dropFinished(list, new Date(now)).map((item) => item.competition.fisRaceId);
+
+  it('keeps a competition until it ends', () => {
+    expect(ids('2026-11-01T00:00:00Z')).toEqual([1, 2]);
+    expect(ids('2026-11-21T17:00:00Z')).toEqual([1, 2]);
+  });
+
+  it('drops the ones that have ended', () => {
+    expect(ids('2026-11-21T19:00:00Z')).toEqual([2]);
+    expect(ids('2027-06-01T00:00:00Z')).toEqual([]);
+  });
+});
+
+describe('getBuildNow', () => {
+  it('uses the pinned date when one is given', () => {
+    expect(getBuildNow('2026-11-16T00:00:00Z').toISOString()).toBe(
+      '2026-11-16T00:00:00.000Z',
+    );
+  });
+
+  it('falls back to the current time', () => {
+    const before = Date.now();
+
+    expect(getBuildNow('').getTime()).toBeGreaterThanOrEqual(before);
+  });
+
+  it('rejects a value that is not a date', () => {
+    expect(() => getBuildNow('soon')).toThrow('BUILD_NOW is not a date');
   });
 });
 

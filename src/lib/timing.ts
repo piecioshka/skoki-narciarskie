@@ -148,6 +148,34 @@ export function findFirstUnfinished<T>(
   });
 }
 
+/**
+ * "Now" of the static build. `BUILD_NOW` pins it, so the e2e build keeps the
+ * competitions its fixed clocks look at.
+ */
+export function getBuildNow(value = process.env['BUILD_NOW']): Date {
+  if (!value) {
+    return new Date();
+  }
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    throw new Error(`BUILD_NOW is not a date: ${value}`);
+  }
+  return date;
+}
+
+/**
+ * Competitions still ahead or running at `now`. One that has finished can
+ * never be the next one again, so a page built later needs no card for it.
+ */
+export function dropFinished(
+  competitions: ScheduledCompetition[],
+  now: Date,
+): ScheduledCompetition[] {
+  return competitions.filter((item) => item.slot.end > now);
+}
+
 /** The first scheduled competition that has not finished yet. */
 export function findNext(
   competitions: ScheduledCompetition[],

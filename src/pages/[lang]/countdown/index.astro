@@ -12,7 +12,13 @@ import {
   hillOfCompetition,
 } from '../../../lib/hills';
 import { getFlag } from '../../../lib/links';
-import { findNext, listScheduled, timingAttributes } from '../../../lib/timing';
+import {
+  dropFinished,
+  findNext,
+  getBuildNow,
+  listScheduled,
+  timingAttributes,
+} from '../../../lib/timing';
 import { formatSeasonLabel, getCurrentSeason } from '../../../lib/seasons';
 
 export function getStaticPaths() {
@@ -26,9 +32,13 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const season = getCurrentSeason();
-const competitions = listScheduled(season, { withTraining: false });
+const buildNow = getBuildNow();
+const competitions = dropFinished(
+  listScheduled(season, { withTraining: false }),
+  buildNow,
+);
 // Only a no-JS fallback; the client script picks the poster on every tick.
-const buildTimeNext = findNext(competitions, new Date());
+const buildTimeNext = findNext(competitions, buildNow);
 const posters = competitions.map((item) => {
   const hill = hillOfCompetition(item.event, item.competition);
 

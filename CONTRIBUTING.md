@@ -17,7 +17,7 @@ Serwer deweloperski startuje na pierwszym wolnym porcie od 3000.
 - `npm run preview` - podgląd zbudowanej strony
 - `npm run typecheck` - `astro check`
 - `npm test` - testy jednostkowe (Vitest)
-- `npm run e2e` - testy end-to-end (Playwright, headless, na zbudowanej stronie)
+- `npm run e2e` - testy end-to-end (Playwright, headless). Same budują stronę z datą buildu przypiętą przez `BUILD_NOW` (`npm run build:e2e`), bo strona główna i odliczanie pomijają konkursy zakończone przed buildem
 - `npm run lint` - ESLint
 - `npm run format` / `npm run format:check` - Prettier
 - `npm run standings` - pobiera klasyfikację generalną z FIS do `src/data/standings/`

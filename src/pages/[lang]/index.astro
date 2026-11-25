@@ -12,7 +12,13 @@ import { describeEventHill } from '../../lib/hills';
 import { getFlag } from '../../lib/links';
 import { countdownPath, eventPath, seasonPath } from '../../lib/paths';
 import { sortEvents } from '../../lib/schedule';
-import { findNext, listScheduled, timingAttributes } from '../../lib/timing';
+import {
+  dropFinished,
+  findNext,
+  getBuildNow,
+  listScheduled,
+  timingAttributes,
+} from '../../lib/timing';
 import { formatSeasonLabel, getCurrentSeason } from '../../lib/seasons';
 
 export function getStaticPaths() {
@@ -27,10 +33,14 @@ const { lang } = Astro.props;
 const dict = t(lang);
 const season = getCurrentSeason();
 // Training is in the event program, but the countdown is for competitions.
-const competitions = listScheduled(season, { withTraining: false });
+const buildNow = getBuildNow();
+const competitions = dropFinished(
+  listScheduled(season, { withTraining: false }),
+  buildNow,
+);
 // The build-time pick is only a no-JS fallback; the client script re-picks
 // the card on every tick, because a static page does not know "now".
-const buildTimeNext = findNext(competitions, new Date());
+const buildTimeNext = findNext(competitions, buildNow);
 // Only the card shown without JS carries its where-to-watch panel; the others
 // share one panel per channel set.
 const sharedPanels = competitions.filter((item) => item !== buildTimeNext);

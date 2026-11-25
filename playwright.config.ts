@@ -21,15 +21,17 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
-  // Always serve the build made by `npm run build`; reusing a running preview
-  // would silently test a previous build.
+  // Always build and serve a fresh copy; reusing a running preview would
+  // silently test a previous build. The build date is pinned before the
+  // earliest fixed clock in the specs, so pages keep every competition the
+  // specs look at (finished ones are dropped at build time).
   webServer: {
-    command: `npm run preview -- --port ${port}`,
+    command: `npm run build:e2e && npm run preview -- --port ${port}`,
     url: baseURL,
     reuseExistingServer: false,
     env: { ASTRO_PREVIEW_BACKGROUND: '1' },
     stdout: 'pipe',
     stderr: 'pipe',
-    timeout: 60_000,
+    timeout: 180_000,
   },
 });
