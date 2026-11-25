@@ -41,4 +41,11 @@ Instrukcja uruchomienia, opis danych i sposób dodawania kolejnych sezonów są 
 
 ## Licencja 📄
 
-[The MIT License](https://piecioshka.mit-license.org) @ 2026
+Kod: [The MIT License](https://piecioshka.mit-license.org) @ 2026
+
+Licencja MIT obejmuje kod serwisu, a nie materiały innych autorów zapisane w repozytorium:
+
+- zdjęcia z Wikimedia Commons mają licencje swoich autorów, wypisane przy każdym pliku i na stronie "Autorzy zdjęć"
+- portrety zawodników z FIS należą do FIS (© FIS)
+- odręczne programy należą do [ich autora](https://www.facebook.com/profile.php?id=100064595445494) i są pokazywane z linkiem do źródła
+- dane o zawodach i wynikach pochodzą z serwisów wymienionych w sekcji "Skąd są dane"
