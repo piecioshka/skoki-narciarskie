@@ -37,3 +37,15 @@ The hill that stands for a whole event (`hillOfEvent`): the largest hill its com
 ### Hill label
 
 How a competition's hill is written (`competitionHillLabel`): "HS132 (K120)", plain "HS132" when the hill data has no hill of that size, the hill type ("large hill") when the size is unknown, and nothing when neither is known.
+
+### Refresh scripts
+
+The Node scripts in `scripts/` that read FIS pages and write data files: `documents` and `standings` run every hour in GitHub Actions, `import-season` and `careers` are run by hand. Their parsers live in `src/lib/fis-*.ts`, so they are unit-tested without the network.
+
+### FIS client
+
+The one way the refresh scripts fetch FIS pages (`createFisClient` in `src/lib/fis-client.ts`): a browser User-Agent, a 3 s gap between requests, and a 60 s wait and retry after a 429. Its fetch and sleep can be swapped out in tests.
+
+### FIS page cache
+
+An optional disk cache of FIS pages in `tmp/fis-cache/`, one file per URL hash (`fileCache`). The hand-run scripts use it, so a rerun costs no requests; the hourly refresh does not, because it must see the current pages.

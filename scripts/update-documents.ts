@@ -2,32 +2,14 @@
 // program) from the FIS event pages and writes them to the season file.
 // Usage: npm run documents -- [season] [event slug]
 // Without a slug it checks every event that has not finished yet.
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { createFisClient, FIS_URL } from '../src/lib/fis-client.ts';
 import { assignDocuments, parseDocuments } from '../src/lib/fis-documents.ts';
+import { latestSeason, SEASONS_DIR } from '../src/lib/season-files.ts';
 import { seasonSchema } from '../src/lib/schema.ts';
 
-const FIS = 'https://www.fis-ski.com/DB';
-const USER_AGENT =
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
-// FIS answers 429 after about fifty quick requests.
-const REQUEST_GAP_MS = 3000;
-const SEASONS_DIR = new URL('../src/data/seasons/', import.meta.url);
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function latestSeason(): string {
-  const latest = readdirSync(SEASONS_DIR)
-    .filter((file) => file.endsWith('.json'))
-    .sort()
-    .at(-1);
-
-  if (!latest) {
-    throw new Error('No season files found');
-  }
-  return latest.replace('.json', '');
-}
+// No cache: the hourly refresh must always see the current pages.
+const fis = createFisClient();
 
 const season = process.argv[2] ?? latestSeason();
 const onlySlug = process.argv[3];
@@ -62,13 +44,11 @@ function isWanted(event: (typeof data.events)[number]): boolean {
 }
 
 async function fetchDocuments(eventId: number) {
-  const url = `${FIS}/general/event-details.html?sectorcode=JP&eventid=${eventId}&seasoncode=${season.slice(5)}`;
-  const response = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status} for ${url}`);
-  }
-  return parseDocuments(await response.text());
+  return parseDocuments(
+    await fis.get(
+      `${FIS_URL}/general/event-details.html?sectorcode=JP&eventid=${eventId}&seasoncode=${season.slice(5)}`,
+    ),
+  );
 }
 
 function writeDocuments(
@@ -107,7 +87,6 @@ for (const [index, event] of data.events.entries()) {
     console.log(
       `${event.slug}: ${updated.documents?.length ?? 0} event documents, ${updated.competitions.reduce((sum, item) => sum + (item.documents?.length ?? 0), 0)} competition documents`,
     );
-    await sleep(REQUEST_GAP_MS);
   }
 }
 
