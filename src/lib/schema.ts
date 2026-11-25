@@ -153,6 +153,22 @@ export const standingsSchema = z.object({
   rows: z.array(standingsRowSchema),
 });
 
+export const nationsCupRowSchema = z.object({
+  rank: z.number().int().positive(),
+  nation: z.string().regex(/^[A-Z]{3}$/),
+  points: z.number().int().nonnegative(),
+});
+
+// The FIS team classification of a season: points of every athlete of a
+// country summed, team competitions included.
+export const nationsCupSchema = z.object({
+  season: z.string().regex(/^\d{4}-\d{4}$/),
+  // Day the table was fetched from FIS; null while FIS has no table.
+  updatedAt: isoDate.nullable(),
+  sourceUrl: z.url(),
+  rows: z.array(nationsCupRowSchema),
+});
+
 export const athleteSchema = z.object({
   name: z.string().min(1),
   // Profile page (Wikipedia); omitted when no verified page exists.
@@ -197,6 +213,8 @@ export type OfficialRole = Official['role'];
 export type Program = z.infer<typeof programSchema>;
 export type StandingsRow = z.infer<typeof standingsRowSchema>;
 export type Standings = z.infer<typeof standingsSchema>;
+export type NationsCupRow = z.infer<typeof nationsCupRowSchema>;
+export type NationsCup = z.infer<typeof nationsCupSchema>;
 export type StaffMember = z.infer<typeof staffSchema>;
 export type StaffRole = StaffMember['role'];
 export type NationTeams = z.infer<typeof nationTeamsSchema> & {

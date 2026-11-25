@@ -3,6 +3,7 @@ import { expect, test } from '@playwright/test';
 const PAGES = [
   '/pl/2026-2027/standings/',
   '/pl/nations/pol/',
+  '/pl/2025-2026/nations-cup/',
   '/pl/2026-2027/gallery/',
   '/pl/2026-2027/wisla/',
   '/pl/countdown/',
@@ -49,6 +50,7 @@ test.describe('active navigation link', () => {
     ['/pl/2026-2027/wisla/', 'Terminarz'],
     ['/pl/2026-2027/standings/', 'Klasyfikacja'],
     ['/pl/nations/pol/', 'Reprezentacje'],
+    ['/pl/2025-2026/nations-cup/', 'Reprezentacje'],
     ['/pl/2026-2027/gallery/', 'Galeria'],
   ] as const;
 
@@ -843,6 +845,54 @@ test.describe('hill', () => {
     await page.goto('/en/2026-2027/falun/');
     await expect(page.locator('.hill')).toHaveCount(2);
     await expect(page.locator('.hill').first()).toContainText('Lugnet HS95');
+  });
+});
+
+test.describe('nations cup', () => {
+  test('a season shows countries ranked by FIS team points', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2025-2026/nations-cup/');
+    await expect(page.locator('#nations-cup-title')).toHaveText(
+      'Puchar Narodów 2025/2026',
+    );
+
+    const first = page.locator('.table__row').first();
+
+    await expect(first.locator('td').first()).toHaveText('1');
+    await expect(first).toContainText('Austria');
+    await expect(page.locator('.table__row--home')).toContainText('Polska');
+    await first.getByRole('link', { name: /Austria/ }).click();
+    await expect(page).toHaveURL(/\/pl\/nations\/aut\/$/);
+  });
+
+  test('season switcher lists Nations Cup seasons and opens them', async ({
+    page,
+  }) => {
+    await page.goto('/pl/2025-2026/nations-cup/');
+
+    const switcher = page.locator('.season-switch');
+
+    await expect(switcher.getByRole('link')).toHaveCount(9);
+    await expect(switcher.getByRole('link').last()).toHaveText('2018/2019');
+    await expect(switcher.locator('[aria-current="page"]')).toHaveText(
+      '2025/2026',
+    );
+    await switcher.getByRole('link', { name: '2020/2021' }).click();
+    await expect(page).toHaveURL(/\/pl\/2020-2021\/nations-cup\/$/);
+    await expect(page.locator('.table__row').first()).toBeVisible();
+  });
+
+  test('nations page links to the newest Nations Cup', async ({ page }) => {
+    await page.goto('/en/nations/');
+    await page
+      .getByRole('link', { name: /^Nations Cup \d{4}\/\d{4}$/ })
+      .click();
+    await expect(page).toHaveURL(/\/en\/\d{4}-\d{4}\/nations-cup\/$/);
+    await expect(page.locator('.table__row').first()).toBeVisible();
+    await expect(page.locator('.topbar__nav [aria-current="page"]')).toHaveText(
+      'Nations',
+    );
   });
 });
 

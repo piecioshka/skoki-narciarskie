@@ -27,7 +27,8 @@
     "standings": "node scripts/update-standings.ts",
     "import-season": "node scripts/import-season.ts",
     "careers": "node scripts/update-careers.ts",
-    "documents": "node scripts/update-documents.ts"
+    "documents": "node scripts/update-documents.ts",
+    "nations-cup": "node scripts/update-nations-cup.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.5",

@@ -1,8 +1,8 @@
 ---
+import SeasonSwitch from '../../../../components/SeasonSwitch.astro';
 import StandingsTable from '../../../../components/StandingsTable.astro';
 import { LANGUAGES, t, type Lang } from '../../../../i18n';
 import Layout from '../../../../layouts/Layout.astro';
-import { standingsPath } from '../../../../lib/paths';
 import { formatSeasonLabel } from '../../../../lib/seasons';
 import { getStandings, getStandingsSeasons } from '../../../../lib/standings';
 
@@ -40,17 +40,12 @@ const hasRows = standings !== undefined && standings.rows.length > 0;
       {title}
     </h2>
     <p class="lead">{dict.standingsLead}</p>
-    <nav class="season-switch" aria-label={dict.otherSeasons}>
-      {getStandingsSeasons().map((id) => (
-        <a
-          class="season-switch__link"
-          href={standingsPath(lang, id)}
-          aria-current={id === seasonId ? 'page' : undefined}
-        >
-          {formatSeasonLabel(id)}
-        </a>
-      ))}
-    </nav>
+    <SeasonSwitch
+      lang={lang}
+      seasons={getStandingsSeasons()}
+      current={seasonId}
+      route={(id) => ({ name: 'standings', seasonId: id })}
+    />
     {hasRows ? (
       <StandingsTable lang={lang} standings={standings} />
     ) : (

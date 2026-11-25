@@ -245,6 +245,10 @@ body {
   color: var(--pal-text-muted);
 }
 
+.nations-cup-link {
+  margin: -0.5rem 0 1.25rem;
+}
+
 .note {
   margin: 0.75rem 0 0;
   font-size: var(--pal-font-size-sm);

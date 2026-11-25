@@ -17,6 +17,7 @@ describe('routePath', () => {
     [{ name: 'hill', slug: 'wisla' }, '/hills/wisla/'],
     [{ name: 'nations' }, '/nations/'],
     [{ name: 'nation', nation: 'POL' }, '/nations/pol/'],
+    [{ name: 'nations-cup', seasonId: '2025-2026' }, '/2025-2026/nations-cup/'],
     [{ name: 'rules' }, '/rules/'],
     [{ name: 'credits' }, '/credits/'],
     [{ name: 'countdown' }, '/countdown/'],
@@ -52,6 +53,7 @@ describe('sectionOf', () => {
     [{ name: 'tournament', slug: 'tcs' }, 'tournaments'],
     [{ name: 'hill', slug: 'wisla' }, 'hills'],
     [{ name: 'nation', nation: 'POL' }, 'nations'],
+    [{ name: 'nations-cup', seasonId: '2025-2026' }, 'nations'],
     [{ name: 'rules' }, 'rules'],
   ])('puts %o in %s', (route, section) => {
     expect(sectionOf(route)).toBe(section);

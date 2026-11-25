@@ -1,0 +1,124 @@
+---
+import SeasonSwitch from '../../../../components/SeasonSwitch.astro';
+import { LANGUAGES, t, type Lang } from '../../../../i18n';
+import Layout from '../../../../layouts/Layout.astro';
+import { getNationFlag, getNationName } from '../../../../lib/links';
+import { getNations } from '../../../../lib/nations';
+import {
+  getNationsCup,
+  getNationsCupSeasons,
+} from '../../../../lib/nations-cup';
+import { nationPath } from '../../../../lib/paths';
+import { formatSeasonLabel } from '../../../../lib/seasons';
+
+// One page per Nations Cup file: the seasons FIS has a Nations Cup for, and
+// the latest season, which may still wait for its first competition.
+export function getStaticPaths() {
+  return LANGUAGES.flatMap((lang) =>
+    getNationsCupSeasons().map((seasonId) => ({
+      params: { lang, season: seasonId },
+      props: { lang, seasonId },
+    })),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  seasonId: string;
+}
+
+const { lang, seasonId } = Astro.props;
+const dict = t(lang);
+const title = dict.nationsCupTitle(formatSeasonLabel(seasonId));
+const seasons = getNationsCupSeasons();
+const nationsCup = getNationsCup(seasonId);
+const rows = nationsCup?.rows ?? [];
+// Only countries whose athletes have World Cup points have a nation page.
+const nationPages = new Set(getNations().map((item) => item.nation));
+---
+
+<Layout
+  lang={lang}
+  title={title}
+  description={`${title}. ${dict.nationsCupLead}`}
+  route={{ name: 'nations-cup', seasonId }}
+>
+  <section class="section" aria-labelledby="nations-cup-title">
+    <h2 class="section__title section__title--page" id="nations-cup-title">
+      {title}
+    </h2>
+    <p class="lead">{dict.nationsCupLead}</p>
+    <SeasonSwitch
+      lang={lang}
+      seasons={seasons}
+      current={seasonId}
+      route={(id) => ({ name: 'nations-cup', seasonId: id })}
+    />
+    {rows.length > 0 ? (
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="table__cell table__cell--number" scope="col">
+                {dict.rank}
+              </th>
+              <th class="table__cell" scope="col">
+                {dict.country}
+              </th>
+              <th class="table__cell table__cell--number" scope="col">
+                {dict.points}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => {
+              const label =
+                `${getNationFlag(row.nation)} ${getNationName(lang, row.nation)}`.trim();
+
+              return (
+                <tr
+                  class:list={[
+                    'table__row',
+                    row.nation === 'POL' && 'table__row--home',
+                  ]}
+                  data-nation={row.nation}
+                >
+                  <td class="table__cell table__cell--number">{row.rank}</td>
+                  <td class="table__cell">
+                    {nationPages.has(row.nation) ? (
+                      <a
+                        class="table__link"
+                        href={nationPath(lang, row.nation)}
+                      >
+                        {label}
+                      </a>
+                    ) : (
+                      label
+                    )}
+                  </td>
+                  <td class="table__cell table__cell--number table__cell--strong">
+                    {row.points}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    ) : (
+      <p class="notice">{dict.nationsCupNotStarted}</p>
+    )}
+    {nationsCup && (
+      <p class="note">
+        {nationsCup.updatedAt && (
+          <>
+            {dict.standingsUpdated} {nationsCup.updatedAt} ·{' '}
+          </>
+        )}
+        <a class="link" href={nationsCup.sourceUrl}>
+          {dict.standingsSource}
+        </a>
+      </p>
+    )}
+  </section>
+</Layout>

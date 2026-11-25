@@ -27,10 +27,6 @@ export function calendarPath(lang: Lang, seasonId: string): string {
   return url(`/${lang}/${seasonId}/calendar.ics`);
 }
 
-export function standingsPath(lang: Lang, seasonId: string): string {
-  return routeUrl(lang, { name: 'standings', seasonId });
-}
-
 export function tournamentsPath(lang: Lang): string {
   return routeUrl(lang, { name: 'tournaments' });
 }

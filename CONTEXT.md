@@ -40,7 +40,11 @@ How a competition's hill is written (`competitionHillLabel`): "HS132 (K120)", pl
 
 ### Refresh scripts
 
-The Node scripts in `scripts/` that read FIS pages and write data files: `documents` and `standings` run every hour in GitHub Actions, `import-season` and `careers` are run by hand. Their parsers live in `src/lib/fis-*.ts`, so they are unit-tested without the network.
+The Node scripts in `scripts/` that read FIS pages and write data files: `documents`, `standings` and `nations-cup` run every hour in GitHub Actions, `import-season` and `careers` are run by hand. Their parsers live in `src/lib/fis-*.ts`, so they are unit-tested without the network.
+
+### Nations Cup
+
+The official FIS team classification of a season (`cupcode=NC-WC`): the points of all athletes of a country summed, team competitions included. It is not the sum of the overall standings, which leaves team events out and is what the nations pages add up. FIS has it from the 2018-19 season; older seasons have no file and no page, and only the latest season keeps an empty file before its first competition.
 
 ### FIS client
 

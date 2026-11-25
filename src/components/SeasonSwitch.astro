@@ -1,0 +1,30 @@
+---
+import { t, type Lang } from '../i18n';
+import { routeUrl } from '../lib/paths';
+import type { Route } from '../lib/routes';
+import { formatSeasonLabel } from '../lib/seasons';
+
+interface Props {
+  lang: Lang;
+  /** Seasons to list, newest first. */
+  seasons: string[];
+  current: string;
+  /** The page of the same kind in another season. */
+  route: (seasonId: string) => Route;
+}
+
+const { lang, seasons, current, route } = Astro.props;
+const dict = t(lang);
+---
+
+<nav class="season-switch" aria-label={dict.otherSeasons}>
+  {seasons.map((id) => (
+    <a
+      class="season-switch__link"
+      href={routeUrl(lang, route(id))}
+      aria-current={id === current ? 'page' : undefined}
+    >
+      {formatSeasonLabel(id)}
+    </a>
+  ))}
+</nav>

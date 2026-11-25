@@ -14,6 +14,7 @@ export type Route =
   | { name: 'hill'; slug: string }
   | { name: 'nations' }
   | { name: 'nation'; nation: string }
+  | { name: 'nations-cup'; seasonId: string }
   | { name: 'rules' }
   | { name: 'credits' }
   | { name: 'countdown' };
@@ -52,6 +53,8 @@ export function routePath(route: Route): string {
       return '/nations/';
     case 'nation':
       return `/nations/${route.nation.toLowerCase()}/`;
+    case 'nations-cup':
+      return `/${route.seasonId}/nations-cup/`;
     case 'rules':
       return '/rules/';
     case 'credits':
@@ -79,6 +82,7 @@ export function sectionOf(route: Route): NavSection | undefined {
     case 'hill':
       return 'hills';
     case 'nation':
+    case 'nations-cup':
       return 'nations';
     case 'home':
     case 'credits':

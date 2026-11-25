@@ -43,6 +43,9 @@ interface Dictionary {
   standingsEmpty: string;
   standingsUpdated: string;
   standingsSource: string;
+  nationsCupTitle: (season: string) => string;
+  nationsCupLead: string;
+  nationsCupNotStarted: string;
   onlyPoles: string;
   rank: string;
   athlete: string;
@@ -252,6 +255,11 @@ const pl: Dictionary = {
     'Sezon jeszcze się nie zaczął. Klasyfikacja pojawi się po pierwszym konkursie.',
   standingsUpdated: 'Stan na',
   standingsSource: 'Źródło: FIS',
+  nationsCupTitle: (season) => `Puchar Narodów ${season}`,
+  nationsCupLead:
+    'Oficjalna klasyfikacja drużynowa FIS: punkty wszystkich zawodników danego kraju w Pucharze Świata mężczyzn, razem z konkursami drużynowymi.',
+  nationsCupNotStarted:
+    'Sezon jeszcze się nie zaczął. Puchar Narodów pojawi się po pierwszym konkursie.',
   onlyPoles: 'Tylko Polacy',
   rank: 'Miejsce',
   athlete: 'Zawodnik',
@@ -514,6 +522,11 @@ const en: Dictionary = {
     'The season has not started yet. Standings will appear after the first competition.',
   standingsUpdated: 'As of',
   standingsSource: 'Source: FIS',
+  nationsCupTitle: (season) => `Nations Cup ${season}`,
+  nationsCupLead:
+    "The official FIS team classification: points of all athletes of a country in the men's World Cup, team competitions included.",
+  nationsCupNotStarted:
+    'The season has not started yet. The Nations Cup will appear after the first competition.',
   onlyPoles: 'Poles only',
   rank: 'Rank',
   athlete: 'Athlete',

@@ -1,0 +1,77 @@
+{
+  "season": "2026-2027",
+  "updatedAt": "2026-11-25",
+  "sourceUrl": "https://www.fis-ski.com/DB/ski-jumping/cup-standings.html?sectorcode=JP&seasoncode=2027&cupcode=NC-WC&disciplinecode=ALL&gendercode=M&nationcode=",
+  "rows": [
+    {
+      "rank": 1,
+      "nation": "AUT",
+      "points": 668
+    },
+    {
+      "rank": 2,
+      "nation": "NOR",
+      "points": 620
+    },
+    {
+      "rank": 3,
+      "nation": "JPN",
+      "points": 287
+    },
+    {
+      "rank": 4,
+      "nation": "SLO",
+      "points": 237
+    },
+    {
+      "rank": 5,
+      "nation": "GER",
+      "points": 140
+    },
+    {
+      "rank": 6,
+      "nation": "SUI",
+      "points": 108
+    },
+    {
+      "rank": 7,
+      "nation": "FIN",
+      "points": 98
+    },
+    {
+      "rank": 8,
+      "nation": "POL",
+      "points": 54
+    },
+    {
+      "rank": 9,
+      "nation": "FRA",
+      "points": 29
+    },
+    {
+      "rank": 10,
+      "nation": "USA",
+      "points": 27
+    },
+    {
+      "rank": 11,
+      "nation": "ITA",
+      "points": 25
+    },
+    {
+      "rank": 12,
+      "nation": "EST",
+      "points": 25
+    },
+    {
+      "rank": 13,
+      "nation": "KAZ",
+      "points": 14
+    },
+    {
+      "rank": 14,
+      "nation": "BUL",
+      "points": 4
+    }
+  ]
+}

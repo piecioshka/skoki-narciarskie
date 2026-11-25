@@ -3,6 +3,8 @@ import NationsTable from '../../../components/NationsTable.astro';
 import { LANGUAGES, t, type Lang } from '../../../i18n';
 import Layout from '../../../layouts/Layout.astro';
 import { CONTINENTS, getContinent, getNations } from '../../../lib/nations';
+import { getLatestNationsCupSeason } from '../../../lib/nations-cup';
+import { routeUrl } from '../../../lib/paths';
 import { formatSeasonLabel } from '../../../lib/seasons';
 import { getStandingsSeasons } from '../../../lib/standings';
 
@@ -19,6 +21,7 @@ const dict = t(lang);
 const seasons = getStandingsSeasons();
 const range = `${formatSeasonLabel(seasons[seasons.length - 1] ?? '')} - ${formatSeasonLabel(seasons[0] ?? '')}`;
 const nations = getNations();
+const nationsCupSeason = getLatestNationsCupSeason();
 const groups = CONTINENTS.map((continent) => ({
   continent,
   nations: nations.filter((item) => getContinent(item.nation) === continent),
@@ -48,6 +51,19 @@ const groups = CONTINENTS.map((continent) => ({
       </button>
     </div>
     <p class="lead">{dict.nationsLead(range)}</p>
+    {nationsCupSeason && (
+      <p class="nations-cup-link">
+        <a
+          class="link"
+          href={routeUrl(lang, {
+            name: 'nations-cup',
+            seasonId: nationsCupSeason,
+          })}
+        >
+          {dict.nationsCupTitle(formatSeasonLabel(nationsCupSeason))}
+        </a>
+      </p>
+    )}
     <div id="nations-flat">
       <NationsTable lang={lang} nations={nations} />
     </div>

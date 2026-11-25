@@ -21,6 +21,7 @@ Serwer deweloperski startuje na pierwszym wolnym porcie od 3000.
 - `npm run lint` - ESLint
 - `npm run format` / `npm run format:check` - Prettier
 - `npm run standings` - pobiera klasyfikację generalną z FIS do `src/data/standings/`
+- `npm run nations-cup` - pobiera Puchar Narodów z FIS do `src/data/nations-cup/`; `npm run nations-cup -- --all` sprawdza wszystkie sezony, które mają plik klasyfikacji
 - `npm run documents` - pobiera z FIS pliki PDF zawodów (program, listy startowe, wyniki, Media Stats) dla nadchodzących i trwających zawodów; jedne zawody: `npm run documents -- 2026-2027 lillehammer`
 - `npm run import-season -- 2025-2026` - importuje zakończony sezon z FIS (zawody, konkursy mężczyzn i mieszane, podia)
 - `npm run ci` - wszystko, co uruchamia CI; ten sam skrypt odpala hook `pre-push`
@@ -40,9 +41,11 @@ Strona jest w pełni statyczna (Astro, `output: 'static'`). Build nie zna bież�
 - `src/pages/[lang]/` - widoki: strona główna, terminarz sezonu, strona zawodów, endpoint `calendar.ics`
 - `e2e/specs/` - testy Playwright z podmienionym zegarem
 - `src/data/standings/` - klasyfikacja generalna, jeden plik na sezon
+- `src/data/nations-cup/` - Puchar Narodów, jeden plik na sezon
 - `src/data/teams/` - kadry reprezentacji ze sztabem
 - `src/data/programs/` i `src/assets/programs/` - metadane i skany odręcznych programów
 - `scripts/update-standings.ts` - skrypt aktualizujący klasyfikację
+- `scripts/update-nations-cup.ts` - skrypt aktualizujący Puchar Narodów
 
 Trasy:
 
@@ -52,6 +55,7 @@ Trasy:
 - `/[lang]/[season]/[event]/` - program zawodów
 - `/[lang]/[season]/calendar.ics` - kalendarz
 - `/[lang]/[season]/standings/` - klasyfikacja generalna
+- `/[lang]/[season]/nations-cup/` - Puchar Narodów
 - `/[lang]/[season]/polish-team/` - kadry A i B ze sztabem
 - `/[lang]/[season]/gallery/` - galeria odręcznych programów
 - `/[lang]/tournaments/` i `/[lang]/tournaments/[slug]/` - lista i profile turniejów
@@ -102,6 +106,10 @@ Importowane sezony nie mają rozmiaru skoczni ani jej nazwy (FIS podaje tylko ty
 ## Klasyfikacja generalna
 
 `npm run standings` pobiera tabelę Pucharu Świata mężczyzn z FIS i zapisuje ją do `src/data/standings/<sezon>.json` (domyślnie najnowszy sezon, inny podaje się argumentem: `npm run standings -- 2025-2026`). Uruchom po każdym konkursie i zacommituj wynik. Zanim sezon się zacznie, strona pokazuje końcową tabelę poprzedniego sezonu.
+
+## Puchar Narodów
+
+`npm run nations-cup` pobiera z FIS Puchar Narodów Pucharu Świata mężczyzn (`cupcode=NC-WC`) i zapisuje go do `src/data/nations-cup/<sezon>.json` (domyślnie najnowszy sezon, inny podaje się argumentem). Co godzinę robi to workflow `refresh-data.yml`. `npm run nations-cup -- --all` sprawdza wszystkie sezony z `src/data/standings/` przez cache w `tmp/fis-cache/`. FIS publikuje Puchar Narodów od sezonu 2018/2019. Gdy strona FIS pokazuje inny puchar, skrypt nie zapisuje pliku, więc starsze sezony nie mają stron; wyjątkiem jest najnowszy sezon, który przed pierwszym konkursem dostaje plik z pustym `rows` i `updatedAt: null`. Oba skrypty (`standings` i `nations-cup`) nigdy nie zastępują zapisanych wierszy pustą tabelą i nie zmieniają pliku, gdy tabela się nie zmieniła, więc `updatedAt` to dzień ostatniej zmiany.
 
 ## Kadry
 

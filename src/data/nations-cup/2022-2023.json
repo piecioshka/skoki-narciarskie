@@ -1,0 +1,97 @@
+{
+  "season": "2022-2023",
+  "updatedAt": "2026-11-25",
+  "sourceUrl": "https://www.fis-ski.com/DB/ski-jumping/cup-standings.html?sectorcode=JP&seasoncode=2023&cupcode=NC-WC&disciplinecode=ALL&gendercode=M&nationcode=",
+  "rows": [
+    {
+      "rank": 1,
+      "nation": "AUT",
+      "points": 7093
+    },
+    {
+      "rank": 2,
+      "nation": "NOR",
+      "points": 5631
+    },
+    {
+      "rank": 3,
+      "nation": "SLO",
+      "points": 5573
+    },
+    {
+      "rank": 4,
+      "nation": "POL",
+      "points": 4889
+    },
+    {
+      "rank": 5,
+      "nation": "GER",
+      "points": 4512
+    },
+    {
+      "rank": 6,
+      "nation": "JPN",
+      "points": 2035
+    },
+    {
+      "rank": 7,
+      "nation": "SUI",
+      "points": 782
+    },
+    {
+      "rank": 8,
+      "nation": "FIN",
+      "points": 459
+    },
+    {
+      "rank": 9,
+      "nation": "ITA",
+      "points": 415
+    },
+    {
+      "rank": 10,
+      "nation": "USA",
+      "points": 356
+    },
+    {
+      "rank": 11,
+      "nation": "CZE",
+      "points": 72
+    },
+    {
+      "rank": 12,
+      "nation": "EST",
+      "points": 64
+    },
+    {
+      "rank": 13,
+      "nation": "BUL",
+      "points": 63
+    },
+    {
+      "rank": 14,
+      "nation": "ROU",
+      "points": 57
+    },
+    {
+      "rank": 15,
+      "nation": "UKR",
+      "points": 41
+    },
+    {
+      "rank": 16,
+      "nation": "CAN",
+      "points": 35
+    },
+    {
+      "rank": 17,
+      "nation": "TUR",
+      "points": 16
+    },
+    {
+      "rank": 18,
+      "nation": "KAZ",
+      "points": 12
+    }
+  ]
+}
