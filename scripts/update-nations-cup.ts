@@ -2,8 +2,9 @@
 // src/data/nations-cup/<season>.json.
 // Usage: npm run nations-cup -- [season]   one season, the newest by default
 //        npm run nations-cup -- --all      every season with a standings file
-import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { createFisClient, fileCache, FIS_URL } from '../src/lib/fis-client.ts';
+import { writeJson } from '../src/lib/write-json.ts';
 import {
   cupFileToWrite,
   NATIONS_CUP,
@@ -56,7 +57,7 @@ async function update(season: string): Promise<void> {
   }
   const nationsCup = nationsCupSchema.parse({ season, sourceUrl, ...file });
 
-  writeFileSync(target, `${JSON.stringify(nationsCup, null, 2)}\n`);
+  await writeJson(target, nationsCup);
   console.log(
     `${season}: ${file.rows.length} rows (cup on page: ${parsed.cupCode})`,
   );

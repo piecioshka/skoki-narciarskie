@@ -2,10 +2,11 @@
 // FIS biography of every athlete who finished a season in the overall top 30,
 // and writes them to src/data/careers.json.
 // Usage: npm run careers
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { parsePodiums, type CareerPodiums } from '../src/lib/fis-careers.ts';
 import { createFisClient, FIS_URL, fileCache } from '../src/lib/fis-client.ts';
 import { standingsSchema } from '../src/lib/schema.ts';
+import { writeJson } from '../src/lib/write-json.ts';
 
 const STANDINGS_DIR = new URL('../src/data/standings/', import.meta.url);
 // A podium finisher practically always ends some season in the top 30, so
@@ -42,8 +43,5 @@ for (const id of [...ids].sort((a, b) => a - b)) {
   }
 }
 
-writeFileSync(
-  new URL('../src/data/careers.json', import.meta.url),
-  `${JSON.stringify(careers, null, 2)}\n`,
-);
+await writeJson(new URL('../src/data/careers.json', import.meta.url), careers);
 console.log(`${ids.size} athletes written`);

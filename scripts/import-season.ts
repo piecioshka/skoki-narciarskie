@@ -2,8 +2,9 @@
 // podiums) from FIS into src/data/seasons/<season>.json.
 // Usage: npm run import-season -- 2025-2026
 // Responses are cached in tmp/fis-cache, so a rerun costs no requests.
-import { writeFileSync } from 'node:fs';
+
 import { createFisClient, FIS_URL, fileCache } from '../src/lib/fis-client.ts';
+import { writeJson } from '../src/lib/write-json.ts';
 import {
   parsePodium,
   parseRaces,
@@ -160,8 +161,8 @@ for (const eventId of eventIds) {
 
 const data = seasonSchema.parse({ id: season, channels: {}, events });
 
-writeFileSync(
+await writeJson(
   new URL(`../src/data/seasons/${season}.json`, import.meta.url),
-  `${JSON.stringify(data, null, 2)}\n`,
+  data,
 );
 console.log(`${season}: ${events.length} events written`);

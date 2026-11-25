@@ -2,11 +2,12 @@
 // program) from the FIS event pages and writes them to the season file.
 // Usage: npm run documents -- [season] [event slug]
 // Without a slug it checks every event that has not finished yet.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { createFisClient, FIS_URL } from '../src/lib/fis-client.ts';
 import { assignDocuments, parseDocuments } from '../src/lib/fis-documents.ts';
 import { latestSeason, SEASONS_DIR } from '../src/lib/season-files.ts';
 import { seasonSchema } from '../src/lib/schema.ts';
+import { writeJson } from '../src/lib/write-json.ts';
 
 // No cache: the hourly refresh must always see the current pages.
 const fis = createFisClient();
@@ -91,4 +92,4 @@ for (const [index, event] of data.events.entries()) {
 }
 
 seasonSchema.parse(raw);
-writeFileSync(file, `${JSON.stringify(raw, null, 2)}\n`);
+await writeJson(file, raw);

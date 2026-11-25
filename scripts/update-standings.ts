@@ -1,10 +1,11 @@
 // Fetches the men's World Cup overall standings from FIS and writes them to
 // src/data/standings/<season>.json. Usage: npm run standings -- [season]
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { createFisClient, FIS_URL } from '../src/lib/fis-client.ts';
 import { cupFileToWrite, parseStandings } from '../src/lib/fis-standings.ts';
 import { latestSeason } from '../src/lib/season-files.ts';
 import { standingsSchema } from '../src/lib/schema.ts';
+import { writeJson } from '../src/lib/write-json.ts';
 
 const CUP = 'WC';
 // No cache: the hourly refresh must always see the current standings.
@@ -37,7 +38,7 @@ const file = cupFileToWrite({
 if (file) {
   const standings = standingsSchema.parse({ season, sourceUrl, ...file });
 
-  writeFileSync(target, `${JSON.stringify(standings, null, 2)}\n`);
+  await writeJson(target, standings);
 }
 console.log(
   `${season}: ${file ? `${file.rows.length} rows` : 'unchanged'} (cup on page: ${parsed.cupCode})`,
