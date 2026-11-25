@@ -1,6 +1,11 @@
 ---
 import { t, type Lang } from '../i18n';
-import { getBroadcasters, getLiveUrl, getResultsUrl } from '../lib/links';
+import {
+  getBroadcasters,
+  getChannels,
+  getLiveUrl,
+  getResultsUrl,
+} from '../lib/links';
 import type { Competition, Season, SeasonEvent } from '../lib/schema';
 import Icon from './Icon.astro';
 
@@ -23,6 +28,7 @@ const {
 const dict = t(lang);
 const broadcasters = getBroadcasters(season, event, competition);
 const resultsUrl = getResultsUrl(competition);
+const channels = getChannels(season, event, competition);
 ---
 
 <div class:list={['links', broadcastsLast && 'links--broadcasts-last']}>
@@ -47,6 +53,35 @@ const resultsUrl = getResultsUrl(competition);
       </li>
     )}
   </ul>
+  {channels.length > 0 && (
+    <details class="watch">
+      <summary class="watch__summary">{dict.watchOptions}</summary>
+      <div class="watch__channels">
+        {channels.map((channel) => (
+          <section class="watch__channel">
+            <p class="watch__name">{channel.name}</p>
+            <ul class="watch__list">
+              {channel.options.map((option) => (
+                <li class="watch__item">
+                  {option.type === 'online' ? (
+                    <a href={option.url}>{option.name}</a>
+                  ) : option.type === 'antenna' ? (
+                    dict.watchAntenna
+                  ) : (
+                    dict.watchPayTv
+                  )}
+                  {(option.type === 'antenna' ||
+                    (option.type === 'online' && option.free)) && (
+                    <span class="watch__free">{dict.watchFree}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </details>
+  )}
   <ul class="links__row">
     <li class="links__item links__item--live">
       <a class="button button--live" href={getLiveUrl(competition)}>

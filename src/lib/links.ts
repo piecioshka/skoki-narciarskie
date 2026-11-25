@@ -1,4 +1,10 @@
-import type { Broadcaster, Competition, Season, SeasonEvent } from './schema';
+import type {
+  Broadcaster,
+  Channel,
+  Competition,
+  Season,
+  SeasonEvent,
+} from './schema';
 
 const FIS = 'https://www.fis-ski.com/DB';
 
@@ -39,6 +45,26 @@ export function getBroadcasters(
     const broadcaster = season.broadcasters[id];
 
     return broadcaster ? [broadcaster] : [];
+  });
+}
+
+/**
+ * Every way to watch the channels behind the broadcasters of a competition,
+ * in the order the broadcasters are listed, each channel once.
+ */
+export function getChannels(
+  season: Season,
+  event: SeasonEvent,
+  competition: Competition,
+): Channel[] {
+  const ids = getBroadcasters(season, event, competition).flatMap(
+    (broadcaster) => (broadcaster.channel ? [broadcaster.channel] : []),
+  );
+
+  return [...new Set(ids)].flatMap((id) => {
+    const channel = season.channels[id];
+
+    return channel ? [channel] : [];
   });
 }
 

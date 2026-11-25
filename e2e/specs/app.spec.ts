@@ -362,6 +362,24 @@ test.describe('event page', () => {
     await expect(mixed.getByRole('link', { name: /TVN/ })).toHaveCount(0);
   });
 
+  test('folds every way to watch under the broadcasters', async ({ page }) => {
+    await openAt(page, '/pl/2026-2027/lillehammer/', BEFORE_SEASON);
+
+    const mixed = page.locator('.competition[data-race="7794"]');
+    const hbo = mixed.getByRole('link', { name: 'HBO Max' });
+
+    await expect(hbo).toBeHidden();
+    await mixed.getByText('Gdzie obejrzeć').click();
+    await expect(hbo).toBeVisible();
+    await expect(mixed.locator('.watch__name')).toHaveText([
+      'Eurosport 1',
+      'TTV',
+    ]);
+    await expect(mixed.locator('.watch')).toContainText(
+      'Telewizja naziemnabezpłatnie',
+    );
+  });
+
   test('shows times in the time zone of the viewer', async ({ browser }) => {
     const context = await browser.newContext({ timezoneId: 'Asia/Tokyo' });
     const page = await context.newPage();

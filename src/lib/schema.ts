@@ -85,14 +85,44 @@ export const eventSchema = z.object({
 export const broadcasterSchema = z.object({
   name: z.string().min(1),
   url: z.url(),
+  // Key in `channels`: the TV channel this button is one way to watch.
+  channel: z.string().optional(),
+});
+
+// One way to watch a channel: a streaming service with a link, free
+// terrestrial TV, or any cable and satellite operator carrying it.
+export const watchOptionSchema = z.discriminatedUnion('type', [
+  z.object({
+    type: z.literal('online'),
+    name: z.string().min(1),
+    url: z.url(),
+    free: z.boolean().default(false),
+  }),
+  z.object({ type: z.literal('antenna') }),
+  z.object({ type: z.literal('pay-tv') }),
+]);
+
+export const channelSchema = z.object({
+  name: z.string().min(1),
+  options: z.array(watchOptionSchema).min(1),
 });
 
 export const seasonSchema = z
   .object({
     id: z.string().regex(/^\d{4}-\d{4}$/),
     broadcasters: z.record(z.string(), broadcasterSchema),
+    channels: z.record(z.string(), channelSchema).default({}),
     events: z.array(eventSchema).min(1),
   })
+  .refine(
+    (season) =>
+      Object.values(season.broadcasters).every(
+        (broadcaster) =>
+          broadcaster.channel === undefined ||
+          broadcaster.channel in season.channels,
+      ),
+    { message: 'Broadcaster refers to an unknown channel' },
+  )
   .refine(
     (season) =>
       season.events.every((event) =>
@@ -107,6 +137,8 @@ export const seasonSchema = z
 export type Competition = z.infer<typeof competitionSchema>;
 export type SeasonEvent = z.infer<typeof eventSchema>;
 export type Broadcaster = z.infer<typeof broadcasterSchema>;
+export type Channel = z.infer<typeof channelSchema>;
+export type WatchOption = z.infer<typeof watchOptionSchema>;
 export type Season = z.infer<typeof seasonSchema>;
 export type CompetitionKind = Competition['kind'];
 export type EventTag = SeasonEvent['tags'][number];

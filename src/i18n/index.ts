@@ -146,6 +146,10 @@ interface Dictionary {
   watch: string;
   broadcastUnknown: string;
   broadcastNone: string;
+  watchOptions: string;
+  watchAntenna: string;
+  watchPayTv: string;
+  watchFree: string;
   liveResults: string;
   results: string;
   eventPage: string;
@@ -383,6 +387,10 @@ const pl: Dictionary = {
   watch: 'Transmisja',
   broadcastUnknown: 'Nadawca nie jest jeszcze znany',
   broadcastNone: 'Bez transmisji w telewizji',
+  watchOptions: 'Gdzie obejrzeć',
+  watchAntenna: 'Telewizja naziemna',
+  watchPayTv: 'Telewizja kablowa i satelitarna',
+  watchFree: 'bezpłatnie',
   liveResults: 'Wyniki na żywo',
   results: 'Wyniki',
   eventPage: 'Program zawodów',
@@ -642,6 +650,10 @@ const en: Dictionary = {
   watch: 'Broadcast',
   broadcastUnknown: 'Broadcaster not announced yet',
   broadcastNone: 'Not shown on TV',
+  watchOptions: 'Where to watch',
+  watchAntenna: 'Terrestrial TV',
+  watchPayTv: 'Cable and satellite TV',
+  watchFree: 'free',
   liveResults: 'Live results',
   results: 'Results',
   eventPage: 'Event program',

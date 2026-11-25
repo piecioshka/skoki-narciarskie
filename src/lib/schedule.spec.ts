@@ -46,7 +46,7 @@ function event(competitions: Competition[]): SeasonEvent {
 }
 
 function season(events: SeasonEvent[]): Season {
-  return { id: '2026-2027', broadcasters: {}, events };
+  return { id: '2026-2027', broadcasters: {}, channels: {}, events };
 }
 
 describe('getPhase', () => {

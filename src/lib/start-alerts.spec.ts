@@ -25,6 +25,7 @@ function season(competitions: Competition[]): Season {
   return {
     id: '2026-2027',
     broadcasters: {},
+    channels: {},
     events: [
       {
         slug: 'lillehammer',

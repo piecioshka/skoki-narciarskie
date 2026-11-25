@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   FIS_LIVE_URL,
   getBroadcasters,
+  getChannels,
   getLiveUrl,
   getResultsUrl,
 } from './links';
@@ -42,6 +43,30 @@ describe('getBroadcasters', () => {
       'Eurosport 1 (Polsat Box Go)',
       'TVN (Player)',
     ]);
+  });
+});
+
+describe('getChannels', () => {
+  function channelsOf(kind: string): string[] {
+    const competition = lillehammer?.competitions.find(
+      (item) => item.kind === kind,
+    );
+
+    if (!lillehammer || !competition) {
+      throw new Error(`No ${kind} in Lillehammer`);
+    }
+    return getChannels(season, lillehammer, competition).map(
+      (channel) => channel.name,
+    );
+  }
+
+  it('lists each channel behind the broadcasters once', () => {
+    expect(channelsOf('individual')).toEqual(['Eurosport 1', 'TVN']);
+    expect(channelsOf('mixed-team')).toEqual(['Eurosport 1', 'TTV']);
+  });
+
+  it('is empty without broadcasters', () => {
+    expect(channelsOf('training')).toEqual([]);
   });
 });
 

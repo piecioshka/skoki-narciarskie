@@ -490,6 +490,42 @@ body {
   order: 1;
 }
 
+/* Every way to watch the channels, folded under the buttons. */
+.watch__summary {
+  width: fit-content;
+  font-size: var(--pal-font-size-md);
+  color: var(--pal-text-muted);
+  cursor: pointer;
+}
+
+.watch__channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin-top: 0.5rem;
+}
+
+.watch__name {
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+}
+
+.watch__list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.watch__free {
+  margin-left: 0.5rem;
+  font-size: var(--pal-font-size-sm);
+  color: var(--pal-text-muted);
+}
+
+.links--broadcasts-last > .watch {
+  order: 1;
+}
+
+[data-phase='finished'] > .links > .watch,
 [data-phase='finished'] > .links > .links__row--broadcast,
 [data-phase='finished'] > .links .links__item--live {
   display: none;

@@ -3,23 +3,98 @@
   "broadcasters": {
     "eurosport-pilot": {
       "name": "Eurosport 1 (Pilot WP)",
-      "url": "https://pilot.wp.pl/tv/#eurosport-1"
+      "url": "https://pilot.wp.pl/tv/#eurosport-1",
+      "channel": "eurosport"
     },
     "eurosport-polsat": {
       "name": "Eurosport 1 (Polsat Box Go)",
-      "url": "https://polsatboxgo.pl/kanaly-tv/eurosport-1/1456336/ogladaj"
+      "url": "https://polsatboxgo.pl/kanaly-tv/eurosport-1/1456336/ogladaj",
+      "channel": "eurosport"
     },
     "tvn": {
       "name": "TVN (Player)",
-      "url": "https://player.pl/"
+      "url": "https://player.pl/",
+      "channel": "tvn"
     },
     "ttv": {
       "name": "TTV (Player)",
-      "url": "https://player.pl/live"
+      "url": "https://player.pl/live",
+      "channel": "ttv"
     },
     "tvp": {
       "name": "TVP Sport",
-      "url": "https://sport.tvp.pl/transmisje"
+      "url": "https://sport.tvp.pl/transmisje",
+      "channel": "tvp"
+    }
+  },
+  "channels": {
+    "eurosport": {
+      "name": "Eurosport 1",
+      "options": [
+        {
+          "type": "online",
+          "name": "Pilot WP",
+          "url": "https://pilot.wp.pl/tv/#eurosport-1"
+        },
+        {
+          "type": "online",
+          "name": "Polsat Box Go",
+          "url": "https://polsatboxgo.pl/kanaly-tv/eurosport-1/1456336/ogladaj"
+        },
+        {
+          "type": "online",
+          "name": "Player (Eurosport Pass)",
+          "url": "https://player.pl/live/eurosport-1-hd,57615"
+        },
+        {
+          "type": "online",
+          "name": "HBO Max",
+          "url": "https://www.hbomax.com/pl/pl"
+        },
+        {
+          "type": "pay-tv"
+        }
+      ]
+    },
+    "tvn": {
+      "name": "TVN",
+      "options": [
+        {
+          "type": "antenna"
+        },
+        {
+          "type": "online",
+          "name": "Player",
+          "url": "https://player.pl/live/tvn,5"
+        }
+      ]
+    },
+    "ttv": {
+      "name": "TTV",
+      "options": [
+        {
+          "type": "antenna"
+        },
+        {
+          "type": "online",
+          "name": "Player",
+          "url": "https://player.pl/live"
+        }
+      ]
+    },
+    "tvp": {
+      "name": "TVP Sport",
+      "options": [
+        {
+          "type": "online",
+          "name": "sport.tvp.pl",
+          "url": "https://sport.tvp.pl/transmisje",
+          "free": true
+        },
+        {
+          "type": "pay-tv"
+        }
+      ]
     }
   },
   "events": [
