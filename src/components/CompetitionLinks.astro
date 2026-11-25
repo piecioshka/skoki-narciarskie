@@ -1,8 +1,15 @@
 ---
 import { t, type Lang } from '../i18n';
-import { getChannels, getLiveUrl, getResultsUrl } from '../lib/links';
+import {
+  getChannelIds,
+  getChannels,
+  getLiveUrl,
+  getResultsUrl,
+  watchPanelId,
+} from '../lib/links';
 import type { Competition, Season, SeasonEvent } from '../lib/schema';
 import Icon from './Icon.astro';
+import WatchPanel from './WatchPanel.astro';
 
 interface Props {
   lang: Lang;
@@ -11,6 +18,9 @@ interface Props {
   competition: Competition;
   // Moves where to watch below the other links and the default slot.
   broadcastsLast?: boolean;
+  // The panel is left out and cloned from a shared <template> (see
+  // WatchPanelTemplates) when first opened; without JS only the summary shows.
+  sharedPanel?: boolean;
 }
 
 const {
@@ -19,10 +29,14 @@ const {
   event,
   competition,
   broadcastsLast = false,
+  sharedPanel = false,
 } = Astro.props;
 const dict = t(lang);
 const resultsUrl = getResultsUrl(competition);
 const channels = getChannels(season, event, competition);
+const panelId = sharedPanel
+  ? watchPanelId(getChannelIds(season, event, competition))
+  : undefined;
 ---
 
 <div class:list={['links', broadcastsLast && 'links--broadcasts-last']}>
@@ -34,7 +48,7 @@ const channels = getChannels(season, event, competition);
     </p>
   )}
   {channels.length > 0 && (
-    <details class="watch">
+    <details class="watch" data-watch-panel={panelId}>
       <summary class="button watch__summary">
         <Icon name="tv" />
         {dict.watchOptions}
@@ -43,48 +57,7 @@ const channels = getChannels(season, event, competition);
         </span>
         <Icon name="chevron-down" class="watch__chevron" />
       </summary>
-      <div class="watch__panel">
-        {channels.map((channel) => (
-          <section class="watch__channel">
-            <p class="watch__name">{channel.name}</p>
-            <ul class="watch__services">
-              {channel.options.map(
-                (option) =>
-                  option.type === 'online' && (
-                    <li>
-                      <a class="button watch__service" href={option.url}>
-                        {option.name}
-                        {option.free && (
-                          <span class="watch__free">{dict.watchFree}</span>
-                        )}
-                      </a>
-                    </li>
-                  ),
-              )}
-            </ul>
-            {channel.options.map(
-              (option) =>
-                option.type !== 'online' && (
-                  <p class="watch__tv">
-                    <Icon
-                      name={
-                        option.type === 'antenna'
-                          ? 'radio-tower'
-                          : 'satellite-dish'
-                      }
-                    />
-                    {option.type === 'antenna'
-                      ? dict.watchAntenna
-                      : dict.watchPayTv}
-                    {option.type === 'antenna' && (
-                      <span class="watch__free">{dict.watchFree}</span>
-                    )}
-                  </p>
-                ),
-            )}
-          </section>
-        ))}
-      </div>
+      {!sharedPanel && <WatchPanel lang={lang} channels={channels} />}
     </details>
   )}
   <ul class="links__row">

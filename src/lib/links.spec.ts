@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { FIS_LIVE_URL, getChannels, getLiveUrl, getResultsUrl } from './links';
+import {
+  FIS_LIVE_URL,
+  getChannelIds,
+  getChannels,
+  getLiveUrl,
+  getResultsUrl,
+  watchPanelId,
+} from './links';
 import {
   competitionSchema,
   seasonSchema,
@@ -51,6 +58,31 @@ describe('getChannels', () => {
         channels: ['tvn', 'eurosport', 'tvn'],
       }).map((channel) => channel.name),
     ).toEqual(['TVN', 'Eurosport 1']);
+  });
+});
+
+describe('watchPanelId', () => {
+  it('gives competitions on the same channels the same panel', () => {
+    if (!lillehammer) {
+      throw new Error('Lillehammer is missing from the current season');
+    }
+    const ids = lillehammer.competitions.map((item) =>
+      watchPanelId(getChannelIds(season, lillehammer, item)),
+    );
+
+    expect(new Set(ids)).toEqual(
+      new Set([
+        'watch-panel-',
+        'watch-panel-eurosport',
+        'watch-panel-eurosport+ttv',
+        'watch-panel-eurosport+tvn',
+      ]),
+    );
+  });
+
+  it('keeps channel sets apart whatever their keys contain', () => {
+    expect(watchPanelId(['a-b', 'c'])).not.toBe(watchPanelId(['a', 'b-c']));
+    expect(watchPanelId(['a+b'])).not.toBe(watchPanelId(['a', 'b']));
   });
 });
 

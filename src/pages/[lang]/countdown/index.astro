@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Icon from '../../../components/Icon.astro';
+import PosterChrome from '../../../components/PosterChrome.astro';
 import SlotTime from '../../../components/SlotTime.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../../i18n';
 import Layout from '../../../layouts/Layout.astro';
@@ -11,7 +12,6 @@ import {
   hillOfCompetition,
 } from '../../../lib/hills';
 import { getFlag } from '../../../lib/links';
-import { url } from '../../../lib/paths';
 import { findNext, listScheduled, timingAttributes } from '../../../lib/timing';
 import { formatSeasonLabel, getCurrentSeason } from '../../../lib/seasons';
 
@@ -29,11 +29,17 @@ const season = getCurrentSeason();
 const competitions = listScheduled(season, { withTraining: false });
 // Only a no-JS fallback; the client script picks the poster on every tick.
 const buildTimeNext = findNext(competitions, new Date());
-const units = ['days', 'hours', 'minutes', 'seconds'] as const;
 const posters = competitions.map((item) => {
   const hill = hillOfCompetition(item.event, item.competition);
 
-  return { ...item, hill, photo: hill ? getHillPhoto(hill) : undefined };
+  return {
+    ...item,
+    hill,
+    photo: hill ? getHillPhoto(hill) : undefined,
+    // The poster shown without JS; the others get their shared parts from
+    // the templates below when the page script shows them.
+    shown: item.slot === buildTimeNext?.slot,
+  };
 });
 ---
 
@@ -67,7 +73,7 @@ const posters = competitions.map((item) => {
       {posters.map((item) => (
         <article
           class="poster js-poster"
-          hidden={item.slot !== buildTimeNext?.slot}
+          hidden={!item.shown}
           {...timingAttributes(item.competition, item.slot)}
           data-race={item.competition.fisRaceId}
           data-event={item.event.slug}
@@ -81,20 +87,7 @@ const posters = competitions.map((item) => {
               loading="eager"
             />
           )}
-          <div class="poster__shade" aria-hidden="true" />
-          <div class="poster__snow" aria-hidden="true" />
-          <svg
-            class="poster__flight"
-            viewBox="0 0 400 200"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              class="poster__flight-hill"
-              d="M0 40 Q 120 60 160 110 T 400 200"
-            />
-            <path class="poster__flight-path" d="M150 92 Q 260 70 380 170" />
-          </svg>
+          {item.shown && <PosterChrome lang={lang} part="backdrop" />}
 
           <div class="poster__body">
             <p class="poster__kicker">
@@ -129,19 +122,7 @@ const posters = competitions.map((item) => {
               )}
             </p>
 
-            <div class="poster__clock js-poster-clock">
-              {units.map((unit) => (
-                <div class={`poster__unit poster__unit--${unit}`}>
-                  <span class={`poster__digits js-poster-${unit}`}>--</span>
-                  <span class="poster__unit-label">
-                    {dict.posterUnits[unit]}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <p class="poster__live js-poster-live" hidden>
-              {dict.posterLive}
-            </p>
+            {item.shown && <PosterChrome lang={lang} part="clock" />}
 
             <p class="poster__start">
               <span class="poster__start-label">{dict.posterStartsAt}</span>{' '}
@@ -162,20 +143,16 @@ const posters = competitions.map((item) => {
               </p>
             )}
 
-            <p class="poster__footer">
-              <img
-                class="poster__logo"
-                src={url('/favicon.svg')}
-                alt=""
-                width="20"
-                height="20"
-              />
-              <span class="poster__site">{dict.siteName}</span>
-            </p>
+            {item.shown && <PosterChrome lang={lang} part="footer" />}
           </div>
         </article>
       ))}
     </div>
+    {(['backdrop', 'clock', 'footer'] as const).map((part) => (
+      <template class="js-poster-part" data-part={part}>
+        <PosterChrome lang={lang} part={part} />
+      </template>
+    ))}
     <div class="poster-export" hidden={buildTimeNext === undefined}>
       <button
         class="button button--primary js-poster-export"

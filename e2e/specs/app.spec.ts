@@ -69,6 +69,22 @@ test.describe('home page', () => {
     ).toBeHidden();
   });
 
+  test('opens where to watch on any next card', async ({ page }) => {
+    // Cards other than the one shown without JS clone a shared panel.
+    for (const now of [BEFORE_SEASON, AFTER_FIRST_EVENT]) {
+      await openAt(page, '/pl/', now);
+
+      const next = page.locator('.js-next:visible');
+      const service = next.getByRole('link', { name: 'Pilot WP' });
+
+      await expect(service).toBeHidden();
+      await next.getByText('Gdzie obejrzeć').click();
+      await expect(service).toBeVisible();
+      await expect(service).toHaveAttribute('target', '_blank');
+      await expect(next.locator('.watch__panel')).toHaveCount(1);
+    }
+  });
+
   test('links live results once the competition starts', async ({ page }) => {
     await openAt(page, '/pl/', DURING_FIRST_RACE);
 

@@ -1,0 +1,59 @@
+---
+import { t, type Lang } from '../i18n';
+import { url } from '../lib/paths';
+
+// The parts of a countdown poster that are the same for every competition.
+// Only the poster shown without JS has them in the HTML; the page script
+// copies them from <template>s into the poster it shows (see app.ts).
+interface Props {
+  lang: Lang;
+  part: 'backdrop' | 'clock' | 'footer';
+}
+
+const { lang, part } = Astro.props;
+const dict = t(lang);
+const units = ['days', 'hours', 'minutes', 'seconds'] as const;
+---
+
+{part === 'backdrop' && (
+  <>
+    <div class="poster__shade" aria-hidden="true" />
+    <div class="poster__snow" aria-hidden="true" />
+    <svg
+      class="poster__flight"
+      viewBox="0 0 400 200"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path class="poster__flight-hill" d="M0 40 Q 120 60 160 110 T 400 200" />
+      <path class="poster__flight-path" d="M150 92 Q 260 70 380 170" />
+    </svg>
+  </>
+)}
+{part === 'clock' && (
+  <>
+    <div class="poster__clock js-poster-clock">
+      {units.map((unit) => (
+        <div class={`poster__unit poster__unit--${unit}`}>
+          <span class={`poster__digits js-poster-${unit}`}>--</span>
+          <span class="poster__unit-label">{dict.posterUnits[unit]}</span>
+        </div>
+      ))}
+    </div>
+    <p class="poster__live js-poster-live" hidden>
+      {dict.posterLive}
+    </p>
+  </>
+)}
+{part === 'footer' && (
+  <p class="poster__footer">
+    <img
+      class="poster__logo"
+      src={url('/favicon.svg')}
+      alt=""
+      width="20"
+      height="20"
+    />
+    <span class="poster__site">{dict.siteName}</span>
+  </p>
+)}

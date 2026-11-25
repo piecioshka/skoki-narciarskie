@@ -4,6 +4,7 @@ import Badges from '../../components/Badges.astro';
 import EventCard from '../../components/EventCard.astro';
 import Icon from '../../components/Icon.astro';
 import SlotTime from '../../components/SlotTime.astro';
+import WatchPanelTemplates from '../../components/WatchPanelTemplates.astro';
 import { getCountryName, LANGUAGES, t, type Lang } from '../../i18n';
 import Layout from '../../layouts/Layout.astro';
 import EventHillPhoto from '../../components/EventHillPhoto.astro';
@@ -30,6 +31,9 @@ const competitions = listScheduled(season, { withTraining: false });
 // The build-time pick is only a no-JS fallback; the client script re-picks
 // the card on every tick, because a static page does not know "now".
 const buildTimeNext = findNext(competitions, new Date());
+// Only the card shown without JS carries its where-to-watch panel; the others
+// share one panel per channel set.
+const sharedPanels = competitions.filter((item) => item !== buildTimeNext);
 ---
 
 <Layout lang={lang} route={{ name: 'home' }}>
@@ -78,6 +82,7 @@ const buildTimeNext = findNext(competitions, new Date());
           season={season}
           event={item.event}
           competition={item.competition}
+          sharedPanel={item !== buildTimeNext}
         />
         <a class="link next__poster" href={countdownPath(lang)}>
           {dict.posterOpen}
@@ -93,6 +98,7 @@ const buildTimeNext = findNext(competitions, new Date());
         <EventHillPhoto event={item.event} class="next__photo" />
       </article>
     ))}
+    <WatchPanelTemplates lang={lang} season={season} items={sharedPanels} />
     <p class="notice js-season-over" hidden={buildTimeNext !== undefined}>
       {dict.seasonOver}
     </p>

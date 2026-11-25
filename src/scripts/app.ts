@@ -146,6 +146,43 @@ function updateNext(now: Date, lang: Lang): void {
   }
 }
 
+function clonePosterPart(part: string): DocumentFragment | undefined {
+  const template = document.querySelector(
+    `template.js-poster-part[data-part="${part}"]`,
+  );
+
+  return template instanceof HTMLTemplateElement
+    ? document.importNode(template.content, true)
+    : undefined;
+}
+
+/**
+ * Only the poster shown without JS has the parts shared by every poster
+ * (backdrop, clock, footer); any other poster gets them once it is shown.
+ */
+function completePoster(poster: HTMLElement): void {
+  const body = poster.querySelector('.poster__body');
+  const kind = poster.querySelector('.poster__kind');
+
+  if (poster.querySelector('.js-poster-clock') || !body || !kind) {
+    return;
+  }
+
+  const backdrop = clonePosterPart('backdrop');
+  const clock = clonePosterPart('clock');
+  const footer = clonePosterPart('footer');
+
+  if (backdrop) {
+    body.before(backdrop);
+  }
+  if (clock) {
+    kind.after(clock);
+  }
+  if (footer) {
+    body.append(footer);
+  }
+}
+
 function updatePoster(now: Date, lang: Lang): void {
   const current = showCurrent(all('.js-poster'), now);
   const slot = current ? readSlot(current) : undefined;
@@ -153,6 +190,8 @@ function updatePoster(now: Date, lang: Lang): void {
   if (!current || !slot) {
     return;
   }
+
+  completePoster(current);
 
   const phase = getPhase(now, slot);
   const left = countdown(now, slot.start);
@@ -316,8 +355,8 @@ function setupToc(): void {
   }
 }
 
-function openExternalLinksInNewTab(): void {
-  for (const link of document.querySelectorAll<HTMLAnchorElement>(
+function openExternalLinksInNewTab(root: ParentNode = document): void {
+  for (const link of root.querySelectorAll<HTMLAnchorElement>(
     'a[href^="http"]',
   )) {
     if (link.host !== location.host) {
@@ -326,6 +365,40 @@ function openExternalLinksInNewTab(): void {
       link.rel = 'noopener noreferrer';
     }
   }
+}
+
+/** Fills a where-to-watch panel shared through a template (see WatchPanelTemplates). */
+function fillWatchPanel(details: HTMLDetailsElement): void {
+  const id = details.dataset['watchPanel'];
+
+  if (!id || details.querySelector('.watch__panel')) {
+    return;
+  }
+
+  const template = document.getElementById(id);
+
+  if (template instanceof HTMLTemplateElement) {
+    const panel = document.importNode(template.content, true);
+
+    openExternalLinksInNewTab(panel);
+    details.append(panel);
+  }
+}
+
+function setupSharedWatchPanels(): void {
+  const fill = (target: EventTarget | null): void => {
+    const details =
+      target instanceof Element ? target.closest('details.watch') : null;
+
+    if (details instanceof HTMLDetailsElement) {
+      fillWatchPanel(details);
+    }
+  };
+
+  // A click on the summary fills the panel before it opens, so it never shows
+  // empty; `toggle` (which does not bubble) covers opening by other means.
+  document.addEventListener('click', (event) => fill(event.target), true);
+  document.addEventListener('toggle', (event) => fill(event.target), true);
 }
 
 function setupSeasonSelects(): void {
@@ -421,6 +494,7 @@ function setup(): void {
   setupShortcuts();
   setupSeasonSelects();
   openExternalLinksInNewTab();
+  setupSharedWatchPanels();
   setupHomeOnlyFilters();
   setupViewToggles();
   setupPosterFormats();

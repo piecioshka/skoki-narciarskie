@@ -845,6 +845,11 @@ export function setupPosterExport(options: PosterExportOptions): void {
     current: NonNullable<ReturnType<PosterExportOptions['current']>>,
   ): Promise<PosterContent> => {
     await document.fonts.ready;
+    // The logo of a poster completed by the page script may still be loading.
+    await current.element
+      .querySelector<HTMLImageElement>('.poster__logo')
+      ?.decode()
+      .catch(() => undefined);
     return readContent(
       current.element,
       current.slot,

@@ -39,11 +39,32 @@ export function getChannels(
   event: SeasonEvent,
   competition: Competition,
 ): Channel[] {
-  return [...new Set(competition.channels ?? event.channels)].flatMap((id) => {
+  return getChannelIds(season, event, competition).flatMap((id) => {
     const channel = season.channels[id];
 
     return channel ? [channel] : [];
   });
+}
+
+/** Keys of the channels from `getChannels`, in the same order. */
+export function getChannelIds(
+  season: Season,
+  event: SeasonEvent,
+  competition: Competition,
+): string[] {
+  return [...new Set(competition.channels ?? event.channels)].filter(
+    (id) => season.channels[id] !== undefined,
+  );
+}
+
+/**
+ * Element id of the shared where-to-watch panel of one channel set: every
+ * competition shown on the same channels points at the same panel.
+ */
+export function watchPanelId(channelIds: readonly string[]): string {
+  // Keys may contain any character; encoded keys never contain `+`, so two
+  // different channel sets never share an id.
+  return `watch-panel-${channelIds.map(encodeURIComponent).join('+')}`;
 }
 
 /** Regional indicator symbols for an ISO 3166-1 alpha-2 country code. */

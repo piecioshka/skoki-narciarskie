@@ -61,3 +61,11 @@ The channels a competition is shown on (`getChannels` in `src/lib/links.ts`): it
 ### Route
 
 The identity of one page without language or base path, such as `{ name: 'event', seasonId, slug }` (`Route` in `src/lib/routes.ts`). `routePath` turns it into a path, `sectionOf` names the nav section it highlights, and `NAV` declares each top bar section once with its landing route, labels and shortcut key; pages hand their route to the layout instead of a path string.
+
+### Shared watch panel
+
+The where-to-watch panel of a channel set, rendered once per page as a `<template>` (`watchPanelId` in `src/lib/links.ts`). On the home page only the next card shown without JS has its panel inline; the other cards clone the shared one when their summary is first opened.
+
+### Poster parts
+
+The parts every countdown poster has in common: the backdrop, the clock with the live banner, and the footer (`PosterChrome.astro`). Only the poster shown without JS has them in the HTML; the page script copies them from templates into the poster it shows.
