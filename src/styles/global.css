@@ -383,6 +383,13 @@ body {
   color: var(--live);
 }
 
+[data-phase='finished'] > * .phase.js-phase,
+[data-phase='finished'] > .phase.js-phase {
+  border-color: transparent;
+  background: var(--free-soft);
+  color: var(--free);
+}
+
 /* Not on yet, but later today: blue like the frame of today's competitions. */
 [data-phase='today'] > * .phase.js-phase,
 [data-phase='today'] > .phase.js-phase {
@@ -1670,13 +1677,15 @@ a[href^='http']:not(.icon-button)::after {
 }
 
 /* Every kind of special event has its own tag color:
-   World Championships purple, Four Hills gold, ski flying teal. */
+   World Championships purple, Four Hills gold, ski flying sky blue. */
 
 :root {
   --purple-soft: #f1e8fd;
   --purple-on-soft: #5b21b6;
   --teal-soft: #dcf5f0;
   --teal-on-soft: #0f5f55;
+  --sky-soft: #dff1fd;
+  --sky-on-soft: #0a5785;
 }
 
 :root[data-theme='dark'] {
@@ -1684,6 +1693,8 @@ a[href^='http']:not(.icon-button)::after {
   --purple-on-soft: #d4b8ff;
   --teal-soft: #123a36;
   --teal-on-soft: #7fe0d0;
+  --sky-soft: #0c2f45;
+  --sky-on-soft: #7cc8fb;
 }
 
 .badge--championships {
@@ -1697,8 +1708,8 @@ a[href^='http']:not(.icon-button)::after {
 }
 
 .badge--ski-flying {
-  background: var(--teal-soft);
-  color: var(--teal-on-soft);
+  background: var(--sky-soft);
+  color: var(--sky-on-soft);
 }
 
 /* Next competition: photo of the hill beside the details */
