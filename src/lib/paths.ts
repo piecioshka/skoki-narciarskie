@@ -31,10 +31,6 @@ export function standingsPath(lang: Lang, seasonId: string): string {
   return routeUrl(lang, { name: 'standings', seasonId });
 }
 
-export function galleryPath(lang: Lang, seasonId: string): string {
-  return routeUrl(lang, { name: 'gallery', seasonId });
-}
-
 export function tournamentsPath(lang: Lang): string {
   return routeUrl(lang, { name: 'tournaments' });
 }
@@ -61,10 +57,6 @@ export function nationsPath(lang: Lang): string {
 
 export function nationPath(lang: Lang, nation: string): string {
   return routeUrl(lang, { name: 'nation', nation });
-}
-
-export function rulesPath(lang: Lang): string {
-  return routeUrl(lang, { name: 'rules' });
 }
 
 export function countdownPath(lang: Lang): string {
