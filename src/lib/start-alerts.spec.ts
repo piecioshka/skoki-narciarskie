@@ -24,7 +24,6 @@ function competition(overrides: Partial<Competition>): Competition {
 function season(competitions: Competition[]): Season {
   return {
     id: '2026-2027',
-    broadcasters: {},
     channels: {},
     events: [
       {
@@ -36,7 +35,7 @@ function season(competitions: Competition[]): Season {
         countryCode: 'NO',
         hillName: 'Lysgårdsbakken',
         timeZone: 'Europe/Oslo',
-        broadcasts: [],
+        channels: [],
         officials: [],
         competitions,
       },

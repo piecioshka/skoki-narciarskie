@@ -394,7 +394,7 @@ test.describe('event page', () => {
     ).toBeVisible();
   });
 
-  test('lists the training and the broadcasters of each competition', async ({
+  test('lists the training and the channels of each competition', async ({
     page,
   }) => {
     await openAt(page, '/pl/2026-2027/lillehammer/', BEFORE_SEASON);

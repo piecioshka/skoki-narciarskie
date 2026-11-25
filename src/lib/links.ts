@@ -1,10 +1,4 @@
-import type {
-  Broadcaster,
-  Channel,
-  Competition,
-  Season,
-  SeasonEvent,
-} from './schema';
+import type { Channel, Competition, Season, SeasonEvent } from './schema';
 
 const FIS = 'https://www.fis-ski.com/DB';
 
@@ -36,32 +30,16 @@ export function getFisEventUrl(season: Season, event: SeasonEvent): string {
   return `${FIS}/general/event-details.html?sectorcode=JP&eventid=${event.fisEventId}&seasoncode=${seasonCode}`;
 }
 
-export function getBroadcasters(
-  season: Season,
-  event: SeasonEvent,
-  competition: Competition,
-): Broadcaster[] {
-  return (competition.broadcasts ?? event.broadcasts).flatMap((id) => {
-    const broadcaster = season.broadcasters[id];
-
-    return broadcaster ? [broadcaster] : [];
-  });
-}
-
 /**
- * Every way to watch the channels behind the broadcasters of a competition,
- * in the order the broadcasters are listed, each channel once.
+ * Every channel showing a competition, with its ways to watch: the
+ * competition's own list, or the event's when it has none, each channel once.
  */
 export function getChannels(
   season: Season,
   event: SeasonEvent,
   competition: Competition,
 ): Channel[] {
-  const ids = getBroadcasters(season, event, competition).flatMap(
-    (broadcaster) => (broadcaster.channel ? [broadcaster.channel] : []),
-  );
-
-  return [...new Set(ids)].flatMap((id) => {
+  return [...new Set(competition.channels ?? event.channels)].flatMap((id) => {
     const channel = season.channels[id];
 
     return channel ? [channel] : [];

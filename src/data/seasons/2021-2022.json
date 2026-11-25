@@ -1,6 +1,6 @@
 {
   "id": "2021-2022",
-  "broadcasters": {},
+  "channels": {},
   "events": [
     {
       "slug": "nizhny-tagil",
@@ -11,7 +11,7 @@
       "countryCode": "RU",
       "hillName": null,
       "timeZone": "Asia/Yekaterinburg",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -83,7 +83,7 @@
       "countryCode": "FI",
       "hillName": null,
       "timeZone": "Europe/Helsinki",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -155,7 +155,7 @@
       "countryCode": "PL",
       "hillName": null,
       "timeZone": "Europe/Warsaw",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -221,7 +221,7 @@
       "countryCode": "DE",
       "hillName": null,
       "timeZone": "Europe/Amsterdam",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -293,7 +293,7 @@
       "countryCode": "CH",
       "hillName": null,
       "timeZone": "Europe/Zurich",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -365,7 +365,7 @@
       "countryCode": "DE",
       "hillName": null,
       "timeZone": "Europe/Berlin",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -408,7 +408,7 @@
       "countryCode": "DE",
       "hillName": null,
       "timeZone": "Europe/Berlin",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -451,7 +451,7 @@
       "countryCode": "AT",
       "hillName": null,
       "timeZone": "Europe/Vienna",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -475,7 +475,7 @@
       "countryCode": "AT",
       "hillName": null,
       "timeZone": "Europe/Vienna",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -547,7 +547,7 @@
       "countryCode": "AT",
       "hillName": null,
       "timeZone": "Europe/Vienna",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -613,7 +613,7 @@
       "countryCode": "PL",
       "hillName": null,
       "timeZone": "Europe/Warsaw",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -679,7 +679,7 @@
       "countryCode": "JP",
       "hillName": null,
       "timeZone": "Asia/Tokyo",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -723,7 +723,7 @@
       "countryCode": "DE",
       "hillName": null,
       "timeZone": "Europe/Berlin",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -795,7 +795,7 @@
       "countryCode": "DE",
       "hillName": null,
       "timeZone": "Europe/Berlin",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -890,7 +890,7 @@
       "countryCode": "FI",
       "hillName": null,
       "timeZone": "Europe/Helsinki",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -985,7 +985,7 @@
       "countryCode": "NO",
       "hillName": null,
       "timeZone": "Europe/Oslo",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -1028,7 +1028,7 @@
       "countryCode": "NO",
       "hillName": null,
       "timeZone": "Europe/Oslo",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -1123,7 +1123,7 @@
       "countryCode": "DE",
       "hillName": null,
       "timeZone": "Europe/Berlin",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {
@@ -1195,7 +1195,7 @@
       "countryCode": "SI",
       "hillName": null,
       "timeZone": "Europe/Ljubljana",
-      "broadcasts": [],
+      "channels": [],
       "officials": [],
       "competitions": [
         {

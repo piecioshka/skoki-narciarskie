@@ -151,14 +151,14 @@ for (const eventId of eventIds) {
     countryCode: toCountryCode(title[2] ?? ''),
     hillName: null,
     timeZone: toTimeZone(first?.timeZone, toCountryCode(title[2] ?? '')),
-    broadcasts: [],
+    channels: [],
     officials: [],
     competitions,
   });
   console.log(`${city}: ${competitions.length} competitions`);
 }
 
-const data = seasonSchema.parse({ id: season, broadcasters: {}, events });
+const data = seasonSchema.parse({ id: season, channels: {}, events });
 
 writeFileSync(
   new URL(`../src/data/seasons/${season}.json`, import.meta.url),

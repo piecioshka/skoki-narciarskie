@@ -49,3 +49,11 @@ The one way the refresh scripts fetch FIS pages (`createFisClient` in `src/lib/f
 ### FIS page cache
 
 An optional disk cache of FIS pages in `tmp/fis-cache/`, one file per URL hash (`fileCache`). The hand-run scripts use it, so a rerun costs no requests; the hourly refresh does not, because it must see the current pages.
+
+### Channel
+
+A TV channel (Eurosport 1, TVN, TVP) with every way to watch it: online services, terrestrial TV or pay TV. Seasons keep them in `channels`, and events and competitions point at them by key; there is no separate broadcaster layer.
+
+### Channels of a competition
+
+The channels a competition is shown on (`getChannels` in `src/lib/links.ts`): its own `channels` list, or the event's when it has none. An empty result shows a note: "not announced yet" when the competition has no list of its own, "not on TV" when it has an empty one.

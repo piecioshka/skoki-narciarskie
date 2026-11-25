@@ -65,13 +65,13 @@ Trasy:
 Plik `src/data/seasons/<sezon>.json`:
 
 - `id` - np. `2026-2027`
-- `broadcasters` - słownik nadawców (`name`, `url`)
+- `channels` - słownik kanałów TV (`name`, `options`: serwisy online z linkiem, telewizja naziemna `antenna`, kablowa i satelitarna `pay-tv`)
 - `events[]` - zawody:
   - `slug`, `type` (`world-cup` albo `world-championships`), `tags` (`four-hills`, `ski-flying`)
   - `fisEventId` - identyfikator wydarzenia w FIS
   - `city`, `countryCode`, `hillName`, `timeZone` (strefa IANA skoczni)
-  - `broadcasts` - identyfikatory nadawców
-  - `competitions[]` - `fisRaceId`, `kind` (`qualification`, `individual`, `team`, `mixed-team`), `hillSize`, `date`, `time`, `status`
+  - `channels` - klucze z `channels` sezonu: kanały pokazujące zawody
+  - `competitions[]` - `fisRaceId`, `kind` (`qualification`, `individual`, `team`, `mixed-team`), `hillSize`, `date`, `time`, `status`, opcjonalnie `channels` (własna lista kanałów konkursu; bez pola obowiązuje lista zawodów, pusta lista znaczy "bez transmisji")
 
 `date` i `time` są w czasie lokalnym skoczni. `time: null` oznacza, że godzina nie jest jeszcze znana; strona pokazuje wtedy samą datę. `status` przyjmuje `scheduled`, `cancelled` albo `moved`.
 

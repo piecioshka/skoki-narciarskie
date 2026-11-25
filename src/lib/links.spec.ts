@@ -1,72 +1,73 @@
 import { describe, expect, it } from 'vitest';
+import { FIS_LIVE_URL, getChannels, getLiveUrl, getResultsUrl } from './links';
 import {
-  FIS_LIVE_URL,
-  getBroadcasters,
-  getChannels,
-  getLiveUrl,
-  getResultsUrl,
-} from './links';
-import { competitionSchema, type Competition, type Season } from './schema';
+  competitionSchema,
+  seasonSchema,
+  type Competition,
+  type Season,
+} from './schema';
 import { getCurrentSeason } from './seasons';
 
 const season: Season = getCurrentSeason();
 const lillehammer = season.events.find((item) => item.slug === 'lillehammer');
 
-function namesOf(kind: string): string[][] {
-  if (!lillehammer) {
-    throw new Error('Lillehammer is missing from the current season');
+describe('getChannels', () => {
+  function channelsOf(kind: string): string[][] {
+    if (!lillehammer) {
+      throw new Error('Lillehammer is missing from the current season');
+    }
+    return lillehammer.competitions
+      .filter((item) => item.kind === kind)
+      .map((item) =>
+        getChannels(season, lillehammer, item).map((channel) => channel.name),
+      );
   }
-  return lillehammer.competitions
-    .filter((item) => item.kind === kind)
-    .map((item) =>
-      getBroadcasters(season, lillehammer, item).map(
-        (broadcaster) => broadcaster.name,
-      ),
-    );
-}
 
-describe('getBroadcasters', () => {
-  it('uses the broadcasters of the competition when it has its own', () => {
-    expect(namesOf('mixed-team')).toEqual([
-      ['Eurosport 1 (Pilot WP)', 'Eurosport 1 (Polsat Box Go)', 'TTV (Player)'],
-    ]);
-    expect(namesOf('qualification')[0]).toEqual([
-      'Eurosport 1 (Pilot WP)',
-      'Eurosport 1 (Polsat Box Go)',
-    ]);
-    expect(namesOf('training')).toEqual([[]]);
+  it('uses the channels of the competition when it has its own', () => {
+    expect(channelsOf('mixed-team')).toEqual([['Eurosport 1', 'TTV']]);
+    expect(channelsOf('qualification')[0]).toEqual(['Eurosport 1']);
   });
 
-  it('falls back to the broadcasters of the event', () => {
-    expect(namesOf('individual')[0]).toEqual([
-      'Eurosport 1 (Pilot WP)',
-      'Eurosport 1 (Polsat Box Go)',
-      'TVN (Player)',
-    ]);
+  it('falls back to the channels of the event', () => {
+    expect(channelsOf('individual')[0]).toEqual(['Eurosport 1', 'TVN']);
+  });
+
+  it('is empty when the competition is not on TV', () => {
+    expect(channelsOf('training')).toEqual([[]]);
+  });
+
+  it('lists each channel once', () => {
+    if (!lillehammer) {
+      throw new Error('Lillehammer is missing from the current season');
+    }
+    const [competition] = lillehammer.competitions;
+
+    if (!competition) {
+      throw new Error('Lillehammer has no competitions');
+    }
+    expect(
+      getChannels(season, lillehammer, {
+        ...competition,
+        channels: ['tvn', 'eurosport', 'tvn'],
+      }).map((channel) => channel.name),
+    ).toEqual(['TVN', 'Eurosport 1']);
   });
 });
 
-describe('getChannels', () => {
-  function channelsOf(kind: string): string[] {
-    const competition = lillehammer?.competitions.find(
-      (item) => item.kind === kind,
-    );
+describe('seasonSchema', () => {
+  it('rejects a competition pointing at an unknown channel', () => {
+    const [event] = season.events;
 
-    if (!lillehammer || !competition) {
-      throw new Error(`No ${kind} in Lillehammer`);
+    if (!event) {
+      throw new Error('The current season has no events');
     }
-    return getChannels(season, lillehammer, competition).map(
-      (channel) => channel.name,
-    );
-  }
-
-  it('lists each channel behind the broadcasters once', () => {
-    expect(channelsOf('individual')).toEqual(['Eurosport 1', 'TVN']);
-    expect(channelsOf('mixed-team')).toEqual(['Eurosport 1', 'TTV']);
-  });
-
-  it('is empty without broadcasters', () => {
-    expect(channelsOf('training')).toEqual([]);
+    expect(
+      seasonSchema.safeParse({
+        ...season,
+        events: [{ ...event, channels: ['missing'] }],
+      }).success,
+    ).toBe(false);
+    expect(seasonSchema.safeParse(season).success).toBe(true);
   });
 });
 

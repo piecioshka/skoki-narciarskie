@@ -43,7 +43,7 @@ const event: SeasonEvent = {
   countryCode: 'NO',
   hillName: 'Lysgårdsbakken',
   timeZone: 'Europe/Oslo',
-  broadcasts: [],
+  channels: [],
   officials: [],
   competitions: [
     competition({ kind: 'training', fisRaceId: null, time: '12:00' }),

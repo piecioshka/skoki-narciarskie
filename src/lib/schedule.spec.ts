@@ -28,14 +28,14 @@ function event(competitions: Competition[]): SeasonEvent {
     countryCode: 'NO',
     hillName: 'Lysgårdsbakken',
     timeZone: 'Europe/Oslo',
-    broadcasts: [],
+    channels: [],
     officials: [],
     competitions,
   };
 }
 
 function season(events: SeasonEvent[]): Season {
-  return { id: '2026-2027', broadcasters: {}, channels: {}, events };
+  return { id: '2026-2027', channels: {}, events };
 }
 
 describe('event helpers', () => {

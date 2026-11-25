@@ -43,8 +43,9 @@ export const competitionSchema = z
       )
       .default([]),
     documents: documentsSchema.optional(),
-    // Broadcasters of this competition alone; falls back to the event's list.
-    broadcasts: z.array(z.string()).optional(),
+    // Keys in the season `channels` showing this competition alone; falls back
+    // to the event's list when absent.
+    channels: z.array(z.string()).optional(),
     // Poles (men and women) on the FIS start list of this competition; empty
     // until FIS publishes it.
     polishAthletes: z
@@ -76,17 +77,11 @@ export const eventSchema = z.object({
   countryCode: z.string().regex(/^[A-Z]{2}$/),
   hillName: z.string().min(1).nullable(),
   timeZone: z.string().min(1),
-  broadcasts: z.array(z.string()),
+  // Keys in the season `channels` showing the competitions of this event.
+  channels: z.array(z.string()),
   officials: z.array(officialSchema).default([]),
   documents: documentsSchema.optional(),
   competitions: z.array(competitionSchema).min(1),
-});
-
-export const broadcasterSchema = z.object({
-  name: z.string().min(1),
-  url: z.url(),
-  // Key in `channels`: the TV channel this button is one way to watch.
-  channel: z.string().optional(),
 });
 
 // One way to watch a channel: a streaming service with a link, free
@@ -110,33 +105,22 @@ export const channelSchema = z.object({
 export const seasonSchema = z
   .object({
     id: z.string().regex(/^\d{4}-\d{4}$/),
-    broadcasters: z.record(z.string(), broadcasterSchema),
     channels: z.record(z.string(), channelSchema).default({}),
     events: z.array(eventSchema).min(1),
   })
   .refine(
     (season) =>
-      Object.values(season.broadcasters).every(
-        (broadcaster) =>
-          broadcaster.channel === undefined ||
-          broadcaster.channel in season.channels,
-      ),
-    { message: 'Broadcaster refers to an unknown channel' },
-  )
-  .refine(
-    (season) =>
       season.events.every((event) =>
         [
-          ...event.broadcasts,
-          ...event.competitions.flatMap((item) => item.broadcasts ?? []),
-        ].every((id) => id in season.broadcasters),
+          ...event.channels,
+          ...event.competitions.flatMap((item) => item.channels ?? []),
+        ].every((id) => id in season.channels),
       ),
-    { message: 'Event refers to an unknown broadcaster' },
+    { message: 'Event refers to an unknown channel' },
   );
 
 export type Competition = z.infer<typeof competitionSchema>;
 export type SeasonEvent = z.infer<typeof eventSchema>;
-export type Broadcaster = z.infer<typeof broadcasterSchema>;
 export type Channel = z.infer<typeof channelSchema>;
 export type WatchOption = z.infer<typeof watchOptionSchema>;
 export type Season = z.infer<typeof seasonSchema>;

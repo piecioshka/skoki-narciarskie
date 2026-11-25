@@ -43,7 +43,7 @@ function event(
     countryCode: 'NO',
     hillName: null,
     timeZone: 'Europe/Oslo',
-    broadcasts: [],
+    channels: [],
     officials: [],
     competitions,
     ...overrides,
