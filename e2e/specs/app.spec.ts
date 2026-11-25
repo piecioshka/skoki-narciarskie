@@ -58,9 +58,9 @@ test.describe('home page', () => {
     await expect(next.locator('.js-countdown-value')).toHaveText(
       '4 dni 1 godz. 0 min 0 s',
     );
-    await expect(
-      next.getByRole('link', { name: 'Eurosport 1 (Pilot WP)' }),
-    ).toBeVisible();
+    await expect(next.locator('.watch__channel-names')).toHaveText(
+      'Eurosport 1',
+    );
     await expect(
       next.getByRole('link', { name: 'Wyniki na żywo' }),
     ).toHaveAttribute('href', /fis-ski\.com/);
@@ -337,9 +337,7 @@ test.describe('event page', () => {
     const row = page.locator('.competition[data-race="7796"]');
 
     await expect(row.locator('.js-phase')).toHaveText('Zakończony');
-    await expect(
-      row.getByRole('link', { name: 'Eurosport 1 (Pilot WP)' }),
-    ).toBeHidden();
+    await expect(row.locator('.watch')).toBeHidden();
     await expect(
       row.getByRole('link', { name: 'Wyniki', exact: true }),
     ).toBeVisible();
@@ -358,11 +356,12 @@ test.describe('event page', () => {
     await expect(
       training.getByRole('link', { name: 'Wyniki', exact: true }),
     ).toHaveCount(0);
-    await expect(mixed.getByRole('link', { name: /TTV/ })).toBeVisible();
-    await expect(mixed.getByRole('link', { name: /TVN/ })).toHaveCount(0);
+    await expect(mixed.locator('.watch__channel-names')).toHaveText(
+      'Eurosport 1, TTV',
+    );
   });
 
-  test('folds every way to watch under the broadcasters', async ({ page }) => {
+  test('folds every way to watch under one summary', async ({ page }) => {
     await openAt(page, '/pl/2026-2027/lillehammer/', BEFORE_SEASON);
 
     const mixed = page.locator('.competition[data-race="7794"]');
@@ -603,19 +602,14 @@ test.describe('live favicon', () => {
 });
 
 test.describe('competition links', () => {
-  test('put broadcasts below the other links', async ({ page }) => {
+  test('put where to watch below the other links', async ({ page }) => {
     await openAt(page, '/pl/2026-2027/lillehammer/', BEFORE_SEASON);
 
     const competition = page.locator('.competition[data-race="7796"]');
-    const broadcasts = competition.locator('.links__row--broadcast');
-    const others = competition.locator(
-      '.links__row:not(.links__row--broadcast)',
-    );
+    const broadcasts = competition.locator('.watch');
+    const others = competition.locator('.links__row');
 
-    await expect(broadcasts.locator('.links__item')).toHaveText([
-      /Eurosport 1 \(Pilot WP\)/,
-      /Eurosport 1 \(Polsat Box Go\)/,
-    ]);
+    await expect(competition.locator('.button--primary')).toHaveCount(0);
     await expect(others.locator('.links__item').first()).toHaveText(
       /Wyniki na żywo/,
     );

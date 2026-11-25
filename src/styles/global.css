@@ -14,6 +14,8 @@
   --bronze-soft: #f6e2d2;
   --live: #d9202f;
   --live-soft: #fde8ea;
+  --free: #136c34;
+  --free-soft: #def5e5;
 }
 
 :root[data-theme='dark'] {
@@ -27,6 +29,8 @@
   --bronze-soft: #3d2819;
   --live: #ff6b78;
   --live-soft: #40191e;
+  --free: #7ee2a0;
+  --free-soft: #173323;
 }
 
 *,
@@ -467,7 +471,6 @@ body {
   gap: 0.5rem;
 }
 
-/* Broadcasts take the first row, everything else the second. */
 .links__row {
   display: flex;
   flex-wrap: wrap;
@@ -479,6 +482,7 @@ body {
 
 .links__note {
   display: inline-flex;
+  margin: 0;
   align-items: center;
   min-height: var(--pal-control-height);
   font-size: var(--pal-font-size-md);
@@ -486,47 +490,101 @@ body {
 }
 
 /* A finished competition keeps only the link to its results. */
-.links--broadcasts-last > .links__row--broadcast {
-  order: 1;
-}
-
-/* Every way to watch the channels, folded under the buttons. */
+/* Every way to watch the channels, folded under one summary. */
 .watch__summary {
   width: fit-content;
-  font-size: var(--pal-font-size-md);
-  color: var(--pal-text-muted);
+  max-width: 100%;
   cursor: pointer;
+  list-style: none;
+  user-select: none;
 }
 
-.watch__channels {
+.watch__summary::-webkit-details-marker {
+  display: none;
+}
+
+.watch__channel-names {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--pal-text-muted);
+  font-weight: var(--pal-font-weight-regular);
+}
+
+.watch__chevron {
+  transform-origin: center;
+  transition: transform 0.15s ease;
+}
+
+.watch[open] .watch__chevron {
+  transform: rotate(180deg);
+}
+
+.watch__panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.watch__channel {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 2rem;
-  margin-top: 0.5rem;
+  flex-direction: column;
+  gap: 0.625rem;
+  min-width: 0;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--pal-border);
+  border-radius: var(--pal-radius);
+  background: var(--pal-bg-panel);
 }
 
 .watch__name {
-  margin: 0 0 0.25rem;
-  font-weight: 600;
-}
-
-.watch__list {
   margin: 0;
-  padding-left: 1.25rem;
+  font-size: var(--pal-font-size-md);
+  font-weight: var(--pal-font-weight-bold);
 }
 
-.watch__free {
-  margin-left: 0.5rem;
-  font-size: var(--pal-font-size-sm);
+.watch__services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.watch__services:empty {
+  display: none;
+}
+
+.watch__service {
+  background: var(--pal-bg);
+}
+
+.watch__tv {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: var(--pal-font-size-md);
   color: var(--pal-text-muted);
 }
 
-.links--broadcasts-last > .watch {
+.watch__free {
+  padding: 0.0625rem 0.5rem;
+  border-radius: 999px;
+  background: var(--free-soft);
+  color: var(--free);
+  font-size: var(--pal-font-size-xs);
+  font-weight: var(--pal-font-weight-semibold);
+}
+
+.links--broadcasts-last > .watch,
+.links--broadcasts-last > .links__note--broadcast {
   order: 1;
 }
 
 [data-phase='finished'] > .links > .watch,
-[data-phase='finished'] > .links > .links__row--broadcast,
+[data-phase='finished'] > .links > .links__note--broadcast,
 [data-phase='finished'] > .links .links__item--live {
   display: none;
 }

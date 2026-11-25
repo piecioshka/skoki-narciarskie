@@ -14,7 +14,7 @@ interface Props {
   season: Season;
   event: SeasonEvent;
   competition: Competition;
-  // Moves broadcasts below the other links and the default slot.
+  // Moves where to watch below the other links and the default slot.
   broadcastsLast?: boolean;
 }
 
@@ -32,51 +32,62 @@ const channels = getChannels(season, event, competition);
 ---
 
 <div class:list={['links', broadcastsLast && 'links--broadcasts-last']}>
-  <ul class="links__row links__row--broadcast">
-    {broadcasters.map((broadcaster) => (
-      <li class="links__item links__item--broadcast">
-        <a
-          class="button button--primary"
-          href={broadcaster.url}
-          title={`${dict.watch}: ${broadcaster.name}`}
-        >
-          <Icon name="tv" />
-          {broadcaster.name}
-        </a>
-      </li>
-    ))}
-    {broadcasters.length === 0 && (
-      <li class="links__item links__item--broadcast links__note">
-        {competition.broadcasts === undefined
-          ? dict.broadcastUnknown
-          : dict.broadcastNone}
-      </li>
-    )}
-  </ul>
+  {broadcasters.length === 0 && (
+    <p class="links__note links__note--broadcast">
+      {competition.broadcasts === undefined
+        ? dict.broadcastUnknown
+        : dict.broadcastNone}
+    </p>
+  )}
   {channels.length > 0 && (
     <details class="watch">
-      <summary class="watch__summary">{dict.watchOptions}</summary>
-      <div class="watch__channels">
+      <summary class="button watch__summary">
+        <Icon name="tv" />
+        {dict.watchOptions}
+        <span class="watch__channel-names">
+          {channels.map((channel) => channel.name).join(', ')}
+        </span>
+        <Icon name="chevron-down" class="watch__chevron" />
+      </summary>
+      <div class="watch__panel">
         {channels.map((channel) => (
           <section class="watch__channel">
             <p class="watch__name">{channel.name}</p>
-            <ul class="watch__list">
-              {channel.options.map((option) => (
-                <li class="watch__item">
-                  {option.type === 'online' ? (
-                    <a href={option.url}>{option.name}</a>
-                  ) : option.type === 'antenna' ? (
-                    dict.watchAntenna
-                  ) : (
-                    dict.watchPayTv
-                  )}
-                  {(option.type === 'antenna' ||
-                    (option.type === 'online' && option.free)) && (
-                    <span class="watch__free">{dict.watchFree}</span>
-                  )}
-                </li>
-              ))}
+            <ul class="watch__services">
+              {channel.options.map(
+                (option) =>
+                  option.type === 'online' && (
+                    <li>
+                      <a class="button watch__service" href={option.url}>
+                        {option.name}
+                        {option.free && (
+                          <span class="watch__free">{dict.watchFree}</span>
+                        )}
+                      </a>
+                    </li>
+                  ),
+              )}
             </ul>
+            {channel.options.map(
+              (option) =>
+                option.type !== 'online' && (
+                  <p class="watch__tv">
+                    <Icon
+                      name={
+                        option.type === 'antenna'
+                          ? 'radio-tower'
+                          : 'satellite-dish'
+                      }
+                    />
+                    {option.type === 'antenna'
+                      ? dict.watchAntenna
+                      : dict.watchPayTv}
+                    {option.type === 'antenna' && (
+                      <span class="watch__free">{dict.watchFree}</span>
+                    )}
+                  </p>
+                ),
+            )}
           </section>
         ))}
       </div>
