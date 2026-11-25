@@ -63,7 +63,23 @@ test.describe('home page', () => {
     );
     await expect(
       next.getByRole('link', { name: 'Wyniki na żywo' }),
+    ).toBeHidden();
+    await expect(
+      next.getByRole('link', { name: 'Wyniki', exact: true }),
+    ).toBeHidden();
+  });
+
+  test('links live results once the competition starts', async ({ page }) => {
+    await openAt(page, '/pl/', DURING_FIRST_RACE);
+
+    const next = page.locator('.js-next:visible');
+
+    await expect(
+      next.getByRole('link', { name: 'Wyniki na żywo' }),
     ).toHaveAttribute('href', /fis-ski\.com/);
+    await expect(
+      next.getByRole('link', { name: 'Wyniki na żywo' }),
+    ).toBeVisible();
   });
 
   test('shows a photo of the hill next to the details', async ({ page }) => {
@@ -320,7 +336,7 @@ test.describe('schedule', () => {
 
 test.describe('event page', () => {
   test('shows the program with links per competition', async ({ page }) => {
-    await openAt(page, '/pl/2026-2027/lillehammer/', BEFORE_SEASON);
+    await openAt(page, '/pl/2026-2027/lillehammer/', DURING_FIRST_RACE);
 
     const rows = page.locator('.competition');
 
@@ -603,9 +619,9 @@ test.describe('live favicon', () => {
 
 test.describe('competition links', () => {
   test('put where to watch below the other links', async ({ page }) => {
-    await openAt(page, '/pl/2026-2027/lillehammer/', BEFORE_SEASON);
+    await openAt(page, '/pl/2026-2027/lillehammer/', DURING_FIRST_RACE);
 
-    const competition = page.locator('.competition[data-race="7796"]');
+    const competition = page.locator('.competition[data-race="7795"]');
     const broadcasts = competition.locator('.watch');
     const others = competition.locator('.links__row');
 

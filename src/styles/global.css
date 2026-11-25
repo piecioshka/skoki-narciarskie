@@ -583,6 +583,14 @@ body {
   order: 1;
 }
 
+/* Before the start there is nothing to follow live and no results yet. */
+[data-phase='upcoming'] > .links .links__item--live,
+[data-phase='upcoming'] > .links .links__item--results,
+[data-phase='today'] > .links .links__item--live,
+[data-phase='today'] > .links .links__item--results {
+  display: none;
+}
+
 [data-phase='finished'] > .links > .watch,
 [data-phase='finished'] > .links > .links__note--broadcast,
 [data-phase='finished'] > .links .links__item--live {
