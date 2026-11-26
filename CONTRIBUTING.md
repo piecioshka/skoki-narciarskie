@@ -79,7 +79,7 @@ Strona jest statyczna, więc powiadomienie o starcie zawodów pokazuje przegląd
 
 Wybór przełącznika i dziennik trzyma `localStorage` (klucze w `STORAGE_KEYS` w `src/config.ts`); dziennik ma wersjonowany klucz i mieści 200 ostatnich wpisów. Zmiana z innej karty dochodzi przez zdarzenie `storage`.
 
-Powiadomienie wychodzi jedną ścieżką: funkcja `show()` w `src/scripts/start-alerts.ts` pokazuje je i dopisuje wpis do dziennika. Nowy rodzaj powiadomienia dostaje wartość w `ALERT_KINDS` (`src/lib/alert-log.ts`), etykietę w `alertKinds` w słownikach, własny przełącznik na stronie powiadomień i wychodzi tą samą ścieżką, więc sam trafia do dziennika.
+Powiadomienie wychodzi jedną ścieżką: funkcja `show()` w `src/scripts/start-alerts.ts` pokazuje je i dopisuje wpis do dziennika. Jego ikona to `public/notification-icon.png` (192 px), po zmianie `public/favicon.svg` odtwarzana przez `rsvg-convert -w 192 -h 192 -o public/notification-icon.png public/favicon.svg`. Nowy rodzaj powiadomienia dostaje wartość w `ALERT_KINDS` (`src/lib/alert-log.ts`), etykietę w `alertKinds` w słownikach, własny przełącznik na stronie powiadomień i wychodzi tą samą ścieżką, więc sam trafia do dziennika.
 
 W testach e2e `Notification` podmienia atrapa z `e2e/support/notifications.ts`, bo headless Chromium zawsze zgłasza `denied`.
 

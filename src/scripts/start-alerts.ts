@@ -81,7 +81,8 @@ function notify(alert: StartAlert): AlertOutcome {
     const notification = new Notification(alert.title, {
       body: alert.body,
       tag: alert.id,
-      icon: url('/favicon.svg'),
+      // A PNG: not every system draws an SVG icon in a notification.
+      icon: url('/notification-icon.png'),
     });
 
     notification.addEventListener('click', () => {

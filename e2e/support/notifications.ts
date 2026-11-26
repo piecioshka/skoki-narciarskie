@@ -22,7 +22,8 @@ interface FakeOptions {
 /**
  * Replaces `Notification` with a fake: headless Chromium reports `denied`
  * even with the permission granted. Created notifications are collected in
- * `window.createdNotifications`, permission requests counted in
+ * `window.createdNotifications`, the icon of the last one is kept in
+ * `window.lastNotificationIcon`, permission requests counted in
  * `window.permissionRequests`.
  */
 export async function mockNotifications(
@@ -52,6 +53,7 @@ export async function mockNotifications(
           }
           created.push({ title, body: options.body ?? '' });
           Reflect.set(window, 'lastNotification', this);
+          Reflect.set(window, 'lastNotificationIcon', options.icon ?? '');
         }
 
         close(): void {

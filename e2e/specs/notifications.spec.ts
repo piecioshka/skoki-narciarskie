@@ -192,6 +192,26 @@ test.describe('notifications page', () => {
     expect(await createdNotifications(page)).toEqual([]);
   });
 
+  test('gives the notification a 192 px PNG icon', async ({ page }) => {
+    await mockNotifications(page, 'granted');
+    await saveChoice(page, true);
+    await openAt(page, '/pl/', JUST_AFTER_START);
+    await expect
+      .poll(() => createdNotifications(page))
+      .toEqual([START_NOTIFICATION]);
+    const icon = await page.evaluate(() =>
+      String(Reflect.get(window, 'lastNotificationIcon')),
+    );
+    expect(icon).toMatch(/\/notification-icon\.png$/);
+    const size = await page.evaluate(async (src) => {
+      const image = new Image();
+      image.src = src;
+      await image.decode();
+      return [image.naturalWidth, image.naturalHeight];
+    }, icon);
+    expect(size).toEqual([192, 192]);
+  });
+
   test('stays silent while the switch is off', async ({ page }) => {
     await mockNotifications(page, 'granted');
     await saveChoice(page, false);
