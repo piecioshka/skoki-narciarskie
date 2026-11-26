@@ -58,3 +58,11 @@ export function nationPath(lang: Lang, nation: string): string {
 export function countdownPath(lang: Lang): string {
   return routeUrl(lang, { name: 'countdown' });
 }
+
+export function notificationsPath(lang: Lang): string {
+  return routeUrl(lang, { name: 'notifications' });
+}
+
+export function alertsPath(lang: Lang): string {
+  return routeUrl(lang, { name: 'alerts' });
+}

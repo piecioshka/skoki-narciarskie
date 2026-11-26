@@ -17,7 +17,9 @@ export type Route =
   | { name: 'nations-cup'; seasonId: string }
   | { name: 'rules' }
   | { name: 'credits' }
-  | { name: 'countdown' };
+  | { name: 'countdown' }
+  | { name: 'notifications' }
+  | { name: 'alerts' };
 
 export type NavSection =
   | 'schedule'
@@ -61,10 +63,17 @@ export function routePath(route: Route): string {
       return '/credits/';
     case 'countdown':
       return '/countdown/';
+    case 'notifications':
+      return '/notifications/';
+    case 'alerts':
+      return '/alerts/';
   }
 }
 
-/** The nav section a page belongs to; home, credits and countdown have none. */
+/**
+ * The nav section a page belongs to; home, credits, countdown, notifications
+ * and alerts have none.
+ */
 export function sectionOf(route: Route): NavSection | undefined {
   switch (route.name) {
     case 'season':
@@ -87,6 +96,8 @@ export function sectionOf(route: Route): NavSection | undefined {
     case 'home':
     case 'credits':
     case 'countdown':
+    case 'notifications':
+    case 'alerts':
       return undefined;
   }
 }

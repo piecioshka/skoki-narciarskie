@@ -10,6 +10,26 @@ import type { Season } from './schema';
 // while instead of only in the exact second.
 export const START_ALERT_WINDOW_MINUTES = 10;
 
+/** What the bell and the switch show. */
+export type StartAlertsState = 'on' | 'off' | 'blocked' | 'unsupported';
+
+/**
+ * State of the start notifications: `permission` is the browser's answer
+ * (nothing when it has no Notification API), `stored` the saved choice.
+ */
+export function getStartAlertsState(
+  permission: NotificationPermission | undefined,
+  stored: string | null,
+): StartAlertsState {
+  if (permission === undefined) {
+    return 'unsupported';
+  }
+  if (permission === 'denied') {
+    return 'blocked';
+  }
+  return permission === 'granted' && stored === 'true' ? 'on' : 'off';
+}
+
 export interface StartAlert {
   /** Stable across pages and tabs, so one start is announced once. */
   id: string;

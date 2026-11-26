@@ -11,4 +11,7 @@ export const STORAGE_KEYS = {
   posterFormat: 'ski-jumping:poster-format',
   startAlerts: 'ski-jumping:start-alerts',
   startAlertsShown: 'ski-jumping:start-alerts-shown',
+  // Versioned: a change of the entry shape gets a new key instead of a
+  // migration, the log is disposable.
+  alertLog: 'ski-jumping:alert-log:v1',
 } as const;

@@ -5,6 +5,8 @@ import type {
   SeasonEvent,
   StaffRole,
 } from '../lib/schema';
+import type { AlertKind, AlertOutcome } from '../lib/alert-log';
+import type { StartAlertsState } from '../lib/start-alerts';
 import type { Phase } from '../lib/timing';
 
 export const LANGUAGES = ['pl', 'en'] as const;
@@ -180,9 +182,22 @@ interface Dictionary {
   startsIn: string;
   startAlertTitle: string;
   startAlertBody: string;
-  startAlertsOn: string;
-  startAlertsOff: string;
-  startAlertsBlocked: string;
+  notificationsTitle: string;
+  notificationsLead: string;
+  notificationsToAlerts: string;
+  /** Name and state of the notifications page, for the top bar bell. */
+  notificationsLabels: Record<StartAlertsState, string>;
+  startAlertsName: string;
+  startAlertsHints: Record<StartAlertsState, string>;
+  switchOn: string;
+  switchOff: string;
+  alertsTitle: string;
+  alertsLead: string;
+  alertsToNotifications: string;
+  alertsEmpty: string;
+  alertsClear: string;
+  alertKinds: Record<AlertKind, string>;
+  alertOutcomes: Record<AlertOutcome, string>;
   posterTitle: string;
   posterLead: string;
   posterOpen: string;
@@ -452,10 +467,35 @@ const pl: Dictionary = {
   startsIn: 'Start za',
   startAlertTitle: 'Zawody wystartowały',
   startAlertBody: 'Kliknij, aby otworzyć stronę zawodów.',
-  startAlertsOn: 'Wyłącz powiadomienia o starcie zawodów',
-  startAlertsOff: 'Włącz powiadomienia o starcie zawodów',
-  startAlertsBlocked:
-    'Powiadomienia są zablokowane w ustawieniach przeglądarki',
+  notificationsTitle: 'Powiadomienia',
+  notificationsLead:
+    'Tu włączasz i wyłączasz powiadomienia tej strony. Wybór zapamiętuje ta przeglądarka.',
+  notificationsToAlerts: 'To, co zostało pokazane, jest na stronie Alerty',
+  notificationsLabels: {
+    on: 'Powiadomienia (włączone)',
+    off: 'Powiadomienia (wyłączone)',
+    blocked: 'Powiadomienia (zablokowane w ustawieniach przeglądarki)',
+    unsupported: 'Powiadomienia (niedostępne w tej przeglądarce)',
+  },
+  startAlertsName: 'Start zawodów',
+  startAlertsHints: {
+    on: 'Powiadomienie przeglądarki w chwili startu kwalifikacji albo konkursu. Działa tylko wtedy, gdy strona jest otwarta w którejś karcie.',
+    off: 'Powiadomienie przeglądarki w chwili startu kwalifikacji albo konkursu. Działa tylko wtedy, gdy strona jest otwarta w którejś karcie.',
+    blocked:
+      'Powiadomienia są zablokowane w ustawieniach przeglądarki. Odblokuj je tam: strona nie może zapytać ponownie.',
+    unsupported: 'Ta przeglądarka nie obsługuje powiadomień.',
+  },
+  switchOn: 'Włączone',
+  switchOff: 'Wyłączone',
+  alertsTitle: 'Alerty',
+  alertsLead:
+    'Dziennik powiadomień, które pokazała ta przeglądarka, od najnowszych. Mieści 200 ostatnich wpisów.',
+  alertsToNotifications: 'Przełączniki są na stronie Powiadomienia',
+  alertsEmpty:
+    'Dziennik jest pusty: żadne powiadomienie się jeszcze nie pokazało.',
+  alertsClear: 'Wyczyść dziennik',
+  alertKinds: { start: 'Start zawodów' },
+  alertOutcomes: { shown: 'Pokazane', error: 'Błąd przeglądarki' },
   posterTitle: 'Odliczanie',
   posterLead: 'Zrób zrzut ekranu i wyślij znajomym, niech też odliczają.',
   posterOpen: 'Odliczanie na plakacie',
@@ -707,9 +747,34 @@ const en: Dictionary = {
   startsIn: 'Starts in',
   startAlertTitle: 'Competition started',
   startAlertBody: 'Click to open the event page.',
-  startAlertsOn: 'Turn off competition start notifications',
-  startAlertsOff: 'Turn on competition start notifications',
-  startAlertsBlocked: 'Notifications are blocked in the browser settings',
+  notificationsTitle: 'Notifications',
+  notificationsLead:
+    'Turn the notifications of this site on and off here. This browser remembers the choice.',
+  notificationsToAlerts: 'What was shown is on the Alerts page',
+  notificationsLabels: {
+    on: 'Notifications (on)',
+    off: 'Notifications (off)',
+    blocked: 'Notifications (blocked in the browser settings)',
+    unsupported: 'Notifications (not available in this browser)',
+  },
+  startAlertsName: 'Competition start',
+  startAlertsHints: {
+    on: 'A browser notification at the moment a qualification or a competition starts. It works only while the site is open in some tab.',
+    off: 'A browser notification at the moment a qualification or a competition starts. It works only while the site is open in some tab.',
+    blocked:
+      'Notifications are blocked in the browser settings. Unblock them there: the page cannot ask again.',
+    unsupported: 'This browser does not support notifications.',
+  },
+  switchOn: 'On',
+  switchOff: 'Off',
+  alertsTitle: 'Alerts',
+  alertsLead:
+    'The log of notifications this browser has shown, newest first. It keeps the last 200 entries.',
+  alertsToNotifications: 'The switches are on the Notifications page',
+  alertsEmpty: 'The log is empty: no notification has been shown yet.',
+  alertsClear: 'Clear the log',
+  alertKinds: { start: 'Competition start' },
+  alertOutcomes: { shown: 'Shown', error: 'Browser error' },
   posterTitle: 'Countdown',
   posterLead:
     'Take a screenshot and send it to your friends so they count down too.',

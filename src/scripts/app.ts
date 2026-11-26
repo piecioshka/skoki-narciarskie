@@ -1,5 +1,5 @@
 import { STORAGE_KEYS } from '../config';
-import { isLang, t, type Lang } from '../i18n';
+import { t, type Lang } from '../i18n';
 import {
   findFirstUnfinished,
   getPhase,
@@ -10,24 +10,12 @@ import {
 } from '../lib/timing';
 import { countdown, formatLocal, isSameLocalDay } from '../lib/time';
 import { setupPosterExport } from './poster-export';
+import { setupAlertLog } from './alert-log';
 import { setupLiveFavicon } from './live-favicon';
+import { getLang, store } from './page';
 import { setupStartAlerts } from './start-alerts';
 
 const MAX_UPCOMING_EVENTS = 3;
-
-function store(key: string, value: string): void {
-  try {
-    localStorage.setItem(key, value);
-  } catch {
-    // Storage can be blocked (private mode); the preference is then per page.
-  }
-}
-
-function getLang(): Lang {
-  const { lang } = document.documentElement;
-
-  return isLang(lang) ? lang : 'pl';
-}
 
 function readSlot(element: HTMLElement): Slot | undefined {
   return readTiming(element.dataset)?.slot;
@@ -512,6 +500,8 @@ function setup(): void {
   });
   setupToc();
   showLocalTimes();
+
+  setupAlertLog();
 
   const checkStartAlerts = setupStartAlerts();
   const updateFavicon = setupLiveFavicon();

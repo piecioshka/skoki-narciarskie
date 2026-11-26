@@ -2,27 +2,20 @@
 // there is no push server: a notification fires only while some page of the
 // site is open (also in a background tab).
 import { STORAGE_KEYS } from '../config';
+import { t } from '../i18n';
+import { isSitePath, type AlertOutcome } from '../lib/alert-log';
 import { url } from '../lib/paths';
-import { findDueAlerts, type StartAlert } from '../lib/start-alerts';
+import {
+  findDueAlerts,
+  getStartAlertsState,
+  type StartAlert,
+  type StartAlertsState,
+} from '../lib/start-alerts';
+import { recordAlert } from './alert-log';
+import { getLang, readStored, store } from './page';
 
 // Old ids are dropped so the list in storage does not grow all season.
 const SHOWN_LIMIT = 50;
-
-function read(key: string): string | null {
-  try {
-    return localStorage.getItem(key);
-  } catch {
-    return null;
-  }
-}
-
-function store(key: string, value: string): void {
-  try {
-    localStorage.setItem(key, value);
-  } catch {
-    // Without storage the choice lasts only for this page.
-  }
-}
 
 function isAlert(value: unknown): value is StartAlert {
   if (typeof value !== 'object' || value === null) {
@@ -48,7 +41,7 @@ export function readAlerts(): StartAlert[] {
 function readShown(): Set<string> {
   try {
     const parsed: unknown = JSON.parse(
-      read(STORAGE_KEYS.startAlertsShown) ?? '[]',
+      readStored(STORAGE_KEYS.startAlertsShown) ?? '[]',
     );
 
     return new Set(
@@ -67,42 +60,60 @@ function rememberShown(ids: string[]): void {
   store(STORAGE_KEYS.startAlertsShown, JSON.stringify(all));
 }
 
-function isEnabled(): boolean {
-  return (
-    Notification.permission === 'granted' &&
-    read(STORAGE_KEYS.startAlerts) === 'true'
+function getState(): StartAlertsState {
+  return getStartAlertsState(
+    'Notification' in window ? Notification.permission : undefined,
+    readStored(STORAGE_KEYS.startAlerts),
   );
 }
 
-// Event pages are plain paths such as /pl/2026-2027/ruka/ (with the base
-// path in front on GitHub Pages).
-const EVENT_PATH = /^\/[a-z0-9-]+(?:\/[a-z0-9-]+)*\/$/;
-
-// The address comes from data in the page, so only an event path of this site
-// is opened, never a full URL or a `javascript:` one.
+// The address comes from data in the page, so only a page of this site is
+// opened, never a full URL or a `javascript:` one.
 function openOnSite(target: string): void {
-  if (EVENT_PATH.test(target)) {
+  if (isSitePath(target)) {
     location.assign(target);
   }
 }
 
-function show(alert: StartAlert): void {
-  // The tag lets the system replace a duplicate from another open tab.
-  const notification = new Notification(alert.title, {
-    body: alert.body,
-    tag: alert.id,
-    icon: url('/favicon.svg'),
-  });
+function notify(alert: StartAlert): AlertOutcome {
+  try {
+    // The tag lets the system replace a duplicate from another open tab.
+    const notification = new Notification(alert.title, {
+      body: alert.body,
+      tag: alert.id,
+      icon: url('/favicon.svg'),
+    });
 
-  notification.addEventListener('click', () => {
-    window.focus();
-    notification.close();
-    openOnSite(alert.url);
+    notification.addEventListener('click', () => {
+      window.focus();
+      notification.close();
+      openOnSite(alert.url);
+    });
+    return 'shown';
+  } catch {
+    // Chrome on Android takes notifications only from a service worker and
+    // throws here.
+    return 'error';
+  }
+}
+
+/** The one path that shows a notification; it also writes the alert log. */
+function show(alert: StartAlert): void {
+  const outcome = notify(alert);
+
+  recordAlert({
+    id: alert.id,
+    at: new Date().toISOString(),
+    kind: 'start',
+    title: alert.title,
+    body: alert.body,
+    url: alert.url,
+    outcome,
   });
 }
 
 function check(alerts: StartAlert[]): void {
-  if (!isEnabled()) {
+  if (getState() !== 'on') {
     return;
   }
 
@@ -120,24 +131,55 @@ function check(alerts: StartAlert[]): void {
   }
 }
 
-function render(button: HTMLElement): void {
-  const { labelOn, labelOff, labelBlocked } = button.dataset;
-  const blocked = Notification.permission === 'denied';
-  const enabled = isEnabled();
-  const label = blocked ? labelBlocked : enabled ? labelOn : labelOff;
+/** The bell in the top bar: a link whose icon and name tell the state. */
+function renderBell(state: StartAlertsState): void {
+  const label = t(getLang()).notificationsLabels[state];
 
-  button.setAttribute('aria-pressed', String(enabled));
-  button.setAttribute('aria-disabled', String(blocked));
-  if (label) {
-    button.setAttribute('aria-label', label);
-    button.title = label;
+  for (const link of document.querySelectorAll<HTMLElement>(
+    '.js-notifications-link',
+  )) {
+    link.dataset['state'] = state;
+    link.setAttribute('aria-label', label);
+    link.title = label;
   }
 }
 
-async function toggle(button: HTMLElement): Promise<void> {
-  if (isEnabled()) {
+/** The switch on the notifications page, when this is that page. */
+function renderSwitch(state: StartAlertsState): void {
+  const dict = t(getLang());
+  const enabled = state === 'on';
+
+  for (const button of document.querySelectorAll<HTMLButtonElement>(
+    'button.js-start-alerts-switch',
+  )) {
+    button.setAttribute('aria-pressed', String(enabled));
+    // The page cannot ask again once the browser blocks notifications.
+    button.disabled = state === 'blocked' || state === 'unsupported';
+  }
+  for (const label of document.querySelectorAll(
+    '.js-start-alerts-switch-label',
+  )) {
+    label.textContent = enabled ? dict.switchOn : dict.switchOff;
+  }
+  for (const hint of document.querySelectorAll('.js-start-alerts-hint')) {
+    hint.textContent = dict.startAlertsHints[state];
+  }
+}
+
+function render(): void {
+  const state = getState();
+
+  renderBell(state);
+  renderSwitch(state);
+}
+
+async function toggle(): Promise<void> {
+  const state = getState();
+
+  if (state === 'on') {
     store(STORAGE_KEYS.startAlerts, 'false');
-  } else if (Notification.permission !== 'denied') {
+  } else if (state === 'off') {
+    // The click on the switch is the user gesture the browser requires.
     const permission =
       Notification.permission === 'granted'
         ? 'granted'
@@ -145,23 +187,29 @@ async function toggle(button: HTMLElement): Promise<void> {
 
     store(STORAGE_KEYS.startAlerts, String(permission === 'granted'));
   }
-  render(button);
+  render();
 }
 
 /** Returns the check to run on every tick, or nothing when unsupported. */
 export function setupStartAlerts(): (() => void) | undefined {
-  const button = document.getElementById('start-alerts-toggle');
+  render();
+  for (const button of document.querySelectorAll('.js-start-alerts-switch')) {
+    button.addEventListener('click', () => {
+      void toggle();
+    });
+  }
+  // A choice made in another tab reaches the bell and the switch at once.
+  window.addEventListener('storage', (event) => {
+    if (event.key === null || event.key === STORAGE_KEYS.startAlerts) {
+      render();
+    }
+  });
 
-  if (!button || !('Notification' in window)) {
+  if (!('Notification' in window)) {
     return undefined;
   }
 
   const alerts = readAlerts();
 
-  button.hidden = false;
-  render(button);
-  button.addEventListener('click', () => {
-    void toggle(button);
-  });
   return () => check(alerts);
 }

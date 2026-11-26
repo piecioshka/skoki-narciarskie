@@ -4,7 +4,14 @@ import Icon from '../components/Icon.astro';
 import { REPOSITORY_URL, STORAGE_KEYS } from '../config';
 import { LANGUAGES, otherLang, t, type Lang } from '../i18n';
 import { rules } from '../i18n/rules';
-import { creditsPath, homePath, routeUrl, url } from '../lib/paths';
+import {
+  alertsPath,
+  creditsPath,
+  homePath,
+  notificationsPath,
+  routeUrl,
+  url,
+} from '../lib/paths';
 import { NAV, routePath, sectionOf, type Route } from '../lib/routes';
 import { getCurrentSeason } from '../lib/seasons';
 import { buildStartAlerts } from '../lib/start-alerts';
@@ -150,21 +157,18 @@ const jsonLdText = jsonLd
           ))}
         </nav>
         <div class="topbar__actions">
-          <button
-            class="icon-button icon-button--alerts js-start-alerts"
-            id="start-alerts-toggle"
-            type="button"
-            aria-pressed="false"
-            aria-label={dict.startAlertsOff}
-            title={dict.startAlertsOff}
-            data-label-on={dict.startAlertsOn}
-            data-label-off={dict.startAlertsOff}
-            data-label-blocked={dict.startAlertsBlocked}
-            hidden
+          <a
+            class="icon-button icon-button--alerts js-notifications-link"
+            id="notifications-link"
+            href={notificationsPath(lang)}
+            data-state="off"
+            aria-label={dict.notificationsLabels.off}
+            title={dict.notificationsLabels.off}
+            aria-current={route.name === 'notifications' ? 'page' : undefined}
           >
             <Icon name="bell" class="icon--bell" />
             <Icon name="bell-off" class="icon--bell-off" />
-          </button>
+          </a>
           <a
             class="icon-button icon-button--flag"
             id="language-switch"
@@ -207,6 +211,11 @@ const jsonLdText = jsonLd
       <p class="footer__line">
         <a class="link" href={creditsPath(lang)}>
           {dict.creditsTitle}
+        </a>
+      </p>
+      <p class="footer__line">
+        <a class="link" id="alerts-link" href={alertsPath(lang)}>
+          {dict.alertsTitle}
         </a>
       </p>
       <p class="footer__line">

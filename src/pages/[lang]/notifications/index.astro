@@ -1,0 +1,67 @@
+---
+import { LANGUAGES, t, type Lang } from '../../../i18n';
+import Layout from '../../../layouts/Layout.astro';
+import { alertsPath } from '../../../lib/paths';
+
+// Settings only: every kind of notification with its own switch. What was
+// shown is on the alerts page. The switch is driven by scripts/start-alerts.
+export function getStaticPaths() {
+  return LANGUAGES.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+---
+
+<Layout
+  lang={lang}
+  title={dict.notificationsTitle}
+  description={dict.notificationsLead}
+  route={{ name: 'notifications' }}
+>
+  <section class="section" aria-labelledby="notifications-title">
+    <h2 class="section__title section__title--page" id="notifications-title">
+      {dict.notificationsTitle}
+    </h2>
+    <p class="lead">{dict.notificationsLead}</p>
+    <p class="page-links">
+      <a class="link" id="notifications-to-alerts" href={alertsPath(lang)}>
+        {dict.notificationsToAlerts}
+      </a>
+    </p>
+    <ul class="switches">
+      <li class="switches__row">
+        <div class="switches__text">
+          <span class="switches__name" id="start-alerts-name">
+            {dict.startAlertsName}
+          </span>
+          <span
+            class="switches__hint js-start-alerts-hint"
+            id="start-alerts-hint"
+          >
+            {dict.startAlertsHints.off}
+          </span>
+        </div>
+        <button
+          class="switch js-start-alerts-switch"
+          id="start-alerts-switch"
+          type="button"
+          aria-pressed="false"
+          aria-labelledby="start-alerts-name start-alerts-switch-label"
+          aria-describedby="start-alerts-hint"
+        >
+          <span
+            class="js-start-alerts-switch-label"
+            id="start-alerts-switch-label"
+          >
+            {dict.switchOff}
+          </span>
+        </button>
+      </li>
+    </ul>
+  </section>
+</Layout>

@@ -3,6 +3,7 @@ import type { Competition, Season } from './schema';
 import {
   buildStartAlerts,
   findDueAlerts,
+  getStartAlertsState,
   isAnyLive,
   type StartAlert,
 } from './start-alerts';
@@ -99,6 +100,25 @@ describe('findDueAlerts', () => {
 
   it('skips alerts already shown', () => {
     expect(findDueAlerts(alerts, now, new Set(['now']))).toEqual([]);
+  });
+});
+
+describe('getStartAlertsState', () => {
+  it('is unsupported without the Notification API', () => {
+    expect(getStartAlertsState(undefined, 'true')).toBe('unsupported');
+  });
+
+  it('is blocked when the browser denies, whatever was saved', () => {
+    expect(getStartAlertsState('denied', 'true')).toBe('blocked');
+    expect(getStartAlertsState('denied', null)).toBe('blocked');
+  });
+
+  it('is on only with the permission and the saved choice', () => {
+    expect(getStartAlertsState('granted', 'true')).toBe('on');
+    expect(getStartAlertsState('granted', 'false')).toBe('off');
+    expect(getStartAlertsState('granted', null)).toBe('off');
+    expect(getStartAlertsState('default', 'true')).toBe('off');
+    expect(getStartAlertsState('default', null)).toBe('off');
   });
 });
 

@@ -38,6 +38,8 @@ Strona jest w pełni statyczna (Astro, `output: 'static'`). Build nie zna bież�
 - `src/lib/links.ts` - adresy FIS i nadawców
 - `src/i18n/` - słowniki `pl` i `en`
 - `src/scripts/app.ts` - skrypt przeglądarkowy: godziny w strefie widza, fazy, odliczanie, motyw, skróty
+- `src/scripts/start-alerts.ts` i `src/lib/start-alerts.ts` - powiadomienia przeglądarki o starcie zawodów, dzwonek i przełącznik
+- `src/scripts/alert-log.ts` i `src/lib/alert-log.ts` - dziennik pokazanych powiadomień
 - `src/pages/[lang]/` - widoki: strona główna, terminarz sezonu, strona zawodów, endpoint `calendar.ics`
 - `e2e/specs/` - testy Playwright z podmienionym zegarem
 - `src/data/standings/` - klasyfikacja generalna, jeden plik na sezon
@@ -63,6 +65,23 @@ Trasy:
 - `/[lang]/nations/` i `/[lang]/nations/[kod]/` - reprezentacje
 - `/[lang]/credits/` - autorzy zdjęć
 - `/[lang]/rules/` - zasady skoków ze schematami
+- `/[lang]/notifications/` - przełączniki powiadomień
+- `/[lang]/alerts/` - dziennik pokazanych powiadomień
+
+## Powiadomienia i alerty
+
+Strona jest statyczna, więc powiadomienie o starcie zawodów pokazuje przeglądarka i tylko wtedy, gdy strona jest otwarta w którejś karcie. Dwie strony mają rozdzielone role:
+
+- `/[lang]/notifications/` to wyłącznie ustawienia: każdy rodzaj powiadomienia ma wiersz z nazwą, podpowiedzią i przełącznikiem `<button aria-pressed>`. Włączenie prosi o zgodę przeglądarki (`Notification.requestPermission()`); gdy przeglądarka blokuje powiadomienia albo ich nie obsługuje, przełącznik jest wyłączony, a podpowiedź mówi dlaczego. Strona nie pokazuje historii.
+- `/[lang]/alerts/` to wyłącznie dziennik: pokazane powiadomienia od najnowszych, z czasem, rodzajem, treścią i wynikiem (`shown` albo `error`), plus przycisk czyszczenia. Strona nie ma przełączników.
+- Obie strony linkują do siebie w pierwszych liniach.
+- Dzwonek w górnym pasku jest linkiem do `/[lang]/notifications/` (dzwonek, gdy powiadomienia są włączone, przekreślony, gdy są wyłączone albo zablokowane; stan także w `aria-label` i `title`). Do dziennika prowadzi zwykły link tekstowy w stopce.
+
+Wybór przełącznika i dziennik trzyma `localStorage` (klucze w `STORAGE_KEYS` w `src/config.ts`); dziennik ma wersjonowany klucz i mieści 200 ostatnich wpisów. Zmiana z innej karty dochodzi przez zdarzenie `storage`.
+
+Powiadomienie wychodzi jedną ścieżką: funkcja `show()` w `src/scripts/start-alerts.ts` pokazuje je i dopisuje wpis do dziennika. Nowy rodzaj powiadomienia dostaje wartość w `ALERT_KINDS` (`src/lib/alert-log.ts`), etykietę w `alertKinds` w słownikach, własny przełącznik na stronie powiadomień i wychodzi tą samą ścieżką, więc sam trafia do dziennika.
+
+W testach e2e `Notification` podmienia atrapa z `e2e/support/notifications.ts`, bo headless Chromium zawsze zgłasza `denied`.
 
 ## Dane sezonu
 

@@ -21,6 +21,8 @@ describe('routePath', () => {
     [{ name: 'rules' }, '/rules/'],
     [{ name: 'credits' }, '/credits/'],
     [{ name: 'countdown' }, '/countdown/'],
+    [{ name: 'notifications' }, '/notifications/'],
+    [{ name: 'alerts' }, '/alerts/'],
   ])('builds the path of %o', (route, path) => {
     expect(routePath(route)).toBe(path);
   });
@@ -46,6 +48,8 @@ describe('sectionOf', () => {
     [{ name: 'home' }, undefined],
     [{ name: 'credits' }, undefined],
     [{ name: 'countdown' }, undefined],
+    [{ name: 'notifications' }, undefined],
+    [{ name: 'alerts' }, undefined],
     [{ name: 'season', seasonId: '2026-2027' }, 'schedule'],
     [{ name: 'event', seasonId: '2026-2027', slug: 'ruka' }, 'schedule'],
     [{ name: 'standings', seasonId: '2026-2027' }, 'standings'],

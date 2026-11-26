@@ -1,0 +1,61 @@
+---
+import { LANGUAGES, t, type Lang } from '../../../i18n';
+import Layout from '../../../layouts/Layout.astro';
+import { notificationsPath } from '../../../lib/paths';
+
+// The log only: notifications this browser has shown, read from localStorage
+// and drawn by scripts/alert-log. The switches are on the notifications page.
+export function getStaticPaths() {
+  return LANGUAGES.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+---
+
+<Layout
+  lang={lang}
+  title={dict.alertsTitle}
+  description={dict.alertsLead}
+  route={{ name: 'alerts' }}
+>
+  <section class="section" aria-labelledby="alerts-title">
+    <h2 class="section__title section__title--page" id="alerts-title">
+      {dict.alertsTitle}
+    </h2>
+    <p class="lead">{dict.alertsLead}</p>
+    <p class="page-links">
+      <a
+        class="link"
+        id="alerts-to-notifications"
+        href={notificationsPath(lang)}
+      >
+        {dict.alertsToNotifications}
+      </a>
+    </p>
+    <div class="alert-log js-alert-log">
+      <p class="notice js-alert-log-empty" id="alert-log-empty">
+        {dict.alertsEmpty}
+      </p>
+      <div class="alert-log__tools js-alert-log-filled" hidden>
+        <button
+          class="button js-alert-log-clear"
+          id="alert-log-clear"
+          type="button"
+        >
+          {dict.alertsClear}
+        </button>
+      </div>
+      <ol
+        class="alert-log__list js-alert-log-list js-alert-log-filled"
+        id="alert-log-list"
+        aria-labelledby="alerts-title"
+        hidden
+      ></ol>
+    </div>
+  </section>
+</Layout>
