@@ -12,12 +12,16 @@ interface Props {
 
 const { lang, competition, timeSlot: slot } = Astro.props;
 // Rendered in Polish time; the client script rewrites it to the viewer zone.
-const fallback = formatInZone(slot.start, 'Europe/Warsaw');
+const [fallbackDate, fallbackTime] = formatInZone(
+  slot.start,
+  'Europe/Warsaw',
+).split(' ');
 ---
 
 {slot.timed ? (
   <time class="slot-time js-local-time" datetime={slot.start.toISOString()}>
-    {fallback}
+    <span class="slot-time__date js-local-date">{fallbackDate}</span>{' '}
+    <span class="js-local-clock">{fallbackTime}</span>
   </time>
 ) : (
   <span class="slot-time">

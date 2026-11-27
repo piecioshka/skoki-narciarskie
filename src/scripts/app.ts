@@ -38,7 +38,14 @@ function showLocalTimes(): void {
     const value = element.getAttribute('datetime');
 
     if (value) {
-      element.textContent = formatLocal(new Date(value));
+      const [date = '', time = ''] = formatLocal(new Date(value)).split(' ');
+
+      for (const dateElement of all('.js-local-date', element)) {
+        dateElement.textContent = date;
+      }
+      for (const clockElement of all('.js-local-clock', element)) {
+        clockElement.textContent = time;
+      }
     }
   }
   for (const element of all('.js-time-zone')) {

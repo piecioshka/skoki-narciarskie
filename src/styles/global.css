@@ -467,6 +467,10 @@ body {
   margin-top: 1rem;
 }
 
+.slot-time__date {
+  color: var(--pal-text-muted);
+}
+
 .slot-time__unknown {
   font-family: var(--pal-font-family);
   font-size: var(--pal-font-size-sm);
@@ -2351,6 +2355,10 @@ a[href^='http']:not(.icon-button)::after {
   font-family: var(--pal-font-mono);
   font-weight: var(--pal-font-weight-bold);
   color: var(--poster-ink);
+}
+
+.poster__start .slot-time__date {
+  color: inherit;
 }
 
 .poster__start .slot-time__unknown {
