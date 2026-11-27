@@ -420,6 +420,10 @@
           "fisCodex": "0316",
           "documents": [
             {
+              "label": "Qualification Results",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/b9c2f83d-0181-4732-b99e-b62399811da9.pdf"
+            },
+            {
               "label": "Start List Qualification",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/4e7ad4c6-ae2e-4eac-9df2-b674c18333cd.pdf"
             },
@@ -430,6 +434,10 @@
             {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/a9da54af-eedb-4416-b6a2-9942e493db64.pdf"
+            },
+            {
+              "label": "Equipment Control Report",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/8b219f13-f989-4994-bda9-0d95f07bb324.pdf"
             }
           ]
         },
@@ -442,6 +450,10 @@
           "status": "scheduled",
           "fisCodex": "0317",
           "documents": [
+            {
+              "label": "Start List 1st Round",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/556f0494-07aa-44d4-a56d-87d29317a04c.pdf"
+            },
             {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/74848e96-494e-4f01-b51f-86cff750da63.pdf"
