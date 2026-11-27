@@ -760,6 +760,12 @@ body {
   font-weight: var(--pal-font-weight-semibold);
 }
 
+.day__weekday {
+  margin-left: 0.5rem;
+  color: var(--pal-text-muted);
+  font-weight: var(--pal-font-weight-regular);
+}
+
 .competition-list {
   border: 1px solid var(--pal-border);
   border-radius: var(--pal-radius);

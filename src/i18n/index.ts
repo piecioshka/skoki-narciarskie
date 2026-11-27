@@ -162,6 +162,8 @@ interface Dictionary {
   /** FIS attachment labels; an unknown label is shown as FIS wrote it. */
   documentLabels: Record<string, string>;
   program: string;
+  /** Names of the days of the week, starting with Sunday. */
+  weekdays: readonly string[];
   timeUnknown: string;
   timeZoneNote: string;
   addToCalendar: string;
@@ -433,6 +435,15 @@ const pl: Dictionary = {
     'Trial Round Results': 'Wyniki serii próbnej',
   },
   program: 'Program',
+  weekdays: [
+    'niedziela',
+    'poniedziałek',
+    'wtorek',
+    'środa',
+    'czwartek',
+    'piątek',
+    'sobota',
+  ],
   timeUnknown: 'godzina nieznana',
   timeZoneNote: 'Godziny w strefie czasowej:',
   addToCalendar: 'Dodaj do kalendarza (ICS)',
@@ -713,6 +724,15 @@ const en: Dictionary = {
   fisEventPage: 'Event page at FIS',
   documentLabels: {},
   program: 'Program',
+  weekdays: [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ],
   timeUnknown: 'time not announced',
   timeZoneNote: 'Times shown in time zone:',
   addToCalendar: 'Add to calendar (ICS)',

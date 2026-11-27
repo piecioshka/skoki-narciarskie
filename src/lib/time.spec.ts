@@ -4,6 +4,7 @@ import {
   countdown,
   formatInZone,
   isSameLocalDay,
+  weekdayIndex,
   zonedTimeToUtc,
 } from './time';
 
@@ -45,6 +46,13 @@ describe('formatInZone', () => {
 describe('addDays', () => {
   it('rolls over the year', () => {
     expect(addDays('2026-12-31', 1)).toBe('2027-01-01');
+  });
+});
+
+describe('weekdayIndex', () => {
+  it('counts from Sunday', () => {
+    expect(weekdayIndex('2026-11-27')).toBe(5);
+    expect(weekdayIndex('2026-11-29')).toBe(0);
   });
 });
 

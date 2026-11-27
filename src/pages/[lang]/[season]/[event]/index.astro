@@ -35,6 +35,7 @@ import {
 } from '../../../../lib/schedule';
 import { getSlot, timingAttributes } from '../../../../lib/timing';
 import { formatSeasonLabel, getSeasons } from '../../../../lib/seasons';
+import { weekdayIndex } from '../../../../lib/time';
 
 export function getStaticPaths() {
   return LANGUAGES.flatMap((lang) =>
@@ -157,7 +158,12 @@ const jsonLd = {
     </h3>
     {days.map((day) => (
       <div class="day">
-        <h4 class="day__title">{day.date}</h4>
+        <h4 class="day__title">
+          {day.date}
+          <span class="day__weekday">
+            {dict.weekdays[weekdayIndex(day.date)]}
+          </span>
+        </h4>
         <ul class="competition-list">
           {day.competitions.map((competition) => {
             const slot = getSlot(event, competition);

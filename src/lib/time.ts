@@ -76,6 +76,11 @@ export function addDays(date: string, days: number): string {
   return next.toISOString().slice(0, 10);
 }
 
+/** Day of the week of an ISO date: 0 is Sunday, 6 is Saturday. */
+export function weekdayIndex(date: string): number {
+  return new Date(`${date}T00:00:00Z`).getUTCDay();
+}
+
 export interface Countdown {
   days: number;
   hours: number;
