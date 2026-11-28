@@ -451,6 +451,10 @@
           "fisCodex": "0317",
           "documents": [
             {
+              "label": "Official Results",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/f456d13b-b8ea-418f-9576-be2902fa2882.pdf"
+            },
+            {
               "label": "Start List Final Round",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/3b712cb4-18c7-4a7b-a3eb-2ec91fe8ea3c.pdf"
             },
@@ -469,6 +473,30 @@
             {
               "label": "Media Stats",
               "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/74848e96-494e-4f01-b51f-86cff750da63.pdf"
+            },
+            {
+              "label": "Prize Money Ranking",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/078a8be3-6d89-4903-9477-9667c3e859ea.pdf"
+            },
+            {
+              "label": "Speed Analysis",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/182401ae-46bc-4610-930f-af9316806c9c.pdf"
+            },
+            {
+              "label": "World Cup Standing",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/64246696-3b2b-4bef-8dec-671d2fc6864f.pdf"
+            },
+            {
+              "label": "Nations Cup Standing",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/497a6229-311f-4a1b-b4b5-4313b2b4f045.pdf"
+            },
+            {
+              "label": "U23 Ranking",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/779ff721-b82c-40fa-8316-2871832e2fdf.pdf"
+            },
+            {
+              "label": "Equipment Control Report",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/beb81521-b955-4f37-9cd8-a740875503a6.pdf"
             }
           ]
         },
@@ -479,7 +507,13 @@
           "date": "2026-11-29",
           "time": "13:45",
           "status": "scheduled",
-          "fisCodex": "0083"
+          "fisCodex": "0083",
+          "documents": [
+            {
+              "label": "Start List Qualification",
+              "url": "https://www.fis-ski.com/DB/v2/download/competition-attachment/9fa29992-dd84-4c1a-b9f5-8f86d1d20385.pdf"
+            }
+          ]
         },
         {
           "fisRaceId": 7803,
